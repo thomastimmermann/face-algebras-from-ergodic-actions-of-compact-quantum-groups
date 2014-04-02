@@ -1,0 +1,180 @@
+% In definition of faithful $I^2$-algebra, we can indeed just suppose that the embedding $\Ff(I^2)\rightarrow M(A)$ is faithful.
+% Correct use of $\cdot$ versus operator product?
+
+% Podles sphere can be defined as an algebra in $\Rep(SU_q(2))$. Hence, it should make sense as an algebra under the forgetful functor to SU_q(2)-dynamical. By duality for coideals, the same should hold for passage to SU_q(1,1) in fact...
+
+
+\documentclass[11pt]{article}
+
+\usepackage[pdftex]{hyperref}
+\usepackage{fixme}
+\usepackage{mathrsfs}
+\usepackage[a4paper]{geometry}
+\usepackage{amssymb, amsthm, amsfonts, amsxtra, amsmath}
+\usepackage{latexsym}
+\usepackage{mathabx}
+\usepackage[all]{xy}
+\usepackage{graphics}
+\usepackage{makeidx}
+\usepackage{stmaryrd} % for llbracket/rrbracket
+
+
+\theoremstyle{change}
+
+\newcommand{\co}{\mathrm{co}}
+\newcommand{\Corep}{\mathrm{Corep_{f}}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\img}{img}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ext}{\mathrm{e}}
+\DeclareMathOperator{\can}{\mathrm{can}}
+\DeclareMathOperator{\op}{\mathrm{op}}
+\DeclareMathOperator{\fin}{\mathrm{f}}
+\DeclareMathOperator{\Pol}{\mathrm{P}}
+\DeclareMathOperator{\End}{\mathrm{End}}
+\DeclareMathOperator{\Par}{\mathrm{Par}}
+\DeclareMathOperator{\reg}{\mathrm{reg}}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\Zz}{\mathrm{Z}}
+\DeclareMathOperator{\Ran}{\mathrm{Ran}}
+\DeclareMathOperator{\hol}{\mathrm{hol}}
+\DeclareMathOperator{\Ind}{\mathrm{Ind}}
+\DeclareMathOperator{\Ker}{\mathrm{Ker}}
+\DeclareMathOperator{\Char}{\mathrm{Char}}
+\DeclareMathOperator{\dyn}{\mathrm{dyn}}
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+
+\newcommand{\nc}{\R}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\kk}{\mathfrak{k}}
+\newcommand{\ttt}{\mathfrak{t}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\llll}{\mathfrak{l}}
+\newcommand{\uu}{\mathfrak{u}}
+\newcommand{\bb}{\mathfrak{b}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\ssl}{\mathfrak{sl}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\spp}{\mathfrak{sp}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\e}{\mathfrak{e}}
+\newcommand{\s}{\mathfrak{s}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Ss}{\mathbb{S}}
+\newcommand{\ZZ}{\mathscr{Z}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\Hsp}{\mathscr{H}}
+\newcommand{\qn}[2]{\lbrack #1 \rbrack_{#2}}
+\newcommand{\fqn}[2]{\lbrack #1 \rbrack_{#2}!}
+\newcommand{\bqn}[3]{\left\lbrack \begin{array}{c} \!#1\! \\ \!#2\! \end{array}\right\rbrack_{#3}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\RR}{\mathcal{R}}
+\newcommand{\rd}{\mathrm{d}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\cop}{\mathrm{cop}}
+\newcommand{\opp}{\mathrm{op}}
+\newcommand{\Rm}{\mathcal{R}}
+\newcommand{\wt}{\mathrm{wt}}
+%\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\CatC}{\mathcal{C}}
+\newcommand{\CatD}{\mathcal{D}}
+\newcommand{\Corr}{\mathrm{Corr}}
+\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Star}[2]{{}_{#1}\!*_{#2}}
+\newcommand{\vot}{\bar{\otimes}}
+\newcommand{\A}{\mathcal{B}}
+\newcommand{\Aa}{\mathscr{B}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\alg}{\mathrm{alg}}
+\newcommand{\Gg}{\mathscr{G}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\Rtimes}{\underset{\R}{\times}}
+\newcommand{\Rb}{\R^{\bullet}}
+\newcommand{\vtimes}{\bar{\otimes}}
+\newcommand{\Rr}{\mathscr{R}}
+\newcommand{\Tt}{\mathscr{T}}
+\newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+\newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
+\newcommand{\Gru}[3]{\;{}^{\;#2}#1^{#3}}
+\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
+\newcommand{\Fun}{\mathrm{Fun}}
+\newcommand{\Ff}{\Fun_{\fin}}
+%\newcommand{\fin}{\mathrm{fin}}
+\newcommand{\iitimes}{\underset{I}{\otimes}}
+\newcommand{\itimes}{\underset{I^2}{\otimes}}
+\newcommand{\osum}[1]{\underset{#1}{\sum}^{\oplus}}
+\newcommand{\osumc}[1]{\underset{#1}{\sum}^{\bar{\oplus}}}
+\newcommand{\oplusc}{\bar{\oplus}}
+\newcommand{\wDelta}{\widetilde{\Delta}}
+\newcommand{\f}{\mathrm{fin}}
+%\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Rho}{\mathrm{P}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\DA}{\mathcal{A}}
+\newcommand{\Circt}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}} % Woronowicz style tensor product, USUAL SIZE
+\newcommand{\CoRep}{\mathrm{Corep}}
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Lem}[Theorem]{Lemma}
+\newtheorem{Prop}[Theorem]{Proposition}
+\newtheorem{Cor}[Theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{Def}[Theorem]{Definition}
+\newtheorem{Rem}[Theorem]{Remark}
+\newtheorem{Exa}[Theorem]{Example}
+\newtheorem{Not}[Theorem]{Notation}
+\newtheorem{Que}[Theorem]{Question}
+\newtheorem{Con}[Theorem]{Conjecture}
+
+\date{}
+
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\title{Generalized face algebras, ergodic actions of compact quantum groups and dynamical quantum $SU(2)$}
+
+\author{Kenny De Commer\thanks{Department of Mathematics, University of Cergy-Pontoise, UMR CNRS 8088, F-95000 Cergy-Pontoise, France, email: {\tt Kenny.De-Commer@u-cergy.fr}}
+\and Thomas Timmermann\thanks{University of M\"{u}nster}}
+
+\maketitle
+
+
+\begin{abstract}
+ We present a generalized definition of Hayashi's compact face algebras which allows for an infinite-dimensional base algebra. As the main source of examples, we show how any quantum homogeneous space of a compact quantum group leads to such a generalized compact face algebra. In particular, we show how the construction applied to a non-standard Podle\'{s} sphere, seen as a quantum homogeneous space for quantum $SU(2)$, leads to an implementation of the dynamical quantum $SU(2)$-group as a generalized compact face algebra.
+\end{abstract}
+
+%\emph{Keywords}:
+
+%AMS 2010 \emph{Mathematics subject classification}:
+
+
+%17B37: Quantum groups, quantized enveloping algebras
+%20G42: quantized function algebras
+%46L65: Functional analysis, deformations, quantizations
+%81R50: Quantum groups and related algebraic methods
+%16T05: Hopf algebras and their applications
+%16T10: Bialgebras
+%16T15: Coalgebras and comodules; corings
+%46L08  $C^*$-modules
+
+
+\input{1-face-algebras.tex}
+\input{2-representations.tex}
+\input{3-tannaka.tex}
+\input{4-op-alg.tex}
+\input{5-free.tex}
+\input{6-dyn-suq.tex}
+
+\end{document}

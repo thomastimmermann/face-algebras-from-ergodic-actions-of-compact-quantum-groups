@@ -1,0 +1,164 @@
+\section{Tannaka-Krein duality for compact Hopf face algebras}
+
+Let $\CatC$ be a rigid tensor C$^*$-category with irreducible unit. For example, one can take $\CatC = \Rep(\G)$, the category of finite-dimensional unitary representations of a compact quantum group $\G$. We will in general view the tensor product of $\CatC$ as being strict. Let $J$ be an index set for a maximal set of mutually non-isomorphic irreducible objects $u_a$ in $\CatC$. The unit object of $\CatC$ will be written $u_o$. Whenever convenient, we will replace $u_a$ by its associated index symbol $a$. We will also fix once and for all orthonormal bases $f_{c,j}^{a,b}$ for $\Mor(u_c,u_a\otimes u_b)$, where $j$ runs over an index set $J^{a,b}_{c}$.
+
+Let $I$ be a (countable) set. We will write $\Hilb_{I^2}$ for the monoidal tensor C$^*$-category of $I$-bigraded Hilbert spaces $\Hsp = \osumc{r,s}\Hsp_{rs}$, where the direct sum on the right is understood as the completion of the ordinary algebraic one. The tensor product $\iitimes$ in $\Hilb_{I^2}$ is defined by $(\Hsp\iitimes \mathscr{G})_{rs} = \oplusc_t \left(\Hsp_{rt}\otimes\mathscr{G}_{ts}\right)$. The unit of $\Hilb_{I^2}$ is $l^2(I)$ with the obvious $I^2$-grading. We will view this monoidal category as being strict.
+
+We will be interested in strong tensor C$^*$-functors $F$ from $\CatC$ to $\Hilb_{I^2}$. As shown in [DCY], any ergodic action of a compact quantum group $\G$ on a unital C$^*$-algebra provides a tensor C$^*$-functor of $\CatC$ into $\Hilb_{I^2}$ for some set $I$.
+
+For $F: \CatC\rightarrow \Hilb_{I^2}$ a strong tensor C$^*$-functor, we denote the unitary compatibility morphisms by $\phi_{X,Y}:F(X)\iitimes F(Y)\rightarrow F(X\otimes Y)$, where we recall that they are assumed to satisfy the coherence conditions  \[\phi_{X,Y\otimes Z}(\id_X\otimes \phi_{Y,Z}) = \phi_{X\otimes Y,Z}(\phi_{X,Y}\otimes \id_Z),\qquad \phi_{o,a} = \phi_{a,o} = \id_a.\] It will be convenient to extend $\phi_{X,Y}$ to a coisometry $F(X)\otimes F(Y)\rightarrow F(X\otimes Y)$, defining it to be zero on the orthogonal complement of $F(X)\iitimes F(Y)$. Note however that then $\phi_{X,o}$ becomes the coisometry $F(X)\otimes l^2(I)\rightarrow F(X)$ sending $F(X)_{rs} \otimes \C\delta_t$ canonically onto $\delta_{s,t}F(X)_{rs}$, and similarly for $\phi_{o,X}$. Whenever $X,Y$ are clear, we will abbreviate $\phi_{X,Y}$ as $\phi$. We will use the notation \[F^{a,b}_{c,j} = \phi^* F(f^{a,b}_{c,j}) \in B(F(u_c),F(u_a)\otimes F(u_b)).\]
+
+As $\CatC$ is rigid, each $F(X)$ will be column-finite in the sense that for each $X$ in $\CatC$ and each fixed $s$ in $I$, the direct sum $\osum{r} F(X)_{rs}$ will be finite-dimensional. Similarly, each $F(X)$ will be row-finite. See ...
+
+%If $X$ is an object in $\CatC$, we have a canonical unitary $F(X) \cong \oplus_{a\in I}\left( F(u_a)\otimes \Mor(u_a,X)\right)$, where the $\Mor(u_a,X)$ are Hilbert spaces by the inner product $\langle S,T\rangle = S^*T$. For any $\xi \in F(X)$, we will write $\xi =\sum_a \xi_{a} \otimes \xi^a$ under this isomorphism, so that $\sum_a F(\xi^a)\xi_a = \xi$. If $\xi \in F(u_a)$, we will also write $\xi = \xi_a$ for emphasis.
+
+%Similarly, when $\xi \in F(X)\iitimes F(Y)$, we will write $\xi_{(I)}\otimes \xi_{(J)}$ for the image of $\xi$ under the natural isomorphism $F(X)\iitimes F(Y)\underset{\phi_{X,Y}}{\cong} F(X\otimes Y) \cong \oplus_{a\in I}\left(F(u_a)\otimes \Mor(u_a,X\otimes Y)\right)$.
+
+Define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) = B(F(u_a)_{kl}, F(u_a)_{mn}).\] Write $\Gr{A}{k}{l}{m}{n} = \oplus_{a\in J} \Gr{A}{k}{l}{m}{n}(a)$ and $A = \oplus_{k,l,m,n} \Gr{A}{k}{l}{m}{n}$. The $a$-spectral subspace $A(a)$ of $A$ is defined as \[A(a) = \osum{k,l,m,n} \Gr{A}{k}{l}{m}{n}(a).\] For any element $x\in A$, its component in the $a$-spectral subspace is written $x_a$.
+
+Our goal is to turn $A$ into a generalized compact Hopf face algebra.
+
+%If $\xi$ is a vector in $F(u_a)_{mn}$, we will denote it as $\xi_a$ to emphasize its dependence on $a$. On the other hand, a typical element $\xi$ in $\overline{F(u_a)_{mn}}$ will be denoted $\xi^a$. By $\xi\rightarrow \bar{\xi}$ we will denote the canonical real linear map $F(u_a)_{rs} \rightarrow \overline{F(u_a)_{rs}}$, so that $\overline{\xi_a} = \bar{\xi}^a$. An element in $\Gr{A}{k}{l}{m}{n}$ will then be written symbolically as $\xi^a\otimes \eta_a$, where we implicitly assume a summation over several elementary tensors and over $a$. In general, if abstract indices occur both in covariant and contravariant positions, the summation will be implicitly understood, unless explicitly indicated otherwise.
+
+%If $\xi_a \in F(u_a)_{rs}$ and $\eta_b\in F(u_b)_{st}$, we will denote by $(\xi_a\otimes \eta_b)_c$ the $c$-component of the vector $\phi_{a,b}(\xi_a\otimes \eta_b)_c$ inside $F(u_a\otimes u_b)_{rt}$. Similarly, if $\xi^a \in \overline{F(u_a)_{rs}}$ and $\eta_b\in \overline{F(u_b)_{st}}$, we denote by $(\xi^a\otimes \eta^b)^c$ the vector $\overline{(\bar{\xi}_a\otimes \bar{\eta}_b)_c}$.
+
+We first turn $A$ into an algebra. The multiplication $x\cdot y$ of $x\in \Gr{A}{k}{l}{m}{n}(a)$ and $y\in \Gr{A}{p}{q}{r}{s}(b)$ is the element in $\Gr{A}{k}{q}{m}{s}$ defined by the formula \[(x\cdot y)_c = \sum_{j\in J^{a,b}_c} \left(F^{a,b}_{c,j}\right)^*(x\otimes y)\left( F^{a,b}_{c,j}\right).\] Note that the product is independent of the specific choice of orthogonal bases $f^{a,b}_{c,j}$. We will continue to use the $\cdot$-notation to distinguish this product from the ordinary multiplication of operators.
+
+\begin{Lem} With the above product, $A$ becomes a faithful strong $I^2$-algebra.
+\end{Lem}
+
+\begin{proof} Let $x\in \Gr{A}{k}{l}{m}{n}(a)$, $y\in \Gr{A}{p}{q}{r}{s}(b)$ and $z\in \Gr{A}{q}{t}{s}{v}$. From the fact that $\phi$ is a natural transformation, we find that \[((x\cdot y)\cdot z)_d = \sum_{e\in J}\sum_{k\in J_d^{e,c}}\sum_{j\in J_e^{a,b}} \left(\phi^*(\phi^*\otimes \id)F(f_{d,e,j,k}^{1,a,b,c})\right)^*(x\otimes y\otimes z)\left((\phi^*\otimes \id)\phi^* F(f_{d,e,j,k}^{1,a,b,c})\right)\] where $f_{d,e,j,k}^{1,a,b,c}=(f_{e,j}^{a,b}\otimes \id)f_{d,k}^{e,c}$. On the other hand, \[(x\cdot (y\cdot z))_d = \sum_{e\in J}\sum_{k\in J_d^{a,e}}\sum_{j\in J_e^{b,c}} \left(\phi(\id\otimes \phi)F(f_{d,e,j,k}^{2,a,b,c})\right)^*(x\otimes y\otimes z)\left((\id\otimes \phi)\phi F(f_{d,e,j,k}^{2,a,b,c})\right)\] where $f_{d,e,j,k}^{2,a,b,c} = (\id\otimes f_{e,j}^{b,c})f_{d,k}^{a,e}$. As $\phi(\phi\otimes \id)$ by $\phi(\id\otimes \phi)$ by assumption, and as the orthonormal bases $\{f_{d,e,j,k}^{1,a,b,c}\mid e,j,k\}$ or $\{f^{2,a,b,c}_{d,e,j,k}\mid e,j,k\}$ can clearly be replaced by any other orthonormal basis of $\Mor(u_d,u_a\otimes u_b\otimes u_c)$, it follows that $(x\cdot y)\cdot z = x\cdot (y\cdot z)$.
+
+Define $1_{rs} \in B(F(u_o)_{rr},F(u_o)_{ss}) = \Gr{A}{r}{r}{s}{s}(o)$ as the map sending $\delta_r$ to $\delta_s$. By the compatibility assumption for $\phi_{a,o}$ and $\phi_{o,a}$, the map $\Ff(I^2)\rightarrow A$ mapping $\delta_{(r,s)}$ to $1_{rs}$ is an algebra homomorphism. Thus $A$ becomes a faithful strong $I^2$-algebra.
+\end{proof}
+
+In the following, we will again write $\lambda_r = \sum_s 1_{rs}$ and $\rho_s = \sum_r 1_{rs}$ inside $M(A)$, using the notation as at the end of the proof of the previous lemma.
+
+We turn to the coproduct. Let $\{e_{a,i}\mid i\in B_a\}$ denote an orthonormal basis of $F(u_a)$ over an index set $B_a$ which is adapted to the bigrading (in the sense that each $e_{a,i}$ is inside exactly one component). Write $B_{a,rs}\subseteq B_a$ for the set of indices for which $e_{a,i}\in F(u_a)_{rs}$. Define elements \[P^{kl}_{mn}(a)\in \Gr{A}{k}{l}{m}{n}(a) \otimes \Gr{A}{m}{n}{k}{l}(a)\] by \[P^{kl}_{mn}(a) = \sum_{i\in B_{a,kl},j\in B_{a,mn}}  e_{a,j}e_{a,i}^*\otimes e_{a,i}e_{a,j}^*.\] As each $F(u_a)_{kl}$ is finite-dimensional, the above sums are finite.
+
+%\begin{Lem} For any $x,y\in A$, one has $P^{kl}_{mn}(a)(x\otimes y) = (y\otimes x)P^{kl}_{mn}(a)$ under the ordinary operator product.
+%\end{Lem}
+
+%Here the product is considered to be zero if the range and source of a composition don't match.
+
+%\begin{proof}Immediate.
+%\end{proof}
+
+Define now maps \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}(a) \rightarrow \Gr{A}{k}{l}{r}{s}(a)\otimes \Gr{A}{r}{s}{m}{n}(a)\] by the application \[x \mapsto P_{rs}^{mn}(a) (x\otimes 1) = (1\otimes x)P_{rs}^{kl}(a).\] They obviously extend to linear maps $\Delta_{rs}$ from $A$ to $A\itimes A$.
+
+\begin{Lem} For each $x\in A$, the element $\Delta(x) = \sum_{rs}\Delta_{rs}(x)$ gives a well-defined multiplier of $A\itimes A$. The resulting map $\Delta: A\rightarrow M(A\itimes A)$ is an $I^2$-coproduct.
+\end{Lem}
+
+\begin{proof} As the grading on each $F(u_a)$ is column-finite, it follows at once that for each fixed $p,q$ and $x\in A$, the element $\Delta_{rs}(x)(1\itimes \lambda_p\rho_q)$ is zero except for finitely many $r$ and $s$. Similarly, $(1\itimes \lambda_p\rho_q)\Delta_{rs}(x)$ is zero except for finitely many $r,s$ because of row-finiteness of $F(u_a)$. Hence $\Delta(x)$ is well-defined as a multiplier for each $x\in A$. Once we show that $\Delta$ is multiplicative, it will be immediate that $\Delta$ is coassociative, since each $\Delta_{rs}$ is coassociative. Moreover, also the fact that $\Delta$ then is an $I^2$-morphism is clear from the definition.
+
+To obtain the multiplicativity of $\Delta$, or rather of the coextension $\widetilde{\Delta}$, choose $x\in \Grd{A}{m}{n}(a)$ and $y\in \Grd{A}{n}{q}(b)$. Then \begin{eqnarray*}\wDelta(x)\cdot\wDelta(y) &=& \sum_{rstv}\left(P^{mn}_{rs}(a)(x\otimes 1)\right)\cdot \left(P^{nq}_{tv}(b)(y\otimes 1)\right)\\ &=& \sum_{cd}\sum_{ij}\sum_{klpt} \left(F_{c,i}^{a,b}\otimes F_{d,j}^{a,b}\right)^*\left(e_{a,k}e_{a,l}^*x\otimes e_{b,p}e_{b,t}^*y\otimes e_{a,l}e_{a,k}^*\otimes e_{b,t}e_{b,p}^*\right)\left(F_{c,i}^{a,b}\otimes F_{d,j}^{a,b}\right),\end{eqnarray*} where we may take the sum over all $k,l\in I_a$, $p,t\in I_b$ (and where the composition of operators with mismatching target and source is considered to be zero). Note that the infinite sums are convergent inside $M(A\otimes A)$ by the argument in the first paragraph.
+
+Plugging in the identity operator $\sum_{cd}\sum_{rs} \left(e_{c,r}e_{c,r}^*\otimes e_{d,s}e_{d,s}^*\right)$ at the front, we obtain that the expression becomes \[ \sum_{cd}\sum_{rs}\sum_{ij}\sum_{klpt} X^{c,r,i}_{k,p}Y^{d,s,j}_{l,t}(e_{c,r}\otimes e_{d,s})\left(e_{a,l}^*x\otimes e_{b,t}^*y\otimes e_{a,k}^*\otimes e_{b,p}^*\right)\left(F_{c,i}^{a,b}\otimes F_{d,j}^{a,b}\right)^*\] where $X^{c,r,i}_{k,p} = e_{c,r}^*(F_{c,i}^{a,b})^*(e_{a,k}\otimes e_{b,p})$ and $Y^{d,s,j}_{l,t} = e_{d,t}^*(F_{d,j}^{a,b})^*(e_{a,l}\otimes e_{b,t})$. Resumming over the $k,l,p,t$, we obtain \[\sum_{cd}\sum_{rs}\sum_{ij} \left(e_{c,r}e_{d,s}^* (F_{d,j}^{a,b})^*(x\otimes y)F_{c,i}^{a,b}\right)\otimes \left(e_{d,s}e_{c,r}^* (F_{c,i}^{a,b})^*F_{d,j}^{a,b}\right).\] As $\phi$ is a coisometry and the $f_{c,i}^{a,b}$ are orthonormal, this expression simplifies to \[\sum_{c}\sum_{rs}\sum_{i}e_{c,r}e_{c,s}^* \left((F_{c,i}^{a,b})^*(x\otimes y)F_{c,i}^{a,b}\right)\otimes e_{c,s}e_{c,r}^*,\] which is precisely $\widetilde{\Delta}(x\cdot y)$.
+\end{proof}
+
+%Note that the extension of $\Delta$ to a map $\widetilde{\Delta}:A\rightarrow M(A\otimes A)$ is given by the same formula as before.
+
+\begin{Prop} The couple $(A,\Delta)$ is a generalized face algebra over $I$.
+\end{Prop}
+\begin{proof} Let $\varepsilon$ assign to any $x\in \Gr{A}{k}{l}{m}{n}(a)$ the number $\Tr(x) = \sum_{i\in B_a} (e_{a,i}^*xe_{a,i})$ (where we keep the convention that mismatching operators compose to zero). We claim that $\varepsilon$ is a counit, satisfying the conditions in the definition of a generalized face algebra. The fact that $\varepsilon$ is a counit is immediate from the definition of $\Delta$. It is also computed directly that for $x\in \Gr{A}{k}{l}{m}{n}$ and $y\in \Gr{A}{l}{r}{n}{s}$, we have $\varepsilon(x\cdot y) = \varepsilon(x)\varepsilon(y)$, since the $\{\phi^*F(f_{c,i}^{a,b})e_{c,j}\mid c,i,j\}$ form an orthonormal basis of $F(u_a)\iitimes F(u_b)$. From this formula, the second identity for the counit will hold true once we show that \[\varepsilon(\lambda_k\rho_mx\lambda_l\rho_n) = \varepsilon(\lambda_k\rho_mx_{(1)})\varepsilon(x_{(2)}\lambda_l\rho_n).\] But both left and right hand side are zero unless $k=m$, $n=l$ and $x\in \Gr{A}{k}{l}{m}{n}$, in which case both sides equal $\varepsilon(x)$.
+\end{proof}
+
+Our next job is to define a suitable antipode for $(A,\Delta)$. Here the rigidity of $\CatC$ will come into play, so we first fix our conventions. Let $a \mapsto \bar{a}$ be the involution induced by the rigidity on the index set $J$. We assume that $\overline{u_a} = u_{\bar{a}}$. For each $u_a$, we will fix duality morphisms $R_a: u_0\rightarrow u_{\bar{a}}\otimes u_a$ and $\bar{R}_a: u_0\rightarrow u_a\otimes u_{\bar{a}}$. By means of $F$ and $\phi$, they induce $I^2$-grading preserving maps $\mathscr{R}_a: l^2(I) \rightarrow F(u_{\bar{a}})\iitimes F(u_a)$ and $\bar{\mathscr{R}}_a:l^2(I) \rightarrow F(u_a)\iitimes F(u_{\bar{a}})$. These in turn provide an invertible anti-linear map $I_a:F(u_a)_{kl}\rightarrow F(u_{\bar{a}})_{lk}$ and $J_a: F(u_{\bar{a}})_{lk}\rightarrow F(u_{a})_{kl}$ such that $\langle I_{a}\xi_a,\eta_{\bar{a}}\rangle = \sum_r\delta_r^* \bar{\mathscr{R}}_a^*(\xi_a\otimes \eta_{\bar{a}})$ and $\langle J_a\eta_{\bar{a}},\xi_a\rangle = \sum_s \delta_s^* \mathscr{R}_a^* (\eta_{\bar{a}}\otimes \xi_a)$. The snake identities for $R_a$ and $\bar{R}_a$ guarantee that $J_a$ is the inverse of $I_a$.
+
+We define \[S: \Gr{A}{k}{l}{m}{n}(a)\rightarrow \Gr{A}{n}{m}{l}{k}(\bar{a})\] by \[x \mapsto I_ax^*J_a.\]
+
+% Anti-multiplicativity not proven, should be from general theory
+\begin{Lem} By means of the map $S$, the couple $(A,\Delta)$ becomes a generalized Hopf face algebra.
+\end{Lem}
+
+\begin{proof} It is clear that $S$ is invertible. We also have $S(\lambda_k\rho_l) = \lambda_l\rho_k$ as $I_o\delta_k = \delta_k$.
+
+Let us check that $S$ satisfies the condition $S(x_{(1)})\cdot x_{(2)} = \sum_p \varepsilon(x\cdot \lambda_p)\rho_p$ in the multiplier algebra for $x\in \Gr{A}{k}{l}{m}{n}(a)$. By definition, we have \[S(x_{(1)})\cdot x_{(2)} = \sum_{c}\sum_i\sum_{p,q\in B_a} \left(F_{c,i}^{\bar{a},a}\right)^*\left(I_ae_{a,q}e_{a,p}^*J_a\otimes xe_{a,q}e_{a,p}^*\right)\left(F_{c,i}^{\bar{a},a}\right).\]
+%\\ &=& \sum_{c}\sum_i\sum_{rs}\sum_{p\in B_{a,rs},q\in B_{a,kl}}\sum_{vw} X_{q,v} Y_{p,w} \left(F_{c,i}^{\bar{a},a}\right)^*(e_{\bar{a},v}e_{\bar{a},w}^*\otimes x e_{a,q}e_{a,p}^*)\left(F_{c,i}^{\bar{a},a}\right)\end{eqnarray*} where $X_{q,v} = (e_{a,q}^*\otimes e_{\bar{a},v}^*)\bar{\mathscr{R}}_a\delta_k$ and $Y_{p,w} = (e_{\bar{a},w}^*\otimes e_{a,p}^*)\mathscr{R}_a\delta_s$.
+
+Let $C:\C\rightarrow \C$ be complex conjugation. Then we can write $I_ae_{a,q}e_{a,p}^*J_a = (I_ae_{a,q}C)(Ce_{a,p}^*J_a)$. We now calculate, by definition of $J_a$ and $F_{c,i}^{\bar{a},a}$, that \[\sum_{p\in B_a} (Ce_{a,p}^*J_a\otimes e_{a,p}^*)\left(F_{c,i}^{\bar{a},a}\right) =  (R_a^*f_{c,i}^{\bar{a},a})\sum_{s\in I} \delta_s^*,\] since $\phi$ is a coisometry. Plugging this into our expression for $S(x_{(1)})\cdot x_{(2)}$, we obtain \[\sum_s\sum_{q\in B_a}\left(\sum_c\sum_i \left(f_{c,i}^{\bar{a},a})^*R_a\right) F_{c,i}^{\bar{a},a} \right)^* (I_ae_{a,q}C\otimes xe_{a,q}\delta_s^*).\] As $\phi$ is a coisometry and $\phi^*\phi \mathscr{R}_a = \mathscr{R}_a$, we can write $\left(f_{c,i}^{\bar{a},a})^*R_a\right) F_{c,i}^{\bar{a},a} = F_{c,i}^{\bar{a},a}(F_{c,i}^{\bar{a},a})^*\mathscr{R}_a$. As the $f_{c,i}^{\bar{a},a}$ form an orthonormal basis, we thus get \[S(x_{(1)})\cdot x_{(2)} = \sum_s\sum_{q\in B_a} \mathscr{R}_a^*(I_ae_{a,q}C\otimes xe_{a,q}\delta_s^*).\] Now the composition $I_ae_{a,q}C$ is the creation operator for the vector $I_ae_{a,q}$. Hence using again the definition of $J_a$, and using that $x\in \Gr{A}{k}{l}{m}{n}$, we get \begin{eqnarray*} S(x_{(1)})\cdot x_{(2)} &=& \sum_{s}\sum_q \delta_n\delta_s^* e_{a,q}^*xe_{a,q} \\ &=& \sum_s\Tr(x)\delta_n\delta_s^* \\ &=& \sum_p \varepsilon(x\lambda_p)\rho_p,\end{eqnarray*} since $\Tr(x) = \delta_{k,m}\delta_{n,l}\varepsilon(x)$.
+
+The identity $x_{(1)}\cdot S(x_{(2)}) = \sum_p\varepsilon(\rho_px)\lambda_p$ is proven in a similar way.
+\end{proof}
+
+In the next step, we determine an invariant functional for $(A,\Delta)$.
+
+\begin{Def} We define $\varphi: \Gr{A}{k}{l}{m}{n} \rightarrow \C$ as the projection onto the component $\Gr{A}{k}{l}{m}{n}(o) \cong \delta_{kl}\delta_{mn} \C$.
+\end{Def}
+
+\begin{Lem} The functional $\varphi$ is an invariant normalized functional.
+\end{Lem}
+
+\begin{proof} The fact that $\varphi$ is normalized is immediate, so let us check that it is invariant. Let $x\in \Gr{A}{k}{l}{m}{n}(a)$. Then \begin{eqnarray*} (\id\otimes \varphi)\widetilde{\Delta}(x) &=& \sum_{i,j}  \varphi(e_{a,j}e_{a,i}^*)e_{a,i}e_{a,j}^*x \\ &=& \delta_{a,o} \sum_{r,s}\delta_r\delta_s^* x \\ &=& \varphi(x)\sum_r\delta_r\delta_k^*  \\ &=& \sum_p\varphi(\lambda_px)\lambda_p.\end{eqnarray*}
+
+The proof of right invariance follows similarly.
+\end{proof}
+
+Finally, we introduce the $^*$-structure and show that $(A,\Delta)$ is a generalized compact Hopf face algebra. To distinguish the new $^*$-operation from the ordinary operator algebraic one, we will denote it by $\dagger$.
+
+\begin{Def} We define the anti-linear map $\dagger: \Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{m}{n}{k}{l}$ by the formula \[ x^{\dagger} = S(x^*) \]
+\end{Def}
+
+\begin{Lem} The map $x\mapsto x^{\dagger}$ is an anti-multiplicative anti-linear involution on $A$.
+\end{Lem}
+
+\begin{proof} It is clear that $x\mapsto x^{\dagger}$ is anti-linear. It is also immediate from the definition of the product that $(x\cdot y)^* = x^*\cdot y^*$. Together with the anti-multiplicativity of $S$, this proves the anti-multiplicativity of $\dagger$.
+
+Let us proof that $\dagger$ is an involution. It is sufficient to prove that $I_{\bar{a}}I_a= \lambda\id$ and $J_aJ_{\bar{a}} = \lambda^{-1}\id$ for some scalar $\lambda$. But this follows from the fact that $(\bar{R}_a,R_a)$ and $(R_{\bar{a}},\bar{R}_{\bar{a}})$ are both solutions to the conjugate equations for $\bar{a}$.
+\end{proof}
+
+The last property which needs to be proven is the positivity of $\varphi$. For this, recall that $R_a^*R_a$ and $\bar{R}_a^*\bar{R}_a$ are scalars as $u_a$ is irreducible. One can then rescale $R_a$ and $\bar{R}_a$ such that the scalar in both expressions is the same. This scalar is then a uniquely determined number $\dim_q(a)$, called the \emph{quantum dimension} of $a$. It follows that $\frac{1}{\dim_q(a)}F(R_aR_a^*)$ is the projection of $F(u_{\bar{a}}\otimes u_a)$ onto the copy of $F(u_o)$ inside, and a similar statement holds for $\bar{R}_a$.
+
+\begin{Prop} For any $x\in A$, the scalar $\varphi(x^{\dagger}\cdot x)$ is positive.
+\end{Prop}
+
+\begin{proof} It is straightforward to see that the blocks $\Gr{A}{k}{l}{m}{n}$ are mutually orthogonal, and that moreover the spectral subspaces inside are mutually orthogonal. Let then $\xi,\zeta \in F(u_a)_{kl}$ and $\eta,\mu\in F(u_a)_{mn}$. We have, using the remark above, \begin{eqnarray*} \varphi(y^{\dag}\cdot x) &=& \varphi(\sum_c\sum_i \left(F_{c,i}^{\bar{a},a}\right)^*(I_ayJ_a\otimes x)\left(F_{c,i}^{\bar{a},a}\right))\\ &=& \delta_n^* \sum_i \left(F_{o,i}^{\bar{a},a}\right)^*(I_ayJ_a\otimes x)\left(F_{o,i}^{\bar{a},a}\right)\delta_l\\ &=& \frac{1}{\dim_q(u_a)} \delta_n^* \mathscr{R}_a^*(I_ayJ_a\otimes x)\mathscr{R}_a\delta_l \\ &=& \frac{1}{\dim_q(u_a)}\sum_{p,q}\delta_n^*\mathscr{R}_a^*(I_ayJ_ae_{\bar{a},p}e_{\bar{a},p}^*\otimes xe_{a,q}e_{a,q}^*)\mathscr{R}_a\delta_l.\end{eqnarray*} By the defining properties of $I_a$ and $J_a$, this expression becomes $\dim_q(u_a)^{-1}\sum_{p} \langle e_{\bar{a},p},J_a^*x^*yJ_ae_{\bar{a},p}\rangle$, thus clearly $\varphi$ will be positive on $A$.
+\end{proof}
+
+\section*{Corepresentations of generalized compact Hopf face algebras}
+
+Let $(A,\Delta)$ be a generalized compact Hopf face algebra over an index set $I$. A \emph{locally finite-dimensional unitary corepresentation} of $(A,\Delta)$ consists of a row and column-finite $I^2$-graded Hilbert space $\Hsp = \osumc{k,l\in I}\Hsp_{kl}$ together with elements $\Gr{U}{k}{l}{m}{n}\in \Gr{A}{k}{l}{m}{n}\otimes B(\Gru{\Hsp}{m}{n},\Gru{\Hsp}{k}{l})$ such that \[\sum_{k} \left(\Gr{U}{k}{l}{m}{n}\right)^*\Gr{U}{k}{l}{m}{n} = \lambda_l\rho_n \otimes \id_{\Gru{\Hsp}{m}{n}}\] and \[\sum_{n} \Gr{U}{k}{l}{m}{n}\left(\Gr{U}{k}{l}{m}{n}\right)^* = \lambda_k\rho_m \otimes \id_{\Gru{\Hsp}{k}{l}},\] and \[(\wDelta\otimes \id)(\Gr{U}{k}{l}{m}{n}) = \sum_{p,q} \left(\Gr{U}{k}{l}{p}{q}\right)_{13}\left(\Gr{U}{p}{q}{m}{n}\right)_{23}.\] Note that in the first two identities, the sums are finite, while in the finite identity the possibly infinite sum is meaningful inside the multiplier algebra sense.
+
+By a morphism between two locally finite-dimensional unitary corepresentations $(\mathscr{H},U)$ and $(\mathscr{G},V)$ is meant a grading-preserving bounded map $T = \osumc{k,l} \Gru{T}{k}{l}:\mathscr{H}\rightarrow \mathscr{G}$ such that $(1\otimes \Gru{T}{k}{l})\Gr{U}{k}{l}{m}{n} = \Gr{V}{k}{l}{m}{n}(1\otimes \Gru{T}{m}{n})$. The collection of all locally finite-dimensional unitary corepresentations clearly forms a semi-simple C$^*$-category $\CoRep(A)$. We will say that $(A,\Delta)$ is \emph{of finite type} if the morphisms in $\CoRep(A)$ are finite-dimensional.
+
+% Annoying change of order by conventions followed... Necessary to repair?
+% of finite type follows if unit object is irreducible. This is easy to characterize (biconnectedness?)
+One can define a tensor product $\Circt$ between locally finite-dimensional corepresentations by means of the $\iitimes$-product of bigraded Hilbert spaces and the operation
+\[\Gr{(U\Circt V)}{k}{l}{m}{n} = \left(\Gr{U}{k}{r}{m}{s}\right)_{12}\left(\Gr{V}{r}{l}{s}{n}\right)_{13}.\] In this way, the category $\CoRep(A)$ becomes a monoidal category. The unit object consists of the $I^2$-graded Hilbert space $l^2(I)$ together with the elements $\Gr{U}{k}{l}{m}{n}= \delta_{kl}\delta_{mn}\lambda_k\rho_m\otimes 1$.
+
+Assume now that $\CatC$ is a semi-simple tensor C$^*$-category with irreducible unit, and $F:\CatC\rightarrow \Hilb$ a strong tensor C$^*$-functor. Let $(A,\Delta)$ be the associated generalized compact Hopf face algebra. Let us show that $\CatC\cong \CoRep(A)$ by means of an equivalence functor $G$.
+
+For $X$ an object of $\CatC$, we build a locally finite-dimensional unitary corepresentation $U$ on $F(X)$. Consider the canonical isomorphism $F(X) \cong \oplus_{a\in J} X_a \otimes \Mor(X_a,X)$. Let \[\Gr{U}{k}{l}{m}{n}(a) \in  \Gr{A}{k}{l}{m}{n}(a)\otimes B(F(u_a)_{mn},F(u_a)_{kl})= B(F(u_a)_{kl},F(u_a)_{mn})\otimes B(F(u_a)_{mn},F(u_a)_{kl})\] be determined as the element implementing the non-degenerate pairing $B(F(u_a)_{kl},F(u_a)_{mn})\otimes B(F(u_a)_{nm},F(u_a)_{lk})\rightarrow \C$ sending $S\otimes T$ to $\Tr(ST)$. Using notation as before, this means that \[\Gr{U}{k}{l}{m}{n}(a) = \sum_{p\in B_{a,mn},q\in B_{a,kl}} e_pe_q^*\otimes e_qe_p^*.\]
+
+
+
+\section*{Monoidal equivalence of generalized compact Hopf face algebras}
+
+Let $(A,\Delta)$ be a generalized Hopf face algebra over a set $I$. Assume that $I = I_1\sqcup I_2$, and let $\Lambda_j = \sum_{i\in I_j}\lambda_i$, resp. $\Rho_j = \sum_{i\in I_j} \rho_j$. If the $\Lambda_j$ and $\Rho_j$ are central in $M(A)$, then we can write $A = \osum{i,j} A(ij)$ where $A(ij) = \Lambda_i\Rho_jA$ are subalgebras. Moreover, the comultiplication $\wDelta$ splits into comultiplications \[\wDelta_{ij}^k:A(ij)\rightarrow M(A(ik)\otimes A(kj))\textrm{ s.t. } \wDelta = \wDelta_{ij}^1 +\wDelta_{ij}^2 \textrm{ on }A(ij).\] A similar decomposition holds for $\Delta$.
+
+It is immediate to see that the $(A(ii),\Delta_{ii}^i)$ are two generalized Hopf face algebras over the respective $I_i$.
+
+\begin{Def} We say $(A,\Delta)$ is a \emph{co-linking generalized (compact) Hopf face algebra} between $(A(11),\Delta_{11}^1)$ and $(A(22),\Delta_{22}^2)$ if $\lambda_i\Rho_2\neq 0$ for any $i\in I_1$.
+\end{Def}
+
+Upon applying the antipode, we see that then $\rho_j\Lambda_1\neq 0$ for any $j\in I_2$ as well.
+
+\begin{Def} Two generalized (compact) Hopf face algebras are called \emph{comonoidally Morita equivalent} if they are isomorphic to the components $(A_{ii},\Delta_{ii}^i)$ of some co-linking generalized (compact) Hopf face algebra.\end{Def}
+
+As an example, consider two sets $I_i$, and two tensor functors $(F_i,\phi_i)$ of a semi-simple rigid C$^*$-category $\CatC$ with irreducible unit into $\Hilb_{I_i^2}$. Then with $I= I_1\sqcup I_2$, we can form a new C$^*$-functor $F=F_1\oplus F_2$ of $\CatC$ into $\Hilb_{I^2}$ by putting $F(X) = F_1(X)\oplus F_2(X)$ with the obvious $I^2$-grading (and the obvious direct sum operation on morphisms). It becomes monoidal by means of the unitaries \[F(X\otimes Y) = F_1(X\otimes Y)\oplus F_2(X\otimes Y) \underset{\phi_1\oplus \phi_2}{\cong} (F_1(X)\underset{I_1}{\otimes} F_1(Y)) \oplus (F_2(X)\otimes F_2(Y)) \cong F(X)\iitimes F(Y)\] (where the last map is unitary since $(F(X)\iitimes F(Y))_{ij}=0$ for example for $i\in I_1$ and $j\in I_2$).
+
+If we then consider the generalized compact Hopf face algebra $(A,\Delta)$ associated to $F$, we have immediately from the construction that the $\Lambda_i$ and $\Rho_i$ associated to the decomposition $I = I_1\sqcup I_2$ are indeed central elements in $M(A)$. Moreover, the parts $(A_{ii}^i,\Delta_{ii}^i)$ are seen to arise from applying the Tannaka-Krein construction to the respective functors $F_1$ and $F_2$. The fact that $(A,\Delta)$ is co-linking is immediate from the fact that \emph{none} of the $\lambda_i\rho_j$ are zero in this particular case (since $\Gr{A}{k}{k}{m}{m}(o) = B(F(u_o)_{kk},F(u_o)_{mm}) \cong \C$).
+
+We will exploit the above extra structure in the following section to say something about the algebra $A$ appearing in ... This is the component $\tilde{A}(1,1)$ of the above algebra. The following lemma will be needed.
+
+\begin{Lem} Assume $(A,\Delta)$ is a co-linking generalized Hopf face algebra. Then any of the maps $\wDelta_{ij}^k$ is injective.\end{Lem}
+
+\begin{proof} Take a non-zero $x\in A_n(ij)$ where $n\in I_j$. Then for any $l\in I$ with $\rho_n\lambda_l\neq 0$, we know that $\wDelta(x)(1\otimes \rho_n\lambda_l)\neq 0$. Hence $\wDelta_{ij}^k(x)(1\otimes \rho_n\lambda_l)\neq 0$ for $l\in I_k$, and hence $\wDelta_{ij}^k(x)\neq 0$. Now if $j=k$, the condition $\rho_n\lambda_l\neq 0$ is satisfied by taking $l=n$ (since $\varepsilon(\lambda_n\rho_n)=1$). If $j\neq k$, it is satisfied for at least one $l$ by the co-linking assumption.
+\end{proof}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dyn-suq-main"
+%%% End: 
+

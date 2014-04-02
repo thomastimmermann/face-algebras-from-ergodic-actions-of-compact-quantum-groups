@@ -1,0 +1,331 @@
+\section{Compact Hopf Face Algebras}
+
+% TODO: clarify link with weak Hopf algebras (Van Daele and Wang) and weak bialgebras (Bohm et al)
+
+\subsection{Preliminaries}
+
+If $I$ is a set, we write $\Fun_{\fin}(I)$ for the algebra of
+\emph{finitely supported} $\C$-valued functions on $I$, and $\Fun(I)$
+for the algebra of \emph{all} $\C$-valued functions on $I$. By $I^n$
+we denote the $n$-fold Cartesian product of $I$ with itself. We will
+always suppose that $I$ is at most countable.
+
+By an algebra, we will understand an associative algebra $A$ over $\C$
+which does not necessarily contain a unit, but which has local units
+in the sense that for each finite set of elements $a_i\in A$, there
+exists $e\in A$ such that $a_ie=a_i=ea_i$ for all $i$. Then $A$ embeds
+into its multiplier algebra $M(A)$, which is the subalgebra of
+$\End(A)\oplus \End(A)^{\op}$ consisting of linear endomorphisms $m =
+(L_m,R_m^{\op})$ for which $b(L_ma) = (R_mb)a$ for all $a,b\in A$. The
+embedding is by means of the map $a \mapsto (L_a,R_a^{\op})$ where
+$L_a$ and $R_a$ denote respectively left and right multiplication with
+$a$. In the following, we simply identify $A$ as a subalgebra of
+$M(A)$. As an example, we have that $\Fun_{\fin}(I)$ is an algebra
+with $M(\Fun_{\fin}(I)) = \Fun(I)$.
+
+If $A$ and $B$ are algebras, a homomorphism $f:A\rightarrow M(B)$ is
+called \emph{non-degenerate} if $f(A)B = B = Bf(A)$. In this case, $f$
+extends uniquely to a unital homomorphism $M(A)\rightarrow M(B)$,
+which we will denote by the same symbol. We will call non-degenerate
+homomorphisms simply \emph{morphisms}. A morphism $f$ such that
+$f(A)=B$ will be called a \emph{strong} morphism. Note that if $f$ is
+a morphism, we can find local units for $B$ in $f(A)\subseteq M(B)$.
+
+% TODO: specify what $^*$-structure is, give standard *-structure on $\Fun(I)$
+% TODO: better terminology?
+\begin{Def} Let $I$ be a set. An algebra $A$ is called an $I$-algebra
+  if it comes equipped with a morphism \[\Fun_{\fin}(I) \rightarrow
+  M(A).\] It is called a \emph{strong} $I$-algebra if this morphism is
+  strong.
+\end{Def}
+
+% TODO: take care of bad typesetting
+Note that by non-degeneracy, we obtain a map $\Fun(I)\rightarrow
+M(A)$. This implies that for any $k\in I$, we have idempotent mutually
+orthogonal elements $e_k$ in $M(A)$ corresponding to the image of the
+functions \[m \mapsto \delta_{k,m}.\] Hence, again by non-degeneracy,
+$A$ has a $I^{2}$-grading \[ A = \osum{k,l}\Gru{A}{k}{l}, \qquad
+\Gru{A}{k}{l} = e_kAe_l.\] If $A$ is a strong $I$-algebra, the
+$\Gru{A}{k}{k}$ will be unital with unit $e_k$, and the
+$\Gru{A}{k}{l}$ are (unital)
+$\Gru{A}{k}{k}$-$\Gru{A}{l}{l}$-bimodules.
+
+Similarly, if $A$ is an $I^2$-algebra, we have for any $k\in I$
+elements $\lambda_k$ and $\rho_k$ in $M(A)$ corresponding respectively
+to the image of the functions \[(m,n) \mapsto \delta_{k,m},\qquad
+(m,n)\mapsto \delta_{k,n}.\] This gives a $I^4$-grading on $A$ by
+putting \[\Gr{A}{k}{l}{m}{n} = \lambda_k\rho_mA\lambda_l\rho_n.\] It
+is then clear that when $m,n\in I$, the symbol $\Grd{A}{m}{n}$ will
+denote $\osum{m,n} \Gr{A}{k}{l}{m}{n}$, etc.
+
+\begin{Def} If $A$ is an $I^2$-algebra, we will say $A$ is
+  \emph{faithful} if $\lambda_k\neq 0$ for all $k$, and similarly
+  $\rho_m\neq 0$ for all $m$.\end{Def}
+
+\begin{Def} Let $A,B$ be two $I^2$-algebras. We define $A\itimes B$ to
+  be the subalgebra \[\osum{r,s} \Grd{A}{r}{s}\otimes \Gru{B}{r}{s}
+  \subseteq A\otimes B,\] seen as an $I^2$-algebra by means of the map
+  $\delta_{(k,l)}\mapsto \lambda_k\itimes \rho_l$, where the latter
+  tensor is the restriction to $A\itimes B$ of the multiplier
+  $\lambda_k\otimes \rho_l$ of $A\otimes B$.
+\end{Def}
+
+\begin{Rem} Note that $A\itimes B$ will indeed again have local units
+  and be faithful. The $\itimes$-product then clearly defines an
+  associative product on $I^2$-algebras.
+\end{Rem}
+
+\begin{Rem} One has for $A\itimes B$ also the multiplier
+  $\rho_p\itimes \lambda_p = \rho_p\itimes 1 = 1\itimes \lambda_p$,
+  which acts again by restriction of the corresponding multipliers on
+  $A\otimes B$.
+\end{Rem}
+
+\begin{Rem}\label{RemCut} If $A$ is an algebra, we can endow $M(A)$
+  with the topology for which $m_{\alpha}\rightarrow m$ if for any
+  $a\in A$, we have eventually that $m_{\alpha}a=ma$ and
+  $am_{\alpha}=am$. If then $A$ and $B$ are $I^2$-algebras, we can
+  write $A\itimes B = E(A\otimes B)E$ where $E \in M(A\otimes B)$ is
+  the idempotent multiplier $\sum_{p}\rho_p\otimes \lambda_p$, the sum
+  obviously converging (over the net of all finite subsets of $I$) in
+  the above topology.
+\end{Rem}
+
+
+\begin{Def} Let $A,B$ be two $I$-algebras. An $I$-morphism from $A$ to $B$ will mean a morphism $f:A\rightarrow M(B)$ intertwining the $\Fun_{\fin}(I)$-morphisms.
+\end{Def}
+
+Clearly, one can form tensor products $f\itimes g$ of $I^2$-morphisms,
+giving a morphism between $\itimes$-tensor products. The
+non-degeneracy of $f\itimes g$ can again be shown by a local unit
+argument.
+
+\subsection{Generalized Hopf face algebras}
+
+\begin{Def} Let $I$ be a set, and $A$ an $I^2$-algebra. By an
+  \emph{$I^2$-coproduct} on $A$, we will mean a coassociative
+  $I^2$-morphism $\Delta:A\rightarrow M(A\itimes A)$,
+  i.e. \[(\Delta\itimes \id)\Delta = (\id\itimes \Delta)\Delta.\]
+\end{Def}
+
+\begin{Rem}\label{RemMult} As $\Delta$ is an $I^2$-morphism, we have
+  $\Delta(\lambda_k\rho_l) =\lambda_k\itimes \rho_l$. Hence if $A$ is
+  a \emph{strong} $I^2$-algebra, this implies that for any $p\in I$ we
+  have \[(\rho_p\itimes 1)\Delta(A) = (1\itimes \lambda_p)\Delta(A)
+  \subseteq A\itimes A \qquad \textrm{and}\qquad
+  \Delta(A)(\rho_p\itimes 1)= \Delta(A)(1\itimes \lambda_p) \subseteq
+  A\itimes A.\]
+\end{Rem}
+
+% TODO: elaborate
+\begin{Rem} If $A$ is a strong $I^2$-algebra, we have an inclusion
+  $M(A\itimes A)\rightarrow M(A\otimes A)$ by means of \[m\mapsto
+  \sum_{k,l,p} m(\lambda_k\rho_p\itimes \lambda_p\rho_l) =
+  \sum_{k,l,p} (\lambda_k\rho_p\itimes \lambda_p\rho_l)m.\] Hence an
+  $I^2$-coproduct $\Delta$ then `co-extends' to an algebra
+  homomorphism \[\wDelta: A\rightarrow M(A\otimes A)\] such
+  that \[\wDelta(A)(A\otimes A) = E(A\otimes A),\qquad (A\otimes
+  A)\wDelta(A) = (A\otimes A)E,\] where $E$ again denotes the element
+  $\sum_{p}\rho_p\otimes \lambda_p$. This $\wDelta$ then extends
+  (uniquely) to an algebra homomorphism $M(A)\rightarrow M(A\otimes
+  A)$ such that $\wDelta(1) = E$, cf. [Van Daele and Wang; B\"{o}hm et
+  al]. By definition, we have \[\wDelta(a)(\lambda_k\rho_m\otimes
+  \lambda_l\rho_n) = \delta_{m,l}\Delta(a)(\lambda_k\rho_m\itimes
+  \lambda_m\rho_n), \qquad (\lambda_k\rho_m\otimes \lambda_l\rho_n)
+  \wDelta(a)= \delta_{m,l}(\lambda_k\rho_m\itimes
+  \lambda_m\rho_n)\Delta(a)\] for all $a\in A$ and all $k,l,m,n\in
+  I$. This implies that \[\Delta(a)(1\itimes \lambda_l\rho_n) =
+  \wDelta(a)(1\otimes \lambda_l\rho_n)\] for all $a\in A$ and $l,n\in
+  I$, and similarly for other expressions of this kind. Hence we see
+  that \[\wDelta(A)(1\otimes A)\cup \wDelta(A)(A\otimes 1)\cup
+  (A\otimes 1)\wDelta(A)\cup (1\otimes A)\wDelta(A)\subseteq A\otimes
+  A.\]
+\end{Rem}
+
+\begin{Def} A \emph{generalized face algebra over $I$} consists of a
+  strong $I^2$-algebra $A$ together with an $I^2$-coproduct and a
+  functional $\varepsilon:A\rightarrow \C$ such that \[(\id\otimes
+  \varepsilon)((a\otimes 1)\wDelta(b)(c\otimes 1)) = abc =
+  (\varepsilon\otimes \id)((1\otimes a)\wDelta(b)(1\otimes c))\] for
+  all $a,b,c\in A$,
+  and \begin{equation}\label{EqBoh}(\varepsilon\otimes
+    \varepsilon)((a\otimes 1)\wDelta(b)(1\otimes c)) =
+    \varepsilon(abc) = (\varepsilon\otimes \varepsilon)((1\otimes
+    a)\wDelta(b)(c\otimes 1))\end{equation} for all $a,b,c\in
+  A$.% Is Hayashi axiom sufficient, or should indeed the Bohm axiom be taken?
+\end{Def}
+
+
+
+
+%The following lemma is immediate.
+
+%\begin{Lem} We have $\varepsilon(\Gr{A}{k}{l}{m}{n}) = \delta_{k,m}\delta_{n,l}\C$.\end{Lem}
+
+We will use the Sweedler notation for the coproduct $\wDelta$ from now
+on.
+
+\begin{Def} Let $I$ be a set. A \emph{generalized Hopf face algebra
+    over $I$} is a generalized face algebra $(A,\Delta)$ admitting an
+  invertible anti-homomorphism $S:A \rightarrow A$ such that
+  $S(\lambda_k\rho_m) = \lambda_m\rho_k$ for all $k,m\in I$ and such
+  that \[S(a_{(1)})a_{(2)}b = \sum_n\varepsilon(a\lambda_n)\rho_nb,
+  \qquad ba_{(1)}S(a_{(2)}) = \sum_k\varepsilon(\rho_ka)b\lambda_k\]
+  for all $a,b\in A$.
+\end{Def}
+
+\begin{Rem} Imposing the invertibility of $S$ corresponds to the
+  \emph{regularity} condition in the case of multiplier Hopf algebras,
+  see [VDae]. We refrain from seeing it as a separate condition as it
+  will be satisfied automatically in the examples under consideration.
+\end{Rem}
+
+\begin{Rem} If $(A,\Delta)$ is a generalized Hopf face algebra, then
+  also $(A^{\op},\Delta)$ and $(A,\Delta^{\op})$ are (the embeddings
+  of $\Ff(I^2)$ being unchanged), with the same counit maps and their
+  antipodes being given by $S^{-1}$.
+
+\end{Rem}
+
+% To prove: $S$ is anti-multiplicative
+
+\begin{Lem} Let $(A,\Delta)$ be a generalized Hopf face algebra over
+  $I$. Then $\varepsilon(\lambda_k\rho_m)=\delta_{k,m}$.
+\end{Lem}
+\begin{proof} As $\wDelta(\lambda_k\rho_m) = \sum_p
+  \lambda_k\rho_p\otimes \lambda_p\rho_m$, we find that
+  $\lambda_k\rho_m = \sum_p
+  \varepsilon(\lambda_p\rho_m)\lambda_k\rho_p$. Hence if $p\neq m$, we
+  have $\varepsilon(\lambda_p\rho_m)\lambda_k\rho_p=0$. Applying $S$,
+  we see that $\varepsilon(\lambda_p\rho_m)=0$.
+
+  We conclude that $\lambda_k\rho_m =
+  \varepsilon(\lambda_m\rho_m)\lambda_k\rho_m$. As $\rho_m \neq 0$,
+  varying $k$ shows that necessarily $\varepsilon(\lambda_m\rho_m)=1$.
+\end{proof}
+
+
+\begin{Lem} For all $a\in A$ and $m,n\in I$, we have
+  $\varepsilon(a\lambda_k) = \varepsilon(a\rho_k)$ and
+  $\varepsilon(\lambda_la)=\varepsilon(\rho_la)$.
+\end{Lem}
+\begin{proof} From the axiom \ref{EqBoh}, it follows that $\sum_p
+  \varepsilon(a\rho_p)\varepsilon(\lambda_pb)= \varepsilon(ab)$ for
+  all $a,b\in A$. Taking $b = \lambda_k\rho_m$, we find that
+  $\varepsilon(a\rho_k)\varepsilon(\lambda_k\rho_m) =
+  \varepsilon(a\lambda_k\rho_m)$. Taking $m=k$ and applying the
+  previous lemma, we find
+  $\varepsilon(a\rho_k)=\varepsilon(a\lambda_k\rho_k)$, implying one
+  half of the lemma. The other half is proven similarly.
+\end{proof}
+
+\begin{Def} Define \[V: \osum{n} A_n\otimes {}_{n}A \rightarrow
+  \osum{r} {}_rA\otimes {}^rA\] by the formula \[a\otimes b\rightarrow
+  \wDelta(a)(1\otimes b).\]
+\end{Def}
+
+\begin{Lem}\label{LemUni} The map $V$ is an isomorphism.
+\end{Lem}
+\begin{proof} As $\wDelta(A)(A\otimes A)\subseteq E(A\otimes A)$ with
+  $E = \sum_p \rho_p\otimes \lambda_p$, it is clear that $V$ has the
+  proper range. Define \[\widetilde{V}: \osum{r} {}_rA\otimes
+  {}^rA\rightarrow\osum{n} A_n\otimes {}_{n}A\] by means of the
+  formula \[a\otimes b \mapsto a_{(1)}\otimes S(a_{(2)})b =
+  a_{(1)}\otimes S(S^{-1}(b)a_{(2)}).\]
+
+  By the defining property of $S$, we find that for all $a,b,c\in A$,
+  we have \[(c\otimes 1)\cdot (\widetilde{V}V)(a\otimes b) = \sum_p
+  ca_{(1)}\varepsilon(a_{(2)}\lambda_p)\otimes \rho_pb.\] By the
+  previous lemma, this equals $\sum_p
+  ca_{(1)}\varepsilon(a_{(2)}\rho_p)\otimes \rho_pb$. But as $a\otimes
+  b = \sum_p a\rho_p\otimes \rho_pb$ by assumption, we obtain
+  that \[(c\otimes 1)\cdot (\widetilde{V}V)(a\otimes b) =
+  ca_{(1)}\varepsilon(a_{(2)})\otimes b = ca\otimes b,\] proving that
+  $\widetilde{V}V(a\otimes b) = a\otimes b$.
+
+  The identity $V\widetilde{V} = \id$ is proven similarly.
+\end{proof}
+
+\begin{Cor} Define \[W: \osum{n} {}_n A \otimes {}^nA \rightarrow
+  \osum{r} \; {}^rA\otimes A^r\] by the formula \[a\otimes b
+  \rightarrow S^{-1}(b_{(1)})a\otimes d_{(2)} =
+  S^{-1}(S(a)b_{(1)})\otimes b_{(2)}.\] Then $W$ is invertible, its
+  inverse being given as \[W^{-1}(a\otimes b) = \wDelta(b)(a\otimes
+  1).\]
+\end{Cor}
+
+\begin{proof} Apply the previous Lemma to $(A,\Delta^{\op})$.
+\end{proof}
+
+\subsection{Invariant functionals}
+
+\begin{Def} Let $I$ be a set. An \emph{invariant functional} for a
+  generalized Hopf face algebra $(A,\Delta)$ over $I$ is a functional
+  $\varphi:A \rightarrow \C$ such that for all $a\in A$, we have the
+  identity of multipliers \[(\id\otimes \varphi)\wDelta(a) = \sum_p
+  \varphi(\lambda_p a)\lambda_p,\qquad (\varphi\otimes \id)\wDelta(a)
+  = \sum_p\varphi(a\rho_p)\rho_p.\] We say that $\varphi$ is
+  normalized if $\varphi(\lambda_k\rho_l)=1$ for all $k,l\in I$ with
+  $\lambda_k\rho_l\neq 0$.
+\end{Def}
+
+%\begin{Lem} We have $\varphi(\Gr{A}{k}{l}{m}{n}) = \delta_{k,l}\delta_{m,n}\C$.\end{Lem}
+
+% TODO: make connection with weak multiplier Hopf algebras
+
+\begin{Lem} An invariant normalized functional $\varphi$ is faithful,
+  i.e. $\varphi(ab)=0$ for all $b$ implies $b=0$, and $\varphi(ab)=0$
+  for all $a$ implies $b=0$.
+\end{Lem}
+
+\begin{proof} We follow ad verbatim the proof of Proposition 3.4 in
+  [VDae, Algebraic framework]: if $\varphi(ba)=0$ for all $a$, we
+  arrive at the conclusion that for all $d\in A$ and all functionals
+  $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes
+  1)\wDelta(a))$ satisfies $(\id\otimes \varphi)((1\otimes
+  c)\wDelta(p)) = 0$. Continuing as in that proof, we obtain from the
+  antipode trick that $\sum_n
+  \varphi(cS(q)\rho_n)\varepsilon(p\lambda_n)=0$. Choosing now for $c$
+  and $q$ local units of the form $\lambda_k\rho_l$, the normalization
+  condition on $\varphi$ gives that $\varepsilon(p\lambda_n)=0$ for
+  all $n$, hence $\varepsilon(p)=0$. This implies $\omega(da)=0$. As
+  $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+
+The other case follows similarly, considering the opposite algebra.
+\end{proof}
+
+% This part is necessary to put into Enock framework, but might possibly be skipped if we only want an operator algebra implementation of dynamical quantum SU(2), as then one has enough with the multiplicative unitaries
+Our next aim is to prove that a normalized invariant functional is
+modular, that is, there exists an automorphism $\sigma: A\rightarrow
+A$ such that for all $a,b\in A$, we have \[\varphi(ba) =
+\varphi(a\sigma(b)).\]
+
+\begin{Lem} Let $\varphi$ be a normalized invariant functional. For
+  all $a\in A$ and $k,m\in I$, we have \[\varphi(a\lambda_k) =
+  \varphi(\lambda_ka),\qquad \varphi(a\rho_m) = \varphi(\rho_ma).\]
+\end{Lem}
+
+\begin{proof}
+
+\end{proof}
+
+
+\subsection{Generalized compact Hopf face algebras}
+
+
+A non-degenerate algebra $A$ is called a $^*$-algebra if it comes equipped with an anti-linear involutive anti-homomorphism $A\rightarrow A, a\mapsto a^*$. In this case, $M(A)$ becomes a $^*$-algebra in a natural way. For example, we always consider $\Fun_{\fin}(I)$ as a $^*$-algebra by the ordinary complex conjugation of functions, $f^*(k) = \overline{f(k)}$.
+
+
+
+
+\begin{Def} A couple $(A,\Delta)$ consisting of a generalized Hopf face $^*$-algebra with an invertible antipode invariant normalized functional $\varphi$ is called a \emph{generalized compact face algebra}.
+\end{Def}
+
+One proves that a generalized Hopf face $^*$-algebra has
+$S(S(x)^*)^*=x$ for all $x$, so $S$ is automatically invertible. 
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dyn-suq-main"
+%%% End: 

@@ -1,0 +1,30 @@
+\section{Compact Hopf face algebras on the level of operator algebras}
+
+It then follows by symmetry that also the maps \[(W^{k,t}_{m,n,u,v})^*: \oplus_l \Gr{A}{k}{l}{m}{n} \otimes \Gr{A}{l}{t}{u}{v} \rightarrow \oplus_r \Gr{A}{k}{t}{m}{r}\otimes \Gr{A}{n}{r}{u}{v}\] defined by the formula \[a\otimes b\rightarrow \Delta(b)(a\otimes 1)\] are unitaries, with inverse map $a\otimes b\mapsto S^{-1}(b_{(1)})a\otimes b_{(2)}$.
+
+\begin{Lem}\label{LemUni} Let $(A,\Delta)$ be a generalized compact face algebra. Then each $V^{k,l,s,t}_{m,v}$ is a unitary, and similarly for the $W^{k,t}_{m,n,u,v}$.
+\end{Lem}
+
+\begin{proof} It is immediately checked that $V^{k,l,s,t}_{m,v}$ is isometric.
+\end{proof}
+
+Let us write $\mathscr{L}^2(A,\varphi)$ for the completion of $A$ with respect to the inner product $\langle a,b\rangle = \varphi(a^*b)$. The canonical inclusion of $A$ into $\mathscr{L}^2(A)$ will be denoted $\Lambda$.
+
+\begin{Lem} Assume $(A,\Delta)$ is a generalized compact face algebra. The representation of $A$ by left multiplication on itself extends to a representation by bounded operators on the completion $\mathscr{L}^2(A,\varphi)$.
+\end{Lem}
+
+\begin{proof} Denote $\omega_{\xi,\eta}(x) = \langle \xi,x\eta\rangle$ for $\xi,\eta$ vectors and $x$ a bounded operator. Then a straightforward computation shows that \[(\omega_{\Lambda(a),\Lambda(b)}\otimes \id)(V) = \varphi(a^*b_{(1)})b_{(2)}\] as a left multiplication operator. As $(A\otimes 1)\Delta(A) = (A\otimes A)\Delta(1)$ by Lemma \ref{LemUni} (applied to the opposite algebra), it follows by normalization of $\varphi$ that each element of $A$ can be represented in the form $(\omega_{\Lambda(a),\Lambda(b)}\otimes \id)(V)$, and hence extends to a bounded operator on $\mathscr{L}^2(A,\varphi)$.
+\end{proof}
+
+In the following, we will abbreviate $\mathscr{L}^2(A)$ by $L^2A$.
+
+Let $(A,\Delta)$ be a generalized compact face algebra. Denote the von Neumann algebraic completion of $A\subseteq B(L^2A)$ by $M$. Denote $L^2A\iitimes L^2A = E(L^2A\otimes L^2A)$, where $E = \sum_p \rho_p\otimes \lambda_p$ is extended to a bounded operator (in fact, a self-adjoint projection). Finally, denote $M\itimes M = E(M\otimes M)E$. Then $M\itimes M$ is the von Neumann algebraic completion of $A\itimes A$.
+
+Extend now the $V^{k,l,s,t}_{m,v}$ to unitaries \[V: \oplus_p L^2(A_p)\otimes L^2({}_pA) \rightarrow \oplus_p L^2({}_pA)\otimes L^2({}^pA)= E(L^2A\otimes L^2A).\] Then we can construct a map \[\Delta: M\rightarrow M\itimes M,\quad x\rightarrow V(x\otimes 1)V^*.\] By direct computation, we see that $\Delta$ extends the comultiplication map on $A$. It is then immediate to check that $\Delta$ is in fact coassociative (where one may as well consider $\Delta$ as a non-unital map from $M$ to $M\otimes M$).
+
+We aim to show that $(M,\Delta)$ can be fitted into the theory of measured quantum groupoids.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dyn-suq-main"
+%%% End: 

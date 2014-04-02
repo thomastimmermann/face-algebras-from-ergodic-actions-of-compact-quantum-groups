@@ -1,0 +1,910 @@
+\section{Representation theory}
+
+\subsection{Corepresentations of generalized compact Hopf face
+  algebras}
+
+Let $(A,\Delta)$ be a generalized compact Hopf face algebra over an
+index set $I$. % A \emph{locally finite corepresentation}
+% of $(A,\Delta)$ consists of a row- and column-finite $I^{2}$-graded
+% Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$
+% together with a family $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of elements $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}
+% \otimes
+% \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$ such that
+% \begin{enumerate}
+% \item $(\tilde \Delta \otimes \id)(\Gr{X}{k}{l}{m}{n}) = \sum_{p,q}
+%   \left(\Gr{X}{k}{l}{p}{q}\right)_{13}\left(\Gr{X}{p}{q}{m}{n}\right)_{23}$ and
+% \item $X$ is invertible in the sense that there exist elements $\Gr{Z}{k}{l}{m}{n} \in \Gr{A}{n}{m}{l}{k}
+%   \otimes
+%   \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$ such
+%   that
+%   \begin{align*}
+%     \sum_{k} \Gr{Z}{m}{n'}{k}{l} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
+%     \lambda_{l} \rho_{n} \otimes \id_{\Gru{\mathcal{H}}{m}{n}}, &
+%     \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{m}{n}{k'}{l} &= \delta_{k,k'}
+%     \lambda_{k} \rho_{m} \otimes \id_{\Gru{\mathcal{H}}{k}{l}}.
+%   \end{align*}
+% \end{enumerate}
+% Here, the infinite sum in 1.\ makes sense in the multiplier algebra,
+% and the sums in 2.\ are finite. The family
+% $Z=(\Gr{Z}{k}{l}{m}{n})_{k,l,m,n}$ in 2.\ is uniquely
+% determined by $X$ and will be denoted by $X^{-1}$.
+\begin{Lem} \label{lemma:rep-corep}
+  Let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be a row-
+  and column-finite $I^{2}$-graded Hilbert space and let
+  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ be a family of elements
+  $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
+  \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$
+  satisfying
+  \begin{align} \label{eq:rep-delta}
+    (\tilde \Delta \otimes \id)(\Gr{X}{k}{l}{m}{n}) = \sum_{p,q}
+    \left(\Gr{X}{k}{l}{p}{q}\right)_{13}\left(\Gr{X}{p}{q}{m}{n}\right)_{23}. 
+  \end{align}
+  Then the following conditions are equivalent:
+  \begin{enumerate}
+  \item $(\epsilon \otimes
+    \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{\mathcal{H}}{k}{l}}$;
+  \item there exist elements $\Gr{Z}{k}{l}{m}{n} \in
+    \Gr{A}{n}{m}{l}{k} \otimes
+    \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$ such
+    that
+  \begin{align*}
+    \sum_{k} \Gr{Z}{m}{n'}{k}{l} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
+    \lambda_{l} \rho_{n} \otimes \id_{\Gru{\mathcal{H}}{m}{n}}, &
+    \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{m}{n}{k'}{l} &= \delta_{k,k'}
+    \lambda_{k} \rho_{m} \otimes \id_{\Gru{\mathcal{H}}{k}{l}}.
+  \end{align*}
+  \end{enumerate}
+  If these conditions hold, then the family $X^{-1}:=Z$ is unique and
+  given by $\Gr{(X^{-1})}{k}{l}{m}{n}=(S \otimes
+  \id)(\Gr{X}{k}{l}{m}{n})$. In particular, it satisfies
+  \begin{align*}
+    (\tilde \Delta \otimes \id)(\Gr{(X^{-1})}{k}{l}{m}{n}) &=
+    \sum_{p,q}
+    \left(\Gr{(X^{-1})}{k}{l}{m}{n}\right)_{23}\left(\Gr{(X^{-1})}{m}{n}{p}{q}\right)_{13}.
+  \end{align*}
+\end{Lem}
+Note that the sum in \eqref{eq:rep-delta} makes sense in the
+multiplier algebra, and that the sums in (2) are finite because
+$\mathcal{H}$ is row- and column-finite. If it exists, we denote the family $Z$ in condition (2)  by $X^{-1}$.
+\begin{proof}
+   Assume that (1) holds and let  $\Gr{Z}{k}{l}{m}{n}=(S \otimes
+   \id)(\Gr{X}{k}{l}{m}{n})$. Then the antipode axiom implies
+   \begin{align*}
+     \sum_{k} \Gr{Z}{m}{n'}{k}{l} \Gr{X}{k}{l}{m}{n} &= \sum_{k}
+     (S\otimes \id)(\Gr{X}{m}{n'}{k}{l}) \Gr{X}{k}{l}{m}{n}
+     \\
+     &=\sum_{k} (m_{A} \otimes \id)(S\otimes \id \otimes \id) (
+     (\Gr{X}{m}{n
+       '}{k}{l})_{13}(\Gr{X}{k}{l}{m}{n})_{23}) \\
+     &= (m_{A} \otimes \id)(S\otimes \id \otimes \id)((\tilde \Delta
+     \otimes \id)(\Gr{X}{m}{n'}{m}{n})(1 \otimes \lambda_{l}\otimes
+     1)) \\
+     &= \sum_{p} \rho_{p}\lambda_{l} \otimes (\epsilon(-\lambda_{p}
+    ) \otimes \id)(\Gr{X}{m}{n'}{m}{n}) \\
+     &= \rho_{n}\lambda_{l} \otimes \delta_{n',n}
+     \id_{\Gru{\mathcal{H}}{m}{n}},
+   \end{align*}
+   which is the first equation in (2). The second one follows
+   similarly.
+
+   Conversely, assume that (2) holds. Then uniqueness of the family
+   $Z$ is easily verified. Let $\Gr{c}{k}{l}{m}{n}:=(\epsilon \otimes
+   \id)(\Gr{X}{k}{l}{m}{n})$.  If $(k,l)\neq (m,n)$, then
+   $\Gr{c}{k}{l}{m}{n} = 0$ because
+   $\epsilon(\Gr{A}{k}{l}{m}{n})=0$. Relation \eqref{eq:rep-delta} and
+   the counit property imply
+\begin{align*}
+  \Gr{X}{k}{l}{m}{n} &=
+  (\lambda_{k} \otimes 1)\Gr{X}{k}{l}{m}{n}(\lambda_{l}\otimes 1) \\
+  &= (\epsilon \otimes \id \otimes \id)(((1 \otimes \lambda_{k} \otimes
+  1)(\hat \Delta \otimes \id)(\Gr{X}{k}{l}{m}{n})(1 \otimes \lambda_{l}
+  \otimes 1)) \\ &=(\epsilon \otimes \id \otimes \id)
+  \left(\left(\Gr{X}{k}{l}{k}{l}\right)_{13}\left(\Gr{X}{k}{l}{m}{n}\right)_{23}\right)
+\\ &  = (1 \otimes \Gr{c}{k}{l}{k}{l}) \Gr{X}{k}{l}{m}{n}.
+   \end{align*}
+   We multiply on the right by $\Gr{Z}{m}{n}{k}{l}$, sum over $n$, use
+   condition (2) and find
+   $\Gr{c}{k}{l}{k}{l}=\id_{\Gru{\mathcal{H}}{k}{l}}$.
+\end{proof}
+
+A \emph{locally finite corepresentation of $(A,\Delta)$} is a pair
+$(\mathcal{H},X)$ as above satisfying conditions (1) and (2). A
+\emph{morphism} $T$ between two such corepresentations
+$(\mathcal{H},X)$ and $(\mathcal{K},Y)$ is a family of morphisms
+$\Gru{T}{k}{l} \in
+\mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$
+satisfying $(1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} =
+\Gr{Y}{k}{l}{m}{n}(1 \otimes \Gru{T}{m}{n})$.  Using condition (2) in
+Lemma \ref{lemma:rep-corep}, one finds that the last equation holds if
+and only if
+  \begin{align} 
+    \sum_{m} \Gr{(Y^{-1})}{k}{l'}{m}{n}(1 \otimes
+    \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} &= \delta_{l,l'}
+    \lambda_{n}\rho_{l} \otimes \Gru{T}{k}{l}, \\
+    \sum_{n} \Gr{Y}{k'}{l}{m}{n}(1 \otimes
+    \Gru{T}{m}{n})\Gr{(X^{-1})}{m}{n}{k}{l} &= \delta_{k,k'}
+    \lambda_{m} \rho_{k} \otimes \Gru{T}{k}{l}.
+ \end{align}
+For example, if the first equation holds, then
+\begin{align*}
+  \Gr{Y}{m}{n}{k}{l} (1 \otimes \Gru{T}{k}{l}) &=
+  \sum_{m}  \Gr{Y}{m}{n}{k}{l} \Gr{(Y^{-1})}{k}{l}{m}{n}(1 \otimes
+  \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} = (\lambda_{k}\rho_{m}\otimes \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l}.
+\end{align*}
+Conversely, if $T$ is a morphism, then
+\begin{align*}
+  \sum_{m} \Gr{(Y^{-1})}{k}{l'}{m}{n}(1 \otimes
+  \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} &= \sum_{m}
+  \Gr{(Y^{-1})}{k}{l'}{m}{n} \Gr{Y}{m}{n}{k}{l}(1 \otimes
+  \Gru{T}{k}{l}) = \delta_{l',l} \lambda_{n}\rho_{l} \otimes
+  \Gru{T}{k}{l}.
+\end{align*}
+
+We denote by $\Corep(A,\Delta)$ the category of locally finite
+corepresentations of $(A,\Delta)$ with morphisms as above.
+
+
+Let $(\mathcal{H},X)$ be a locally finite
+corepresentation. We call a family of subspaces
+$\Gru{\mathcal{K}}{k}{l} \subseteq \Gru{\mathcal{H}}{k}{l}$
+\emph{invariant} if $\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =
+(1\otimes \Gru{P}{k}{l})\Gr{X}{k}{l}{m}{n}$, where $\Gru{P}{k}{l}$
+denotes the projection
+$\Gru{\mathcal{H}}{k}{l}\to\Gru{\mathcal{K}}{k}{l}$.
+
+The following analogue of Schur's Lemma holds.  Let $T$ be a morphism
+of locally finite corepresentations $(\mathcal{H},X)$ and
+$(\mathcal{K},Y)$. Then $ \bigoplus_{k,l} \ker \Gru{T}{k}{l}$ and
+$\bigoplus_{k,l} \img \Gru{T}{k}{l}$ are invariant subspaces of
+$\mathcal{H}$ and $\mathcal{K}$, respectively. In particular, if
+$(\mathcal{H},X)$ and $(\mathcal{K},Y)$ are irreducible, then $T$ is
+either $0$ or an isomorphism.
+
+
+\paragraph{Unitarity of corepresentations}
+We call a locally finite corepresentation $(\mathcal{H},X)$
+\emph{unitary} if $\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{m}{n}{k}{l})^{*}$.  In this paragraph, we assume that
+$(A,\Delta)$ has a faithful positive functional, and show that then
+every irreducible locally finite-dimensional corepresentation is
+equivalent to a unitary one, by embedding it into a restriction of the
+regular corepresentation.
+\begin{Exa} \label{exa:rep-regular}
+  Assume that $(A,\Delta)$ has a positive invariant functional $\phi$
+  that is faithful. 
+
+  Let $\Gru{\mathcal{H}}{k}{l} \subseteq \bigoplus_{m,n}
+  \Gr{A}{m}{n}{k}{l}$ be a row- and column-finite family of
+  finite-dimensional subspaces satisfying
+\begin{align*}
+ \tilde  \Delta^{\co} (\Gru{\mathcal{H}}{m}{n}) \subseteq \sum_{p,q}
+ \Gr{A}{p}{q}{m}{n} \otimes \Gru{\mathcal{H}}{p}{q}.
+\end{align*}
+Equip each $\Gru{\mathcal{H}}{k}{l}$ with the scalar product $\langle
+a|b\rangle:=\phi(a^{*}b)$ and take the Hilbert space direct sum
+$\mathcal{H}:=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$.
+Define $\Gr{V}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
+\mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$ by the
+equation
+\begin{align*}
+  \Gr{V}{k}{l}{m}{n}|a\rangle_{2} &= \tilde \Delta^{\co}(a),
+\end{align*}
+where $\Gr{V}{k}{l}{m}{n}|a\rangle_{2}$  denotes the application of
+the second leg of
+$\Gr{V}{k}{l}{m}{n}$  to $a \in \Gru{\mathcal{H}}{m}{n}$. Then
+$(\mathcal{H},V)$ is a unitary corepresentation. We call it the 
+\emph{locally finite restriction of the regular corepresentation}
+determined by the family $(\Gru{\mathcal{H}}{k}{l})_{k,l}$. 
+\fxnote{proof this}
+\end{Exa}
+
+\begin{Lem} \label{lem:rep-morphism-regular}
+  Assume that $(A,\Delta)$ has a faithful and positive invariant
+  functional.  Let $(\mathcal{H},X)$ be a locally
+  finite-dimensional corepresentation and let $\xi \in
+  \Gru{\mathcal{H}}{k}{l}$. Then the family of finite-dimensional
+  subspaces
+  \begin{align*}
+   \Gru{\mathcal{K}}{m}{n}  &=  \{ (\id \otimes
+   \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) : \eta \in
+   \Gru{\mathcal{H}}{m} {n}\} \subseteq \Gr{A}{k}{l}{m}{n}
+  \end{align*}
+  defines a restriction of the regular corepresentation
+  $(\mathcal{K},V)$, and the family of maps
+  \begin{align*}
+    \Gru{T_{(\xi)}}{m}{n} \colon \Gru{\mathcal{H}}{m}{n} \to
+    \Gru{\mathcal{K}}{m}{n}, \ \eta \mapsto (\id \otimes
+    \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),
+  \end{align*}
+  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$.
+\end{Lem}
+Note that the family $(\Gru{\mathcal{K}}{m}{n})_{m,n}$ is row- and
+column-finite because $(\Gru{\mathcal{H}}{m}{n})_{m,n}$
+is. 
+\begin{proof} Both assertions  follow from the fact
+  that for all $\eta \in \Gru{\mathcal{H}}{p}{q}$,
+\begin{align*}
+  (1 \otimes \rho_{m})\cdot \tilde \Delta^{\co}\big((\id \otimes
+  \omega_{\xi,\eta})(\Gr{X}{k}{l}{p}{q})\big) \cdot (1 \otimes
+  \rho_{n}) &= (\id \otimes \id \otimes \omega_{\xi,\eta})\big(
+  (\Gr{X}{k}{l}{m}{n})_{23}(\Gr{X}{m}{n}{p}{q})_{13})\big) \\ &=(1
+  \otimes \Gru{T_{(\xi)}}{m}{n})\Gr{X}{m}{n}{p}{q} |\eta\rangle_{2}.
+\end{align*}
+\end{proof}
+\begin{Prop}  \label{prop:rep-unitarisable}
+  Assume that $(A,\Delta)$ has a faithful and positive invariant
+  functional. Then every irreducible locally finite corepresentation
+  is equivalent to a unitary one.
+\end{Prop}
+\begin{proof}
+  Let $(\mathcal{H},X)$ be an irreducible locally finite
+  corepresentation. Then for some $k,l$ and $\xi \in
+  \Gru{\mathcal{H}}{k}{l}$,  the operator  $T_{(\xi)}$  defined in
+  Lemma \ref{lem:rep-morphism-regular} has to be non-zero and hence,
+  by Schur's Lemma, injective. Thus, it forms an equivalence between
+  $(\mathcal{H},X)$ and a sub-corepresentation of a locally finite
+  restriction of the regular corepresentation, which is unitary by
+  Example \ref{exa:rep-regular}.
+\end{proof}
+
+
+\paragraph{Schur orthogonality relations}
+In this paragraph, we obtain the analogue of Schur's orthogonality
+relations for matrix coefficients of corepresentations.
+
+The space of \emph{matrix coefficients} $\mathcal{C}(X)$ of a locally
+finite corepresentation $(\mathcal{H},X)$ is the sum of
+the subspaces
+\begin{align*}
+  \Gr{\mathcal{C}(X)}{k}{l}{m}{n} &= \span \left\{ (\id \otimes
+  \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) \mid \xi \in
+  \Gru{\mathcal{H}}{k}{l}, \eta \in \Gru{\mathcal{H}}{m}{n} \right\}
+\subseteq \Gr{A}{k}{l}{m}{n}.
+\end{align*}
+
+\begin{Prop} \label{prop:rep-weak-pw}
+  Assume that $(A,\Delta)$ has a faithful and positive invariant
+  functional. Then $A$ is the sum of the matrix coefficients of
+unitary  irreducible locally finite corepresentations.
+\end{Prop}
+\begin{proof}
+  Let $a \in \Gr{A}{k}{l}{m}{n}$. Then
+  $(1 \otimes \rho_{p})\tilde \Delta^{\co}(a)(1 \otimes \rho_{q}) \in
+  \Gr{A}{p}{q}{m}{n} \otimes \Gr{A}{k}{l}{p}{q}$ and the subspace
+    \begin{align*}
+    \Gru{\mathcal{H}}{p}{q} &:= \span \{ (\omega \otimes \id)(\tilde
+    \Delta^{\co}(a)) : \omega \in (\Gr{A}{p}{q}{m}{n})' \} \subseteq
+    \Gr{A}{k}{l}{p}{q}
+  \end{align*}
+  has finite dimension. Since $(1 \otimes \rho_{p})\tilde
+  \Delta^{\co}(a)$ and $\tilde \Delta^{\co}(a)(1 \otimes \rho_{q})$
+  lie in the tensor product $A \otimes A$, the family
+  $(\Gru{\mathcal{H}}{p}{q})_{p,q}$ is row- and column-finite. Using
+  co-associativity, one checks that this family defines a locally
+  finite restriction $(\mathcal{H},V)$ of the regular
+  corepresentation. Evidently, $a \in \mathcal{C}(V)$. Decomposing
+  $(\mathcal{H},V)$, we find that
+  $a$ is contained in the sum of matrix coefficients of unitary
+  irreducible corepresentations.
+\end{proof}
+The key to the orthogonality relations is the following averaging procedure.
+\begin{Lem} \label{lem:rep-average}
+  Let $\phi$ be an invariant functional for $(A,\Delta)$, let
+  $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be locally
+  finite-dimensional corepresentations of $(A,\Delta)$ and let $T$ be
+  a family of operators $\Gru{T}{k}{l} \in
+  \mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$ which
+  are $0$ for all but finitely many $k,l$. Then the families $\check T$ and
+  $\hat T$ given by
+  \begin{align*}
+    \Gru{\check T}{k}{l} &:= \sum_{m,n} (\phi \otimes
+    \id)(\Gr{(Y^{-1})}{k}{l}{m}{n}(1\otimes
+    \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l}), \\
+    \Gru{\hat T}{k}{l} &:= \sum_{m,n} (\phi \otimes
+    \id)(\Gr{Y}{k}{l}{m}{n}(1\otimes
+    \Gru{T}{m}{n})\Gr{(X^{-1})}{m}{n}{k}{l})
+  \end{align*}
+  are morphisms from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$.
+\end{Lem}
+\begin{proof}
+ The assertion converning $\check{T}$ follows
+  from the calculation
+  \begin{align*}
+    &\sum_{m} \Gr{(Y^{-1})}{k}{l'}{m}{n}(1 \otimes
+    \Gru{\check{T}}{m}{n})\Gr{X}{m}{n}{k}{l} = \\
+    &=\sum_{m,p,q} (\phi \otimes \id \otimes
+    \id)\left(\left(\Gr{(Y^{-1})}{k}{l'}{m}{n}\right)_{23}
+      \left(\Gr{(Y^{-1})}{m}{n}{p}{q}\right)_{13}(1 \otimes 1 \otimes
+      \Gru{T}{p}{q})\left(\Gr{X}{p}{q}{m}{n}\right)_{13}\left(\Gr{X}{m}{n}{k}{l}\right)_{23}\right)
+    \\
+    % &= \sum_{m,p,q}(\phi \otimes \id \otimes \id)\left((1 \otimes
+    %   \lambda_{n} \otimes 1)(\tilde \Delta \otimes
+    %   \id)\left(\Gr{(Y^{-1})}{k}{l'}{p}{q}\right)(\rho_{m} \otimes 1
+    %   \otimes \Gru{T}{p}{q})(\tilde \Delta \otimes
+    %   \id)\left(\Gr{(X}{p}{q}{k}{l}\right)(1 \otimes\lambda_{n}
+    %   \otimes 1)\right) \\
+    &= \sum_{p,q} (\lambda_{n} \otimes 1) \cdot ((\phi \otimes \id)
+    \circ \tilde \Delta \otimes \id)\left(\Gr{(Y^{-1})}{k}{l'}{p}{q}(1
+      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}\right) \cdot
+    (\lambda_{n} \otimes 1)
+    \\
+    &= \sum_{r,p,q} (\lambda_{n} \otimes 1) \cdot \left(\rho_{r}
+      \otimes (\phi \otimes \id)\left(\Gr{(Y^{-1})}{k}{l'}{p}{q}(1 
+      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}(\rho_{r} \otimes
+      1)\right)\right) \cdot (\lambda_{n} \otimes 1) \\
+  &= \delta_{l,l'}\lambda_{n}\rho_{l} \otimes \Gru{\check{T}}{k}{l},
+  \end{align*}
+  where we used the relation $\phi(\Grd{A}{l'}{l})=0$ for $l'\neq l$
+  for the last equality. A similar calculation proves the assertion
+  concerning $\hat{T}$. 
+\end{proof}
+
+% Choose a representative family of unitary irreducible locally finite
+% corepresentations
+% $(\Grd{\mathcal{H}}{(\alpha)}{},{_{(\alpha)}X})_{\alpha}$ and a basis
+% $(\Gr{\zeta}{k}{l}{(\alpha)}{i})_{i}$ for each
+% $\Gr{\mathcal{H}}{k}{l}{(\alpha)}{}$, and let
+% \begin{align*}
+%   (\Gr{(u_{\alpha})}{k}{l}{m}{n}){i,j} &:= (\id \otimes
+%   \Gr{\omega}{k}{l}{(\alpha)}{i,j})( )
+% \end{align*}
+
+The first part of the orthogonality relations concerns matrix
+coefficients of inequivalent irreducible corepresentations.
+\begin{Prop} \label{prop:rep-orthogonality-1}
+  Let $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be inequivalent unitary
+  irreducible locally finite-dimensional corepresentations and let
+  $\phi$ be an invariant functional for $(A,\Delta)$.  Then
+  $\phi(S(b)a) =\phi(b^{*}a) = \phi(bS(a))=\phi(ba^{*})=0$ for all
+  $a\in \mathcal{C}(X), b \in \mathcal{C}(Y)$.
+\end{Prop}
+\begin{proof}
+  Let $a=(\id \otimes \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})$ and
+  $b=(\id \otimes \omega_{\eta,\eta'})(\Gr{Y}{p}{q}{r}{s})$, where
+  $\xi \in \Gru{\mathcal{H}}{k}{l}, \xi' \in \Gru{\mathcal{H}}{m}{n}$
+  and $\eta \in \Gru{\mathcal{K}}{p}{q}, \eta' \in
+  \Gru{\mathcal{K}}{r}{s}$. We may assume $(p,q,r,s) = (m,n,k,l)$
+  because $\phi(S(a)b) = 0 = \phi(aS(b))$ otherwise.  
+Lemma \ref{lem:rep-average}, applied to the 
+  family $\Gru{T}{p}{q}= \delta_{p,k}\delta_{q,l}
+  |\eta'\rangle\langle\xi|$, yields  morphisms $\check{T},\hat{T}$
+  from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$ which necessarily are
+  $0$. Inserting the definition of $\check{T}$, we find
+  \begin{align*}
+    \phi(S(b)a) &= \phi\big((S \otimes
+    \omega_{\eta,\eta'})(\Gr{Y}{m}{n}{k}{l}) \cdot (\id \otimes
+    \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})\big) \\ &= (\phi \otimes
+    \id)\left(\langle\eta|_{2} \Gr{(Y^{-1})}{m}{n}{k}{l}(1 \otimes
+      |\eta'\rangle\langle \xi|)
+      \Gr{X}{k}{l}{m}{n}|\xi'\rangle_{2}\right) 
+    = \langle \eta|_{2} \Gru{\check{T}}{m}{n}|\xi'\rangle_{2} = 0.
+  \end{align*}
+  A similar calculation involving $\hat{T}$ shows that
+  $\phi(aS(b))=0$.  Using the relation $X^{*}=X^{-1}=(S\otimes
+  \id)(X)$ and $Y^{*}=(S\otimes \id)(Y)$, we conclude
+  $\phi(a^{*}b)=\phi(ab^{*})=0$.
+\end{proof}
+
+The second part of the orthogonality relations concerns inner products
+as above but with $a,b\in \mathcal{C}(X)$ for some irreducible
+corepresentation  $X$  and involves the conjugate corepresentation,
+which is defined as follows.
+
+
+
+Given a Hilbert spaces $H,K$, we denote by $\overline{H},\overline{K}$
+the conjugate Hilbert spaces, by $T \mapsto \overline{T}$ the
+canonical conjugate-linear isomorphism $\mathcal{B}(H,K) \to
+\mathcal{B}(\overline{H},\overline{K})$, and by $T \mapsto
+T^{\top}:=\overline{T}^{*}$ the linear anti-isomorphism
+$\mathcal{B}(H,K) \to \mathcal{B}(\overline{K},\overline{H})$.
+
+\begin{Lem} \label{lemma:rep-functors}
+   On the category
+  $\Corep(A,\Delta)$, there exist
+  \begin{enumerate}
+  \item a covariant functor $(\mathcal{H},X) \mapsto
+    (\overline{\mathcal{H}},\overline{X})$ and $T \mapsto
+    \overline{T}$, where
+    \begin{align*}
+      \Gru{\overline{\mathcal{H}}}{k}{l} &= \overline{\Gru{\mathcal{H}}{l}{k}},
+      & \Gr{\overline{X}}{k}{l}{m}{n} &= (\Gr{X}{l}{k}{n}{m})^{(*
+        \otimes \overline{(\ \cdot \ ) })}
+      =((\Gr{X}{l}{k}{n}{m})^{*})^{\id \otimes \top}, &
+      \Gru{\overline{T}}{k}{l} &= \overline{\Gru{T}{l}{k}};
+    \end{align*}
+  \item a contravariant functor $(\mathcal{H},X) \mapsto
+    (\overline{\mathcal{H}},X^{S\otimes \top})$ and
+    $T\mapsto T^{\top}$, where 
+    \begin{align*}
+      \Gr{(X^{S\otimes \top})}{k}{l}{m}{n} &= (S \otimes (\ \cdot \
+      )^{\top})(\Gr{X}{n}{m}{l}{k}), & \Gru{(T^{\top})}{k}{l}
+      &=(\Gru{T}{l}{k})^{\top};
+    \end{align*}
+  \item a covariant functor  $(\mathcal{H},X) \mapsto (\mathcal{H},X^{S^{2}\otimes \id})$
+    and $T\mapsto T$, where $\Gr{(X^{S^{2}\otimes \id})}{k}{l}{m}{n}=(S^{2} \otimes
+  \id)(\Gr{X}{k}{l}{m}{n})$.
+  \end{enumerate}
+  If $(\mathcal{H},X)$ is unitary, then $\overline{X}=X^{S\otimes \top}$.\end{Lem}
+\begin{proof}
+  Let $(\mathcal{H},X)$ be a locally finite corepresentation. Using the fact that $\tilde \Delta$ and $\epsilon$ are
+  $*$-homomorphisms, one easily verifies
+  \begin{align*}
+    (\tilde \Delta \otimes \id)( \Gr{\overline{X}}{k}{l}{m}{n}) &=
+    \sum_{p,q} ( \Gr{\overline{X}}{k}{l}{p}{q})_{13}
+    ( \Gr{\overline{X}}{p}{q}{m}{n})_{23}, \\
+    (\epsilon \otimes \id)(\Gr{\overline{X}}{k}{l}{m}{n}) &=
+    \overline{(\epsilon \otimes \id)(\Gr{X}{l}{k}{n}{m})}
+    = \delta_{l,n}\delta_{k,m}
+    \overline{\id_{\Gru{\mathcal{H}}{l}{k}}}
+    = \delta_{l,n}\delta_{k,m} \id_{\Gru{\overline{\mathcal{H}}}{k}{l}}.
+  \end{align*}
+  A similar calculation shows that
+  $(\overline{\mathcal{H}},X^{S\otimes \top})$ is a
+  corepresentation. The assertions (1) and (2) follow
+  immediately. The square of the functor in (2) yields the functor in
+  (3).  
+\end{proof}
+We call $(\overline{\mathcal{H}},\overline{X})$ the \emph{conjugate} of 
+$(\mathcal{H},X)$.   
+\begin{Prop} \label{prop:rep-f}
+  Assume that $(A,\Delta)$ has a faithful, positive, normalized
+  invariant functional $\phi$ and let $(\mathcal{H},X)$ be a unitary
+  irreducible locally finite corepresentation. 
+  \begin{enumerate}
+  \item $\overline{\mathcal{H}}$ and the family
+    $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{m}{n}{k}{l}\big)^{*}$
+    form a locally finite corepresentation and there
+    exists an invertible, positive isomorphism $\overline{F_{X}}$ from
+    $(\overline{\mathcal{H}},\overline{X})$ to
+    $(\overline{\mathcal{H}},\overline{X}^{-*})$.
+  \item The family
+    $\Gru{F_{X}}{k}{l}:=\overline{\Gru{\overline{F_{X}}}{l}{k}}$ is an
+    invertible, positive isomorphism from $(\mathcal{H},X)$ to
+    $(\mathcal{H},X^{S^{2} \otimes \id})$.
+  \end{enumerate}
+\end{Prop}
+\begin{proof}
+(1) By Proposition \ref{prop:rep-unitarisable},
+$(\overline{\mathcal{H}},\overline{X})$ is equivalent to a unitary
+corepresentation, that is, there exists a family of operators
+$\Gru{T}{k}{l} \in \mathcal{B}(\Gru{\overline{\mathcal{H}}}{k}{l})$
+such that the family 
+\begin{align*}
+\Gr{Z}{k}{l}{m}{n}:= (1 \otimes
+\Gru{T}{k}{l})\Gr{\overline{X}}{k}{l}{m}{n}(1 \otimes
+\Gru{T}{m}{n})^{-1} 
+\end{align*}
+ is a unitary corepresentation. The relation
+ $\Gr{(Z^{-1})}{k}{l}{m}{n}=\big(\Gr{Z}{m}{n}{k}{l})^{*}$ then implies
+ \begin{align*}
+   \Gr{Z}{k}{l}{m}{n} = (1 \otimes
+   \Gru{T}{k}{l})^{-*}\big(\Gr{(\overline{X}^{-1})}{m}{n}{k}{l}\big)^{*}(1
+   \otimes \Gru{T}{m}{n})^{*}
+ \end{align*}
+ and hence the family 
+ $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{m}{n}{k}{l}\big)^{*}$
+ is an irreducible locally finite corepresentation and the family
+ $\Gru{\overline{F}_{X}}{k}{l}:=(\Gru{T}{k}{l})^{*}\Gru{T}{k}{l} \in
+  \mathcal{B}(\Gru{\overline{\mathcal{H}}}{k}{l})$
+is an isomorphism from $(\overline{\mathcal{H}},\overline{X})$ to
+$(\overline{\mathcal{H}},\overline{X}^{-*})$.   
+
+(2) The morphism $T$  from $(\overline{\mathcal{H}},\overline{X})$  to
+$(\overline{\mathcal{H}},Z)$ yields morphisms $\overline{T}$ from
+$(\mathcal{H},X)$ to $(\mathcal{H},\overline{Z})$ and $T^{\top}$ from $(\mathcal{H},Z^{S\otimes\top})$ to
+$(\mathcal{H},\overline{X}{S \otimes \top})$. Since $X$ and $Z$ are
+unitary, $\overline{Z}=Z^{S\otimes \top}$ and  $\overline{X}^{S \otimes
+  \top} = X^{S^{2} \otimes \top}$. Thus $T^{\top}\overline{T} =
+\overline{T^{*}T}$ is a morphism from $(\mathcal{H},X)$ to
+$(\mathcal{H},X^{S^{2}\otimes \id})$.
+\end{proof}
+\begin{Theorem} \label{thm:rep-orthogonality} Assume that $(A,\Delta)$
+  has a faithful, positive, normalized invariant functional
+  $\phi$. Let $(\mathcal{H},X)$ be a unitary irreducible locally
+  finite corepresentation of $(A,\Delta)$ and let $F_{X}$ be a
+  non-zero morphism from $(\mathcal{H},X)$ to $(\mathcal{H},(S^{2}
+  \otimes \id)(X))$.
+  \begin{enumerate}
+  \item The numbers $\alpha:=\sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l})$
+    and $\beta:=\sum_{n} \Tr(\Gru{F_{X}}{m}{n})$ do not depend on $l$
+    or $n$.
+  \item  For all $k,l,m,n$,
+    \begin{align*}
+      (\phi \otimes \id)((\Gr{X}{k}{l}{m}{n})^{*}\Gr{X}{k}{l}{m}{n})
+      &=\alpha^{-1}{\Tr(\Gru{(F^{-1}_{X})}{k}{l})} \cdot
+      \id_{\Gru{\mathcal{H}}{m}{n}}, \\
+      (\phi \otimes \id)(\Gr{X}{k}{l}{m}{n}(\Gr{X}{k}{l}{m}{n})^{*})
+      &=\beta^{-1}{\Tr( \Gru{(F_{X})}{m}{n})} \cdot
+      \id_{\Gru{\mathcal{H}}{k}{l}}.
+    \end{align*}
+  \item Denote by $\Sigma_{k,l,m,n}$ the flip $\Gru{\mathcal{H}}{k}{l}
+    \otimes \Gru{\mathcal{H}}{m}{n} \to \Gru{\mathcal{H}}{m}{n}
+    \otimes \Gru{\mathcal{H}}{k}{l}$. Then
+ \begin{align*}
+   (\phi \otimes \id \otimes
+   \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13}) &=
+   \alpha^{-1}
+   (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{(F_{X}^{-1})}{k}{l})
+   \circ \Sigma_{k,l,m,n}, \\
+   (\phi \otimes \id \otimes
+   \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})_{12}^{*}) &= \beta^{-1} (\Gru{F_{X}}{m}{n}
+   \otimes \id_{\Gru{\mathcal{H}}{k}{l}}) \circ \Sigma_{k,l,m,n}.
+ \end{align*}
+\end{enumerate}
+  \end{Theorem}
+\begin{proof}
+  We prove the assertions and equations involving $\alpha$ in (1), (2)
+  and (3)  simultaneously; the assertions involving $\beta$  follow similarly.
+
+  As above, we denote by $\Sigma_{p,q,r,s}$ the flip
+  $\Gru{\mathcal{H}}{p}{q} \otimes \Gru{\mathcal{H}}{r}{s} \to
+  \Gru{\mathcal{H}}{r}{s} \otimes \Gru{\mathcal{H}}{p}{q}$.  Consider
+  the operator
+  \begin{align*}
+    F_{m,n,k,l}
+    &:=(\phi \otimes \id \otimes \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})
+    \circ \Sigma_{m,n,k,l} \\ &= (\phi \otimes \id \otimes
+    \id)\left((\Gr{(X^{-1})}{m}{n}{k}{l})_{12}
+      (\Sigma_{k,l,k,l})_{23}(\Gr{X}{k}{l}{m}{n})_{12}\right).
+  \end{align*}
+  By Lemma \ref{lem:rep-average}, the family $(F_{m,n,k,l})_{m,n}$ is
+  an endomorphism of $(\mathcal{H} \otimes \Gru{\mathcal{H}}{k}{l}, (X)_{12})$ and hence
+  \begin{align}
+    F_{m,n,k,l} &= \id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
+  \end{align}
+  with some $\Gru{R}{k}{l} \in \mathcal{B}(\Gru{\mathcal{H}}{k}{l})$ not
+  depending on $m,n$.
+  On the other hand, 
+  \begin{align*}
+    F_{m,n,k,l} &= (\phi \otimes \id \otimes \id)((S \otimes
+    \id)(\Gr{X}{m}{n}{k}{l})_{12}(\Gr{X}{k}{l}{m}{n})_{13})
+    \circ \Sigma_{m,n,k,l} \\
+    &= (\phi\circ S^{-1} \otimes \id \otimes \id)\left(((S \otimes
+      \id)(\Gr{X}{k}{l}{m}{n}))_{13}
+      ((S^{2} \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{12}\right)     \circ \Sigma_{m,n,k,l}\\
+    &= (\phi\circ S^{-1} \otimes \id \otimes \id)\left(((S \otimes
+      \id)(\Gr{X}{k}{l}{m}{n}))_{13} (\Sigma_{m,n,m,n})_{23} ((S^{2}
+      \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{12}\right).
+  \end{align*}
+  Since $\phi\circ S^{-1}$ is an invariant functional for
+  $(A,\Delta)$, we can again apply Lemma \ref{lem:rep-average} and
+  find that the family $(F_{m,n,k,l})_{k,l}$ is a morphism from
+  $(\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H}, (X^{S^{2} \otimes
+    \id})_{13})$ to $(\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H},
+  (X)_{13})$. Therefore,
+  \begin{align}
+    F_{m,n,k,l} &= \Gru{T}{m}{n} \otimes (\Gru{F_{X}}{k}{l})^{-1} \label{eq:rep-orthogonal-2}
+  \end{align}
+  with some $\Gru{T}{m}{n} \in \mathcal{B}(\Gru{\mathcal{H}}{m}{n})$
+  not depending on $k,l$. Combining \eqref{eq:rep-orthogonal-1} and
+  \eqref{eq:rep-orthogonal-2}, we conclude that $F_{m,n,k,l} = \lambda
+  (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes (\Gru{F_{X}}{k}{l})^{-1})$
+  for some $\lambda \in \C$.  Choose a basis
+  $(\zeta_{i})_{i}$ for $\Gru{\mathcal{H}}{k}{l}$. Then
+  \begin{align*}
+    \lambda \cdot \id_{\Gru{\mathcal{H}}{m}{n}} \cdot
+    \Tr((\Gru{F_{X}}{k}{l})^{-1}) &= \sum_{i} (\id \otimes
+    \omega_{\zeta_{i},\zeta_{i}})(F_{m,n,k,l}) = (\phi \otimes
+    \id)((\Gr{X}{m}{n}{k}{l})^{*} \Gr{X}{k}{l}{m}{n}).
+  \end{align*}
+  We sum over $k$, use the relations $\sum_{k}
+  (\Gr{X}{m}{n}{k}{l})^{*} \Gr{X}{k}{l}{m}{n} = \lambda_{l}\rho_{n}
+  \otimes \id_{\Gru{\mathcal{H}}{m}{n}}$ and
+  $\phi(\lambda_{l}\rho_{n})=1$, and find
+\begin{align*}
+\lambda \cdot  \sum_{k} \Tr((\Gru{F_{X}}{k}{l})^{-1}) = 1.
+\end{align*}
+Now all assertions in (1)--(3) concerning $\alpha$ follow.
+ % the second formula, we use the first formula for the
+ %    opposite of $(A,\Delta)$. For this opposite, $\phi$ still is a
+ %    faithful, positive, normalized invariant functional and
+ %    $(\mathcal{H},X)$ still is a unitary irreducible locally finite
+ %    corepresentation, but the antipode $S$ gets replaced by $S^{-1}$
+ %    and therefore $F_{X}$ gets replaced by $F_{X}^{-1}$.
+\end{proof}
+\begin{Cor}
+  Assume that $(A,\Delta)$ has a faithful, positive, normalized
+  invariant functional $\phi$. Let $(\mathcal{H},X)$ be a unitary
+  irreducible locally finite corepresentation of $(A,\Delta)$, let
+  $F_{X}$ be a non-zero morphism from $(\mathcal{H},X)$ to
+  $(\mathcal{H},(S^{2} \otimes \id)(X))$, and let $a=(\id \otimes
+  \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
+  \omega_{\eta,\eta'})(\Gr{X}{p}{q}{r}{s})$, where $\xi \in
+  \Gru{\mathcal{H}}{k}{l}, \xi' \in \Gru{\mathcal{H}}{m}{n}$ and $\eta
+  \in \Gru{\mathcal{H}}{p}{q}, \eta' \in \Gru{\mathcal{H}}{r}{s}$.
+  Then
+\begin{align*}
+  \phi(b^{*}a) &= \frac{\langle \eta'|\xi'\rangle \langle
+    \xi|F^{-1}_{X}\eta\rangle}{\sum_{k}
+    \Tr(\Gru{(F^{-1}_{X})}{k}{l})}, & \phi(ab^{*}) = \frac{\langle
+    \eta'|F_{X}\xi'\rangle \langle \xi|\eta\rangle}{\sum_{n}
+    \Tr(\Gru{F_{X}}{m}{n})}.
+\end{align*}
+\end{Cor}
+\begin{proof}
+  By Theorem \ref{thm:rep-orthogonality}, 
+  \begin{align*}
+    \phi(b^{*}a) &= (\phi \otimes \omega_{\eta',\eta} \otimes
+    \omega_{\xi,\xi'})((\Gr{X}{k}{l}{m}{n})_{12}^{*}\Gr{X}{k}{l}{m}{n})
+    \\
+    &= \frac{1}{\sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l})} 
+    (\omega_{\eta',\eta} \otimes
+    \omega_{\xi,\xi'})(   (
+    \id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{(F_{X}^{-1})}{k}{l})
+    \circ \Sigma_{k,l,m,n}). 
+  \end{align*}
+  The formula for $\phi(ab^{*})$ follows similarly or by considering
+  the opposite of $(A,\Delta)$.
+\end{proof}
+\begin{Cor} \label{cor:rep-pw}
+  Assume that $(A,\Delta)$ has a faithful, positive, normalized
+  invariant functional $\phi$. Let
+  $(\mathcal{H}_{\alpha},X_{\alpha})_{\alpha}$ be a representative
+  family of all irreducible locally finite corepresentations of
+  $(A,\Delta)$. Then the map
+  \begin{align*}
+    \bigoplus_{\alpha} \bigoplus_{k,l,m,n}
+    (\overline{\Gru{\mathcal{H}_{\alpha}}{k}{l}} \otimes
+    \Gru{\mathcal{H}_{\alpha}}{m}{n}) \to A
+  \end{align*}
+  that sends $\overline{\xi} \otimes \eta \in
+  \overline{\Gru{\mathcal{H}_{\alpha}}{k}{l}} \otimes
+  \Gru{\mathcal{H}_{\alpha}}{m}{n}$ to $ (\id \otimes
+  \omega_{\xi_{\alpha},\eta_{\alpha}})(\Gr{(X_{\alpha})}{k}{l}{m}{n})$,
+  is a linear isomorphism.
+\end{Cor}
+
+Given $\omega,\omega' \in A'$ and $a \in A$, we define convolution
+products
+\begin{align*}
+  \omega \ast a
+&:= (\id \otimes \omega) (\tilde \Delta(a)), & a \ast
+\omega'&:=(\omega' \otimes \id)(\Delta(a)), & \omega \ast a \ast
+\omega'&:= (\omega \ast a)\ast \omega' = \omega \ast (a \ast \omega').\end{align*}
+We shall say that an entire function $f$ has \emph{exponential growth
+  on the right half-plane} if there exist $C,d$ such that $|f(x+iy)|\leq
+C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$. 
+\begin{Theorem} \label{thm:rep-characters}
+  Assume that $(A,\Delta)$ has a faithful, positive, normalized
+  invariant functional $\phi$.  There exists a unique family of characters
+  $f_{z} \colon A\to \C$ such that
+  \begin{enumerate}
+  \item for each $a\in A$, the function $z\mapsto f_{z}(a)$ is entire
+    and of exponential growth on the right half-plane;
+  \item $f_{0} = \epsilon$ and $(f_{z} \otimes f_{z'}) \circ \tilde
+    \Delta= f_{z+z'}$ for all $z,z' \in \C$.
+  \item $\phi(ab)=\phi(b(f_{1} \ast a \ast f_{1}))$ for all $a,b\in A$.
+  \end{enumerate}
+  This family furthermore satisfies
+  \begin{enumerate}\setcounter{enumi}{3}
+  \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$;
+  \item $f_{z}(\lambda_{l}\rho_{n})=\delta_{l,n}$,  $f_{z} \circ S = f_{-z}$,
+and    $f_{z} \circ \ast = \ast \circ f_{-\overline{z}}$.
+\end{enumerate}
+\end{Theorem}
+\begin{proof}
+  We first prove uniqueness.  Assume that $(f_{z})_{z}$ is a family of
+  functionals satisfying (1)--(3).  Since $\phi$ is faithful, the map
+  $\sigma\colon a \mapsto f_{1} \ast a \ast f_{1}$ is uniquely
+  determined, and one easily sees that is is a homomorphism. Using
+  (2), we find that $\epsilon \circ \sigma=f_{2}$ and $f_{2n}$ are
+  uniquely determined and characters for each $n$. Using (1) and the
+  fact that every entire function of exponential growth on the right
+  half-plane is uniquely determined by its values at $\N \subseteq \C$
+  \cite{}, we can conclude that each $f_{z}$ is uniquely determined
+  and a character.
+
+  Let us now prove existence.  By Corollary \ref{cor:rep-pw}, we can
+  define for each $z\in \C$ a functional $f_{z} \colon A \to \C$ such
+  that for every unitary irreducible locally finite corepresentation
+  $(\mathcal{H},X)$,
+    \begin{align*}
+      f_{z}((\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})) &=
+      \delta_{k,m}\delta_{l,n} \cdot
+      \omega_{\xi,\eta}((\Gru{F_{X}}{k}{l})^{z}) \quad \text{for all }
+      \xi \in \Gru{\mathcal{H}}{k}{l},\eta \in
+      \Gru{\mathcal{H}}{m}{n},
+    \end{align*}
+    or, equivalently,
+    \begin{align*}
+      (f_{z} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
+      \delta_{k,m}\delta_{l,n} \cdot (\Gru{F_{X}}{k}{l})^{z},
+    \end{align*}
+    where $F_{X}$ is a non-zero morphism from $(\mathcal{H},X)$ to
+    $(\mathcal{H}, (S^{2} \otimes \id)(X))$ such that
+    \begin{align*}
+      \alpha_{X}:= \sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l}) = \sum_{n}
+      \Tr(\Gru{F_{X}}{m}{n})
+    \end{align*}
+    for all $l,n$ (see Theorem \ref{thm:rep-orthogonality}). By
+    construction, (1) holds. We show that $(f_{z})_{z}$ satisfies the
+    assertions (2)--(5). The proof of uniqueness shows that each
+    $f_{z}$ is a character. Throughout the following arguments, let 
+    $(\mathcal{H},X)$ be a unitary irreducible corepresentation
+    $(\mathcal{H},X)$ and let $F_{X}$ be as above.
+
+    (2) This follows from the relations
+    \begin{align*}
+      (f_{0}  \otimes \id)(\Gr{X}{k}{l}{m}{n}) &=
+      \delta_{k,m}\delta_{l,n} \id_{\Gru{\mathcal{H}}{k}{l}} =
+      (\epsilon \otimes \id)(\Gr{X}{k}{l}{k}{l})
+    \end{align*}
+    and
+    \begin{align*}
+      ((f_{z}\otimes f_{z'})\circ \tilde \Delta \otimes
+      \id)(\Gr{X}{k}{l}{m}{n}) &=  \delta_{k,m}\delta_{l,n}(f_{z} \otimes f_{z'} \otimes
+      \id)\big((\Gr{X}{k}{l}{k}{l})_{13}
+      (\Gr{X}{k}{l}{k}{l})_{23}\big) \\
+      &=  \delta_{k,m}\delta_{l,n}(\Gru{F_{X}}{k}{l})^{z}  \cdot (\Gru{F_{X}}{k}{l})^{z'} \\
+      &= (f_{z+z'} \otimes \id)(\Gr{X}{k}{l}{m}{n}).
+    \end{align*}
+    To conclude assertion (2), apply slice maps of the form $\id
+    \otimes \omega_{\xi,\xi'}$.
+
+   
+    (3)  Write $\tilde \Delta^{(2)} = (\tilde
+    \Delta \otimes \id)\circ \tilde \Delta = (\id \otimes \tilde
+    \Delta) \circ \tilde \Delta$ and $\rho_{z,z'}:=(f_{z'} \otimes \id
+    \otimes f_{z})\circ \tilde \Delta^{(2)}$. Then
+    \begin{align*}
+      (\rho_{z,z'} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (f_{z'} \otimes
+      \id \otimes f_{z} \otimes
+      \id)((\Gr{X}{k}{l}{k}{l})_{14}(\Gr{X}{k}{l}{m}{n})_{24}(\Gr{X}{m}{n}{m}{n})_{34})
+      \\
+      &= (1 \otimes (\Gru{F_{X}}{k}{l})^{z'}) \Gr{X}{k}{l}{m}{n} (1
+      \otimes (\Gru{F_{X}}{m}{n})^{z}).
+    \end{align*}
+    We take $z=z'=1$, use Theorem \ref{thm:rep-orthogonality}, where
+    now $\alpha= \beta$ by our scaling of $F_{X}$, and obtain
+    \begin{align*}
+      (\phi \otimes \id \otimes
+      \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}((\rho_{1,1} \otimes
+      \id)(\Gr{X}{k}{l}{m}{n}))_{13}) &=\alpha^{-1}(\id \otimes
+      \Gru{F_{X}}{k}{l}) (\id \otimes \Gru{(F_{X}^{-1})}{k}{l})
+      \Sigma_{k,l,m,n} (\id \otimes
+      \Gru{F_{X}}{m}{n}) \\
+      &=\beta^{-1}(\Gru{F_{X}}{m}{n} \otimes \id) \Sigma_{k,l,m,n} \\
+      &= (\phi \otimes \id \otimes
+      \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})_{12}^{*}).
+    \end{align*}
+    To conclude assertion (3), applying slice maps of the form
+    $\omega_{\xi,\xi'} \otimes \omega_{\eta,\eta'}$.
+
+    (4) By Proposition \ref{prop:rep-f} and the calculation above,
+    \begin{align*}
+      (S^{2} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (1
+      \otimes\Gru{F_{X}}{k}{l})
+      \Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{F_{X}}{m}{n})^{-1} 
+      =(\rho_{-1,1}  \otimes \id)(\Gr{X}{k}{l}{m}{n}).
+    \end{align*}
+     Assertion (4) follows again by applying slice maps.
+    
+     (5) The fact that $f_{z}$ is a character and
+     that $f_{z}(\Gr{A}{k}{l}{m}{n})=0$ if $(k,l)\neq (m,n)$
+     immediately implies the relation
+     $f_{z}(\lambda_{l}\rho_{n})=\delta_{l,n}$  and the equality
+     \begin{align*}
+       (f_{-z} \otimes \id) (\Gr{X}{k}{l}{k}{l})=
+       (\Gru{(F_{X})}{k}{l})^{-z} &= (f_{z} \otimes
+       \id)(\Gr{X}{k}{l}{k}{l})^{-1} \\ &= (f_{z} \otimes
+       \id)(\Gr{(X^{-1})}{k}{l}{k}{l}) = (f_{z} \circ S \otimes
+       \id)(\Gr{X}{k}{l}{k}{l}).
+     \end{align*}
+Therefore, $f_{-z} = f_{z} \circ S$. Using the preceding calculation,
+     the relation $(S \otimes \id)(\Gr{X}{k}{l}{k}{l}) =
+     (\Gr{X}{k}{l}{k}{l})^{*}$ and positivity of $\Gru{F_{X}}{k}{l}$,
+     we conclude
+     \begin{align*}
+       (\ast \circ f_{z} \circ \ast \otimes
+       \id)(\Gr{X}{k}{l}{k}{l})
+&=       (f_{z} \otimes
+       \id)((\Gr{X}{k}{l}{k}{l})^{*})^{*} \\
+& = (f_{-z} \otimes \id)(\Gr{X}{k}{l}{k}{l})^{*} 
+ =
+((\Gru{F_{X}}{k}{l})^{-z})^{*} 
+=       (\Gru{F_{X}}{k}{l})^{-\overline{z}} = (f_{-\overline{z}}
+\otimes \id)(\Gr{X}{k}{l}{k}{l}),
+     \end{align*}
+whence $\ast \circ f_{z} \circ \ast = f_{-\overline{z}}$.
+\end{proof}
+
+%  consider
+%   the family
+%   \begin{align*}
+%     (\Gru{F}{m}{n})^{\top} \circ  \overline{\Sigma_{m,n,k,l}} &=
+% \phi((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})^{\top}
+% \circ  \overline{\Sigma_{m,n,k,l}} \\
+%  &=
+%  \phi((\Gr{X}{k}{l}{m}{n})_{12}^{*\circ (\id \otimes
+%   \top)}(\overline{\Sigma_{k,l,k,l}})_{23} (\Gr{X}{k}{l}{m}{n})^{\id \otimes
+%   \top}_{12})  \\
+% &=\phi((\Gr{\overline{X}}{l}{k}{n}{m})_{12}(\overline{\Sigma_{k,l,k,l}})_{23}
+%  (\Gr{\overline{X}}{l}{k}{n}{m})_{12}).
+% \end{align*} \fxnote{Treat $X^{\id \otimes \top}$}
+% By Lemma \ref{lem:rep-average}, this family is a morphism from to
+% $(\overline{\mathcal{H}}\otimes \overline{K},\overline{X}^{-*} \otimes
+% \id_{\overline{K}})$  to
+% $(\overline{\mathcal{H}}\otimes \overline{K},\overline{X} \otimes
+% \id_{\overline{K}})$ and hence of the form
+% $(\Gru{\overline{F_{X}}}{n}{m})^{-1} \otimes T$ with $T \in
+% \mathcal{B}(\overline{K})$ not depending on $m,n$.
+
+% Thus,
+% \begin{align*}
+%  (\id \otimes R)  \circ \Sigma_{k,l,m,n} =   \Gru{F}{m}{n} =
+%  \Sigma_{k,l,m,n} \circ (\Gru{\overline{F_{X}}}{n}{m})^{-\top} \otimes T^{\top})
+% \end{align*}
+
+  
+%   We may assume $(k,l,m,n)=(p,q,r,s)$ because otherwise both sides of
+%   the equation that we want to prove vanish.
+
+%   Applying Lemma \ref{lem:rep-average} to the corepresentation $X$ and
+%   the family $\Gru{T}{p}{q}=
+%   \delta_{p,k}\delta_{q,l} |\eta\rangle\langle\xi|$, we obtain an
+%   endomorphism $\check{T}$ of $(\mathcal{H},X)$ which
+%   necessarily has the form $\check{T}=\lambda(\xi,\eta) \id$ for some
+%   $\lambda(\xi,\eta) \in \C$. Inserting the definition of
+%   $\check{T}$, we find
+%   \begin{align}\nonumber
+%     \phi(b^{*}a) &= \phi\big((\id \otimes
+%     \omega_{\eta',\eta})((\Gr{X}{k}{l}{m}{n})^{*}) \cdot (\id \otimes
+%     \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})\big) \\  &= (\phi \otimes
+%     \id)\left(\langle\eta'|_{2} \Gr{(X^{-1})}{m}{n}{k}{l}(1 \otimes
+%       |\eta\rangle\langle \xi|)
+%       \Gr{X}{k}{l}{m}{n}|\xi'\rangle_{2}\right) 
+%     = \langle \eta'|_{2} \Gru{\check{T}}{m}{n}|\xi'\rangle_{2} =
+%     \lambda(\xi,\eta) \langle\eta'|\xi'\rangle. \label{eq:rep-orthogonal-1}
+%   \end{align}
+%   Next, we apply Lemma \ref{lem:rep-average} to the corepresentations
+%   $\overline{X}$ and $\overline{X}^{-*}$ and the family
+%   $\Gru{R}{p}{q}=\delta_{p,m}\delta_{q,n}|\overline{
+%     \xi'}\rangle\langle\overline{\eta'}|$, and obtain a morphism
+%   $\hat{R}$ from $\overline{X}^{-*}$ to $\overline{X}$ which
+%   necessarily has the form $\hat{R}=\mu(\eta',\xi')\overline{F_{X}}$
+%   for some $\mu(\eta',\xi') \in \C$. Using the relation
+%   \begin{align*}
+%     a &= (\id \otimes
+%     \omega_{\overline{\xi},\overline{\xi'}})(\Gr{\overline{X}}{l}{k}{n}{m})^{*},
+%     & b&= (\id \otimes
+%     \omega_{\overline{\eta},\overline{\eta'}})(\Gr{\overline{X}}{k}{l}{m}{n})^{*}
+%   \end{align*}
+%   and the definition of $\hat{R}$, we obtain
+%   \begin{align}
+%     \phi(b^{*}a) &= (\phi \otimes \id)\left(\langle
+%       \overline{\eta}|_{2} \Gr{\overline{X}}{k}{l}{m}{n}(1 \otimes
+%       |\overline{\eta}'\rangle\langle \overline{\xi'}|)
+%       \Gr{(\overline{X}^{*})}{m}{n}{k}{l} \right) \nonumber \\
+%     &=\langle \overline{\eta}| \Gru{\hat{R}}{k}{l}
+%     |\overline{\xi}\rangle = \langle
+%     \overline{\eta}|\Gru{\overline{F_{X}}}{k}{l}\overline{\xi}\rangle
+%     \mu(\eta',\xi'). \label{eq:rep-orthogonal-2}
+%   \end{align}
+%   We choose a basis $(\zeta_{i})_{i}$ for
+%   $\bigoplus_{k}\Gru{\mathcal{H}}{k}{l}$ and calculate
+%   \begin{align*}
+%  \langle
+%     \eta'|\xi'\rangle &=  (\phi \otimes
+%     \id)(\langle\eta'|_{2}(\lambda_{l}\rho_{n} \otimes
+%     \id_{\Gru{\mathcal{H}}{m}{n}})|\xi'\rangle_{2}) \\
+%  &=
+%     \sum_{k} (\phi \otimes \id)\left(\langle\eta'|_{2}
+%       \Gr{(X^{-1})}{m}{n}{k}{l}
+%       \Gr{X}{k}{l}{m}{n}|\xi'\rangle_{2}\right)
+%     \\ &=    \sum_{i} \lambda(\zeta_{i},\zeta_{i}) \langle
+%     \eta'|\xi'\rangle 
+%     \\
+%     &=\sum_{i} \langle
+%     \overline{\zeta_{i}}| \Gru{\overline{F_{X}}}{}{l}\overline{\zeta_{i}}\rangle
+%     \mu(\eta',\xi') 
+% \\ &    = \mu(\eta',\xi') \cdot \sum_{k} \Tr(\Gru{F_{(X)}}{k}{l}),
+%   \end{align*}
+% where $\Gru{\overline{F_{X}}}{}{l}=\bigoplus_{k}
+% \Gru{\overline{F_{X}}}{k}{l}$. Inserting this relation into
+% \eqref{eq:rep-orthogonal-2}, we finally obtain the assertion.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dyn-suq-main"
+%%% End: 

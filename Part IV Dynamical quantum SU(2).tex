@@ -1,0 +1,206 @@
+% In definition of faithful $I^2$-algebra, we can indeed just suppose that the embedding $\Ff(I^2)\rightarrow M(A)$ is faithful.
+% Correct use of $\cdot$ versus operator product?
+
+% Podles sphere can be defined as an algebra in $\Rep(SU_q(2))$. Hence, it should make sense as an algebra under the forgetful functor to SU_q(2)-dynamical. By duality for coideals, the same should hold for passage to SU_q(1,1) in fact...
+
+
+\documentclass[12pt]{article}
+
+
+\usepackage{mathrsfs}
+
+\usepackage{amssymb, amsthm, amsfonts, amsxtra, amsmath}
+\usepackage{latexsym}
+\usepackage{mathabx}
+\usepackage[all]{xy}
+\usepackage{graphics}
+\usepackage{makeidx}
+\usepackage{stmaryrd} % for llbracket/rrbracket
+
+\usepackage{parskip} % paragraphs have no indents and vertical spacings inbetween
+\makeatletter % need this to avoid the conflict between amsthm and parskip
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
+
+
+ \oddsidemargin -9mm\textwidth 17truecm
+
+
+\topmargin -9mm \textheight 22truecm
+\theoremstyle{change}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ext}{\mathrm{e}}
+\DeclareMathOperator{\can}{\mathrm{can}}
+\DeclareMathOperator{\op}{\mathrm{op}}
+\DeclareMathOperator{\fin}{\mathrm{f}}
+\DeclareMathOperator{\Pol}{\mathrm{P}}
+\DeclareMathOperator{\End}{\mathrm{End}}
+\DeclareMathOperator{\Par}{\mathrm{Par}}
+\DeclareMathOperator{\reg}{\mathrm{reg}}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\Zz}{\mathrm{Z}}
+\DeclareMathOperator{\Ran}{\mathrm{Ran}}
+\DeclareMathOperator{\hol}{\mathrm{hol}}
+\DeclareMathOperator{\Ind}{\mathrm{Ind}}
+\DeclareMathOperator{\Ker}{\mathrm{Ker}}
+\DeclareMathOperator{\Char}{\mathrm{Char}}
+\DeclareMathOperator{\dyn}{\mathrm{dyn}}
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+
+\newcommand{\nc}{\R}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\kk}{\mathfrak{k}}
+\newcommand{\ttt}{\mathfrak{t}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\llll}{\mathfrak{l}}
+\newcommand{\uu}{\mathfrak{u}}
+\newcommand{\bb}{\mathfrak{b}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\ssl}{\mathfrak{sl}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\spp}{\mathfrak{sp}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\e}{\mathfrak{e}}
+\newcommand{\s}{\mathfrak{s}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Ss}{\mathbb{S}}
+\newcommand{\ZZ}{\mathscr{Z}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\Hsp}{\mathscr{H}}
+\newcommand{\qn}[2]{\lbrack #1 \rbrack_{#2}}
+\newcommand{\fqn}[2]{\lbrack #1 \rbrack_{#2}!}
+\newcommand{\bqn}[3]{\left\lbrack \begin{array}{c} \!#1\! \\ \!#2\! \end{array}\right\rbrack_{#3}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\RR}{\mathcal{R}}
+\newcommand{\rd}{\mathrm{d}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\cop}{\mathrm{cop}}
+\newcommand{\opp}{\mathrm{op}}
+\newcommand{\Rm}{\mathcal{R}}
+\newcommand{\wt}{\mathrm{wt}}
+%\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\CatC}{\mathcal{C}}
+\newcommand{\CatD}{\mathcal{D}}
+\newcommand{\Corr}{\mathrm{Corr}}
+\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Star}[2]{{}_{#1}\!*_{#2}}
+\newcommand{\vot}{\bar{\otimes}}
+\newcommand{\A}{\mathcal{B}}
+\newcommand{\Aa}{\mathscr{B}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\alg}{\mathrm{alg}}
+\newcommand{\Gg}{\mathscr{G}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\Rtimes}{\underset{\R}{\times}}
+\newcommand{\Rb}{\R^{\bullet}}
+\newcommand{\vtimes}{\bar{\otimes}}
+\newcommand{\Rr}{\mathscr{R}}
+\newcommand{\Tt}{\mathscr{T}}
+\newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+\newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
+\newcommand{\Gru}[3]{\;{}^{\;#2}#1^{#3}}
+\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
+\newcommand{\Fun}{\mathrm{Fun}}
+\newcommand{\Ff}{\Fun_{\fin}}
+%\newcommand{\fin}{\mathrm{fin}}
+\newcommand{\iitimes}{\underset{I}{\otimes}}
+\newcommand{\itimes}{\underset{I^2}{\otimes}}
+\newcommand{\osum}[1]{\underset{#1}{\sum}^{\oplus}}
+\newcommand{\osumc}[1]{\underset{#1}{\sum}^{\bar{\oplus}}}
+\newcommand{\oplusc}{\bar{\oplus}}
+\newcommand{\wDelta}{\widetilde{\Delta}}
+\newcommand{\f}{\mathrm{fin}}
+%\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Rho}{\mathrm{P}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\DA}{\mathcal{A}}
+\newcommand{\Circt}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}} % Woronowicz style tensor product, USUAL SIZE
+\newcommand{\CoRep}{\mathrm{Corep}}
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Lem}[Theorem]{Lemma}
+\newtheorem{Prop}[Theorem]{Proposition}
+\newtheorem{Cor}[Theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{Def}[Theorem]{Definition}
+\newtheorem{Rem}[Theorem]{Remark}
+\newtheorem{Exa}[Theorem]{Example}
+\newtheorem{Not}[Theorem]{Notation}
+\newtheorem{Que}[Theorem]{Question}
+\newtheorem{Con}[Theorem]{Conjecture}
+
+\date{}
+
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\title{{\scriptsize Generalized face algebras,} ergodic actions of compact quantum groups {\scriptsize and dynamical quantum $SU(2)$}}
+
+\author{Kenny De Commer\thanks{Department of Mathematics, University of Cergy-Pontoise, UMR CNRS 8088, F-95000 Cergy-Pontoise, France, email: {\tt Kenny.De-Commer@u-cergy.fr}}
+\and Thomas Timmermann\thanks{University of M\"{u}nster}}
+
+\maketitle
+
+
+\begin{abstract}
+\noindent {\scriptsize We present a generalized definition of Hayashi's compact Hopf face algebras which allows for an infinite-dimensional base algebra.}{\scriptsize  As the main source of examples, we show how any quantum homogeneous space of a compact quantum group leads to such a generalized compact Hopf face algebra.} In particular, we show how the construction applied to a non-standard Podle\'{s} sphere, seen as a quantum homogeneous space for quantum $SU(2)$, leads to an implementation of the dynamical quantum $SU(2)$-group as a generalized compact Hopf face algebra.
+\end{abstract}
+
+
+
+
+\section*{Generalized compact Hopf face algebras from Podle\'{s} spheres}
+
+As a particular case of the construction in the previous section, consider $I = \Z$ with $B_{kl} =\emptyset$ when $k\neq l\pm 1$, and $B_{kl} = \{(k,l)\}$ when $k = l\pm 1$. Put \[E(k,k\pm1) =c_{\pm}\left(\frac{|q|^{x+k\pm1}+|q|^{-x-k\mp1}}{|q|^{x+k}+|q|^{-x-k}}\right)^{1/2}\] where $c_{+}=1$ and $c_-=-\sgn(q)$. Then this collection satisfies the requirements postulated at the beginning of the previous section. It is obtained from the ergodic action of $SU_q(2)$ on the Podle\'{s} sphere $S_{q,\tau(x)}^2$ with $\tau(x) = ...$ as described in [DCY].
+
+For $\epsilon,\nu\in \{+,-\}$, let us write $u_{kl} = u_{(k,k+\epsilon),(l,l+\nu)}$. Then the unitarity relations ... become \begin{eqnarray*} \sum_{\epsilon} (u_{k-\epsilon,l}^{\epsilon,\nu})^*u_{k-\epsilon,m}^{\epsilon,\mu} &=& \delta_{\nu,\mu}\delta_{l,m} \lambda_k\rho_{l+\nu},\\ \sum_{\nu} u_{kl}^{\epsilon,\nu}(u_{ml}^{\mu,\nu})^* &=& \delta_{\epsilon,\mu}\delta_{k,m}\lambda_k\rho_m.\end{eqnarray*} In turns of the multipliers $u^{\epsilon,\nu} = \sum_{k,l} u^{\epsilon,\nu}_{kl}$, this is equivalent with saying that the matrix \[U = \begin{pmatrix} u^{--}& u^{+-} \\ u^{-+}&u^{++}\end{pmatrix}\] is unitary.
+
+The relations for the adjoint further imply that \begin{eqnarray*}u_{kl}^{+-} &=&\frac{E(l,l-1)}{E(k,k+1)}(u_{k+1,l-1}^{-+})^*,\\  u_{kl}^{++}&=& \frac{E(l,l+1)}{E(k,k+1)}(u_{k+1,l+1}^{--})^* .\end{eqnarray*}
+
+Let us write $F(k)^{1/2} = \frac{1}{|q|^{1/2}E(k,k+1)}$. Further, for any function $f$ on $I$, write $f(\lambda) = \sum_k f(k)\lambda_k$ and $f(\rho) = \sum_m f(m)\rho_m$. Then using that $E(l+1,l) = -\sgn(q)\frac{1}{E(l,l+1)}$, we find that the above adjoint relations are equivalent to
+
+\begin{eqnarray*} u^{+-} &=& -q F(\rho-1)^{1/2}F(\lambda)^{1/2}(u^{-+})^* \\ u^{++} &=&  \frac{F(\lambda)^{1/2}}{F(\rho)^{1/2}}(u^{--})^*.
+\end{eqnarray*}
+
+Write now \[\alpha = u^{--},\qquad \beta = qF(\rho)^{1/2}u^{-+}.\] Then the above commutation relations are equivalent to \begin{align*} \alpha \beta = qF(\rho-1)\beta\alpha && \alpha\beta^* = qF(\lambda)\beta^*\alpha\end{align*} \begin{align*} \alpha\alpha^* +F(\lambda)\beta^*\beta = 1,&& \alpha^*\alpha+\frac{q^{-2}}{F(\rho-1)}\beta^*\beta = 1,\\ \frac{1}{F(\rho-1)}\alpha\alpha^* +\beta\beta^* = F(\lambda-1)^{-1},&& F(\lambda)\alpha^*\alpha +q^{-2}\beta\beta^* = F(\rho),\end{align*} \begin{align*} f(\lambda)g(\rho)\alpha =
+\alpha f(\lambda+1)g(\rho+1),&& f(\lambda)g(\rho)\beta = \beta f(\lambda+1)g(\rho-1).\end{align*}
+
+These are precisely the commutation relations for the dynamical quantum $SU(2)$-group as in for example [KR], except that the precise value of $F$ has been changed by a shift in the parameter domain by a complex constant. As the coproduct on $A$ is given by $\Delta(u^{\epsilon,\nu}) = \sum_{\mu} u^{\epsilon,\mu}\itimes u^{\mu,\nu}$, we also find that the coproduct agrees with the one on the dynamical quantum $SU(2)$-group, namely \begin{eqnarray*} \Delta(\alpha) &=& \alpha\itimes \alpha - q^{-1}\beta\itimes \beta^*,\\ \Delta(\beta) &=& \beta\itimes \alpha^* +\alpha\itimes \beta.\end{eqnarray*}
+
+More generally, 
+
+As a concrete instance of the example of monoidal equivalence, let $\tilde{A}$ be the generalized compact Hopf face algebra obtained from the set $\tilde{I} =I_1\sqcup I_2$ with $I_1= \Z$ and $I_2= \{\bullet\}$ with the $B_{kl} =\emptyset$ and $E(k,l)$ for $k,l\neq \bullet$ as in section ..., with $B_{k,\bullet} = B_{\bullet,k}= \emptyset$, and $B_{\bullet,\bullet} = \{\pm\}$ with $E_{\bullet,\bullet} = \begin{pmatrix} 0 & |q|^{1/2} \\ -\sgn(q)|q|^{-1/2}&0\end{pmatrix}$ (with the basis ordered as $-,+$). Then this will be obtained from the direct sum of the functor from ... and the ordinary forgetful functor from $\Rep(SU_q(2))$ into $\Hilb$. It follows that the components $\tilde{A}(ij)$ can be described by the generators and relations as in ..., but with $F(\lambda)$ and $F(\rho)$ set equal to 1 whenever the corresponding index is $\bullet$.
+
+
+
+
+% Study spectrum fundamental character
+% Study dual quantum groupoid
+% Make connection with dynamical cocycle
+% In case of qgroupoid constructed from identity functor for Rep(SU_q(2)): rep theory of associated Galois object should just be: a single representation (Galois object is type I factor, cutdown of $B(\mathscr{L}^2(SU_q(2)))$). Yes: in general, Galois object is Morita equivalent with algebra of original ergodic action, should also be stressed for Podles spheres
+
+\section*{Representation theory of the function algebra on the dynamical quantum $SU(2)$ group}
+
+\begin{Lem} There are faithful $^*$-representations $\pi_{\pm}$ of $\Pol_{\ext}(\X)$ as operators $\mathscr{D}^{\pm}\rightarrow \mathscr{D}^{\pm}$, given by the following formulas (where we suppress the explicit notations $\pi_{\pm}$): \begin{align*} \alpha\cdot e_{n,y}^+ = \left(\frac{1+q^{2n-2y}}{1+q^{-2y-2}}\right)^{1/2}e_{n,y+1}^+,&& \beta\cdot e_{n,y}^+ = \left(\frac{q^{-2y}-q^{2n-2y+2}}{1+q^{-2y-2}}\right)^{1/2}e_{n+1,y+1}^+,\end{align*}
+\begin{align*} \alpha\cdot e_{n,y}^- = \left(\frac{1-q^{2n}}{1+q^{-2y-2}}\right)^{1/2}e_{n-1,y+1}^-,&& \beta\cdot e_{n,y}^- = \left(\frac{q^{2n+2}+q^{-2y}}{1+q^{-2y-2}}\right)^{1/2}e_{n,y+1}^-,\end{align*} the functions in $C_c(\R)$ simply acting by $fe_{n,y}^{\pm}= f(y)e_{n,y}^{\pm}$.
+
+Both representations are bounded when restricted to $\Pol(\X)$.
+\end{Lem}
+
+
+
+\end{document}
