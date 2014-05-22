@@ -1,8 +1,8 @@
-% In definition of faithful $I^2$-algebra, we can indeed just suppose that the embedding $\Ff(I^2)\rightarrow M(A)$ is faithful.
-% Correct use of $\cdot$ versus operator product?
-
+% Remarks:
 % Podles sphere can be defined as an algebra in $\Rep(SU_q(2))$. Hence, it should make sense as an algebra under the forgetful functor to SU_q(2)-dynamical. By duality for coideals, the same should hold for passage to SU_q(1,1) in fact...
-
+%
+% link with article `Racah - Wigner quantum 6j Symbols, Ocneanu Cells for AN diagrams and quantum groupoids' by Coquereaux?
+% Ref to Schauenburg that face algebras are weak Hopf algebras
 
 \documentclass[11pt]{article}
 
@@ -13,11 +13,16 @@
 \usepackage{amssymb, amsthm, amsfonts, amsxtra, amsmath}
 \usepackage{latexsym}
 \usepackage{mathabx}
-\usepackage[all]{xy}
-\usepackage{graphics}
-\usepackage{makeidx}
-\usepackage{stmaryrd} % for llbracket/rrbracket
+\usepackage{enumitem}
+%\usepackage[all]{xy}
+%\usepackage{graphics}
 
+\usepackage{parskip} % paragraphs have no indents and vertical spacings inbetween
+\makeatletter % need this to avoid the conflict between amsthm and parskip
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
 
 \theoremstyle{change}
 
@@ -82,9 +87,9 @@
 \newcommand{\res}{\mathrm{res}}
 \newcommand{\cop}{\mathrm{cop}}
 \newcommand{\opp}{\mathrm{op}}
+\newcommand{\coop}{\mathrm{coop}}
 \newcommand{\Rm}{\mathcal{R}}
 \newcommand{\wt}{\mathrm{wt}}
-%\newcommand{\Tr}{\mathrm{Tr}}
 \newcommand{\Ad}{\mathrm{Ad}}
 \newcommand{\CatC}{\mathcal{C}}
 \newcommand{\CatD}{\mathcal{D}}
@@ -103,10 +108,6 @@
 \newcommand{\vtimes}{\bar{\otimes}}
 \newcommand{\Rr}{\mathscr{R}}
 \newcommand{\Tt}{\mathscr{T}}
-\newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
-\newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
-\newcommand{\Gru}[3]{\;{}^{\;#2}#1^{#3}}
-\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
 \newcommand{\Fun}{\mathrm{Fun}}
 \newcommand{\Ff}{\Fun_{\fin}}
 %\newcommand{\fin}{\mathrm{fin}}
@@ -123,6 +124,50 @@
 \newcommand{\DA}{\mathcal{A}}
 \newcommand{\Circt}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\CoRep}{\mathrm{Corep}}
+\newcommand{\even}{\mathrm{even}}
+\newcommand{\odd}{\mathrm{odd}}
+
+\newcommand{\GrHA}[3]{#1{\begin{pmatrix} #2,  #3\end{pmatrix}}}% Horizontal grading ordinary style, with argument
+\newcommand{\Grs}[3]{#1{\begin{pmatrix} #2,  #3\end{pmatrix}}}
+
+\newcommand{\GrDA}[3]{\;{}_{\;#2}#1_{#3}} % Horizontal grading bottom style, with argument
+%\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
+
+\newcommand{\GrVA}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} % Vertical grading ordinary style, with argument
+\newcommand{\Grt}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} 
+
+\newcommand{\GrRA}[3]{#1^{#2}_{#3}} % Vertical grading right style, with argument
+
+\newcommand{\Unit}{\mathbf{1}}
+\newcommand{\UnitC}[2]{\mathbf{1}\!\begin{pmatrix} #1 \\ #2\end{pmatrix}} 
+\newcommand{\Grru}[2]{\begin{pmatrix} #1 \\ #2\end{pmatrix}}
+
+\newcommand{\eGr}[5]{#1{{\tiny \begin{pmatrix} #2 \quad #3 \\ #4 \quad #5\end{pmatrix}}}}
+
+\newcommand{\pma}[4]{\begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}
+\newcommand{\pmat}[4]{{\tiny \begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}}
+
+\newcommand{\UT}[2]{#1{\tiny #2 }}
+\newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+%\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
+%\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} \, #2\;\\ #3 \qquad #4 \\ \,#5\;\end{pmatrix}}}
+\newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
+\newcommand{\Gru}[3]{\;{}^{\;#2}#1^{#3}}
+\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
+\newcommand{\gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+\newcommand{\eGrr}[3]{#1_{{\tiny \left(#2, #3\right)}}}
+\newcommand{\eGrt}[4]{#1{{\tiny \begin{pmatrix} #2 \\ #3 \\ #4 \end{pmatrix}}}}
+\newcommand{\Grr}[4]{\begin{pmatrix}#1 \quad #2\\#3&#4\end{pmatrix}}
+
+\newcommand{\Grss}[3]{\UT{#1}{\begin{pmatrix} #2 \; #3\end{pmatrix}}}
+\newcommand{\Grb}[7]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\\ #6 \quad #7\end{pmatrix}}}
+\newcommand{\un}[2]{e{{\tiny \begin{pmatrix}#1\\ #2\end{pmatrix}}}}
+\newcommand{\unn}[3]{e{{\tiny \begin{pmatrix}#1\\ #2\\#3\end{pmatrix}}}}
+
+\newcommand{\wmult}{\cdot}
+\newcommand{\bmult}{*}
+\newcommand{\wmate}{\rightarrow}% Change this to source/target notation l(eft) r(ight)
+\newcommand{\bmate}{\downarrow}% Change this to source/target notation u(p) d(own)
 
 \newtheorem{Theorem}{Theorem}[section]
 \newtheorem{Lem}[Theorem]{Lemma}
@@ -143,7 +188,7 @@
 \numberwithin{equation}{section}
 
 \begin{document}
-\title{Compact quantum groups of face type, ergodic actions of compact quantum groups and the dynamical quantum $SU(2)$ group}
+\title{Compact quantum groups of face type, compact quantum homogeneous spaces and the dynamical quantum $SU(2)$ group}
 
 \author{Kenny De Commer\thanks{Department of Mathematics, Vrije Universiteit Brussel, VUB, B-1050 Brussels, Belgium, email: {\tt kenny.de.commer@vub.ac.be}}
 \and Thomas Timmermann\thanks{University of M\"{u}nster}}
@@ -152,7 +197,7 @@
 
 % Terminology `compact' might have to be adapted if we work with infinitely many objects.
 \begin{abstract}
-Compact quantum groups of face type, as introduced by Hayashi, form a class of quantum groupoids with a classical, finite set of objects. We generalize Hayashi's definition to allow for an infinite set of objects. We then show how any quantum homogeneous space of an ordinary compact quantum group leads to a compact quantum group of face type. In particular, when this construction is applied to the non-standard Podle\'{s} spheres, we obtain compact quantum groups of face type which are operator algebraic versions of the dynamical quantum $SU(2)$-group as studied by Etingof-Varchenko and Koelink-Rosengren.% References ok?
+\noindent Compact quantum groups of face type, as introduced by Hayashi, form a class of quantum groupoids with a classical, finite set of objects. We generalize Hayashi's definition to allow for an infinite set of objects. We then show how any quantum homogeneous space of an ordinary compact quantum group leads to a compact quantum group of face type. In particular, when this construction is applied to the non-standard Podle\'{s} spheres, we obtain compact quantum groups of face type which are operator algebraic versions of the dynamical quantum $SU(2)$-group as studied by Etingof-Varchenko and Koelink-Rosengren.% References ok?
 \end{abstract}
 
 
