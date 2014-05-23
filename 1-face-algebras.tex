@@ -22,7 +22,7 @@ such that the obvious associativity and unit conditions are satisfied.
 By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I$.
 \end{Def}
 
-\begin{Rem} The local units $\Unit_k$ are allowed to be zero.
+\begin{Rem} For the moment we will allow the local units $\Unit_k$ to be zero.
 \end{Rem}
 
 Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $\neg \left(K\wmate L\right)$, and we then let $\Grs{M}{K}{L}$ be the zero map.
@@ -30,7 +30,7 @@ Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0
 \begin{Def} The \emph{total algebra} $A$ of an $I$-partial algebra $\mathscr{A}$ is the vector space \[A = \oplus_{K\in I^2} A(K)\] endowed with the unique multiplication whose restriction to $A(K)\otimes A(L)$ concides with $M(K,L)$.  
 \end{Def} 
 
-Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a unit, but it is a \emph{locally unital algebra} $A$ [Quil] as there exist mutually orthogonal idempotents $1_k$ with $A = \osum{k,l} 1_kA1_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
+Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a unit, but it is a \emph{locally unital algebra} [Quil] as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
 \end{Rem} 
@@ -62,10 +62,12 @@ satisfying the obvious coassociativity and counitality conditions.
 By \emph{$I$-partial coalgebra} will be meant a partial coalgebra with object set $I$.
 \end{Def}
 
+\begin{Not}\label{NotCom} As the index of $\varepsilon_k$ is determined by the element to which it is applied, there is no harm in dropping the index $k$ and simply writing $\varepsilon$.
 
-We again make the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $\neg\left(K\bmate L\right)$. We also simply write $\varepsilon$ for the various $\varepsilon_k$, and we consider $\varepsilon$ as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
+Similarly, if $K = \Grt{}{k}{l}$ and $L = \Grt{}{l}{m}$, we abbreviate $\Delta_l = \Grt{\Delta}{K}{L}$, as the other indices are determined by the element to which $\Delta_l$ is applied.
+\end{Not}
 
-We make the following  convention: if $K = \Grt{}{k}{l}$ and $L = \Grt{}{l}{m}$, we will abreviate $\Delta_l = \Grt{\Delta}{K}{L}$, as the other indices are determined by the element to which $\Delta_l$ is applied.
+We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $\neg\left(K\bmate L\right)$. Similarly $\varepsilon$ is seen as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
 
 %The $\Grt{A}{k}{l}$ can be combined into a comultiplication \[\Delta: \Prod_{K} A(K)\rightarrow \Prod_{L,M} \left(A(L)\otimes A(M)\right)\] which is coassociative in the obvious way. In the following, we will write elements of direct products as infinite sums.
 
@@ -73,15 +75,16 @@ We can now superpose the notions of partial algebra and partial coalgebra. To fo
 % Formally, a finite morphism between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ equipped with an injection $\phi$ of a subset of $J$ into $I$ consists of maps $F_{K,L}:A(\phi(K),\phi(L))\rightarrow B(K,L)$ for $K,L$ in the domain of $\phi$, such that the map $(K,L)\mapsto F_{K,L}(a)$ is finite in rows and columns when the values of $K,L$ are restricted to one fiber of$ \phi$, and such that then $F_{K,M}(ab) = \sum_L F_{K,L}(a)F_{L,M}(b)$. 
 % Should this more general notion be included?
 
-Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with the two compositions, namely $\cdot$ (viewing $M_2(I)$ as row vectors of column vectors) and $*$ (viewing $M_2(I)$ as column vectors of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact a \emph{vacant} double groupoid in the sense of [Andruskiewitsch-Natale]. %, and many of the constructions below work with $M_2(I)$ replaced by an arbitrary double groupoid, if its vacant!
-In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ or $rs$ in an index. % Put less awkardly.
+Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with two compositions, namely $\cdot$ (viewing $M_2(I)$ as a row vector of column vectors) and $*$ (viewing $M_2(I)$ as a column vector of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact a \emph{vacant} double groupoid in the sense of [Andruskiewitsch-Natale]. %, and many of the constructions below work with $M_2(I)$ replaced by an arbitrary double groupoid, if its vacant!
+
+In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ or $rs$ in an index. We also follow Notation \ref{NotCom}, but the reader should be aware that the index of $\Delta$ will now be a 1$\times$2 vector in $I^2$ as we will work with partial coalgebras over $I^2$.% Put less awkardly.
 %\end{document}
 \begin{Def}\label{DefPartBiAlg} A \emph{partial bialgebra} $\mathscr{A}=(\mathscr{A},M,\Delta)$ consists of a set $I$ and a collection of vector spaces $A(K)$ for $K\in M_2(I)$ such that 
 \begin{itemize}
 \item[$\bullet$] the $\Grs{A}{K_l}{K_r}$ form an $I^2$-partial algebra,
 \item[$\bullet$] the $\Grt{A}{K_u}{K_d}$ form an $I^2$-partial coalgebra,
 \end{itemize} 
-and the following compatibility relations are satisfied.
+and for which the following compatibility relations are satisfied.
 \begin{enumerate}[label=(\alph*)]
 \item\label{Propa} (Comultiplication of Units) For all $k,l,l',m\in I$, one has 
 % $K = \begin{pmatrix} k & k\\p & p \end{pmatrix}$ and $L =\begin{pmatrix} p &p \\ l & l\end{pmatrix}$, one has 
@@ -114,12 +117,16 @@ The set of all multipliers forms an algebra under composition of $L_m$ and anti-
 One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate,  this homomorphism is injective, and we can then identify $A$ as a subalgebra of the (unital) algebra $M(A)$. We then also have inclusions $A\otimes A\subseteq M(A)\otimes M(A)\subseteq M(A\otimes A)$.
 
 \begin{Exa}\label{ExaMult} \begin{enumerate}
-\item Let $A$ be the total algebra of a partial algebra $\mathscr{A}$. As $A$ has local units, it is non-degenerate and idempotent. Then one can identify $M(A)$ with \[M(A) = \left(\prod_l \oplus_k A(k,l)\right) \bigcap \left(\prod_k\oplus_l A(k,l)\right) \subseteq \prod_{k,l} A(k,l),\] i.e. with the space of functions \[m:I^2\rightarrow A,\quad m_{kl}\in A(k,l)\] which have finite support when one of the variables has been fixed. The multiplication is given by the formula \[(mn)_{kl} = \sum_p m_{kp}n_{pl}.\]
-\item Let $m_i$ be any collection of multipliers of $A$, and assume that for each $a\in A$, $m_ia =0$ for almost all $i$, and similarly $am_i=0$ for almost all $i$. Then one can define a multiplier $\sum_i m_i$ in the obvious way. One says that the sum $\sum_i m_i$ converges in the \emph{strict} topology. \\
-
-For example, if $\mathscr{A}$ is an $I$-partial bialgebra, we can define elements \[\lambda_k = \sum_l \UnitC{k}{l},\qquad \rho_l = \sum_k\UnitC{k}{l} \qquad \in M(A),\]
+\item Let $A$ be the total algebra of a partial algebra $\mathscr{A}$. As $A$ has local units, it is non-degenerate and idempotent. Then one can identify $M(A)$ with \[M(A) = \left(\prod_l \oplus_k A(k,l)\right) \bigcap \left(\prod_k\oplus_l A(k,l)\right) \subseteq \prod_{k,l} A(k,l),\] i.e. with the space of functions \[m:I^2\rightarrow A,\quad m_{kl}\in A(k,l)\] which have finite support when either one of the variables has been fixed. The multiplication is given by the formula \[(mn)_{kl} = \sum_p m_{kp}n_{pl}.\]
+\item Let $m_i$ be any collection of multipliers of $A$, and assume that for each $a\in A$, $m_ia =0$ for almost all $i$, and similarly $am_i=0$ for almost all $i$. Then one can define a multiplier $\sum_i m_i$ in the obvious way by termwise multiplication. One says that the sum $\sum_i m_i$ converges in the \emph{strict} topology. 
 \end{enumerate}
 \end{Exa}
+
+Using the notion introduced in Example \ref{ExaMult}.2, we can introduce the following notation.
+
+\begin{Not}
+If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \UnitC{k}{l},\qquad \rho_l = \sum_k\UnitC{k}{l} \qquad \in M(A).\]
+\end{Not}
 
 To show that the total algebra of a partial bialgebra becomes a weak multiplier bialgebra, we will need some easy lemmas. 
 %In the following, we will use the grading for tensor products as in Remark \ref{RemGrad}, coupled with the multiplier interpretation as in Example \ref{ExaMult}.
@@ -128,7 +135,7 @@ To show that the total algebra of a partial bialgebra becomes a weak multiplier 
 
 The resulting map \[\Delta:A\rightarrow M(A\otimes A),\quad a\mapsto \Delta(a)\] is a homomorphism.
 \end{Lem}
-\begin{proof} For $a\in A$ homogeneous, we can define $\Delta(a) = \sum_{rs} \Delta_{rs}(a) \in M(A\otimes A)$, where the sum converges in the strict topology of $A\otimes A$ because of the property \ref{Propd} of Definition \ref{DefPartBiAlg}. This expression clearly satisfies the identities stated in the Lemma, and these in turn uniquely define it. We can then extend $\Delta$ by linearity to $A$. Since, for $a,b$ homogeneous, $\Delta_{rt}(a)\Delta_{t's}(b)=0$ unless $t=t'$, it follows from \ref{Prope} of that definition that $\Delta$ is a homomorphism. 
+\begin{proof} For $a\in A$ homogeneous, we can define $\Delta(a) = \sum_{rs} \Delta_{rs}(a) \in M(A\otimes A)$, where the sum converges in the strict topology of $A\otimes A$ because of the property \ref{Propd} of Definition \ref{DefPartBiAlg}. This expression clearly satisfies the identities stated in the lemma, and these in turn uniquely define it (as they determine the value of $\Delta(a)$ multiplied to the left and right with the local units of $\mathscr{A}\otimes \mathscr{A}$). We can then extend $\Delta$ by linearity to $A$. Since, for $a,b$ homogeneous, $\Delta_{rt}(a)\Delta_{t's}(b)=0$ unless $t=t'$, it follows from \ref{Prope} of that definition that $\Delta$ is a homomorphism. 
 \end{proof}
 
 We will refer to $\Delta: A\rightarrow M(A\otimes A)$ as the \emph{total comultiplication} of $\mathscr{A}$. We will then also use the suggestive Sweedler notation for this map, \[\Delta(a) = a_{(1)}\otimes a_{(2)}.\]
@@ -138,7 +145,7 @@ We will refer to $\Delta: A\rightarrow M(A\otimes A)$ as the \emph{total comulti
 \begin{proof} Clearly the sum defining $E$ is strictly convergent, and makes $E$ into an idempotent. It is moreover immediate that $E\Delta(a)=\Delta(a) = \Delta(a)E$ for all $a\in A$. Since \[E(\UnitC{k}{l}\otimes \UnitC{m}{n}) = \Delta(\UnitC{k}{n})(\UnitC{k}{l}\otimes \UnitC{m}{n}) \] by the property \ref{Propa} of Definition \ref{DefPartBiAlg}, and analogously for multiplication with $E$ on the right, the lemma is proven. 
 \end{proof} 
 
-By [Van Daele-Wang], there is a unique homomorphism $\Delta:M(A)\rightarrow M(A\otimes A)$ extending $\Delta$ and such that $\Delta(1) = E$. Alternatively, if $m\in M(A)$, we can directly define $\Delta(m)$ as the strict limit of the sum $\sum_{k,l,r,s} \Delta_{rs}(m_{kl})$. Similarly the maps $\id\otimes \Delta$ and $\Delta\otimes \id$ extend to maps from $M(A\otimes A)$ to $M(A\otimes A\otimes A)$. The following lemma then gathers the properties of $\Delta$, $\varepsilon$ and $\Delta(1)$ which guarantee that $(A,\Delta)$ forms a weak multiplier bialgebra in the sense of [Bohm].
+By [Van Daele-Wang], there is a unique homomorphism $\Delta:M(A)\rightarrow M(A\otimes A)$ extending $\Delta$ and such that $\Delta(1) = E$. Alternatively, if $m\in M(A)$, we can directly define $\Delta(m)$ as the strict limit of the series $\sum_{k,l,r,s} \Delta_{rs}(m_{kl})$. Similarly the maps $\id\otimes \Delta$ and $\Delta\otimes \id$ extend to maps from $M(A\otimes A)$ to $M(A\otimes A\otimes A)$. The following proposition then gathers the properties of $\Delta$, $\varepsilon$ and $\Delta(1)$ which guarantee that $(A,\Delta)$ forms a weak multiplier bialgebra in the sense of [Bohm].
 
 \begin{Prop} Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$, total comultiplication $\Delta$ and counit $\varepsilon$. Then the following properties are satisfied.
 \begin{itemize}
@@ -151,7 +158,7 @@ By [Van Daele-Wang], there is a unique homomorphism $\Delta:M(A)\rightarrow M(A\
 \end{itemize}
 \end{Prop}
 
-\begin{proof} Most of these properties follow immediately from the definition of a partial bialgebra. For demonstrational purposes, let us check the first weak counitality assumption. Let us choose $a\in A(K)$, $b\in A(L)$ and $c\in A(M)$. Then \[(\Delta(a)(b\otimes c) = \delta_{K_{ru},L_{lu}}\delta_{M_{lu},L_{ld}} \sum_r \Delta_{r,L_{ld}}(a)(b\otimes c).\]  Applying $(\varepsilon\otimes \id)$ to both sides, we obtain by Proposition \ref{Propb} of Definition \ref{DefPartBiAlg} and counitality of $\Delta$ that \[(\varepsilon \otimes \id)(\Delta(a)(b\otimes c)) = \delta_{K_{ru},L_{lu},L_{ld},M_{lu}} \varepsilon(b) ac.\] On the other hand, \begin{eqnarray*} (1\otimes a)\Delta(1)(b\otimes c) &=& \sum_{r,s,t} \UnitC{r}{s} b \otimes a\UnitC{s}{t}c \\ &=& \delta_{L_{ld},K_{ru},M_{lu}} b \otimes ac.\end{eqnarray*} Applying $(\varepsilon\otimes \id)$, we find \begin{eqnarray*} (\varepsilon\otimes \id)( (1\otimes a)\Delta(1)(b\otimes c) ) &=&  \delta_{L_{ld},K_{ru},M_{lu}}\delta_{L_{lu},L_{ld}}\delta_{L_{ru},L_{rd}} \varepsilon(b)ac \\ &=&  \delta_{L_{ld},L_{lu},K_{ru},M_{lu}} \varepsilon(b)ac,\end{eqnarray*} which agrees with the expression above.
+\begin{proof} Most of these properties follow immediately from the definition of a partial bialgebra. For demonstrational purposes, let us check the first weak counitality condition. Let us choose $a\in A(K)$, $b\in A(L)$ and $c\in A(M)$. Then \[\Delta(a)(b\otimes c) = \delta_{K_{ru},L_{lu}}\delta_{M_{lu},L_{ld}} \sum_r \Delta_{r,L_{ld}}(a)(b\otimes c).\]  Applying $(\varepsilon\otimes \id)$ to both sides, we obtain by Proposition \ref{Propb} of Definition \ref{DefPartBiAlg} and counitality of $\Delta$ that \[(\varepsilon \otimes \id)(\Delta(a)(b\otimes c)) = \delta_{K_{ru},L_{lu},L_{ld},M_{lu}} \varepsilon(b) ac.\] On the other hand, \begin{eqnarray*} (1\otimes a)\Delta(1)(b\otimes c) &=& \sum_{r,s,t} \UnitC{r}{s} b \otimes a\UnitC{s}{t}c \\ &=& \delta_{L_{ld},K_{ru},M_{lu}} b \otimes ac.\end{eqnarray*} Applying $(\varepsilon\otimes \id)$, we find \begin{eqnarray*} (\varepsilon\otimes \id)( (1\otimes a)\Delta(1)(b\otimes c) ) &=&  \delta_{L_{ld},K_{ru},M_{lu}}\delta_{L_{lu},L_{ld}}\delta_{L_{ru},L_{rd}} \varepsilon(b)ac \\ &=&  \delta_{L_{ld},L_{lu},K_{ru},M_{lu}} \varepsilon(b)ac,\end{eqnarray*} which agrees with the expression above.
 \end{proof} 
 
 \begin{Rem} 
@@ -210,28 +217,29 @@ Since also the expressions $\Delta(a)(b\otimes 1)$ and $(1\otimes a)\Delta(b)$ a
 %It is easily verified that in this case $\overline{\varepsilon_{K}(a)} = \varepsilon_{K^{\circ}}(a)$, and that $\Delta:A\rightarrow M(A\otimes A)$ becomes a $^*$-algebra homomorphism.
 
 % To complete
-We have the following formulas for the maps $\overline{\Pi}^L,\overline{\Pi}^R,\Pi^L$ and $\Pi^R$: if $a\in \eGr{A}{k}{l}{m}{n}$, then \[ \overline{\Pi}^L(a) =\varepsilon(a)\lambda_n,\quad \overline{\Pi}^R(a) =\varepsilon(a)\rho_k,\quad \Pi^L(a) =\varepsilon(a)\lambda_m,\quad \Pi^R(a) = \varepsilon(a) \rho_l.\]
+\begin{Rem}
+We have the following formulas for the maps $\overline{\Pi}^L,\overline{\Pi}^R,\Pi^L$ and $\Pi^R$ onto the base algebra (see [Bohm]): if $a\in \eGr{A}{k}{l}{m}{n}$, then \[ \overline{\Pi}^L(a) =\varepsilon(a)\lambda_n,\quad \overline{\Pi}^R(a) =\varepsilon(a)\rho_k,\quad \Pi^L(a) =\varepsilon(a)\lambda_m,\quad \Pi^R(a) = \varepsilon(a) \rho_l.\] In particular, we see that the base algebra consists of the algebra $\Fun_{\fin}(I)$ of finite support functions on $I$. 
+\end{Rem}
 
 
 
 
-
-We can now formulate the notion of partial Hopf algebra, the definition of course being inspired again by the notion of antipode for a weak (multiplier) bialgebra. Let us denote $\circ$ for the inverse of $\wmult$, and $\bullet$ for the inverse of $\bmult$, so \[\begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ} = \begin{pmatrix} l & k \\ n & m \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\bullet} = \begin{pmatrix} m & n \\ k & l \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ \bullet} = \begin{pmatrix} n & m \\ l & k \end{pmatrix}.\] The notation $\circ$ (resp. $\bullet$) will also be used for row vectors (resp. column vectors).
+We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak (multiplier) Hopf algebra. Let us denote $\circ$ for the inverse of $\wmult$, and $\bullet$ for the inverse of $\bmult$, so \[\begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ} = \begin{pmatrix} l & k \\ n & m \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\bullet} = \begin{pmatrix} m & n \\ k & l \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ \bullet} = \begin{pmatrix} n & m \\ l & k \end{pmatrix}.\] The notation $\circ$ (resp. $\bullet$) will also be used for row vectors (resp. column vectors).
 
 
 \begin{Def}\label{DefPartBiAlgAnt} An \emph{antipode} for an $I$-partial multiplier bialgebra $\mathscr{A}$ consists of maps $S:A(K)\rightarrow A(K^{\circ\bullet})$
 % $S: \eGr{A}{k}{l}{m}{n} \rightarrow \eGr{A}{n}{m}{l}{k}$ 
-such that the following property holds: for all $M,P\in M_2(I)$ and all $a\in A(M)$, \begin{eqnarray*} \underset{K\wmult L^{\circ\bullet}=P}{\sum_{K\bmult L = M}} a_{(1)K}S(a_{(2)L})= \delta_{P_l,P_r}\varepsilon(a)\mathbf{1}(P_l),\\\underset{K^{\circ\bullet}\wmult L=P}{\sum_{K\bmult L = M}} S(a_{(1)K})a_{(2)L}= \delta_{P_l,P_r}\varepsilon(a)\mathbf{1}(P_l).\end{eqnarray*}
+such that the following property holds: for all $M,P\in M_2(I)$ and all $a\in A(M)$, \begin{eqnarray*} \underset{K\wmult L^{\circ\bullet}=P}{\sum_{K\bmult L = M}} a_{(1)K}S(a_{(2)L})= \delta_{P_l,P_r}\varepsilon(a)\mathbf{1}(P_l),\\\underset{K^{\circ\bullet}\wmult L=P}{\sum_{K\bmult L = M}} S(a_{(1)K})a_{(2)L}= \delta_{P_l,P_r}\varepsilon(a)\mathbf{1}(P_r).\end{eqnarray*}
 
-A partial multiplier bialgebra $\mathscr{A}$ is called a \emph{partial multiplier Hopf algebra} if it admits an antipode.
+A partial multiplier bialgebra $\mathscr{A}$ is called a \emph{partial Hopf algebra} if it admits an antipode.
 \end{Def} 
 
 \begin{Rem} Note that condition \ref{Propd} of Definition \ref{DefPartBiAlg} again guarantees that the above sums are in fact finite.
 \end{Rem}
 
-If $S$ is an antipode for a partial multiplier bialgebra, we can extends $S$ to a linear map $A\rightarrow A$. 
+If $S$ is an antipode for a partial bialgebra, we can extends $S$ to a linear map \[S:A\rightarrow A\] on the total algebra $A$. 
 
-\begin{Lem}\label{LemAnti} Let $S$ be an antipode for a partial multiplier bialgebra. Then for all $a,b,c\in A$, one has \begin{eqnarray*} (a_{(1)}c\otimes ba_{(2)}S(a_{(3)})) &=& (1\otimes b)\Delta(1)(ac\otimes 1)\\ (S(a_{(1)})a_{(2)}c\otimes ba_{(3)})&=& (1\otimes ba)\Delta(1)(c\otimes 1).\end{eqnarray*}
+\begin{Lem}\label{LemAnti} Let $S$ be an antipode for a partial bialgebra. Then for all $a,b,c\in A$, one has \begin{eqnarray*} (a_{(1)}c\otimes ba_{(2)}S(a_{(3)})) &=& (1\otimes b)\Delta(1)(ac\otimes 1)\\ (S(a_{(1)})a_{(2)}c\otimes ba_{(3)})&=& (1\otimes ba)\Delta(1)(c\otimes 1).\end{eqnarray*}
 \end{Lem} 
 
 %Note that we can here make use of Remark \ref{RemStrongReg} to make sense of the above expressions as elements of $A\otimes A$. 
@@ -256,7 +264,7 @@ The second identity is proven similarly.
 \begin{Prop} A partial bialgebra $\mathscr{A}$ is a partial Hopf algebra if and only if the total weak multiplier bialgebra $(A,\Delta)$ is a weak multiplier Hopf algebra (in the sense of [B\"{o}hm]). 
 \end{Prop} 
 
-\begin{proof} We verify that the total antipode $S:A\rightarrow A$ satsisfies the conditions as in [B\"{o}hm]. In fact, the two first identities are precisely our identities in Lemma \ref{LemAnti}. The last identity says that formally one should have \[\sum_kS(\rho_k a)\lambda_k = S(a),\quad \forall a\in A,\] but this follows immediately from the fact the way $S$ sends homogeneous components to homogeneous components. 
+\begin{proof} We verify that the total antipode $S:A\rightarrow A$ satsisfies the conditions as in [B\"{o}hm]. In fact, the two first identities are precisely our identities in Lemma \ref{LemAnti}. The last identity says that formally one should have \[\sum_kS(\rho_k a)\lambda_k = S(a),\quad \forall a\in A,\] but this follows immediately from the way $S$ acts on homogeneous components.
 \end{proof}
 
  From ..., we obtain the following corollary. 
@@ -264,13 +272,39 @@ The second identity is proven similarly.
 \begin{Cor} The map $S:A\rightarrow A$ is an anti-homomorphism.
 \end{Cor} 
 
+We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
+\begin{Def} A partial $^*$-algebra $\mathscr{A}$ is a partial algebra whose total algebra $A$ is equipped with an antilinear, anti-multiplicative involution \[*:A\rightarrow A,\quad a\mapsto a^*\] such that the $\mathbf{1}_k$ are self-adjoint for all $k$ in the object set. 
+\end{Def} 
 
+One can of course give an alternative definition directly in terms of the partial algebra structure by requiring that we are given anti-linear maps $A(k,l)\rightarrow A(l,k)$ satisfying the obvious anti-multiplicativity and involution properties.
 
+\begin{Def} A partial $^*$-bialgebra $\mathscr{A}$ is a partial bialgebra whose underlying partial algebra has been endowed with a partial $^*$-algebra structure for which \[\Delta_{rs}(a)^* = \Delta_{sr}(a^*),\qquad \forall K\in M_2(I), a\in A(K).\]
 
+A partial Hopf $^*$-algebra is a partial bialgebra which is at the same time a partial $^*$-bialgebra and a partial Hopf algebra.
+\end{Def} 
 
+\begin{Rem}
+\begin{enumerate}
+\item By uniqueness of the counit, cf. [Bohm], it follows automatically that $\varepsilon$ satisfies $\varepsilon(a^*) = \overline{\varepsilon(a)}$ for all $a$. % To substantiate
+\item By uniqueness of the antipode, cf. [Bohm], it follows automatically that $S(S(a)^*)^* = a$ for all $a$. In particular, $S$ is invertible. % To substantiate
+\end{enumerate}
+\end{Rem}
 
+\begin{Def} Let $\mathscr{A}$ be a partial bi-algebra. An \emph{invariant functional} $\varphi$ for $\mathscr{A}$ consists of a functional $\varphi:A\rightarrow \C$ with support on the $\eGr{A}{k}{k}{m}{m}$ such that for all $a\in \eGr{A}{k}{l}{m}{n}$ and all $b$, one has  \[(\id\otimes \varphi)(b\otimes 1)\Delta(a)) = \varphi(a)b\lambda_k,\] and \[(\varphi\otimes \id)(\Delta(a)(1\otimes b) = \varphi(a)\rho_nb.\]
 
+We call $\varphi$ \emph{normalized} if $\varphi(\UnitC{k}{k}) = 1$ for all $k$. 
+\end{Def} 
+
+\begin{Rem} If $\varphi$ is normalized, it follows immediately from the definining property that $\varphi(\UnitC{k}{l})=1$ whenever $\UnitC{k}{l}\neq 0$.
+\end{Rem} 
+
+We are finally ready to give our main definition.
+
+\begin{Def} A \emph{compact quantum group of face type} is a partial Hopf $^*$-algebra with a \emph{positive} invariant functional $\varphi$, that is $\varphi(a^*a)\geq 0$ for all $a\in A$. 
+\end{Def} 
+
+\section{Structure theory for compact quantum groups of face type}
 
 
 \begin{Def} A \emph{(right) comodule} for a generalized face bialgebra $(A,\Delta)$ over $I$ is an $I^2$-graded vector space $V = \osum{K\in I^2} V(K)$ together with linear maps \[\delta\Grru{K}{L}:V(L)\rightarrow V(K)\otimes A\Grru{K}{L}\] satisfying \[(\id\otimes \Delta\Grru{K}{L})\delta(K*L) = (\delta(K)\otimes \id)\delta(L)\] and \[(\id\otimes \varepsilon_K)\delta\Grru{K}{K} = \id_{V(K)}.\]
