@@ -1,10 +1,8 @@
-\section{Representation theory}
+\section{Structure theory}
 
-\subsection{Corepresentations of generalized compact Hopf face
-  algebras}
+\subsection{Corepresentations of partial Hopf algebras}
 
-Let $(A,\Delta)$ be a generalized compact Hopf face algebra over an
-index set $I$. % A \emph{locally finite corepresentation}
+% A \emph{locally finite corepresentation}
 % of $(A,\Delta)$ consists of a row- and column-finite $I^{2}$-graded
 % Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$
 % together with a family $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of elements $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}
@@ -28,6 +26,24 @@ index set $I$. % A \emph{locally finite corepresentation}
 % and the sums in 2.\ are finite. The family
 % $Z=(\Gr{Z}{k}{l}{m}{n})_{k,l,m,n}$ in 2.\ is uniquely
 % determined by $X$ and will be denoted by $X^{-1}$.
+
+Let $\mathscr{A}$ be an $I$-partial bialgebra. An $I^2$-graded Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ will be called \emph{locally supported} %better name... 
+if $\Gru{\Hsp}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed.
+
+\begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be a locally supported $I^{2}$-graded Hilbert space.
+A \emph{locally finite corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $\Hsp$ consists of a family of elements 
+  $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
+  \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$
+  satisfying
+  \begin{align} \label{eq:rep-delta}
+    (\Delta_{pq} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
+    \left(\Gr{X}{k}{l}{p}{q}\right)_{13}\left(\Gr{X}{p}{q}{m}{n}\right)_{23}
+  \end{align}
+and   \[(\epsilon \otimes
+    \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{\mathcal{H}}{k}{l}}\] 
+for all possible indices.
+\end{Def} 
+
 \begin{Lem} \label{lemma:rep-corep}
   Let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be a row-
   and column-finite $I^{2}$-graded Hilbert space and let

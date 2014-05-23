@@ -78,7 +78,7 @@
 \newcommand{\Ss}{\mathbb{S}}
 \newcommand{\ZZ}{\mathscr{Z}}
 \newcommand{\ad}{\mathrm{ad}}
-\newcommand{\Hsp}{\mathscr{H}}
+\newcommand{\Hsp}{\mathcal{H}}
 \newcommand{\qn}[2]{\lbrack #1 \rbrack_{#2}}
 \newcommand{\fqn}[2]{\lbrack #1 \rbrack_{#2}!}
 \newcommand{\bqn}[3]{\left\lbrack \begin{array}{c} \!#1\! \\ \!#2\! \end{array}\right\rbrack_{#3}}
@@ -225,3 +225,106 @@
 \input{6-dyn-suq.tex}
 
 \end{document}
+
+Scraps of section 2 for further ref.
+
+\section{Structure theory for compact quantum groups of face type}
+
+
+\begin{Def} A \emph{(right) comodule} for a generalized face bialgebra $(A,\Delta)$ over $I$ is an $I^2$-graded vector space $V = \osum{K\in I^2} V(K)$ together with linear maps \[\delta\Grru{K}{L}:V(L)\rightarrow V(K)\otimes A\Grru{K}{L}\] satisfying \[(\id\otimes \Delta\Grru{K}{L})\delta(K*L) = (\delta(K)\otimes \id)\delta(L)\] and \[(\id\otimes \varepsilon_K)\delta\Grru{K}{K} = \id_{V(K)}.\]
+
+We say $(V,\delta)$ is \emph{of finite type} (or simply \emph{finite}) if the support of $M\mapsto V(M)$ is finite in one variable if the other variable is held fixed.% Call this separately finite support? 
+\end{Def}
+
+For example, each $\oplus_{L} A\Grru{K}{L}$ is a right comodule under $\Delta$. We will write \[\delta(M)(v) = v_{(0)M_u}\otimes v_{(1)M},\] to be interpreted as zero if $v\notin V(M_u)$.
+
+We have a tensor product $\boxtimes$ on finite comodules by putting \[(V\boxtimes W)(M) = \underset{K\cdot L = M}{\oplus} (V(K)\otimes V(L))\] with comodule structure \[\delta(M)(v\otimes w) = \underset{K\cdot L = M}{\sum} v_{(0)K_u}\otimes w_{(0)L_u} \otimes v_{(1)K}w_{(1)L}.\] We then obtain a tenor category with unit the vector space $\mathbf{1} = \Fun_{\fin}(I)$ of finite support functions on $I$ with grading $\mathbf{1}(k,l) = \delta_{k,l} \C \delta_k$ (with $\delta_k$ the Dirac function at $k$) and comodule structure \[\delta(K,K)(\delta_{K_d}) = \delta_{K_u}\otimes e(K).\]
+
+When $(A,\Delta)$ is a Hopf face algebra, this tensor category admits left % or right - sort out
+ duals. Indeed, define $(V^*)(M) = V(M^{\circ})^*$ with coaction \[(\delta(M)(\omega))(v) = \omega(v_{(0)M_d^{\circ}})S(v_{(1)M^{\circ\bullet}}),\qquad \omega\in V(M_d^{\circ})^*,v\in V(M_u^{\circ}).\] Then the natural dualities between the $V(K)$ and $V^*(K^{\circ})$ lead to comodule maps \[\oplus_{K} V^*(K^{\circ})\otimes V(K) \rightarrow \mathbf{1}_K,\qquad \mathbf{1}_K\rightarrow \oplus_K V(K)\otimes V^*(K^{\circ}).\]
+
+%\subsection{Invariant functionals}
+
+Let us now turn to the notion of invariant functional.
+
+\begin{Def} Let $I$ be a set. An \emph{invariant functional} for a Hopf face algebra $(A,\Delta)$ over $I$ is a functional $\varphi:A \rightarrow \C$ such that for all $K,L$ and $a\in A(K*L)$ we have \[(\id\otimes \varphi)\Delta\Grru{K}{L}(a) = \delta_{K_l,K_r}\varphi(a)e(K_l),\qquad (\varphi\otimes \id)\Delta\Grru{K}{L}(a) = \delta_{L_l,L_r} \varphi(a)e(L_r).\] We say that $\varphi$ is normalized if $\varphi(\lambda_k\rho_l)=1$ for all $k,l\in I$ with $\lambda_k\rho_l\neq 0$.
+\end{Def}
+
+%\begin{Lem} We have $\varphi(\Gr{A}{k}{l}{m}{n}) = \delta_{k,l}\delta_{m,n}\C$.\end{Lem}
+
+% TODO: make connection with weak multiplier Hopf algebras
+
+\begin{Lem} An invariant normalized functional $\varphi$ is faithful, i.e. $\varphi(ab)=0$ for all $b$ implies $b=0$, and $\varphi(ab)=0$ for all $a$ implies $b=0$.
+\end{Lem}
+
+\begin{proof} We follow ad verbatim the proof of Proposition 3.4 in [VDae, Algebraic framework]: if $\varphi(ba)=0$ for all $a$, we arrive at the conclusion that for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\wDelta(a))$ satisfies $(\id\otimes \varphi)((1\otimes c)\wDelta(p)) = 0$. Continuing as in that proof, we obtain from the antipode trick that $\sum_n \varphi(cS(q)\rho_n)\varepsilon(p\lambda_n)=0$. Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\varepsilon(p\lambda_n)=0$ for all $n$, hence $\varepsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+
+The other case follows similarly, considering the opposite algebra.
+\end{proof}
+
+% This part is necessary to put into Enock framework, but might possibly be skipped if we only want an operator algebra implementation of dynamical quantum SU(2), as then one has enough with the multiplicative unitaries
+Our next aim is to prove that a normalized invariant functional is modular, that is, there exists an automorphism $\sigma: A\rightarrow A$ such that for all $a,b\in A$, we have \[\varphi(ba) = \varphi(a\sigma(b)).\]
+
+\begin{Lem} Let $\varphi$ be a normalized invariant functional. For all $a\in A$ and $k,m\in I$, we have \[\varphi(a\lambda_k) = \varphi(\lambda_ka),\qquad \varphi(a\rho_m) = \varphi(\rho_ma).\]
+\end{Lem}
+
+\begin{proof}
+
+\end{proof}
+
+
+
+\begin{Def} Define \[V: \osum{n} A_n\otimes {}_{n}A \rightarrow \osum{r} {}_rA\otimes {}^rA\] by the formula \[a\otimes b\rightarrow \wDelta(a)(1\otimes b).\]
+\end{Def}
+
+\begin{Lem}\label{LemUni} The map $V$ is an isomorphism.
+\end{Lem}
+\begin{proof} As $\wDelta(A)(A\otimes A)\subseteq E(A\otimes A)$ with $E = \sum_p \rho_p\otimes \lambda_p$, it is clear that $V$ has the proper range. Define \[\widetilde{V}:  \osum{r} {}_rA\otimes {}^rA\rightarrow\osum{n} A_n\otimes {}_{n}A\] by means of the formula \[a\otimes b \mapsto a_{(1)}\otimes S(a_{(2)})b = a_{(1)}\otimes S(S^{-1}(b)a_{(2)}).\]
+
+By the defining property of $S$, we find that for all $a,b,c\in A$, we have \[(c\otimes 1)\cdot (\widetilde{V}V)(a\otimes b) = \sum_p ca_{(1)}\varepsilon(a_{(2)}\lambda_p)\otimes \rho_pb.\] By the previous lemma, this equals $\sum_p ca_{(1)}\varepsilon(a_{(2)}\rho_p)\otimes \rho_pb$. But as $a\otimes b = \sum_p a\rho_p\otimes \rho_pb$ by assumption, we obtain that \[(c\otimes 1)\cdot (\widetilde{V}V)(a\otimes b) = ca_{(1)}\varepsilon(a_{(2)})\otimes b = ca\otimes b,\] proving that $\widetilde{V}V(a\otimes b) = a\otimes b$.
+
+The identity $V\widetilde{V} = \id$ is proven similarly.
+\end{proof}
+
+\begin{Cor} Define \[W: \osum{n} {}_n A \otimes {}^nA  \rightarrow \osum{r} \; {}^rA\otimes A^r\] by the formula \[a\otimes b \rightarrow S^{-1}(b_{(1)})a\otimes d_{(2)} = S^{-1}(S(a)b_{(1)})\otimes b_{(2)}.\] Then $W$ is invertible, its inverse being given as \[W^{-1}(a\otimes b) = \wDelta(b)(a\otimes 1).\]
+\end{Cor}
+
+\begin{proof} Apply the previous Lemma to $(A,\Delta^{\op})$.
+\end{proof}
+
+
+
+\subsection{Generalized compact Hopf face algebras}
+
+
+A non-degenerate algebra $A$ is called a $^*$-algebra if it comes equipped with an anti-linear involutive anti-homomorphism $A\rightarrow A, a\mapsto a^*$. In this case, $M(A)$ becomes a $^*$-algebra in a natural way. For example, we always consider $\Fun_{\fin}(I)$ as a $^*$-algebra by the ordinary complex conjugation of functions, $f^*(k) = \overline{f(k)}$.
+
+
+
+
+\begin{Def} A couple $(A,\Delta)$ consisting of a generalized Hopf face $^*$-algebra with an invertible antipode invariant normalized functional $\varphi$ is called a \emph{generalized compact face algebra}.
+\end{Def}
+
+One proves that a generalized Hopf face $^*$-algebra has $S(S(x)^*)^*=x$ for all $x$, so $S$ is automatically invertible. It then follows by symmetry that also the maps \[(W^{k,t}_{m,n,u,v})^*: \oplus_l \Gr{A}{k}{l}{m}{n} \otimes \Gr{A}{l}{t}{u}{v} \rightarrow \oplus_r \Gr{A}{k}{t}{m}{r}\otimes \Gr{A}{n}{r}{u}{v}\] defined by the formula \[a\otimes b\rightarrow \Delta(b)(a\otimes 1)\] are unitaries, with inverse map $a\otimes b\mapsto S^{-1}(b_{(1)})a\otimes b_{(2)}$.
+
+\begin{Lem}\label{LemUni} Let $(A,\Delta)$ be a generalized compact face algebra. Then each $V^{k,l,s,t}_{m,v}$ is a unitary, and similarly for the $W^{k,t}_{m,n,u,v}$.
+\end{Lem}
+
+\begin{proof} It is immediately checked that $V^{k,l,s,t}_{m,v}$ is isometric.
+\end{proof}
+
+Let us write $\mathscr{L}^2(A,\varphi)$ for the completion of $A$ with respect to the inner product $\langle a,b\rangle = \varphi(a^*b)$. The canonical inclusion of $A$ into $\mathscr{L}^2(A)$ will be denoted $\Lambda$.
+
+\begin{Lem} Assume $(A,\Delta)$ is a generalized compact face algebra. The representation of $A$ by left multiplication on itself extends to a representation by bounded operators on the completion $\mathscr{L}^2(A,\varphi)$.
+\end{Lem}
+
+\begin{proof} Denote $\omega_{\xi,\eta}(x) = \langle \xi,x\eta\rangle$ for $\xi,\eta$ vectors and $x$ a bounded operator. Then a straightforward computation shows that \[(\omega_{\Lambda(a),\Lambda(b)}\otimes \id)(V) = \varphi(a^*b_{(1)})b_{(2)}\] as a left multiplication operator. As $(A\otimes 1)\Delta(A) = (A\otimes A)\Delta(1)$ by Lemma \ref{LemUni} (applied to the opposite algebra), it follows by normalization of $\varphi$ that each element of $A$ can be represented in the form $(\omega_{\Lambda(a),\Lambda(b)}\otimes \id)(V)$, and hence extends to a bounded operator on $\mathscr{L}^2(A,\varphi)$.
+\end{proof}
+
+In the following, we will abbreviate $\mathscr{L}^2(A)$ by $L^2A$.
+
+Let $(A,\Delta)$ be a generalized compact face algebra. Denote the von Neumann algebraic completion of $A\subseteq B(L^2A)$ by $M$. Denote $L^2A\iitimes L^2A = E(L^2A\otimes L^2A)$, where $E = \sum_p \rho_p\otimes \lambda_p$ is extended to a bounded operator (in fact, a self-adjoint projection). Finally, denote $M\itimes M = E(M\otimes M)E$. Then $M\itimes M$ is the von Neumann algebraic completion of $A\itimes A$.
+
+Extend now the $V^{k,l,s,t}_{m,v}$ to unitaries \[V: \oplus_p L^2(A_p)\otimes L^2({}_pA) \rightarrow \oplus_p L^2({}_pA)\otimes L^2({}^pA)= E(L^2A\otimes L^2A).\] Then we can construct a map \[\Delta: M\rightarrow M\itimes M,\quad x\rightarrow V(x\otimes 1)V^*.\] By direct computation, we see that $\Delta$ extends the comultiplication map on $A$. It is then immediate to check that $\Delta$ is in fact coassociative (where one may as well consider $\Delta$ as a non-unital map from $M$ to $M\otimes M$).
+
+We aim to show that $(M,\Delta)$ can be fitted into the theory of measured quantum groupoids.
