@@ -27,11 +27,10 @@
 % $Z=(\Gr{Z}{k}{l}{m}{n})_{k,l,m,n}$ in 2.\ is uniquely
 % determined by $X$ and will be denoted by $X^{-1}$.
 
-Let $\mathscr{A}$ be an $I$-partial bialgebra. An $I^2$-graded Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ will be called \emph{locally supported} %better name... 
-if $\Gru{\Hsp}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed.
+Let $\mathscr{A}$ be an $I$-partial bialgebra. 
 
-\begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be a locally supported $I^{2}$-graded Hilbert space.
-A \emph{locally finite corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $\Hsp$ consists of a family of elements 
+\begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be an $I^{2}$-graded Hilbert space.
+A \emph{corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $\Hsp$ consists of a family of elements 
   $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
   \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$
   satisfying
@@ -42,123 +41,99 @@ A \emph{locally finite corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of 
 and   \[(\epsilon \otimes
     \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{\mathcal{H}}{k}{l}}\] 
 for all possible indices.
-\end{Def} 
+\end{Def} % Drop s.f. and say we only work with s.f. coreps.?
 
-\begin{Lem} \label{lemma:rep-corep}
-  Let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be a row-
-  and column-finite $I^{2}$-graded Hilbert space and let
-  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ be a family of elements
-  $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
-  \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$
-  satisfying
-  \begin{align} \label{eq:rep-delta}
-    (\tilde \Delta \otimes \id)(\Gr{X}{k}{l}{m}{n}) = \sum_{p,q}
-    \left(\Gr{X}{k}{l}{p}{q}\right)_{13}\left(\Gr{X}{p}{q}{m}{n}\right)_{23}. 
-  \end{align}
-  Then the following conditions are equivalent:
-  \begin{enumerate}
-  \item $(\epsilon \otimes
-    \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{\mathcal{H}}{k}{l}}$;
-  \item there exist elements $\Gr{Z}{k}{l}{m}{n} \in
-    \Gr{A}{n}{m}{l}{k} \otimes
-    \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$ such
-    that
-  \begin{align*}
-    \sum_{k} \Gr{Z}{m}{n'}{k}{l} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
-    \lambda_{l} \rho_{n} \otimes \id_{\Gru{\mathcal{H}}{m}{n}}, &
-    \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{m}{n}{k'}{l} &= \delta_{k,k'}
-    \lambda_{k} \rho_{m} \otimes \id_{\Gru{\mathcal{H}}{k}{l}}.
-  \end{align*}
-  \end{enumerate}
-  If these conditions hold, then the family $X^{-1}:=Z$ is unique and
-  given by $\Gr{(X^{-1})}{k}{l}{m}{n}=(S \otimes
-  \id)(\Gr{X}{k}{l}{m}{n})$. In particular, it satisfies
-  \begin{align*}
-    (\tilde \Delta \otimes \id)(\Gr{(X^{-1})}{k}{l}{m}{n}) &=
-    \sum_{p,q}
-    \left(\Gr{(X^{-1})}{k}{l}{m}{n}\right)_{23}\left(\Gr{(X^{-1})}{m}{n}{p}{q}\right)_{13}.
-  \end{align*}
-\end{Lem}
-Note that the sum in \eqref{eq:rep-delta} makes sense in the
-multiplier algebra, and that the sums in (2) are finite because
-$\mathcal{H}$ is row- and column-finite. If it exists, we denote the family $Z$ in condition (2)  by $X^{-1}$.
-\begin{proof}
-   Assume that (1) holds and let  $\Gr{Z}{k}{l}{m}{n}=(S \otimes
-   \id)(\Gr{X}{k}{l}{m}{n})$. Then the antipode axiom implies
-   \begin{align*}
-     \sum_{k} \Gr{Z}{m}{n'}{k}{l} \Gr{X}{k}{l}{m}{n} &= \sum_{k}
-     (S\otimes \id)(\Gr{X}{m}{n'}{k}{l}) \Gr{X}{k}{l}{m}{n}
-     \\
-     &=\sum_{k} (m_{A} \otimes \id)(S\otimes \id \otimes \id) (
-     (\Gr{X}{m}{n
-       '}{k}{l})_{13}(\Gr{X}{k}{l}{m}{n})_{23}) \\
-     &= (m_{A} \otimes \id)(S\otimes \id \otimes \id)((\tilde \Delta
-     \otimes \id)(\Gr{X}{m}{n'}{m}{n})(1 \otimes \lambda_{l}\otimes
-     1)) \\
-     &= \sum_{p} \rho_{p}\lambda_{l} \otimes (\epsilon(-\lambda_{p}
-    ) \otimes \id)(\Gr{X}{m}{n'}{m}{n}) \\
-     &= \rho_{n}\lambda_{l} \otimes \delta_{n',n}
-     \id_{\Gru{\mathcal{H}}{m}{n}},
-   \end{align*}
-   which is the first equation in (2). The second one follows
-   similarly.
+Let us call an $I^2$-graded Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ \emph{separately finitely supported (sfs)} %better name? 
+if $\Gru{\Hsp}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed. Similarly, a corepresentation will be called separately finitely supported if its carrier $I^2$-graded Hilbert space is separately finitely supported.
 
-   Conversely, assume that (2) holds. Then uniqueness of the family
-   $Z$ is easily verified. Let $\Gr{c}{k}{l}{m}{n}:=(\epsilon \otimes
-   \id)(\Gr{X}{k}{l}{m}{n})$.  If $(k,l)\neq (m,n)$, then
-   $\Gr{c}{k}{l}{m}{n} = 0$ because
-   $\epsilon(\Gr{A}{k}{l}{m}{n})=0$. Relation \eqref{eq:rep-delta} and
-   the counit property imply
-\begin{align*}
-  \Gr{X}{k}{l}{m}{n} &=
-  (\lambda_{k} \otimes 1)\Gr{X}{k}{l}{m}{n}(\lambda_{l}\otimes 1) \\
-  &= (\epsilon \otimes \id \otimes \id)(((1 \otimes \lambda_{k} \otimes
-  1)(\hat \Delta \otimes \id)(\Gr{X}{k}{l}{m}{n})(1 \otimes \lambda_{l}
-  \otimes 1)) \\ &=(\epsilon \otimes \id \otimes \id)
-  \left(\left(\Gr{X}{k}{l}{k}{l}\right)_{13}\left(\Gr{X}{k}{l}{m}{n}\right)_{23}\right)
-\\ &  = (1 \otimes \Gr{c}{k}{l}{k}{l}) \Gr{X}{k}{l}{m}{n}.
-   \end{align*}
-   We multiply on the right by $\Gr{Z}{m}{n}{k}{l}$, sum over $n$, use
-   condition (2) and find
-   $\Gr{c}{k}{l}{k}{l}=\id_{\Gru{\mathcal{H}}{k}{l}}$.
-\end{proof}
-
-A \emph{locally finite corepresentation of $(A,\Delta)$} is a pair
-$(\mathcal{H},X)$ as above satisfying conditions (1) and (2). A
-\emph{morphism} $T$ between two such corepresentations
-$(\mathcal{H},X)$ and $(\mathcal{K},Y)$ is a family of morphisms
+\begin{Def} A \emph{morphism} $T$ between two corepresentations
+$(\mathcal{H},X)$ and $(\mathcal{K},Y)$ is a family of bounded linear maps
 $\Gru{T}{k}{l} \in
 \mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$
 satisfying $(1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} =
-\Gr{Y}{k}{l}{m}{n}(1 \otimes \Gru{T}{m}{n})$.  Using condition (2) in
-Lemma \ref{lemma:rep-corep}, one finds that the last equation holds if
+\Gr{Y}{k}{l}{m}{n}(1 \otimes \Gru{T}{m}{n})$.
+
+ We call $T$ \emph{bounded} when $\oplus_{k,l} \Gru{T}{k}{l}$ is bounded.
+\end{Def}
+
+The following lemma shows that when $\mathscr{A}$ is a partial Hopf algebra, an sfs corepresentation is invertible.
+
+% Local finite-dimensionality not needed?
+\begin{Lem} \label{lemma:rep-corep} Let $\mathscr{A}$ be a partial Hopf algebra, and let $X$ be an sfs corepresentation of $\mathscr{A}$ on an $I^2$-graded Hilbert space $\Hsp$.
+  Then the elements % More logical to give the $Z$ the grading of the component in $A$ to which they belong
+  \[\Gr{Z}{k}{l}{m}{n} =(S \otimes
+  \id)(\Gr{X}{n}{m}{l}{k}) \in
+    \Gr{A}{k}{l}{m}{n} \otimes
+    \mathcal{B}(\Gru{\mathcal{H}}{l}{k},\Gru{\mathcal{H}}{n}{m})\] are the unique elements such  that
+  \begin{align}\label{eq:rep-delta}
+    \sum_{k} \Gr{Z}{l}{k}{n'}{m} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
+    \UnitC{l}{n} \otimes \id_{\Gru{\mathcal{H}}{m}{n}}, &
+    \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{l}{k'}{n}{m} &= \delta_{k,k'}
+    \UnitC{k}{m}\otimes \id_{\Gru{\mathcal{H}}{k}{l}}.
+  \end{align}
+   In particular, they satisfy
+  \begin{align*}
+    (\Delta_{pq} \otimes \id)(\Gr{Z}{k}{l}{m}{n}) &=
+    \left(\Gr{Z}{p}{q}{m}{n}\right)_{23}\left(\Gr{Z}{p}{q}{k}{l}\right)_{13}.
+  \end{align*}
+\end{Lem}
+Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is sfs. If it exists, we denote the family $Z$ by $X^{-1}$.
+\begin{proof}
+ Let  $\Gr{Z}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{k}{l}{m}{n})$, and write the multiplication of $A$ as $M_A$. Then the antipode axiom implies
+   \begin{align*}
+     \sum_{k} \Gr{Z}{l}{k}{n'}{m} \Gr{X}{k}{l}{m}{n} &= \sum_{k}
+     (S\otimes \id)(\Gr{X}{m}{n'}{k}{l}) \Gr{X}{k}{l}{m}{n}
+     \\
+     &=\sum_{k} (M_A \otimes \id)(S\otimes \id \otimes \id) (
+     (\Gr{X}{m}{n
+       '}{k}{l})_{13}(\Gr{X}{k}{l}{m}{n})_{23}) \\
+     &= (M_A\otimes \id)(S\otimes \id \otimes \id)\sum_{k}((\Delta_{kl}
+     \otimes \id)(\Gr{X}{m}{n'}{m}{n}) \\
+     &= \delta_{n,n'} \UnitC{l}{n}\otimes (\varepsilon\otimes \id)(\Gr{X}{m}{n}{m}{n}) \\
+     &= \delta_{n,n'}\UnitC{l}{n} \otimes 
+     \id_{\Gru{\mathcal{H}}{m}{n}}.
+   \end{align*} The second identity follows
+   similarly.
+
+ Uniqueness follows immediately from the identities  \eqref{eq:rep-delta}.
+\end{proof}
+
+ \begin{Rem} % To see if this has to be modified.
+ Using \eqref{eq:rep-delta}, one finds that a collection of bounded operators $\Gru{T}{k}{l} \in
+\mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$ forms a morphism between two corepresentations
+$(\mathcal{H},X)$ and $(\mathcal{K},Y)$  if
 and only if
   \begin{align} 
-    \sum_{m} \Gr{(Y^{-1})}{k}{l'}{m}{n}(1 \otimes
+    \sum_{m} \Gr{(Y^{-1})}{n}{m}{l'}{k}(1 \otimes
     \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} &= \delta_{l,l'}
-    \lambda_{n}\rho_{l} \otimes \Gru{T}{k}{l}, \\
+    \UnitC{n}{l} \otimes \Gru{T}{k}{l}, \\
     \sum_{n} \Gr{Y}{k'}{l}{m}{n}(1 \otimes
-    \Gru{T}{m}{n})\Gr{(X^{-1})}{m}{n}{k}{l} &= \delta_{k,k'}
-    \lambda_{m} \rho_{k} \otimes \Gru{T}{k}{l}.
+    \Gru{T}{m}{n})\Gr{(X^{-1})}{l}{k}{n}{m} &= \delta_{k,k'}
+    \UnitC{m}{k} \otimes \Gru{T}{k}{l}.
  \end{align}
 For example, if the first equation holds, then
 \begin{align*}
   \Gr{Y}{m}{n}{k}{l} (1 \otimes \Gru{T}{k}{l}) &=
-  \sum_{m}  \Gr{Y}{m}{n}{k}{l} \Gr{(Y^{-1})}{k}{l}{m}{n}(1 \otimes
-  \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} = (\lambda_{k}\rho_{m}\otimes \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l}.
+  \sum_{m}  \Gr{Y}{m}{n}{k}{l} \Gr{(Y^{-1})}{n}{m}{l}{k}(1 \otimes
+  \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} = (\UnitC{k}{m}\otimes \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l}.
 \end{align*}
 Conversely, if $T$ is a morphism, then
 \begin{align*}
-  \sum_{m} \Gr{(Y^{-1})}{k}{l'}{m}{n}(1 \otimes
+  \sum_{m} \Gr{(Y^{-1})}{n}{m}{l'}{k}(1 \otimes
   \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l} &= \sum_{m}
-  \Gr{(Y^{-1})}{k}{l'}{m}{n} \Gr{Y}{m}{n}{k}{l}(1 \otimes
-  \Gru{T}{k}{l}) = \delta_{l',l} \lambda_{n}\rho_{l} \otimes
+  \Gr{(Y^{-1})}{n}{m}{l'}{k} \Gr{Y}{m}{n}{k}{l}(1 \otimes
+  \Gru{T}{k}{l}) = \delta_{l',l} \UnitC{n}{l} \otimes
   \Gru{T}{k}{l}.
 \end{align*}
+\end{Rem}
+%In the following we will write $X^{-1}:=Z$.
 
-We denote by $\Corep(A,\Delta)$ the category of locally finite
-corepresentations of $(A,\Delta)$ with morphisms as above.
+Let us say an $I^2$-graded Hilbert space $\Hsp$ is seperately finite dimensional (sfd) if $\oplus_l \Gru{\Hsp}{k}{l}$ (resp. $\oplus_l \Gru{\Hsp}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation. 
 
+\begin{Def} We denote by $\Corep(A,\Delta)$ the category of sfd corepresentations of $(A,\Delta)$ with bounded morphisms.
+\end{Def}
+
+Clearly $\Corep(A,\Delta)$ is a $\C$-linear category. The next Lemma, which is an analogue of Schur's lemma, shows that it is semi-simple.
 
 Let $(\mathcal{H},X)$ be a locally finite
 corepresentation. We call a family of subspaces

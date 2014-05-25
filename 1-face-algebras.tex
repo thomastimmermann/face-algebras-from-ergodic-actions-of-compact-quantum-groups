@@ -229,7 +229,7 @@ We have the following formulas for the maps $\overline{\Pi}^L,\overline{\Pi}^R,\
 
 We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak (multiplier) Hopf algebra. Let us denote $\circ$ for the inverse of $\wmult$, and $\bullet$ for the inverse of $\bmult$, so \[\begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ} = \begin{pmatrix} l & k \\ n & m \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\bullet} = \begin{pmatrix} m & n \\ k & l \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ \bullet} = \begin{pmatrix} n & m \\ l & k \end{pmatrix}.\] The notation $\circ$ (resp. $\bullet$) will also be used for row vectors (resp. column vectors).
 
-
+% Write this out more explicitly
 \begin{Def}\label{DefPartBiAlgAnt} An \emph{antipode} for an $I$-partial multiplier bialgebra $\mathscr{A}$ consists of maps $S:A(K)\rightarrow A(K^{\circ\bullet})$
 % $S: \eGr{A}{k}{l}{m}{n} \rightarrow \eGr{A}{n}{m}{l}{k}$ 
 such that the following property holds: for all $M,P\in M_2(I)$ and all $a\in A(M)$, \begin{eqnarray*} \underset{K\wmult L^{\circ\bullet}=P}{\sum_{K\bmult L = M}} a_{(1)K}S(a_{(2)L})= \delta_{P_l,P_r}\varepsilon(a)\mathbf{1}(P_l),\\\underset{K^{\circ\bullet}\wmult L=P}{\sum_{K\bmult L = M}} S(a_{(1)K})a_{(2)L}= \delta_{P_l,P_r}\varepsilon(a)\mathbf{1}(P_r).\end{eqnarray*}
@@ -297,7 +297,7 @@ A partial Hopf $^*$-algebra is a partial bialgebra which is at the same time a p
 \begin{Def} Let $\mathscr{A}$ be a partial bi-algebra. An \emph{invariant functional} $\varphi$ for $\mathscr{A}$ consists of a functional $\varphi:A\rightarrow \C$ with support on the $\eGr{A}{k}{k}{m}{m}$ such that for all $a\in \eGr{A}{k}{l}{m}{n}$ and all $b$, one has  \[(\id\otimes \varphi)(b\otimes 1)\Delta(a)) = \varphi(a)b\lambda_k,\] and \[(\varphi\otimes \id)(\Delta(a)(1\otimes b) = \varphi(a)\rho_nb.\]
 
 We call $\varphi$ \emph{normalized} if $\varphi(\UnitC{k}{k}) = 1$ for all $k$. 
-\end{Def} 
+\end{Def} % More motivation for this notion to be provided?
 
 \begin{Rem} If $\varphi$ is normalized, it follows immediately from the definining property that $\varphi(\UnitC{k}{l})=1$ whenever $\UnitC{k}{l}\neq 0$.
 \end{Rem} 
@@ -312,7 +312,7 @@ We will need the following lemma at some point, which is an almost verbatim tran
 \begin{Lem} Let $\mathscr{A}$ be a partial Hopf algebra, and let $\varphi$ be a normalized invariant functional for $\mathscr{A}$. Then $\varphi$ is faithful: if $a\in A$ and $\varphi(ab) =0$ (resp. $\varphi(ba)=0$) for all $b\in A$, then $a=0$.
 \end{Lem} 
 % To be tidied up
-\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$, we arrive at the conclusion that for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\wDelta(b))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in that proof, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\varepsilon(p\lambda_n)=0\]. Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\varepsilon(p\lambda_n)=0$ for all $n$, hence $\varepsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$, we arrive at the conclusion that for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\wDelta(b))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in that proof, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\varepsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\varepsilon(p\lambda_n)=0$ for all $n$, hence $\varepsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
 
 The other case follows similarly, or by considering the opposite bialgebra.
 \end{proof} 
