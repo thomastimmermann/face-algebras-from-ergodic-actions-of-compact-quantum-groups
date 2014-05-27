@@ -1,5 +1,7 @@
 \section{Structure theory}
 
+In this section, the representation theory of compact quantum groups of face type is investigated. As the situation is quite similar to the case already studied by Hayashi, we do not provide full proofs, but only draw attention to those parts of the theory which need modification.
+
 \subsection{Corepresentations of partial Hopf algebras}
 
 % A \emph{locally finite corepresentation}
@@ -27,49 +29,86 @@
 % $Z=(\Gr{Z}{k}{l}{m}{n})_{k,l,m,n}$ in 2.\ is uniquely
 % determined by $X$ and will be denoted by $X^{-1}$.
 
-Let $\mathscr{A}$ be an $I$-partial bialgebra. 
+Let $\mathscr{A}$ be an $I$-partial bialgebra. We denote $\mathcal{L}(V,W)$ for the vector space of linear maps between two vector spaces.
 
-\begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ be an $I^{2}$-graded Hilbert space.
-A \emph{corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $\Hsp$ consists of a family of elements 
+\begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ be an $I^{2}$-graded vector space.
+A \emph{corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $V$ consists of a family of elements 
   $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
-  \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$
+  \mathcal{L}(\Gru{\Vv}{m}{n},\Gru{V}{k}{l})$
   satisfying
   \begin{align} \label{eq:rep-delta}
     (\Delta_{pq} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
     \left(\Gr{X}{k}{l}{p}{q}\right)_{13}\left(\Gr{X}{p}{q}{m}{n}\right)_{23}
   \end{align}
 and   \[(\epsilon \otimes
-    \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{\mathcal{H}}{k}{l}}\] 
+    \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{V}{k}{l}}\] 
 for all possible indices.
 \end{Def} % Drop s.f. and say we only work with s.f. coreps.?
 
-Let us call an $I^2$-graded Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$ \emph{separately finitely supported (sfs)} %better name? 
-if $\Gru{\Hsp}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed. Similarly, a corepresentation will be called separately finitely supported if its carrier $I^2$-graded Hilbert space is separately finitely supported.
-
-\begin{Def} A \emph{morphism} $T$ between two corepresentations
-$(\mathcal{H},X)$ and $(\mathcal{K},Y)$ is a family of bounded linear maps
+\begin{Def}\label{DefMorphism} A \emph{morphism} $T$ between two corepresentations
+$(V,X)$ and $(W,Y)$ is a family of linear maps
 $\Gru{T}{k}{l} \in
-\mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$
+\mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$
 satisfying $(1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} =
 \Gr{Y}{k}{l}{m}{n}(1 \otimes \Gru{T}{m}{n})$.
-
- We call $T$ \emph{bounded} when $\oplus_{k,l} \Gru{T}{k}{l}$ is bounded.
+% We call $T$ \emph{bounded} when $\oplus_{k,l} \Gru{T}{k}{l}$ is bounded.
 \end{Def}
+
+\begin{Def} Let $(V,X)$ be a locally finite
+corepresentation. We call a family of subspaces
+$\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$
+\emph{invariant} if $(1\otimes \Gru{Q}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =0$,
+where $\Gru{P}{k}{l}:\Gru{W}{k}{l}\to\Gru{V}{k}{l}$ is the inclusion map and $\Gru{Q}{k}{l}:\Gru{V}{k}{l}\to\Gru{V}{k}{l}/\Gru{W}{k}{l}$
+denotes the quotient map.
+\end{Def}
+
+The following analogue of Schur's Lemma holds.
+
+\begin{Lem} Let $T$ be a morphism
+of locally finite corepresentations $(V,X)$ and
+$(W,Y)$. Then $ \bigoplus_{k,l} \ker \Gru{T}{k}{l}$ and
+$\bigoplus_{k,l} \img \Gru{T}{k}{l}$ are invariant subspaces of
+$V$ and $W$, respectively.
+\end{Lem} 
+
+In particular, if $(V,X)$ and $(W,Y)$ are irreducible, then a morphism $T$ from $V$ to $W$ is
+either $0$ or an isomorphism.
+
+\begin{Def} We denote by $\Corep(A,\Delta)$ the category of corepresentations of $(A,\Delta)$ with morphisms as in Definition \ref{DefMorphism}.
+\end{Def}
+
+Clearly $\Corep(A,\Delta)$ is a $\C$-linear category. The next lemma provides one with a tensor product structure on this category.
+
+\begin{Lem} Let $X$ and $Y$ be two sfd copresentations on respective $I^2$-graded vector spaces $V$ and $W$. Put $V\itimes W = \oplus_k \Gru{V}{k}{l} \otimes \Gru{W}{k}{l}$ with its natural $I^2$-grading. Then \begin{eqnarray*} \Gr{(X\Circt Y)}{k}{p}{m}{q} = \sum_{l,n} \left(\Gr{X}{k}{l}{m}{n}\right)_{12}\left(\Gr{Y}{l}{p}{n}{q}\right)_{13} &\in \oplus_{l,n} \left( \Gr{A}{k}{l}{m}{n}\otimes \mathcal{L}(\Gru{V}{m}{n},\Gru{V}{k}{l})\otimes \mathcal{L}(\Gru{W}{n}{w},\Gru{W}{l}{p})\right) \\& \subseteq  \Gr{A}{k}{l}{m}{n}\otimes \mathcal{L}(\Gru{(V\itimes W)}{m}{q},\Gru{(V\itimes W)}{k}{p})\end{eqnarray*} is a corepresentation.
+\end{Lem} 
+
+\begin{proof} This follows from the multiplicativity of $\Delta$ and the weak multiplicativity of $\varepsilon$. % To expand?
+\end{proof} 
+
+\begin{Cor} The category $\Corep(A,\Delta)$ with the above tensor product $\Circt$ forms a tensor category.
+\end{Cor}
+\begin{proof} Clear.
+\end{proof} 
+
+Let us call an $I^2$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ \emph{separately finitely supported (sfs)} %better name? 
+if $\Gru{V}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed. Similarly, a corepresentation will be called separately finitely supported if its carrier $I^2$-graded vector space is separately finitely supported. It is easily seen that sfs corepresentations are stable under $\Circt$. 
+
+%  Antipode duality.% To continue.
 
 The following lemma shows that when $\mathscr{A}$ is a partial Hopf algebra, an sfs corepresentation is invertible.
 
 % Local finite-dimensionality not needed?
-\begin{Lem} \label{lemma:rep-corep} Let $\mathscr{A}$ be a partial Hopf algebra, and let $X$ be an sfs corepresentation of $\mathscr{A}$ on an $I^2$-graded Hilbert space $\Hsp$.
+\begin{Lem} \label{lemma:rep-corep} Let $\mathscr{A}$ be a partial Hopf algebra, and let $X$ be an sfs corepresentation of $\mathscr{A}$ on an $I^2$-graded vector space $V$.
   Then the elements % More logical to give the $Z$ the grading of the component in $A$ to which they belong
   \[\Gr{Z}{k}{l}{m}{n} =(S \otimes
   \id)(\Gr{X}{n}{m}{l}{k}) \in
     \Gr{A}{k}{l}{m}{n} \otimes
-    \mathcal{B}(\Gru{\mathcal{H}}{l}{k},\Gru{\mathcal{H}}{n}{m})\] are the unique elements such  that
+    \mathcal{L}(\Gru{V}{l}{k},\Gru{W}{n}{m})\] are the unique elements such  that
   \begin{align}\label{eq:rep-delta}
     \sum_{k} \Gr{Z}{l}{k}{n'}{m} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
-    \UnitC{l}{n} \otimes \id_{\Gru{\mathcal{H}}{m}{n}}, &
+    \UnitC{l}{n} \otimes \id_{\Gru{V}{m}{n}}, &
     \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{l}{k'}{n}{m} &= \delta_{k,k'}
-    \UnitC{k}{m}\otimes \id_{\Gru{\mathcal{H}}{k}{l}}.
+    \UnitC{k}{m}\otimes \id_{\Gru{W}{k}{l}}.
   \end{align}
    In particular, they satisfy
   \begin{align*}
@@ -91,7 +130,7 @@ Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is s
      \otimes \id)(\Gr{X}{m}{n'}{m}{n}) \\
      &= \delta_{n,n'} \UnitC{l}{n}\otimes (\varepsilon\otimes \id)(\Gr{X}{m}{n}{m}{n}) \\
      &= \delta_{n,n'}\UnitC{l}{n} \otimes 
-     \id_{\Gru{\mathcal{H}}{m}{n}}.
+     \id_{\Gru{V}{m}{n}}.
    \end{align*} The second identity follows
    similarly.
 
@@ -99,9 +138,9 @@ Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is s
 \end{proof}
 
  \begin{Rem} % To see if this has to be modified.
- Using \eqref{eq:rep-delta}, one finds that a collection of bounded operators $\Gru{T}{k}{l} \in
-\mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$ forms a morphism between two corepresentations
-$(\mathcal{H},X)$ and $(\mathcal{K},Y)$  if
+ Using \eqref{eq:rep-delta}, one finds that a collection of linear maps $\Gru{T}{k}{l} \in
+\mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ forms a morphism between two corepresentations
+$(V,X)$ and $(W,Y)$  if
 and only if
   \begin{align} 
     \sum_{m} \Gr{(Y^{-1})}{n}{m}{l'}{k}(1 \otimes
@@ -128,37 +167,26 @@ Conversely, if $T$ is a morphism, then
 \end{Rem}
 %In the following we will write $X^{-1}:=Z$.
 
-Let us say an $I^2$-graded Hilbert space $\Hsp$ is seperately finite dimensional (sfd) if $\oplus_l \Gru{\Hsp}{k}{l}$ (resp. $\oplus_l \Gru{\Hsp}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation. 
+Let us say an $I^2$-graded vector space $V$ is seperately finite dimensional (sfd) if $\oplus_l \Gru{V}{k}{l}$ (resp. $\oplus_l \Gru{V}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation. We will denote by $\Corep_{\sfd}(\mathscr{A})$ the full subcategory of $\Corep(\mathscr{A})$ consisting of sfd representations. One easily sees that this subcategory is closed under $\Circt$. 
 
-\begin{Def} We denote by $\Corep(A,\Delta)$ the category of sfd corepresentations of $(A,\Delta)$ with bounded morphisms.
-\end{Def}
+\begin{Lem} Let $\mathscr{A}$ be a partial Hopf algebra. Then $\Corep_{\sfd}(\mathscr{A})$ is a tensor category with left duality. 
+\end{Lem} 
 
-Clearly $\Corep(A,\Delta)$ is a $\C$-linear category. The next Lemma, which is an analogue of Schur's lemma, shows that it is semi-simple.
+\begin{proof} Some proof.
+\end{proof}
 
-Let $(\mathcal{H},X)$ be a locally finite
-corepresentation. We call a family of subspaces
-$\Gru{\mathcal{K}}{k}{l} \subseteq \Gru{\mathcal{H}}{k}{l}$
-\emph{invariant} if $\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =
-(1\otimes \Gru{P}{k}{l})\Gr{X}{k}{l}{m}{n}$, where $\Gru{P}{k}{l}$
-denotes the projection
-$\Gru{\mathcal{H}}{k}{l}\to\Gru{\mathcal{K}}{k}{l}$.
+Let us now enhance our partial Hopf algebras to quantum groups of face type. One then considers corepresentations on sfd \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition.
 
-The following analogue of Schur's Lemma holds.  Let $T$ be a morphism
-of locally finite corepresentations $(\mathcal{H},X)$ and
-$(\mathcal{K},Y)$. Then $ \bigoplus_{k,l} \ker \Gru{T}{k}{l}$ and
-$\bigoplus_{k,l} \img \Gru{T}{k}{l}$ are invariant subspaces of
-$\mathcal{H}$ and $\mathcal{K}$, respectively. In particular, if
-$(\mathcal{H},X)$ and $(\mathcal{K},Y)$ are irreducible, then $T$ is
-either $0$ or an isomorphism.
+%\paragraph{Unitarity of corepresentations}
 
+\begin{Def} Let $\mathscr{A}$ define a compact quantum group of face type. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space
+\emph{unitary} if $\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{m}{n}{k}{l})^{*}$.  
+\end{Def} 
 
-\paragraph{Unitarity of corepresentations}
-We call a locally finite corepresentation $(\mathcal{H},X)$
-\emph{unitary} if $\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{m}{n}{k}{l})^{*}$.  In this paragraph, we assume that
-$(A,\Delta)$ has a faithful positive functional, and show that then
-every irreducible locally finite-dimensional corepresentation is
+Our aim now is to show that every irreducible sfd corepresentation is
 equivalent to a unitary one, by embedding it into a restriction of the
 regular corepresentation.
+
 \begin{Exa} \label{exa:rep-regular}
   Assume that $(A,\Delta)$ has a positive invariant functional $\phi$
   that is faithful. 
