@@ -139,7 +139,7 @@ Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is s
  Uniqueness follows immediately from the identities  \eqref{eq:rep-delta}.
 \end{proof}
 
- \begin{Rem} % To see if this has to be modified.
+ \begin{Rem}\label{RemMorRep} % To see if this has to be modified.
  Using \eqref{eq:rep-delta}, one finds that a collection of linear maps $\Gru{T}{k}{l} \in
 \mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ forms a morphism between two corepresentations
 $(V,X)$ and $(W,Y)$  if
@@ -184,7 +184,9 @@ Let us now enhance our partial Hopf algebras to quantum groups of face type. One
 \begin{Def} Let $\mathscr{A}$ define a compact quantum group of face type. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
 \emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}.\]  
 \end{Def} 
-\begin{Rem} We assume here of course that $\Hsp$ is the \emph{closed} direct sum of all (finite-dimensional) $\Gru{\Hsp}{m}{n}$, but this does not change the notion of corepresentation which had a local definition.
+\begin{Rem} \begin{enumerate} \item We assume here of course that $\Hsp$ is the \emph{closed} direct sum of all (finite-dimensional) $\Gru{\Hsp}{m}{n}$, but this does not change the notion of corepresentation which had a local definition.
+\item Concerning morphisms, we will say a collection of $T_{kl}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus T_{k,l}$ is bounded.
+\end{enumerate}
 \end{Rem}
 
 Our aim now is to show that every irreducible sfd corepresentation is
@@ -312,32 +314,37 @@ the subspaces
 \end{proof}
 The key to the orthogonality relations is the following averaging procedure.
 \begin{Lem} \label{lem:rep-average}
-  Let $\phi$ be an invariant functional for $(A,\Delta)$, let
-  $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be locally
-  finite-dimensional corepresentations of $(A,\Delta)$ and let $T$ be
+  Let $\phi$ be an invariant functional for $\mathscr{A}$, let
+  $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be sfd corepresentations of $\mathscr{A}$ and let $T$ be
   a family of operators $\Gru{T}{k}{l} \in
-  \mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$ which
-  are $0$ for all but finitely many $k,l$. Then the families $\check T$ and
-  $\hat T$ given by
+  \mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$.
+  
+  Then for any fixed $n$, the families $\check T_n$ given by
   \begin{align*}
-    \Gru{\check T}{k}{l} &:= \sum_{m,n} (\phi \otimes
-    \id)(\Gr{(Y^{-1})}{k}{l}{m}{n}(1\otimes
-    \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l}), \\
-    \Gru{\hat T}{k}{l} &:= \sum_{m,n} (\phi \otimes
+    \Gru{\check T_n}{k}{l} &:= \sum_{m} (\phi \otimes
+    \id)(\Gr{(Y^{-1})}{n}{m}{l}{k}(1\otimes
+    \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l})
+   \end{align*} 
+   
+  define a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$.
+
+     Similarly, for fixed $m$, the      
+    
+  \begin{align*} \Gru{\hat T_m}{k}{l} &:= \sum_{n} (\phi \otimes
     \id)(\Gr{Y}{k}{l}{m}{n}(1\otimes
-    \Gru{T}{m}{n})\Gr{(X^{-1})}{m}{n}{k}{l})
+    \Gru{T}{m}{n})\Gr{(X^{-1})}{l}{k}{n}{m})
   \end{align*}
-  are morphisms from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$.
-\end{Lem}
+  define a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$. % Slightly changed the averaging so that I do not need a restriction of finite support on $T$.
+\end{Lem} 
 \begin{proof}
- The assertion converning $\check{T}$ follows
+ Using Remark \ref{RemMorRep}, the assertion concerning the $\check{T}$ follows
   from the calculation
   \begin{align*}
-    &\sum_{m} \Gr{(Y^{-1})}{k}{l'}{m}{n}(1 \otimes
-    \Gru{\check{T}}{m}{n})\Gr{X}{m}{n}{k}{l} = \\
-    &=\sum_{m,p,q} (\phi \otimes \id \otimes
-    \id)\left(\left(\Gr{(Y^{-1})}{k}{l'}{m}{n}\right)_{23}
-      \left(\Gr{(Y^{-1})}{m}{n}{p}{q}\right)_{13}(1 \otimes 1 \otimes
+    &\sum_{m} \Gr{(Y^{-1})}{n}{m}{l'}{k}(1 \otimes
+    \Gru{\check{T}_q}{m}{n})\Gr{X}{m}{n}{k}{l} = \\
+    &=\sum_{m,p} (\phi \otimes \id \otimes
+    \id)\left(\left(\Gr{(Y^{-1})}{n}{m}{l'}{k}\right)_{23}
+      \left(\Gr{(Y^{-1})}{q}{p}{n}{m}\right)_{13}(1 \otimes 1 \otimes
       \Gru{T}{p}{q})\left(\Gr{X}{p}{q}{m}{n}\right)_{13}\left(\Gr{X}{m}{n}{k}{l}\right)_{23}\right)
     \\
     % &= \sum_{m,p,q}(\phi \otimes \id \otimes \id)\left((1 \otimes
@@ -346,20 +353,19 @@ The key to the orthogonality relations is the following averaging procedure.
     %   \otimes \Gru{T}{p}{q})(\tilde \Delta \otimes
     %   \id)\left(\Gr{(X}{p}{q}{k}{l}\right)(1 \otimes\lambda_{n}
     %   \otimes 1)\right) \\
-    &= \sum_{p,q} (\lambda_{n} \otimes 1) \cdot ((\phi \otimes \id)
-    \circ \tilde \Delta \otimes \id)\left(\Gr{(Y^{-1})}{k}{l'}{p}{q}(1
-      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}\right) \cdot
-    (\lambda_{n} \otimes 1)
+    &= \sum_{m,p} (\left((\phi \otimes \id)
+    \circ \Delta_{mn}\right) \otimes \id)\left(\Gr{(Y^{-1})}{q}{p}{l'}{k}(1
+      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}\right) 
     \\
-    &= \sum_{r,p,q} (\lambda_{n} \otimes 1) \cdot \left(\rho_{r}
-      \otimes (\phi \otimes \id)\left(\Gr{(Y^{-1})}{k}{l'}{p}{q}(1 
-      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}(\rho_{r} \otimes
-      1)\right)\right) \cdot (\lambda_{n} \otimes 1) \\
-  &= \delta_{l,l'}\lambda_{n}\rho_{l} \otimes \Gru{\check{T}}{k}{l},
+    &= \delta_{l',l}\UnitC{n}{l}\otimes \left(\sum_{p,q} (\phi \otimes \id)\left(\Gr{(Y^{-1})}{q}{p}{l}{k}(1 
+      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}\right)\right)\\
+  &= \delta_{l,l'}\UnitC{n}{l} \otimes \Gru{\check{T}_q}{k}{l},
   \end{align*}
-  where we used the relation $\phi(\Grd{A}{l'}{l})=0$ for $l'\neq l$
-  for the last equality. A similar calculation proves the assertion
-  concerning $\hat{T}$. 
+  where we used the relation $\phi(\Gr{A}{r}{s}{l'}{l})=0$ for $l'\neq l$
+  for the last equality. 
+  
+  A similar calculation proves the assertion
+  concerning the $\hat{T}$. 
 \end{proof}
 
 % Choose a representative family of unitary irreducible locally finite
@@ -376,9 +382,9 @@ The first part of the orthogonality relations concerns matrix
 coefficients of inequivalent irreducible corepresentations.
 \begin{Prop} \label{prop:rep-orthogonality-1}
   Let $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be inequivalent unitary
-  irreducible locally finite-dimensional corepresentations and let
+  irreducible sfd corepresentations and let
   $\phi$ be an invariant functional for $(A,\Delta)$.  Then
-  $\phi(S(b)a) =\phi(b^{*}a) = \phi(bS(a))=\phi(ba^{*})=0$ for all
+  \[\phi(S(b)a) =\phi(b^{*}a) = \phi(bS(a))=\phi(ba^{*})=0\] for all
   $a\in \mathcal{C}(X), b \in \mathcal{C}(Y)$.
 \end{Prop}
 \begin{proof}
@@ -386,26 +392,31 @@ coefficients of inequivalent irreducible corepresentations.
   $b=(\id \otimes \omega_{\eta,\eta'})(\Gr{Y}{p}{q}{r}{s})$, where
   $\xi \in \Gru{\mathcal{H}}{k}{l}, \xi' \in \Gru{\mathcal{H}}{m}{n}$
   and $\eta \in \Gru{\mathcal{K}}{p}{q}, \eta' \in
-  \Gru{\mathcal{K}}{r}{s}$. We may assume $(p,q,r,s) = (m,n,k,l)$
-  because $\phi(S(a)b) = 0 = \phi(aS(b))$ otherwise.  
-Lemma \ref{lem:rep-average}, applied to the 
+  \Gru{\mathcal{K}}{r}{s}$. 
+  
+  If $(p,q,r,s) \neq (m,n,k,l)$, then clearly $\phi(S(b)a) = 0 = \phi(bS(a))$.
+  
+   If $(p,q,r,s) = (m,n,k,l)$,  then Lemma \ref{lem:rep-average}, applied to the 
   family $\Gru{T}{p}{q}= \delta_{p,k}\delta_{q,l}
-  |\eta'\rangle\langle\xi|$, yields  morphisms $\check{T},\hat{T}$
+  |\eta'\rangle\langle\xi|$, yields  morphisms $\check{T}_l,\hat{T}_k$
   from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$ which necessarily are
-  $0$. Inserting the definition of $\check{T}$, we find
+  $0$. Inserting the definition of $\check{T}_l$, we find
   \begin{align*}
     \phi(S(b)a) &= \phi\big((S \otimes
     \omega_{\eta,\eta'})(\Gr{Y}{m}{n}{k}{l}) \cdot (\id \otimes
     \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})\big) \\ &= (\phi \otimes
-    \id)\left(\langle\eta|_{2} \Gr{(Y^{-1})}{m}{n}{k}{l}(1 \otimes
+    \id)\left((1\otimes \langle\eta|) \Gr{(Y^{-1})}{l}{k}{n}{m}(1 \otimes
       |\eta'\rangle\langle \xi|)
-      \Gr{X}{k}{l}{m}{n}|\xi'\rangle_{2}\right) 
-    = \langle \eta|_{2} \Gru{\check{T}}{m}{n}|\xi'\rangle_{2} = 0.
-  \end{align*}
+      \Gr{X}{k}{l}{m}{n}(1\otimes |\xi'\rangle)\right) 
+   \\ &= (1\otimes \langle \eta|) \Gru{\check{T}_l}{m}{n}(1\otimes |\xi'\rangle) = 0.
+  \end{align*}% Resort notation on using leg notation, physics bra-ket, etc.
+  
   A similar calculation involving $\hat{T}$ shows that
-  $\phi(aS(b))=0$.  Using the relation $X^{*}=X^{-1}=(S\otimes
+  $\phi(bS(a))=0$.  
+  
+  Using the relation $X^{*}=X^{-1}=(S\otimes
   \id)(X)$ and $Y^{*}=(S\otimes \id)(Y)$, we conclude
-  $\phi(a^{*}b)=\phi(ab^{*})=0$.
+  $\phi(b^{*}a)=\phi(ba^{*})=0$.
 \end{proof}
 
 The second part of the orthogonality relations concerns inner products
