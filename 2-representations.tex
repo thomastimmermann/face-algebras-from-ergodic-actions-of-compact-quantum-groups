@@ -34,7 +34,7 @@ Let $\mathscr{A}$ be an $I$-partial bialgebra. We denote $\mathcal{L}(V,W)$ for 
 \begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ be an $I^{2}$-graded vector space.
 A \emph{corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $V$ consists of a family of elements 
   $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
-  \mathcal{L}(\Gru{\Vv}{m}{n},\Gru{V}{k}{l})$
+  \mathcal{L}(\Gru{V}{m}{n},\Gru{V}{k}{l})$
   satisfying
   \begin{align} \label{eq:rep-delta}
     (\Delta_{pq} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
@@ -45,6 +45,8 @@ and   \[(\epsilon \otimes
 for all possible indices.
 \end{Def} % Drop s.f. and say we only work with s.f. coreps.?
 
+We will sometimes consider $\Gr{X}{k}{l}{m}{n}$ as a map in $\mathcal{L}(\Gru{V}{m}{n},\Gr{A}{k}{l}{m}{n}\otimes \Gru{V}{k}{l})$. % Or better to keep leg numbering notation because confusing otherwise? Or use $1\otimes $ notation?
+
 \begin{Def}\label{DefMorphism} A \emph{morphism} $T$ between two corepresentations
 $(V,X)$ and $(W,Y)$ is a family of linear maps
 $\Gru{T}{k}{l} \in
@@ -54,7 +56,7 @@ satisfying $(1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} =
 % We call $T$ \emph{bounded} when $\oplus_{k,l} \Gru{T}{k}{l}$ is bounded.
 \end{Def}
 
-\begin{Def} Let $(V,X)$ be a locally finite
+\begin{Def} Let $(V,X)$ be a
 corepresentation. We call a family of subspaces
 $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$
 \emph{invariant} if $(1\otimes \Gru{Q}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =0$,
@@ -179,83 +181,87 @@ Let us now enhance our partial Hopf algebras to quantum groups of face type. One
 
 %\paragraph{Unitarity of corepresentations}
 
-\begin{Def} Let $\mathscr{A}$ define a compact quantum group of face type. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space
-\emph{unitary} if $\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{m}{n}{k}{l})^{*}$.  
+\begin{Def} Let $\mathscr{A}$ define a compact quantum group of face type. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
+\emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}.\]  
 \end{Def} 
+\begin{Rem} We assume here of course that $\Hsp$ is the \emph{closed} direct sum of all (finite-dimensional) $\Gru{\Hsp}{m}{n}$, but this does not change the notion of corepresentation which had a local definition.
+\end{Rem}
 
 Our aim now is to show that every irreducible sfd corepresentation is
 equivalent to a unitary one, by embedding it into a restriction of the
 regular corepresentation.
 
 \begin{Exa} \label{exa:rep-regular}
-  Assume that $(A,\Delta)$ has a positive invariant functional $\phi$
-  that is faithful. 
+  Let $\mathscr{A}$ define a compact quantum group of face type, with normalized positive invariant functional $\phi$. 
 
-  Let $\Gru{\mathcal{H}}{k}{l} \subseteq \bigoplus_{m,n}
-  \Gr{A}{m}{n}{k}{l}$ be a row- and column-finite family of
-  finite-dimensional subspaces satisfying
+  Let $\Gru{\mathcal{H}}{m}{n} \subseteq \bigoplus_{k,l}
+  \Gr{A}{k}{l}{m}{n}$ be an sfd bigraded subspace satisfying
 \begin{align*}
- \tilde  \Delta^{\co} (\Gru{\mathcal{H}}{m}{n}) \subseteq \sum_{p,q}
+  \Delta^{\co}_{pq}(\Gru{\mathcal{H}}{m}{n}) \subseteq
  \Gr{A}{p}{q}{m}{n} \otimes \Gru{\mathcal{H}}{p}{q}.
 \end{align*}
+for all indices.
 Equip each $\Gru{\mathcal{H}}{k}{l}$ with the scalar product $\langle
 a|b\rangle:=\phi(a^{*}b)$ and take the Hilbert space direct sum
 $\mathcal{H}:=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$.
-Define $\Gr{V}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
-\mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})$ by the
+Define \[ \Gr{V}{k}{l}{m}{n} \in \mathcal{L}(\Gru{\mathcal{H}}{m}{n}, \Gr{A}{k}{l}{m}{n} \otimes \Gru{\mathcal{H}}{k}{l}) \cong \Gr{A}{k}{l}{m}{n} \otimes 
+\mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})\]  by the
 equation
 \begin{align*}
-  \Gr{V}{k}{l}{m}{n}|a\rangle_{2} &= \tilde \Delta^{\co}(a),
+  \Gr{V}{k}{l}{m}{n}a &= \Delta^{\co}_{kl}(a).
 \end{align*}
-where $\Gr{V}{k}{l}{m}{n}|a\rangle_{2}$  denotes the application of
-the second leg of
-$\Gr{V}{k}{l}{m}{n}$  to $a \in \Gru{\mathcal{H}}{m}{n}$. Then
-$(\mathcal{H},V)$ is a unitary corepresentation. We call it the 
-\emph{locally finite restriction of the regular corepresentation}
+%where $\Gr{V}{k}{l}{m}{n}|a\rangle_{2}$  denotes the application of
+%the second leg of
+%$\Gr{V}{k}{l}{m}{n}$  to $a \in \Gru{\mathcal{H}}{m}{n}$. 
+
+\begin{Lem} The couple $(\mathcal{H},V)$ defines a unitary corepresentation. 
+\end{Lem} 
+\begin{proof} It suffices to prove that \begin{equation}\label{EqUnit} \sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n} = \delta_{n,n'}\UnitC{l}{n}\otimes \id_{\Gru{\Hsp}{m}{n}}.\end{equation} Take $a\in \Gru{\Hsp}{m}{n}$ and $b\in \Gru{\Hsp}{m}{n'}$. Then writing $\Lambda(a): \C\rightarrow \Gru{\Hsp}{m}{n}$ and similarly for $b$, we compute \begin{eqnarray*}(1\otimes \Lambda(b)^*)\left(\sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n}\right) (1\otimes \Lambda(a)) &=& \sum_k (\id\otimes \phi)(\Delta_{kl}^{\op}(b)^*\Delta_{kl}{\op}(a))\\ &=&  \sum_k (\id\otimes \phi)(\Delta_{lk}^{\op}(b^*)\Delta_{kl}{\op}(a)) \\ &=& (\id\otimes \phi)(\Delta_{ll}^{\op}(b^*a))\\ &=&  (\phi\otimes \id)(\Delta_{ll}(b^*a)) \\ &=& \phi(b^*a)\UnitC{l}{n} \\&=& \delta_{n',n} \UnitC{l}{n} \otimes \Lambda(b)^*\Lambda(a).\end{eqnarray*} 
+This proves \eqref{EqUnit}.
+\end{proof} 
+
+We will call $(\mathcal{H},V)$  the 
+\emph{sfd restriction of the regular corepresentation}
 determined by the family $(\Gru{\mathcal{H}}{k}{l})_{k,l}$. 
 \fxnote{proof this}
 \end{Exa}
 
 \begin{Lem} \label{lem:rep-morphism-regular}
-  Assume that $(A,\Delta)$ has a faithful and positive invariant
-  functional.  Let $(\mathcal{H},X)$ be a locally
-  finite-dimensional corepresentation and let $\xi \in
+  Let $\mathscr{A}$ define a compact quantum group of face type. Let $(\mathcal{H},X)$ be an sfd corepresentation on a Hilbert space, and let $\xi \in
   \Gru{\mathcal{H}}{k}{l}$. Then the family of finite-dimensional
   subspaces
   \begin{align*}
    \Gru{\mathcal{K}}{m}{n}  &=  \{ (\id \otimes
    \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) : \eta \in
    \Gru{\mathcal{H}}{m} {n}\} \subseteq \Gr{A}{k}{l}{m}{n}
-  \end{align*}
-  defines a restriction of the regular corepresentation
+  \end{align*}% Should explain notation
+  defines an sfd restriction of the regular corepresentation
   $(\mathcal{K},V)$, and the family of maps
   \begin{align*}
     \Gru{T_{(\xi)}}{m}{n} \colon \Gru{\mathcal{H}}{m}{n} \to
     \Gru{\mathcal{K}}{m}{n}, \ \eta \mapsto (\id \otimes
     \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),
   \end{align*}
-  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$.
+  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$. % Should $\xi$ then also be in a subscript for $\mathcal{K}$?
 \end{Lem}
-Note that the family $(\Gru{\mathcal{K}}{m}{n})_{m,n}$ is row- and
-column-finite because $(\Gru{\mathcal{H}}{m}{n})_{m,n}$
+Note that the family $(\Gru{\mathcal{K}}{m}{n})_{m,n}$ is sfd because $(\Gru{\mathcal{H}}{m}{n})_{m,n}$
 is. 
 \begin{proof} Both assertions  follow from the fact
   that for all $\eta \in \Gru{\mathcal{H}}{p}{q}$,
-\begin{align*}
-  (1 \otimes \rho_{m})\cdot \tilde \Delta^{\co}\big((\id \otimes
-  \omega_{\xi,\eta})(\Gr{X}{k}{l}{p}{q})\big) \cdot (1 \otimes
-  \rho_{n}) &= (\id \otimes \id \otimes \omega_{\xi,\eta})\big(
-  (\Gr{X}{k}{l}{m}{n})_{23}(\Gr{X}{m}{n}{p}{q})_{13})\big) \\ &=(1
-  \otimes \Gru{T_{(\xi)}}{m}{n})\Gr{X}{m}{n}{p}{q} |\eta\rangle_{2}.
-\end{align*}
+\begin{eqnarray*}
+\Delta^{\op}_{pq}(\Gru{T_{(\xi)}}{m}{n}(\eta)) &=&  \Delta_{pq}^{\op}\big((\id \otimes
+  \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})\big)\\
+ &=&(\id \otimes \id \otimes \omega_{\xi,\eta})\big(
+  (\Gr{X}{k}{l}{p}{q})_{23}(\Gr{X}{p}{q}{m}{n})_{13})\big) \\ &=&(1
+  \otimes \Gru{T_{(\xi)}}{p}{q})\Gr{X}{p}{q}{m}{n} \eta.
+\end{eqnarray*}
 \end{proof}
 \begin{Prop}  \label{prop:rep-unitarisable}
-  Assume that $(A,\Delta)$ has a faithful and positive invariant
-  functional. Then every irreducible locally finite corepresentation
-  is equivalent to a unitary one.
+  Let $\mathscr{A}$ define a compact quantum group of face type. Then every irreducible sfd corepresentation on a Hilbert space
+  is equivalent to a unitary sfd representation.
 \end{Prop}
 \begin{proof}
-  Let $(\mathcal{H},X)$ be an irreducible locally finite
+  Let $(\mathcal{H},X)$ be an irreducible sfd
   corepresentation. Then for some $k,l$ and $\xi \in
   \Gru{\mathcal{H}}{k}{l}$,  the operator  $T_{(\xi)}$  defined in
   Lemma \ref{lem:rep-morphism-regular} has to be non-zero and hence,
@@ -265,13 +271,10 @@ is.
   Example \ref{exa:rep-regular}.
 \end{proof}
 
-
-\paragraph{Schur orthogonality relations}
-In this paragraph, we obtain the analogue of Schur's orthogonality
+Our next goal is to obtain the analogue of Schur's orthogonality
 relations for matrix coefficients of corepresentations.
 
-The space of \emph{matrix coefficients} $\mathcal{C}(X)$ of a locally
-finite corepresentation $(\mathcal{H},X)$ is the sum of
+\begin{Def} The space of \emph{matrix coefficients} $\mathcal{C}(X)$ of an sfd corepresentation $(\mathcal{H},X)$ is the sum of
 the subspaces
 \begin{align*}
   \Gr{\mathcal{C}(X)}{k}{l}{m}{n} &= \span \left\{ (\id \otimes
@@ -279,27 +282,29 @@ the subspaces
   \Gru{\mathcal{H}}{k}{l}, \eta \in \Gru{\mathcal{H}}{m}{n} \right\}
 \subseteq \Gr{A}{k}{l}{m}{n}.
 \end{align*}
+\end{Def}
+
+\begin{Lem} Every sfd unitary corepresentation $(X,\Hsp)$ of $\mathscr{A}$ decomposes into a direct sum of irreducible sfd unitary corepresentations.
+\end{Lem} 
+\begin{proof} The usual spectral argument shows that irreducibility is the same as indecomposability of a corepresentation. In fact, the self-interwiners of $\Hsp$ form a sub-von Neumann algebra of $\prod_{k,l}^{\infty} B(\Gru{\Hsp}{k}{l})$. As the $B(\Gru{\Hsp}{k}{l})$ are finite dimensional, this easily implies that $\Hsp$ can be written as a (possibly infinite sum) of irreducible subspaces, corresponding to the minimal projections in the von Neumann algebra of self-intertwiners.% To expand? 
+\end{proof} 
 
 \begin{Prop} \label{prop:rep-weak-pw}
-  Assume that $(A,\Delta)$ has a faithful and positive invariant
-  functional. Then $A$ is the sum of the matrix coefficients of
-unitary  irreducible locally finite corepresentations.
+  Assume that $\mathscr{A}$ defines a compact quantum group of face type. Then the total algebra $A$ is the sum of the matrix coefficients of
+ irreducible unitary sfd corepresentations.
 \end{Prop}
 \begin{proof}
   Let $a \in \Gr{A}{k}{l}{m}{n}$. Then
-  $(1 \otimes \rho_{p})\tilde \Delta^{\co}(a)(1 \otimes \rho_{q}) \in
-  \Gr{A}{p}{q}{m}{n} \otimes \Gr{A}{k}{l}{p}{q}$ and the subspace
+  $\Delta^{\co}_{pq}(a) \in
+  \Gr{A}{p}{q}{m}{n} \otimes \Gr{A}{k}{l}{p}{q}$, and the subspace
     \begin{align*}
-    \Gru{\mathcal{H}}{p}{q} &:= \span \{ (\omega \otimes \id)(\tilde
-    \Delta^{\co}(a)) : \omega \in (\Gr{A}{p}{q}{m}{n})' \} \subseteq
+    \Gru{\mathcal{H}}{p}{q} &:= \span \{ (\omega \otimes \id)(
+    \Delta^{\co}_{pq}(a)) : \omega \in \Hom_{\C}(\Gr{A}{p}{q}{m}{n},\C) \} \subseteq
     \Gr{A}{k}{l}{p}{q}
   \end{align*}
-  has finite dimension. Since $(1 \otimes \rho_{p})\tilde
-  \Delta^{\co}(a)$ and $\tilde \Delta^{\co}(a)(1 \otimes \rho_{q})$
-  lie in the tensor product $A \otimes A$, the family
-  $(\Gru{\mathcal{H}}{p}{q})_{p,q}$ is row- and column-finite. Using
-  co-associativity, one checks that this family defines a locally
-  finite restriction $(\mathcal{H},V)$ of the regular
+  has finite dimension. Since $a$ is fixed, the
+  $(\Gru{\mathcal{H}}{p}{q})_{p,q}$ are in fact sfd. Using
+  co-associativity, one checks that this family defines an sfd restriction $(\mathcal{H},V)$ of the regular
   corepresentation. Evidently, $a \in \mathcal{C}(V)$. Decomposing
   $(\mathcal{H},V)$, we find that
   $a$ is contained in the sum of matrix coefficients of unitary
