@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  28 MAY 2014 22:01
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  29 MAY 2014 12:04
 entering extended mode
 **dyn-suq-main.tex
 
@@ -810,17 +810,17 @@ col-lec-tion of lin-ear maps $ [][]\OML/cmm/m/it/10.95 T[] \U/matha/m/n/10.95 P
 
 [12] [13]
 Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
-line 228.
-FiXme Note: 'proof this' on input line 228.
+line 229.
+FiXme Note: 'proof this' on input line 229.
  [14]
-Overfull \hbox (11.91739pt too wide) in paragraph at lines 266--274
+Overfull \hbox (11.91739pt too wide) in paragraph at lines 267--275
 \OT1/cmr/m/n/10.95 Lemma, in-jec-tive. Thus, it forms an equiv-a-lence be-tween
  $\U/matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m/it/10.95 ; X\U/matha/m/n/
 10.95 q$ \OT1/cmr/m/n/10.95 and a sub-corepresentation
  []
 
-[15] [16] [17] [18]
-Overfull \hbox (9.62767pt too wide) in paragraph at lines 641--651
+[15] [16] [17] [18] [19]
+Overfull \hbox (9.62767pt too wide) in paragraph at lines 643--653
 $\OML/cmm/m/it/10.95 F[]$ \OT1/cmr/m/it/10.95 be a non-zero mor-phism from $\U/
 matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m/it/10.95 ; X\U/matha/m/n/10.95
  q$ \OT1/cmr/m/it/10.95 to $\U/matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m
@@ -830,29 +830,29 @@ L/cmm/m/it/10.95 a \U/matha/m/n/10.95  p[] b\OML/cmm/m/it/10.95 ![]\U/matha/m/
 n/10.95 qp [][]\OML/cmm/m/it/10.95 X[]\U/matha/m/n/10.95 q$
  []
 
-[19]
-Overfull \hbox (16.14471pt too wide) in paragraph at lines 698--698
+
+Overfull \hbox (16.14471pt too wide) in paragraph at lines 700--700
 [] 
  []
 
-[20]
-Overfull \hbox (41.02719pt too wide) in paragraph at lines 804--804
+[20] [21]
+Overfull \hbox (41.02719pt too wide) in paragraph at lines 806--806
 [] 
  []
 
 
-Overfull \hbox (18.31133pt too wide) in paragraph at lines 842--842
+Overfull \hbox (18.31133pt too wide) in paragraph at lines 844--844
 [] 
  []
 
-[21])
+)
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\3-tannaka.tex [22] [23]
+quantum-groups\3-tannaka.tex [22] [23] [24]
 Overfull \hbox (42.66815pt too wide) in alignment at lines 54--54
  [][][] []
  []
 
-[24] [25]
+[25]
 Overfull \hbox (19.95937pt too wide) in paragraph at lines 79--79
 []\OT1/cmr/m/n/10.95 Let $\OML/cmm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \U/msb/m/n
 /10.95 C \U/matha/m/n/10.95 Ñ \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 be com-ple
@@ -919,9 +919,9 @@ m/m/it/10.95 X\U/matha/m/n/10.95 q [] \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p
 \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q
  []
 
-)
+[30])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\4-op-alg.tex [30] [31]
+quantum-groups\4-op-alg.tex [31]
 Overfull \hbox (2.02695pt too wide) in paragraph at lines 25--26
 []\OT1/cmr/m/n/10.95 We aim to show that $\U/matha/m/n/10.95 p\OML/cmm/m/it/10.
 95 M; \OT1/cmr/m/n/10.95 \U/matha/m/n/10.95 q$ \OT1/cmr/m/n/10.95 can be fit-t
@@ -970,7 +970,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 112.
 
-)
+[39])
 
 FiXme Summary: Number of notes: 1,
 (FiXme)        Number of warnings: 0,
@@ -979,7 +979,7 @@ FiXme Summary: Number of notes: 1,
 (FiXme)        Total: 1.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
-[39]
+[40]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
@@ -995,13 +995,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 236.
  ) 
 Here is how much of TeX's memory you used:
- 7366 strings out of 494045
- 105320 string characters out of 3148388
+ 7367 strings out of 494045
+ 105327 string characters out of 3148388
  206310 words of memory out of 3000000
  10373 multiletter control sequences out of 15000+200000
  30962 words of font info for 118 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 35i,17n,60p,1465b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,17n,60p,1472b,519s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi6
 00\matha12.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
 mathabx\dpi657\mathb10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\lj
@@ -1031,9 +1031,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files
 ublic/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/rsf
 s/rsfs10.pfb>
-Output written on dyn-suq-main.pdf (39 pages, 476597 bytes).
+Output written on dyn-suq-main.pdf (40 pages, 478152 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 163 named destinations out of 1000 (max. 500000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 164 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -185,7 +185,8 @@ Let us now enhance our partial Hopf algebras to quantum groups of face type. One
 \emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}.\]  
 \end{Def} 
 \begin{Rem} \begin{enumerate} \item We assume here of course that $\Hsp$ is the \emph{closed} direct sum of all (finite-dimensional) $\Gru{\Hsp}{m}{n}$, but this does not change the notion of corepresentation which had a local definition.
-\item Concerning morphisms, we will say a collection of $T_{kl}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus T_{k,l}$ is bounded.
+\item Concerning morphisms, we will say a collection of $T_{kl}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus T_{k,l}$ is bounded. We will denote by $\Corep_{\sfd,u}(\mathscr{A})$ the category of unitary sfd corepresentations with arbitrary morphisms, and $\Corep_{\sfd,u}^{\infty}(\mathscr{A})$ for the category with bounded morphisms.
+% Give a more prominent place
 \end{enumerate}
 \end{Rem}
 
@@ -288,7 +289,7 @@ the subspaces
 
 \begin{Lem} Every sfd unitary corepresentation $(X,\Hsp)$ of $\mathscr{A}$ decomposes into a direct sum of irreducible sfd unitary corepresentations.
 \end{Lem} 
-\begin{proof} The usual spectral argument shows that irreducibility is the same as indecomposability of a corepresentation. In fact, the self-interwiners of $\Hsp$ form a sub-von Neumann algebra of $\prod_{k,l}^{\infty} B(\Gru{\Hsp}{k}{l})$. As the $B(\Gru{\Hsp}{k}{l})$ are finite dimensional, this easily implies that $\Hsp$ can be written as a (possibly infinite sum) of irreducible subspaces, corresponding to the minimal projections in the von Neumann algebra of self-intertwiners.% To expand? 
+\begin{proof} The usual spectral argument shows that irreducibility is the same as indecomposability of a corepresentation. In fact, the bounded self-interwiners of $\Hsp$ form a sub-von Neumann algebra of $\prod_{k,l}^{\infty} B(\Gru{\Hsp}{k}{l})$. As the $B(\Gru{\Hsp}{k}{l})$ are finite dimensional, this easily implies that $\Hsp$ can be written as a (possibly infinite sum) of irreducible subspaces, corresponding to the minimal projections in the von Neumann algebra of self-intertwiners.% To expand? 
 \end{proof} 
 
 \begin{Prop} \label{prop:rep-weak-pw}
@@ -424,20 +425,17 @@ as above but with $a,b\in \mathcal{C}(X)$ for some irreducible
 corepresentation  $X$  and involves the conjugate corepresentation,
 which is defined as follows.
 
-
-
 Given a Hilbert spaces $H,K$, we denote by $\overline{H},\overline{K}$
 the conjugate Hilbert spaces, by $T \mapsto \overline{T}$ the
 canonical conjugate-linear isomorphism $\mathcal{B}(H,K) \to
 \mathcal{B}(\overline{H},\overline{K})$, and by $T \mapsto
-T^{\top}:=\overline{T}^{*}$ the linear anti-isomorphism
+T^{\top}:=\overline{T}^{*}$ the linear anti-isomorphism % Or contravariant isomorphism?
 $\mathcal{B}(H,K) \to \mathcal{B}(\overline{K},\overline{H})$.
 
-\begin{Lem} \label{lemma:rep-functors}
-   On the category
-  $\Corep(A,\Delta)$, there exist
+\begin{Lem} \label{lemma:rep-functors}Let $\Corep_{\sfd,\Hilb}(\mathscr{A})$ denote the category of (not necessarily unitary) corepresentations of $\mathscr{A}$ on sfd bigraded Hilbert spaces. 
+   Then on $\Corep_{\sfd,\Hilb}(\mathscr{A})$ there exist
   \begin{enumerate}
-  \item a covariant functor $(\mathcal{H},X) \mapsto
+  \item a covariant antilinear functor $(\mathcal{H},X) \mapsto
     (\overline{\mathcal{H}},\overline{X})$ and $T \mapsto
     \overline{T}$, where
     \begin{align*}
@@ -447,61 +445,62 @@ $\mathcal{B}(H,K) \to \mathcal{B}(\overline{K},\overline{H})$.
       =((\Gr{X}{l}{k}{n}{m})^{*})^{\id \otimes \top}, &
       \Gru{\overline{T}}{k}{l} &= \overline{\Gru{T}{l}{k}};
     \end{align*}
-  \item a contravariant functor $(\mathcal{H},X) \mapsto
+  \item a contravariant linear functor $(\mathcal{H},X) \mapsto
     (\overline{\mathcal{H}},X^{S\otimes \top})$ and
     $T\mapsto T^{\top}$, where 
-    \begin{align*}
-      \Gr{(X^{S\otimes \top})}{k}{l}{m}{n} &= (S \otimes (\ \cdot \
+    \begin{align*}\Gru{\overline{\mathcal{H}}}{k}{l} &= \overline{\Gru{\mathcal{H}}{l}{k}},&
+     & \Gr{(X^{S\otimes \top})}{k}{l}{m}{n} = (S \otimes (\ \cdot \
       )^{\top})(\Gr{X}{n}{m}{l}{k}), & \Gru{(T^{\top})}{k}{l}
       &=(\Gru{T}{l}{k})^{\top};
     \end{align*}
-  \item a covariant functor  $(\mathcal{H},X) \mapsto (\mathcal{H},X^{S^{2}\otimes \id})$
-    and $T\mapsto T$, where $\Gr{(X^{S^{2}\otimes \id})}{k}{l}{m}{n}=(S^{2} \otimes
-  \id)(\Gr{X}{k}{l}{m}{n})$.
+  \item a covariant linear functor  $(\mathcal{H},X) \mapsto (\mathcal{H},X^{S^{2}\otimes \id})$
+    and $T\mapsto T$, where the grading is unchanged and \[\Gr{(X^{S^{2}\otimes \id})}{k}{l}{m}{n}=(S^{2} \otimes
+  \id)(\Gr{X}{k}{l}{m}{n}).\]
   \end{enumerate}
   If $(\mathcal{H},X)$ is unitary, then $\overline{X}=X^{S\otimes \top}$.\end{Lem}
 \begin{proof}
-  Let $(\mathcal{H},X)$ be a locally finite corepresentation. Using the fact that $\tilde \Delta$ and $\epsilon$ are
-  $*$-homomorphisms, one easily verifies
-  \begin{align*}
-    (\tilde \Delta \otimes \id)( \Gr{\overline{X}}{k}{l}{m}{n}) &=
-    \sum_{p,q} ( \Gr{\overline{X}}{k}{l}{p}{q})_{13}
-    ( \Gr{\overline{X}}{p}{q}{m}{n})_{23}, \\
-    (\epsilon \otimes \id)(\Gr{\overline{X}}{k}{l}{m}{n}) &=
-    \overline{(\epsilon \otimes \id)(\Gr{X}{l}{k}{n}{m})}
-    = \delta_{l,n}\delta_{k,m}
-    \overline{\id_{\Gru{\mathcal{H}}{l}{k}}}
-    = \delta_{l,n}\delta_{k,m} \id_{\Gru{\overline{\mathcal{H}}}{k}{l}}.
-  \end{align*}
-  A similar calculation shows that
-  $(\overline{\mathcal{H}},X^{S\otimes \top})$ is a
-  corepresentation. The assertions (1) and (2) follow
-  immediately. The square of the functor in (2) yields the functor in
-  (3).  
+The first assertion follows immediately from the fact that $\Delta_{rs}(a*)=\Delta_{sr}(a)^*$ and the $^*$-compatibility of $\epsilon$. The second assertion follows from the fact that $\Delta_{pq}\circ S  = (S\otimes S)\circ \Delta_{qp}^{\op}$ and $\epsilon\circ S = \epsilon$. The final functor is just the square of the second functor. 
+
+The fact that $\overline{X}=X^{S\otimes \top}$ for $X$ unitary is just by definition. % yes?
+ % Some of these properties should be mentioned before.
+  
+  
+  %\begin{align*}
+  %  (\Delta_{pq} \otimes \id)( \Gr{\overline{X}}{k}{l}{m}{n}) &=
+    %( \Gr{\overline{X}}{k}{l}{p}{q})_{13}
+    %( \Gr{\overline{X}}{p}{q}{m}{n})_{23}, \\
+    %(\epsilon \otimes \id)(\Gr{\overline{X}}{k}{l}{m}{n}) &=
+   % \overline{(\epsilon \otimes \id)(\Gr{X}{l}{k}{n}{m})}
+   % = \delta_{l,n}\delta_{k,m}
+   % \overline{\id_{\Gru{\mathcal{H}}{l}{k}}}
+   % = \delta_{l,n}\delta_{k,m} \id_{\Gru{\overline{\mathcal{H}}}{k}{l}}.
+ % \end{align*}
+  
 \end{proof}
 We call $(\overline{\mathcal{H}},\overline{X})$ the \emph{conjugate} of 
 $(\mathcal{H},X)$.   
+
 \begin{Prop} \label{prop:rep-f}
-  Assume that $(A,\Delta)$ has a faithful, positive, normalized
-  invariant functional $\phi$ and let $(\mathcal{H},X)$ be a unitary
-  irreducible locally finite corepresentation. 
+  Let $\mathscr{A}$ define a compact quantum group of face type, and let $\phi$ be a positive normalized
+  invariant functional $\phi$. Let $(\mathcal{H},X)$ be a unitary
+  irreducible sfd corepresentation. 
   \begin{enumerate}
-  \item $\overline{\mathcal{H}}$ and the family
-    $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{m}{n}{k}{l}\big)^{*}$
-    form a locally finite corepresentation and there
-    exists an invertible, positive isomorphism $\overline{F_{X}}$ from
+  \item The conjugate $\overline{\mathcal{H}}$ with the family
+    $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{l}{k}{n}{m}\big)^{*}$
+    form an sfd corepresentation, and there
+    exists an invertible, positive morphism $\overline{F_{X}}$ from
     $(\overline{\mathcal{H}},\overline{X})$ to
-    $(\overline{\mathcal{H}},\overline{X}^{-*})$.
+    $(\overline{\mathcal{H}},\overline{X}^{-*})$. % Better notation?
   \item The family
     $\Gru{F_{X}}{k}{l}:=\overline{\Gru{\overline{F_{X}}}{l}{k}}$ is an
-    invertible, positive isomorphism from $(\mathcal{H},X)$ to
+    invertible, positive morphism from $(\mathcal{H},X)$ to
     $(\mathcal{H},X^{S^{2} \otimes \id})$.
   \end{enumerate}
 \end{Prop}
 \begin{proof}
 (1) By Proposition \ref{prop:rep-unitarisable},
 $(\overline{\mathcal{H}},\overline{X})$ is equivalent to a unitary
-corepresentation, that is, there exists a family of operators
+corepresentation, that is, there exists a family of invertible operators
 $\Gru{T}{k}{l} \in \mathcal{B}(\Gru{\overline{\mathcal{H}}}{k}{l})$
 such that the family 
 \begin{align*}
@@ -510,35 +509,36 @@ such that the family
 \Gru{T}{m}{n})^{-1} 
 \end{align*}
  is a unitary corepresentation. The relation
- $\Gr{(Z^{-1})}{k}{l}{m}{n}=\big(\Gr{Z}{m}{n}{k}{l})^{*}$ then implies
+ $\Gr{(Z^{-1})}{n}{m}{l}{k}=\big(\Gr{Z}{m}{n}{k}{l})^{*}$ then implies
  \begin{align*}
    \Gr{Z}{k}{l}{m}{n} = (1 \otimes
-   \Gru{T}{k}{l})^{-*}\big(\Gr{(\overline{X}^{-1})}{m}{n}{k}{l}\big)^{*}(1
+   (\Gru{T}{k}{l})^{-1})^{*}\big(\Gr{(\overline{X}^{-1})}{l}{k}{n}{m}\big)^{*}(1
    \otimes \Gru{T}{m}{n})^{*}
  \end{align*}
  and hence the family 
- $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{m}{n}{k}{l}\big)^{*}$
- is an irreducible locally finite corepresentation and the family
+ $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{l}{k}{n}{m}\big)^{*}$
+ is an irreducible sfd corepresentation. The maps
  $\Gru{\overline{F}_{X}}{k}{l}:=(\Gru{T}{k}{l})^{*}\Gru{T}{k}{l} \in
   \mathcal{B}(\Gru{\overline{\mathcal{H}}}{k}{l})$
-is an isomorphism from $(\overline{\mathcal{H}},\overline{X})$ to
+then form an isomorphism from $(\overline{\mathcal{H}},\overline{X})$ to
 $(\overline{\mathcal{H}},\overline{X}^{-*})$.   
 
 (2) The morphism $T$  from $(\overline{\mathcal{H}},\overline{X})$  to
 $(\overline{\mathcal{H}},Z)$ yields morphisms $\overline{T}$ from
 $(\mathcal{H},X)$ to $(\mathcal{H},\overline{Z})$ and $T^{\top}$ from $(\mathcal{H},Z^{S\otimes\top})$ to
-$(\mathcal{H},\overline{X}{S \otimes \top})$. Since $X$ and $Z$ are
+$(\mathcal{H},\overline{X}^{S \otimes \top})$. Since $X$ and $Z$ are
 unitary, $\overline{Z}=Z^{S\otimes \top}$ and  $\overline{X}^{S \otimes
-  \top} = X^{S^{2} \otimes \top}$. Thus $T^{\top}\overline{T} =
+  \top} = X^{S^{2} \otimes \id}$. Thus $T^{\top}\overline{T} =
 \overline{T^{*}T}$ is a morphism from $(\mathcal{H},X)$ to
 $(\mathcal{H},X^{S^{2}\otimes \id})$.
 \end{proof}
-\begin{Theorem} \label{thm:rep-orthogonality} Assume that $(A,\Delta)$
-  has a faithful, positive, normalized invariant functional
-  $\phi$. Let $(\mathcal{H},X)$ be a unitary irreducible locally
-  finite corepresentation of $(A,\Delta)$ and let $F_{X}$ be a
-  non-zero morphism from $(\mathcal{H},X)$ to $(\mathcal{H},(S^{2}
-  \otimes \id)(X))$.
+
+
+\begin{Theorem} \label{thm:rep-orthogonality} Let $\mathscr{A}$ define  a
+compact quantum group of face type. 
+  Let $\phi$ be a normalized invariant functional. Let $(\mathcal{H},X)$ be a unitary irreducible sfd corepresentation of $\mathscr{A}$, and let $F_{X}$ be a
+  non-zero morphism from $(\mathcal{H},X)$ to $(\mathcal{H},X^{S^{2}
+  \otimes \id})$.
   \begin{enumerate}
   \item The numbers $\alpha:=\sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l})$
     and $\beta:=\sum_{n} \Tr(\Gru{F_{X}}{m}{n})$ do not depend on $l$
@@ -552,7 +552,7 @@ $(\mathcal{H},X^{S^{2}\otimes \id})$.
       &=\beta^{-1}{\Tr( \Gru{(F_{X})}{m}{n})} \cdot
       \id_{\Gru{\mathcal{H}}{k}{l}}.
     \end{align*}
-  \item Denote by $\Sigma_{k,l,m,n}$ the flip $\Gru{\mathcal{H}}{k}{l}
+  \item Denote by $\Sigma_{klmn}$ the flip map $\Gru{\mathcal{H}}{k}{l}
     \otimes \Gru{\mathcal{H}}{m}{n} \to \Gru{\mathcal{H}}{m}{n}
     \otimes \Gru{\mathcal{H}}{k}{l}$. Then
  \begin{align*}
@@ -560,10 +560,10 @@ $(\mathcal{H},X^{S^{2}\otimes \id})$.
    \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13}) &=
    \alpha^{-1}
    (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{(F_{X}^{-1})}{k}{l})
-   \circ \Sigma_{k,l,m,n}, \\
+   \circ \Sigma_{klmn}, \\
    (\phi \otimes \id \otimes
    \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})_{12}^{*}) &= \beta^{-1} (\Gru{F_{X}}{m}{n}
-   \otimes \id_{\Gru{\mathcal{H}}{k}{l}}) \circ \Sigma_{k,l,m,n}.
+   \otimes \id_{\Gru{\mathcal{H}}{k}{l}}) \circ \Sigma_{klmn}.
  \end{align*}
 \end{enumerate}
   \end{Theorem}
@@ -571,61 +571,63 @@ $(\mathcal{H},X^{S^{2}\otimes \id})$.
   We prove the assertions and equations involving $\alpha$ in (1), (2)
   and (3)  simultaneously; the assertions involving $\beta$  follow similarly.
 
-  As above, we denote by $\Sigma_{p,q,r,s}$ the flip
-  $\Gru{\mathcal{H}}{p}{q} \otimes \Gru{\mathcal{H}}{r}{s} \to
-  \Gru{\mathcal{H}}{r}{s} \otimes \Gru{\mathcal{H}}{p}{q}$.  Consider
-  the operator
+  %As above, we denote by $\Sigma_{p,q,r,s}$ the flip
+  %$\Gru{\mathcal{H}}{p}{q} \otimes \Gru{\mathcal{H}}{r}{s} \to
+  %\Gru{\mathcal{H}}{r}{s} \otimes \Gru{\mathcal{H}}{p}{q}$.  
+  Consider
+  the following endomorphism $F_{m,n,k,l}$ of $\Gru{\mathcal{H}}{m}{n}\otimes \Gru{\mathcal{H}}{k}{l}$, 
   \begin{align*}
     F_{m,n,k,l}
     &:=(\phi \otimes \id \otimes \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})
-    \circ \Sigma_{m,n,k,l} \\ &= (\phi \otimes \id \otimes
-    \id)\left((\Gr{(X^{-1})}{m}{n}{k}{l})_{12}
-      (\Sigma_{k,l,k,l})_{23}(\Gr{X}{k}{l}{m}{n})_{12}\right).
+    \circ \Sigma_{mnkl} \\ &= (\phi \otimes \id \otimes
+    \id)\left((\Gr{(X^{-1})}{l}{k}{n}{m})_{12}
+      \Sigma_{klkl,23}(\Gr{X}{k}{l}{m}{n})_{12}\right).
   \end{align*}
-  By Lemma \ref{lem:rep-average}, the family $(F_{m,n,k,l})_{m,n}$ is
-  an endomorphism of $(\mathcal{H} \otimes \Gru{\mathcal{H}}{k}{l}, (X)_{12})$ and hence
+  By applying Lemma \ref{lem:rep-average} with respect to the flip map $\Sigma_{klkl}$, we see that the family $(F_{m,n,k,l})_{m,n}$ is
+  an endomorphism of $(\mathcal{H} \otimes \Gru{\mathcal{H}}{k}{l}, X_{12})$ and hence
   \begin{align}
     F_{m,n,k,l} &= \id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
   \end{align}
   with some $\Gru{R}{k}{l} \in \mathcal{B}(\Gru{\mathcal{H}}{k}{l})$ not
-  depending on $m,n$.
+  depending on $m,n$. % In using irreducibility, do we not miss any subtlety in allowing non-bounded morphisms?
   On the other hand, 
   \begin{align*}
     F_{m,n,k,l} &= (\phi \otimes \id \otimes \id)((S \otimes
     \id)(\Gr{X}{m}{n}{k}{l})_{12}(\Gr{X}{k}{l}{m}{n})_{13})
-    \circ \Sigma_{m,n,k,l} \\
+    \circ \Sigma_{mnkl} \\
     &= (\phi\circ S^{-1} \otimes \id \otimes \id)\left(((S \otimes
       \id)(\Gr{X}{k}{l}{m}{n}))_{13}
-      ((S^{2} \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{12}\right)     \circ \Sigma_{m,n,k,l}\\
+      ((S^{2} \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{12}\right)     \circ \Sigma_{mnkl}\\
     &= (\phi\circ S^{-1} \otimes \id \otimes \id)\left(((S \otimes
-      \id)(\Gr{X}{k}{l}{m}{n}))_{13} (\Sigma_{m,n,m,n})_{23} ((S^{2}
-      \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{12}\right).
+      \id)(\Gr{X}{k}{l}{m}{n}))_{13} (\Sigma_{mnmn})_{23} ((S^{2}
+      \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{13}\right).
   \end{align*}
   Since $\phi\circ S^{-1}$ is an invariant functional for
-  $(A,\Delta)$, we can again apply Lemma \ref{lem:rep-average} and
-  find that the family $(F_{m,n,k,l})_{k,l}$ is a morphism from
-  $(\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H}, (X^{S^{2} \otimes
-    \id})_{13})$ to $(\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H},
-  (X)_{13})$. Therefore,
+  $\mathscr{A}$, we can again apply Lemma \ref{lem:rep-average} and
+  find that the family $(F_{m,n,k,l})_{k,l}$ is a morphism \[(F_{m,n,k,l})_{k,l}:
+  (\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H}, (X^{S^{2} \otimes
+    \id})_{13})\rightarrow (\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H},
+  X_{13}).\] Therefore,
   \begin{align}
     F_{m,n,k,l} &= \Gru{T}{m}{n} \otimes (\Gru{F_{X}}{k}{l})^{-1} \label{eq:rep-orthogonal-2}
   \end{align}
   with some $\Gru{T}{m}{n} \in \mathcal{B}(\Gru{\mathcal{H}}{m}{n})$
   not depending on $k,l$. Combining \eqref{eq:rep-orthogonal-1} and
-  \eqref{eq:rep-orthogonal-2}, we conclude that $F_{m,n,k,l} = \lambda
-  (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes (\Gru{F_{X}}{k}{l})^{-1})$
-  for some $\lambda \in \C$.  Choose a basis
+  \eqref{eq:rep-orthogonal-2}, we conclude that, for some $\lambda\in \C$, \[F_{m,n,k,l} = \lambda
+  (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes (\Gru{F_{X}}{k}{l})^{-1})\]
+  
+  Choose a basis
   $(\zeta_{i})_{i}$ for $\Gru{\mathcal{H}}{k}{l}$. Then
   \begin{align*}
     \lambda \cdot \id_{\Gru{\mathcal{H}}{m}{n}} \cdot
     \Tr((\Gru{F_{X}}{k}{l})^{-1}) &= \sum_{i} (\id \otimes
     \omega_{\zeta_{i},\zeta_{i}})(F_{m,n,k,l}) = (\phi \otimes
-    \id)((\Gr{X}{m}{n}{k}{l})^{*} \Gr{X}{k}{l}{m}{n}).
+    \id)((\Gr{X}{k}{l}{m}{n})^{*} \Gr{X}{k}{l}{m}{n}).
   \end{align*}
-  We sum over $k$, use the relations $\sum_{k}
-  (\Gr{X}{m}{n}{k}{l})^{*} \Gr{X}{k}{l}{m}{n} = \lambda_{l}\rho_{n}
+  Taking $n=l$ and summing over $k$, the relations $\sum_{k}
+  (\Gr{X}{k}{l}{m}{n})^{*} \Gr{X}{k}{l}{m}{n} = \UnitC{l}{n}
   \otimes \id_{\Gru{\mathcal{H}}{m}{n}}$ and
-  $\phi(\lambda_{l}\rho_{n})=1$, and find
+  $\phi(\UnitC{l}{l})=1$ give
 \begin{align*}
 \lambda \cdot  \sum_{k} \Tr((\Gru{F_{X}}{k}{l})^{-1}) = 1.
 \end{align*}
