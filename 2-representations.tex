@@ -459,7 +459,7 @@ $\mathcal{B}(H,K) \to \mathcal{B}(\overline{K},\overline{H})$.
   \end{enumerate}
   If $(\mathcal{H},X)$ is unitary, then $\overline{X}=X^{S\otimes \top}$.\end{Lem}
 \begin{proof}
-The first assertion follows immediately from the fact that $\Delta_{rs}(a*)=\Delta_{sr}(a)^*$ and the $^*$-compatibility of $\epsilon$. The second assertion follows from the fact that $\Delta_{pq}\circ S  = (S\otimes S)\circ \Delta_{qp}^{\op}$ and $\epsilon\circ S = \epsilon$. The final functor is just the square of the second functor. 
+The first assertion follows immediately from the fact that $\Delta_{rs}(a^*)=\Delta_{sr}(a)^*$ and the $^*$-compatibility of $\epsilon$. The second assertion follows from the fact that $\Delta_{pq}\circ S  = (S\otimes S)\circ \Delta_{qp}^{\op}$ and $\epsilon\circ S = \epsilon$. The final functor is just the square of the second functor. 
 
 The fact that $\overline{X}=X^{S\otimes \top}$ for $X$ unitary is just by definition. % yes?
  % Some of these properties should be mentioned before.
@@ -639,21 +639,19 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
  %    corepresentation, but the antipode $S$ gets replaced by $S^{-1}$
  %    and therefore $F_{X}$ gets replaced by $F_{X}^{-1}$.
 \end{proof}
-\begin{Cor}
-  Assume that $(A,\Delta)$ has a faithful, positive, normalized
-  invariant functional $\phi$. Let $(\mathcal{H},X)$ be a unitary
-  irreducible locally finite corepresentation of $(A,\Delta)$, let
+\begin{Cor}\label{CorOrth}
+  Assume that $\mathscr{A}$ defines a compact quantum group of face type, and let $\phi$ be a normalized positive  invariant functional. Let $(\mathcal{H},X)$ be a unitary
+  irreducible locally finite corepresentation of $\mathscr{A}$, let
   $F_{X}$ be a non-zero morphism from $(\mathcal{H},X)$ to
   $(\mathcal{H},(S^{2} \otimes \id)(X))$, and let $a=(\id \otimes
   \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
-  \omega_{\eta,\eta'})(\Gr{X}{p}{q}{r}{s})$, where $\xi \in
-  \Gru{\mathcal{H}}{k}{l}, \xi' \in \Gru{\mathcal{H}}{m}{n}$ and $\eta
-  \in \Gru{\mathcal{H}}{p}{q}, \eta' \in \Gru{\mathcal{H}}{r}{s}$.
+  \omega_{\eta,\eta'})(\Gr{X}{k}{l}{m}{n})$, where $\xi,\eta \in
+  \Gru{\mathcal{H}}{k}{l}$ and $\xi',\eta' \in \Gru{\mathcal{H}}{m}{n}$.
   Then
 \begin{align*}
   \phi(b^{*}a) &= \frac{\langle \eta'|\xi'\rangle \langle
-    \xi|F^{-1}_{X}\eta\rangle}{\sum_{k}
-    \Tr(\Gru{(F^{-1}_{X})}{k}{l})}, & \phi(ab^{*}) = \frac{\langle
+    \xi|F^{-1}_{X}\eta\rangle}{\sum_{m}
+    \Tr(\Gru{(F^{-1}_{X})}{m}{n})}, & \phi(ab^{*}) = \frac{\langle
     \eta'|F_{X}\xi'\rangle \langle \xi|\eta\rangle}{\sum_{n}
     \Tr(\Gru{F_{X}}{m}{n})}.
 \end{align*}
@@ -662,7 +660,7 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
   By Theorem \ref{thm:rep-orthogonality}, 
   \begin{align*}
     \phi(b^{*}a) &= (\phi \otimes \omega_{\eta',\eta} \otimes
-    \omega_{\xi,\xi'})((\Gr{X}{k}{l}{m}{n})_{12}^{*}\Gr{X}{k}{l}{m}{n})
+    \omega_{\xi,\xi'})((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})
     \\
     &= \frac{1}{\sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l})} 
     (\omega_{\eta',\eta} \otimes
@@ -671,14 +669,13 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
     \circ \Sigma_{k,l,m,n}). 
   \end{align*}
   The formula for $\phi(ab^{*})$ follows similarly or by considering
-  the opposite of $(A,\Delta)$.
+  the co-opposite of $\mathscr{A}$.
 \end{proof}
 \begin{Cor} \label{cor:rep-pw}
-  Assume that $(A,\Delta)$ has a faithful, positive, normalized
-  invariant functional $\phi$. Let
+  Let $\mathscr{A}$ define a compact quantum group of face type. Let
   $(\mathcal{H}_{\alpha},X_{\alpha})_{\alpha}$ be a representative
-  family of all irreducible locally finite corepresentations of
-  $(A,\Delta)$. Then the map
+  family of all irreducible sfd corepresentations of
+  $\mathscr{A}$. Then the map
   \begin{align*}
     \bigoplus_{\alpha} \bigoplus_{k,l,m,n}
     (\overline{\Gru{\mathcal{H}_{\alpha}}{k}{l}} \otimes
@@ -687,38 +684,46 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
   that sends $\overline{\xi} \otimes \eta \in
   \overline{\Gru{\mathcal{H}_{\alpha}}{k}{l}} \otimes
   \Gru{\mathcal{H}_{\alpha}}{m}{n}$ to $ (\id \otimes
-  \omega_{\xi_{\alpha},\eta_{\alpha}})(\Gr{(X_{\alpha})}{k}{l}{m}{n})$,
+  \omega_{\xi,\eta})(\Gr{(X_{\alpha})}{k}{l}{m}{n})$,
   is a linear isomorphism.
 \end{Cor}
+\begin{proof} This follows from Proposition \ref{prop:rep-weak-pw}, Proposition \ref{prop:rep-orthogonality-1} and Corollary \ref{CorOrth}.
+\end{proof}
 
-Given $\omega,\omega' \in A'$ and $a \in A$, we define convolution
-products
+Suppose now $a\in \Gr{A}{k}{l}{m}{n}$ for some partial bialgebra $\mathscr{A}$. Then for $\omega \in \Hom_{\C}(A,\C)$, we can define
 \begin{align*}
-  \omega \ast a
-&:= (\id \otimes \omega) (\tilde \Delta(a)), & a \ast
-\omega'&:=(\omega' \otimes \id)(\Delta(a)), & \omega \ast a \ast
-\omega'&:= (\omega \ast a)\ast \omega' = \omega \ast (a \ast \omega').\end{align*}
+  \omega \aste{p,q} a
+&:= (\id \otimes \omega) (\Delta_{pq}(a)), & a \aste{r,s}
+\omega&:=(\omega \otimes \id)(\Delta_{rs}(a)).\end{align*} Clearly we can define
+\begin{align*} \omega \aste{p,q} a \aste{r,s}
+\omega'&:= (\omega \aste{p,q} a)\aste{r,s} \omega' = \omega \aste{p,q}(a \aste{r,s} \omega').\end{align*}
+When $\omega$ has support on the $A(K)$ with $K_u=K_d$, we can write, for $a\in \Gr{A}{k}{l}{m}{n}$, \[\omega\ast a := \sum_{p,q} \omega\aste{p,q}a = \omega\aste{m,n}a,\quad  a\ast \omega = \sum_{r,s} a\aste{r,s}\omega = a\aste{k,l}\omega.\] 
+
 We shall say that an entire function $f$ has \emph{exponential growth
-  on the right half-plane} if there exist $C,d$ such that $|f(x+iy)|\leq
+  on the right half-plane} if there exist $C,d>0$ such that $|f(x+iy)|\leq
 C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$. 
+
 \begin{Theorem} \label{thm:rep-characters}
-  Assume that $(A,\Delta)$ has a faithful, positive, normalized
-  invariant functional $\phi$.  There exists a unique family of characters
+  Assume that $\mathscr{A}$ is a compact quantum group of face type with positive normalized
+  invariant functional $\phi$.  There exists a unique family of linear functionals
   $f_{z} \colon A\to \C$ such that
   \begin{enumerate}
+  \item $f_z$ vanishes on $A(K)$ when $K_u\neq K_d$.
   \item for each $a\in A$, the function $z\mapsto f_{z}(a)$ is entire
-    and of exponential growth on the right half-plane;
-  \item $f_{0} = \epsilon$ and $(f_{z} \otimes f_{z'}) \circ \tilde
-    \Delta= f_{z+z'}$ for all $z,z' \in \C$.
+    and of exponential growth on the right half-plane.
+  \item $f_z(ab) = f_z(a)f_z(b)$ for $a\in A(K)$ and $b\in A(L)$ with $K\wmate L$. 
+  \item $f_{0} = \epsilon$ and $(f_{z} \otimes f_{z'}) \circ 
+    \Delta= f_{z+z'}$ for all $z,z' \in \C$. (This expression is meaningful by 1.)
   \item $\phi(ab)=\phi(b(f_{1} \ast a \ast f_{1}))$ for all $a,b\in A$.
   \end{enumerate}
   This family furthermore satisfies
   \begin{enumerate}\setcounter{enumi}{3}
-  \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$;
+  \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$.
   \item $f_{z}(\lambda_{l}\rho_{n})=\delta_{l,n}$,  $f_{z} \circ S = f_{-z}$,
-and    $f_{z} \circ \ast = \ast \circ f_{-\overline{z}}$.
+and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
 \end{enumerate}
 \end{Theorem}
+
 \begin{proof}
   We first prove uniqueness.  Assume that $(f_{z})_{z}$ is a family of
   functionals satisfying (1)--(3).  Since $\phi$ is faithful, the map

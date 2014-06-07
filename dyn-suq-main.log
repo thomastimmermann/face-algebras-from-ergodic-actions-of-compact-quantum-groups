@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  29 MAY 2014 12:04
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  7 JUN 2014 19:59
 entering extended mode
 **dyn-suq-main.tex
 
@@ -598,33 +598,30 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
 
-Package amsthm Warning: Unknown theoremstyle `change' on input line 28.
+Package amsthm Warning: Unknown theoremstyle `change' on input line 29.
 
 \c@Theorem=\count123
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\dyn-suq-main.aux
-
-LaTeX Warning: Label `eq:rep-delta' multiply defined.
-
-)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
+quantum-groups\dyn-suq-main.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 200.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package hyperref Info: Link coloring OFF on input line 203.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
@@ -632,9 +629,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count124
 )
-LaTeX Info: Redefining \ref on input line 200.
-LaTeX Info: Redefining \pageref on input line 200.
-LaTeX Info: Redefining \nameref on input line 200.
+LaTeX Info: Redefining \ref on input line 203.
+LaTeX Info: Redefining \pageref on input line 203.
+LaTeX Info: Redefining \nameref on input line 203.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.out)
@@ -676,21 +673,21 @@ quantum-groups\dyn-suq-main.out)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 207.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 210.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 207.
+LaTeX Font Info:    Try loading font information for U+msa on input line 210.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 207.
+LaTeX Font Info:    Try loading font information for U+msb on input line 210.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 207.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 210.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -743,15 +740,61 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 79.
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 79.
 
 
+LaTeX Warning: Reference `NotCom' on page 3 undefined on input line 81.
+
+
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 86.
 
-[3] [4] [5] [6]
+[3]
+
+LaTeX Warning: Reference `Propd' on page 4 undefined on input line 104.
+
+
+LaTeX Warning: Reference `Prope' on page 4 undefined on input line 104.
+
+[4]
+
+LaTeX Warning: Reference `ExaMult' on page 5 undefined on input line 128.
+
+
+LaTeX Warning: Reference `Propd' on page 5 undefined on input line 141.
+
+
+LaTeX Warning: Reference `DefPartBiAlg' on page 5 undefined on input line 141.
+
+
+LaTeX Warning: Reference `Prope' on page 5 undefined on input line 141.
+
+[5]
+
+LaTeX Warning: Reference `Propa' on page 6 undefined on input line 148.
+
+
+LaTeX Warning: Reference `DefPartBiAlg' on page 6 undefined on input line 148.
+
+
+LaTeX Warning: Reference `Propb' on page 6 undefined on input line 164.
+
+
+LaTeX Warning: Reference `DefPartBiAlg' on page 6 undefined on input line 164.
+
+[6]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 224.
+
+
+LaTeX Warning: Reference `Propd' on page 7 undefined on input line 240.
+
+
+LaTeX Warning: Reference `DefPartBiAlg' on page 7 undefined on input line 240.
 
 [7]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 250.
+
+
+LaTeX Warning: Reference `DefPartBiAlgAnt' on page 8 undefined on input line 25
+0.
 
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 254.
@@ -780,6 +823,9 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 258.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 260.
 
+
+LaTeX Warning: Reference `LemAnti' on page 8 undefined on input line 270.
+
 [8]
 Overfull \hbox (5.82684pt too wide) in paragraph at lines 293--294
 []\OT1/cmr/m/n/10.95 By unique-ness of the an-tipode, cf. [Bohm], it fol-lows a
@@ -796,63 +842,131 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 297.
 [9])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\2-representations.tex [10]
+
+LaTeX Warning: Reference `DefMorphism' on page 11 undefined on input line 79.
+
+
 Overfull \hbox (16.49431pt too wide) in alignment at lines 84--84
  [][][] []
  []
 
 [11]
-Overfull \hbox (1.80638pt too wide) in paragraph at lines 143--147
-\OT1/cmr/bx/n/10.95 Remark 2.9. \OT1/cmr/m/n/10.95 Us-ing [], one finds that a 
-col-lec-tion of lin-ear maps $ [][]\OML/cmm/m/it/10.95 T[] \U/matha/m/n/10.95 P
- \OMS/cmsy/m/n/10.95 L\U/matha/m/n/10.95 p [][]\OML/cmm/m/it/10.95 V[];  [][]W[
-]\U/matha/m/n/10.95 q$
- []
+
+LaTeX Warning: Reference `eq:rep-delta' on page 12 undefined on input line 121.
+
+
+
+LaTeX Warning: Reference `eq:rep-delta' on page 12 undefined on input line 139.
+
+
+
+LaTeX Warning: Reference `eq:rep-delta' on page 12 undefined on input line 143.
+
 
 [12] [13]
+
+LaTeX Warning: Reference `EqUnit' on page 14 undefined on input line 223.
+
 Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
 line 229.
 FiXme Note: 'proof this' on input line 229.
- [14]
+[14]
+
+LaTeX Warning: Reference `lem:rep-morphism-regular' on page 15 undefined on inp
+ut line 270.
+
+
+LaTeX Warning: Reference `exa:rep-regular' on page 15 undefined on input line 2
+74.
+
+
 Overfull \hbox (11.91739pt too wide) in paragraph at lines 267--275
 \OT1/cmr/m/n/10.95 Lemma, in-jec-tive. Thus, it forms an equiv-a-lence be-tween
  $\U/matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m/it/10.95 ; X\U/matha/m/n/
 10.95 q$ \OT1/cmr/m/n/10.95 and a sub-corepresentation
  []
 
-[15] [16] [17] [18] [19]
-Overfull \hbox (9.62767pt too wide) in paragraph at lines 643--653
-$\OML/cmm/m/it/10.95 F[]$ \OT1/cmr/m/it/10.95 be a non-zero mor-phism from $\U/
-matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m/it/10.95 ; X\U/matha/m/n/10.95
- q$ \OT1/cmr/m/it/10.95 to $\U/matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m
-/it/10.95 ; \U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 S[] \U/matha/m/n/10.95 b []
-qp\OML/cmm/m/it/10.95 X\U/matha/m/n/10.95 qq$\OT1/cmr/m/it/10.95 , and let $\OM
-L/cmm/m/it/10.95 a \U/matha/m/n/10.95  p[] b\OML/cmm/m/it/10.95 ![]\U/matha/m/
-n/10.95 qp [][]\OML/cmm/m/it/10.95 X[]\U/matha/m/n/10.95 q$
- []
+[15]
+
+LaTeX Warning: Reference `RemMorRep' on page 16 undefined on input line 341.
+
+[16]
+
+LaTeX Warning: Reference `lem:rep-average' on page 17 undefined on input line 4
+00.
+
+[17]
+
+LaTeX Warning: Reference `prop:rep-unitarisable' on page 18 undefined on input 
+line 501.
+
+[18]
+
+LaTeX Warning: Reference `lem:rep-average' on page 19 undefined on input line 5
+86.
 
 
-Overfull \hbox (16.14471pt too wide) in paragraph at lines 700--700
+LaTeX Warning: Reference `lem:rep-average' on page 19 undefined on input line 6
+06.
+
+
+LaTeX Warning: Reference `eq:rep-orthogonal-1' on page 19 undefined on input li
+ne 615.
+
+
+LaTeX Warning: Reference `eq:rep-orthogonal-2' on page 19 undefined on input li
+ne 616.
+
+[19]
+
+LaTeX Warning: Reference `thm:rep-orthogonality' on page 20 undefined on input 
+line 660.
+
+
+LaTeX Warning: Reference `prop:rep-weak-pw' on page 20 undefined on input line 
+690.
+
+
+LaTeX Warning: Reference `prop:rep-orthogonality-1' on page 20 undefined on inp
+ut line 690.
+
+
+LaTeX Warning: Reference `CorOrth' on page 20 undefined on input line 690.
+
+[20]
+
+LaTeX Warning: Reference `cor:rep-pw' on page 21 undefined on input line 739.
+
+[21]
+
+LaTeX Warning: Reference `thm:rep-orthogonality' on page 22 undefined on input 
+line 761.
+
+
+LaTeX Warning: Reference `thm:rep-orthogonality' on page 22 undefined on input 
+line 799.
+
+
+Overfull \hbox (41.02719pt too wide) in paragraph at lines 811--811
 [] 
  []
 
-[20] [21]
-Overfull \hbox (41.02719pt too wide) in paragraph at lines 806--806
+
+LaTeX Warning: Reference `prop:rep-f' on page 22 undefined on input line 815.
+
+
+Overfull \hbox (18.31133pt too wide) in paragraph at lines 849--849
 [] 
  []
 
-
-Overfull \hbox (18.31133pt too wide) in paragraph at lines 844--844
-[] 
- []
-
-)
+[22])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\3-tannaka.tex [22] [23] [24]
+quantum-groups\3-tannaka.tex [23] [24]
 Overfull \hbox (42.66815pt too wide) in alignment at lines 54--54
  [][][] []
  []
 
-[25]
+[25] [26]
 Overfull \hbox (19.95937pt too wide) in paragraph at lines 79--79
 []\OT1/cmr/m/n/10.95 Let $\OML/cmm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \U/msb/m/n
 /10.95 C \U/matha/m/n/10.95 Ñ \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 be com-ple
@@ -861,7 +975,7 @@ m/n/10.95  p\OML/cmm/m/it/10.95 I[]e[]C\U/matha/m/n/10.95 qp\OML/cmm/m/it/10.9
 5 Ce[]J[]\U/matha/m/n/10.95 q$\OT1/cmr/m/n/10.95 .
  []
 
-[26] [27]
+[27] [28]
 Overfull \hbox (42.0021pt too wide) in paragraph at lines 115--116
 \OT1/cmr/m/n/10.95 By the defin-ing prop-er-ties of $\OML/cmm/m/it/10.95 I[]$ \
 OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 J[]$\OT1/cmr/m/n/10.95 , this ex-pre
@@ -870,7 +984,7 @@ s-sion be-comes $[][]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10
 r/m/n/10.95 ,
  []
 
-[28]
+[29]
 Overfull \hbox (1.66138pt too wide) in paragraph at lines 127--128
 \OT1/cmr/m/n/10.95 sists of the $\OML/cmm/m/it/10.95 I[]$\OT1/cmr/m/n/10.95 -gr
 aded Hilbert space $\OML/cmm/m/it/10.95 l[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10
@@ -903,7 +1017,7 @@ F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10.95 q[]\OML/cmm/m/it
 
  []
 
-[29]
+[30]
 Overfull \hbox (12.61499pt too wide) detected at line 148
 \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 X \U/matha/m/n/10.
 95 b \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q  \OML/cmm/m/it/10.95 F[]\U/math
@@ -919,9 +1033,13 @@ m/m/it/10.95 X\U/matha/m/n/10.95 q [] \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p
 \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q
  []
 
-[30])
+)
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\4-op-alg.tex [31]
+
+LaTeX Warning: Reference `LemUni' on page 32 undefined on input line 16.
+
+
 Overfull \hbox (2.02695pt too wide) in paragraph at lines 25--26
 []\OT1/cmr/m/n/10.95 We aim to show that $\U/matha/m/n/10.95 p\OML/cmm/m/it/10.
 95 M; \OT1/cmr/m/n/10.95 \U/matha/m/n/10.95 q$ \OT1/cmr/m/n/10.95 can be fit-t
@@ -930,7 +1048,7 @@ ed into the the-ory of mea-sured quan-tum groupoids.
 
 )
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\5-free.tex [32]
+quantum-groups\5-free.tex [32] [33]
 Overfull \hbox (7.63324pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10.95 By the fun-da-men-tal prop-erty of the Temperley-Lieb ten-so
 r C$[]$-category $\OMS/cmsy/m/n/10.95 T[] \U/matha/m/n/10.95  []p\OML/cmm/m/it
@@ -938,9 +1056,13 @@ r C$[]$-category $\OMS/cmsy/m/n/10.95 T[] \U/matha/m/n/10.95  []p\OML/cmm/m/it
 mr/m/n/10.95 ,
  []
 
-[33])
+)
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\6-dyn-suq.tex [34] [35]
+quantum-groups\6-dyn-suq.tex [34]
+
+LaTeX Warning: Reference `TheoGenRel' on page 35 undefined on input line 10.
+
+[35]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 25.
@@ -978,30 +1100,39 @@ FiXme Summary: Number of notes: 1,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 1.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
 [40]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 236.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 236.
-Package rerunfilecheck Info: File `dyn-suq-main.out' has not changed.
-(rerunfilecheck)             Checksum: 30665EA473A746886FA8C722B709EDC5;1027.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 239.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `dyn-suq-main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 236.
+Package rerunfilecheck Info: Checksums for `dyn-suq-main.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  30665EA473A746886FA8C722B709EDC5;1027.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
  ) 
 Here is how much of TeX's memory you used:
- 7367 strings out of 494045
- 105327 string characters out of 3148388
- 206310 words of memory out of 3000000
- 10373 multiletter control sequences out of 15000+200000
+ 7360 strings out of 494045
+ 105222 string characters out of 3148388
+ 204980 words of memory out of 3000000
+ 10364 multiletter control sequences out of 15000+200000
  30962 words of font info for 118 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 35i,17n,60p,1472b,519s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,17n,60p,1465b,521s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi6
 00\matha12.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
 mathabx\dpi657\mathb10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\lj
@@ -1031,9 +1162,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files
 ublic/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/rsf
 s/rsfs10.pfb>
-Output written on dyn-suq-main.pdf (40 pages, 478152 bytes).
+Output written on dyn-suq-main.pdf (40 pages, 470126 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 164 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 166 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
