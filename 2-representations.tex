@@ -67,7 +67,7 @@ denotes the quotient map.
 The following analogue of Schur's Lemma holds.
 
 \begin{Lem} Let $T$ be a morphism
-of locally finite corepresentations $(V,X)$ and
+of sfd corepresentations $(V,X)$ and
 $(W,Y)$. Then $ \bigoplus_{k,l} \ker \Gru{T}{k}{l}$ and
 $\bigoplus_{k,l} \img \Gru{T}{k}{l}$ are invariant subspaces of
 $V$ and $W$, respectively.
@@ -493,7 +493,7 @@ $(\mathcal{H},X)$.
     $(\overline{\mathcal{H}},\overline{X}^{-*})$. % Better notation?
   \item The family
     $\Gru{F_{X}}{k}{l}:=\overline{\Gru{\overline{F_{X}}}{l}{k}}$ is an
-    invertible, positive morphism from $(\mathcal{H},X)$ to
+    invertible, positive operator implementing a morphism from $(\mathcal{H},X)$ to
     $(\mathcal{H},X^{S^{2} \otimes \id})$.
   \end{enumerate}
 \end{Prop}
@@ -707,17 +707,17 @@ C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$.
   Assume that $\mathscr{A}$ is a compact quantum group of face type with positive normalized
   invariant functional $\phi$.  There exists a unique family of linear functionals
   $f_{z} \colon A\to \C$ such that
-  \begin{enumerate}
+\begin{enumerate}[label={(\arabic*)}]
   \item $f_z$ vanishes on $A(K)$ when $K_u\neq K_d$.
   \item for each $a\in A$, the function $z\mapsto f_{z}(a)$ is entire
     and of exponential growth on the right half-plane.
-  \item $f_z(ab) = f_z(a)f_z(b)$ for $a\in A(K)$ and $b\in A(L)$ with $K\wmate L$. 
   \item $f_{0} = \epsilon$ and $(f_{z} \otimes f_{z'}) \circ 
-    \Delta= f_{z+z'}$ for all $z,z' \in \C$. (This expression is meaningful by 1.)
+    \Delta= f_{z+z'}$ for all $z,z' \in \C$. (This expression is meaningful by (1))
   \item $\phi(ab)=\phi(b(f_{1} \ast a \ast f_{1}))$ for all $a,b\in A$.
   \end{enumerate}
   This family furthermore satisfies
-  \begin{enumerate}\setcounter{enumi}{3}
+  \begin{enumerate}[label={(\arabic*)}]\setcounter{enumi}{4}
+  \item $f_z(ab) = f_z(a)f_z(b)$ for $a\in A(K)$ and $b\in A(L)$ with $K\wmate L$. 
   \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$.
   \item $f_{z}(\lambda_{l}\rho_{n})=\delta_{l,n}$,  $f_{z} \circ S = f_{-z}$,
 and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
@@ -726,19 +726,16 @@ and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
 
 \begin{proof}
   We first prove uniqueness.  Assume that $(f_{z})_{z}$ is a family of
-  functionals satisfying (1)--(3).  Since $\phi$ is faithful, the map
+  functionals satisfying (1)--(4).  Since $\phi$ is faithful, the map
   $\sigma\colon a \mapsto f_{1} \ast a \ast f_{1}$ is uniquely
-  determined, and one easily sees that is is a homomorphism. Using
-  (2), we find that $\epsilon \circ \sigma=f_{2}$ and $f_{2n}$ are
-  uniquely determined and characters for each $n$. Using (1) and the
+  determined by $\phi$, and one easily sees that it is a homomorphism. Using
+  (3), we find that $\epsilon \circ \sigma^n=f_{2n}$, which uniquely determines these functionals. Using (2) and the
   fact that every entire function of exponential growth on the right
-  half-plane is uniquely determined by its values at $\N \subseteq \C$
-  \cite{}, we can conclude that each $f_{z}$ is uniquely determined
-  and a character.
+  half-plane is uniquely determined by its values at $\N \subseteq \C$, we can conclude that the family $f_{z}$ is uniquely determined. Moreover, since the property (5) holds for $z = 2n$, we also conclude by the same argument as above that it holds for all $z\in \C$.
 
   Let us now prove existence.  By Corollary \ref{cor:rep-pw}, we can
   define for each $z\in \C$ a functional $f_{z} \colon A \to \C$ such
-  that for every unitary irreducible locally finite corepresentation
+  that for every unitary irreducible sfd corepresentation
   $(\mathcal{H},X)$,
     \begin{align*}
       f_{z}((\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})) &=
@@ -752,42 +749,44 @@ and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
       (f_{z} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
       \delta_{k,m}\delta_{l,n} \cdot (\Gru{F_{X}}{k}{l})^{z},
     \end{align*}
-    where $F_{X}$ is a non-zero morphism from $(\mathcal{H},X)$ to
-    $(\mathcal{H}, (S^{2} \otimes \id)(X))$ such that
+    where $F_{X}$ is a non-zero positive operator implementing a morphism from $(\mathcal{H},X)$ to
+    $(\mathcal{H}, (S^{2} \otimes \id)(X))$, scaled such that
     \begin{align*}
       \alpha_{X}:= \sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l}) = \sum_{n}
       \Tr(\Gru{F_{X}}{m}{n})
     \end{align*}
-    for all $l,n$ (see Theorem \ref{thm:rep-orthogonality}). By
-    construction, (1) holds. We show that $(f_{z})_{z}$ satisfies the
-    assertions (2)--(5). The proof of uniqueness shows that each
-    $f_{z}$ is a character. Throughout the following arguments, let 
+    for all $l,n$ (see Proposition \ref{prop:rep-f} and Theorem \ref{thm:rep-orthogonality}). By
+    construction, (1) and (2) hold. We show that the $(f_{z})_{z}$ satisfy the
+    assertions (3)--(7). 
+    %We have already argued that (5) is satisfied
+    %$f_{z}$ is a character. 
+    Throughout the following arguments, let 
     $(\mathcal{H},X)$ be a unitary irreducible corepresentation
     $(\mathcal{H},X)$ and let $F_{X}$ be as above.
 
-    (2) This follows from the relations
+    We first prove property (3). This follows from the relations
     \begin{align*}
       (f_{0}  \otimes \id)(\Gr{X}{k}{l}{m}{n}) &=
       \delta_{k,m}\delta_{l,n} \id_{\Gru{\mathcal{H}}{k}{l}} =
-      (\epsilon \otimes \id)(\Gr{X}{k}{l}{k}{l})
+      (\epsilon \otimes \id)(\Gr{X}{k}{l}{m}{n})
     \end{align*}
     and
     \begin{align*}
-      ((f_{z}\otimes f_{z'})\circ \tilde \Delta \otimes
+      (((f_{z}\otimes f_{z'})\circ \Delta) \otimes
       \id)(\Gr{X}{k}{l}{m}{n}) &=  \delta_{k,m}\delta_{l,n}(f_{z} \otimes f_{z'} \otimes
       \id)\big((\Gr{X}{k}{l}{k}{l})_{13}
       (\Gr{X}{k}{l}{k}{l})_{23}\big) \\
       &=  \delta_{k,m}\delta_{l,n}(\Gru{F_{X}}{k}{l})^{z}  \cdot (\Gru{F_{X}}{k}{l})^{z'} \\
       &= (f_{z+z'} \otimes \id)(\Gr{X}{k}{l}{m}{n}).
     \end{align*}
-    To conclude assertion (2), apply slice maps of the form $\id
-    \otimes \omega_{\xi,\xi'}$.
+    Applying slice maps of the form $\id
+    \otimes \omega_{\xi,\xi'}$ and invoking Theorem \ref{thm:rep-orthogonality}, this proves (3).
 
-   
-    (3)  Write $\tilde \Delta^{(2)} = (\tilde
-    \Delta \otimes \id)\circ \tilde \Delta = (\id \otimes \tilde
-    \Delta) \circ \tilde \Delta$ and $\rho_{z,z'}:=(f_{z'} \otimes \id
-    \otimes f_{z})\circ \tilde \Delta^{(2)}$. Then
+% Again? Check if this has already been used before   
+    To prove (4), write again $ \Delta^{(2)} = (
+    \Delta \otimes \id)\circ  \Delta = (\id \otimes 
+    \Delta) \circ \Delta$, and put \[\rho_{z,z'}:=(f_{z'} \otimes \id
+    \otimes f_{z})\circ  \Delta^{(2)}.\] Then
     \begin{align*}
       (\rho_{z,z'} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (f_{z'} \otimes
       \id \otimes f_{z} \otimes
@@ -798,56 +797,55 @@ and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
     \end{align*}
     We take $z=z'=1$, use Theorem \ref{thm:rep-orthogonality}, where
     now $\alpha= \beta$ by our scaling of $F_{X}$, and obtain
-    \begin{align*}
-      (\phi \otimes \id \otimes
+    \begin{eqnarray*}
+     && \hspace{-2cm} (\phi \otimes \id \otimes
       \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}((\rho_{1,1} \otimes
-      \id)(\Gr{X}{k}{l}{m}{n}))_{13}) &=\alpha^{-1}(\id \otimes
+      \id)(\Gr{X}{k}{l}{m}{n}))_{13})\\ && =\alpha^{-1}(\id \otimes
       \Gru{F_{X}}{k}{l}) (\id \otimes \Gru{(F_{X}^{-1})}{k}{l})
       \Sigma_{k,l,m,n} (\id \otimes
       \Gru{F_{X}}{m}{n}) \\
-      &=\beta^{-1}(\Gru{F_{X}}{m}{n} \otimes \id) \Sigma_{k,l,m,n} \\
-      &= (\phi \otimes \id \otimes
+      &&=\beta^{-1}(\Gru{F_{X}}{m}{n} \otimes \id) \Sigma_{k,l,m,n} \\
+      &&= (\phi \otimes \id \otimes
       \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})_{12}^{*}).
-    \end{align*}
-    To conclude assertion (3), applying slice maps of the form
+    \end{eqnarray*}
+    To conclude the proof of assertion (4), apply again slice maps of the form
     $\omega_{\xi,\xi'} \otimes \omega_{\eta,\eta'}$.
 
-    (4) By Proposition \ref{prop:rep-f} and the calculation above,
+We have then already argued that the property (5) automatically holds. To show the property (6), note that by Proposition \ref{prop:rep-f} and the calculation above,
     \begin{align*}
       (S^{2} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (1
       \otimes\Gru{F_{X}}{k}{l})
       \Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{F_{X}}{m}{n})^{-1} 
       =(\rho_{-1,1}  \otimes \id)(\Gr{X}{k}{l}{m}{n}).
     \end{align*}
-     Assertion (4) follows again by applying slice maps.
+     Assertion (6) follows again by applying slice maps.
     
-     (5) The fact that $f_{z}$ is a character and
-     that $f_{z}(\Gr{A}{k}{l}{m}{n})=0$ if $(k,l)\neq (m,n)$
-     immediately implies the relation
-     $f_{z}(\lambda_{l}\rho_{n})=\delta_{l,n}$  and the equality
+     Finally, (1), (2) and (4)
+     immediately imply the relation
+     $f_{z}(\UnitC{k}{m})=\delta_{k,m}$. The concrete construction of $f_z$ combined with property (3), the identity \eqref{eq:rep-delta} and the partial character property (5) gives the equality
      \begin{align*}
        (f_{-z} \otimes \id) (\Gr{X}{k}{l}{k}{l})=
-       (\Gru{(F_{X})}{k}{l})^{-z} &= (f_{z} \otimes
-       \id)(\Gr{X}{k}{l}{k}{l})^{-1} \\ &= (f_{z} \otimes
-       \id)(\Gr{(X^{-1})}{k}{l}{k}{l}) = (f_{z} \circ S \otimes
+       (\Gru{(F_{X})}{k}{l})^{-z} &=\left( (f_{z} \otimes
+       \id)(\Gr{X}{k}{l}{k}{l})\right)^{-1} \\ &= (f_{z} \otimes
+       \id)(\Gr{(X^{-1})}{l}{k}{l}{k}) = ((f_{z} \circ S) \otimes
        \id)(\Gr{X}{k}{l}{k}{l}).
      \end{align*}
-Therefore, $f_{-z} = f_{z} \circ S$. Using the preceding calculation,
+Therefore, $f_{-z} = f_{z} \circ S$. Let us now write $\bar{f}_z(a) = \overline{f_z(a^*)}$. Using the preceding calculation,
      the relation $(S \otimes \id)(\Gr{X}{k}{l}{k}{l}) =
      (\Gr{X}{k}{l}{k}{l})^{*}$ and positivity of $\Gru{F_{X}}{k}{l}$,
      we conclude
      \begin{align*}
-       (\ast \circ f_{z} \circ \ast \otimes
+       (\bar{f}_z \otimes
        \id)(\Gr{X}{k}{l}{k}{l})
-&=       (f_{z} \otimes
-       \id)((\Gr{X}{k}{l}{k}{l})^{*})^{*} \\
-& = (f_{-z} \otimes \id)(\Gr{X}{k}{l}{k}{l})^{*} 
+&=       \left((f_{z} \otimes
+       \id)((\Gr{X}{k}{l}{k}{l})^{*})\right)^{*} \\
+& = \left((f_{-z} \otimes \id)(\Gr{X}{k}{l}{k}{l})\right)^{*} 
  =
 ((\Gru{F_{X}}{k}{l})^{-z})^{*} 
 =       (\Gru{F_{X}}{k}{l})^{-\overline{z}} = (f_{-\overline{z}}
 \otimes \id)(\Gr{X}{k}{l}{k}{l}),
      \end{align*}
-whence $\ast \circ f_{z} \circ \ast = f_{-\overline{z}}$.
+whence $\bar{f}_z = f_{-\overline{z}}$.
 \end{proof}
 
 %  consider
