@@ -1,6 +1,6 @@
 \section{Compact quantum groups of face type}
 
-We generalize Hayashi's definition of a compact quantum group of face type [Hayashi] to the case where the commutative base algebra is no longer finite-dimensional. We will present two approaches, based on \emph{partial bialgebras} and \emph{weak multiplier bialgebras} [B\"{o}hm]. The first approach is piecewise and concrete, but requires some bookkeeping. The second approach is global but more abstract. As we will see from the general theory and the concrete examples, both approaches have their intrinsic value.
+We generalize Hayashi's definition of a compact quantum group of face type \cite{Hay1} to the case where the commutative base algebra is no longer finite-dimensional. We will present two approaches, based on \emph{partial bialgebras} and \emph{weak multiplier bialgebras} \cite{Boh1}. The first approach is piecewise and concrete, but requires some bookkeeping. The second approach is global but more abstract. As we will see from the general theory and the concrete examples, both approaches have their intrinsic value.
 
 %\begin{Not} If $I$ is a set, we write $\Fun_{\fin}(I)$ for the algebra of \emph{finitely supported} $\C$-valued functions on $I$\\
 
@@ -9,12 +9,12 @@ We generalize Hayashi's definition of a compact quantum group of face type [Haya
 
 % Notation $I$ ok, or better $O$?
 
-Let $I$ be a set. We consider $I^2=I\times I$ as the pair groupoid with $\wmult$ denoting composition. That is, an element $K=(k,l)\in I^2$ has source $k$ and target $l$, and if $K=(k,l)$ and $L=(l,m)$ we write $K\wmult L = (k,m)$. For general $K,L\in I^2$, we write the property `$K$ and $L$ are composable' as $K\wmate L$. 
+Let $I$ be a set. We consider $I^2=I\times I$ as the pair groupoid with $\wmult$ denoting composition. That is, an element $K=(k,l)\in I^2$ has source $K_l = k$ and target $K_r=l$, and if $K=(k,l)$ and $L=(l,m)$ we write $K\wmult L = (k,m)$. %For general $K,L\in I^2$, we write the property `$K$ and $L$ are composable' as $K\wmate L$. 
 
 \begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a small $\C$-linear category, that is, a set $I$ (the object set) together with %Change partial by face? Partial algebra might have distinct meaning
 \begin{itemize}
 \item[$\bullet$] for each $K=(k,l)\in I^2$ a vector space $A(K) = \Grs{A}{k}{l}=\!\!\GrDA{A}{k}{l}$ (possibly the zero vector space),
-\item[$\bullet$] for each $K,L$ with $K\wmate L$ a multiplication map \[M(K,L):A(K) \otimes A(L)\rightarrow A(K\cdot L),\qquad a\otimes b \mapsto ab\]  and 
+\item[$\bullet$] for each $K,L$ with $K_r = L_l$ a multiplication map \[M(K,L):A(K) \otimes A(L)\rightarrow A(K\cdot L),\qquad a\otimes b \mapsto ab\]  and 
 \item[$\bullet$] elements $\Unit(k) = \Unit_k \in \Grs{A}{k}{k}$ (the units), % or the local units?
 \end{itemize}
 such that the obvious associativity and unit conditions are satisfied. 
@@ -26,12 +26,12 @@ By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I
 \begin{Rem} For the moment we will allow the local units $\Unit_k$ to be zero. When none of the units are zero, we will call the partial algebra \emph{connected}. 
 \end{Rem}
 
-Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $\neg \left(K\wmate L\right)$, and we then let $\Grs{M}{K}{L}$ be the zero map.
+Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $K_r\neq L_l$, and we then let $\Grs{M}{K}{L}$ be the zero map.
 
 \begin{Def} The \emph{total algebra} $A$ of an $I$-partial algebra $\mathscr{A}$ is the vector space \[A = \oplus_{K\in I^2} A(K)\] endowed with the unique multiplication whose restriction to $A(K)\otimes A(L)$ concides with $M(K,L)$.  
 \end{Def} 
-
-Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a unit, but it is a \emph{locally unital algebra} [Quil] as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
+% Should a reference to the notion of locally unital algebra be given? I had a reference to Quillen, but no precise article, and I don't seem to find the link anymore...
+Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a unit, but it is a \emph{locally unital algebra} as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
 \end{Rem} 
@@ -48,14 +48,14 @@ Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a 
 %\end{itemize}
 %\end{Def}
 
-The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $k$ and target $l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{n}$. We write $K\bmate L$ if $K$ and $L$ are composable. 
+The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{n}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
 
 %Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
 % Should provide shortcut for notation where only the new indices appear at $\Delta$ (so disregard the source): write $\Delta(K over L)$ as $Delta_{rs}$ for $r=K_{ld}$ and $s=K_{rd}$. 
 \begin{Def} A \emph{partial coalgebra} $\mathscr{A}=(\mathscr{A},\Delta)$ (over $\C$) consists of a set $I$ (the object set) together with 
 \begin{itemize}
 \item[$\bullet$] for each $K=\Grru{k}{l}\in I^2$ a vector space $A(K) = \Grt{A}{k}{l}=\!\!\GrRA{A}{k}{l}$,
-\item[$\bullet$] for each $K,L$ with $K\bmate L$ a comultiplication map \[\Grt{\Delta}{K}{L}:A(K*L)\rightarrow A(K)\otimes A(L),\qquad a \mapsto a_{(1)K}\otimes a_{(2)L},\] and 
+\item[$\bullet$] for each $K,L$ with $K_d = L_u$ a comultiplication map \[\Grt{\Delta}{K}{L}:A(K*L)\rightarrow A(K)\otimes A(L),\qquad a \mapsto a_{(1)K}\otimes a_{(2)L},\] and 
 \item[$\bullet$] counit maps $\varepsilon_k:\Grt{A}{k}{k}\rightarrow \C$,
 \end{itemize} 
 satisfying the obvious coassociativity and counitality conditions.
@@ -68,7 +68,7 @@ By \emph{$I$-partial coalgebra} will be meant a partial coalgebra with object se
 Similarly, if $K = \Grt{}{k}{l}$ and $L = \Grt{}{l}{m}$, we abbreviate $\Delta_l = \Grt{\Delta}{K}{L}$, as the other indices are determined by the element to which $\Delta_l$ is applied.
 \end{Not}
 
-We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $\neg\left(K\bmate L\right)$. Similarly $\varepsilon$ is seen as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
+We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $K_d \neq L_u$. Similarly $\varepsilon$ is seen as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
 
 %The $\Grt{A}{k}{l}$ can be combined into a comultiplication \[\Delta: \Prod_{K} A(K)\rightarrow \Prod_{L,M} \left(A(L)\otimes A(M)\right)\] which is coassociative in the obvious way. In the following, we will write elements of direct products as infinite sums.
 
@@ -90,12 +90,12 @@ and for which the following compatibility relations are satisfied.
 \item\label{Propa} (Comultiplication of Units) For all $k,l,l',m\in I$, one has 
 % $K = \begin{pmatrix} k & k\\p & p \end{pmatrix}$ and $L =\begin{pmatrix} p &p \\ l & l\end{pmatrix}$, one has 
 \[\Delta_{l,l'}(\UnitC{k}{m}) = \delta_{l,l'}\UnitC{k}{l}\otimes \UnitC{l}{m}.\]  
-\item\label{Propb} (Counit of Multiplication) For all $K,L\in M_2(I)$ with $K \wmate L$ and all $a\in A(K)$ and $b\in A(L)$, \[\varepsilon(ab) = \varepsilon(a)\varepsilon(b).\]% Subtlety is that you already have to know composition to be able to apply this rule.
+\item\label{Propb} (Counit of Multiplication) For all $K,L\in M_2(I)$ with $K_r = L_l$ and all $a\in A(K)$ and $b\in A(L)$, \[\varepsilon(ab) = \varepsilon(a)\varepsilon(b).\]% Subtlety is that you already have to know composition to be able to apply this rule.
 \item\label{Propc} (Non-degeneracy) For all $k\in I$, $\varepsilon(\UnitC{k}{k})=1$. 
 \item\label{Propd} (Finiteness) For each $K\in M_2(I)$ and each $a\in A(K)$, the element $\Delta_{rs}(a)$ is zero except for a finite number of indices $r$ (resp. $s$) when $s$ (resp. $r$) is fixed.
 %\[\Grt{\Delta}{K}{L}(a)(1\otimes b) \neq0 \quad \textrm{or} \quad\Grt{\Delta}{K}{L}(a)(b\otimes 1) \neq 0.\]
 % We encode regularity this way: if asymmetrically we ask finiteness only for $r$ fixed, we are in the non-regular situation. (?)
-\item\label{Prope} (Comultiplication is multiplicative) For all $a\in A(K)$ and $b\in A(L)$ with $K\wmate L$,  \[\Delta_{rs}(ab) = \sum_t \Delta_{rt}(a)\Delta_{ts}(b).\]
+\item\label{Prope} (Comultiplication is multiplicative) For all $a\in A(K)$ and $b\in A(L)$ with $K_r= L_l$,  \[\Delta_{rs}(ab) = \sum_t \Delta_{rt}(a)\Delta_{ts}(b).\]
 \end{enumerate}
 \end{Def}
 
