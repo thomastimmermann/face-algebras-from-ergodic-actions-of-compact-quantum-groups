@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  10 JUN 2014 22:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  11 JUN 2014 17:58
 entering extended mode
 **dyn-suq-main.tex
 
@@ -598,7 +598,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
 
-Package amsthm Warning: Unknown theoremstyle `change' on input line 34.
+Package amsthm Warning: Unknown theoremstyle `change' on input line 33.
 
 \c@Theorem=\count123
 
@@ -747,51 +747,48 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 86.
 
 [3] [4] [5] [6]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 224.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 226.
 
 [7]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 250.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 251.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 254.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 255.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 254.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 255.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 254.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 255.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 256.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 256.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 256.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 258.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 258.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 260.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 [8]
-Overfull \hbox (5.82684pt too wide) in paragraph at lines 293--294
+Overfull \hbox (5.82684pt too wide) in paragraph at lines 294--295
 []\OT1/cmr/m/n/10.95 By unique-ness of the an-tipode, cf. [Bohm], it fol-lows a
 u-to-mat-i-cally that $\OML/cmm/m/it/10.95 S\U/matha/m/n/10.95 p\OML/cmm/m/it/1
 0.95 S\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 a\U/matha/m/n/10.95 q[]q[] $
  []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 297.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 298.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 297.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 298.
 
 [9])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
@@ -821,12 +818,12 @@ Overfull \hbox (11.91739pt too wide) in paragraph at lines 267--275
 
 [15] [16] [17] [18] [19] [20] [21] [22])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\3-tannaka.tex [23] [24]
+quantum-groups\3-tannaka.tex [23] [24] [25]
 Overfull \hbox (42.66815pt too wide) in alignment at lines 54--54
  [][][] []
  []
 
-[25] [26]
+[26]
 Overfull \hbox (19.95937pt too wide) in paragraph at lines 79--79
 []\OT1/cmr/m/n/10.95 Let $\OML/cmm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \U/msb/m/n
 /10.95 C \U/matha/m/n/10.95 Ñ \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 be com-ple
@@ -893,9 +890,9 @@ m/m/it/10.95 X\U/matha/m/n/10.95 q [] \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p
 \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q
  []
 
-)
+[31])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\4-op-alg.tex [31] [32]
+quantum-groups\4-op-alg.tex [32]
 Overfull \hbox (2.02695pt too wide) in paragraph at lines 25--26
 []\OT1/cmr/m/n/10.95 We aim to show that $\U/matha/m/n/10.95 p\OML/cmm/m/it/10.
 95 M; \OT1/cmr/m/n/10.95 \U/matha/m/n/10.95 q$ \OT1/cmr/m/n/10.95 can be fit-t
@@ -944,12 +941,12 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 112.
 
-)
+[40])
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
- [40]
+
 
 FiXme Summary: Number of notes: 1,
 (FiXme)        Number of warnings: 0,
@@ -957,27 +954,27 @@ FiXme Summary: Number of notes: 1,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 1.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 255.
 [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 255.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 255.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 255.
 Package rerunfilecheck Info: File `dyn-suq-main.out' has not changed.
 (rerunfilecheck)             Checksum: 30665EA473A746886FA8C722B709EDC5;1027.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
  ) 
 Here is how much of TeX's memory you used:
- 7379 strings out of 494045
- 105416 string characters out of 3148388
- 206429 words of memory out of 3000000
- 10378 multiletter control sequences out of 15000+200000
+ 7393 strings out of 494045
+ 105516 string characters out of 3148388
+ 204561 words of memory out of 3000000
+ 10383 multiletter control sequences out of 15000+200000
  30962 words of font info for 118 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  35i,17n,60p,1472b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1010,9 +1007,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files
 ublic/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/rsf
 s/rsfs10.pfb>
-Output written on dyn-suq-main.pdf (41 pages, 483732 bytes).
+Output written on dyn-suq-main.pdf (41 pages, 489168 bytes).
 PDF statistics:
- 628 PDF objects out of 1000 (max. 8388607)
- 171 named destinations out of 1000 (max. 500000)
+ 654 PDF objects out of 1000 (max. 8388607)
+ 180 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
