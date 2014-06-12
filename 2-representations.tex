@@ -1,9 +1,10 @@
-\section{Structure theory}
+\section{Representation theory}
 
-In this section, the representation theory of compact quantum groups of face type is investigated. As the situation is quite similar to the case already studied by Hayashi, we do not provide full proofs, but only draw attention to those parts of the theory which need modification.
+In this section, the representation theory of partial compact quantum groups is investigated. As the situation is quite similar to the case already studied by Hayashi \cite{Hay1}, we do not always provide fully written out proofs, but only draw attention to those parts of the theory which need modification.
+
+In what follows, the homogeneous component $A(K) = \eGr{A}{k}{l}{m}{n}$ of a partial bialgebra will now be mainly written as $A(K) = \Gr{A}{k}{l}{m}{n}$. 
 
 \subsection{Corepresentations of partial Hopf algebras}
-
 % A \emph{locally finite corepresentation}
 % of $(A,\Delta)$ consists of a row- and column-finite $I^{2}$-graded
 % Hilbert space $\mathcal{H}=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$
@@ -29,75 +30,85 @@ In this section, the representation theory of compact quantum groups of face typ
 % $Z=(\Gr{Z}{k}{l}{m}{n})_{k,l,m,n}$ in 2.\ is uniquely
 % determined by $X$ and will be denoted by $X^{-1}$.
 
-Let $\mathscr{A}$ be an $I$-partial bialgebra. We denote $\mathcal{L}(V,W)$ for the vector space of linear maps between two vector spaces.
+Let $\mathscr{A}$ be an $I$-partial bialgebra. We denote $\Hom_\C(V,W)$ for the vector space of linear maps between two vector spaces.
 
 \begin{Def} Let $\mathscr{A}$ be an $I$-partial bialgebra, and let $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ be an $I^{2}$-graded vector space.
 A \emph{corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $V$ consists of a family of elements 
   $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
-  \mathcal{L}(\Gru{V}{m}{n},\Gru{V}{k}{l})$
+  \Hom_\C(\Gru{V}{m}{n},\Gru{V}{k}{l})$
   satisfying
   \begin{align} \label{eq:rep-delta}
     (\Delta_{pq} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
-    \left(\Gr{X}{k}{l}{p}{q}\right)_{13}\left(\Gr{X}{p}{q}{m}{n}\right)_{23}
+    \Big{(}\Gr{X}{k}{l}{p}{q}\Big{)}_{13}\Big{(}\Gr{X}{p}{q}{m}{n}\Big{)}_{23}
   \end{align}
 and   \[(\epsilon \otimes
     \id)(\Gr{X}{k}{l}{m}{n})=\delta_{k,m}\delta_{l,n}\id_{\Gru{V}{k}{l}}\] 
 for all possible indices.
 \end{Def} % Drop s.f. and say we only work with s.f. coreps.?
 
-We will sometimes consider $\Gr{X}{k}{l}{m}{n}$ as a map in $\mathcal{L}(\Gru{V}{m}{n},\Gr{A}{k}{l}{m}{n}\otimes \Gru{V}{k}{l})$. % Or better to keep leg numbering notation because confusing otherwise? Or use $1\otimes $ notation?
+We use here the standard leg numbering notation, e.g. $a_{12} = a\otimes 1$.
+
+We will sometimes for convenience consider $\Gr{X}{k}{l}{m}{n}$ as a map in $\Hom_\C(\Gru{V}{m}{n},\Gr{A}{k}{l}{m}{n}\otimes \Gru{V}{k}{l})$. % Or better to keep leg numbering notation because confusing otherwise? Or use $1\otimes $ notation?
 
 \begin{Def}\label{DefMorphism} A \emph{morphism} $T$ between two corepresentations
-$(V,X)$ and $(W,Y)$ is a family of linear maps
-$\Gru{T}{k}{l} \in
-\mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$
-satisfying $(1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} =
-\Gr{Y}{k}{l}{m}{n}(1 \otimes \Gru{T}{m}{n})$.
+$(V,X)$ and $(W,Y)$ of a partial bialgebra $\mathscr{A}$ is a family of linear maps
+\[\Gru{T}{k}{l} \in
+\Hom_\C(\Gru{V}{k}{l},\Gru{W}{k}{l})\]
+satisfying \[(1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} = \Gr{Y}{k}{l}{m}{n}(1 \otimes \Gru{T}{m}{n}).\]
 % We call $T$ \emph{bounded} when $\oplus_{k,l} \Gru{T}{k}{l}$ is bounded.
 \end{Def}
 
 \begin{Def} Let $(V,X)$ be a
-corepresentation. We call a family of subspaces
-$\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$
-\emph{invariant} if $(1\otimes \Gru{Q}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =0$,
-where $\Gru{P}{k}{l}:\Gru{W}{k}{l}\to\Gru{V}{k}{l}$ is the inclusion map and $\Gru{Q}{k}{l}:\Gru{V}{k}{l}\to\Gru{V}{k}{l}/\Gru{W}{k}{l}$
+corepresentation of a partial bialgebra $\mathscr{A}$. A family of subspaces
+\[\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}\]
+is called \emph{invariant} if \[(1\otimes \Gru{Q}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =0,\]
+where $\Gru{P}{m}{n}:\Gru{W}{m}{n}\to\Gru{V}{m}{n}$ is the inclusion map and $\Gru{Q}{k}{l}:\Gru{V}{k}{l}\to\Gru{V}{k}{l}/\Gru{W}{k}{l}$
 denotes the quotient map.
 \end{Def}
 
 The following analogue of Schur's Lemma holds.
 
 \begin{Lem} Let $T$ be a morphism
-of sfd corepresentations $(V,X)$ and
+of corepresentations $(V,X)$ and
 $(W,Y)$. Then $ \bigoplus_{k,l} \ker \Gru{T}{k}{l}$ and
 $\bigoplus_{k,l} \img \Gru{T}{k}{l}$ are invariant subspaces of
 $V$ and $W$, respectively.
 \end{Lem} 
 
-In particular, if $(V,X)$ and $(W,Y)$ are irreducible, then a morphism $T$ from $V$ to $W$ is
-either $0$ or an isomorphism.
+In particular, if $(V,X)$ and $(W,Y)$ are irreducible, then a morphism $T$ from $V$ to $W$ either has all $\Gru{T}{k}{l}=0$ or all
+$\Gru{T}{k}{l}$ isomorphisms.
 
-\begin{Def} We denote by $\Corep(A,\Delta)$ the category of corepresentations of $(A,\Delta)$ with morphisms as in Definition \ref{DefMorphism}.
+\begin{Def} Let $\mathscr{A}$ be a partial bialgebra. We denote by $\Corep(\mathscr{A})$ the category of corepresentations of $\mathscr{A}$ with morphisms as in Definition \ref{DefMorphism}.
 \end{Def}
 
-Clearly $\Corep(A,\Delta)$ is a $\C$-linear category. The next lemma provides one with a tensor product structure on this category.
+Clearly $\mathscr{A}$ is a $\C$-linear category. We will be interested in a full subcategory of it. 
 
-\begin{Lem} Let $X$ and $Y$ be two sfd copresentations on respective $I^2$-graded vector spaces $V$ and $W$. Put $V\itimes W = \oplus_k \Gru{V}{k}{l} \otimes \Gru{W}{k}{l}$ with its natural $I^2$-grading. Then \begin{eqnarray*} \Gr{(X\Circt Y)}{k}{p}{m}{q} = \sum_{l,n} \left(\Gr{X}{k}{l}{m}{n}\right)_{12}\left(\Gr{Y}{l}{p}{n}{q}\right)_{13} &\in \oplus_{l,n} \left( \Gr{A}{k}{l}{m}{n}\otimes \mathcal{L}(\Gru{V}{m}{n},\Gru{V}{k}{l})\otimes \mathcal{L}(\Gru{W}{n}{w},\Gru{W}{l}{p})\right) \\& \subseteq  \Gr{A}{k}{l}{m}{n}\otimes \mathcal{L}(\Gru{(V\itimes W)}{m}{q},\Gru{(V\itimes W)}{k}{p})\end{eqnarray*} is a corepresentation.
+\begin{Def} An $I^2$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ is called \emph{separately finitely supported (sfs)} %better name? 
+if $\Gru{V}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed. 
+
+If $\mathscr{A}$ is an $I$-partial bialgebra, a corepresentation $X$ will be called sfs if its carrier $I^2$-graded vector space is sfs. 
+\end{Def}
+
+We will denote by $\Corep_{\sfs}(\mathscr{A})$ the full category of $\Corep(\mathscr{A})$ consisting of sfs corepresentations.
+
+The next lemma provides one with a tensor product structure on the category $\Corep_{\sfs}(\mathscr{A})$.
+
+\begin{Lem} Let $X$ and $Y$ be two sfs copresentations on respective $I^2$-graded vector spaces $V$ and $W$. Put \[\Gru{(V\iitimes W)}{k}{m} = \oplus_l \left(\Gru{V}{k}{l} \otimes \Gru{W}{l}{m}\right),\] and consider their direct sum $V\iitimes W$ with its natural $I^2$-grading. Then $V\iitimes W$ is sfs, the sum \[ \Gr{(X\Circt Y)}{k}{p}{m}{q} := \sum_{l,n} \left(\Gr{X}{k}{l}{m}{n}\right)_{12}\left(\Gr{Y}{l}{p}{n}{q}\right)_{13}\] has only finitely many non-zero terms, and \[\Gr{(X\Circt Y)}{k}{p}{m}{q}\in \Gr{A}{k}{p}{m}{q}\otimes \Hom_\C(\Gru{(V\iitimes W)}{m}{q},\Gru{(V\iitimes W)}{k}{p})\] defines a corepresentation.
 \end{Lem} 
 
-\begin{proof} This follows from the multiplicativity of $\Delta$ and the weak multiplicativity of $\epsilon$. % To expand?
+\begin{proof} It is trivially checked that $V\iitimes W$ is sfs. Then for $k,m$ fixed, there are only finitely many $l,n$ for which $\Gr{X}{k}{l}{m}{n}$ is non-zero. This shows that the sum defining $\Gr{(X\Circt Y)}{k}{p}{m}{q}$ is in fact finite. Using the natural inclusions \begin{eqnarray*} &&\hspace{-2cm} \Gr{A}{k}{p}{m}{q}\otimes \Hom_\C(\Gru{V}{m}{n},\Gru{V}{k}{l})\otimes  \Hom_\C(\Gru{W}{n}{q},\Gru{W}{l}{p}) \\ && \subseteq \Gr{A}{k}{p}{m}{q} \otimes \Hom_\C(\Gru{V}{m}{n}\otimes \Gru{W}{n}{q},\Gru{V}{k}{l}\otimes \Gru{W}{l}{p})\\ &&\subseteq \Gr{A}{k}{p}{m}{q}\otimes \Hom_\C(\Gru{(V\iitimes W)}{m}{q},\Gru{(V\iitimes W)}{k}{p}),\end{eqnarray*} we see that $\Gr{(X\Circt Y)}{k}{p}{m}{q}$ is indeed an element of $\Gr{A}{k}{p}{m}{q}\otimes \Hom_\C(\Gru{(V\iitimes W)}{m}{q},\Gru{(V\iitimes W)}{k}{p})$. 
+
+The fact that $\Gr{(X\Circt Y)}{k}{p}{m}{q}$ is a corepresentation then follows straightforwardly from the multiplicativity of $\Delta$ and the weak multiplicativity of $\epsilon$.
 \end{proof} 
 
-\begin{Cor} The category $\Corep(A,\Delta)$ with the above tensor product $\Circt$ forms a tensor category.
+\begin{Cor} The category $\Corep_{\sfs}(\mathscr{A})$ with the above tensor product $\Circt$ forms a tensor category.
 \end{Cor}
-\begin{proof} Clear.
+\begin{proof} Clear. We only remark that the unit object of the category is given by the graded vector space $\C_I$ with components $\delta_{kl}\C$ and associated corepresentation \[\Gr{X}{k}{l}{m}{n} = \delta_{m,n}\delta_{k,l} \UnitC{k}{m}.\] 
 \end{proof} 
-
-Let us call an $I^2$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ \emph{separately finitely supported (sfs)} %better name? 
-if $\Gru{V}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$) when $l$ (resp. $k$) is fixed. Similarly, a corepresentation will be called separately finitely supported if its carrier $I^2$-graded vector space is separately finitely supported. It is easily seen that sfs corepresentations are stable under $\Circt$. 
 
 %  Antipode duality.% To continue.
 
-The following lemma shows that when $\mathscr{A}$ is a partial Hopf algebra, an sfs corepresentation is invertible.
+The following lemma shows that when $\mathscr{A}$ is a partial \emph{Hopf} algebra, an sfs corepresentation is invertible.
 
 % Local finite-dimensionality not needed?
 \begin{Lem} \label{lemma:rep-corep} Let $\mathscr{A}$ be a partial Hopf algebra, and let $X$ be an sfs corepresentation of $\mathscr{A}$ on an $I^2$-graded vector space $V$.
@@ -105,12 +116,12 @@ The following lemma shows that when $\mathscr{A}$ is a partial Hopf algebra, an 
   \[\Gr{Z}{k}{l}{m}{n} =(S \otimes
   \id)(\Gr{X}{n}{m}{l}{k}) \in
     \Gr{A}{k}{l}{m}{n} \otimes
-    \mathcal{L}(\Gru{V}{l}{k},\Gru{W}{n}{m})\] are the unique elements such  that
+    \Hom_\C(\Gru{V}{l}{k},\Gru{V}{n}{m})\] are the unique elements such  that
   \begin{align}\label{eq:rep-delta}
     \sum_{k} \Gr{Z}{l}{k}{n'}{m} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
     \UnitC{l}{n} \otimes \id_{\Gru{V}{m}{n}}, &
     \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{l}{k'}{n}{m} &= \delta_{k,k'}
-    \UnitC{k}{m}\otimes \id_{\Gru{W}{k}{l}}.
+    \UnitC{k}{m}\otimes \id_{\Gru{V}{k}{l}}.
   \end{align}
    In particular, they satisfy
   \begin{align*}
@@ -118,7 +129,7 @@ The following lemma shows that when $\mathscr{A}$ is a partial Hopf algebra, an 
     \left(\Gr{Z}{p}{q}{m}{n}\right)_{23}\left(\Gr{Z}{p}{q}{k}{l}\right)_{13}.
   \end{align*}
 \end{Lem}
-Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is sfs. If it exists, we denote the family $Z$ by $X^{-1}$.
+Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is sfs. 
 \begin{proof}
  Let  $\Gr{Z}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{k}{l}{m}{n})$, and write the multiplication of $A$ as $M_A$. Then the antipode axiom implies
    \begin{align*}
@@ -139,9 +150,12 @@ Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is s
  Uniqueness follows immediately from the identities  \eqref{eq:rep-delta}.
 \end{proof}
 
+\begin{Def} Let $\mathscr{A}$ and $X$ be as in Lemma \ref{lemma:rep-corep}. The element $Z$, when it exists, will be denoted $X^{-1}$.
+\end{Def} 
+
  \begin{Rem}\label{RemMorRep} % To see if this has to be modified.
  Using \eqref{eq:rep-delta}, one finds that a collection of linear maps $\Gru{T}{k}{l} \in
-\mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ forms a morphism between two corepresentations
+\mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ forms a morphism between two sfs corepresentations
 $(V,X)$ and $(W,Y)$  if
 and only if
   \begin{align} 
@@ -169,19 +183,26 @@ Conversely, if $T$ is a morphism, then
 \end{Rem}
 %In the following we will write $X^{-1}:=Z$.
 
-Let us say an $I^2$-graded vector space $V$ is seperately finite dimensional (sfd) if $\oplus_l \Gru{V}{k}{l}$ (resp. $\oplus_l \Gru{V}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation. We will denote by $\Corep_{\sfd}(\mathscr{A})$ the full subcategory of $\Corep(\mathscr{A})$ consisting of sfd representations. One easily sees that this subcategory is closed under $\Circt$. 
+To actually have a tensor category with duality, we need something stronger than the sfs condition.
+
+\begin{Def} An $I^2$-graded vector space $V$ is called \emph{seperately finite dimensional (sfd)} if $\oplus_l \Gru{V}{k}{l}$ (resp. $\oplus_l \Gru{V}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation of a partial bialgebra $\mathscr{A}$, and we then denote by $\Corep_{\sfd}(\mathscr{A})$ the full subcategory of $\Corep_{\sfs}(\mathscr{A})$ consisting of sfd representations. 
+\end{Def} 
+
+One easily sees that $\Corep_{\sfd}(\mathscr{A})$ is closed under $\Circt$. 
 
 \begin{Lem} Let $\mathscr{A}$ be a partial Hopf algebra. Then $\Corep_{\sfd}(\mathscr{A})$ is a tensor category with left duality. 
 \end{Lem} 
 
-\begin{proof} Some proof.
+\begin{proof} Let $X$ be an sfd corepresentation on a bigraded vector space $V$. Put \[\Gru{(V^*)}{k}{l} = (\Gru{V}{k}{l})^*,\] and let $V^*$ denote their direct sum bigraded vector space. Using the natural contravariant identification \[\Hom_\C(\Gru{V}{l}{k},\Gru{V}{n}{m})\cong \Hom_\C(\Gru{(V^*)}{m}{n},\Gru{(V^*)}{k}{l}),\] we can transform $X^{-1}$ into a corepresentation $X^d$ on $V^*$. 
+
+We claim that $X^d$ is the left dual of $X$. To see this, consider the evaluation maps \[\Gru{T}{k}{m}: \Gru{(V^*\iitimes V)}{k}{m} \supseteq (\Gru{V}{l}{k})^*\otimes \Gru{V}{l}{m}\rightarrow \delta_{k,m} \C = \Gru{\C_I}{k}{m}.\] Then from Lemma \ref{lemma:rep-corep}, we obtain \begin{eqnarray*} (1\otimes \Gru{T}{k}{p})\Big{(} \sum_{l,n} \big{(} \Gr{(X^d)}{k}{l}{m}{n}\big{)}_{12} \big{(}\Gr{X}{l}{p}{n}{q}\big{)}_{13}\Big{)} &=& \delta_{p,k}(\id\otimes \Gru{T}{m}{m}) \left( \sum_{l,n}  \Gr{(X^{-1})}{k}{l}{m}{n}\Gr{X}{l}{k}{n}{q}\right)_{13} \\ &=& \delta_{p,k}\UnitC{k}{q}\otimes \Gru{T}{m}{q}.\end{eqnarray*} Hence the $\Gru{T}{k}{l}$ define an intertwiner between $V^*\iitimes V$ and $\C_I$. Similarly, the maps  \[\Gru{R}{k}{k}: \Gru{\C_I}{k}{k} = \C\rightarrow \Gru{(V\iitimes V^*)}{k}{k},\quad 1\mapsto \sum_{l,i} \Gru{v_i}{k}{l}\otimes \Gru{\omega_i}{l}{k},\] where the $\{\Gru{v_i}{k}{l}\mid i\}$ and $\{\Gru{\omega_i}{l}{k} \mid i\}$ form a dual basis of $\Gru{V}{k}{l}$, can be shown to form an intertwiner. It is then easy to check that $T$ and $R$ make $X^d$ into the left dual of $X$. % More info?
 \end{proof}
 
-Let us now enhance our partial Hopf algebras to quantum groups of face type. One then considers corepresentations on sfd \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition.
+Let us now enhance our partial Hopf algebras to partial compact quantum groups. One then considers corepresentations on sfd \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition.
 
 %\paragraph{Unitarity of corepresentations}
 
-\begin{Def} Let $\mathscr{A}$ define a compact quantum group of face type. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
+\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
 \emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}.\]  
 \end{Def} 
 \begin{Rem} \begin{enumerate} \item We assume here of course that $\Hsp$ is the \emph{closed} direct sum of all (finite-dimensional) $\Gru{\Hsp}{m}{n}$, but this does not change the notion of corepresentation which had a local definition.

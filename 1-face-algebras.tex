@@ -1,4 +1,4 @@
-\section{Compact quantum groups of face type}
+\section{Partial compact quantum groups}
 
 We generalize Hayashi's definition of a compact quantum group of face type \cite{Hay1} to the case where the commutative base algebra is no longer finite-dimensional. We will present two approaches, based on \emph{partial bialgebras} and \emph{weak multiplier bialgebras} \cite{Boh1}. The first approach is piecewise and concrete, but requires some bookkeeping. The second approach is global but more abstract. As we will see from the general theory and the concrete examples, both approaches have their intrinsic value.
 
@@ -226,7 +226,7 @@ Since also the expressions $\Delta(a)(b\otimes 1)$ and $(1\otimes a)\Delta(b)$ a
 
 % To complete
 \begin{Rem}\label{RemFull}
-Recall from \cite[Section 3]{Boh1} a regular weak multiplier bialgebra admits four projections $A\rightarrow M(A)$, given by \begin{align*} \bar{\Pi}^L(a) = (\epsilon\otimes \id)((a\otimes 1)\Delta(1)),\quad &  \bar{\Pi}^R(a) = (\id\otimes \epsilon)(\Delta(1)(1\otimes a)),\\ \Pi^L(a)  = (\epsilon\otimes \id)(\Delta(1)(a\otimes 1)),\quad& \Pi^R(a) = (\id\otimes\epsilon)((1\otimes a)\Delta(1)),\end{align*} where the right hand side expressions are interpreted as multipliers in the obvious way (using regularity). A trivial computation shows that if $a\in \eGr{A}{k}{l}{m}{n}$, then \[ \overline{\Pi}^L(a) =\epsilon(a)\lambda_n,\quad \overline{\Pi}^R(a) =\epsilon(a)\rho_k,\quad \Pi^L(a) =\epsilon(a)\lambda_m,\quad \Pi^R(a) = \epsilon(a) \rho_l.\] In particular, we see that the \emph{base algebra} of $(A,\Delta)$ is just the algebra $\Fun_{\fin}(I)$ of finite support functions on $I$, and from \cite[Theorem 3.13]{Boh1}, we conclude that the comultiplication of $A$ is (left and right) \emph{full} (meaning roughly that the legs of $\Delta(A)$ span $A$).
+Recall from \cite[Section 3]{Boh1} that a regular weak multiplier bialgebra admits four projections $A\rightarrow M(A)$, given by \begin{align*} \bar{\Pi}^L(a) = (\epsilon\otimes \id)((a\otimes 1)\Delta(1)),\quad &  \bar{\Pi}^R(a) = (\id\otimes \epsilon)(\Delta(1)(1\otimes a)),\\ \Pi^L(a)  = (\epsilon\otimes \id)(\Delta(1)(a\otimes 1)),\quad& \Pi^R(a) = (\id\otimes\epsilon)((1\otimes a)\Delta(1)),\end{align*} where the right hand side expressions are interpreted as multipliers in the obvious way. A trivial computation shows that if $a\in \eGr{A}{k}{l}{m}{n}$, then \[ \overline{\Pi}^L(a) =\epsilon(a)\lambda_n,\quad \overline{\Pi}^R(a) =\epsilon(a)\rho_k,\quad \Pi^L(a) =\epsilon(a)\lambda_m,\quad \Pi^R(a) = \epsilon(a) \rho_l.\] In particular, we see that the \emph{base algebra} of $(A,\Delta)$ is just the algebra $\Fun_{\fin}(I)$ of finite support functions on $I$. From \cite[Theorem 3.13]{Boh1}, we conclude that the comultiplication of $A$ is (left and right) \emph{full} (meaning roughly that the legs of $\Delta(A)$ span $A$).
 \end{Rem}
 
 We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak multiplier Hopf algebra \cite{Boh1,VDW2,VDW1}. We will mainly refer to \cite{Boh1} for uniformity.% OK?
@@ -279,11 +279,11 @@ From the remarks following \cite[Theorem 6.8.(2)]{Boh1}, we conclude the followi
 \begin{Cor} If $\mathscr{A}$ is a partial Hopf algebra, its total algebra $A$ with total comultiplication $\Delta$ forms a weak multiplier Hopf algebra in the sense of \cite[Definition 1.14]{VDW1}.
 \end{Cor}
 
- From \cite[Theorem 6.12]{Boh1}, we obtain the following corollary. 
+From \cite[Theorem 6.12 and Corollary 6.16]{Boh1}, we obtain the following corollary. 
 
-\begin{Cor} The map $S:A\rightarrow A$ is an antihomomorphism.
+\begin{Cor} The map $S:A\rightarrow A$ is an antihomomorphism s.t. \[\Delta_{rs}(S(a)) = (S\otimes S)\Delta_{sr}^{\op}(a).\]
 \end{Cor} 
-% Necessary to state also anti-comultiplicativity? Cf. Bohm Cor. 6.16.
+
 
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
