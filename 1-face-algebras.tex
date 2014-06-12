@@ -131,6 +131,9 @@ Using the notion introduced in Example \ref{ExaMult}.2, we can introduce the fol
 If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \UnitC{k}{l},\qquad \rho_l = \sum_k\UnitC{k}{l} \qquad \in M(A).\]
 \end{Not}
 
+\begin{Rem} From Property \ref{Propc} of Definition \ref{DefPartBiAlg}, it follows that $\lambda_k\neq 0\neq \rho_k$ for any $k\in I$.
+\end{Rem} 
+
 To show that the total algebra of a partial bialgebra becomes a weak multiplier bialgebra, we will need some easy lemmas. 
 %In the following, we will use the grading for tensor products as in Remark \ref{RemGrad}, coupled with the multiplier interpretation as in Example \ref{ExaMult}.
 
@@ -222,8 +225,8 @@ Since also the expressions $\Delta(a)(b\otimes 1)$ and $(1\otimes a)\Delta(b)$ a
 %It is easily verified that in this case $\overline{\varepsilon_{K}(a)} = \varepsilon_{K^{\circ}}(a)$, and that $\Delta:A\rightarrow M(A\otimes A)$ becomes a $^*$-algebra homomorphism.
 
 % To complete
-\begin{Rem}
-Recall from \cite[Section 3]{Boh1} a regular weak multiplier bialgebra admits four projections $A\rightarrow M(A)$, given by \begin{align*} \bar{\Pi}^L(a) = (\epsilon\otimes \id)((a\otimes 1)\Delta(1)),\quad &  \bar{\Pi}^R(a) = (\id\otimes \epsilon)(\Delta(1)(1\otimes a)),\\ \Pi^L(a)  = (\epsilon\otimes \id)(\Delta(1)(a\otimes 1)),\quad& \Pi^R(a) = (\id\otimes\epsilon)((1\otimes a)\Delta(1)),\end{align*} where the right hand side expressions are interpreted as multipliers in the obvious way (using regularity). A trivial computation shows that if $a\in \eGr{A}{k}{l}{m}{n}$, then \[ \overline{\Pi}^L(a) =\epsilon(a)\lambda_n,\quad \overline{\Pi}^R(a) =\epsilon(a)\rho_k,\quad \Pi^L(a) =\epsilon(a)\lambda_m,\quad \Pi^R(a) = \epsilon(a) \rho_l.\] In particular, we see that the \emph{base algebra} of $(A,\Delta)$ is just the algebra $\Fun_{\fin}(I)$ of finite support functions on $I$. 
+\begin{Rem}\label{RemFull}
+Recall from \cite[Section 3]{Boh1} a regular weak multiplier bialgebra admits four projections $A\rightarrow M(A)$, given by \begin{align*} \bar{\Pi}^L(a) = (\epsilon\otimes \id)((a\otimes 1)\Delta(1)),\quad &  \bar{\Pi}^R(a) = (\id\otimes \epsilon)(\Delta(1)(1\otimes a)),\\ \Pi^L(a)  = (\epsilon\otimes \id)(\Delta(1)(a\otimes 1)),\quad& \Pi^R(a) = (\id\otimes\epsilon)((1\otimes a)\Delta(1)),\end{align*} where the right hand side expressions are interpreted as multipliers in the obvious way (using regularity). A trivial computation shows that if $a\in \eGr{A}{k}{l}{m}{n}$, then \[ \overline{\Pi}^L(a) =\epsilon(a)\lambda_n,\quad \overline{\Pi}^R(a) =\epsilon(a)\rho_k,\quad \Pi^L(a) =\epsilon(a)\lambda_m,\quad \Pi^R(a) = \epsilon(a) \rho_l.\] In particular, we see that the \emph{base algebra} of $(A,\Delta)$ is just the algebra $\Fun_{\fin}(I)$ of finite support functions on $I$, and from \cite[Theorem 3.13]{Boh1}, we conclude that the comultiplication of $A$ is (left and right) \emph{full} (meaning roughly that the legs of $\Delta(A)$ span $A$).
 \end{Rem}
 
 We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak multiplier Hopf algebra \cite{Boh1,VDW2,VDW1}. We will mainly refer to \cite{Boh1} for uniformity.% OK?
@@ -268,54 +271,68 @@ The second identity is proven similarly.
 \begin{Prop} A collection of maps $S:A(K)\rightarrow A(K^{\circ\bullet})$ defines an antipode for a partial bialgebra $\mathscr{A}$ if and only if the total map $S:A\rightarrow A$ defines an antipode for the total weak multiplier bialgebra $(A,\Delta)$ in the sense of \cite[Section 6]{Boh1}. 
 \end{Prop} 
 
-\begin{proof} We verify that the total antipode $S:A\rightarrow A$ satsisfies the conditions as in [B\"{o}hm]. In fact, the two first identities are precisely our identities in Lemma \ref{LemAnti}. The last identity says that formally one should have \[\sum_kS(\rho_k a)\lambda_k = S(a),\quad \forall a\in A,\] but this follows immediately from the way $S$ acts on homogeneous components.
+\begin{proof} We verify that the total antipode $S:A\rightarrow A$ satisfies the conditions of an antipode as stated in \cite[Theorem 6.8.(2)]{Boh1}. In fact, the two first identities of their Theorem 6.8.(2) are precisely our identities in Lemma \ref{LemAnti}. The third and last identity of their Theorem 6.8.(2) says that formally one should have \[\sum_kS(\rho_k a)\lambda_k = S(a),\quad \forall a\in A,\] but this follows immediately from the way $S$ acts on homogeneous components.% Should I spell out the definition of an antipode as given by Bohm et al?
 \end{proof}
+
+From the remarks following \cite[Theorem 6.8.(2)]{Boh1}, we conclude the following.
+
+\begin{Cor} If $\mathscr{A}$ is a partial Hopf algebra, its total algebra $A$ with total comultiplication $\Delta$ forms a weak multiplier Hopf algebra in the sense of \cite[Definition 1.14]{VDW1}.
+\end{Cor}
 
  From \cite[Theorem 6.12]{Boh1}, we obtain the following corollary. 
 
-\begin{Cor} The map $S:A\rightarrow A$ is an anti-homomorphism.
+\begin{Cor} The map $S:A\rightarrow A$ is an antihomomorphism.
 \end{Cor} 
+% Necessary to state also anti-comultiplicativity? Cf. Bohm Cor. 6.16.
 
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
-\begin{Def} A partial $^*$-algebra $\mathscr{A}$ is a partial algebra whose total algebra $A$ is equipped with an antilinear, anti-multiplicative involution \[*:A\rightarrow A,\quad a\mapsto a^*\] such that the $\mathbf{1}_k$ are self-adjoint for all $k$ in the object set. 
+\begin{Def} A partial $^*$-algebra $\mathscr{A}$ is a partial algebra whose total algebra $A$ is equipped with an antilinear, antimultiplicative involution \[*:A\rightarrow A,\quad a\mapsto a^*\] such that the $\mathbf{1}_k$ are selfadjoint for all $k$ in the object set. 
 \end{Def} 
 
-One can of course give an alternative definition directly in terms of the partial algebra structure by requiring that we are given anti-linear maps $A(k,l)\rightarrow A(l,k)$ satisfying the obvious anti-multiplicativity and involution properties.
+One can of course give an alternative definition directly in terms of the partial algebra structure by requiring that we are given antilinear maps $A(k,l)\rightarrow A(l,k)$ satisfying the obvious antimultiplicativity and involution properties.
 
-\begin{Def} A partial $^*$-bialgebra $\mathscr{A}$ is a partial bialgebra whose underlying partial algebra has been endowed with a partial $^*$-algebra structure for which \[\Delta_{rs}(a)^* = \Delta_{sr}(a^*),\qquad \forall K\in M_2(I), a\in A(K).\]
+\begin{Def} An $I$-partial $^*$-bialgebra $\mathscr{A}$ is an $I$-partial bialgebra whose underlying partial algebra has been endowed with a partial $^*$-algebra structure for which \[\Delta_{rs}(a)^* = \Delta_{sr}(a^*),\qquad \forall K\in M_2(I), \forall a\in A(K), \forall r,s\in I.\]
 
 A partial Hopf $^*$-algebra is a partial bialgebra which is at the same time a partial $^*$-bialgebra and a partial Hopf algebra.
 \end{Def} 
 
 \begin{Rem}
 \begin{enumerate}
-\item By uniqueness of the counit, cf. [Bohm], it follows automatically that $\epsilon$ satisfies $\epsilon(a^*) = \overline{\epsilon(a)}$ for all $a$. % To substantiate
-\item By uniqueness of the antipode, cf. [Bohm], it follows automatically that $S(S(a)^*)^* = a$ for all $a$. In particular, $S$ is invertible. % To substantiate
+\item By uniqueness of the counit \cite[Theorem 2.8]{Boh1}, it follows automatically that $\epsilon$ satisfies $\epsilon(a^*) = \overline{\epsilon(a)}$ for all $a$.
+\item From \cite[Proposition 4.11]{VDW1}, it follows automatically that $S(S(a)^*)^* = a$ for all $a$. In particular, $S$ is invertible. % To substantiate
 \end{enumerate}
 \end{Rem}
 
-\begin{Def} Let $\mathscr{A}$ be a partial bi-algebra. An \emph{invariant functional} $\varphi$ for $\mathscr{A}$ consists of a functional $\varphi:A\rightarrow \C$ with support on the $\eGr{A}{k}{k}{m}{m}$ such that for all $a\in \eGr{A}{k}{l}{m}{n}$ and all $b$, one has  \[(\id\otimes \varphi)(b\otimes 1)\Delta(a)) = \varphi(a)b\lambda_k,\] and \[(\varphi\otimes \id)(\Delta(a)(1\otimes b) = \varphi(a)\rho_nb.\]
+\begin{Def} Let $\mathscr{A}$ be a partial bi-algebra. An \emph{invariant functional} $\varphi$ for $\mathscr{A}$ consists of a functional $\varphi:A\rightarrow \C$ %necessary to assume?
+such that for all $a\in \eGr{A}{k}{l}{m}{n}$ and all $b$, one has  \[(\id\otimes \varphi)((b\otimes 1)\Delta(a)) = \varphi(a)b\lambda_k,\] and \[(\varphi\otimes \id)(\Delta(a)(1\otimes b)) = \varphi(a)\rho_nb.\]
 
 We call $\varphi$ \emph{normalized} if $\varphi(\UnitC{k}{k}) = 1$ for all $k$. 
 \end{Def} % More motivation for this notion to be provided?
 
-\begin{Rem} If $\varphi$ is normalized, it follows immediately from the definining property that $\varphi(\UnitC{k}{l})=1$ whenever $\UnitC{k}{l}\neq 0$.
+\begin{Rem} 
+\begin{enumerate}
+\item It follows from the defining property of $\varphi$ (and the fact that $\lambda_k\neq 0\neq \rho_k$ for any $k\in I$) that $\varphi$ is zero on the $A(K)$ with $K_l\neq K_r$. 
+\item If $\varphi$ is normalized, it also follows immediately from the definining property that $\varphi(\UnitC{k}{l})=1$ whenever $\UnitC{k}{l}\neq 0$.
+\end{enumerate}
 \end{Rem} 
 
 We are finally ready to give our main definition.
 
-\begin{Def} A \emph{compact quantum group of face type} $\mathscr{G}$ is a partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with a \emph{positive} normalized invariant functional $\varphi$, that is $\varphi(a^*a)\geq 0$ for all $a\in A$. It is called \emph{connected} if the underlying partial algebra is connected, i.e.~ when $\UnitC{k}{l}\neq0$ for all $k,l$. 
+\begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with a \emph{positive} normalized invariant functional $\varphi$, that is $\varphi(a^*a)\geq 0$ for all $a\in A$. It is called \emph{connected} if the underlying partial algebra is connected, i.e.~ when $\UnitC{k}{l}\neq0$ for all $k,l$. % Necessary to introduce notion of connectedness?  
 \end{Def} 
 
-We will need the following lemma at some point, which is an almost verbatim transcription of the argument in  Proposition 3.4 of [VDae, Algebraic framework].
+\begin{Rem} Following \cite{Hay1}, we could also have called our objects \emph{compact quantum groups of face type}, but we feel this gives the wrong impression when the base algebra is infinite dimensional (i.e. the object set is not compact). When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. % Is this a clear enough motivation? 
+\end{Rem} 
+
+We will need the following lemma at some point, which is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
 
 \begin{Lem} Let $\mathscr{A}$ be a partial Hopf algebra, and let $\varphi$ be a normalized invariant functional for $\mathscr{A}$. Then $\varphi$ is faithful: if $a\in A$ and $\varphi(ab) =0$ (resp. $\varphi(ba)=0$) for all $b\in A$, then $a=0$.
 \end{Lem} 
-% To be tidied up
-\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$, we arrive at the conclusion that for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\wDelta(b))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in that proof, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+% Ref to Timmermann for case of quantum groupoids? Can be explicitly used here? Ask Fons if he has already derived this result, and acknowledge? 
+\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$, we arrive at the conclusion that for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(b))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
 
-The other case follows similarly, or by considering the opposite bialgebra.
+The other case follows similarly, or by considering the opposite comultiplication.
 \end{proof} 
 
 

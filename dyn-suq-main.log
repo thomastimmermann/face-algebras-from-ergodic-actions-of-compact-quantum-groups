@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  11 JUN 2014 17:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  12 JUN 2014 09:51
 entering extended mode
 **dyn-suq-main.tex
 
@@ -747,57 +747,48 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 86.
 
 [3] [4] [5] [6]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 226.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 229.
 
 [7]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 251.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 254.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 255.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 258.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 255.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 258.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 255.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 258.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 260.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 260.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 260.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 262.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 262.
 
 [8]
-Overfull \hbox (5.82684pt too wide) in paragraph at lines 294--295
-[]\OT1/cmr/m/n/10.95 By unique-ness of the an-tipode, cf. [Bohm], it fol-lows a
-u-to-mat-i-cally that $\OML/cmm/m/it/10.95 S\U/matha/m/n/10.95 p\OML/cmm/m/it/1
-0.95 S\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 a\U/matha/m/n/10.95 q[]q[] $
- []
 
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 308.
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 298.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 298.
-
-[9])
+[9] [10])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\2-representations.tex [10]
+quantum-groups\2-representations.tex [11]
 Overfull \hbox (16.49431pt too wide) in alignment at lines 84--84
  [][][] []
  []
 
-[11]
+[12]
 Overfull \hbox (1.80638pt too wide) in paragraph at lines 143--147
 \OT1/cmr/bx/n/10.95 Remark 2.9. \OT1/cmr/m/n/10.95 Us-ing [], one finds that a 
 col-lec-tion of lin-ear maps $ [][]\OML/cmm/m/it/10.95 T[] \U/matha/m/n/10.95 P
@@ -805,11 +796,11 @@ col-lec-tion of lin-ear maps $ [][]\OML/cmm/m/it/10.95 T[] \U/matha/m/n/10.95 P
 ]\U/matha/m/n/10.95 q$
  []
 
-[12] [13]
+[13] [14]
 Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
 line 229.
 FiXme Note: 'proof this' on input line 229.
- [14]
+
 Overfull \hbox (11.91739pt too wide) in paragraph at lines 267--275
 \OT1/cmr/m/n/10.95 Lemma, in-jec-tive. Thus, it forms an equiv-a-lence be-tween
  $\U/matha/m/n/10.95 p\OMS/cmsy/m/n/10.95 H\OML/cmm/m/it/10.95 ; X\U/matha/m/n/
@@ -832,7 +823,7 @@ m/n/10.95  p\OML/cmm/m/it/10.95 I[]e[]C\U/matha/m/n/10.95 qp\OML/cmm/m/it/10.9
 5 Ce[]J[]\U/matha/m/n/10.95 q$\OT1/cmr/m/n/10.95 .
  []
 
-[27] [28]
+[27] [28] [29]
 Overfull \hbox (42.0021pt too wide) in paragraph at lines 115--116
 \OT1/cmr/m/n/10.95 By the defin-ing prop-er-ties of $\OML/cmm/m/it/10.95 I[]$ \
 OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 J[]$\OT1/cmr/m/n/10.95 , this ex-pre
@@ -841,7 +832,7 @@ s-sion be-comes $[][]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10
 r/m/n/10.95 ,
  []
 
-[29]
+[30]
 Overfull \hbox (1.66138pt too wide) in paragraph at lines 127--128
 \OT1/cmr/m/n/10.95 sists of the $\OML/cmm/m/it/10.95 I[]$\OT1/cmr/m/n/10.95 -gr
 aded Hilbert space $\OML/cmm/m/it/10.95 l[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10
@@ -874,7 +865,7 @@ F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10.95 q[]\OML/cmm/m/it
 
  []
 
-[30]
+[31]
 Overfull \hbox (12.61499pt too wide) detected at line 148
 \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 X \U/matha/m/n/10.
 95 b \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q  \OML/cmm/m/it/10.95 F[]\U/math
@@ -890,7 +881,7 @@ m/m/it/10.95 X\U/matha/m/n/10.95 q [] \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p
 \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q
  []
 
-[31])
+)
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\4-op-alg.tex [32]
 Overfull \hbox (2.02695pt too wide) in paragraph at lines 25--26
@@ -901,7 +892,7 @@ ed into the the-ory of mea-sured quan-tum groupoids.
 
 )
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\5-free.tex [33]
+quantum-groups\5-free.tex [33] [34]
 Overfull \hbox (7.63324pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10.95 By the fun-da-men-tal prop-erty of the Temperley-Lieb ten-so
 r C$[]$-category $\OMS/cmsy/m/n/10.95 T[] \U/matha/m/n/10.95  []p\OML/cmm/m/it
@@ -909,7 +900,7 @@ r C$[]$-category $\OMS/cmsy/m/n/10.95 T[] \U/matha/m/n/10.95  []p\OML/cmm/m/it
 mr/m/n/10.95 ,
  []
 
-[34])
+)
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\6-dyn-suq.tex [35] [36]
 
@@ -954,27 +945,27 @@ FiXme Summary: Number of notes: 1,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 1.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 255.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 256.
 [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 255.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 256.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 255.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 255.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 256.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 256.
 Package rerunfilecheck Info: File `dyn-suq-main.out' has not changed.
 (rerunfilecheck)             Checksum: 30665EA473A746886FA8C722B709EDC5;1027.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 256.
  ) 
 Here is how much of TeX's memory you used:
- 7393 strings out of 494045
- 105516 string characters out of 3148388
- 204561 words of memory out of 3000000
- 10383 multiletter control sequences out of 15000+200000
+ 7401 strings out of 494045
+ 105592 string characters out of 3148388
+ 206618 words of memory out of 3000000
+ 10385 multiletter control sequences out of 15000+200000
  30962 words of font info for 118 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  35i,17n,60p,1472b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1007,9 +998,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files
 ublic/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/rsf
 s/rsfs10.pfb>
-Output written on dyn-suq-main.pdf (41 pages, 489168 bytes).
+Output written on dyn-suq-main.pdf (41 pages, 493989 bytes).
 PDF statistics:
- 654 PDF objects out of 1000 (max. 8388607)
- 180 named destinations out of 1000 (max. 500000)
+ 673 PDF objects out of 1000 (max. 8388607)
+ 186 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
