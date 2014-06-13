@@ -7,35 +7,31 @@
 
 % Thank Piotr, Makoto and ...(?) for discussions. Link with graph C*-algebras?
 
-\section{Compact quantum groups of face type from reciprocal random walks} 
+\section{Partial compact quantum groups from reciprocal random walks} 
 
 
-We recall some notions introduced in [DCY]. We slightly change the terminology for the sake of convenience.
+We recall some notions introduced in \cite{DCY1}. We slightly change the terminology for the sake of convenience.
 
 % Should we assume that the graph has a finite number of components? 
-\begin{Def} By a graph $\Gamma$ we mean a quadruple $\Gamma=(V,E,s,t)$ where $V$ and $E$ are sets, called respectively the set of \emph{vertices} and the set of \emph{edges}, and $s$ and $t$ are maps \[s,t:E\rightarrow V,\] called respectively the source and target map.
+\begin{Def} By a graph $\Gamma$ we mean a quadruple $\Gamma=(\Gamma^{(0)},\Gamma^{(1)},s,t)$ where $\Gamma^{(0)}$ and $\Gamma^{(1)}$ are sets, called respectively the set of \emph{vertices} and the set of \emph{edges}, and $s$ and $t$ are maps \[s,t:\Gamma^{(1)}\rightarrow \Gamma^{(0)},\] called respectively the source and target map.% Use immediately the $\Gamma^{(i)}$-notation?
 
-An \emph{involution} of a graph is a map \[i:E \rightarrow E,\quad e\mapsto \overline{e}\] such that $s(\bar{e}) = t(e)$. 
+An \emph{involutive graph} $(\Gamma,i)$ is a graph $\Gamma$ equipped with an involution \[i:\Gamma^{(1)} \rightarrow \Gamma^{(1)},\quad e\mapsto \overline{e}\] such that $s(\bar{e}) = t(e)$ for all edges $e$.
+
+A \emph{weighted graph} $(\Gamma,w)$ is a graph $\Gamma$ equipped with a weight function $w:\Gamma^{(1)}\rightarrow \R_0^+$
+
+ A \emph{signed} graph $(\Gamma,\sgn)$ is a graph equipped with a function $\sgn:\Gamma^{(1)}\rightarrow \{\pm 1\}$.  
 \end{Def}
-
-When $\Gamma$ is a graph, we also write $\Gamma{(0)}$ for the set of vertices and $\Gamma^{(1)}$ for the set of edges.
 
 %An isomorphism of graphs consists of a pair of isomorphisms between the sets of vertices and the sets of edges which commute with the respective source and target maps.
 
-\begin{Def} A \emph{weight} on a graph $\Gamma$ is a function $w:\Gamma^{(1)}\rightarrow \R_0^+$. By \emph{weighted graph} $(\Gamma,w)$ we will mean a graph $\Gamma$ equipped with a weight $w$. 
-
-By a \emph{signed} graph we mean a graph equipped with a map $\sgn:\Gamma^{(1)}\rightarrow \{\pm 1\}$. 
-
-By a \emph{signed weighted graph} we mean a signed graph equipped with a weight.
-\end{Def}
 
 %An isomorphism of weighted graphs is an isomorphism of graphs which intertwines the weights.
 
-\begin{Def} A \emph{reciprocal weighted graph} $(\Gamma,w,i)$ consists of a weighted graph $(\Gamma,w)$ and an involution $i$ of $\Gamma$ such that $w(e)w(\bar{e}) = 1$ for all edges $e$. 
+\begin{Def} A \emph{reciprocal weighted graph} $(\Gamma,w,i)$ is a weighted, involutive graph such that $w(e)w(\bar{e}) = 1$ for all edges $e$. 
 
-A \emph{positive (resp. negative) reciprocal signed graph} $(\Gamma,\sgn,i)$ consists of a signed graph $(\Gamma,\sgn)$ and an involution $i$ of $\Gamma$ such that $\sgn(e)\sgn(\bar{e}) = 1$ (resp. $=-1$) for all edges $e$. 
+A \emph{$\pm$-reciprocal signed graph} $(\Gamma,\sgn,i)$ is a signed, involutive graph such that $\sgn(e)\sgn(\bar{e}) = \pm 1$ for all edges $e$. 
 
-By a \emph{reciprocal signed weighted graph} we mean a signed and weighted graph which is reciprocal as a weighted and signed graph for the same involution. 
+A \emph{$\pm$-reciprocal signed weighted graph} $(\Gamma,w,\sgn,i)$ is a reciprocal weighted graph $(\Gamma,w,i)$ which also has a $\pm$-reciprocal signed graph structure $(\Gamma,\sgn,i)$. 
 
 A weighted graph $(\Gamma,p)$ is called a \emph{random walk} if $\sum_{s(e)=v} p(e) = 1$ for all $v\in \Gamma^{(0)}$.
 \end{Def}
@@ -45,9 +41,14 @@ A weighted graph $(\Gamma,p)$ is called a \emph{random walk} if $\sum_{s(e)=v} p
 
 %Isomorphisms between $t$-random walks will simply be isomorphisms of weighted graphs (and hence do not remember any structure concerning involutions or signedness). 
 
-% For examples, see ...
+For some examples of $t$-reciprocal random walks, we refer to \cite{DCY1}. One particular example which will be needed for our construction of dynamical quantum $SU(2)$ is the following.
 
-Let $0<|q|\leq 1$, and let $\Gamma = (\Gamma,w,\sgn,i)$ be a $-2_q$-reciprocal random walk. Then we can define a couple $\Hsp(\Gamma) = (\Hsp,R)$ where $\Hsp$ is $l^2(\Gamma^{(1)})$ with the $\Gamma^{(0)}$-bigrading $\delta_e \in \Hsp(s(e),t(e))$ for the obvious Dirac functions, and where $R$ is the (bounded) map $l^2(\Gamma^{(0)})\rightarrow \Hsp\underset{\Gamma^{(0)}}{\boxtimes} \Hsp$ defined as \begin{eqnarray*} R\delta_v &=& \sum_{e,s(e) = v} \sgn(e)\sqrt{w(e)}\delta_e \otimes \delta_{\bar{e}}.\end{eqnarray*} Then $R^*R = |q|+|q|^{-1}$ and \[(R^*\boxtimes \id)(\id\boxtimes R) = -\sgn(q)\id.\] By the fundamental property of the Temperley-Lieb tensor C$^*$-category $\mathcal{T}_q = \Rep(SU_q(2))$, this means that we have a unique strongly monoidal $^*$-functor
+\begin{Exa} Take $0<|q|<1$ and $x\in \R$. Write $2_q = q+q^{-1}$. Then we have the reciprocal $-2_q$-random walk \[\Gamma_x =(\Gamma_x,w,\sgn,i)\] with \[ \Gamma^{(0)} = \Z,\quad \Gamma^{(1)} = \{(k,l)\mid |k-l|= 1\}\subseteq \Z\times \Z\] with projection on the first (resp. second) leg as source (resp. target) map, with weight function \[w(k,k\pm 1) = \frac{|q|^{x+k\pm 1}+|q|^{-(x+k\pm 1)}}{|q|^{x+k}+|q|^{-(x+k)}},\] sign function \[\sgn(k,k+1) = 1,\quad \sgn(k,k-1) = -\sgn(q),\] and involution $\overline{(k,k+1)} = (k+1,k)$. 
+
+By translation we can shift the value of $x$ by an integer, and by inversion we can change $x$ into $-x$. It follows that by some graph isomorphism, we can always arrange to have $x\in \lbrack 0,\frac{1}{2}\rbrack$.
+\end{Exa} 
+
+Let now $0<|q|\leq 1$, and let $\Gamma = (\Gamma,w,\sgn,i)$ be a $-2_q$-reciprocal random walk. Then we can define a couple $\Hsp(\Gamma) = (\Hsp,R)$ where $\Hsp$ is $l^2(\Gamma^{(1)})$ with the $\Gamma^{(0)}$-bigrading $\delta_e \in \Hsp(s(e),t(e))$ for the obvious Dirac functions, and where $R$ is the (bounded) map $l^2(\Gamma^{(0)})\rightarrow \Hsp\underset{\Gamma^{(0)}}{\boxtimes} \Hsp$ defined as \begin{eqnarray*} R\delta_v &=& \sum_{e,s(e) = v} \sgn(e)\sqrt{w(e)}\delta_e \otimes \delta_{\bar{e}}.\end{eqnarray*} Then $R^*R = |q|+|q|^{-1}$ and \[(R^*\boxtimes \id)(\id\boxtimes R) = -\sgn(q)\id.\] By the fundamental property of the Temperley-Lieb tensor C$^*$-category $\mathcal{T}_q = \Rep(SU_q(2))$, this means that we have a unique strongly monoidal $^*$-functor
 \[F_{\Gamma}:\mathcal{T}_q \rightarrow {}^{\Gamma^{(0)}}\Hilb_f^{\Gamma^{(0)}}\] such that $\Gamma(\pi_{1/2}) = \Hsp$ and $F(\mathscr{R}) = R$ with $(\pi_{1/2},\mathscr{R},-\sgn(q)\mathscr{R})$ a solution for the conjugate equations for $\pi_{1/2}$. 
 
 Up to equivalence, $F_{\Gamma}$ only depends upon the isomorphism class of $(\Gamma,w)$, and is independent of the chosen involution or sign structure.
