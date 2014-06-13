@@ -193,42 +193,42 @@ One easily sees that $\Corep_{\sfd}(\mathscr{A})$ is closed under $\Circt$.
 \begin{Lem} Let $\mathscr{A}$ be a partial Hopf algebra. Then $\Corep_{\sfd}(\mathscr{A})$ is a tensor category with left duality. 
 \end{Lem} 
 
-\begin{proof} Let $X$ be an sfd corepresentation on a bigraded vector space $V$. Put \[\Gru{(V^*)}{k}{l} = (\Gru{V}{k}{l})^*,\] and let $V^*$ denote their direct sum bigraded vector space. Using the natural contravariant identification \[\Hom_\C(\Gru{V}{l}{k},\Gru{V}{n}{m})\cong \Hom_\C(\Gru{(V^*)}{m}{n},\Gru{(V^*)}{k}{l}),\] we can transform $X^{-1}$ into a corepresentation $X^d$ on $V^*$. 
+\begin{proof} Let $X$ be an sfd corepresentation on a bigraded vector space $V$. Put \[\Gru{(V^*)}{k}{l} = (\Gru{V}{k}{l})^*,\] and let $V^*$ denote their direct sum bigraded vector space. Using the natural contravariant identification \[\Hom_\C(\Gru{V}{l}{k},\Gru{V}{n}{m})\cong \Hom_\C(\Gru{(V^*)}{m}{n},\Gru{(V^*)}{k}{l}),\] we see (by means of Lemma \ref{lemma:rep-corep}) that $X^{-1}$ gets transformed into a corepresentation $X^d$ on $V^*$. 
 
 We claim that $X^d$ is the left dual of $X$. To see this, consider the evaluation maps \[\Gru{T}{k}{m}: \Gru{(V^*\iitimes V)}{k}{m} \supseteq (\Gru{V}{l}{k})^*\otimes \Gru{V}{l}{m}\rightarrow \delta_{k,m} \C = \Gru{\C_I}{k}{m}.\] Then from Lemma \ref{lemma:rep-corep}, we obtain \begin{eqnarray*} (1\otimes \Gru{T}{k}{p})\Big{(} \sum_{l,n} \big{(} \Gr{(X^d)}{k}{l}{m}{n}\big{)}_{12} \big{(}\Gr{X}{l}{p}{n}{q}\big{)}_{13}\Big{)} &=& \delta_{p,k}(\id\otimes \Gru{T}{m}{m}) \left( \sum_{l,n}  \Gr{(X^{-1})}{k}{l}{m}{n}\Gr{X}{l}{k}{n}{q}\right)_{13} \\ &=& \delta_{p,k}\UnitC{k}{q}\otimes \Gru{T}{m}{q}.\end{eqnarray*} Hence the $\Gru{T}{k}{l}$ define an intertwiner between $V^*\iitimes V$ and $\C_I$. Similarly, the maps  \[\Gru{R}{k}{k}: \Gru{\C_I}{k}{k} = \C\rightarrow \Gru{(V\iitimes V^*)}{k}{k},\quad 1\mapsto \sum_{l,i} \Gru{v_i}{k}{l}\otimes \Gru{\omega_i}{l}{k},\] where the $\{\Gru{v_i}{k}{l}\mid i\}$ and $\{\Gru{\omega_i}{l}{k} \mid i\}$ form a dual basis of $\Gru{V}{k}{l}$, can be shown to form an intertwiner. It is then easy to check that $T$ and $R$ make $X^d$ into the left dual of $X$. % More info?
 \end{proof}
 
-Let us now enhance our partial Hopf algebras to partial compact quantum groups. One then considers corepresentations on sfd \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition.
+Let us now enhance our partial Hopf algebras to partial compact quantum groups. One then considers corepresentations on sfd bigraded \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition. We denote $B(\Hsp,\mathcal{G})$ for the linear space of bounded morphisms between Hilbert spaces.
 
 %\paragraph{Unitarity of corepresentations}
 
 \begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
-\emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}.\]  
+\emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}\quad \textrm{in }\Gr{A}{k}{l}{m}{n}\otimes B(\Gru{\Hsp}{l}{k},\Gru{\Hsp}{n}{m}).\]  
 \end{Def} 
-\begin{Rem} \begin{enumerate} \item We assume here of course that $\Hsp$ is the \emph{closed} direct sum of all (finite-dimensional) $\Gru{\Hsp}{m}{n}$, but this does not change the notion of corepresentation which had a local definition.
-\item Concerning morphisms, we will say a collection of $T_{kl}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus T_{k,l}$ is bounded. We will denote by $\Corep_{\sfd,u}(\mathscr{A})$ the category of unitary sfd corepresentations with arbitrary morphisms, and $\Corep_{\sfd,u}^{\infty}(\mathscr{A})$ for the category with bounded morphisms.
-% Give a more prominent place
+\begin{Rem} \begin{enumerate} \item In the Hilbert space setting, it is more natural to let $\Hsp$ be the \emph{closed} (instead of the purely algebraic) direct sum of all (finite-dimensional) $\Gru{\Hsp}{k}{l}$. This does not change the notion of corepresentation, which had a local definition.
+\item Concerning morphisms, we will say a collection of $\Gru{T}{k}{l}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus \Gru{T}{k}{l}$ is bounded. We will denote by $\Corep_{\sfd,u}(\mathscr{A})$ the category of unitary sfd corepresentations with arbitrary morphisms, and $\Corep_{\sfd,u}^{\infty}(\mathscr{A})$ for the category with bounded morphisms.
+% Give a more prominent place, or check later if it is actually worthwhile to make this distinction.
 \end{enumerate}
 \end{Rem}
 
 Our aim now is to show that every irreducible sfd corepresentation is
-equivalent to a unitary one, by embedding it into a restriction of the
+equivalent to a unitary one. We show this by embedding the corepresentation into a restriction of the
 regular corepresentation.
 
 \begin{Exa} \label{exa:rep-regular}
-  Let $\mathscr{A}$ define a compact quantum group of face type, with normalized positive invariant functional $\phi$. 
+  Let $\mathscr{A}$ define a partial compact quantum group with normalized positive invariant functional $\phi$. 
 
   Let $\Gru{\mathcal{H}}{m}{n} \subseteq \bigoplus_{k,l}
-  \Gr{A}{k}{l}{m}{n}$ be an sfd bigraded subspace satisfying
+  \Gr{A}{k}{l}{m}{n}$ be finite dimensional subspaces satisfying
 \begin{align*}
-  \Delta^{\co}_{pq}(\Gru{\mathcal{H}}{m}{n}) \subseteq
+  \Delta^{\op}_{pq}(\Gru{\mathcal{H}}{m}{n}) \subseteq
  \Gr{A}{p}{q}{m}{n} \otimes \Gru{\mathcal{H}}{p}{q}.
 \end{align*}
 for all indices.
 Equip each $\Gru{\mathcal{H}}{k}{l}$ with the scalar product $\langle
-a|b\rangle:=\phi(a^{*}b)$ and take the Hilbert space direct sum
+a|b\rangle:=\phi(a^{*}b)$. By Lemma \ref{LemFaith}, these are finite-dimensional Hilbert spaces. Take the Hilbert space direct sum
 $\mathcal{H}:=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$.
-Define \[ \Gr{V}{k}{l}{m}{n} \in \mathcal{L}(\Gru{\mathcal{H}}{m}{n}, \Gr{A}{k}{l}{m}{n} \otimes \Gru{\mathcal{H}}{k}{l}) \cong \Gr{A}{k}{l}{m}{n} \otimes 
+Define \[ \Gr{V}{k}{l}{m}{n} \in \Hom_\C(\Gru{\mathcal{H}}{m}{n}, \Gr{A}{k}{l}{m}{n} \otimes \Gru{\mathcal{H}}{k}{l}) \cong \Gr{A}{k}{l}{m}{n} \otimes 
 \mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})\]  by the
 equation
 \begin{align*}
@@ -240,7 +240,7 @@ equation
 
 \begin{Lem} The couple $(\mathcal{H},V)$ defines a unitary corepresentation. 
 \end{Lem} 
-\begin{proof} It suffices to prove that \begin{equation}\label{EqUnit} \sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n} = \delta_{n,n'}\UnitC{l}{n}\otimes \id_{\Gru{\Hsp}{m}{n}}.\end{equation} Take $a\in \Gru{\Hsp}{m}{n}$ and $b\in \Gru{\Hsp}{m}{n'}$. Then writing $\Lambda(a): \C\rightarrow \Gru{\Hsp}{m}{n}$ and similarly for $b$, we compute \begin{eqnarray*}(1\otimes \Lambda(b)^*)\left(\sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n}\right) (1\otimes \Lambda(a)) &=& \sum_k (\id\otimes \phi)(\Delta_{kl}^{\op}(b)^*\Delta_{kl}{\op}(a))\\ &=&  \sum_k (\id\otimes \phi)(\Delta_{lk}^{\op}(b^*)\Delta_{kl}{\op}(a)) \\ &=& (\id\otimes \phi)(\Delta_{ll}^{\op}(b^*a))\\ &=&  (\phi\otimes \id)(\Delta_{ll}(b^*a)) \\ &=& \phi(b^*a)\UnitC{l}{n} \\&=& \delta_{n',n} \UnitC{l}{n} \otimes \Lambda(b)^*\Lambda(a).\end{eqnarray*} 
+\begin{proof} It is clear that $V$ defines a corepresentation. It then suffices to prove that \begin{equation}\label{EqUnit} \sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n} = \delta_{n,n'}\UnitC{l}{n}\otimes \id_{\Gru{\Hsp}{m}{n}}.\end{equation} Take $a\in \Gru{\Hsp}{m}{n}$ and $b\in \Gru{\Hsp}{m}{n'}$. Then writing \[\Lambda(a): \C\rightarrow \Gru{\Hsp}{m}{n}, \quad 1\mapsto a,\] and similarly for $b$, we compute \begin{eqnarray*}(1\otimes \Lambda(b)^*)\left(\sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n}\right) (1\otimes \Lambda(a)) &=& \sum_k (\id\otimes \phi)(\Delta_{kl}^{\op}(b)^*\Delta_{kl}^{\op}(a))\\ &=&  \sum_k (\id\otimes \phi)(\Delta_{lk}^{\op}(b^*)\Delta_{kl}^{\op}(a)) \\ &=& (\id\otimes \phi)(\Delta_{ll}^{\op}(b^*a))\\ &=&  (\phi\otimes \id)(\Delta_{ll}(b^*a)) \\ &=& \phi(b^*a)\UnitC{l}{n} \\&=& \delta_{n',n} \UnitC{l}{n} \otimes \Lambda(b)^*\Lambda(a).\end{eqnarray*} 
 This proves \eqref{EqUnit}.
 \end{proof} 
 
@@ -250,8 +250,10 @@ determined by the family $(\Gru{\mathcal{H}}{k}{l})_{k,l}$.
 \fxnote{proof this}
 \end{Exa}
 
+In the following, we will use the notation \[\omega_{\xi,\eta}:B(\Hsp,\mathcal{G})\rightarrow \C,\quad x\mapsto \langle \xi,x\eta\rangle,\quad \xi\in \mathcal{G},\eta\in \Hsp.\]
+
 \begin{Lem} \label{lem:rep-morphism-regular}
-  Let $\mathscr{A}$ define a compact quantum group of face type. Let $(\mathcal{H},X)$ be an sfd corepresentation on a Hilbert space, and let $\xi \in
+  Let $\mathscr{A}$ define a partial compact quantum group. Let $(\mathcal{H},X)$ be an sfd corepresentation on a Hilbert space, and let $\xi \in
   \Gru{\mathcal{H}}{k}{l}$. Then the family of finite-dimensional
   subspaces
   \begin{align*}
@@ -259,14 +261,13 @@ determined by the family $(\Gru{\mathcal{H}}{k}{l})_{k,l}$.
    \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) : \eta \in
    \Gru{\mathcal{H}}{m} {n}\} \subseteq \Gr{A}{k}{l}{m}{n}
   \end{align*}% Should explain notation
-  defines an sfd restriction of the regular corepresentation
-  $(\mathcal{K},V)$, and the family of maps
+  defines an sfd restriction $(\mathcal{K},V)$ of the regular corepresentation, and the family of maps
   \begin{align*}
     \Gru{T_{(\xi)}}{m}{n} \colon \Gru{\mathcal{H}}{m}{n} \to
     \Gru{\mathcal{K}}{m}{n}, \ \eta \mapsto (\id \otimes
     \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),
   \end{align*}
-  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$. % Should $\xi$ then also be in a subscript for $\mathcal{K}$?
+  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$ in $\Corep_{\sfd,u}(\mathscr{A})$. % Should $\xi$ then also be in a subscript for $\mathcal{K}$?
 \end{Lem}
 Note that the family $(\Gru{\mathcal{K}}{m}{n})_{m,n}$ is sfd because $(\Gru{\mathcal{H}}{m}{n})_{m,n}$
 is. 
@@ -281,8 +282,8 @@ is.
 \end{eqnarray*}
 \end{proof}
 \begin{Prop}  \label{prop:rep-unitarisable}
-  Let $\mathscr{A}$ define a compact quantum group of face type. Then every irreducible sfd corepresentation on a Hilbert space
-  is equivalent to a unitary sfd representation.
+  Let $\mathscr{A}$ define a partial compact quantum group. Then every irreducible sfd corepresentation on a Hilbert space
+  is equivalent to a unitary sfd corepresentation.
 \end{Prop}
 \begin{proof}
   Let $(\mathcal{H},X)$ be an irreducible sfd
@@ -290,7 +291,7 @@ is.
   \Gru{\mathcal{H}}{k}{l}$,  the operator  $T_{(\xi)}$  defined in
   Lemma \ref{lem:rep-morphism-regular} has to be non-zero and hence,
   by Schur's Lemma, injective. Thus, it forms an equivalence between
-  $(\mathcal{H},X)$ and a sub-corepresentation of a locally finite
+  $(\mathcal{H},X)$ and a sub-corepresentation of an sfd
   restriction of the regular corepresentation, which is unitary by
   Example \ref{exa:rep-regular}.
 \end{proof}
@@ -298,7 +299,7 @@ is.
 Our next goal is to obtain the analogue of Schur's orthogonality
 relations for matrix coefficients of corepresentations.
 
-\begin{Def} The space of \emph{matrix coefficients} $\mathcal{C}(X)$ of an sfd corepresentation $(\mathcal{H},X)$ is the sum of
+\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. The space of \emph{matrix coefficients} $\mathcal{C}(X)$ of an sfd corepresentation $(\mathcal{H},X)$ is the sum of
 the subspaces
 \begin{align*}
   \Gr{\mathcal{C}(X)}{k}{l}{m}{n} &= \span \left\{ (\id \otimes
@@ -310,11 +311,20 @@ the subspaces
 
 \begin{Lem} Every sfd unitary corepresentation $(X,\Hsp)$ of $\mathscr{A}$ decomposes into a direct sum of irreducible sfd unitary corepresentations.
 \end{Lem} 
-\begin{proof} The usual spectral argument shows that irreducibility is the same as indecomposability of a corepresentation. In fact, the bounded self-interwiners of $\Hsp$ form a sub-von Neumann algebra of $\prod_{k,l}^{\infty} B(\Gru{\Hsp}{k}{l})$. As the $B(\Gru{\Hsp}{k}{l})$ are finite dimensional, this easily implies that $\Hsp$ can be written as a (possibly infinite sum) of irreducible subspaces, corresponding to the minimal projections in the von Neumann algebra of self-intertwiners.% To expand? 
+\begin{proof} From the unarity assumption, it follows immediately that an invariant subspace of $\Hsp$ also has an invariant orthogonal complement. Hence irreducibility and indecomposability of unitary corepresentations coincide. More generally, one deduces that the bounded self-interwiners of $\Hsp$ form a (von Neumann) $^*$-algebra.
+
+% Trivial rep should maybe be introduced in a more conspicuous place
+Let us now first show that the trivial representation decomposes into irreducibles. Let $I$ be the object set of $\mathscr{A}$, and say $k\sim l$ if $\UnitC{k}{l}\neq 0$. Then $\sim$ is an equivalence relation: as \[\Delta_{ll}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m},\] the relation $\sim$ is transitive. As $S(\UnitC{k}{l}) = \UnitC{l}{k}$, we have that $\sim$ is symmetric. And as $\varepsilon(\UnitC{k}{k})=1$, we also have that $\sim$ is reflexive. 
+
+Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. Define $\C_{I_{\alpha}}\subseteq \C_I$ as the linear span of the homogeneous components with index in $\alpha$. It is clear then that the $\C_{I_{\alpha}}$ are invariant and irreducible.
+
+Consider now a general corepresentation $(X,\Hsp)$. Let $\Grd{\Hsp}{\alpha}{\beta}$ be the closed linear span of the homogeneous components with index in $\alpha\times \beta$. As we can identify \[\Grd{\Hsp}{\alpha}{\beta} \cong \C_{I_{\alpha}}\,\Circt\, \Hsp\,\Circt\, \C_{I_{\beta}},\] we see that $\Grd{\Hsp}{\alpha}{\beta}$ is an invariant subspace of $\Hsp$. Hence we may as well suppose that $\Hsp = \Grd{\Hsp}{\alpha}{\beta}$. 
+
+But let then $T$ be a bounded self-intertwiner of $\Hsp$. Then from the two equations in Remark \ref{RemMorRep}, we see that $T\rightarrow \Gru{T}{k}{l}$ is injective for any choice of $k\in \alpha,l\in \beta$. It follows that the algebra of self-intertwiners of $\Hsp$ is finite-dimensional. We then immediately conclude that $\Hsp$ is a finite direct sum of irreducible invariant subspaces.
 \end{proof} 
 
 \begin{Prop} \label{prop:rep-weak-pw}
-  Assume that $\mathscr{A}$ defines a compact quantum group of face type. Then the total algebra $A$ is the sum of the matrix coefficients of
+  Assume that $\mathscr{A}$ defines a partial compact quantum group. Then the total algebra $A$ is the sum of the matrix coefficients of
  irreducible unitary sfd corepresentations.
 \end{Prop}
 \begin{proof}
@@ -336,19 +346,19 @@ the subspaces
 \end{proof}
 The key to the orthogonality relations is the following averaging procedure.
 \begin{Lem} \label{lem:rep-average}
-  Let $\phi$ be an invariant functional for $\mathscr{A}$, let
+  Let $\mathscr{A}$ define a partial compact quantum group, and let  $\phi$ be any invariant functional for $\mathscr{A}$. Let
   $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be sfd corepresentations of $\mathscr{A}$ and let $T$ be
   a family of operators $\Gru{T}{k}{l} \in
   \mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$.
   
-  Then for any fixed $n$, the families $\check T_n$ given by
+  Then for any fixed $n$, the family of linear maps
   \begin{align*}
     \Gru{\check T_n}{k}{l} &:= \sum_{m} (\phi \otimes
     \id)(\Gr{(Y^{-1})}{n}{m}{l}{k}(1\otimes
     \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l})
    \end{align*} 
    
-  define a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$.
+  define a morphism $\check T_n$ from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$ in $\Corep_{\sfd,u}(\mathscr{A})$.
 
      Similarly, for fixed $m$, the      
     
@@ -404,7 +414,7 @@ The first part of the orthogonality relations concerns matrix
 coefficients of inequivalent irreducible corepresentations.
 \begin{Prop} \label{prop:rep-orthogonality-1}
   Let $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be inequivalent unitary
-  irreducible sfd corepresentations and let
+  irreducible sfd corepresentations, and let
   $\phi$ be an invariant functional for $(A,\Delta)$.  Then
   \[\phi(S(b)a) =\phi(b^{*}a) = \phi(bS(a))=\phi(ba^{*})=0\] for all
   $a\in \mathcal{C}(X), b \in \mathcal{C}(Y)$.
@@ -443,15 +453,15 @@ coefficients of inequivalent irreducible corepresentations.
 
 The second part of the orthogonality relations concerns inner products
 as above but with $a,b\in \mathcal{C}(X)$ for some irreducible
-corepresentation  $X$  and involves the conjugate corepresentation,
+corepresentation  $X$. It involves the conjugate corepresentation,
 which is defined as follows.
 
-Given a Hilbert spaces $H,K$, we denote by $\overline{H},\overline{K}$
+Given Hilbert spaces $\Hsp,\mathcal{K}$, we denote by $\overline{\Hsp},\overline{\mathcal{K}}$
 the conjugate Hilbert spaces, by $T \mapsto \overline{T}$ the
-canonical conjugate-linear isomorphism $\mathcal{B}(H,K) \to
-\mathcal{B}(\overline{H},\overline{K})$, and by $T \mapsto
+canonical conjugate-linear isomorphism $\mathcal{B}(\Hsp,\mathcal{K}) \to
+\mathcal{B}(\overline{\Hsp},\overline{\mathcal{K}})$, and by $T \mapsto
 T^{\top}:=\overline{T}^{*}$ the linear anti-isomorphism % Or contravariant isomorphism?
-$\mathcal{B}(H,K) \to \mathcal{B}(\overline{K},\overline{H})$.
+$\mathcal{B}(\Hsp,\mathcal{K}) \to \mathcal{B}(\overline{\mathcal{K}},\overline{\Hsp})$.
 
 \begin{Lem} \label{lemma:rep-functors}Let $\Corep_{\sfd,\Hilb}(\mathscr{A})$ denote the category of (not necessarily unitary) corepresentations of $\mathscr{A}$ on sfd bigraded Hilbert spaces. 
    Then on $\Corep_{\sfd,\Hilb}(\mathscr{A})$ there exist
@@ -502,8 +512,8 @@ We call $(\overline{\mathcal{H}},\overline{X})$ the \emph{conjugate} of
 $(\mathcal{H},X)$.   
 
 \begin{Prop} \label{prop:rep-f}
-  Let $\mathscr{A}$ define a compact quantum group of face type, and let $\phi$ be a positive normalized
-  invariant functional $\phi$. Let $(\mathcal{H},X)$ be a unitary
+  Let $\mathscr{A}$ define a partial compact quantum group, and let $\phi$ be a positive normalized
+  invariant functional. Let $(\mathcal{H},X)$ be a unitary
   irreducible sfd corepresentation. 
   \begin{enumerate}
   \item The conjugate $\overline{\mathcal{H}}$ with the family
@@ -555,9 +565,9 @@ $(\mathcal{H},X^{S^{2}\otimes \id})$.
 \end{proof}
 
 
-\begin{Theorem} \label{thm:rep-orthogonality} Let $\mathscr{A}$ define  a
-compact quantum group of face type. 
-  Let $\phi$ be a normalized invariant functional. Let $(\mathcal{H},X)$ be a unitary irreducible sfd corepresentation of $\mathscr{A}$, and let $F_{X}$ be a
+\begin{Theorem} \label{thm:rep-orthogonality} Let $\mathscr{A}$ define a partial
+compact quantum group. 
+  Let $\phi$ be a positive normalized invariant functional. Let $(\mathcal{H},X)$ be a unitary irreducible sfd corepresentation of $\mathscr{A}$, and let $F_{X}$ be a
   non-zero morphism from $(\mathcal{H},X)$ to $(\mathcal{H},X^{S^{2}
   \otimes \id})$.
   \begin{enumerate}
@@ -661,8 +671,8 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
  %    and therefore $F_{X}$ gets replaced by $F_{X}^{-1}$.
 \end{proof}
 \begin{Cor}\label{CorOrth}
-  Assume that $\mathscr{A}$ defines a compact quantum group of face type, and let $\phi$ be a normalized positive  invariant functional. Let $(\mathcal{H},X)$ be a unitary
-  irreducible locally finite corepresentation of $\mathscr{A}$, let
+  Assume that $\mathscr{A}$ defines a partial compact quantum group, and let $\phi$ be a normalized positive  invariant functional. Let $(\mathcal{H},X)$ be a unitary
+  irreducible sfd corepresentation of $\mathscr{A}$, let
   $F_{X}$ be a non-zero morphism from $(\mathcal{H},X)$ to
   $(\mathcal{H},(S^{2} \otimes \id)(X))$, and let $a=(\id \otimes
   \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
@@ -693,7 +703,7 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
   the co-opposite of $\mathscr{A}$.
 \end{proof}
 \begin{Cor} \label{cor:rep-pw}
-  Let $\mathscr{A}$ define a compact quantum group of face type. Let
+  Let $\mathscr{A}$ define a partial compact quantum group. Let
   $(\mathcal{H}_{\alpha},X_{\alpha})_{\alpha}$ be a representative
   family of all irreducible sfd corepresentations of
   $\mathscr{A}$. Then the map
@@ -725,7 +735,7 @@ We shall say that an entire function $f$ has \emph{exponential growth
 C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$. 
 
 \begin{Theorem} \label{thm:rep-characters}
-  Assume that $\mathscr{A}$ is a compact quantum group of face type with positive normalized
+  Assume that $\mathscr{A}$ defines a partial compact quantum group with positive normalized
   invariant functional $\phi$.  There exists a unique family of linear functionals
   $f_{z} \colon A\to \C$ such that
 \begin{enumerate}[label={(\arabic*)}]
@@ -733,17 +743,20 @@ C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$.
   \item for each $a\in A$, the function $z\mapsto f_{z}(a)$ is entire
     and of exponential growth on the right half-plane.
   \item $f_{0} = \epsilon$ and $(f_{z} \otimes f_{z'}) \circ 
-    \Delta= f_{z+z'}$ for all $z,z' \in \C$. (This expression is meaningful by (1))
+    \Delta= f_{z+z'}$ for all $z,z' \in \C$.
   \item $\phi(ab)=\phi(b(f_{1} \ast a \ast f_{1}))$ for all $a,b\in A$.
   \end{enumerate}
   This family furthermore satisfies
   \begin{enumerate}[label={(\arabic*)}]\setcounter{enumi}{4}
   \item $f_z(ab) = f_z(a)f_z(b)$ for $a\in A(K)$ and $b\in A(L)$ with $K_r = L_l$. 
   \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$.
-  \item $f_{z}(\lambda_{l}\rho_{n})=\delta_{l,n}$,  $f_{z} \circ S = f_{-z}$,
+  \item $f_{z}(\UnitC{l}{n})=\delta_{l,n}$,  $f_{z} \circ S = f_{-z}$,
 and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
 \end{enumerate}
 \end{Theorem}
+
+
+Note that condition (3) is meaningful by condition (1).
 
 \begin{proof}
   We first prove uniqueness.  Assume that $(f_{z})_{z}$ is a family of
