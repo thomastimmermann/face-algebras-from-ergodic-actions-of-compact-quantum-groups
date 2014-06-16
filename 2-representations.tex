@@ -37,7 +37,7 @@ A \emph{corepresentation}  $X=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ o
   $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
   \Hom_\C(\Gru{V}{m}{n},\Gru{V}{k}{l})$
   satisfying
-  \begin{align} \label{eq:rep-delta}
+  \begin{align} \label{eq:rep-delta1}
     (\Delta_{pq} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
     \Big{(}\Gr{X}{k}{l}{p}{q}\Big{)}_{13}\Big{(}\Gr{X}{p}{q}{m}{n}\Big{)}_{23}
   \end{align}
@@ -117,7 +117,7 @@ The following lemma shows that when $\mathscr{A}$ is a partial \emph{Hopf} algeb
   \id)(\Gr{X}{n}{m}{l}{k}) \in
     \Gr{A}{k}{l}{m}{n} \otimes
     \Hom_\C(\Gru{V}{l}{k},\Gru{V}{n}{m})\] are the unique elements such  that
-  \begin{align}\label{eq:rep-delta}
+  \begin{align}\label{eq:rep-delta2}
     \sum_{k} \Gr{Z}{l}{k}{n'}{m} \Gr{X}{k}{l}{m}{n} &= \delta_{n,n'}
     \UnitC{l}{n} \otimes \id_{\Gru{V}{m}{n}}, &
     \sum_{n} \Gr{X}{k}{l}{m}{n} \Gr{Z}{l}{k'}{n}{m} &= \delta_{k,k'}
@@ -129,7 +129,7 @@ The following lemma shows that when $\mathscr{A}$ is a partial \emph{Hopf} algeb
     \left(\Gr{Z}{p}{q}{m}{n}\right)_{23}\left(\Gr{Z}{p}{q}{k}{l}\right)_{13}.
   \end{align*}
 \end{Lem}
-Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is sfs. 
+Note that the sums in \eqref{eq:rep-delta2} are finite because $\mathcal{H}$ is sfs. 
 \begin{proof}
  Let  $\Gr{Z}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{k}{l}{m}{n})$, and write the multiplication of $A$ as $M_A$. Then the antipode axiom implies
    \begin{align*}
@@ -147,14 +147,14 @@ Note that the sums in \eqref{eq:rep-delta} are finite because $\mathcal{H}$ is s
    \end{align*} The second identity follows
    similarly.
 
- Uniqueness follows immediately from the identities  \eqref{eq:rep-delta}.
+ Uniqueness follows immediately from the identities  \eqref{eq:rep-delta2}.
 \end{proof}
 
 \begin{Def} Let $\mathscr{A}$ and $X$ be as in Lemma \ref{lemma:rep-corep}. The element $Z$, when it exists, will be denoted $X^{-1}$.
 \end{Def} 
 
  \begin{Rem}\label{RemMorRep} % To see if this has to be modified.
- Using \eqref{eq:rep-delta}, one finds that a collection of linear maps $\Gru{T}{k}{l} \in
+ Using \eqref{eq:rep-delta2}, one finds that a collection of linear maps $\Gru{T}{k}{l} \in
 \mathcal{L}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ forms a morphism between two sfs corepresentations
 $(V,X)$ and $(W,Y)$  if
 and only if
@@ -856,7 +856,7 @@ We have then already argued that the property (5) automatically holds. To show t
     
      Finally, (1), (2) and (4)
      immediately imply the relation
-     $f_{z}(\UnitC{k}{m})=\delta_{k,m}$. The concrete construction of $f_z$ combined with property (3), the identity \eqref{eq:rep-delta} and the partial character property (5) gives the equality
+     $f_{z}(\UnitC{k}{m})=\delta_{k,m}$. The concrete construction of $f_z$ combined with property (3), the identity \eqref{eq:rep-delta2} and the partial character property (5) gives the equality
      \begin{align*}
        (f_{-z} \otimes \id) (\Gr{X}{k}{l}{k}{l})=
        (\Gru{(F_{X})}{k}{l})^{-z} &=\left( (f_{z} \otimes

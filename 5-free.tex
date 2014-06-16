@@ -7,65 +7,71 @@
 
 % Thank Piotr, Makoto and ...(?) for discussions. Link with graph C*-algebras?
 
-\section{Partial compact quantum groups from reciprocal random walks} 
-
+\section{Partial compact quantum groups from reciprocal random walks}
 
 We recall some notions introduced in \cite{DCY1}. We slightly change the terminology for the sake of convenience.
 
 % Should we assume that the graph has a finite number of components? 
-\begin{Def} By a graph $\Gamma$ we mean a quadruple $\Gamma=(\Gamma^{(0)},\Gamma^{(1)},s,t)$ where $\Gamma^{(0)}$ and $\Gamma^{(1)}$ are sets, called respectively the set of \emph{vertices} and the set of \emph{edges}, and $s$ and $t$ are maps \[s,t:\Gamma^{(1)}\rightarrow \Gamma^{(0)},\] called respectively the source and target map.% Use immediately the $\Gamma^{(i)}$-notation?
 
-An \emph{involutive graph} $(\Gamma,i)$ is a graph $\Gamma$ equipped with an involution \[i:\Gamma^{(1)} \rightarrow \Gamma^{(1)},\quad e\mapsto \overline{e}\] such that $s(\bar{e}) = t(e)$ for all edges $e$.
-
-A \emph{weighted graph} $(\Gamma,w)$ is a graph $\Gamma$ equipped with a weight function $w:\Gamma^{(1)}\rightarrow \R_0^+$
-
- A \emph{signed} graph $(\Gamma,\sgn)$ is a graph equipped with a function $\sgn:\Gamma^{(1)}\rightarrow \{\pm 1\}$.  
-\end{Def}
-
-%An isomorphism of graphs consists of a pair of isomorphisms between the sets of vertices and the sets of edges which commute with the respective source and target maps.
-
-
-%An isomorphism of weighted graphs is an isomorphism of graphs which intertwines the weights.
-
-\begin{Def} A \emph{reciprocal weighted graph} $(\Gamma,w,i)$ is a weighted, involutive graph such that $w(e)w(\bar{e}) = 1$ for all edges $e$. 
-
-A \emph{$\pm$-reciprocal signed graph} $(\Gamma,\sgn,i)$ is a signed, involutive graph such that $\sgn(e)\sgn(\bar{e}) = \pm 1$ for all edges $e$. 
-
-A \emph{$\pm$-reciprocal signed weighted graph} $(\Gamma,w,\sgn,i)$ is a reciprocal weighted graph $(\Gamma,w,i)$ which also has a $\pm$-reciprocal signed graph structure $(\Gamma,\sgn,i)$. 
-
-A weighted graph $(\Gamma,p)$ is called a \emph{random walk} if $\sum_{s(e)=v} p(e) = 1$ for all $v\in \Gamma^{(0)}$.
-\end{Def}
-
-\begin{Def} Fix $t\in \R_0$. A \emph{$t$-reciprocal random walk} is a $\sgn(t)$-reciprocal signed weighted graph $(\Gamma,w,\sgn,i)$ such that $(\Gamma,p)$ is a random walk for $p(e) = \frac{1}{|t|}w(e)$.  
+\begin{Def} Let $t\in \R_0$. A \emph{$t$-reciprocal random walk} consists of a quadruple $(\Gamma,w,\sgn,i)$ with \begin{itemize}
+\item[$\bullet$] $\Gamma=(\Gamma^{(0)},\Gamma^{(1)},s,t)$ a graph with \emph{source} and \emph{target} maps \[s,t:\Gamma^{(1)}\rightarrow \Gamma^{(0)},\]
+\item[$\bullet$] $w$ a function (the \emph{weight} function) $w:\Gamma^{(1)}\rightarrow \R_0^+$,
+\item[$\bullet$] $\sgn$ a function (the \emph{sign} function) $\sgn:\Gamma^{(1)}\rightarrow \{\pm 1\}$,
+\item[$\bullet$] $i$ an involution \[i:\Gamma^{(1)} \rightarrow \Gamma^{(1)},\quad e\mapsto \overline{e}\] with $s(\bar{e}) = t(e)$ for all edges $e$,
+\end{itemize}
+such that the following conditions are satisfied:
+\begin{itemize}
+\item[$\bullet$] $w(e)w(\bar{e}) = 1$ for all edges $e$,
+\item[$\bullet$] $\sgn(e)\sgn(\bar{e}) = \sgn(t)$ for all edges $e$,
+\item[$\bullet$] $p(e) = \frac{1}{|t|}w(e)$ defines a \emph{random walk}:   $\sum_{s(e)=v} p(e) = 1$ for all $v\in \Gamma^{(0)}$.
+\end{itemize}
 \end{Def}
 
 %Isomorphisms between $t$-random walks will simply be isomorphisms of weighted graphs (and hence do not remember any structure concerning involutions or signedness). 
 
 For some examples of $t$-reciprocal random walks, we refer to \cite{DCY1}. One particular example which will be needed for our construction of dynamical quantum $SU(2)$ is the following.
 
-\begin{Exa} Take $0<|q|<1$ and $x\in \R$. Write $2_q = q+q^{-1}$. Then we have the reciprocal $-2_q$-random walk \[\Gamma_x =(\Gamma_x,w,\sgn,i)\] with \[ \Gamma^{(0)} = \Z,\quad \Gamma^{(1)} = \{(k,l)\mid |k-l|= 1\}\subseteq \Z\times \Z\] with projection on the first (resp. second) leg as source (resp. target) map, with weight function \[w(k,k\pm 1) = \frac{|q|^{x+k\pm 1}+|q|^{-(x+k\pm 1)}}{|q|^{x+k}+|q|^{-(x+k)}},\] sign function \[\sgn(k,k+1) = 1,\quad \sgn(k,k-1) = -\sgn(q),\] and involution $\overline{(k,k+1)} = (k+1,k)$. 
+\begin{Exa}\label{ExaGraphPod} Take $0<|q|<1$ and $x\in \R$. Write $2_q = q+q^{-1}$. Then we have the reciprocal $-2_q$-random walk \[\Gamma_x =(\Gamma_x,w,\sgn,i)\] with \[ \Gamma^{(0)} = \Z,\quad \Gamma^{(1)} = \{(k,l)\mid |k-l|= 1\}\subseteq \Z\times \Z\] with projection on the first (resp. second) leg as source (resp. target) map, with weight function \[w(k,k\pm 1) = \frac{|q|^{x+k\pm 1}+|q|^{-(x+k\pm 1)}}{|q|^{x+k}+|q|^{-(x+k)}},\] sign function \[\sgn(k,k+1) = 1,\quad \sgn(k,k-1) = -\sgn(q),\] and involution $\overline{(k,k+1)} = (k+1,k)$. 
 
-By translation we can shift the value of $x$ by an integer, and by inversion we can change $x$ into $-x$. It follows that by some graph isomorphism, we can always arrange to have $x\in \lbrack 0,\frac{1}{2}\rbrack$.
+By translation we shift the value of $x$ by an integer, and by inversion we change $x$ into $-x$ and multiply the sign function with a fixed sign. It follows that by some graph isomorphism, we can always arrange to have $x\in \lbrack 0,\frac{1}{2}\rbrack$ at the cost of having a different sign function.
 \end{Exa} 
 
-Let now $0<|q|\leq 1$, and let $\Gamma = (\Gamma,w,\sgn,i)$ be a $-2_q$-reciprocal random walk. Then we can define a couple $\Hsp(\Gamma) = (\Hsp,R)$ where $\Hsp$ is $l^2(\Gamma^{(1)})$ with the $\Gamma^{(0)}$-bigrading $\delta_e \in \Hsp(s(e),t(e))$ for the obvious Dirac functions, and where $R$ is the (bounded) map $l^2(\Gamma^{(0)})\rightarrow \Hsp\underset{\Gamma^{(0)}}{\boxtimes} \Hsp$ defined as \begin{eqnarray*} R\delta_v &=& \sum_{e,s(e) = v} \sgn(e)\sqrt{w(e)}\delta_e \otimes \delta_{\bar{e}}.\end{eqnarray*} Then $R^*R = |q|+|q|^{-1}$ and \[(R^*\boxtimes \id)(\id\boxtimes R) = -\sgn(q)\id.\] By the fundamental property of the Temperley-Lieb tensor C$^*$-category $\mathcal{T}_q = \Rep(SU_q(2))$, this means that we have a unique strongly monoidal $^*$-functor
-\[F_{\Gamma}:\mathcal{T}_q \rightarrow {}^{\Gamma^{(0)}}\Hilb_f^{\Gamma^{(0)}}\] such that $\Gamma(\pi_{1/2}) = \Hsp$ and $F(\mathscr{R}) = R$ with $(\pi_{1/2},\mathscr{R},-\sgn(q)\mathscr{R})$ a solution for the conjugate equations for $\pi_{1/2}$. 
+Let now $0<|q|\leq 1$, and let $SU_q(2)$ be Woronowicz's twisted $SU(2)$ group \cite{Wor1}. Then $SU_q(2)$ is a compact quantum group, and its category of finite-dimensional unitary representations $\Rep(SU_q(2))$ is generated by the spin $1/2$-representation $\pi_{1/2}$ on $\C^2$.
 
-Up to equivalence, $F_{\Gamma}$ only depends upon the isomorphism class of $(\Gamma,w)$, and is independent of the chosen involution or sign structure.
+Let $\Gamma = (\Gamma,w,\sgn,i)$ be a $-2_q$-reciprocal random walk. Define $\Hsp_{\Gamma}$ as the $\Gamma^{(0)}$-bigraded Hilbert space $l^2(\Gamma^{(1)})$, where the $\Gamma^{(0)}$-bigrading is given by \[\delta_e \in \Gru{\Hsp_{\Gamma}}{s(e)}{t(e)}\] for the obvious Dirac functions. Further define $R_{\Gamma}$ as the (bounded) map \[R_{\Gamma}:l^2(\Gamma^{(0)})\rightarrow \Hsp_{\Gamma}\underset{\Gamma^{(0)}}{\otimes} \Hsp_{\Gamma}\] given by \begin{eqnarray*} R_{\Gamma} \delta_v &=& \sum_{e,s(e) = v} \sgn(e)\sqrt{w(e)}\delta_e \otimes \delta_{\bar{e}}.\end{eqnarray*} Then $R_{\Gamma}^*R_{\Gamma} = |q|+|q|^{-1}$ and \[(R_{\Gamma}^*\otimes \id)(\id\otimes R_{\Gamma}) = -\sgn(q)\id.\]
 
-It then follows from our main theorem that for each reciprocal random walk on a graph $\Gamma$, one obtains a $\Gamma^{(0)}$-face compact quantum group. Our aim is to give a direct representation of it by generators and relations.
 
-\begin{Theorem}\label{TheoGenRel} Let $0<|q|\leq 1$, and let $\Gamma$ be a $-2_q$-reciprocal random walk. Let $A(\Gamma)$ be the total $^*$-algebra associated to the $\Gamma^{(0)}$-face compact quantum group constructed from the fiber functor $F_{\Gamma}$. Then $A(\Gamma)$ is the universal $^*$-algebra generated by a copy of the $^*$-algebra of finite support functions on $\Gamma^{(0)}\times \Gamma^{(0)}$ and elements $(u_{e,f})_{e,f\in \Gamma^{(1)}}$ where $u_{e,f}\in A(\Gamma)\begin{pmatrix} s(e) & t(e)\\ s(f)&t(f)\end{pmatrix}$ and 
-\begin{eqnarray*} 
-\sum_{v\in \Gamma^{(0)}}\sum_{g\in \Gamma_{vw}} u_{g,e}^*u_{g,f} = \delta_{e,f}\mathbf{1}\Grru{w}{t(e)}\\
-\sum_{w\in \Gamma^{(0)}} \sum_{g\in \Gamma_{vw}} u_{e,g}u_{f,g}^* = \delta_{e,f} \mathbf{1}\Grru{s(e)}{v}\\ 
-u_{e,f}^* \;=\; \sgn(e)\sgn(f)\sqrt{\frac{w(f)}{w(e)}} u_{\bar{e},\bar{f}}.
-\end{eqnarray*} 
+%Then we can define a couple $\Hsp(\Gamma) = (\Hsp,R)$ where $\Hsp$ is $l^2(\Gamma^{(1)})$ with the $\Gamma^{(0)}$-bigrading $\delta_e \in \Hsp(s(e),t(e))$ for the obvious Dirac functions, and where  
+
+% Dropped Temperley-Lieb terminology
+
+Hence, by the universal property of $\Rep(SU_q(2))$ (\cite[Theorem 1.4]{DCY1}, based on \cite{Tur1,Eti1,Yam1,Pin2,Pin3}), we have a strongly monoidal $^*$-functor
+\[F_{\Gamma}: \Rep(SU_q(2)) \rightarrow {}^{\Gamma^{(0)}}\Hilb_f^{\Gamma^{(0)}}\] such that $F_{\Gamma}(\pi_{1/2}) = \Hsp_{\Gamma}$ and $F_{\Gamma}(\mathscr{R}) = R_{\Gamma}$, with \[(\pi_{1/2},\mathscr{R},-\sgn(q)\mathscr{R})\] a solution for the conjugate equations for $\pi_{1/2}$. Up to equivalence, $F_{\Gamma}$ only depends upon the isomorphism class of $(\Gamma,w)$, and is independent of the chosen involution or sign structure.
+
+% Concrete reference to be added.
+It follows from our main theorem that for each reciprocal random walk on a graph $\Gamma$, one obtains a $\Gamma^{(0)}$-partial compact quantum group. Our aim is to give a direct representation of it by generators and relations.
+
+\begin{Theorem}\label{TheoGenRel} Let $0<|q|\leq 1$, and let $\Gamma$ be a $-2_q$-reciprocal random walk. Let $A(\Gamma)$ be the total $^*$-algebra associated to the $\Gamma^{(0)}$-partial compact quantum group constructed from the fiber functor $F_{\Gamma}$. Then $A(\Gamma)$ is the universal $^*$-algebra generated by a copy of the $^*$-algebra of finite support functions on $\Gamma^{(0)}\times \Gamma^{(0)}$ (with the Dirac functions written as $\UnitC{v}{w}$) and elements $(u_{e,f})_{e,f\in \Gamma^{(1)}}$ where $u_{e,f}\in \Gr{A(\Gamma)}{s(e)}{t(e)}{s(f)}{t(f)}$ and 
+\begin{eqnarray} 
+\label{EqUni1}\sum_{v\in \Gamma^{(0)}}\sum_{g\in \Gamma_{vw}} u_{g,e}^*u_{g,f} = \delta_{e,f}\mathbf{1}\Grru{w}{t(e)}, \qquad \forall w\in \Gamma^{(0)}, e,f\in \Gamma^{(1)},\\
+\label{EqUni2}\sum_{w\in \Gamma^{(0)}} \sum_{g\in \Gamma_{vw}} u_{e,g}u_{f,g}^* = \delta_{e,f} \mathbf{1}\Grru{s(e)}{v}\qquad \forall v\in \Gamma{(0)}, e,f\in \Gamma^{(1)},\\ 
+\label{EqInt}u_{e,f}^* \;=\; \sgn(e)\sgn(f)\sqrt{\frac{w(f)}{w(e)}} u_{\bar{e},\bar{f}},\qquad \forall e,f\in \Gamma^{(1)}.
+\end{eqnarray}
+
+If moreover $v,w\in \Gamma^{(0)}$ and $e,f\in \Gamma^{(1)}$, we have \[\Delta_{vw}(u_{e,f}) = \underset{t(g) = w}{\sum_{s(g) = v}} u_{e,g}\otimes u_{g,f},\]
+\[\varepsilon(u_{e,f}) = \delta_{e,f}\] and \[S(u_{e,f}) = u_{f,e}^*.\] 
 \end{Theorem} 
 
-It is also easy to give formulas for the comultiplication, counit and antipode on these generators. Namely, if $K,L  \in M_2(\Gamma^{(0)})$, we have for $K*L = \begin{pmatrix} s(e) & t(e)\\ s(f)& t(f)\end{pmatrix}$ that \[\Delta\Grru{K}{L}(u_{e,f}) = \underset{s(g) = L_{lu}}{\underset{t(g) = K_{rd}}{\sum_{g\in\Gamma^{(1)}}}} u_{e,g}\otimes u_{g,f}.\] For $e,f\in \Gamma^{(1)}$ with the same source and target, we have
-\[\varepsilon(s(e)\;t(e))(u_{e,f}) = \delta_{e,f}.\]
-Finally, for the antipode we have \[S(u_{e,f}) = u_{f,e}^*.\]
+\begin{proof} We follow the proof of \cite[Theorem 5.5]{BDV1}.
+
+First of all, it is straightforward to verify that $\mathscr{A}(\Gamma)$ indeed has a unique coproduct, counit and antipode for which it becomes a partial Hopf $^*$-algebra, and such that on the generators the formulas above for them are satisfied.% More detail?
+
+On the other hand, denote by $\widetilde{\mathscr{A}}(\Gamma)$ the partial Hopf $^*$-algebra constructed from $F_{\Gamma}$. Let $\widetilde{U}$ be the corepresentation corresponding to $F_{\Gamma}(\pi_{1/2})$. Then the matrix entries $\widetilde{u}_{e,f}$ of $\widetilde{U}$ with respect to  the canonical basis of $\Hsp_{\Gamma} = l^2(\Gamma^{(1)})$ satisfy the relations \eqref{EqUni1} and \eqref{EqUni2} because of unitarity of $\widetilde{U}$. On the other hand, the relation \eqref{EqInt} follows immediately from the fact that $R_{\Gamma}$ is an intertwiner. As $\pi_{1/2}$ is a generating representation for $\Rep(SU_q(2))$, it follows that we have a surjective $^*$-representation $\mathscr{A}(\Gamma)\rightarrow \widetilde{\mathscr{A}}(\Gamma)$.
+
+Let now $P_{n,m}$ for $n\in \N,m\in \frac{1}{2}\N$ with $2m = n \mod 2$ and $2m\leq n$ be the (Jones-Wenzl) projection in $\Mor(\pi_{1/2}^{n},\pi_{1/2}^{n})$ which projects onto the spin $m$-representation $\pi_m$. As $U$ is a (real or anti-real) selfconjugate corepresentation of $\mathscr{A}$, it follows that $P_{n,m}$ is an endomorphism of $U^{(n)} := U^{\Circt n}$. Hence we obtain a well-defined linear map \[\theta: \widetilde{\mathscr{A}}(\Gamma)\rightarrow \mathscr{A}(\Gamma)\] such that, with $\widetilde{U}_m$ the corepresentation of $\widetilde{\mathscr{A}}(\Gamma)$ associated to $F(\pi_m)$,  \[ (\theta\otimes \id)\widetilde{U}_m = (\id\otimes P_{n,m})U^{(n)}.\]
+As in \cite{BDV1}, we then infer that \[(\theta\otimes\id)(\widetilde{U}_m)_{12}(\theta\otimes\id)(\widetilde{U}_{m'})_{13} = (\theta\otimes\id)((\widetilde{U}_m)_{12}(\widetilde{U}_{m'})_{13})\] inside $\End(\Hsp_{\Gamma}^{\iitimes n})\otimes \mathscr{A}(\Gamma)$, so that $\theta$ is multiplicative and hence an inverse to the quotient map  $\mathscr{A}(\Gamma)\rightarrow \widetilde{\mathscr{A}}(\Gamma)$.
+\end{proof}
+
 
 
 %%% Local Variables: 
