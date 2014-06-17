@@ -19,8 +19,8 @@ Consider now $M(A_x)$, the multiplier algebra of $A_x$. We can form in $M(A_x)$ 
 \begin{eqnarray*} u_{++} &=& \frac{w_+(\rho)^{1/2}}{w_+(\lambda)^{1/2}}u_{--}^*,\\u_{+-}&=& (-1)^{s_q}  \frac{w_-^{1/2}(\rho)}{w_+^{1/2}(\lambda)}u_{-+}^*.  \\ 
 \end{eqnarray*}
 
-Let us write \[F(k) = |q|^{-1}w_+(k) =  |q|^{-1}\frac{|q|^{x+k+1}+|q|^{-x-k-1}}{|q|^{x+k}+|q|^{-x-k}},\] and further put\[\alpha = \frac{F^{1/2}(\rho-1)}{F^{1/2}(\lambda-1)}u_{--},\qquad \beta = \frac{1}{F^{1/2}(\lambda-1)}u_{-+}.\] Then the above commutation relations are equivalent to \begin{align*} \alpha \beta = qF(\rho-1)\beta\alpha && \alpha\beta^* = qF(\lambda)\beta^*\alpha\end{align*} \begin{align*} \alpha\alpha^* +F(\lambda)\beta^*\beta = 1,&& \alpha^*\alpha+q^{-2}F(\rho-1)^{-1}\beta^*\beta = 1,\\ F(\rho-1)^{-1}\alpha\alpha^* +\beta\beta^* = F(\lambda-1)^{-1},&& F(\lambda)\alpha^*\alpha +q^{-2}\beta\beta^* = F(\rho),\end{align*} \begin{align*} f(\lambda)g(\rho)\alpha =
-\alpha f(\lambda+1)g(\rho+1),&& f(\lambda)g(\rho)\beta = \beta f(\lambda+1)g(\rho-1).\end{align*}
+Let us write \[F(k) = |q|^{-1}w_+(k) =  |q|^{-1}\frac{|q|^{x+k+1}+|q|^{-x-k-1}}{|q|^{x+k}+|q|^{-x-k}},\] and further put\[\alpha = \frac{F^{1/2}(\rho-1)}{F^{1/2}(\lambda-1)}u_{--},\qquad \beta = \frac{1}{F^{1/2}(\lambda-1)}u_{-+}.\] Then the above commutation relations are equivalent to \begin{equation}\label{EqqCom} \alpha \beta = qF(\rho-1)\beta\alpha \qquad \alpha\beta^* = qF(\lambda)\beta^*\alpha\end{equation} \begin{equation}\label{EqDet} \alpha\alpha^* +F(\lambda)\beta^*\beta = 1,\qquad \alpha^*\alpha+q^{-2}F(\rho-1)^{-1}\beta^*\beta = 1,\end{equation}\begin{equation*} F(\rho-1)^{-1}\alpha\alpha^* +\beta\beta^* = F(\lambda-1)^{-1},\qquad  F(\lambda)\alpha^*\alpha +q^{-2}\beta\beta^* = F(\rho),\end{equation*} \begin{equation}\label{EqGrad} f(\lambda)g(\rho)\alpha =
+\alpha f(\lambda+1)g(\rho+1),\qquad f(\lambda)g(\rho)\beta = \beta f(\lambda+1)g(\rho-1).\end{equation}%layout might be nicer
 
 These are precisely the commutation relations for the dynamical quantum $SU(2)$-group as in \cite[Definition 2.6]{KoR1}, except that the precise value of $F$ has been changed by a shift in the parameter domain by a complex constant. Clearly, by Theorem \ref{TheoGenRel} the (total) coproduct on $A_x$ also agrees with the one on the dynamical quantum $SU(2)$-group, namely \begin{eqnarray*} \Delta(\alpha) &=& \Delta(1) (\alpha\otimes \alpha - q^{-1}\beta\otimes \beta^*),\\ \Delta(\beta) &=& \Delta(1)(\beta\otimes \alpha^* +\alpha\otimes \beta)\end{eqnarray*} where $\Delta(1) = \sum_{k\in \Z} \rho_k\otimes \lambda_k$.
 
@@ -56,7 +56,7 @@ We aim to classify irreducible $(x,c)$-sets. We start of with the following lemm
 
 Hence it suffices to classify even irreducible $(x,c)$-sets. This is achieved in the following proposition.
 
-\begin{Prop} Let $c\geq 0$ and $x\in \lbrack 0,\frac{1}{2}\rbrack$.  
+\begin{Prop}\label{PropClass1D} Let $c\geq 0$ and $x\in \lbrack 0,\frac{1}{2}\rbrack$.  
 \begin{itemize}
 \item[$\bullet$] If $c< |q|^{2x-1}+|q|^{-2x+1}$, then $2\Z$ is an irreducible $(x,c)$-set.
 \item[$\bullet$] If $c\geq |q|^{2x-1}+|q|^{-2x+1}$, write $c=|q|^y+|q|^{-y}$ for some unique $y\geq 1-2x$. 
@@ -82,32 +82,86 @@ We leave this rather tedious verification task to the reader.
 
 Let us now return to the representation theory of the $^*$-algebra $A_x$.
 
-Let $\pi$ be any (necessarily bounded) non-degenerate $^*$-representation of $A_x$ on a Hilbert space $\Hsp_{\pi}$. Then \[\Hsp_{\pi} = \oplus \Hsp_{m,n},\qquad \Hsp_{m,n} = \pi(\un{m}{n})\Hsp.\] Let $V_{\pi}$ be the non-closed linear span of all $\Hsp_{m,n}$. Then $\pi(A)V_{\pi} = V_{\pi}$. It follows that one can extends $\pi$ to a map $M(A) \rightarrow \End(V_{\pi})$. As the $u_{\epsilon,\eta}$ form a unitary matrix, we can then in fact make sense of the $\pi(u_{\epsilon,\eta})$ as contractions on $\Hsp_{\pi}$. On the other hand, the generators $\alpha,\beta$ and their adjoints give rise to endomorphisms $V_{\pi}\rightarrow V_{\pi}$ which are bounded when restricted to any $\Hsp_{m,n}$. It is easy to see that non-degenerate $^*$-representations of $A_x$ are in one-to-one correspondence with $\Z^2$-direct sums $V$ of finite-dimensional Hilbert spaces equipped with maps $\alpha,\beta:V_{\pi}\rightarrow V_{\pi}$ satisfying the commutation relations as in ...
+Let $\pi$ be any (necessarily bounded) non-degenerate $^*$-representation of $A_x$ on a Hilbert space $\Hsp_{\pi}$. Then \[\Hsp_{\pi} = \oplus \Hsp^{m}_{n},\qquad \Hsp^{m}_{n} = \pi(\UnitC{m}{n})\Hsp.\] Write \[V_{\pi} =  \textrm{the (non-closed) linear span of all }\Hsp^{m}_{n}.\] Then $\pi(A_x)V_{\pi} = V_{\pi}$. It follows that one can extends $\pi$ to a map \[\pi: M(A) \rightarrow \End(V_{\pi}).\] As the $u_{\epsilon,\nu}$ form a unitary matrix, we can then in fact make sense of the $\pi(u_{\epsilon,\nu})$ as contractions on $\Hsp_{\pi}$. On the other hand, the generators $\alpha,\beta$ and their adjoints give rise to endomorphisms $V_{\pi}\rightarrow V_{\pi}$ which are bounded when restricted to any $\Hsp^{m}_{n}$.
 
-Consider \[\Omega =q^{\lambda-\rho+1}+q^{\rho-\lambda-1} - \sgn(q)^{\lambda-\rho}q^{-1}(|q|^{x+\lambda+1}+|q|^{-x-\lambda-1})(|q|^{x+\rho-1}+|q|^{-x-\rho+1})\beta^*\beta.\] As in [KR], one shows that $\Omega$ is a central element. It then follows immediately that if $\pi$ is an irreducible representation of $A_x$, there exists $c\in \R$ such that $\Omega\xi = c\xi$ for all $\xi \in V_{\pi}$. Moreover, since for any $\epsilon,\nu$ one has that $u_{\epsilon,\nu}^*u_{\epsilon,\nu}$ can be expressed as an element of the form $g_{\epsilon,\nu}(\lambda,\rho) + h_{\epsilon,\nu}\Omega$, we easily deduce from the commutation relations and irreducibility that $\Hsp_{m,n}$ is at most one-dimensional. Because of the commutation relations of the generators with the $f(\lambda,\mu)$ it is also clear that either all $\Hsp_{m,n}$ with $m-n$ odd are zero, or all $\Hsp_{m,n}$ with $m-n$ even are zero. In the first case we call $\pi$ even, in the second case we call $\pi$ odd. 
+We then have the following easy lemma.
+
+\begin{Lem} There is a one-to-one correspondence, obtained by restriction, between non-degenerate $^*$-representations of $A_x$ on Hilbert spaces, and $\Z^2$-bigraded vector spaces $V$ with finite-dimensional Hilbert spaces as summands and equipped with adjointable maps $\alpha,\beta:V_{\pi}\rightarrow V_{\pi}$ satisfying the commutation relations as in \eqref{EqqCom}, \eqref{EqDet} and \eqref{EqGrad}.\end{Lem}
+
+\begin{Def} The \emph{Casimir} of $A_x$ is defined to be the following element $\Omega\in M(A_x)$, \[\Omega =q^{\lambda-\rho+1}+q^{\rho-\lambda-1} - \sgn(q)^{\lambda-\rho}q^{-1}(|q|^{x+\lambda+1}+|q|^{-x-\lambda-1})(|q|^{x+\rho-1}+|q|^{-x-\rho+1})\beta^*\beta.\] 
+\end{Def}
+
+\begin{Lem} The element $\Omega$ is central in $M(A_x)$.
+\end{Lem}
+\begin{proof}
+Straightforward, cf. \cite[Lemma 3.3]{KoR1}.
+\end{proof}
+
+\begin{Cor} If $\pi$ is an irreducible $^*$-representation of $A_x$, there exists $c\in \R$ such that $\Omega\xi = c\xi$ for all $\xi \in V_{\pi}$. 
+\end{Cor} 
+\begin{Cor} If $\pi$ is an irreducible $^*$-representation of $A_x$ on a Hilbert space $\Hsp_{\pi}$, then $\Hsp^m_n$ is at most one-dimensional for each $m,n\in \Z$.
+\end{Cor} 
+\begin{proof} 
+This follows immediately from \eqref{EqqCom} and the fact that for any $\epsilon,\nu$ one has that $u_{\epsilon,\nu}^*u_{\epsilon,\nu}$ can be expressed as an element of the form $g_{\epsilon,\nu}(\lambda,\rho) + h_{\epsilon,\nu}\Omega$ by \eqref{EqDet}.
+\end{proof}
+
+Let now $\pi$ be an irreducible $^*$-representation of $A_x$ on a Hilbert space $\Hsp_{\pi}$. From the commutation relations of the generators with the $f(\lambda,\mu)$, it is clear that either all $\Hsp_{m,n}$ with $m-n$ odd are zero, or all $\Hsp_{m,n}$ with $m-n$ even are zero. 
+
+\begin{Def} Let $(\Hsp_{\pi},\pi)$ be an irreducible $^*$-representation of $A_x$. We call $\pi$ even (resp. odd) if all $\Hsp^m_n$ with $m-n$ odd (resp. even) are zero.
+\end{Def} 
 
 %We can hence identity $\Hsp$ as a quotient of $l^2(\Z\times \Z)$. Write the images of the standard basis vectors $e_{m,n}$ of $l^2(\Z\times \Z)$ as $f_{m,n}$. Let us write $F = \{(m,n)\mid f_{m,n}\neq 0\}$.
 
-Note now that we have the following identities (where the right hand sides are unambiguously defined because of centrality of $\Omega$): 
+The following lemma follows from a straightforward computation.
+
+\begin{Lem} Inside $M(A_x)$, we have the following identities:
 \begin{eqnarray*}
 \alpha^*\alpha &=& \frac{|q|^{2x+\lambda+\rho+1}+|q|^{-2x-\lambda-\rho-1}+\sgn(q)^{\lambda-\rho+1}\Omega}{(|q|^{x+\lambda+1}+|q|^{-x-\lambda-1})(|q|^{x+\rho}+|q|^{-x-\rho})}\\
 \alpha\alpha^* &=& \frac{|q|^{2x+\lambda+\rho-1}+|q|^{-2x-\lambda-\rho+1}+\sgn(q)^{\lambda-\rho-1}\Omega}{(|q|^{x+\lambda}+|q|^{-x-\lambda})(|q|^{x+\rho-1}+|q|^{-x-\rho+1})}\\
 \beta^*\beta &=& |q|\frac{|q|^{\lambda-\rho+1}+|q|^{-\lambda+\rho-1}-\sgn(q)^{\lambda-\rho+1}\Omega}{(|q|^{x+\lambda+1}+|q|^{-x-\lambda-1})(|q|^{x+\rho-1}+|q|^{-x-\rho+1})}\\
 \beta\beta^* &=&  |q|\frac{|q|^{\lambda-\rho-1}+|q|^{-\lambda+\rho+1}-\sgn(q)^{\lambda-\rho-1}\Omega}{(|q|^{x+\lambda}+|q|^{-x-\lambda})(|q|^{x+\rho}+|q|^{-x-\rho})}.
 \end{eqnarray*}
+\end{Lem}
 
-For $c\in\R$, let us call a couple $(k,l)\in \Z^2$ $(\epsilon,\nu)_c$ adapted if the following inequality holds: \begin{equation}\label{EqAd}(|q|^{(x+k)+\epsilon\nu(x+l)-\epsilon}+|q|^{-(x+k)-\epsilon\nu(x+l)+\epsilon})+\sgn(q)^{k-l+1}\epsilon\nu c\geq 0.\end{equation} Let us call $(k,l)$ \emph{strictly} $(\epsilon,\nu)_c$-adapted if this is a strict equality. Let us call $(k,l)$ $c$-adapted if it is $(\epsilon,\nu)_c$-adapted for all $\epsilon,\nu$. Finally, let us call $(k,l)$ $c$-compatible if there exists an irreducible representation $\pi$ of $A_x$ with $\pi(\Omega) = c$ and $\Hsp_{k,l}\neq \{0\}$. 
+Note that the right hand sides are well-defined because of centrality of $\Omega$.
 
-Let us call a subset $T\subseteq \Z^2$ a $c$-set if the following conditions are satisfied: 
+\begin{Def} Fix $c\in \R$. A couple $(k,l)\in \Z^2$ is called \emph{$(\epsilon,\nu)_c$-adapted} if the following inequality holds: \begin{equation}\label{EqAd}(|q|^{(x+k)+\epsilon\nu(x+l)-\epsilon}+|q|^{-(x+k)-\epsilon\nu(x+l)+\epsilon})+\sgn(q)^{k-l+1}\epsilon\nu c\geq 0.\end{equation} A couple $(k,l)$ is called \emph{strictly} $(\epsilon,\nu)_c$-adapted if this is a strict equality. We call $(k,l)$ \emph{$c$-adapted} if it is $(\epsilon,\nu)_c$-adapted for all $\epsilon,\nu\in \{+,-\}$. Finally, let us call $(k,l)$ \emph{$c$-compatible} if there exists an irreducible representation $\pi$ of $A_x$ with $\pi(\Omega) = c$ and $\Hsp^{k}_{l}\neq \{0\}$.
+\end{Def} 
+
+\begin{Def} Fix $c\in \R$. We call a subset $T\subseteq \Z^2$ a \emph{$c$-set} if the following conditions are satisfied: 
 \begin{itemize} 
 \item[$\bullet$] $T$ is not empty.
 \item[$\bullet$] $T$ consists of $c$-adapted points.
 \item[$\bullet$] If $(k,l)\in T$ is strictly $(\epsilon,\nu)_c$-adapted, then $(k-\epsilon,l-\nu)$ is in $T$.
 \end{itemize}
 
-Call $T$ irreducible if it is not the disjoint union of two $c$-sets.  Let us write $\Z^2_{\even} = \{(k,l)\mid k-l \textrm{ even}\}$ and $\Z^2_{\odd} = \Z^2\setminus \Z^2_{\even}$, and call a $c$-set even or odd according to whether it lies in $\Z^2_{\even}$ or $\Z^2_{\odd}$. Then it is easily seen that for any even (resp. odd) irreducible representation $\pi$ of $A$, the set of $c=\pi(\Omega)$-compatible $(k,l)$ forms an irreducible even (resp. odd) $c$-set. Conversely, if $T$ is an irreducible $c$-set, then necessarily $T$ is either an even or odd $c$-set, and we can construct an irreducible even/odd representation of $A$ on $l^2(T)$ by putting \begin{eqnarray*} \alpha e_{k,l} &=&  \left(\frac{|q|^{2x+k+l+1}+|q|^{-2x-k-l-1}+\sgn(q)^{k-l+1}c}{(|q|^{x+k+1}+|q|^{-x-k-1})(|q|^{x+l}+|q|^{-x-l})}\right)^{1/2}e_{k+1,l+1},\\ \beta e_{k,l} &=& \sgn(q)^{k}\left(|q|\frac{|q|^{k-l+1}+|q|^{-k+l-1}-\sgn(q)^{k-l+1}c}{(|q|^{x+k+1}+|q|^{-x-k-1})(|q|^{x+l-1}+|q|^{-x-l+1})}\right)^{1/2} e_{k+1,l-1},\end{eqnarray*} where the right hand side is considered as the zero vector when the scalar factor on the right is zero. Moreover, this then establishes a one-to-one correspondence between irreducible $c$-sets and irreducible representations of $A_x$ with $\pi(\Omega) =c$.
+We say that $T$ \emph{irreducible} if it is not the disjoint union of two $c$-sets.
 
-Hence what remains is to classify irreducible $c$-sets for each $c\in \R$. But clearly $T$ is an even irreducible $c$-set if and only if there exists an even irreducible $(x,-\sgn(q)c)$-set $Z_+\subseteq \Z$ and an even irreducible $(0,\sgn(q)c)$-set $Z_-\subseteq \Z$ such that $(k,l)\in T$ if and only if $k-l\in Z_-$ and $k+l\in Z_+$. Similary, $T$ is an odd irreducible $c$-set if and only if there exists an odd irreducible $(x,-c)$-set $Z_+\subseteq \Z$ and an irreducible $(0,c)$-set $Z_-\subseteq \Z$ such that $(k,l)\in T$ if and only if $k-l\in Z_-$ and $k+l\in Z_+$.
+Writing $\Z^2_{\even} = \{(k,l)\mid k-l \textrm{ even}\}$ and $\Z^2_{\odd} = \Z^2\setminus \Z^2_{\even}$, we call a $c$-set even or odd according to whether it lies in $\Z^2_{\even}$ or $\Z^2_{\odd}$.
+\end{Def}
+
+\begin{Prop}\label{PropClassRep} For any even (resp. odd) irreducible representation $\pi$ of $A_x$, the set of $c=\pi(\Omega)$-compatible $(k,l)$ forms an irreducible even (resp. odd) $c$-set. 
+
+Conversely, if $T$ is an irreducible $c$-set, then necessarily $T$ is either an even or odd $c$-set, and there exists a unique irreducible even/odd $^*$-representation $\pi$ of $A_x$ (up to unitary equivalence) having $\pi(\Omega) = c $ and with $T$ as its set of $c$-compatible $(k,l)$.
+\end{Prop}
+
+\begin{proof} The first assertion is trivial. For the second assertion, let us put $\Hsp_{\pi} = l^2(T)$ with  \begin{eqnarray*} \alpha e_{k,l} &=&  \left(\frac{|q|^{2x+k+l+1}+|q|^{-2x-k-l-1}+\sgn(q)^{k-l+1}c}{(|q|^{x+k+1}+|q|^{-x-k-1})(|q|^{x+l}+|q|^{-x-l})}\right)^{1/2}e_{k+1,l+1},\\ \beta e_{k,l} &=& \sgn(q)^{k}\left(|q|\frac{|q|^{k-l+1}+|q|^{-k+l-1}-\sgn(q)^{k-l+1}c}{(|q|^{x+k+1}+|q|^{-x-k-1})(|q|^{x+l-1}+|q|^{-x-l+1})}\right)^{1/2} e_{k+1,l-1},\end{eqnarray*} where the right hand side is considered as the zero vector when the scalar factor on the right is zero. 
+
+Then $\pi$ is clearly a well-defined irreducible $^*$-representation with $\pi(\Omega) =c$ and with $T$ as its set of $c$-compatible vectors. As any non-zero $\Hsp^{k}_l$ is cyclic for $\pi$, we deduce that $\pi$ is the unique $^*$-representation up to unitary equivalence which satisfies this condition.
+\end{proof}
+
+What remains is to classify irreducible $c$-sets for each $c\in \R$.
+
+\begin{Lem}\label{LemClass2D} A set $T\subseteq \Z^2_{\even}$ is an  irreducible $c$-set if and only if there exists an even irreducible $(x,-\sgn(q)c)$-set $Z_+\subseteq \Z$ and an even irreducible $(0,\sgn(q)c)$-set $Z_-\subseteq \Z$ such that $(k,l)\in T$ if and only if $k-l\in Z_-$ and $k+l\in Z_+$.
+
+A set $T\subseteq \Z^2_{\odd}$ is an irreducible $c$-set if and only if there exists an odd irreducible $(x,-c)$-set $Z_+\subseteq \Z$ and an irreducible $(0,c)$-set $Z_-\subseteq \Z$ such that $(k,l)\in T$ if and only if $k-l\in Z_-$ and $k+l\in Z_+$.
+\end{Lem} 
+
+\begin{proof}
+Immediate.
+\end{proof}
+
+Combining Proposition \ref{PropClassRep} with Proposition \ref{PropClass1D} and Lemma \ref{LemClass2D}, we thus obtain a concrete description of the spectrum of $A_x$. The following pictures illustrate the situation for the cases $x=0$, $x\in (0,\frac{1}{2})$ and $x=\frac{1}{2}$.
 
 
 
@@ -124,39 +178,6 @@ Hence what remains is to classify irreducible $c$-sets for each $c\in \R$. But c
 % In case of qgroupoid constructed from identity functor for Rep(SU_q(2)): rep theory of associated Galois object should just be: a single representation (Galois object is type I factor, cutdown of $B(\mathscr{L}^2(SU_q(2)))$). Yes: in general, Galois object is Morita equivalent with algebra of original ergodic action, should also be stressed for Podles spheres
 
 
-
-\subsection{Representation theory of the intertwiner function algebra on the dynamical quantum $SU(2)$ group (to be modified)}
-
-\begin{Lem} There are faithful $^*$-representations $\pi_{\pm}$ of $\Pol_{\ext}(\X)$ as operators $\mathscr{D}^{\pm}\rightarrow \mathscr{D}^{\pm}$, given by the following formulas (where we suppress the explicit notations $\pi_{\pm}$): \begin{align*} \alpha\cdot e_{n,y}^+ = \left(\frac{1+q^{2n-2y}}{1+q^{-2y-2}}\right)^{1/2}e_{n,y+1}^+,&& \beta\cdot e_{n,y}^+ = \left(\frac{q^{-2y}-q^{2n-2y+2}}{1+q^{-2y-2}}\right)^{1/2}e_{n+1,y+1}^+,\end{align*}
-\begin{align*} \alpha\cdot e_{n,y}^- = \left(\frac{1-q^{2n}}{1+q^{-2y-2}}\right)^{1/2}e_{n-1,y+1}^-,&& \beta\cdot e_{n,y}^- = \left(\frac{q^{2n+2}+q^{-2y}}{1+q^{-2y-2}}\right)^{1/2}e_{n,y+1}^-,\end{align*} the functions in $C_c(\R)$ simply acting by $fe_{n,y}^{\pm}= f(y)e_{n,y}^{\pm}$.
-
-Both representations are bounded when restricted to $\Pol(\X)$.
-\end{Lem}
-
-%Miyashita Ulbrich?
-
-
-%\section*{Representation theory of the dynamical quantum $SU(2)$ group}
-
-%We let $A$ be the universal $^*$-algebra generated by the elements of a unitary $U = \begin{pmatrix} a & b \\ c & d\end{pmatrix}$ and a copy of $l^{\infty}(\Z\times \Z)$ such that \begin{eqnarray*} d^* &=& \frac{Z(\lambda)}{Z(\rho)}a ,\\ c^* &=& -\sgn(q)  Z(\lambda)Z(\rho-1),\end{eqnarray*} where $Z(k) = \left(\frac{|q|^{x+k}+|q|^{-x-k}}{|q|^{x+k+1}+|q|^{-x-k-1}}\right)^{1/2}$. We look for irreducible representations of $A$ such that the restriction to $c_c(\Z\times \Z)$ is non-degenerate. 
-%We write $\beta = qF(\rho)^{1/2}u^{-,+}$, where $F(k) = |q|^{-1}Z(k)^{-2}$.
-
-%Let \[\Omega = |q|^{\lambda-\rho+1}+|q|^{\rho-\lambda-1}-(|q|^{x+\lambda+1}+|q|^{-x-\lambda-1})(|q|^{x+\rho}+|q|^{-x-\rho})b^*b\] which we consider as a formal element. Then $\Omega$ is central. Since in any non-degenerate representation $\pi$ of $A$ the Hilbert space $\Hsp$ decomposes into direct summands $\Hsp_{k,l}$, the action of $\Omega$ on the algebraic direct sum of all $\Hsp_{k,l}$ is meaningful. If then $\pi$ is irreducible, it is clear that $\pi(\Omega)$ must be a scalar.
-
-
-\subsection{Representation theory of the function algebra on the dynamical quantum $SU(2)$ group}
-
-
-% Study spectrum fundamental character
-% Study dual quantum groupoid
-% Make connection with dynamical cocycle
-% In case of qgroupoid constructed from identity functor for Rep(SU_q(2)): rep theory of associated Galois object should just be: a single representation (Galois object is type I factor, cutdown of $B(\mathscr{L}^2(SU_q(2)))$). Yes: in general, Galois object is Morita equivalent with algebra of original ergodic action, should also be stressed for Podles spheres
-
-\begin{Lem} There are faithful $^*$-representations $\pi_{\pm}$ of $\Pol_{\ext}(\X)$ as operators $\mathscr{D}^{\pm}\rightarrow \mathscr{D}^{\pm}$, given by the following formulas (where we suppress the explicit notations $\pi_{\pm}$): \begin{align*} \alpha\cdot e_{n,y}^+ = \left(\frac{1+q^{2n-2y}}{1+q^{-2y-2}}\right)^{1/2}e_{n,y+1}^+,&& \beta\cdot e_{n,y}^+ = \left(\frac{q^{-2y}-q^{2n-2y+2}}{1+q^{-2y-2}}\right)^{1/2}e_{n+1,y+1}^+,\end{align*}
-\begin{align*} \alpha\cdot e_{n,y}^- = \left(\frac{1-q^{2n}}{1+q^{-2y-2}}\right)^{1/2}e_{n-1,y+1}^-,&& \beta\cdot e_{n,y}^- = \left(\frac{q^{2n+2}+q^{-2y}}{1+q^{-2y-2}}\right)^{1/2}e_{n,y+1}^-,\end{align*} the functions in $C_c(\R)$ simply acting by $fe_{n,y}^{\pm}= f(y)e_{n,y}^{\pm}$.
-
-Both representations are bounded when restricted to $\Pol(\X)$.
-\end{Lem}
 
 
 

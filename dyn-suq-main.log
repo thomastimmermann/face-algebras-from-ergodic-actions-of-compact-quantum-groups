@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  17 JUN 2014 16:24
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.8.5)  17 JUN 2014 20:48
 entering extended mode
 **dyn-suq-main.tex
 
@@ -946,29 +946,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 27.
 
-[42] [43]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 85.
-
-[44]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 128.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 128.
-
-[45]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 147.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 147.
-
-)
+[42] [43] [44] [45])
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ³ in font cmr10!
 Missing character: There is no Ã in font cmr10!
@@ -990,14 +968,14 @@ quantum-groups\dyn-suq-main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 268.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 268.
 Package rerunfilecheck Info: File `dyn-suq-main.out' has not changed.
-(rerunfilecheck)             Checksum: 0E33170C5E9056BC17CD6874222F898C;1077.
+(rerunfilecheck)             Checksum: 52C8426DEE88CD7B8DB0B79B3388D549;776.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 268.
  ) 
 Here is how much of TeX's memory you used:
- 7466 strings out of 494045
- 106269 string characters out of 3148388
- 205048 words of memory out of 3000000
- 10423 multiletter control sequences out of 15000+200000
+ 7480 strings out of 494045
+ 106411 string characters out of 3148388
+ 205304 words of memory out of 3000000
+ 10427 multiletter control sequences out of 15000+200000
  35266 words of font info for 134 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  35i,16n,60p,1798b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1032,9 +1010,9 @@ nts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/
 rsfs/rsfs10.pfb>
-Output written on dyn-suq-main.pdf (47 pages, 543917 bytes).
+Output written on dyn-suq-main.pdf (47 pages, 545953 bytes).
 PDF statistics:
- 779 PDF objects out of 1000 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 797 PDF objects out of 1000 (max. 8388607)
+ 220 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
