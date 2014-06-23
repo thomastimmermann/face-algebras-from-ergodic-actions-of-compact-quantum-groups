@@ -369,7 +369,7 @@ $R_{1}T_{1}R_{1}=R_{1}$ follow easily from  \eqref{EqDel} and
 \eqref{eq:delta-lambda-rho}. The assertions concerning $R_{2}$ and
 $T_{2}$ follow similarly.
 \end{proof}
-\begin{Theorem} 
+\begin{Theorem}  \label{theorem:partial-hopf-algebra}
   Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$,
   total comultiplication $\Delta$ and counit $\epsilon$. Then the
   following conditions are equivalent:
@@ -398,31 +398,54 @@ $S$ of $(A,\Delta)$ satisfies $S(A(K))\subseteq A(K^{\circ\bullet})$ and relatio
 From \cite[Proposition 3.5 and Proposition 3.7]{VDW1} or \cite[Theorem
 6.12 and Corollary 6.16]{Boh1}, we can conclude that the antipode of a
 partial Hopf algebra reverses the multiplication and
-comultiplication. Denote by $\Delta_{rs}^{\op}$ the composition of
-$\Delta_{rs}$ with the flip map.
+comultiplication. Denote by $\Delta^{\op}$ the composition of
+$\Delta$ with the flip map.
 
 \begin{Cor}
-Let $\mathscr{A}$ be a partial Hopf algebra. Then the total antipode $S:A\rightarrow A$ is an antihomomorphism and $\Delta_{rs}(S(a)) = (S\otimes S)\Delta_{sr}^{\op}(a)$ for all $a\in A$.
+Let $\mathscr{A}$ be a partial Hopf algebra. Then the total antipode
+$S:A\rightarrow A$ satisfies
+$S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
+for all $a,b\in A$.
 \end{Cor} 
-
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
-\begin{Def} A partial $^*$-algebra $\mathscr{A}$ is a partial algebra whose total algebra $A$ is equipped with an antilinear, antimultiplicative involution \[*:A\rightarrow A,\quad a\mapsto a^*\] such that the $\mathbf{1}_k$ are selfadjoint for all $k$ in the object set. 
+\begin{Def} A \emph{partial $^*$-algebra} $\mathscr{A}$ is a partial
+  algebra whose total algebra $A$ is equipped with an antilinear,
+  antimultiplicative involution $*\colon A\rightarrow A$, $ a\mapsto
+  a^*$,  such that the $\mathbf{1}_k$ are selfadjoint for all $k$ in
+  the object set. 
 \end{Def} 
 
 One can of course give an alternative definition directly in terms of the partial algebra structure by requiring that we are given antilinear maps $A(k,l)\rightarrow A(l,k)$ satisfying the obvious antimultiplicativity and involution properties.
 
-\begin{Def} An $I$-partial $^*$-bialgebra $\mathscr{A}$ is an $I$-partial bialgebra whose underlying partial algebra has been endowed with a partial $^*$-algebra structure for which \[\Delta_{rs}(a)^* = \Delta_{sr}(a^*),\qquad \forall K\in M_2(I), \forall a\in A(K), \forall r,s\in I.\]
-
-A partial Hopf $^*$-algebra is a partial bialgebra which is at the same time a partial $^*$-bialgebra and a partial Hopf algebra.
+\begin{Def} A \emph{partial $^*$-bialgebra} $\mathscr{A}$ is a
+ partial bialgebra whose underlying partial algebra has been
+  endowed with a partial $^*$-algebra structure such that
+$\Delta(a)^* = \Delta(a^*)$ for all $a \in A$.
+A \emph{partial Hopf $^*$-algebra} is a partial bialgebra which is at the same time a partial $^*$-bialgebra and a partial Hopf algebra.
 \end{Def} 
+Thus, a partial bialgebra is a partial
+$*$-bialgebra if and only if the underlying weak multiplier bialgebra
+ is a weak multiplier $*$-bialgebra.
 
-\begin{Rem}
-\begin{enumerate}
-\item By uniqueness of the counit \cite[Theorem 2.8]{Boh1}, it follows automatically that $\epsilon$ satisfies $\epsilon(a^*) = \overline{\epsilon(a)}$ for all $a$.
-\item From \cite[Proposition 4.11]{VDW1}, it follows automatically that $S(S(a)^*)^* = a$ for all $a$. In particular, $S$ is invertible. % To substantiate
-\end{enumerate}
-\end{Rem}
+From Theorem \ref{theorem:partial-hopf-algebra} and \cite{Boh1},
+\cite{VDW1}, we can deduce:
+\begin{Cor}
+  An $I$-partial $*$-bialgebra $\mathscr{A}$ is an $I$-partial Hopf
+  $*$-algebra if and only if the weak multiplier $*$-bialgebra
+  $(A,\Delta)$ is a weak multiplier Hopf $*$-algebra. In that case,
+  the counit and antipode satisfy
+  $\epsilon(a^{*})=\overline{\epsilon(a)}$ and $S(S(a)^{*})^{*}=a$ for
+  all $a\in A$; in particular, the total antipode is bijective.
+\end{Cor}
+\begin{proof}
+  The if and only if part follows immediately from  Theorem
+  \ref{theorem:partial-hopf-algebra}, the relation for the counit  from
+uniqueness of the counit  \cite[Theorem 2.8]{Boh1}, and the relation
+for the antipode from \cite[Proposition 4.11]{VDW1}.
+\end{proof}
+
+
 
 \begin{Def} Let $\mathscr{A}$ be a partial bi-algebra. An \emph{invariant functional} $\varphi$ for $\mathscr{A}$ consists of a functional $\varphi:A\rightarrow \C$ %necessary to assume?
 such that for all $a\in \eGr{A}{k}{l}{m}{n}$ and all $b$, one has  \[(\id\otimes \varphi)((b\otimes 1)\Delta(a)) = \varphi(a)b\lambda_k,\] and \[(\varphi\otimes \id)(\Delta(a)(1\otimes b)) = \varphi(a)\rho_nb.\]

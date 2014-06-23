@@ -1,28 +1,217 @@
 \section{Compact Hopf face algebras on the level of operator algebras}
 
-It then follows by symmetry that also the maps \[(W^{k,t}_{m,n,u,v})^*: \oplus_l \Gr{A}{k}{l}{m}{n} \otimes \Gr{A}{l}{t}{u}{v} \rightarrow \oplus_r \Gr{A}{k}{t}{m}{r}\otimes \Gr{A}{n}{r}{u}{v}\] defined by the formula \[a\otimes b\rightarrow \Delta(b)(a\otimes 1)\] are unitaries, with inverse map $a\otimes b\mapsto S^{-1}(b_{(1)})a\otimes b_{(2)}$.
 
-\begin{Lem}\label{LemUni} Let $(A,\Delta)$ be a generalized compact face algebra. Then each $V^{k,l,s,t}_{m,v}$ is a unitary, and similarly for the $W^{k,t}_{m,n,u,v}$.
+
+Let $\mathscr{G}$ be a partial compact quantum group, given by a
+partial Hopf $*$-algebra $\mathscr{A}=P(\mathscr{G})$ with positive
+normalized invariant functional $\phi$.  Since $\phi$ is faithful by
+\ref{LemFaith},  the formula
+\begin{align*}
+  \langle a|b\rangle :=\phi(a^{*}b) \quad \text{for all } a,b\in A
+\end{align*}
+defines an inner product on $A$. We denote by $\LA$ the completion,
+which is a Hilbert space, and by $\Lambda \colon A \to \LA$ the
+natural embedding. Since $\phi(A(K)^{*}A(L)) = 0$ if $K\neq L$ by
+\ref{}, this Hilbert space is the orthogonal direct sum of
+the finite-dimensional subspaces  $\Lambda(A(K)) \subseteq \LA$, that is,
+\begin{align*}
+  \LA &= \bigoplus_{K} \Lambda(A(K)).
+\end{align*}
+ For each $k\in I$, we can therefore define operators
+$\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in {\cal
+  B}(\LA)$ such that
+\begin{align*}
+  \lambda_{k}\Lambda(a)&= \Lambda(\lambda_{k} a), &
+  \lambda^{\op}_{k}\Lambda(a) &= \Lambda(a\lambda_{k}), &
+  \rho_{k}\Lambda(a) &= \Lambda(\rho_{k}a), &
+  \rho_{k}^{\op}\Lambda(a) &= \Lambda(a\rho_{k})
+\end{align*}
+for all $a\in A$. Likewise, we define $*$-homomorphisms
+$\lambda,\lambda^{\op},\rho,\rho^{\op} \colon l^{\infty}(I) \to {\cal
+  B}(\LA)$.
+
+We identify  the algebraic
+tensor product $A\otimes A$ with a subspace of the Hilbert space
+tensor product $\LA \otimes \LA$ using the map $\Lambda \otimes \Lambda$.
+\begin{Lem} \label{lemma:partial-isometry}
+The map $T_{1} \colon A \otimes A \to A \otimes A$ given by $a\otimes
+b\mapsto \Delta(a)(1 \otimes b)$ extends to a partial isometry
+  $V \colon \LA \otimes \LA \to \LA \otimes \LA$. Its range and domain projection  are given by
+  \begin{align*}
+    VV^{*} &= \sum_{k} \rho_{k} \otimes \lambda_{k}, &
+    V^{*}V &=\sum_{k} \rho^{\op}_{k} \otimes \rho_{k}, 
+  \end{align*}
+ the sums converging in the strong operator topology.
 \end{Lem}
-
-\begin{proof} It is immediately checked that $V^{k,l,s,t}_{m,v}$ is isometric.
+\begin{proof}
+  Let $a,b \in A$. Since $\Delta$ is a $*$-homomorphism and $\phi$ is
+invariant,
+  \begin{align*}
+    \langle \Lambda(a_{(1)}) \otimes
+    \Lambda(a_{(2)}b)|\Lambda(a'_{(1)}) \otimes
+    \Lambda(a'_{(2)}b')\rangle &=
+    \phi(a_{(1)}^{*}a'_{(1)})\phi(b^{*}a_{(2)}^{*}a'_{(2)}b') \\
+    &= \sum_{p}
+    \phi(b^{*}\rho_{p}\phi(\rho_{p}a^{*}a'\rho_{p})\rho_{p}b') \\
+    & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \Lambda(\rho_{p}b) |
+    \Lambda(a'\rho_{p}) \otimes \Lambda(b'\rho_{p})\rangle.
+  \end{align*}
+  Now, the assertion follows from \ref{prop:riti}.
 \end{proof}
 
-Let us write $\mathscr{L}^2(A,\varphi)$ for the completion of $A$ with respect to the inner product $\langle a,b\rangle = \varphi(a^*b)$. The canonical inclusion of $A$ into $\mathscr{L}^2(A)$ will be denoted $\Lambda$.
-
-\begin{Lem} Assume $(A,\Delta)$ is a generalized compact face algebra. The representation of $A$ by left multiplication on itself extends to a representation by bounded operators on the completion $\mathscr{L}^2(A,\varphi)$.
-\end{Lem}
-
-\begin{proof} Denote $\omega_{\xi,\eta}(x) = \langle \xi,x\eta\rangle$ for $\xi,\eta$ vectors and $x$ a bounded operator. Then a straightforward computation shows that \[(\omega_{\Lambda(a),\Lambda(b)}\otimes \id)(V) = \varphi(a^*b_{(1)})b_{(2)}\] as a left multiplication operator. As $(A\otimes 1)\Delta(A) = (A\otimes A)\Delta(1)$ by Lemma \ref{LemUni} (applied to the opposite algebra), it follows by normalization of $\varphi$ that each element of $A$ can be represented in the form $(\omega_{\Lambda(a),\Lambda(b)}\otimes \id)(V)$, and hence extends to a bounded operator on $\mathscr{L}^2(A,\varphi)$.
+\begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact quantum group with
+  underlying total $*$-algebra $A$ and associated Hilbert
+  space $\LA$. Then there exists a unique $*$-homomorphism $\pi\colon
+  A \to {\cal B}(\LA)$ such that $\pi(a)\Lambda(b)=\Lambda(ab)$ for
+  all $a,b\in A$.
+\end{Prop}
+\begin{proof} 
+  Let $a,c \in A$. Then the formula $x \mapsto \langle
+\Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
+  $\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LA)$ and a
+  straightforward computation shows that
+  \begin{align*}
+    (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
+    \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
+  \end{align*}
+  for all $b\in A$. Therefore, left multiplication by
+  $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on $\LA$.
+ Since $(A\otimes 1)\Delta(A) = (A\otimes
+  A)\Delta(1)$ by Proposition \ref{prop:riti} and $\phi$ is
+  normalized,  elements of the form $\phi(c^{*}a_{(1)})a_{(2)}$ span $A$.
 \end{proof}
 
-In the following, we will abbreviate $\mathscr{L}^2(A)$ by $L^2A$.
+\begin{Lem} \label{lemma:hilbert-algebra}
+  The subspace $\Lambda(A) \subseteq \LA$ is a Hilbert algebra with
+  respect to the operations given by
+  $\Lambda(a)\Lambda(b)=\pi(a)\Lambda(b)=\Lambda(ab)$ and
+  $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in A$.
+\end{Lem}
+\begin{proof}
+  The map $\pi(a)$ is bounded for each $a \in A$ by \ref{prop:gns},
+  and the involution is pre-closed because
+  \begin{align*}
+    \langle \Lambda(a)|\Lambda(b^{*})\rangle = \phi(a^{*}b^{*}) =
+    \phi(b^{*}\sigma(a^{*})) = \langle
+    \Lambda(b)|\Lambda(\sigma(a^{*}))\rangle
+  \end{align*}
+  for all $a,b \in A$, where $\sigma$ denotes the modular automorphism
+  of $\phi$; see \ref{},
+\end{proof}
+\begin{Prop}
+  Let $\mathscr{G}$ be a partial compact quantum group 
+with associated GNS-representation $\pi \colon A \to {\cal B}(\LA)$
+and von Neumann algebra $M=\pi(A)''$. Then
+  there exist a unique normal semi-finite faithful weight $\vnphi$ on
+  $M$ and unique normal semi-finite faithful
+  operator-valued weights $T,T'$ from $M$ to
+  $\lambda(l^{\infty}(I))$ and $\rho(l^{\infty}(I))$, respectively,
+  such that $\pi(A) \subseteq \mathfrak{M}_{\vnphi} \cap
+  \mathfrak{M}_{T} \cap \mathfrak{M}_{T'}$ and
+  \begin{align}\label{eq:vnphi}
+    \vnphi(\pi(a))&= \phi(a), &
+    T(\pi(a))\Lambda(b) &= \Lambda(_{\lambda}\phi(a)b), &
+    T'(\pi(b))\Lambda(b) &= \Lambda(_{\rho}\phi(a)b)        
+  \end{align}
+  for all $a,b\in A$. Furthermore, $\nu \circ \alpha^{-1} \circ T = \vnphi =
+  \nu \circ \beta^{-1} \circ T'$. 
+\end{Prop}
+\begin{proof}
+  The existence of $\vnphi$ follows from Lemma
+  \ref{lemma:hilbert-algebra} and the general theory of Hilbert
+  algebras. By \cite{}, there exists a normal semi-finite faithful
+  weight $\vnphi$ on the von-Neumann algebra $\pi(A)''$ such that
+  $\pi(A) \subseteq \mathfrak{N}_{\tilde \phi}$ and
+  $\vnphi(\pi(a^{*}a))=\|\Lambda(a)\|^{2}=\phi(a^{*}a)$ for all $a\in
+  A$. The polarization identity now yields $\vnphi(\pi(a^{*}b)) =
+  \phi(a^{*}b)$ for all $a,b\in A$. Since $A$ is idempotent, we can
+  conclude $\pi(A) \subseteq \mathfrak{N}_{\vnphi}$ and $\vnphi\circ
+  \pi=\phi$.
 
-Let $(A,\Delta)$ be a generalized compact face algebra. Denote the von Neumann algebraic completion of $A\subseteq B(L^2A)$ by $M$. Denote $L^2A\iitimes L^2A = E(L^2A\otimes L^2A)$, where $E = \sum_p \rho_p\otimes \lambda_p$ is extended to a bounded operator (in fact, a self-adjoint projection). Finally, denote $M\itimes M = E(M\otimes M)E$. Then $M\itimes M$ is the von Neumann algebraic completion of $A\itimes A$.
+  We next prove uniqueness of $\vnphi$, $T$ and $T'$.  The elements
+  $p_{k,m}:=\lambda_{k}\rho_{m}$ are pairwise orthogonal
+  projections in $\mathfrak{M}_{\vnphi} \cap \mathfrak{M}_{T} \cap
+  \mathfrak{M}_{T'}$ summing up to $1$, whence $\vnphi$, $T$ and $T'$
+  are the sums of the bounded linear maps
+  \begin{align*}
+    \Gr{\vnphi}{k}{l}{m}{n}&\colon x\mapsto \vnphi(p_{k,m}xp_{l,n}),  &
+    \Gr{T}{k}{l}{m}{n} &\colon x \mapsto T(p_{k,m}xp_{l,n}), &
+    \Gr{T'{}}{k}{l}{m}{n} &\colon x\mapsto T'(p_{k,m}xp_{l,n}),
+  \end{align*}
+  respectively, which are determined by their restriction to
+  $\pi(A)$. Note that in particular, the maps above vanish if
+  $(k,m)\neq (l,n)$.
+  
+  We finally prove existence of $T$ and $T'$. For each $k,m\in I$, the vector
+  $\xi_{k,m}:=\Lambda(\lambda_{k}\rho_{m})$ has norm one and the
+  associated vector state $\omega_{\xi_{k,m}}$ satisfies
+  \begin{align*}
+    \omega_{\xi_{k,m}}(\pi(a))= \langle
+    \Lambda(\lambda_{k}\rho_{m})|\Lambda(a\lambda_{k},\rho_{m})\rangle
+    = \phi(\lambda_{k}\rho_{m}a\lambda_{k}\rho_{m} )=
+    \phi(\lambda_{k}\rho_{m}a)
+  \end{align*}
+  for all $a\in A$. Therefore, the maps
+  \begin{align} \label{eq:vnphi-explicit}
+\tilde\phi&\colon x\mapsto\sum_{k,m} \omega_{\xi_{k,m}}(x), &
+    T&\colon x\mapsto \sum_{k,m}
+    \omega_{\xi_{k,m}}(x)\alpha(\delta_{k}), & T'&\colon x\mapsto
+    \sum_{k,m} \omega_{\xi_{k,m}}(x) \beta(\delta_{m})
+  \end{align}
+  satisfy \eqref{eq:vnphi}. Clearly, these maps are normal,
+  semi-finite and satisfy $\nu \circ \alpha^{-1}\circ T = \tilde\phi = \nu
+  \circ \beta^{-1} \circ T'$.  By uniqueness, $\tilde
+  \phi=\vnphi$. Since $\vnphi$ is faithful, so must be $T$ and $T'$.
+\end{proof}
+\begin{Theorem}
+    $(l^{\infty}(I),M,\lambda,\rho,\vnDelta,T,T',\nu)$
+  is a measured quantum groupoid in the sense of \cite{enock:action}.
+\end{Theorem}
+\begin{proof}
+  We need to show that $T$ is left-invariant, $T'$ is right-invariant,
+  and that $\nu$ is relatively invariant with respect to $T$ and $T'$
+  in the sense that the modular automorphism groups of the weights
+  $\nu \circ \alpha^{-1} \circ T$ and $\nu \circ \beta^{-1} \circ T'$
+  commute.  We prove the first condition, and the second one follows from
+  a similar argument. The third condition holds trivially because the
+  two compositions coincide by Proposition \ref{prop:}. 
 
-Extend now the $V^{k,l,s,t}_{m,v}$ to unitaries \[V: \oplus_p L^2(A_p)\otimes L^2({}_pA) \rightarrow \oplus_p L^2({}_pA)\otimes L^2({}^pA)= E(L^2A\otimes L^2A).\] Then we can construct a map \[\Delta: M\rightarrow M\itimes M,\quad x\rightarrow V(x\otimes 1)V^*.\] By direct computation, we see that $\Delta$ extends the comultiplication map on $A$. It is then immediate to check that $\Delta$ is in fact coassociative (where one may as well consider $\Delta$ as a non-unital map from $M$ to $M\otimes M$).
+  Let $\xi_{k,m}=\Lambda(\lambda_{k}\rho_{m})$ and abbreviate
+  $\vnphi_{k,m}=\omega_{\xi_{k,m}}$. Then the normal linear map
+  \begin{align*}
+    T_{m}\colon \pi(A)'' \to \alpha(l^{\infty}(I)), \ x\mapsto \sum_{k} \vnphi_{k,m}(x)\alpha(\delta_{k})
+  \end{align*}
+  is bounded and satisfies $T=\sum_{m} T_{m}$ by
+  \eqref{eq:vnphi}. For all $a,b\in
+  A$,
+  \begin{align*}
+    (\id {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\vnDelta(\pi(a)))\Lambda(b) &=
+    (r^{\beta,\alpha}_{\xi_{k,m}})^{*}\vnDelta(\pi(a))r^{\beta,\alpha}_{\xi_{k,m}}
+    \Lambda(b) \\
+    &= (r^{\beta,\alpha}_{\xi_{k,m}})^{*}(\Lambda(a_{(1)}b)
+    {_{\rho} \otimes_{\lambda}} \Lambda(a_{(2)}\lambda_{k}\rho_{m})) \\
+    &=
+    \Lambda(\phi(\lambda_{k}\rho_{m}a_{(2)}\lambda_{k}\rho_{m})\rho_{k}a_{(1)}b).
+  \end{align*}
+  Sum over $k \in I$ and using \eqref{eq:wdelta}, we find
+  \begin{align*}
+ \sum_{k} (\id
+ {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\vnDelta(\pi(a))) &=
+\pi(\phi(\rho_{m}a_{(2)}\rho_{m})a_{(1)})  =
+\pi(_{\lambda}\phi(\rho_{m}a\rho_{m})) = T_{m}(\pi(a)).
+  \end{align*}
+  Finally, we insert the relation $\sum_{k} \vnphi_{k,m} = \nu \circ
+  T_{m}$ and obtain
+\begin{align*}
+  (\id {_{\rho}\otimes_{\lambda}} T_{m})(\vnDelta(x)) = (\id {_{\rho}\otimes_{\lambda}}
+  (\nu \circ T_{m}))(\vnDelta(x)) {_{\rho}\otimes_{\lambda}} 1 = T_{m}(x)  {_{\rho}\otimes_{\lambda}} 1
+\end{align*}
+for all $x\in \pi(A)$.  Since $T_{m}$ is normal and bounded, this
+equation remains valid for all $x\in \pi(A)''$. Summing over $m$, we
+obtain $(\id {_{\rho}\otimes_{\lambda}} T)(\vnDelta(x)) = T(x)  {_{\rho}\otimes_{\lambda}} 1$ for all
+positive $x \in \pi(A)''$ which is the desired left-invariance of $T$.
+\end{proof}
 
-We aim to show that $(M,\Delta)$ can be fitted into the theory of measured quantum groupoids.
 
 %%% Local Variables: 
 %%% mode: latex
