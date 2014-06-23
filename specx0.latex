@@ -1,0 +1,87 @@
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(3428,1042)(480,-2157)
+\put(3106,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}t}%
+}}}}
+\put(3556,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}t}%
+}}}}
+\put(811,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}-t}%
+}}}}
+\put(1801,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}1}%
+}}}}
+\put(2701,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}1}%
+}}}}
+\put(3151,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}3}%
+}}}}
+\put(901,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}5}%
+}}}}
+\put(1351,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}3}%
+}}}}
+\put(1261,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}-t}%
+}}}}
+\put(1711,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}-t}%
+}}}}
+\put(2206,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}0}%
+}}}}
+\put(2656,-1816){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}t}%
+}}}}
+\put(3601,-1861){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}5}%
+}}}}
+{\color[rgb]{0,0,0}\thinlines
+\put(1351,-1186){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(1801,-1186){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(901,-1186){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(3601,-1186){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(3151,-1186){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(2701,-1186){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(901,-2086){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(1351,-2086){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(1801,-2086){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(1801,-1636){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(3601,-2086){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(2701,-2086){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(3151,-2086){\circle*{128}}
+}%
+{\color[rgb]{0,0,0}\put(2701,-1636){\circle*{128}}
+}%
+\thicklines
+{\color[rgb]{0,0,0}\put(1869,-1636){\line( 1, 0){764}}
+}%
+\thinlines
+{\color[rgb]{0,0,0}\put(676,-1636){\vector( 1, 0){3150}}
+}%
+{\color[rgb]{0,0,0}\put(901,-1591){\line( 0,-1){ 90}}
+}%
+{\color[rgb]{0,0,0}\put(1351,-1591){\line( 0,-1){ 90}}
+}%
+{\color[rgb]{0,0,0}\put(1801,-1591){\line( 0,-1){ 90}}
+}%
+{\color[rgb]{0,0,0}\put(3151,-1591){\line( 0,-1){ 90}}
+}%
+{\color[rgb]{0,0,0}\put(3601,-1591){\line( 0,-1){ 90}}
+}%
+{\color[rgb]{0,0,0}\put(2251,-1591){\line( 0,-1){ 90}}
+}%
+\put(495,-1642){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}...}%
+}}}}
+\put(3893,-1642){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}{\color[rgb]{0,0,0}...}%
+}}}}
+\end{picture}%
