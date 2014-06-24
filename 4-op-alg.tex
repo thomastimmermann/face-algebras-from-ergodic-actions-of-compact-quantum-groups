@@ -1,47 +1,67 @@
 \section{Compact Hopf face algebras on the level of operator algebras}
 
 
+Let $\mathscr{G}$ be a partial compact quantum group. Using the
+invariant functional, we now construct completions of the underlying
+$*$-algebra $P(\mathscr{G})$ in the form of a reduced $C^{*}$-algebra $\CrG$
+and a von Neumann algebra $\LGinf$ which act on a Hilbert space
+$\LGtwo$. Then, we lift the  comultiplication and the invariant
+functional to the level of operator algebras and show that $\LGinf$ becomes a measured
+quantum groupoid in the sense of Lesieur \cite{} and Enock \cite{}.
 
-Let $\mathscr{G}$ be a partial compact quantum group, given by a
-partial Hopf $*$-algebra $\mathscr{A}=P(\mathscr{G})$ with positive
-normalized invariant functional $\phi$.  Since $\phi$ is faithful by
-\ref{LemFaith},  the formula
+
+Denote by $\LGtwo$ the completion of $A$ with respect to the norm
+associated to the inner product given by
 \begin{align*}
-  \langle a|b\rangle :=\phi(a^{*}b) \quad \text{for all } a,b\in A
+  \langle a|b\rangle :=\phi(a^{*}b) \quad \text{for all } a,b\in A,
 \end{align*}
-defines an inner product on $A$. We denote by $\LA$ the completion,
-which is a Hilbert space, and by $\Lambda \colon A \to \LA$ the
-natural embedding. Since $\phi(A(K)^{*}A(L)) = 0$ if $K\neq L$ by
-\ref{}, this Hilbert space is the orthogonal direct sum of
-the finite-dimensional subspaces  $\Lambda(A(K)) \subseteq \LA$, that is,
-\begin{align*}
-  \LA &= \bigoplus_{K} \Lambda(A(K)).
-\end{align*}
- For each $k\in I$, we can therefore define operators
+and by $\Lambda \colon A \to \LGtwo$ the natural embedding.  This
+product is definite because $\phi$ is faithful by \ref{LemFaith}, and
+it extends to the space $\LGtwo$ which thus becomes a Hilbert space.
+As such, $\LGtwo$ is the
+orthogonal direct sum of the finite-dimensional subspaces
+$\Lambda(A(K)) \subseteq \LGtwo$, where $K\in M_{2}(I)$, because
+$\phi(A(K)^{*}A(L)) = 0$ if $K\neq L$ by \ref{}.  In particular, there
+exist  operators
 $\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in {\cal
-  B}(\LA)$ such that
+  B}(\LGtwo)$ for each $k\in I$ such that
 \begin{align*}
   \lambda_{k}\Lambda(a)&= \Lambda(\lambda_{k} a), &
   \lambda^{\op}_{k}\Lambda(a) &= \Lambda(a\lambda_{k}), &
   \rho_{k}\Lambda(a) &= \Lambda(\rho_{k}a), &
   \rho_{k}^{\op}\Lambda(a) &= \Lambda(a\rho_{k})
 \end{align*}
-for all $a\in A$. Likewise, we define $*$-homomorphisms
-$\lambda,\lambda^{\op},\rho,\rho^{\op} \colon l^{\infty}(I) \to {\cal
-  B}(\LA)$.
+for all $a\in A$, and faithful, normal $*$-homomorphisms
+\begin{align} \label{eq:vn-lambda-rho}
+  \lambda,\rho \colon l^{\infty}(I) \to
+  {\cal B}(\LGtwo)
+\end{align}
+that send the delta function at
+$k\in I$ to the operators $\lambda_{k}$ or $\rho_{k}$, respectively. 
+
+To construct the $C^{*}$-algebra $\CrG$ and $\LGinf$ and to lift the
+comultiplication, we first lift the map $T_{1}$ considered in
+Proposition \ref{prop:riti} to a partial isometry on $\LGtwo \otimes
+\LGtwo$.  Define $\vnE,\overline{G} \in {\cal B}(\LGtwo \otimes
+\LGtwo)$ by
+\begin{align*}
+  \vnE &:=\sum_{k} \rho_{k} \otimes \lambda_{k}, & 
+  \overline{G} &:= \sum_{k} \rho_{k}^{\op} \otimes \rho_{k},
+\end{align*}
+where the sums converge with respect to the strong operator
+topology.
 
 We identify  the algebraic
 tensor product $A\otimes A$ with a subspace of the Hilbert space
-tensor product $\LA \otimes \LA$ using the map $\Lambda \otimes \Lambda$.
+tensor product $\LGtwo \otimes \LGtwo$ using the map $\Lambda \otimes \Lambda$.
 \begin{Lem} \label{lemma:partial-isometry}
-The map $T_{1} \colon A \otimes A \to A \otimes A$ given by $a\otimes
-b\mapsto \Delta(a)(1 \otimes b)$ extends to a partial isometry
-  $V \colon \LA \otimes \LA \to \LA \otimes \LA$. Its range and domain projection  are given by
-  \begin{align*}
-    VV^{*} &= \sum_{k} \rho_{k} \otimes \lambda_{k}, &
-    V^{*}V &=\sum_{k} \rho^{\op}_{k} \otimes \rho_{k}, 
-  \end{align*}
- the sums converging in the strong operator topology.
+There exists a unique partial isometry $V$ on $\LGtwo \otimes \LGtwo$
+such that
+\begin{align*}
+  V(\Lambda(a) \otimes \Lambda(b)) = \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}b)
+\end{align*}
+for all $a,b\in A$. Its range and domain projections are given by $VV^{*} = \vnE$
+and $V^{*}V = \overline{G}$.
 \end{Lem}
 \begin{proof}
   Let $a,b \in A$. Since $\Delta$ is a $*$-homomorphism and $\phi$ is
@@ -61,28 +81,153 @@ invariant,
 
 \begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact quantum group with
   underlying total $*$-algebra $A$ and associated Hilbert
-  space $\LA$. Then there exists a unique $*$-homomorphism $\pi\colon
-  A \to {\cal B}(\LA)$ such that $\pi(a)\Lambda(b)=\Lambda(ab)$ for
-  all $a,b\in A$.
+  space $\LGtwo$. Then there exists a unique $*$-homomorphism $\pi\colon
+  A \to {\cal B}(\LGtwo)$ such that $\pi(a)\Lambda(b)=\Lambda(ab)$ for
+  all $a,b\in A$, and this $\pi$ is faithful.
 \end{Prop}
 \begin{proof} 
   Let $a,c \in A$. Then the formula $x \mapsto \langle
 \Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
-  $\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LA)$ and a
+  $\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LGtwo)$ and a
   straightforward computation shows that
   \begin{align*}
     (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
     \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
   \end{align*}
   for all $b\in A$. Therefore, left multiplication by
-  $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on $\LA$.
+  $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on $\LGtwo$.
  Since $(A\otimes 1)\Delta(A) = (A\otimes
   A)\Delta(1)$ by Proposition \ref{prop:riti} and $\phi$ is
-  normalized,  elements of the form $\phi(c^{*}a_{(1)})a_{(2)}$ span $A$.
+  normalized,  elements of the form $\phi(c^{*}a_{(1)})a_{(2)}$ span
+  $A$. 
 \end{proof}
 
+Given a partial compact quantum group $\mathscr{G}$, we denote by
+\begin{align}
+  \CrG &\subseteq {\cal B}(\LGtwo) &&\text{and} & \LGinf &\subseteq {\cal B}(\LGtwo)
+\end{align}
+the $C^{*}$-algebra and the von Neumann algebra generated by $\pi(A)
+\subseteq \LGtwo$, respectively, and identify $M(\CrG)$ with a
+$C^{*}$-subalgebra of $\LGtwo$.  Thus, we get a sequence of inclusions
+\begin{align*}
+A \cong \pi(A) \subseteq
+  \CrG \subseteq M(\CrG) \subseteq
+\LGinf \subseteq {\cal B}(\LGtwo).
+\end{align*}
+Note that
+ the $*$-homomorphisms $\lambda,\rho$ in
+\eqref{eq:vn-lambda-rho} send $l^{\infty}(I)$ to $M(\CrG)$, and that
+\begin{align*}
+  \vnE \in M(\CrG \otimes \CrG) \subseteq \LGinf \otimes \LGinf
+  \subseteq {\cal B}(\LGtwo \otimes \LGtwo),
+\end{align*}
+where $\otimes$ denotes the minimal tensor product
+of $C^{*}$-algebras, the tensor product of von Neumann algebras, and
+the tensor product of Hilbert spaces, respectively.
+
+Consider the map 
+\begin{align*}
+  \vnDelta \colon \LGinf \to {\cal B}(\LGtwo \otimes \LGtwo), \ x
+  \mapsto V(x \otimes 1)V^{*}.
+\end{align*}
+\begin{Lem} \label{lemma:vn-delta}
+  \begin{enumerate}
+  \item $\vnDelta(\pi(a)) (\Lambda(b) \otimes \Lambda(c)) =
+    \Lambda(a_{(1)}b) \otimes \Lambda(a_{(2)}b)$ for all $a,b,c\in A$;
+  \item $\vnDelta$ is a normal, faithful $*$-homomorphism;
+  \item  $\vnDelta(\CrG) \subseteq \vnE M(\CrG \otimes
+  \CrG)\vnE$ and $\vnDelta(\LGinf) \subseteq \vnE(\LGinf \otimes
+  \LGinf)\vnE$.
+  \end{enumerate}
+\end{Lem}
+\begin{proof}
+  The equation in 1.{} is easily verified. The map $\vnDelta$ is
+  normal by construction, a $*$-homo\-morphism by 1.{}, and faithful
+  because $\vnDelta(x)=0$ implies $x\otimes 1=0$ on
+  $V^{*}V(L^{2}(\mathscr{G}) \otimes L^{2}(\mathscr{G}))$ and hence
+  $x=0$ on $\bigoplus_{k}
+  \rho_{k}^{\op}L^{2}(\mathscr{G})=L^{2}(\mathscr{G})$. Finally, 3.\
+  follows from the relation $\Delta(a)=E\Delta(a)E$, which holds for
+  all $a\in A$.
+\end{proof}
+
+To connect to the theory of measured quantum groupoids, we need a few
+preliminaries.
+
+Denote by $\nu$ the
+normal, faithful, semifinite weight on $l^{\infty}(I)$ given by
+\begin{align*}
+  \nu(f) &=\sum_{k} f(k) \quad \text{for all } f\in l^{\infty}(I)_{+}.
+\end{align*}
+Then the relative tensor product of $\LGtwo$ with itself,
+relative to the representations $\rho,\lambda$ of $l^{\infty}(I)$ and
+the weight $\nu$, takes the simple form
+\begin{align*}
+\LGinf \otimesrl \LGinf \cong
+  \bigoplus_{k} (\rho_{k}\LGtwo \otimes \lambda_{k}\LGtwo) =
+  \vnE(\LGtwo \otimes \LGtwo),
+\end{align*}
+see \cite{},  the relative tensor product
+of operators $S\in \rho(l^{\infty}(I))'$ and $T \in
+\lambda(l^{\infty}(I))'$ gets identified with the compression
+\begin{align*}
+S \otimesrl T \equiv
+  \vnE(S \otimes
+  T) = (S \otimes T)\vnE \subseteq {\cal B}(\vnE(\LGtwo
+  \otimes \LGtwo)),
+\end{align*}
+and the fiber product of  $  \LGinf$ with itself, relative to $\rho$
+and $\lambda$,  gets identified with
+\begin{align} \label{eq:vn-fiber}
+  \begin{aligned}
+    \LGinf \astrl \LGinf &= (\LGinf' \otimesrl \LGinf')' \\ &\equiv
+    (\vnE(\LGinf' \otimes \LGinf'))' = \vnE(\LGinf \otimes
+    \LGinf)\vnE.
+  \end{aligned}
+\end{align} 
+By Lemma \ref{lemma:vn-delta} 3., we can co-restrict $\vnDelta$ to  a
+normal, faithful $*$-homomorphism
+\begin{align*}
+  \tilde\Delta \colon \LGinf \to   \LGinf \astrl \LGinf.
+\end{align*}
+We now obtain a Hopf-von Neumann bimodule in the
+sense of \cite{} as follows.
+\begin{Prop}
+  Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then
+  \begin{enumerate}
+  \item $\tilde\Delta(\lambda(x)) = \lambda(x) \otimesrl 1$ and
+    $\tilde\Delta(\rho(x)) = 1 \otimesrl \rho(x)$ for all $x\in
+    l^{\infty}(I)$, and
+  \item $(\tilde\Delta \ast \id)\circ \tilde\Delta = (\id \ast \tilde\Delta)
+    \circ \tilde\Delta$.
+  \end{enumerate}
+  In particular, $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta)$ is a
+  Hopf-von Neumann bimodule.
+\end{Prop}
+\begin{proof}
+Assertion 1.\ follows from \eqref{eq:delta-lambda-rho} and
+Lemma \ref{lemma:vn-delta} 1.\ and ensures that  the $*$-homo\-morphisms
+\begin{align*}
+  \tilde\Delta \ast \id, \id \ast \tilde\Delta \colon  \LGinf \astrl \LGinf
+  \to \LGinf \astrl \LGinf \astrl \LGinf
+\end{align*}
+are well-defined.  As in
+\eqref{eq:vn-fiber}, we can identify
+\begin{align*}
+ \LGinf \astrl \LGinf \astrl \LGinf \cong \vnE^{(2)}(\LGinf
+  \otimes \LGinf \otimes \LGinf)\vnE^{(2)},
+\end{align*}
+where $\vnE^{(2)}=(\vnE \otimes 1)(1 \otimes \vnE)$, and then the
+$*$-homomorphisms become restrictions of the maps $\tilde\Delta \otimes
+\id$ and $\id \otimes \tilde\Delta$, respectively. Now, 2.\ follows from
+Lemma \ref{lemma:vn-delta} 1.\ and co-associativity of $\Delta$.
+\end{proof}
+
+To show that the Hopf-von Neumann bimodule above is a measured quantum
+groupoid, we have to lift the invariant weight to $\LGinf$. This can
+be done as follows.
 \begin{Lem} \label{lemma:hilbert-algebra}
-  The subspace $\Lambda(A) \subseteq \LA$ is a Hilbert algebra with
+  The subspace $\Lambda(A) \subseteq \LGtwo$ is a Hilbert algebra with
   respect to the operations given by
   $\Lambda(a)\Lambda(b)=\pi(a)\Lambda(b)=\Lambda(ab)$ and
   $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in A$.
@@ -99,12 +244,9 @@ invariant,
   of $\phi$; see \ref{},
 \end{proof}
 \begin{Prop}
-  Let $\mathscr{G}$ be a partial compact quantum group 
-with associated GNS-representation $\pi \colon A \to {\cal B}(\LA)$
-and von Neumann algebra $M=\pi(A)''$. Then
-  there exist a unique normal semi-finite faithful weight $\vnphi$ on
-  $M$ and unique normal semi-finite faithful
-  operator-valued weights $T,T'$ from $M$ to
+  Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then there exist a unique normal
+  semi-finite faithful weight $\vnphi$ on $\LGinf$ and unique normal
+  semi-finite faithful operator-valued weights $T,T'$ from $\LGinf$ to
   $\lambda(l^{\infty}(I))$ and $\rho(l^{\infty}(I))$, respectively,
   such that $\pi(A) \subseteq \mathfrak{M}_{\vnphi} \cap
   \mathfrak{M}_{T} \cap \mathfrak{M}_{T'}$ and
@@ -120,7 +262,7 @@ and von Neumann algebra $M=\pi(A)''$. Then
   The existence of $\vnphi$ follows from Lemma
   \ref{lemma:hilbert-algebra} and the general theory of Hilbert
   algebras. By \cite{}, there exists a normal semi-finite faithful
-  weight $\vnphi$ on the von-Neumann algebra $\pi(A)''$ such that
+  weight $\vnphi$ on the von-Neumann algebra $\pi(A)''=\LGinf$ such that
   $\pi(A) \subseteq \mathfrak{N}_{\tilde \phi}$ and
   $\vnphi(\pi(a^{*}a))=\|\Lambda(a)\|^{2}=\phi(a^{*}a)$ for all $a\in
   A$. The polarization identity now yields $\vnphi(\pi(a^{*}b)) =
@@ -164,7 +306,7 @@ and von Neumann algebra $M=\pi(A)''$. Then
   \phi=\vnphi$. Since $\vnphi$ is faithful, so must be $T$ and $T'$.
 \end{proof}
 \begin{Theorem}
-    $(l^{\infty}(I),M,\lambda,\rho,\vnDelta,T,T',\nu)$
+The tuple    $(l^{\infty}(I),\LGinf,\lambda,\rho,\tilde\Delta,T,T',\nu)$
   is a measured quantum groupoid in the sense of \cite{enock:action}.
 \end{Theorem}
 \begin{proof}
@@ -185,8 +327,8 @@ and von Neumann algebra $M=\pi(A)''$. Then
   \eqref{eq:vnphi}. For all $a,b\in
   A$,
   \begin{align*}
-    (\id {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\vnDelta(\pi(a)))\Lambda(b) &=
-    (r^{\beta,\alpha}_{\xi_{k,m}})^{*}\vnDelta(\pi(a))r^{\beta,\alpha}_{\xi_{k,m}}
+    (\id {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\tilde\Delta(\pi(a)))\Lambda(b) &=
+    (r^{\beta,\alpha}_{\xi_{k,m}})^{*}\tilde\Delta(\pi(a))r^{\beta,\alpha}_{\xi_{k,m}}
     \Lambda(b) \\
     &= (r^{\beta,\alpha}_{\xi_{k,m}})^{*}(\Lambda(a_{(1)}b)
     {_{\rho} \otimes_{\lambda}} \Lambda(a_{(2)}\lambda_{k}\rho_{m})) \\
@@ -196,19 +338,19 @@ and von Neumann algebra $M=\pi(A)''$. Then
   Sum over $k \in I$ and using \eqref{eq:wdelta}, we find
   \begin{align*}
  \sum_{k} (\id
- {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\vnDelta(\pi(a))) &=
+ {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\tilde\Delta(\pi(a))) &=
 \pi(\phi(\rho_{m}a_{(2)}\rho_{m})a_{(1)})  =
 \pi(_{\lambda}\phi(\rho_{m}a\rho_{m})) = T_{m}(\pi(a)).
   \end{align*}
   Finally, we insert the relation $\sum_{k} \vnphi_{k,m} = \nu \circ
   T_{m}$ and obtain
 \begin{align*}
-  (\id {_{\rho}\otimes_{\lambda}} T_{m})(\vnDelta(x)) = (\id {_{\rho}\otimes_{\lambda}}
-  (\nu \circ T_{m}))(\vnDelta(x)) {_{\rho}\otimes_{\lambda}} 1 = T_{m}(x)  {_{\rho}\otimes_{\lambda}} 1
+  (\id {_{\rho}\otimes_{\lambda}} T_{m})(\tilde\Delta(x)) = (\id {_{\rho}\otimes_{\lambda}}
+  (\nu \circ T_{m}))(\tilde\Delta(x)) {_{\rho}\otimes_{\lambda}} 1 = T_{m}(x)  {_{\rho}\otimes_{\lambda}} 1
 \end{align*}
 for all $x\in \pi(A)$.  Since $T_{m}$ is normal and bounded, this
 equation remains valid for all $x\in \pi(A)''$. Summing over $m$, we
-obtain $(\id {_{\rho}\otimes_{\lambda}} T)(\vnDelta(x)) = T(x)  {_{\rho}\otimes_{\lambda}} 1$ for all
+obtain $(\id {_{\rho}\otimes_{\lambda}} T)(\tilde\Delta(x)) = T(x)  {_{\rho}\otimes_{\lambda}} 1$ for all
 positive $x \in \pi(A)''$ which is the desired left-invariance of $T$.
 \end{proof}
 
