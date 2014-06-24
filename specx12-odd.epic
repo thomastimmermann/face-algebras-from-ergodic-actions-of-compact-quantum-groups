@@ -49,11 +49,15 @@
 \thicklines
 \drawline(1538,503)(2123,503)
 \drawline(1538,503)(2123,503)
+\thinlines
+\drawline(1043,548)(1043,458)
+\drawline(1043,548)(1043,458)
+\drawline(1943,548)(1943,458)
+\drawline(1943,548)(1943,458)
 \put(15,493){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}...}}}}
 \put(3795,493){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}...}}}}
 \put(3698,278){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}c}}}}
 \put(1898,278){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\rmdefault}{\mddefault}{\itdefault}0}}}}
-\thinlines
 \put(1493,503){\circle*{90}}
 \end{picture}
 }
