@@ -1,14 +1,59 @@
 \section{Compact Hopf face algebras on the level of operator algebras}
 
 
-Let $\mathscr{G}$ be a partial compact quantum group. Using the
-invariant functional, we now construct completions of the underlying
-$*$-algebra $P(\mathscr{G})$ in the form of a reduced $C^{*}$-algebra $\CrG$
-and a von Neumann algebra $\LGinf$ which act on a Hilbert space
-$\LGtwo$. Then, we lift the  comultiplication and the invariant
-functional to the level of operator algebras and show that $\LGinf$ becomes a measured
-quantum groupoid in the sense of Lesieur \cite{} and Enock \cite{}.
+Let $\mathscr{G}$ be a partial compact quantum group. We now construct
+completions of the underlying $*$-algebra $P(\mathscr{G})$ in the form
+of a universal $C^{*}$-algebra $\CuG$, a reduced $C^{*}$-algebra
+$\CrG$ and a von Neumann algebra $\LGinf$. The existence of the first
+one follows from the Peter-Weyl theorem \ref{}, and the second and
+third one arise from a GNS-representation of $P(\mathscr{G})$ on the
+Hilbert space $\LGtwo$ associated to the invariant functional of
+$\mathscr{G}$.  We then lift the comultiplication and the invariant
+functional to the level of operator algebras and show that $\LGinf$
+becomes a measured quantum groupoid in the sense of Lesieur \cite{}
+and Enock \cite{}.
 
+Let us start with the construction of $\CuG$. Denote by $A$ the
+underlying total $*$-algebra of the partial $*$-algebra
+$P(\mathscr{G})$ and define a map $|\cdot |_{u} \colon A \to [0,\infty]$ by
+\begin{align*}
+  |a|_{u}&:= \sup \{ \|\pi(a)\| : \pi \text{ is a $*$-homomorphism
+    from } A \text{ into some $C^{*}$-algebra } B\}.
+\end{align*}
+\begin{Lem}
+  $|a|_{u}<\infty$ for each $a \in A$. 
+\end{Lem}
+\begin{proof}
+  By \ref{}, $A$ is linearly spanned by elements of the form $a=(\id \otimes
+  \omega_{\xi,\eta})(X(K))$, where $X$ is a unitary sfd
+  corepresentation of $P(\mathscr{G})$ on some sfd $I^{2}$-graded
+  Hilbert space $\mathcal{H}$ and $K=\pmat{k}{l}{m}{n}\in M_{2}(I)$,
+  $\xi\in \Gru{\mathcal{H}}{m}{n}$, $\eta\in \Gru{\mathcal{H}}{k}{l}$.
+  Clearly, it suffices to prove the assertion for such elements. But
+  since $X$ is unitary, 
+  \begin{align*}
+    \sum_{p}X\pmat{p}{l}{m}{n}^{*} X\pmat{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
+    \otimes \id_{\Gru{\mathcal{H}}{m}{n}}
+  \end{align*}
+  by \ref{}, where the sum is finite because $X$ is sfd. As
+  $\pi(\lambda_{k}\rho_{m})\in \C$ is a projection, we can conclude
+  \begin{align*}
+    \|\pi(a)\| &\leq \| \xi| \|\eta\| \|(\pi \otimes \id)(X(K))\| \\
+    &=\|\xi\|\|\eta\| \|(\pi \otimes \id)(X(K)^{*}X(K))\| \leq
+    \|\xi\|\|\eta\| \|\pi(\lambda_{l}\rho_{n}) \otimes
+    \id_{\Gru{\mathcal{H}}{m} {n}}\| = \|\xi\|\|\eta\|.  
+  \end{align*}
+\end{proof}
+Clearly, $|\cdot|_{u}$ defines a $C^{*}$-semi-norm on
+$P(\mathscr{G})$, and the separated  completion of $P(\mathscr{G})$
+with respect to this norm is a $C^{*}$-algebra. We denote this
+$C^{*}$-algebra by $\CuG$. By construction,   every $*$-homorphism $\pi$
+of $A$ into some $C^{*}$-algebra $C$ factorises through
+$\CuG$. 
+
+We now turn to the construction of the reduced $C^{*}$-algebra $\CrG$
+and the von Neumann algebra $\LGinf$. As a corollary, we will find
+that the map $A \to \CuG$ is injective.
 
 Denote by $\LGtwo$ the completion of $A$ with respect to the norm
 associated to the inner product given by
@@ -39,10 +84,7 @@ for all $a\in A$, and faithful, normal $*$-homomorphisms
 that send the delta function at
 $k\in I$ to the operators $\lambda_{k}$ or $\rho_{k}$, respectively. 
 
-To construct the $C^{*}$-algebra $\CrG$ and $\LGinf$ and to lift the
-comultiplication, we first lift the map $T_{1}$ considered in
-Proposition \ref{prop:riti} to a partial isometry on $\LGtwo \otimes
-\LGtwo$.  Define $\vnE,\overline{G} \in {\cal B}(\LGtwo \otimes
+ Define $\vnE,\overline{G} \in {\cal B}(\LGtwo \otimes
 \LGtwo)$ by
 \begin{align*}
   \vnE &:=\sum_{k} \rho_{k} \otimes \lambda_{k}, & 
@@ -72,7 +114,7 @@ invariant,
     & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \Lambda(\rho_{p}b) |
     \Lambda(a'\rho_{p}) \otimes \Lambda(b'\rho_{p})\rangle.
   \end{align*}
-  Now, the assertion follows from \ref{prop:riti}.
+  Now, the assertion follows from Proposition \ref{prop:riti}.
 \end{proof}
 
 \begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact quantum group with
@@ -97,7 +139,14 @@ invariant,
   normalized,  elements of the form $\phi(c^{*}a_{(1)})a_{(2)}$ span
   $A$. 
 \end{proof}
-
+\begin{Cor}
+  Let $\mathscr{G}$ be a partial compact quantum group. Then the total
+  algebra of $P(\mathscr{G})$ embeds into $\CuG$.
+\end{Cor}
+\begin{proof}
+  The injective  $*$-homomorphism  $\pi\colon A \to \CrG$ 
+  factorises through $\CuG$.
+\end{proof}
 Given a partial compact quantum group $\mathscr{G}$, we call
 $(\LGtwo,\Lambda,\pi)$ the \emph{associated GNS-construction} and denote by
 \begin{align}
@@ -105,11 +154,12 @@ $(\LGtwo,\Lambda,\pi)$ the \emph{associated GNS-construction} and denote by
 \end{align}
 the $C^{*}$-algebra and the von Neumann algebra generated by $\pi(A)
 \subseteq \LGtwo$, respectively, and identify $M(\CrG)$ with a
-$C^{*}$-subalgebra of $\LGtwo$.  Thus, we get a sequence of inclusions
+$C^{*}$-subalgebra of $\LGtwo$.  Since $\pi$ extends to a
+$*$-homomorphism on $\CuG$, we get a sequence of $*$-homomorphisms
 \begin{align*}
-A \cong \pi(A) \subseteq
-  \CrG \subseteq M(\CrG) \subseteq
-\LGinf \subseteq {\cal B}(\LGtwo).
+A \hookrightarrow \CuG \to 
+  \CrG \hookrightarrow M(\CrG) \hookrightarrow
+\LGinf \hookrightarrow {\cal B}(\LGtwo).
 \end{align*}
 Note that
  the $*$-homomorphisms $\lambda,\rho$ in
