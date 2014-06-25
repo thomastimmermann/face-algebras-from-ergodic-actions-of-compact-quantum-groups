@@ -45,11 +45,10 @@ $P(\mathscr{G})$ and define a map $|\cdot |_{u} \colon A \to [0,\infty]$ by
   \end{align*}
 \end{proof}
 Clearly, $|\cdot|_{u}$ defines a $C^{*}$-semi-norm on
-$P(\mathscr{G})$, and the separated  completion of $P(\mathscr{G})$
+$P(\mathscr{G})$, and the separated completion of $P(\mathscr{G})$
 with respect to this norm is a $C^{*}$-algebra. We denote this
-$C^{*}$-algebra by $\CuG$. By construction,   every $*$-homorphism $\pi$
-of $A$ into some $C^{*}$-algebra $C$ factorises through
-$\CuG$. 
+$C^{*}$-algebra by $\CuG$. By construction, every $*$-homorphism $\pi$
+of $A$ into some $C^{*}$-algebra $C$ factorises through $\CuG$.
 
 We now turn to the construction of the reduced $C^{*}$-algebra $\CrG$
 and the von Neumann algebra $\LGinf$. As a corollary, we will find
@@ -64,7 +63,7 @@ and by $\Lambda \colon A \to \LGtwo$ the natural embedding.  This
 product is definite because $\phi$ is faithful by \ref{LemFaith}, and
 it extends to the space $\LGtwo$ which thus becomes a Hilbert space.
 As such, $\LGtwo$ is the
-orthogonal direct sum of the finite-dimensional subspaces
+orthogonal direct sum of the subspaces
 $\Lambda(A(K)) \subseteq \LGtwo$, where $K\in M_{2}(I)$, because
 $\phi(A(K)^{*}A(L)) = 0$ if $K\neq L$ by \ref{}.  In particular, there
 exist  operators
@@ -270,6 +269,49 @@ $*$-homomorphisms become restrictions of the maps $\tilde\Delta \otimes
 Lemma \ref{lemma:vn-delta} 1.\ and co-associativity of $\Delta$.
 \end{proof}
 
+\begin{Prop}
+  Let $\mathscr{G}$ be an $I$-partial compact quantum group.  
+  \begin{enumerate}
+  \item There exists a unique $*$-anti-automorphism $\vnR$ of $\LGinf$
+    such that $\vnR \circ \pi = \pi \circ R$. 
+  \item There exists a unique strongly continuous one-parameter group
+    $\vntau$ on $\LGinf$ such that $\vntau_{t} \circ \pi = \pi \circ
+    \theta_{-it,it}$ for all $t\in \R$. 
+  \end{enumerate}
+
+\end{Prop}
+\begin{proof}
+1.  The map $\Lambda(a) \mapsto \Lambda(R(a)^{*})$ extends to an
+  anti-linear isometry $I$ on $\LGtwo$ because $\phi(R(a)R(b)^{*}) =
+  \phi(R(b^{*}a)) = \phi(b^{*}a)$ for all $a,b\in A$ by Corollary
+  \ref{cor:rep-characters}, and the same Corollary implies that
+  $I^{*}=I^{-1}=I$. Now, the map $\vnR\colon x \mapsto Ix^{*}I$
+  is a $*$-anti-automorphism of $\mathcal{B}(\LGinf)$ such that
+  $\vnR^{2}=\id$, and a short calculation shows that
+$\vnR(\pi(a))\Lambda(b) = \Lambda(R(a)b)$ for all $a,b\in A$.
+
+2.  Corollary \ref{cor:rep-characters} implies that for each $t\in
+\R$, the map $\Lambda(a) \mapsto \Lambda(\theta_{-it,it}(a))$ extends
+to a unitary $U_{t}$ on $\LGtwo$ and that $U_{s}U_{t}=U_{s+t}$ for all
+$s,t\in \R$. A short calculation shows that
+$U_{t}\pi(a)U_{t}^{*}=\pi(a)$ for all $a \in A$, $t\in \R$. Since the function  $z\mapsto f_{z}(a)$ is entire for each
+$a\in A$ by Theorem \ref{thm:rep-characters}, the function
+\begin{align*}
+  z \mapsto
+\langle \Lambda(a)|\Lambda(\theta_{-iz,iz}(b)\rangle =f_{iz}(b_{(1)})\phi(a^{*}b_{(2)})f_{-iz}(b_{(3)})
+\end{align*}
+is entire for all $a,b\in A$. From A.1 in \cite{} [Takesaki:2], it
+follows that the one-parameter group $(U_{t})_{t}$ is strongly
+continuous. Now, the one-parameter group $\vntau$ defined by
+$\vntau_{t}\colon x\mapsto U_{t}xU_{t}^{*}$ satisfies the desired
+properties.
+\end{proof}
+Note that $\vnR(\CrG)=\CrG$ and $\vntau_{t}(\CrG)=\CrG$. Corollary
+\ref{cor:rep-characters} immediately implies the following relations:
+\begin{Cor}
+  
+\end{Cor}
+
 To obtain a measured quantum groupoid, we lift the invariant
 functional $\phi$ of $\mathscr{G}$ to $\LGinf$ and define associated
 operator-valued weight $T_{\lambda},T_{\rho}$ from $\LGinf$ to
@@ -317,9 +359,9 @@ their restrictions to $\pi(A)$:
   their restriction to $\pi(A)$.
 \end{proof}
 Next, we need to show that the weight $\vnphi$ is faithful. At the
-expense of some redundancy, we present two independent arguments which
-both rely the modular automorphism $\sigma$ of $\phi$ obtained in
-\ref{}. The first argument is rather direct.
+expense of some redundancy, we give two arguments, where the first one
+is more direct, while the second one makes the connection to the
+theory of Hilbert algebras.
 \begin{Lem}
   There exists a unique anti-homomorphism $\pi^{\op} \colon A \to
   \mathcal{B}(\LGtwo)$ such that $\pi^{\op}(a)\Lambda(b) =
@@ -373,6 +415,17 @@ GNS-construction $(\LGtwo,\Lambda,\pi)$. Then $\Lambda(A) \subseteq
   \phi(a^{*}a)$ for all $a\in A$ and coincides with $\vnphi$ by Lemma
   \ref{lemma:vn-weights-unique}.
 \end{proof}
+\begin{Prop}
+Let $\mathscr{G}$ be a partial compact quantum group with
+GNS-construction $(\LGtwo,\Lambda,\pi)$. Then the Hilbert algebra $\Lambda(A) \subseteq
+\LGtwo$ is a Tomita algebra with respect to the complex one-parameter
+group $U$ given by $U_{z}\Lambda(a)=\Lambda(\theta_{-iz,-iz}(a))$. In
+particular, $\Delta_{\phi}^{it}=U_{t}$ and $\sigma^{\vnphi}_{z}\circ
+\pi = \pi \circ \theta_{-iz,-iz}$ for all $z\in \C$.
+\end{Prop}
+\begin{proof}
+  To be completed; straightforward; use Takesaki:2 as a reference.
+\end{proof}
 Invariance of $\phi$ implies invariance of $\vnphi$ as follows.
 \begin{Prop} \label{prop:vn-invariance}
   Let $\mathscr{G}$ be a partial compact quantum group. Then the
@@ -401,6 +454,7 @@ for all $x\in \LGinf_{+}$.
   for all $x \in \LGinf$. Summing over $k$ and $m$, we obtain the
   first  equation which we have to prove. The second one follows similarly.
 \end{proof}
+
 \begin{Theorem}
 Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then the
 associated Hopf-von Neumann bimodule
@@ -424,6 +478,7 @@ equation above follows from Proposition
 \ref{prop:vn-invariance}. Likewise $T_{\rho}$ is right-invariant in
 the appropriate sense.
 \end{proof}
+
 
 
 %%% Local Variables: 

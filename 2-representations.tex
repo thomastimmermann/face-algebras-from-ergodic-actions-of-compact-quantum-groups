@@ -819,10 +819,10 @@ Note that condition (3) is meaningful by condition (1).
 % Again? Check if this has already been used before   
     To prove (4), write again $ \Delta^{(2)} = (
     \Delta \otimes \id)\circ  \Delta = (\id \otimes 
-    \Delta) \circ \Delta$, and put \[\rho_{z,z'}:=(f_{z'} \otimes \id
+    \Delta) \circ \Delta$, and put \[\theta_{z,z'}:=(f_{z'} \otimes \id
     \otimes f_{z})\circ  \Delta^{(2)}.\] Then
     \begin{align*}
-      (\rho_{z,z'} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (f_{z'} \otimes
+      (\theta_{z,z'} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (f_{z'} \otimes
       \id \otimes f_{z} \otimes
       \id)((\Gr{X}{k}{l}{k}{l})_{14}(\Gr{X}{k}{l}{m}{n})_{24}(\Gr{X}{m}{n}{m}{n})_{34})
       \\
@@ -833,7 +833,7 @@ Note that condition (3) is meaningful by condition (1).
     now $\alpha= \beta$ by our scaling of $F_{X}$, and obtain
     \begin{eqnarray*}
      && \hspace{-2cm} (\phi \otimes \id \otimes
-      \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}((\rho_{1,1} \otimes
+      \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}((\theta_{1,1} \otimes
       \id)(\Gr{X}{k}{l}{m}{n}))_{13})\\ && =\alpha^{-1}(\id \otimes
       \Gru{F_{X}}{k}{l}) (\id \otimes \Gru{(F_{X}^{-1})}{k}{l})
       \Sigma_{k,l,m,n} (\id \otimes
@@ -850,7 +850,7 @@ We have then already argued that the property (5) automatically holds. To show t
       (S^{2} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (1
       \otimes\Gru{F_{X}}{k}{l})
       \Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{F_{X}}{m}{n})^{-1} 
-      =(\rho_{-1,1}  \otimes \id)(\Gr{X}{k}{l}{m}{n}).
+      =(\theta_{-1,1}  \otimes \id)(\Gr{X}{k}{l}{m}{n}).
     \end{align*}
      Assertion (6) follows again by applying slice maps.
     
@@ -881,6 +881,34 @@ Therefore, $f_{-z} = f_{z} \circ S$. Let us now write $\bar{f}_z(a) = \overline{
      \end{align*}
 whence $\bar{f}_z = f_{-\overline{z}}$.
 \end{proof}
+\begin{Cor} \label{cor:rep-characters}
+  Let $\mathscr{G}$ be an partial compact quantum group with
+  underlying total algebra $A$ and define $\theta_{z,z'}
+  \colon A \to A$ by $a \mapsto f_{z} \ast a \ast f_{z'}$ for each
+  $z,z' \in \C$, where the functionals $f_{z}$ are as in Theorem
+  \ref{thm:rep-characters}. Then for all $z,z',w,w'\in \C$, the
+  following conditions hold:
+  \begin{enumerate}
+  \item $\theta_{z,z'}$ is an algebra automorphism and preserves
+    each subspace $A(K)$; in particular,
+    $\theta_{z,z'}(\lambda_{k}\rho_{m}) = \lambda_{k}\rho_{m}$ for all
+    $k,m\in I$;
+  \item $\theta_{z,z'} \circ * = * \circ
+    \theta_{-\overline{z},-\overline{z'}}$; in particular,
+    $\theta_{it,is}$ is a $*$-automorphism for each $t,s\in \R$;
+  \item $\theta_{z,z'}\circ \theta_{w,w'} = \theta_{z+w,z'+w'}$;
+  \item $ (\theta_{w,z'} \otimes \theta_{z,-w}) \circ \Delta = \Delta
+    \circ \theta_{z,z'}$, $\epsilon \circ \theta_{z,z'} = f_{z+z'}$,
+    $\theta_{z,z'} \circ S = S \circ \theta_{-z',-z}$ and
+    $\phi \circ \theta_{z,z'} = \phi$.
+  \end{enumerate}
+  Moreover,  $R:=S\circ \theta_{1/2,-1/2}$  is a
+  $*$-anti-automorphism of $A$ and $R^{2}=\id$, $\phi \circ R = \phi$.
+\end{Cor}
+\begin{proof}
+  All of this follows easily from Theorem \ref{thm:rep-characters}.
+\end{proof}
+
 
 %  consider
 %   the family
