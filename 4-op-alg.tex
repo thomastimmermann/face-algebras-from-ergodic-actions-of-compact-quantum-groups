@@ -98,7 +98,8 @@ invariant,
   $A$. 
 \end{proof}
 
-Given a partial compact quantum group $\mathscr{G}$, we denote by
+Given a partial compact quantum group $\mathscr{G}$, we call
+$(\LGtwo,\Lambda,\pi)$ the \emph{associated GNS-construction} and denote by
 \begin{align}
   \CrG &\subseteq {\cal B}(\LGtwo) &&\text{and} & \LGinf &\subseteq {\cal B}(\LGtwo)
 \end{align}
@@ -152,9 +153,9 @@ preliminaries.
 
 Denote by $\nu$ the
 normal, faithful, semifinite weight on $l^{\infty}(I)$ given by
-\begin{align*}
+\begin{align} \label{eq:vn-nu}
   \nu(f) &=\sum_{k} f(k) \quad \text{for all } f\in l^{\infty}(I)_{+}.
-\end{align*}
+\end{align}
 Then the relative tensor product of $\LGtwo$ with itself,
 relative to the representations $\rho,\lambda$ of $l^{\infty}(I)$ and
 the weight $\nu$, takes the simple form
@@ -219,135 +220,159 @@ $*$-homomorphisms become restrictions of the maps $\tilde\Delta \otimes
 Lemma \ref{lemma:vn-delta} 1.\ and co-associativity of $\Delta$.
 \end{proof}
 
-To show that the Hopf-von Neumann bimodule above is a measured quantum
-groupoid, we have to lift the invariant weight to $\LGinf$. This can
-be done as follows.
-\begin{Lem} \label{lemma:hilbert-algebra}
-  The subspace $\Lambda(A) \subseteq \LGtwo$ is a Hilbert algebra with
-  respect to the operations given by
-  $\Lambda(a)\Lambda(b)=\pi(a)\Lambda(b)=\Lambda(ab)$ and
-  $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in A$.
+To obtain a measured quantum groupoid, we lift the invariant
+functional $\phi$ of $\mathscr{G}$ to $\LGinf$ and define associated
+operator-valued weight $T_{\lambda},T_{\rho}$ from $\LGinf$ to
+$l^{\infty}(I)$ as follows. Since $\phi$ is normalized, each
+$\Lambda(\lambda_{k},\rho_{m})$ is a unit vector and the associated
+vector functional
+\begin{align*}
+  \vnphic{k}{m}\colon \LGinf \to  \C, \quad x \mapsto \langle\Lambda(\lambda_{k}\rho_{m})|x\Lambda(\lambda_{k}\rho_{m})\rangle
+\end{align*}
+is a state.  Then the formulas
+\begin{align} \label{eq:vn-weights}
+  \vnphi(x) &:= \sum_{k,m} \vnphic{k}{m}(x), &
+    T_{\lambda}(x)&:= \sum_{k,m}
+\vnphic{k}{m}(x)\lambda_{k}, & 
+T_{\rho}(x)&:=
+    \sum_{k,m} \vnphic{k}{m}(x)\rho_{m},
+\end{align}
+where $x\in \LGinf_{+}$, define a a normal semi-finite weight $\vnphi$
+on $\LGinf$ and normal semi-finite conditional expectations $T_{\lambda}$ and
+$T_{\rho}$ from $\LGinf$ to $\lambda(l^{\infty}(I))$ and
+$\rho(l^{\infty}(I))$, respectively. These maps are determined by
+their restrictions to $\pi(A)$:
+\begin{Lem} \label{lemma:vn-weights-unique} The normal weight $\vnphi$ and
+  the normal conditional expectations $T_{\lambda},T_{\rho}$ satisfy $\pi(A) \subseteq
+  \mathfrak{M}_{\vnphi} \cap \mathfrak{M}_{T} \cap \mathfrak{M}_{T'}$
+  and
+  \begin{align*}
+    \vnphi(\pi(a))&= \phi(a), & T_{\lambda}(\pi(a))\Lambda(b) &=
+    \sum_{k}\Lambda(\phi(\lambda_{k}a)\lambda_{k}b), &
+    T_{\rho}(\pi(b))\Lambda(b) &= \sum_{m}\Lambda(\phi(\rho_{m}a)\rho_{m}b)
+  \end{align*}
+  for all $a,b\in A$, and are uniquely determined by these equations. 
 \end{Lem}
 \begin{proof}
-  The map $\pi(a)$ is bounded for each $a \in A$ by \ref{prop:gns},
-  and the involution is pre-closed because
+  The equations follow immediately from the definition and the
+  relation $\phi(a)=\sum_{k,m}
+  \phi(\lambda_{k}\rho_{m}a\lambda_{k}\rho_{m})$, see \ref{}. To prove
+  uniqueness, observe that the $p_{k,m}:=\pi(\lambda_{k}\rho_{m})$ are
+  pairwise orthogonal projections in $\mathfrak{M}_{\vnphi}
+  \cap \mathfrak{M}_{T_{\lambda}} \cap \mathfrak{M}_{T_{\rho}}$
+  summing up to $1$, whence $\vnphi$, $T_{\lambda}$ and $T_{\rho}$ are
+  the sums of the bounded linear maps that send an $x\in \LGinf_{+}$
+  to $\vnphi(p_{k,m}xp_{l,n})$, $T_{\lambda}(p_{k,m}xp_{l,n})$, or
+  $T_{\rho}(p_{k,m}xp_{l,n})$, respectively, which are determined by
+  their restriction to $\pi(A)$.
+\end{proof}
+Next, we need to show that the weight $\vnphi$ is faithful. At the
+expense of some redundancy, we present two independent arguments which
+both rely the modular automorphism $\sigma$ of $\phi$ obtained in
+\ref{}. The first argument is rather direct.
+\begin{Lem}
+  There exists a unique anti-homomorphism $\pi^{\op} \colon A \to
+  \mathcal{B}(\LGtwo)$ such that $\pi^{\op}(a)\Lambda(b) =
+  \Lambda(ba)$ for all $a,b\in A$, and $\pi^{\op}(a^{*})  = \pi^{\op}(\sigma(a^{*}))$.
+\end{Lem}
+\begin{proof}
+The map $\Lambda(b) \to \Lambda(ba)$ is bounded for each $a\in A$ because
+  \begin{align*}
+    \langle \Lambda(c)|\Lambda(ba)\rangle
+    =\phi(c^{*}ba)&=\phi(ba\sigma(c^{*})) \\ &\leq \|\pi(a)\|
+    \phi(b\sigma(c^{*})) = \|\pi(a)\| \phi(c^{*}b) =\|\pi(a)\| \langle \Lambda(c)|\Lambda(b)\rangle
+  \end{align*}
+  for all $c \in A$, and its adjoint is given by $\Lambda(c)\mapsto
+  \Lambda(c\sigma(a)^{*})$ because
+  \begin{align*}
+        \langle \Lambda(c)|\Lambda(ba)\rangle
+    =\phi(c^{*}ba)&= \phi(\sigma^{-1}(a)c^{*}b)
+    =\phi(\sigma(a^{*})^{*}c^{*}b) =
+    \langle\Lambda(c\sigma(a^{*}))|\Lambda(b)\rangle. 
+  \end{align*}
+\end{proof}
+\begin{Lem}
+  The normal weight $\vnphi$ is faithful.
+\end{Lem}
+\begin{proof}
+  The family of vectors $(\Lambda(\lambda_{k}\rho_{m}))_{k,m}$ is
+  cyclic for $\pi^{\op}(A) \subseteq \pi(A)'$.
+\end{proof}
+The second argument uses the theory of left Hilbert algebras \cite{}.
+\begin{Prop} \label{prop:hilbert-algebra} 
+Let $\mathscr{G}$ be a partial compact quantum group with
+GNS-construction $(\LGtwo,\Lambda,\pi)$. Then $\Lambda(A) \subseteq
+\LGtwo$ is a Hilbert algebra with respect to the operations
+  $\Lambda(a)\Lambda(b)=\Lambda(ab)$ and
+  $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in A$. The associated
+  left von Neumann algebra  is $\LGinf$ and the associated normal,
+  semifinite, faithful weight is $\vnphi$.
+\end{Prop}
+\begin{proof}
+  The map $\pi(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
+  each $a \in A$ by Proposition \ref{prop:gns}, and the involution is
+  pre-closed because
   \begin{align*}
     \langle \Lambda(a)|\Lambda(b^{*})\rangle = \phi(a^{*}b^{*}) =
     \phi(b^{*}\sigma(a^{*})) = \langle
     \Lambda(b)|\Lambda(\sigma(a^{*}))\rangle
   \end{align*}
-  for all $a,b \in A$, where $\sigma$ denotes the modular automorphism
-  of $\phi$; see \ref{},
+  for all $a,b \in A$. The left von Neumann algebra is
+  $\pi(A)''=\LGinf$ and the associated weight $\tilde\phi$ satisfies
+  $\tilde \phi(\pi(a^{*}a))=\langle\Lambda(a)|\Lambda(a)\rangle =
+  \phi(a^{*}a)$ for all $a\in A$ and coincides with $\vnphi$ by Lemma
+  \ref{lemma:vn-weights-unique}.
 \end{proof}
-\begin{Prop}
-  Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then there exist a unique normal
-  semi-finite faithful weight $\vnphi$ on $\LGinf$ and unique normal
-  semi-finite faithful operator-valued weights $T,T'$ from $\LGinf$ to
-  $\lambda(l^{\infty}(I))$ and $\rho(l^{\infty}(I))$, respectively,
-  such that $\pi(A) \subseteq \mathfrak{M}_{\vnphi} \cap
-  \mathfrak{M}_{T} \cap \mathfrak{M}_{T'}$ and
-  \begin{align}\label{eq:vnphi}
-    \vnphi(\pi(a))&= \phi(a), &
-    T(\pi(a))\Lambda(b) &= \Lambda(_{\lambda}\phi(a)b), &
-    T'(\pi(b))\Lambda(b) &= \Lambda(_{\rho}\phi(a)b)        
-  \end{align}
-  for all $a,b\in A$. Furthermore, $\nu \circ \alpha^{-1} \circ T = \vnphi =
-  \nu \circ \beta^{-1} \circ T'$. 
+Invariance of $\phi$ implies invariance of $\vnphi$ as follows.
+\begin{Prop} \label{prop:vn-invariance}
+  Let $\mathscr{G}$ be a partial compact quantum group. Then the
+  normal, semi-finite, faithful weight $\vnphi$ on $\LGinf$ satisfies
+  \begin{align*}
+    (\id \otimes \vnphi)(\vnDelta(x)) &=  T_{\lambda}(x), &
+    (\vnphi \otimes \id)(\vnDelta(x)) &= T_{\rho}(x)
+  \end{align*}
+for all $x\in \LGinf_{+}$.
 \end{Prop}
 \begin{proof}
-  The existence of $\vnphi$ follows from Lemma
-  \ref{lemma:hilbert-algebra} and the general theory of Hilbert
-  algebras. By \cite{}, there exists a normal semi-finite faithful
-  weight $\vnphi$ on the von-Neumann algebra $\pi(A)''=\LGinf$ such that
-  $\pi(A) \subseteq \mathfrak{N}_{\tilde \phi}$ and
-  $\vnphi(\pi(a^{*}a))=\|\Lambda(a)\|^{2}=\phi(a^{*}a)$ for all $a\in
-  A$. The polarization identity now yields $\vnphi(\pi(a^{*}b)) =
-  \phi(a^{*}b)$ for all $a,b\in A$. Since $A$ is idempotent, we can
-  conclude $\pi(A) \subseteq \mathfrak{N}_{\vnphi}$ and $\vnphi\circ
-  \pi=\phi$.
-
-  We next prove uniqueness of $\vnphi$, $T$ and $T'$.  The elements
-  $p_{k,m}:=\lambda_{k}\rho_{m}$ are pairwise orthogonal
-  projections in $\mathfrak{M}_{\vnphi} \cap \mathfrak{M}_{T} \cap
-  \mathfrak{M}_{T'}$ summing up to $1$, whence $\vnphi$, $T$ and $T'$
-  are the sums of the bounded linear maps
+  Let  $a \in A$.  Then Lemma \ref{lemma:vn-weights-unique}, relation \eqref{EqDel}
+  and invariance of $\phi$ imply
   \begin{align*}
-    \Gr{\vnphi}{k}{l}{m}{n}&\colon x\mapsto \vnphi(p_{k,m}xp_{l,n}),  &
-    \Gr{T}{k}{l}{m}{n} &\colon x \mapsto T(p_{k,m}xp_{l,n}), &
-    \Gr{T'{}}{k}{l}{m}{n} &\colon x\mapsto T'(p_{k,m}xp_{l,n}),
+    (\id \otimes \vnphic{k}{m})(\vnDelta(\pi(a))) &= (\id \otimes
+    \phi)((1 \otimes \lambda_{k}\rho_{m})\Delta(a)(1 \otimes
+    \lambda_{k}\rho_{m})) \\ & =
+    \rho_{k}a_{(1)}\rho_{k}\phi(\rho_{m}a_{(2)}\rho_{m}) \\ & = \sum_{l}
+    \phi(\lambda_{l}\rho_{m}a\lambda_{l}\rho_{m})\rho_{k}\lambda_{l} \\
+    & = \sum_{l} \vnphic{l}{m}(\pi(a)) \lambda_{l}\rho_{k}.
   \end{align*}
-  respectively, which are determined by their restriction to
-  $\pi(A)$. Note that in particular, the maps above vanish if
-  $(k,m)\neq (l,n)$.
-  
-  We finally prove existence of $T$ and $T'$. For each $k,m\in I$, the vector
-  $\xi_{k,m}:=\Lambda(\lambda_{k}\rho_{m})$ has norm one and the
-  associated vector state $\omega_{\xi_{k,m}}$ satisfies
+  Since $\pi(A)$ is dense in $\LGinf$, we can conclude
   \begin{align*}
-    \omega_{\xi_{k,m}}(\pi(a))= \langle
-    \Lambda(\lambda_{k}\rho_{m})|\Lambda(a\lambda_{k},\rho_{m})\rangle
-    = \phi(\lambda_{k}\rho_{m}a\lambda_{k}\rho_{m} )=
-    \phi(\lambda_{k}\rho_{m}a)
+    (\id \otimes \vnphic{k}{m}) (\vnDelta (x)) &= \sum_{l} \vnphic{l}{m}(x) \lambda_{l}\rho_{k}
   \end{align*}
-  for all $a\in A$. Therefore, the maps
-  \begin{align} \label{eq:vnphi-explicit}
-\tilde\phi&\colon x\mapsto\sum_{k,m} \omega_{\xi_{k,m}}(x), &
-    T&\colon x\mapsto \sum_{k,m}
-    \omega_{\xi_{k,m}}(x)\alpha(\delta_{k}), & T'&\colon x\mapsto
-    \sum_{k,m} \omega_{\xi_{k,m}}(x) \beta(\delta_{m})
-  \end{align}
-  satisfy \eqref{eq:vnphi}. Clearly, these maps are normal,
-  semi-finite and satisfy $\nu \circ \alpha^{-1}\circ T = \tilde\phi = \nu
-  \circ \beta^{-1} \circ T'$.  By uniqueness, $\tilde
-  \phi=\vnphi$. Since $\vnphi$ is faithful, so must be $T$ and $T'$.
+  for all $x \in \LGinf$. Summing over $k$ and $m$, we obtain the
+  first  equation which we have to prove. The second one follows similarly.
 \end{proof}
 \begin{Theorem}
-The tuple    $(l^{\infty}(I),\LGinf,\lambda,\rho,\tilde\Delta,T,T',\nu)$
+Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then the
+associated Hopf-von Neumann bimodule
+$(l^{\infty}(I),\LGinf,\lambda,\rho,\tilde\Delta$ together with the weights
+    $(T_{\lambda},T_{\rho}$ and $\nu$ defined in
+    \eqref{eq:vn-weights} and \eqref{eq:vn-nu}
   is a measured quantum groupoid in the sense of \cite{enock:action}.
 \end{Theorem}
 \begin{proof}
-  We need to show that $T$ is left-invariant, $T'$ is right-invariant,
-  and that $\nu$ is relatively invariant with respect to $T$ and $T'$
-  in the sense that the modular automorphism groups of the weights
-  $\nu \circ \alpha^{-1} \circ T$ and $\nu \circ \beta^{-1} \circ T'$
-  commute.  We prove the first condition, and the second one follows from
-  a similar argument. The third condition holds trivially because the
-  two compositions coincide by Proposition \ref{prop:}. 
-
-  Let $\xi_{k,m}=\Lambda(\lambda_{k}\rho_{m})$ and abbreviate
-  $\vnphi_{k,m}=\omega_{\xi_{k,m}}$. Then the normal linear map
+  First, observe that the  the modular
+  automorphism groups of the weights $\nu \circ \lambda^{-1} \circ
+  T_{\lambda}$ and $\nu \circ \rho^{-1} \circ T_{\rho}$ commute  because the two
+  compositions coincide with $\vnphi$. Next, we need  to show that
+  $T_{\lambda}$ is left-invariant in the sense that
   \begin{align*}
-    T_{m}\colon \pi(A)'' \to \alpha(l^{\infty}(I)), \ x\mapsto \sum_{k} \vnphi_{k,m}(x)\alpha(\delta_{k})
+   (\id \underset{\nu}{_{\rho}\ast_{\lambda}} \vnphi)(\tilde\Delta(x)) = T_{\lambda}(x) 
   \end{align*}
-  is bounded and satisfies $T=\sum_{m} T_{m}$ by
-  \eqref{eq:vnphi}. For all $a,b\in
-  A$,
-  \begin{align*}
-    (\id {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\tilde\Delta(\pi(a)))\Lambda(b) &=
-    (r^{\beta,\alpha}_{\xi_{k,m}})^{*}\tilde\Delta(\pi(a))r^{\beta,\alpha}_{\xi_{k,m}}
-    \Lambda(b) \\
-    &= (r^{\beta,\alpha}_{\xi_{k,m}})^{*}(\Lambda(a_{(1)}b)
-    {_{\rho} \otimes_{\lambda}} \Lambda(a_{(2)}\lambda_{k}\rho_{m})) \\
-    &=
-    \Lambda(\phi(\lambda_{k}\rho_{m}a_{(2)}\lambda_{k}\rho_{m})\rho_{k}a_{(1)}b).
-  \end{align*}
-  Sum over $k \in I$ and using \eqref{eq:wdelta}, we find
-  \begin{align*}
- \sum_{k} (\id
- {_{\rho}\ast_{\lambda}} \vnphi_{k,m})(\tilde\Delta(\pi(a))) &=
-\pi(\phi(\rho_{m}a_{(2)}\rho_{m})a_{(1)})  =
-\pi(_{\lambda}\phi(\rho_{m}a\rho_{m})) = T_{m}(\pi(a)).
-  \end{align*}
-  Finally, we insert the relation $\sum_{k} \vnphi_{k,m} = \nu \circ
-  T_{m}$ and obtain
-\begin{align*}
-  (\id {_{\rho}\otimes_{\lambda}} T_{m})(\tilde\Delta(x)) = (\id {_{\rho}\otimes_{\lambda}}
-  (\nu \circ T_{m}))(\tilde\Delta(x)) {_{\rho}\otimes_{\lambda}} 1 = T_{m}(x)  {_{\rho}\otimes_{\lambda}} 1
-\end{align*}
-for all $x\in \pi(A)$.  Since $T_{m}$ is normal and bounded, this
-equation remains valid for all $x\in \pi(A)''$. Summing over $m$, we
-obtain $(\id {_{\rho}\otimes_{\lambda}} T)(\tilde\Delta(x)) = T(x)  {_{\rho}\otimes_{\lambda}} 1$ for all
-positive $x \in \pi(A)''$ which is the desired left-invariance of $T$.
+for all $x\in \LGinf_{+}$. But it is easy to see that the left hand
+side coincides with   $(\id \ast \vnphi)(\vnDelta(x))$ so that the
+equation above follows from Proposition
+\ref{prop:vn-invariance}. Likewise $T_{\rho}$ is right-invariant in
+the appropriate sense.
 \end{proof}
 
 
