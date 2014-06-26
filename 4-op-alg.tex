@@ -8,10 +8,10 @@ $\CrG$ and a von Neumann algebra $\LGinf$. The existence of the first
 one follows from the Peter-Weyl theorem \ref{}, and the second and
 third one arise from a GNS-representation of $P(\mathscr{G})$ on the
 Hilbert space $\LGtwo$ associated to the invariant functional of
-$\mathscr{G}$.  We then lift the comultiplication and the invariant
-functional to the level of operator algebras and show that $\LGinf$
-becomes a measured quantum groupoid in the sense of Lesieur \cite{}
-and Enock \cite{}.
+$\mathscr{G}$.  We then lift the comultiplication, the invariant
+functional, the unitary antipode and the scaling group to level of
+operator algebras and show that $\LGinf$ becomes a measured quantum
+groupoid in the sense of Lesieur \cite{} and Enock \cite{}.
 
 Let us start with the construction of $\CuG$. Denote by $A$ the
 underlying total $*$-algebra of the partial $*$-algebra
@@ -142,10 +142,10 @@ invariant,
 \Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
   $\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LGtwo)$ and a
   straightforward computation shows that
-  \begin{align*}
+  \begin{align} \label{eq:vn-slice}
     (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
     \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
-  \end{align*}
+  \end{align}
   for all $b\in A$. Therefore, left multiplication by
   $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on $\LGtwo$.
  Since $(A\otimes 1)\Delta(A) = (A\otimes
@@ -213,82 +213,10 @@ Consider the map
   all $a\in A$.
 \end{proof}
 
-To connect to the theory of measured quantum groupoids, we need a few
-preliminaries.
 
-Denote by $\nu$ the
-normal, faithful, semifinite weight on $l^{\infty}(I)$ given by
-\begin{align} \label{eq:vn-nu}
-  \nu(f) &=\sum_{k} f(k) \quad \text{for all } f\in l^{\infty}(I)_{+}.
-\end{align}
-Then the relative tensor product of $\LGtwo$ with itself,
-relative to the representations $\rho,\lambda$ of $l^{\infty}(I)$ and
-the weight $\nu$, takes the simple form
-\begin{align*}
-\LGinf \otimesrl \LGinf \cong
-  \bigoplus_{k} (\rho_{k}\LGtwo \otimes \lambda_{k}\LGtwo) =
-  \vnE(\LGtwo \otimes \LGtwo),
-\end{align*}
-see \cite{},  the relative tensor product
-of operators $S\in \rho(l^{\infty}(I))'$ and $T \in
-\lambda(l^{\infty}(I))'$ gets identified with the compression
-\begin{align*}
-S \otimesrl T \equiv
-  \vnE(S \otimes
-  T) = (S \otimes T)\vnE \subseteq {\cal B}(\vnE(\LGtwo
-  \otimes \LGtwo)),
-\end{align*}
-and the fiber product of  $  \LGinf$ with itself, relative to $\rho$
-and $\lambda$,  gets identified with
-\begin{align} \label{eq:vn-fiber}
-  \begin{aligned}
-    \LGinf \astrl \LGinf &= (\LGinf' \otimesrl \LGinf')' \\ &\equiv
-    (\vnE(\LGinf' \otimes \LGinf'))' = \vnE(\LGinf \otimes
-    \LGinf)\vnE.
-  \end{aligned}
-\end{align} 
-By Lemma \ref{lemma:vn-delta} 3., we can co-restrict $\vnDelta$ to  a
-normal, faithful $*$-homomorphism
-\begin{align*}
-  \tilde\Delta \colon \LGinf \to   \LGinf \astrl \LGinf.
-\end{align*}
-We now obtain a Hopf-von Neumann bimodule in the
-sense of \cite{} as follows.
-\begin{Prop}
-  Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then
-  \begin{enumerate}
-  \item $\tilde\Delta(\lambda(x)) = \lambda(x) \otimesrl 1$ and
-    $\tilde\Delta(\rho(x)) = 1 \otimesrl \rho(x)$ for all $x\in
-    l^{\infty}(I)$, and
-  \item $(\tilde\Delta \ast \id)\circ \tilde\Delta = (\id \ast \tilde\Delta)
-    \circ \tilde\Delta$.
-  \end{enumerate}
-  In particular, $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta)$ is a
-  Hopf-von Neumann bimodule.
-\end{Prop}
-\begin{proof}
-Assertion 1.\ follows from \eqref{eq:delta-lambda-rho} and
-Lemma \ref{lemma:vn-delta} 1.\ and ensures that  the $*$-homo\-morphisms
-\begin{align*}
-  \tilde\Delta \ast \id, \id \ast \tilde\Delta \colon  \LGinf \astrl \LGinf
-  \to \LGinf \astrl \LGinf \astrl \LGinf
-\end{align*}
-are well-defined.  As in
-\eqref{eq:vn-fiber}, we can identify
-\begin{align*}
- \LGinf \astrl \LGinf \astrl \LGinf \cong \vnE^{(2)}(\LGinf
-  \otimes \LGinf \otimes \LGinf)\vnE^{(2)},
-\end{align*}
-where $\vnE^{(2)}=(\vnE \otimes 1)(1 \otimes \vnE)$, and then the
-$*$-homomorphisms become restrictions of the maps $\tilde\Delta \otimes
-\id$ and $\id \otimes \tilde\Delta$, respectively. Now, 2.\ follows from
-Lemma \ref{lemma:vn-delta} 1.\ and co-associativity of $\Delta$.
-\end{proof}
-
-To obtain a measured quantum groupoid, we lift the invariant
-functional $\phi$ of $\mathscr{G}$ to $\LGinf$ and define associated
-operator-valued weight $T_{\lambda},T_{\rho}$ from $\LGinf$ to
-$l^{\infty}(I)$ as follows. Since $\phi$ is normalized, each
+Next, we lift the invariant functional $\phi$ of $\mathscr{G}$ to
+$\LGinf$ and define associated operator-valued weight
+$T_{\lambda},T_{\rho}$ from $\LGinf$ to $l^{\infty}(I)$. Since $\phi$ is normalized, each
 $\Lambda(\lambda_{k},\rho_{m})$ is a unit vector and the associated
 vector functional
 \begin{align*}
@@ -360,33 +288,9 @@ for all $x\in \LGinf_{+}$.
   for all $x \in \LGinf$. Summing over $k$ and $m$, we obtain the
   first  equation which we have to prove. The second one follows similarly.
 \end{proof}
-
-The next result will allow us to show that the weight $\vnphi$ is
-faithful, and to lift the modular automorphism group $\sigma$,  the scaling
-group $\tau$ and the unitary antipode $R$ of $\mathscr{G}$  to $\CrG$
-and $\LGinf$. Let us call a conjugate-linear map on a Hilbert space
-an \emph{anti-symmetry} if it is isometric and its square is the identity.
-\begin{Lem}
-  There exist unique anti-symmetries $I,J$ and a strongly continuous
-  one-parameter group $P=(P_{t})_{t}$ on
-  on $\LGtwo$ such that for all $a\in A$, $t\in \R$,
-  \begin{align*}
-    J\Lambda(a) &= \Lambda(\sigma_{i/2}(a)^{*}), & I\Lambda(a) &=
-    \Lambda(R(a)^{*}), & P_{t}\Lambda(a) &= \Lambda(\tau_{t}(a)).
-  \end{align*}
-\end{Lem}
-\begin{proof}
-  Corollary \ref{cor:rep-characters} implies that the formulas above
-  define anti-symmetries $I,J$ and unitaries $P_{t}$; for
-  example, $\|I\Lambda(a)\|^{2})=\phi(R(a)R(a)^{*})=
-  \phi(a^{*}a)=\|\Lambda(a)\|^{2}$, and $I^{2} = \id$
-  because $*\circ R \circ * \circ R=  R^{2}=\id$. By A.1 in \cite{}
-  [Takesaki:2] and Corollary  \ref{cor:rep-characters} 5., elements of
-  $\Lambda(A)$ are analytic with respect to $P$; in
-  particular,  $P$ is strongly continuous.
-\end{proof}
-
-\begin{Lem} \label{lemma:vn-hilbert}
+The next result gives a fairly complete description of the objects of
+Tomita-Takesaki theory associated to $\vnphi$.
+\begin{Lem} \label{lemma:vn-hilbert} The subspace
   $\Lambda(A) \subseteq \LGtwo$ is a Hilbert algebra with respect to
   the operations $\Lambda(a)\Lambda(b)=\Lambda(ab)$ and
   $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in A$, and a Tomita
@@ -395,8 +299,9 @@ an \emph{anti-symmetry} if it is isometric and its square is the identity.
   $z\in \C$.  The associated left von Neumann
   algebra is $\LGinf$, the associated normal, semifinite, faithful
   weight is $\vnphi$, the modular operator  $\Delta_{\vnphi}$ is the
-  closure of $\nabla_{-i}$,  the modular conjugation $J_{\vnphi}$
-  equals $J$, and the modular automorphism group $\sigma^{\vnphi}$
+  closure of $\nabla_{-i}$,  the modular conjugation $J_{\vnphi}$ is
+  given by $J_{\vnphi}\Lambda(a)=\Lambda(\sigma_{i/2}(a)^{*})$ for all
+  $a\in A$, and the modular automorphism group $\sigma^{\vnphi}$
   satisfies $\sigma^{\vnphi}_{t} \circ \pi_{r} = \pi_{r} \circ
   \sigma_{t}$ for all $t\in \R$.
 \end{Lem}
@@ -436,47 +341,45 @@ To see that $\Lambda(A)$ and $(\nabla_{z})_{z}$ form a Tomita
   operator $\Delta_{\vnphi}$ is the closure of $\nabla_{-i}$ and the
   modular automorphism group is implemented by $(\nabla_{t})_{t}$. 
 \end{proof}
+ The general theory of Hilbert algebras \cite{} implies now:
 \begin{Prop} \label{prop:hilbert-algebra} Let $\mathscr{G}$ be a
   partial compact quantum group. Then the extension $\vnphi$ of the
-  invariant functional to $\LGinf$ is faithful.
+  invariant functional to $\LGinf$ is faithful. \qed
 \end{Prop}
-\begin{proof}
-  By Lemma \ref{lemma:vn-hilbert}, $\vnphi$ is the weight associated
-  to the Hilbert algebra $\Lambda(A)$. 
-\end{proof}
 \begin{Rem}
-  Without using the theory of Hilbert algebras, one can also check
-  directly that $J\pi_{r}(A)J$ commutes with $\pi_{r}(A)$ and hence
+  Without using the theory of Hilbert algebras, one could also check
+  directly that the formula for $J_{\vnphi}$ defines an anti-linear
+  isometry, that $J_{\vnphi}\pi_{r}(A)J_{\vnphi}$ commutes with $\pi_{r}(A)$ and hence
   with $\LGinf$, and that the family
   $(\Lambda(\lambda_{k}\rho_{m}))_{k,m}$ is cyclic for
   $J\pi_{r}(A)J$. Then this family is separating for $\LGinf$ and
   $\vnphi$ is faithful.
 \end{Rem}
-\begin{Theorem} \label{theorem:vn-measured}
-Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then the
-associated Hopf-von Neumann bimodule
-$(l^{\infty}(I),\LGinf,\lambda,\rho,\tilde\Delta)$ together with the weights
-    $(T_{\lambda},T_{\rho}$ and $\nu$ defined in
-    \eqref{eq:vn-weights} and \eqref{eq:vn-nu}
-  is a measured quantum groupoid in the sense of \cite{enock:action}.
-\end{Theorem}
-\begin{proof}
-  First, observe that the  the modular
-  automorphism groups of the weights $\nu \circ \lambda^{-1} \circ
-  T_{\lambda}$ and $\nu \circ \rho^{-1} \circ T_{\rho}$ commute  because the two
-  compositions coincide with $\vnphi$. Next, we need  to show that
-  $T_{\lambda}$ is left-invariant in the sense that
+
+The scaling group $\tau$ and the unitary antipode $R$ of $\mathscr{G}$
+can easily be lifted to $\CrG$ and $\LGinf$ using the following
+result. Let us call a conjugate-linear map on a Hilbert space an
+\emph{anti-symmetry} if it is isometric and its square is the
+identity.
+\begin{Lem} \label{lemma:vn-implementation}
+  There exist a unique anti-symmetry $I$ and a strongly continuous
+  one-parameter group $P=(P_{t})_{t}$ on
+  on $\LGtwo$ such that for all $a\in A$, $t\in \R$,
   \begin{align*}
-   (\id \underset{\nu}{_{\rho}\ast_{\lambda}} \vnphi)(\tilde\Delta(x)) = T_{\lambda}(x) 
+ I\Lambda(a) &=
+    \Lambda(R(a)^{*}), & P_{t}\Lambda(a) &= \Lambda(\tau_{t}(a)).
   \end{align*}
-for all $x\in \LGinf_{+}$. But it is easy to see that the left hand
-side coincides with   $(\id \ast \vnphi)(\vnDelta(x))$ so that the
-equation above follows from Proposition
-\ref{prop:vn-invariance}. Likewise $T_{\rho}$ is right-invariant in
-the appropriate sense.
+\end{Lem}
+\begin{proof}
+  Corollary \ref{cor:rep-characters} implies that the formulas above
+  define an anti-symmetry $I$ and unitaries $P_{t}$; for
+  example, $\|I\Lambda(a)\|^{2})=\phi(R(a)R(a)^{*})=
+  \phi(a^{*}a)=\|\Lambda(a)\|^{2}$, and $I^{2} = \id$
+  because $*\circ R \circ * \circ R=  R^{2}=\id$. By A.1 in \cite{}
+  [Takesaki:2] and Corollary  \ref{cor:rep-characters} 5., elements of
+  $\Lambda(A)$ are analytic with respect to $P$; in
+  particular,  $P$ is strongly continuous.
 \end{proof}
-
-
 \begin{Prop}
   Let $\mathscr{G}$ be an $I$-partial compact quantum group.  
   \begin{enumerate}
@@ -489,24 +392,162 @@ the appropriate sense.
     \circ \pi_{r} = \pi_{r} \circ \theta_{-it,it}$ for all $t\in \R$,
     and this $\vntau$ restricts to a strongly continuous one-parameter
     group on $\CrG$.
-  \item $\vnR$ and $\vntau$ are the unitary antipode and the
-    scaling group, respectively, of the measured
-    quantum groupoid in Theorem \ref{theorem:vn-measured}.
   \end{enumerate}
 \end{Prop}
 \begin{proof}
-  1., 2.  Short calculations show that the maps $\vnR \colon x \mapsto
+    Short calculations show that the maps $\vnR \colon x \mapsto
   Ix^{*}I$ and $\vntau_{t} \colon x \mapsto P_{t}xP_{t}^{*}$ have the
   desired properties.
-
-  3. TO BE FILLED IN
 \end{proof}
-\begin{Rem}
-  Note that we can lift the relations \eqref{eq:scaling-modular-delta}
-  and \eqref{eq:unitary-antipode} to $\CrG$ and $\LGinf$ by
-  continuity, and obtain relations that were proved for general
-  measured quantum groupoids in \cite{}.
-\end{Rem}
+Note that the relations \eqref{eq:scaling-modular-delta} and
+\eqref{eq:unitary-antipode} can be lifted to $\CrG$ and $\LGinf$ by
+continuity.  The next result will allow us to relate $\vnR$ to the
+unitary antipode of the measured quantum groupoid that we are going to
+construct.
+\begin{Lem} \label{lemma:vn-r-characterisation}
+For all $a,b\in A$,
+\begin{align*}
+  \vnR(\id \otimes
+  \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi(a^{*}a))) = (\id
+  \otimes \omega_{J\Lambda(a),J\Lambda(a)})(\vnDelta(\pi(b^{*}b))).
+\end{align*}
+\end{Lem}
+\begin{proof}
+A short calculation shows that  the right hand side is equal to
+  \begin{align*}
+    (b^{*}b)_{(1)}\phi(\sigma_{i/2}(a)(b^{*}b)_{(2)}\sigma_{i/2}(a)^{*})
+    = (b^{*}b)_{(1)}\phi((b^{*}b)_{(2)}\sigma_{-i/2}(a^{*}a)).
+  \end{align*}
+  By [INSERT STRONG INVARIANCE] \ref{},
+  \eqref{eq:scaling-modular-delta}  and \eqref{eq:modular}, this equals 
+  \begin{align*}
+    S(\tau_{-i/2}((a^{*}a)_{(1)})
+    \phi(\sigma_{-i/2}((a^{*}a)_{(2)})b^{*}b)) = 
+    R((a^{*}a)_{(1)}\phi(b^{*}b\sigma_{i/2}((a^{*}a)_{(2)})))
+  \end{align*}  
+which is the  left hand side.
+\end{proof}
+
+The operator-algebraic structures constructed so far fit into the
+theory of measured quantum groupoids as follows.
+
+Denote by $\nu$ the
+normal, faithful, semifinite weight on $l^{\infty}(I)$ given by
+\begin{align} \label{eq:vn-nu}
+  \nu(f) &=\sum_{k} f(k) \quad \text{for all } f\in l^{\infty}(I)_{+}.
+\end{align}
+Then the relative tensor product of $\LGtwo$ with itself,
+relative to the representations $\rho,\lambda$ of $l^{\infty}(I)$ and
+the weight $\nu$, takes the simple form
+\begin{align*}
+\LGinf \otimesrl \LGinf \cong
+  \bigoplus_{k} (\rho_{k}\LGtwo \otimes \lambda_{k}\LGtwo) =
+  \vnE(\LGtwo \otimes \LGtwo),
+\end{align*}
+see \cite{},  the relative tensor product
+of operators $S\in \rho(l^{\infty}(I))'$ and $T \in
+\lambda(l^{\infty}(I))'$ gets identified with the compression
+\begin{align*}
+S \otimesrl T \equiv
+  \vnE(S \otimes
+  T) = (S \otimes T)\vnE \subseteq {\cal B}(\vnE(\LGtwo
+  \otimes \LGtwo)),
+\end{align*}
+and the fiber product of  $  \LGinf$ with itself, relative to $\rho$
+and $\lambda$,  gets identified with
+\begin{align} \label{eq:vn-fiber}
+  \begin{aligned}
+    \LGinf \astrl \LGinf &= (\LGinf' \otimesrl \LGinf')' \\ &\equiv
+    (\vnE(\LGinf' \otimes \LGinf'))' = \vnE(\LGinf \otimes
+    \LGinf)\vnE.
+  \end{aligned}
+\end{align} 
+By Lemma \ref{lemma:vn-delta} 3., we can co-restrict $\vnDelta$ to  a
+normal, faithful $*$-homomorphism
+\begin{align*}
+  \tilde\Delta \colon \LGinf \to   \LGinf \astrl \LGinf.
+\end{align*}
+We now obtain a Hopf-von Neumann bimodule in the
+sense of \cite{}.
+\begin{Prop}
+  Let $\mathscr{G}$ be an $I$-partial compact quantum group. Then
+  \begin{enumerate}
+  \item $\tilde\Delta(\lambda(x)) = \lambda(x) \otimesrl 1$ and
+    $\tilde\Delta(\rho(x)) = 1 \otimesrl \rho(x)$ for all $x\in
+    l^{\infty}(I)$, and
+  \item $(\tilde\Delta \ast \id)\circ \tilde\Delta = (\id \ast \tilde\Delta)
+    \circ \tilde\Delta$.
+  \end{enumerate}
+  In particular, $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta)$ is a
+  Hopf-von Neumann bimodule.
+\end{Prop}
+\begin{proof}
+Assertion 1.\ follows from \eqref{eq:delta-lambda-rho} and
+Lemma \ref{lemma:vn-delta} 1.\ and ensures that  the $*$-homo\-morphisms
+\begin{align*}
+  \tilde\Delta \ast \id, \id \ast \tilde\Delta \colon  \LGinf \astrl \LGinf
+  \to \LGinf \astrl \LGinf \astrl \LGinf
+\end{align*}
+are well-defined.  As in
+\eqref{eq:vn-fiber}, we can identify
+\begin{align*}
+ \LGinf \astrl \LGinf \astrl \LGinf \cong \vnE^{(2)}(\LGinf
+  \otimes \LGinf \otimes \LGinf)\vnE^{(2)},
+\end{align*}
+where $\vnE^{(2)}=(\vnE \otimes 1)(1 \otimes \vnE)$, and then the
+$*$-homomorphisms become restrictions of the maps $\tilde\Delta \otimes
+\id$ and $\id \otimes \tilde\Delta$, respectively. Now, 2.\ follows from
+Lemma \ref{lemma:vn-delta} 1.\ and co-associativity of $\Delta$.
+\end{proof}
+This Hopf-von Neumann bimodule is a measured quantum groupoid in the
+sense of \cite{}.
+\begin{Theorem} \label{theorem:vn-measured} Let $\mathscr{G}$ be an
+  $I$-partial compact quantum group. Then the Hopf-von Neumann
+  bimodule $(l^{\infty}(I),\LGinf,\lambda,\rho,\tilde\Delta)$ and the
+  weights $(T_{\lambda},T_{\rho}$ and $\nu$ defined in
+  \eqref{eq:vn-weights} and \eqref{eq:vn-nu} form a measured quantum
+  groupoid.  It is unimodular and its unitary antipode and scaling
+  group coincide with $\vnR$ and $\vntau$, respectively.
+\end{Theorem}
+\begin{proof}
+  First, observe that the  the modular
+  automorphism groups of the weights $\nu \circ \lambda^{-1} \circ
+  T_{\lambda}$ and $\nu \circ \rho^{-1} \circ T_{\rho}$ commute  because the two
+  compositions coincide with $\vnphi$. Next, we need  to show that
+  $T_{\lambda}$ is left-invariant in the sense that
+  \begin{align*}
+   (\id \underset{\nu}{_{\rho}\ast_{\lambda}} \vnphi)(\tilde\Delta(x)) = T_{\lambda}(x) 
+  \end{align*}
+  for all $x\in \LGinf_{+}$. But it is easy to see that the left hand
+  side coincides with $(\id \ast \vnphi)(\vnDelta(x))$ so that the
+  equation above follows from Proposition
+  \ref{prop:vn-invariance}. Likewise $T_{\rho}$ is right-invariant in
+  the appropriate sense. We thus obtain a measured quantum groupoid as
+  claimed.  Denote by $\tilde R$ its unitary antipode and by
+  $\tilde\tau$ its scaling group.
+
+  Let us prove that $\tilde \tau_{t}=\vntau$ for all $t\in \R$. By
+  \cite{} and by \eqref{eq:scaling-modular-delta} and Remark
+  \ref{remark:vn-scaling-modular-delta},
+  \begin{align*}
+    (\tilde \tau_{t} \astrl \sigma^{\vntau}_{t}) \circ \tilde \Delta
+    &=\tilde \Delta \circ \sigma^{\vntau}_{t}, & (\vntau \otimes
+    \sigma^{\vntau}_{t}) \circ \vnDelta &= \vnDelta \circ \vntau.
+  \end{align*}
+  The second equation implies that the first one remains true if we
+  replace $\tilde\tau_{t}$ by $\vntau_{t}$.  Using Theorem A.7 in
+  \cite{} [enock:action], we can conclude that $\tilde
+  \tau_{t}=\vntau_{t}$.
+
+ To prove that $\tilde R=\vnR$, one uses the relation
+  \begin{align*}
+    \tilde R(\id \underset{\nu}{_{\rho} \ast_{\lambda}}
+    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi(a^{*}a))) &= (\id
+    \underset{\nu}{_{\rho} \ast_{\lambda}}
+    \omega_{J\Lambda(a),J\Lambda(a)})(\vnDelta(\pi(b^{*}b)))
+  \end{align*}
+from \cite{} and Lemma \ref{lemma:vn-r-characterisation}.
+\end{proof}
 
 %%% Local Variables: 
 %%% mode: latex
