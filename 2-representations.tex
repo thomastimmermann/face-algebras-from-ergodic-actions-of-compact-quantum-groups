@@ -900,14 +900,46 @@ whence $\bar{f}_z = f_{-\overline{z}}$.
   \item $ (\theta_{w,z'} \otimes \theta_{z,-w}) \circ \Delta = \Delta
     \circ \theta_{z,z'}$, $\epsilon \circ \theta_{z,z'} = f_{z+z'}$,
     $\theta_{z,z'} \circ S = S \circ \theta_{-z',-z}$ and
-    $\phi \circ \theta_{z,z'} = \phi$.
+    $\phi \circ \theta_{z,z'} = \phi$;
+  \item for every linear map $\omega \colon A \to \C$ and every $a\in
+    A$, the map $(z,z') \mapsto \omega(\theta_{z,z'}(a))$ is entire.
   \end{enumerate}
-  Moreover,  $R:=S\circ \theta_{1/2,-1/2}$  is a
-  $*$-anti-automorphism of $A$ and $R^{2}=\id$, $\phi \circ R = \phi$.
 \end{Cor}
 \begin{proof}
   All of this follows easily from Theorem \ref{thm:rep-characters}.
 \end{proof}
+Using the two-parameter group $\theta$, we define the \emph{modular
+  automorphism group} $\sigma$, the \emph{scaling group} $\tau$   and
+the \emph{unitary antipode} of a partial compact quantum group $A$ by
+\begin{align*}
+  \sigma_{z} &:=\theta_{iz,iz}, & \tau_{z} &:=\theta_{iz,-iz}, & R&:=S
+  \circ \tau_{-i/2}.
+\end{align*}
+Using Corollary \ref{cor:rep-characters}, one verifies that
+$\sigma,\tau,R$ share all the main relations known for locally compact
+quantum groups and measured quantum groupoids, for example, $\sigma$
+and $\tau$ are complex one-parameter groups of algebra automorphisms
+of $A$, the map $R$ is a $*$-anti-automorphism,  $\tau_{t}$ and
+$\sigma_{t}$ are $*$-automorphisms for all $t\in \R$, the family  $\tau$ commutes with
+$\sigma$ and with $R$ in the obvious sense, 
+  \begin{gather}
+    \begin{aligned}
+      \phi\circ \sigma_{z} &= \phi \circ \tau_{z} = \phi \circ R =
+      \phi, & \phi(ab) &= \phi(b\sigma_{-i}(a)),
+    \end{aligned}
+\\ \label{eq:scaling-modular-delta}
+    \begin{aligned} 
+    \Delta \circ \tau_{z} &= (\tau_{z} \otimes \tau_{z}) \circ \Delta,
+    & (\tau_{z} \otimes \sigma_{z}) \circ \Delta &= \Delta \circ
+    \sigma_{z} = (\sigma_{-z} \otimes \tau_{z}) \circ \Delta,      
+  \end{aligned} \\
+  \begin{aligned} \label{eq:unitary-antipode}
+    R^{2} &= \id_{A}, & \Delta \circ R &= (R \otimes R) \circ
+    \Delta^{\op}.
+  \end{aligned}
+  \end{gather}
+
+
 
 
 %  consider
