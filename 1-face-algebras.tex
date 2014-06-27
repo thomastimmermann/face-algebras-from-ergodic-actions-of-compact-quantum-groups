@@ -401,11 +401,13 @@ partial Hopf algebra reverses the multiplication and
 comultiplication. Denote by $\Delta^{\op}$ the composition of
 $\Delta$ with the flip map.
 
-\begin{Cor}
+\begin{Cor} \label{corollary:antipode}
 Let $\mathscr{A}$ be a partial Hopf algebra. Then the total antipode
 $S:A\rightarrow A$ satisfies
 $S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
-for all $a,b\in A$.
+for all $a,b\in A$. In particular, $S(\UnitC{k}{m})=\UnitC{m}{k}$ for
+all $k,m\in I$ if
+$S$ is bijective.
 \end{Cor} 
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
@@ -445,24 +447,57 @@ uniqueness of the counit  \cite[Theorem 2.8]{Boh1}, and the relation
 for the antipode from \cite[Proposition 4.11]{VDW1}.
 \end{proof}
 
+\begin{Def}
+  Let $\mathscr{A}$ be an $I$-partial bialgebra.  We call a family of
+  functionals
+\begin{align} \label{eq:functionals}
+  \phic{k}{m} \colon A\pmat{k}{k}{m}{m} \to \C
+\end{align}
+a \emph{left} (or  \emph{right}) \emph{integral} if
+ $\phic{k}{k}(\UnitC{k}{k})=1$ for all $k\in
+I$ and
+\begin{align}
+  \label{eq:integral}
+   (\id \otimes \phic{l}{m})(\Delta_{l,l}(a)) 
+&= \phic{k}{m}(a)
+  \UnitC{k}{l} &&\big(\text{or} &
+  (\phic{k}{l} \otimes
+  \id)(\Delta_{l,l}(a))&= \phic{k}{m}(a) \UnitC{l}{m}\big)
+\end{align}
+ for all $k,l,m\in I$, $a \in A\pmat{k}{k}{m}{m}$. If $\phi$ is a left
+ and a right integral, we just call it an \emph{integral}.
+\end{Def}
+\begin{Lem}
+  \begin{enumerate}
+  \item If $\phi$ is a left or right integral, then
+    $\phic{k}{m}(\UnitC{k}{m})=1$ for all $k,m\in I$.
+  \item If a left integral and a right integral exist, then the two
+    are equal and unique.
+  \item Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra with
+    bijective antipode $S$.  If $\phi$ is a left or right integral,
+    then it is unique, an integral, and equal to $\phi\circ S$.
+    \end{enumerate}
+\end{Lem}
+\begin{proof}
+To see 1., take     $a=\UnitC{k}{k}$ in \eqref{eq:integral}. For 2.,
+assume that $\phi$ and $\psi$ are a  left and a
+ right integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
+    \begin{align*}
+      \phic{k}{m}(a)  &= (\Grt{\psi}{k}{l} \otimes
+      \phic{l}{m})(\Delta_{l,l}(a)) = \Grt{\psi}{k}{m}(a).
+    \end{align*}
+To prove 3., assume that $\phi$ is a left or right integral. Then
+Corollary \ref{corollary:antipode} implies that $\phi\circ S$ is a
+right or left integral, and 2.\ implies the claim.
+\end{proof}
+Given a family of functionals as in \eqref{eq:functionals}, we denote
+by $\phi \colon A \to \C$ the corresponding functional on the total
+algebra.
 
-
-\begin{Def} Let $\mathscr{A}$ be a partial bi-algebra. An \emph{invariant functional} $\varphi$ for $\mathscr{A}$ consists of a functional $\varphi:A\rightarrow \C$ %necessary to assume?
-such that for all $a\in \eGr{A}{k}{l}{m}{n}$ and all $b$, one has  \[(\id\otimes \varphi)((b\otimes 1)\Delta(a)) = \varphi(a)b\lambda_k,\] and \[(\varphi\otimes \id)(\Delta(a)(1\otimes b)) = \varphi(a)\rho_nb.\]
-
-We call $\varphi$ \emph{normalized} if $\varphi(\UnitC{k}{k}) = 1$ for all $k$. 
-\end{Def} % More motivation for this notion to be provided?
-
-\begin{Rem} 
-\begin{enumerate}
-\item It follows from the defining property of $\varphi$ (and the fact that $\lambda_k\neq 0\neq \rho_k$ for any $k\in I$) that $\varphi$ is zero on the $A(K)$ with $K_l\neq K_r$. 
-\item If $\varphi$ is normalized, it also follows immediately from the definining property that $\varphi(\UnitC{k}{l})=1$ whenever $\UnitC{k}{l}\neq 0$.
-\end{enumerate}
-\end{Rem} 
-
-We are finally ready to give our main definition.
-
-\begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with a \emph{positive} normalized invariant functional $\varphi$, that is $\varphi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
+We are finally ready to formulate our main definition.
+\begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a
+  partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with a
+left and right integral  $\varphi$ that is positive in the sense  that $\varphi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
 %It is called \emph{connected} if the underlying partial algebra is connected, i.e.~ when $\UnitC{k}{l}\neq0$ for all $k,l$.  % Necessary to introduce?
 \end{Def} 
 
@@ -478,20 +513,64 @@ We are finally ready to give our main definition.
 %Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. 
 
 %\end{proof} 
- 
+
+
+The total form of the invariance conditions
+\eqref{eq:integral}  reads as follows. 
+\begin{Lem} \label{lemma:total-integral}
+  A family of functionals $\phi$ as in   \eqref{eq:functionals}
+  satisfies the conditions in \eqref{eq:integral} if and only if
+for all $a\in A$,
+  \begin{align*}
+(\varphi\otimes \id)(\Delta(a)(1\otimes b)) &= \sum_{n}
+\varphi(\rho_{n} a)\rho_n b
+&& \big(\text{or} &
+(\id\otimes \varphi)((b\otimes 1)\Delta(a)) &= \sum_{k}\varphi(\lambda_{k}a)b\lambda_k.\big)
+      \end{align*}
+\end{Lem}
+\begin{proof}
+  Straightforward.
+\end{proof}
+
 
 We will need the following lemma at some point, which is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
 
-\begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a partial Hopf algebra, and let $\varphi$ be a normalized invariant functional for $\mathscr{A}$. Then $\varphi$ is faithful: if $a\in A$ and $\varphi(ab) =0$ (resp. $\varphi(ba)=0$) for all $b\in A$, then $a=0$.
+\begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a partial Hopf
+  algebra with bijective antipode and an integral $\varphi$. Then
+  $\varphi$ is faithful in the following sense: if $a\in A$ and
+  $\varphi(ab) =0$ (resp. $\varphi(ba)=0$) for all $b\in A$, then
+  $a=0$.
 \end{Lem} 
 % Ref to Timmermann for case of quantum groupoids? Can be explicitly used here? Ask Fons if he has already derived this result, and acknowledge? 
-\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$, we arrive at the conclusion that for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(b))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$. Then for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(a))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
 
 The other case follows similarly, or by considering the opposite comultiplication.
 \end{proof} 
 
-
-
+\begin{Lem} \label{lemma:strong-invariance}
+  Let $\mathscr{A}$ be a partial Hopf algebra with  integral $\phi$. Then
+  for all $a\in A$,
+  \begin{align*}
+    (\id \otimes \phi)((1 \otimes b)\Delta(a)) &= (S \otimes
+    \phi)(\Delta(b)(1 \otimes a)), \\
+    (\phi \otimes \id)(\Delta(a)(b \otimes 1)) &= (\phi \otimes
+    S)(\Delta(a)(1\otimes b)).
+  \end{align*}
+\end{Lem}
+\begin{proof}
+ The counit property, the relations \eqref{EqDel} and
+ \eqref{eq:total-antipode} and Lemma \ref{lemma:total-integral} imply
+  \begin{align*}
+    a_{(1)}\phi(ba_{(2)}) &= \sum_{n}
+    a_{(1)}\phi(\epsilon(b_{(1)}\rho_{n})b_{(2)}\lambda_{n}a_{(2)}) \\
+&= \sum_{n} \epsilon(b_{(1)}\rho_{n})\rho_{n}a_{(1)}\phi(b_{(2)}a_{(2)})
+\\
+&= \sum_{n} S(b_{(1)})b_{(2)}a_{(1)}\phi(b_{(3)}a_{(2)}) =
+S(b_{(1)})\phi(b_{(2)}a)
+  \end{align*}
+for all $a,b \in A$. The second equation 
+follows similarly.
+\end{proof}
 
 %%% Local Variables: 
 %%% mode: latex

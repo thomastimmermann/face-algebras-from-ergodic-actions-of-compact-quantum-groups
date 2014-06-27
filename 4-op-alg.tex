@@ -24,13 +24,12 @@ $P(\mathscr{G})$ and define a map $|\cdot |_{u} \colon A \to [0,\infty]$ by
   $|a|_{u}<\infty$ for each $a \in A$. 
 \end{Lem}
 \begin{proof}
-  By \ref{}, $A$ is linearly spanned by elements of the form $a=(\id \otimes
-  \omega_{\xi,\eta})(X(K))$, where $X$ is a unitary sfd
-  corepresentation of $P(\mathscr{G})$ on some sfd $I^{2}$-graded
-  Hilbert space $\mathcal{H}$ and $K=\pmat{k}{l}{m}{n}\in M_{2}(I)$,
-  $\xi\in \Gru{\mathcal{H}}{m}{n}$, $\eta\in \Gru{\mathcal{H}}{k}{l}$.
-  Clearly, it suffices to prove the assertion for such elements. But
-  since $X$ is unitary, 
+  By Corollary \ref{cor:rep-pw}, we can write each $a\in A$ in the
+  form $a=(\id \otimes \omega_{\xi,\eta})(X(K))$, where $X$ is a
+  unitary sfd corepresentation of $P(\mathscr{G})$ on some sfd
+  $I^{2}$-graded Hilbert space $\mathcal{H}$ and
+  $K=\pmat{k}{l}{m}{n}\in M_{2}(I)$, $\xi\in \Gru{\mathcal{H}}{m}{n}$,
+  $\eta\in \Gru{\mathcal{H}}{k}{l}$.  Since $X$ is unitary,
   \begin{align*}
     \sum_{p}X\pmat{p}{l}{m}{n}^{*} X\pmat{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
     \otimes \id_{\Gru{\mathcal{H}}{m}{n}}
@@ -262,31 +261,27 @@ their restrictions to $\pi_{r}(A)$:
 
 Invariance of $\phi$ implies invariance of $\vnphi$ as follows.
 \begin{Prop} \label{prop:vn-invariance}
-  Let $\mathscr{G}$ be a partial compact quantum group. Then the
+  Let $\mathscr{G}$ be a partial compact quantum group. Then for all
+  $x\in \LGinf_{+}$, the
   normal, semi-finite weight $\vnphi$ on $\LGinf$ satisfies
   \begin{align*}
     (\id \otimes \vnphi)(\vnDelta(x)) &=  T_{\lambda}(x), &
-    (\vnphi \otimes \id)(\vnDelta(x)) &= T_{\rho}(x)
+    (\vnphi \otimes \id)(\vnDelta(x)) &= T_{\rho}(x).
   \end{align*}
-for all $x\in \LGinf_{+}$.
 \end{Prop}
 \begin{proof}
-  Let  $a \in A$.  Then Lemma \ref{lemma:vn-weights-unique}, relation \eqref{EqDel}
-  and invariance of $\phi$ imply
+  Let  $a \in A$. Then 
+ \eqref{eq:integral} and the relation
+  $\vnphic{k}{m}\circ \pi = \phic{k}{m}$ imply
   \begin{align*}
-    (\id \otimes \vnphic{k}{m})(\vnDelta(\pi_{r}(a))) &= (\id \otimes
-    \phi)((1 \otimes \lambda_{k}\rho_{m})\Delta(a)(1 \otimes
-    \lambda_{k}\rho_{m})) \\ & =
-    \rho_{k}a_{(1)}\rho_{k}\phi(\rho_{m}a_{(2)}\rho_{m}) \\ & = \sum_{l}
-    \phi(\lambda_{l}\rho_{m}a\lambda_{l}\rho_{m})\rho_{k}\lambda_{l} \\
-    & = \sum_{l} \vnphic{l}{m}(\pi_{r}(a)) \lambda_{l}\rho_{k}.
+    (\id \otimes \vnphic{l}{m})(\vnDelta(\pi_{r}(a))) &= \sum_{k}
+    \vnphic{k}{m}(\pi_{r}(a)) \lambda_{k}\rho_{l}.
   \end{align*}
-  Since $\pi_{r}(A)$ is dense in $\LGinf$, we can conclude
-  \begin{align*}
-    (\id \otimes \vnphic{k}{m}) (\vnDelta (x)) &= \sum_{l} \vnphic{l}{m}(x) \lambda_{l}\rho_{k}
-  \end{align*}
-  for all $x \in \LGinf$. Summing over $k$ and $m$, we obtain the
-  first  equation which we have to prove. The second one follows similarly.
+  Since each $\vnphic{k}{m}$ is a vector state and $\pi_{r}(A)$ is
+  weakly dense in $\LGinf$,  this equations
+  remains true if we replace $\pi_{r}(a)$ by arbitrary $x\in
+  \LGinf$. Summing over $l$ and $m$, we  obtain the first equation
+  which we have to prove. The second one follows similarly.
 \end{proof}
 The next result gives a fairly complete description of the objects of
 Tomita-Takesaki theory associated to $\vnphi$.
@@ -413,18 +408,16 @@ For all $a,b\in A$,
 \end{align*}
 \end{Lem}
 \begin{proof}
-A short calculation shows that  the right hand side is equal to
+Let $c=a^{*}a$ and $d=b^{*}b$. 
+A short calculation using \eqref{eq:modular} shows that  the right hand side is equal to
   \begin{align*}
-    (b^{*}b)_{(1)}\phi(\sigma_{i/2}(a)(b^{*}b)_{(2)}\sigma_{i/2}(a)^{*})
-    = (b^{*}b)_{(1)}\phi((b^{*}b)_{(2)}\sigma_{-i/2}(a^{*}a)).
+    d_{(1)}\phi(\sigma_{i/2}(a)d_{(2)}\sigma_{i/2}(a)^{*})
+    = d_{(1)}\phi(\sigma_{i/2}(c)d_{(2)}).
   \end{align*}
-  By [INSERT STRONG INVARIANCE] \ref{},
-  \eqref{eq:scaling-modular-delta}  and \eqref{eq:modular}, this equals 
-  \begin{align*}
-    S(\tau_{-i/2}((a^{*}a)_{(1)})
-    \phi(\sigma_{-i/2}((a^{*}a)_{(2)})b^{*}b)) = 
-    R((a^{*}a)_{(1)}\phi(b^{*}b\sigma_{i/2}((a^{*}a)_{(2)})))
-  \end{align*}  
+By Lemma \ref{lemma:strong-invariance} and
+  \eqref{eq:scaling-modular-delta}, \eqref{eq:modular},  this equals 
+  $S(\tau_{i/2}(c_{(1)}))
+    \phi(\sigma_{i/2}(c_{(2)})d)$
 which is the  left hand side.
 \end{proof}
 
@@ -527,19 +520,18 @@ sense of \cite{}.
   $\tilde\tau$ its scaling group.
 
   Let us prove that $\tilde \tau_{t}=\vntau$ for all $t\in \R$. By
-  \cite{} and by \eqref{eq:scaling-modular-delta} and Remark
-  \ref{remark:vn-scaling-modular-delta},
+  \cite{} and \eqref{eq:scaling-modular-delta},
   \begin{align*}
     (\tilde \tau_{t} \astrl \sigma^{\vntau}_{t}) \circ \tilde \Delta
-    &=\tilde \Delta \circ \sigma^{\vntau}_{t}, & (\vntau \otimes
-    \sigma^{\vntau}_{t}) \circ \vnDelta &= \vnDelta \circ \vntau.
+    &=\tilde \Delta \circ \sigma^{\vntau}_{t}, & (\vntau_{t} \otimes
+    \sigma^{\vntau}_{t}) \circ \vnDelta &= \vnDelta \circ \vntau_{t}.
   \end{align*}
   The second equation implies that the first one remains true if we
   replace $\tilde\tau_{t}$ by $\vntau_{t}$.  Using Theorem A.7 in
   \cite{} [enock:action], we can conclude that $\tilde
   \tau_{t}=\vntau_{t}$.
 
- To prove that $\tilde R=\vnR$, one uses the relation
+ To prove that $\tilde R=\vnR$, we use the relations
   \begin{align*}
     \tilde R(\id \underset{\nu}{_{\rho} \ast_{\lambda}}
     \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi(a^{*}a))) &= (\id
