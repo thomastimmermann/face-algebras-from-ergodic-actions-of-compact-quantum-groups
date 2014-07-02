@@ -25,6 +25,7 @@
 %\usepackage{graphics}
 \usepackage{pdfpages}
 \usepackage{epic}
+\usepackage{fouridx}
 \usepackage{parskip} % paragraphs have no indents and vertical spacings inbetween
 \makeatletter % need this to avoid the conflict between amsthm and parskip
 \def\thm@space@setup{%
@@ -62,7 +63,7 @@
 \DeclareMathOperator{\Spec}{\mathrm{Spec}}
 \DeclareMathOperator{\adj}{\mathrm{adj}}
 
-\newcommand{\Circt}{\underset{I}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
+\newcommand{\Circt}{{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\Circtv}[1]{\underset{#1}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\smCirct}{\mathop{\ooalign{$\scriptstyle\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptscriptstyle\mathsf T\mkern2.8mu$}\cr}}}  % Woronowicz style tensor product, SCRIPT SIZE
 
@@ -112,7 +113,15 @@
 \newcommand{\CatC}{\mathcal{C}}
 \newcommand{\CatD}{\mathcal{D}}
 \newcommand{\Corr}{\mathrm{Corr}}
+
+\newcommand{\Vectf}{\mathrm{Vect}^{f}}
+\newcommand{\Vecti}{\mathrm{Vect}_{I^{2}}}
+\newcommand{\Vectif}{\mathrm{Vect}^{f}_{I^{2}}}
 \newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Hilbf}{\mathrm{Hilb}^{\mathrm{f}}}
+\newcommand{\Hilbi}{\mathrm{Hilb}_{I^{2}}}
+\newcommand{\Hilbif}{\mathrm{Hilb}_{I^{2}}^{\mathrm{f}}}
+
 \newcommand{\Star}[2]{{}_{#1}\!*_{#2}}
 \newcommand{\vot}{\bar{\otimes}}
 \newcommand{\A}{\mathcal{B}}
@@ -129,8 +138,8 @@
 \newcommand{\Fun}{\mathrm{Fun}}
 \newcommand{\Ff}{\Fun_{\fin}}
 %\newcommand{\fin}{\mathrm{fin}}
-\newcommand{\iitimes}{\underset{I}{\otimes}}
-\newcommand{\itimes}{\underset{I^2}{\otimes}}
+%\newcommand{\iitimes}{\underset{I}{\otimes}}
+\newcommand{\itimes}{\underset{I}{\otimes}}
 \newcommand{\osum}[1]{\underset{#1}{\sum}^{\oplus}}
 \newcommand{\osumc}[1]{\underset{#1}{\sum}^{\bar{\oplus}}}
 \newcommand{\oplusc}{\bar{\oplus}}
@@ -141,7 +150,6 @@
 \newcommand{\Rep}{\mathrm{Rep}}
 \newcommand{\DA}{\mathcal{A}}
 %\newcommand{\Circt}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}} % Woronowicz style tensor product, USUAL SIZE
-\newcommand{\CoRep}{\mathrm{Corep}}
 \newcommand{\even}{\mathrm{even}}
 \newcommand{\odd}{\mathrm{odd}}
 \newcommand{\fd}{\mathrm{fd}}
@@ -167,12 +175,16 @@
 \newcommand{\pmat}[4]{{\tiny \begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}}
 
 \newcommand{\UT}[2]{#1{\tiny #2 }}
-\newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
-%\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
-%\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} \, #2\;\\ #3 \qquad #4 \\ \,#5\;\end{pmatrix}}}
-\newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
-\newcommand{\Gru}[3]{{}^{\;#2}#1^{#3}}
-\newcommand{\Grd}[3]{{}_{\;#2}#1_{#3}}
+\newcommand{\Gr}[5]{\fourIdx{#2}{#4}{#3}{#5}{#1}}%TODO: better typesetting
+\newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
+\newcommand{\Gru}[3]{\Gr{#1}{#2}{#3}{}{}}
+\newcommand{\Grd}[3]{\Gr{#1}{}{}{#2}{#3}}
+% \newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+% %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
+% %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} \, #2\;\\ #3 \qquad #4 \\ \,#5\;\end{pmatrix}}}
+% \newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
+% \newcommand{\Gru}[3]{{}^{\;#2}#1^{#3}}
+% \newcommand{\Grd}[3]{{}_{\;#2}#1_{#3}}
 \newcommand{\gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
 \newcommand{\eGrr}[3]{#1_{{\tiny \left(#2, #3\right)}}}
 \newcommand{\eGrt}[4]{#1{{\tiny \begin{pmatrix} #2 \\ #3 \\ #4 \end{pmatrix}}}}
