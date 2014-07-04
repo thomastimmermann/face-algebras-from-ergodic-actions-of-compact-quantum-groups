@@ -47,7 +47,7 @@ Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a 
 %\end{itemize}
 %\end{Def}
 
-The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{n}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
+The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
 
 %Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
 % Should provide shortcut for notation where only the new indices appear at $\Delta$ (so disregard the source): write $\Delta(K over L)$ as $Delta_{rs}$ for $r=K_{ld}$ and $s=K_{rd}$. 
@@ -100,7 +100,7 @@ and for which the following compatibility relations are satisfied.
 
 % To do: introduce notion of connectedness which should assure the trivial corepresentation is irreducible. This should correspond to the dual notion of pureness in [Bohm-Nill-Szlachanyi], i.e. to the left and right base algebras having $\C$ as intersection. I suspect this is the same as proving $\UnitC{k}{l}\neq 0$ for all $k,l$ (maybe in the presence of antipode integrals), but could not prove it immediately. Update: indeed, under the presence of an antipode the relation $k\sim l$ iff $\Unit{k}{l}\neq 0$ gives an equivalence relation, and then fixing a non-trivial class $P$ and putting $c_k = \delta_{k\in P}, d_l = \delta_{l\in P}$, we obtain a non-trivial element $\sum_k c_k\lambda_k = \sum_l d_l \rho_l$ in the intersection.
 
-\begin{Rem} By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is well-defined. 
+\begin{Rem} By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
 \end{Rem}
 
 %\begin{Rem}By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is well-defined. We can write it less pedantically as \[\Delta_{rs}(ab) = \sum_t \Delta_{rt}(a)\Delta_{ts}(b),\] where we abbreviate $\Delta_{rs} = \Delta_{(r,s)}$.
@@ -150,17 +150,21 @@ The resulting map \[\Delta:A\rightarrow M(A\otimes A),\quad a\mapsto \Delta(a)\]
 We can then extend $\Delta$ to $A$ by linearity. Since, for $a,b$ homogeneous, $\Delta_{rt}(a)\Delta_{t's}(b)=0$ unless $t=t'$, it follows from property \ref{Prope} of Definition \ref{DefPartBiAlg} that $\Delta$ is a homomorphism. 
 \end{proof}
 
-We will refer to $\Delta: A\rightarrow M(A\otimes A)$ as the \emph{total comultiplication} of $\mathscr{A}$. We will then also use the suggestive Sweedler notation for this map, \[\Delta(a) = a_{(1)}\otimes a_{(2)}.\]
-Note that
-\begin{align} \label{eq:delta-lambda-rho} \Delta(\lambda_{p}) &=
-  \lambda_{p} \otimes 1, & \Delta(\rho_{p}) &= 1 \otimes \rho_{p}.
-\end{align}
-\begin{Lem} The element $E = \sum_{k,l,m} \UnitC{k}{l}\otimes \UnitC{l}{m}$ is a well-defined idempotent in $A\otimes A$, and satisfies \[\Delta(A)(A\otimes A)=E(A\otimes A),\quad (A\otimes A)\Delta(A)= (A\otimes A)E.\]
+We will refer to $\Delta: A\rightarrow M(A\otimes A)$ as the \emph{total comultiplication} of $\mathscr{A}$. We will then also use the suggestive Sweedler notation for this map, \[\Delta(a) = a_{(1)}\otimes a_{(2)}.\] Note for example that \[\Delta(\UnitC{k}{m}) = \sum_{l}\UnitC{k}{l}\otimes \UnitC{l}{m} = \sum_l \lambda_k\rho_l\otimes \lambda_l\rho_m.\]
+
+\begin{Lem} The element $E = \sum_{k,l,m} \UnitC{k}{l}\otimes \UnitC{l}{m}= \sum_l \rho_l\otimes \lambda_l$ is a well-defined idempotent in $A\otimes A$, and satisfies \[\Delta(A)(A\otimes A)=E(A\otimes A),\quad (A\otimes A)\Delta(A)= (A\otimes A)E.\]
 \end{Lem} 
 \begin{proof} Clearly the sum defining $E$ is strictly convergent, and makes $E$ into an idempotent. It is moreover immediate that $E\Delta(a)=\Delta(a) = \Delta(a)E$ for all $a\in A$. Since \[E(\UnitC{k}{l}\otimes \UnitC{m}{n}) = \Delta(\UnitC{k}{n})(\UnitC{k}{l}\otimes \UnitC{m}{n}) \] by the property \ref{Propa} of Definition \ref{DefPartBiAlg}, and analogously for multiplication with $E$ on the right, the lemma is proven. 
 \end{proof} 
 
-By \cite[Proposition A.3]{VDW2}, there is a unique homomorphism $\Delta:M(A)\rightarrow M(A\otimes A)$ extending $\Delta$ and such that $\Delta(1) = E$. Alternatively, if $m\in M(A)$, we can directly define $\Delta(m)$ as the strict limit of the series $\sum_{k,l,r,s} \Delta_{rs}(m_{kl})$. Similarly the maps $\id\otimes \Delta$ and $\Delta\otimes \id$ extend to maps from $M(A\otimes A)$ to $M(A\otimes A\otimes A)$. The following proposition gathers the properties of $\Delta$, $\epsilon$ and $\Delta(1)$ which guarantee that $(A,\Delta)$ forms a weak multiplier bialgebra in the sense of \cite[Definition 2.1]{Boh1}.
+By \cite[Proposition A.3]{VDW2}, there is a unique homomorphism $\Delta:M(A)\rightarrow M(A\otimes A)$ extending $\Delta$ and such that $\Delta(1) = E$. Alternatively, if $m\in M(A)$, we can directly define $\Delta(m)$ as the strict limit of the series $\sum_{k,l,r,s} \Delta_{rs}(m_{kl})$. Similarly the maps $\id\otimes \Delta$ and $\Delta\otimes \id$ extend to maps from $M(A\otimes A)$ to $M(A\otimes A\otimes A)$. 
+
+For example, note that
+\begin{align} \label{eq:delta-lambda-rho} \Delta(\lambda_{k}) &=
+  (\lambda_{k} \otimes 1)\Delta(1), & \Delta(\rho_{m}) &= (1 \otimes \rho_{m})\Delta(1).
+\end{align}
+
+The following proposition gathers the properties of $\Delta$, $\epsilon$ and $\Delta(1)$ which guarantee that $(A,\Delta)$ forms a weak multiplier bialgebra in the sense of \cite[Definition 2.1]{Boh1}.
 
 \begin{Prop} Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$, total comultiplication $\Delta$ and counit $\epsilon$. Then the following properties are satisfied.
 \begin{enumerate}[label={(\arabic*)}]
@@ -292,13 +296,13 @@ maps \[S:A(K)\rightarrow A(K^{\circ\bullet})\]
     S(a_{(1)K})a_{(2)L}&=
     \delta_{P_l,P_r}\epsilon(a)\mathbf{1}(P_r).\end{align}
 
-A partial multiplier bialgebra $\mathscr{A}$ is called a \emph{partial Hopf algebra} if it admits an antipode.
+A partial bialgebra $\mathscr{A}$ is called a \emph{partial Hopf algebra} if it admits an antipode.
 \end{Def} 
 
 \begin{Rem} Note that condition \ref{Propd} of Definition \ref{DefPartBiAlg} again guarantees that the above sums are in fact finite.
 \end{Rem}
 
-If $S$ is an antipode for a partial bialgebra, we can extends $S$ to a
+If $S$ is an antipode for a partial bialgebra, we can extend $S$ to a
 linear map \[S:A\rightarrow A\] on the total algebra $A$.  Conditions
 \eqref{eq:antipode-pi-l} and \eqref{eq:antipode-pi-r} then take the
 following simple form:
@@ -312,10 +316,18 @@ following simple form:
   \end{align}
 for all $a\in A$.
 \end{Lem}
+
+Note that these should be considered a priori as equalities of left (resp. right) multipliers on $A$.
+
 \begin{proof}
 For $M,P\in M_{2}(I)$ and $a\in A(M)$, the left and the right hand side  of \eqref{eq:antipode-pi-l} are the $P$-homogeneous components of $ a_{(1)}S(a_{(2)})$ and $\Pi^{L}(a)=\sum_{p} \epsilon(\lambda_{p}a)\lambda_{p}$, respectively.
 \end{proof}
 
+\begin{Lem}\label{LemAntiUnit} Let $\mathscr{A}$ be a partial Hopf algebra with antipode $S$. For all $k,l\in I$, $S(\UnitC{k}{l}) = \UnitC{l}{k}$.
+\end{Lem}% No need for invertibility of antipode for this, and needed to put this earlier since used in next proof.
+\begin{proof} For example the first identity in Equation \eqref{eq:total-antipode} of Lemma \ref{lemma:antipode} applied to $\UnitC{k}{k}$ gives \[\sum_l S(\UnitC{l}{k}) = \sum_l \UnitC{k}{l}S(\UnitC{l}{k}) = \lambda_k,\] as $S(\UnitC{l}{k}) \in \Gr{A}{k}{k}{l}{l}$ and $\Pi^{L}(\UnitC{k}{k}) = \lambda_k$. This implies the lemma.
+
+\end{proof} 
 
 The existence of an antipode is closely related to partial invertibility of
 the maps $T_{1},T_{2} \colon A \otimes A \to A\otimes A$ given by
@@ -335,7 +347,7 @@ The precise formulation involves the linear maps $E_{i},G_{i}
 E_{2}(a\otimes b) &= (a\otimes b)E=\sum_{p} a\rho_{p} \otimes b\lambda_{p}.
 \end{align}
 \begin{Prop} \label{prop:riti}
-  Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$,
+  Let $\mathscr{A}$ be a partial Hopf algebra with total algebra $A$,
   total comultiplication $\Delta$ and antipode  $S$. Then the maps
   $R_{1},R_{2} \colon A \otimes A \to M(A \otimes A)$ given by
   \begin{align*}
@@ -348,14 +360,14 @@ E_{2}(a\otimes b) &= (a\otimes b)E=\sum_{p} a\rho_{p} \otimes b\lambda_{p}.
   \end{align}
 \end{Prop}
 \begin{proof}
-  The map $R_{1}$ takes values in $A$ because
+  The map $R_{1}$ takes values in $A\otimes A$ because
   \begin{align*}
-  a_{1} \otimes
-  S(a_{(2)})\lambda_{k}\rho_{l} =  a_{1} \otimes S(\rho_{l}\lambda_{k}a_{(2)}) \in A
+  a_{(1)} \otimes
+  S(a_{(2)})\lambda_{k}\rho_{l} =  a_{(1)} \otimes S(\rho_{l}\lambda_{k}a_{(2)}) \in A
   \otimes A
   \end{align*}
   for all $a\in A$, and Lemma
-  \ref{lemma:antipode} and \eqref{eq:pi-l-delta} imply
+  \ref{lemma:antipode},  Equation \eqref{eq:pi-l-delta} and Lemma \ref{LemAntiUnit} imply
   \begin{align*}
     T_{1}R_{1}(a \otimes b)&= a_{(1)} \otimes a_{(2)}S(a_{(3)})b =
     a_{(1)} \otimes \Pi^{L}(a_{(2)})b =
@@ -373,16 +385,16 @@ $T_{2}$ follow similarly.
   Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$,
   total comultiplication $\Delta$ and counit $\epsilon$. Then the
   following conditions are equivalent:
-  \begin{enumerate}
-  \item $\mathscr{A}$ is a partial Hopf algebra.
-  \item There exist linear maps $R_{1},R_{2} \colon A\otimes A\to
+  \begin{enumerate}[label={(\arabic*)}]
+  \item\label{tph1} $\mathscr{A}$ is a partial Hopf algebra.
+  \item\label{tph2} There exist linear maps $R_{1},R_{2} \colon A\otimes A\to
     A\otimes A$ satisfying  \eqref{eq:riti}.
-  \item $(A,\Delta,\epsilon)$  is a regular weak multiplier Hopf algebra in the sense of \cite{}.
+  \item\label{tph3} $(A,\Delta,\epsilon)$  is a regular weak multiplier Hopf algebra in the sense of \cite{VDW1}.
   \end{enumerate}
   If these conditions hold, then the total  antipode of $\mathscr{A}$ coincides with the antipode of $(A,\Delta,\epsilon)$.
 \end{Theorem}
 \begin{proof}
-Condition 1.{} implies 2.{} by Proposition \ref{prop:riti}. Condition 2.{} is equivalent to 3.{} by Definition
+\ref{tph1} implies \ref{tph2} by Proposition \ref{prop:riti}. \ref{tph2} is equivalent to \ref{tph3} by Definition
 1.14 in \cite{VDW1}. Indeed, the maps $G_{1},G_{2}$ defined in \eqref{eq:e1g1} and \eqref{eq:e2g2} satisfy
 \begin{align*}
   G_{1}(a_{(1)} \otimes b) \otimes a_{(2)}c &= \sum_{p} a_{(1)} \otimes \rho_{p}b
@@ -390,9 +402,9 @@ Condition 1.{} implies 2.{} by Proposition \ref{prop:riti}. Condition 2.{} is eq
   ac_{(1)} \otimes G_{2}(b\otimes c_{(2)}) &=\sum_{p} a\rho_{p}c_{(1)} \otimes b\lambda_{p} \otimes c_{(2)}
 \end{align*}
 and therefore coincide with the maps introduced in Proposition 1.14 in
-\cite{VDW1}.  Finally, assume condition 3. Then
- Lemma 6.14 and  (6.14) in \cite{Boh1} imply that the antipode
-$S$ of $(A,\Delta)$ satisfies $S(A(K))\subseteq A(K^{\circ\bullet})$ and relation \eqref{eq:total-antipode}.  Now, Lemma \ref{lemma:antipode} implies 1.
+\cite{VDW1}.  Finally, assume \ref{tph3}. Then
+ Lemma 6.14 and equation (6.14) in \cite{Boh1} imply that the antipode
+$S$ of $(A,\Delta)$ satisfies $S(A(K))\subseteq A(K^{\circ\bullet})$ and relation \eqref{eq:total-antipode}.  Now, Lemma \ref{lemma:antipode} implies \ref{tph1}.
 \end{proof}
 
 From \cite[Proposition 3.5 and Proposition 3.7]{VDW1} or \cite[Theorem
@@ -405,9 +417,7 @@ $\Delta$ with the flip map.
 Let $\mathscr{A}$ be a partial Hopf algebra. Then the total antipode
 $S:A\rightarrow A$ satisfies
 $S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
-for all $a,b\in A$. In particular, $S(\UnitC{k}{m})=\UnitC{m}{k}$ for
-all $k,m\in I$ if
-$S$ is bijective.
+for all $a,b\in A$. 
 \end{Cor} 
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
@@ -433,12 +443,12 @@ $*$-bialgebra if and only if the underlying weak multiplier bialgebra
 From Theorem \ref{theorem:partial-hopf-algebra} and \cite{Boh1},
 \cite{VDW1}, we can deduce:
 \begin{Cor}
-  An $I$-partial $*$-bialgebra $\mathscr{A}$ is an $I$-partial Hopf
-  $*$-algebra if and only if the weak multiplier $*$-bialgebra
-  $(A,\Delta)$ is a weak multiplier Hopf $*$-algebra. In that case,
+  An $I$-partial $^*$-bialgebra $\mathscr{A}$ is an $I$-partial Hopf
+  $^*$-algebra if and only if the weak multiplier $^*$-bialgebra
+  $(A,\Delta)$ is a weak multiplier Hopf $^*$-algebra. In that case,
   the counit and antipode satisfy
   $\epsilon(a^{*})=\overline{\epsilon(a)}$ and $S(S(a)^{*})^{*}=a$ for
-  all $a\in A$; in particular, the total antipode is bijective.
+  all $a\in A$. In particular, the total antipode is bijective.
 \end{Cor}
 \begin{proof}
   The if and only if part follows immediately from  Theorem
@@ -447,48 +457,53 @@ uniqueness of the counit  \cite[Theorem 2.8]{Boh1}, and the relation
 for the antipode from \cite[Proposition 4.11]{VDW1}.
 \end{proof}
 
-\begin{Def}
+\begin{Def}% I think the condition needs to apply to a wider family of elements? Also, I think it's good to keep the word invariant around.
   Let $\mathscr{A}$ be an $I$-partial bialgebra.  We call a family of
   functionals
 \begin{align} \label{eq:functionals}
   \phic{k}{m} \colon A\pmat{k}{k}{m}{m} \to \C
 \end{align}
-a \emph{left} (or  \emph{right}) \emph{integral} if
+a \emph{left invariant} \emph{integral} if
  $\phic{k}{k}(\UnitC{k}{k})=1$ for all $k\in
 I$ and
 \begin{align}
   \label{eq:integral}
    (\id \otimes \phic{l}{m})(\Delta_{l,l}(a)) 
-&= \phic{k}{m}(a)
-  \UnitC{k}{l} &&\big(\text{or} &
-  (\phic{k}{l} \otimes
-  \id)(\Delta_{l,l}(a))&= \phic{k}{m}(a) \UnitC{l}{m}\big)
+&= \delta_{k,p} \phic{k}{m}(a)
+  \UnitC{k}{l} 
 \end{align}
- for all $k,l,m\in I$, $a \in A\pmat{k}{k}{m}{m}$. If $\phi$ is a left
- and a right integral, we just call it an \emph{integral}.
+ for all $k,l,m,p\in I$, $a \in A\pmat{k}{p}{m}{m}$. 
+ 
+ We call them a \emph{right invariant}  \emph{integral} if instead one has \begin{align}
+  (\phic{k}{l} \otimes
+  \id)(\Delta_{l,l}(a))&= \delta_{m,p} \phic{k}{m}(a) \UnitC{l}{m}\end{align}
+ for all $k,l,m,p\in I$, $a \in A\pmat{k}{k}{m}{p}$. 
+ 
+ If $\phi$ is a left
+ and a right invariant integral, we call $\phi$ an \emph{invariant integral}.
 \end{Def}
 \begin{Lem}
-  \begin{enumerate}
-  \item If $\phi$ is a left or right integral, then
-    $\phic{k}{m}(\UnitC{k}{m})=1$ for all $k,m\in I$.
-  \item If a left integral and a right integral exist, then the two
+  \begin{enumerate}[label={(\arabic*)}]
+  \item\label{LI1} If $\phi$ is a left or right invariant integral, then
+    $\phic{k}{m}(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.% Non-triviality of $\UnitC{k}{m}$ needs to be assumed!
+  \item\label{LI2} If a left integral and a right invariant integral exist, then the two
     are equal and unique.
-  \item Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra with
-    bijective antipode $S$.  If $\phi$ is a left or right integral,
-    then it is unique, an integral, and equal to $\phi\circ S$.
+  \item\label{LI3} Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra with
+    bijective antipode $S$.  If $\phi$ is a left or right invariant integral,
+    then it is unique, an invariant integral, and equal to $\phi\circ S$.
     \end{enumerate}
 \end{Lem}
 \begin{proof}
-To see 1., take     $a=\UnitC{k}{k}$ in \eqref{eq:integral}. For 2.,
+To see \ref{LI1}, take  $a=\UnitC{k}{k}$ in \eqref{eq:integral}. For \ref{LI2},
 assume that $\phi$ and $\psi$ are a  left and a
- right integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
+ right invariant integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
     \begin{align*}
-      \phic{k}{m}(a)  &= (\Grt{\psi}{k}{l} \otimes
-      \phic{l}{m})(\Delta_{l,l}(a)) = \Grt{\psi}{k}{m}(a).
+      \phic{k}{m}(a)  &= (\Grt{\psi}{k}{k} \otimes
+      \phic{k}{m})(\Delta_{k,k}(a)) = \Grt{\psi}{k}{m}(a)\Grt{\phi}{k}{m}(\UnitC{k}{m}) = \Grt{\psi}{k}{m}(a) .
     \end{align*}
-To prove 3., assume that $\phi$ is a left or right integral. Then
+To prove \ref{LI3}, assume that $\phi$ is a left or right invariant integral. Then
 Corollary \ref{corollary:antipode} implies that $\phi\circ S$ is a
-right or left integral, and 2.\ implies the claim.
+right or left invariant integral, and \ref{LI2} implies the claim.
 \end{proof}
 Given a family of functionals as in \eqref{eq:functionals}, we denote
 by $\phi \colon A \to \C$ the corresponding functional on the total
@@ -496,8 +511,7 @@ algebra.
 
 We are finally ready to formulate our main definition.
 \begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a
-  partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with a
-left and right integral  $\varphi$ that is positive in the sense  that $\varphi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
+  partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with an invariant integral  $\phi$ that is positive in the sense  that $\phi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
 %It is called \emph{connected} if the underlying partial algebra is connected, i.e.~ when $\UnitC{k}{l}\neq0$ for all $k,l$.  % Necessary to introduce?
 \end{Def} 
 
@@ -522,10 +536,10 @@ The total form of the invariance conditions
   satisfies the conditions in \eqref{eq:integral} if and only if
 for all $a\in A$,
   \begin{align*}
-(\varphi\otimes \id)(\Delta(a)(1\otimes b)) &= \sum_{n}
-\varphi(\rho_{n} a)\rho_n b
+(\phi\otimes \id)(\Delta(a)(1\otimes b)) &= \sum_{n}
+\phi(\rho_{n} a)\rho_n b
 && \big(\text{or} &
-(\id\otimes \varphi)((b\otimes 1)\Delta(a)) &= \sum_{k}\varphi(\lambda_{k}a)b\lambda_k.\big)
+(\id\otimes \phi)((b\otimes 1)\Delta(a)) &= \sum_{k}\phi(\lambda_{k}a)b\lambda_k.\big)
       \end{align*}
 \end{Lem}
 \begin{proof}
@@ -536,13 +550,13 @@ for all $a\in A$,
 We will need the following lemma at some point, which is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
 
 \begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a partial Hopf
-  algebra with bijective antipode and an integral $\varphi$. Then
-  $\varphi$ is faithful in the following sense: if $a\in A$ and
-  $\varphi(ab) =0$ (resp. $\varphi(ba)=0$) for all $b\in A$, then
+  algebra with bijective antipode and an integral $\phi$. Then
+  $\phi$ is faithful in the following sense: if $a\in A$ and
+  $\phi(ab) =0$ (resp. $\phi(ba)=0$) for all $b\in A$, then
   $a=0$.
 \end{Lem} 
 % Ref to Timmermann for case of quantum groupoids? Can be explicitly used here? Ask Fons if he has already derived this result, and acknowledge? 
-\begin{proof} Suppose  $\varphi(ba)=0$ for all $b$. Then for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(a))$ satisfies \[(\id\otimes \varphi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \varphi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\varphi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+\begin{proof} Suppose  $\phi(ba)=0$ for all $b$. Then for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(a))$ satisfies \[(\id\otimes \phi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \phi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\phi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
 
 The other case follows similarly, or by considering the opposite comultiplication.
 \end{proof} 
@@ -565,7 +579,7 @@ The other case follows similarly, or by considering the opposite comultiplicatio
     a_{(1)}\phi(\epsilon(b_{(1)}\rho_{n})b_{(2)}\lambda_{n}a_{(2)}) \\
 &= \sum_{n} \epsilon(b_{(1)}\rho_{n})\rho_{n}a_{(1)}\phi(b_{(2)}a_{(2)})
 \\
-&= \sum_{n} S(b_{(1)})b_{(2)}a_{(1)}\phi(b_{(3)}a_{(2)}) =
+&= S(b_{(1)})b_{(2)}a_{(1)}\phi(b_{(3)}a_{(2)}) =
 S(b_{(1)})\phi(b_{(2)}a)
   \end{align*}
 for all $a,b \in A$. The second equation 
