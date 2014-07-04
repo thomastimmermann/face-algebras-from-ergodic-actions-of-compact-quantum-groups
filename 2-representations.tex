@@ -39,10 +39,13 @@ can be written $T=\bigoplus_{k,l\in I} \Gru{T}{k}{l}$.
 \end{Def}
 Here, we use here the standard leg numbering notation, e.g $a_{23}=1\otimes a$.
 \begin{Rem}
-If 3.\ holds, then 1.\ is satisfied if and only if
- $V$ is \emph{separately finitely supported
-    (sfs)} in the sense that $\Gru{V}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$)
-  when $l$ (resp. $k$) is fixed.
+  \begin{enumerate}
+  \item If 3.\ holds, then 1.\ is satisfied if and only if $V$ is
+    \emph{separately finitely supported (sfs)} in the sense that
+    $\Gru{V}{k}{l} = \{0\}$ for almost all $k$ (resp. almost all $l$)
+    when $l$ (resp. $k$) is fixed.
+  \item 
+  \end{enumerate}
 \end{Rem}
 \begin{Exa} \label{example:corep-triv} Equip the vector space
   $\C^{(I)}=\bigoplus_{k\in I} \C$ with the diagonal
@@ -215,9 +218,9 @@ This is clear.
 
 %  Antipode duality.% To continue.
 
-The following lemma shows that when $\mathscr{A}$ is a partial
-\emph{Hopf} algebra, every corepresentation multiplier has a
-generalized inverse.  
+
+If $\mathscr{A}$ is a partial Hopf algebra,  every
+corepresentation multiplier has a generalized inverse.
 \begin{Lem}
   Let $\mathscr{X}$ be a corepresentation of an $I$-partial Hopf
   algebra $\mathscr{A}$ on an $I^{2}$-graded vector space $V$. Then
@@ -293,8 +296,179 @@ X$. Multiplying on the right by $Z$, we can conclude
 $T\lambda^{V}_{k}=\lambda^{V}_{k}$ for all $k$. Thus, $T=\id_{V}$.
 \end{proof}
 
-To actually have a tensor category with duality, we need something stronger than the sfs condition.
 
+If $(A,\Delta)$ is a generalized Hopf face algebra over an index set
+$I$, one can use the antipode to construct a left and a right dual for
+each corepresentation that satisfies a certain finiteness
+assumption. We first recall the general notion of duality in monoidal
+categories, see also \cite{}, and then discuss the cases $\Vecti$ and
+$\Corep(A,\Delta)$.
+
+Let $X$ and $Y$ be objects in a strict tensor category
+$\mathcal{C}$. We say that $X $ is a \emph{right dual} of $Y$ and $Y$
+a \emph{left dual} of $X$ if there are morphisms $X \otimes Y \to 1$
+and $1 \to Y \otimes X$, where $1$ denotes the tensor unit of $\mathcal{C}$, such that the obvious compositions
+  \begin{gather*}
+ X \otimes 1 \to X\otimes Y\otimes X
+  \to 1 \otimes X  \quad\text{and} \quad
+     1 \otimes Y \to Y \otimes X \otimes Y \to Y
+    \otimes 1 
+  \end{gather*}
+  are the identity of $X$ and $Y$,
+  respectively.  
+
+
+The next example fixes some notation.
+\begin{Exa} \label{exa:rigid-vect}
+A vector space $V$ has a left dual or a right dual if and
+only if it has finite dimension. In that case, a left dual of is given by the dual  space $V^{\vee}$ with the morphisms
+\begin{align*}
+ &\colon V^{\vee}\otimes V
+\to \C, \ f \otimes v\mapsto f(v), & &\colon \C \to V
+\otimes V^{\vee}, \ \lambda  \mapsto
+\sum_{k} \lambda \xi_{k} \otimes \xi_{k}^{\vee},
+\end{align*}
+where $(\xi_{k})_{k}$ is an arbitrary basis of $V$ and
+$(\xi_{k}^{\vee})_{k}$ is the dual basis of $V^{\vee}$. Note that
+$coev_{V}(1)$ corresponds to $\id_{V}$ under the natural
+identification $V\otimes V^{\vee} \cong \Hom(V)$.  Identifying $V$
+with $(V^{\vee})^{\vee}$, we find that
+$(V^{\vee},\ev_{V^{\vee}},coev_{V^{\vee}})$ is a right dual of $V$.
+
+If $T$ is a linear map between finite-dimensional vector spaces $V$
+and $W$ and  $T^{\vee} \colon W^{\vee} \to V^{\vee}$ denotes the dual
+map, then
+\begin{align} \label{eq:coev-vee}
+(T \otimes \id_{V^{\vee}})\circ  coev_{V} &= (\id_{W} \otimes T^{\vee}) \circ coev_{W},
+& \ev_{W}(\id_{W^{\vee}} \otimes T) &= \ev_{V}(T^{\vee} \otimes \id_{V}).
+\end{align}
+\end{Exa}
+
+
+The next step is to consider the category $\Vecti$. We need some
+notation.
+
+Given an $I^{2}$-graded vector space $V$, denote by
+$\Gru{\overline{V}}{k}{l}$ the dual space of $\Gru{V}{l}{k}$ and
+identify it with the space of all functionals on $V$ that vanish on
+$\Gru{V}{m}{n}$ for $(m,n)\neq (k,l)$.  Then
+$\overline{V}:=\bigoplus_{k,l}\Gru{\overline{V}}{k}{l} \subseteq
+V^{\vee}$ is an $I^{2}$-graded vector space. Note that $V^{\vee}$ is
+row-/column-finite if and only if $V$ is column-/row-finite, and that
+the assignments $V \mapsto \overline{V}$ and $T\mapsto T^{\vee}$
+define an isomorphism of $\Vecti$ with its opposite category.
+
+An $I^{2}$-graded vector space $V$ has a right dual if and only if $V$
+is  row-finite, and in that case, a right dual is given by
+$\overline{V}$ and the morphisms
+  \begin{align*}
+    \begin{aligned}
+      \ev_{V} &\in \Hom_{I^{2}}(\overline{V} \itimes V, \C^{(I)}), &&
+      \text{where }
+      \Gru{(\ev_{V})}{k}{l}=\delta_{k,l} \ev_{(\Gru{V}{k}{})}, \\
+      coev_{V} & \in \Hom_{I^{2}}(\C^{(I)}, V \itimes \overline{V}),
+      && \text{where } \Gru{(coev_{V})}{k}{l}= \delta_{k,l}
+      coev_{(\Gru{V}{k}{})}.
+    \end{aligned}
+  \end{align*}
+  This follows easily from Example \ref{exa:rigid-vect}.  Likewise, an
+  $I^{2}$-graded vector space has a left dual if and only if it is
+  column-finite. In that case, $\overline{V}$ is row-finite, we can
+  identify $V$ with $\overline{\overline{V}}$, and
+  $(\overline{V},\ev_{\overline{V}},coev_{\overline{V}})$ is a left
+  dual of $V$.
+ 
+  
+
+  The monoidal category $\Vectif$ is therefore rigid.
+
+  We next show that if $(A,\Delta)$ is a generalized Hopf face algebra
+  over an index set $I$, then $\Corep(A,\Delta)$ is rigid as
+  well. The left and right dual of a locally finite corepresentation
+  can be constructed with the help of the antipode as follows.
+\begin{Prop} \label{prop:corep-rigid} Let $(A,\Delta)$ be a generalized Hopf face
+  algebra over an index set $I$, where $A$ is a strong $I^{2}$-algebra.
+  \begin{enumerate}
+  \item Let $(V,X)$ be a locally finite corepresentation of $(A,\Delta)$. Then
+    $X^{S\otimes \vee}:=(S \otimes (-)^{\vee})(X) \in M(A \otimes
+    \Hom_{0}(\overline{V}))$ is locally finite corepresentation of
+    $(A,\Delta)$ on $\overline{V}$.
+  \item $((\overline{V},X^{S\otimes \vee}),\ev_{V},coev_{V})$ is a
+    right dual of dual of $(V,X)$.
+  \item The assignments $(V,X) \mapsto (\overline{V},X^{S\otimes
+      \top})$ and $T \mapsto T^{\vee}$ form an isomorphism between
+    $\Corep(A,\Delta)$ and its opposite category.
+  \item The monoidal category
+    $(\Corepf(A,\Delta),\itimes,(\C^{(I)},\tau))$ is rigid.
+  \end{enumerate}
+\end{Prop}
+\begin{proof}
+  1. Using \eqref{eq:antipode-comultiplication}, the verification is
+  straightforward:
+  \begin{align*}
+    \Gr{(X^{S\otimes \vee})}{k}{l}{m}{n} &=
+      (S \otimes (-)^{\vee})(\Gr{X}{n}{m}{l}{k})
+\\ &\in S(\Gr{A}{n}{m}{l}{k})
+    \otimes \Hom(\Gru{V}{n}{m},\Gru{V}{l}{k})^{\vee} =
+    \Gr{A}{k}{l}{m}{n} \otimes
+    \Hom(\Gru{\overline{V}}{k}{l},\Gru{\overline{V}}{m}{n}), \\
+    (\epsilon \otimes \id)(\Gr{(X^{S\otimes \vee})}{k}{l}{m}{n}) &= (\epsilon
+    \circ S \otimes \vee)(\Gr{X}{n}{m}{l}{k}) \\ &= (\epsilon \otimes
+    \id)(\Gr{X}{n} {m}{l}{k}) = \delta_{k,l}\delta_{m,n}
+    \id_{(\Gru{V}{l}{k})}^{\vee} = \delta_{k,l}\delta_{m,n}
+    \id_{(\Gru{\overline{V}}{k}{l})}, \\ % (\tilde \Delta
+    % \otimes \id)(\Gr{(X^{S\otimes \vee})}{k}{l}{m}{n}) & = (\sigma
+    % \circ (S \otimes S) \otimes (-)^{\vee})(\tilde\Delta \otimes
+    % \id)(\Gr{X}{n}{m}{l}{k}) \\
+    % &= \sum_{p,q} (\sigma \circ (S \otimes S) \otimes
+    % (-)^{\vee})((\Gr{X}{n}{m}{q}{p})_{13}(\Gr{X}{q}{p}{l}{k})_{23}) \\
+    % &= \sum_{p,q} (\Gr{(X^{S\otimes \vee})}{k}{l}{p}{q})_{13}
+    % (\Gr{(X^{S\otimes \vee})}{p}{q}{m}{n})_{23}.
+ (\tilde \Delta \otimes \id)(X^{S\otimes \vee}) &=
+ (\sigma \circ (S \otimes S)  \otimes (-)^{\vee})(\tilde \Delta
+ \otimes \id)(X) \\ &=  (\sigma \circ (S \otimes S)  \otimes
+ (-)^{\vee})(X_{13}X_{23})  
+= (X^{S\otimes \vee})_{13}(X^{S\otimes \vee})_{23}.
+  \end{align*}
+
+
+  2. We first show that $coev_{V}$ is a morphism from
+  $(\C^{(I)},\tau)$ to $(\overline{V},X^{S\otimes \vee}) \Circt
+  (V,X)$. Indeed,   the relations \eqref{eq:corep-blocks-tensor},
+  \eqref{eq:coev-vee} and Lemma \ref{lem:corep-partial-inverse} imply
+\begin{align*}
+  \Gr{(X \Circt X^{S\otimes \vee})}{k}{l}{m}{n}(1 \otimes
+\Gru{(coev_{V})}{m}{n})   &= \sum_{p,q} (\Gr{X}{k}{p}{m}{q})_{12} (S   \otimes
+(-)^{\vee})(\Gr{X}{q}{m}{l}{p})_{13}(1 \otimes \delta_{m,n} coev_{\Gru{V}{m}{}}) \\ &=
+ \delta_{m,n} \sum_{p,q}
+ (\Gr{X}{k}{p}{m}{q})_{12}  
+ (S   \otimes \id)(\Gr{X}{q}{m}{l}{p})_{12}(1 \otimes
+coev_{\Gru{V}{l}{}}) \\
+  &=  \delta_{m,n} \delta_{k,l}(\lambda_{k}\rho_{m} \otimes 
+  \lambda^{V}_{k})_{12}(1 \otimes
+coev_{\Gru{V}{l}{}}) \\ &= 
+ \delta_{m,n}  \delta_{k,l}\lambda_{k}\rho_{m} \otimes
+ coev_{\Gru{V}{k}{}} \\
+&=   (1 \otimes \Gru{(coev_{V})}{k}{l}) \Gr{\tau}{k}{l}{m}{n}.
+\end{align*}
+A similar calculation shows that $\ev_{V}$ is a morphism from $(V,X)
+\Circt (\overline{V},X^{S\otimes \vee})$ to $(\C^{(I)},\tau)$.  Now,
+the assertion follows because $(\overline{V},\ev_{V},coev_{V})$ is a
+right dual of $V$ in $\Vectif$.
+
+3. Clearly, the assignments for a functor. Similar calculations as
+  above show that one can define for every corepresentation $(V,X)$ a corepresentation $(\overline{V},X^{S^{-1}
+    \otimes \vee})$, and the assignments $(V,X)
+  \mapsto (\overline{V},X^{S^{-1} \otimes \vee})$ and $T\mapsto
+  T^{\vee}$   form the inverse of the first functor.
+
+4. The discussion above  shows that every locally finite
+corepresentation $(V,X)$ has a right dual and is the right dual of the
+locally finite corepresentation $(\overline{V},X^{S^{-1} \otimes
+  \vee})$, which then is a left dual of $(V,X)$.
+\end{proof}
+
+The tensor category
 \begin{Def} An $I^2$-graded vector space $V$ is called \emph{seperately finite dimensional (sfd)} if $\oplus_l \Gru{V}{k}{l}$ (resp. $\oplus_l \Gru{V}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation of a partial bialgebra $\mathscr{A}$, and we then denote by $\Corep_{\sfd}(\mathscr{A})$ the full subcategory of $\Corep_{\sfs}(\mathscr{A})$ consisting of sfd representations. 
 \end{Def} 
 
