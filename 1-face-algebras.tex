@@ -2,16 +2,9 @@
 
 We generalize Hayashi's definition of a compact quantum group of face type \cite{Hay1} to the case where the commutative base algebra is no longer finite-dimensional. We will present two approaches, based on \emph{partial bialgebras} and \emph{weak multiplier bialgebras} \cite{Boh1}. The first approach is piecewise and concrete, but requires some bookkeeping. The second approach is global but more abstract. As we will see from the general theory and the concrete examples, both approaches have their intrinsic value.
 
-%\begin{Not} If $I$ is a set, we write $\Fun_{\fin}(I)$ for the algebra of \emph{finitely supported} $\C$-valued functions on $I$\\
+Let $I$ be a set. We consider $I^2=I\times I$ as the pair groupoid with $\wmult$ denoting composition. That is, an element $K=(k,l)\in I^2$ has source $K_l = k$ and target $K_r=l$, and if $K=(k,l)$ and $L=(l,m)$ we write $K\wmult L = (k,m)$. 
 
-%We write $\Fun(I)$ for the algebra of \emph{all} $\C$-valued functions on $I$. %We will always suppose that $I$ is at most countable.
-%\end{Not}
-
-% Notation $I$ ok, or better $O$?
-
-Let $I$ be a set. We consider $I^2=I\times I$ as the pair groupoid with $\wmult$ denoting composition. That is, an element $K=(k,l)\in I^2$ has source $K_l = k$ and target $K_r=l$, and if $K=(k,l)$ and $L=(l,m)$ we write $K\wmult L = (k,m)$. %For general $K,L\in I^2$, we write the property `$K$ and $L$ are composable' as $K\wmate L$. 
-
-\begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a small $\C$-linear category, that is, a set $I$ (the object set) together with %Change partial by face? Partial algebra might have distinct meaning
+\begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a small $\C$-linear category, that is, a set $I$ (the object set) together with 
 \begin{itemize}
 \item[$\bullet$] for each $K=(k,l)\in I^2$ a vector space $A(K) = \Grs{A}{k}{l}=\!\!\GrDA{A}{k}{l}$ (possibly the zero vector space),
 \item[$\bullet$] for each $K,L$ with $K_r = L_l$ a multiplication map \[M(K,L):A(K) \otimes A(L)\rightarrow A(K\cdot L),\qquad a\otimes b \mapsto ab\]  and 
@@ -22,7 +15,7 @@ such that the obvious associativity and unit conditions are satisfied.
 By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I$.
 \end{Def}
 
-\begin{Rem}We allow the local units $\Unit_k$ to be zero. %When none of the units are zero, we will call the partial algebra \emph{connected}. 
+\begin{Rem}We allow the local units $\Unit_k$ to be zero. %When none of the units are zero, we will call the partial algebra \emph{coconnected}. (Coconnected because we are working contravariantly: we say F(G) (the function algebra) has a property if G has that property. But a partial algebra is the `group algebra' of a linear category, so it's dual gets to be called connected, and the partial algebra itself coconnected)
 \end{Rem}
 
 Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $K\wmult L$ is ill-defined, i.e. $K_r\neq L_l$. We then let $\Grs{M}{K}{L}$ be the zero map.
@@ -35,22 +28,8 @@ Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
 \end{Rem} 
 
-%There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
-%We will need the notion of \emph{relator} between partial algebras. When $R\subseteq I\times J$ is a relation, we write, for $k\in I$, $R_k= \{l'\in J\mid (k',l')\in R\}$. We write $D_R = \{k\in I\mid \#R_k\neq0\}$.  
-%A \emph{functor} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a map $F:I\rightarrow J$ and linear maps $F_{k,l}:A(k,l)\rightarrow B(F(k),F(l))$ such that the $F_{k,l}$ respect the algebra and unit maps in the obvious ways. 
+The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. 
 
-%\begin{Def} A \emph{relator} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a relation $F\subseteq I\times J$ and maps $F_{k',l'}:A(k,l)\rightarrow B(k',l')$ for $k'\in R_{k},l'\in R_{l}$ such that the following conditions hold.
-%\begin{itemize}
-%\item For all $k,l\in I$ and $a\in A(k,l)$, the $F_{k',l'}(a)$ are zero for almost all $k'\in R_{k}$ (resp. all $l'\in R_{l}$) when $l'$ (resp. $k'$) is fixed.  
-%\item For all $a\in A(k,l)$ and $b\in A(l,m)$, and all $k'\in R_{k}, m'\in R_{m}$, one has \[F_{k',m'}(ab) = \sum_{l',l'\in R_{l}} F_{k',l'}(a)F_{l',m'}(b).\] 
-%\item $F_{k',l'}(e_{k}) = \delta_{k',l'}e_{k'}$ for all $k'\in R_{k}$.  
-%\end{itemize}
-%\end{Def}
-
-The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
-
-%Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
-% Should provide shortcut for notation where only the new indices appear at $\Delta$ (so disregard the source): write $\Delta(K over L)$ as $Delta_{rs}$ for $r=K_{ld}$ and $s=K_{rd}$. 
 \begin{Def} A \emph{partial coalgebra} $\mathscr{A}=(\mathscr{A},\Delta)$ (over $\C$) consists of a set $I$ (the object set) together with 
 \begin{itemize}
 \item[$\bullet$] for each $K=\Grru{k}{l}\in I^2$ a vector space $A(K) = \Grt{A}{k}{l}=\!\!\GrRA{A}{k}{l}$,
@@ -69,16 +48,12 @@ Similarly, if $K = \Grt{}{k}{l}$ and $L = \Grt{}{l}{m}$, we abbreviate $\Delta_l
 
 We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $K_d \neq L_u$. Similarly $\epsilon$ is seen as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
 
-%The $\Grt{A}{k}{l}$ can be combined into a comultiplication \[\Delta: \Prod_{K} A(K)\rightarrow \Prod_{L,M} \left(A(L)\otimes A(M)\right)\] which is coassociative in the obvious way. In the following, we will write elements of direct products as infinite sums.
-
 We can now superpose the notions of partial algebra and partial coalgebra. To formulate the condition that the coalgebra maps form a `morphism of partial algebras', we will need to impose a finiteness condition which is automatically satisfied when the cardinality of $I$ is finite.
-% Formally, a finite morphism between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ equipped with an injection $\phi$ of a subset of $J$ into $I$ consists of maps $F_{K,L}:A(\phi(K),\phi(L))\rightarrow B(K,L)$ for $K,L$ in the domain of $\phi$, such that the map $(K,L)\mapsto F_{K,L}(a)$ is finite in rows and columns when the values of $K,L$ are restricted to one fiber of$ \phi$, and such that then $F_{K,M}(ab) = \sum_L F_{K,L}(a)F_{L,M}(b)$. 
-% Should this more general notion be included?
 
-Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with two compositions, namely $\cdot$ (viewing $M_2(I)$ as a row vector of column vectors) and $*$ (viewing $M_2(I)$ as a column vector of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact as a \emph{vacant} double groupoid in the sense of \cite{AN1}. %, and many of the constructions below work with $M_2(I)$ replaced by an arbitrary double groupoid, if its vacant!
+Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with two compositions, namely $\cdot$ (viewing $M_2(I)$ as a row vector of column vectors) and $*$ (viewing $M_2(I)$ as a column vector of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact as a \emph{vacant} double groupoid in the sense of \cite{AN1}. 
 
-In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ (without parentheses) or $rs$ in an index. We also follow Notation \ref{NotCom}, but the reader should be aware that the index of $\Delta$ will now be a 1$\times$2 vector in $I^2$ as we will work with partial coalgebras over $I^2$.% Put less awkardly.
-%\end{document}
+In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ (without parentheses) or $rs$ in an index. We also follow Notation \ref{NotCom}, but the reader should be aware that the index of $\Delta$ will now be a 1$\times$2 vector in $I^2$ as we will work with partial coalgebras over $I^2$.
+
 \begin{Def}\label{DefPartBiAlg} A \emph{partial bialgebra} $\mathscr{A}=(\mathscr{A},M,\Delta)$ consists of a set $I$ and a collection of vector spaces $A(K)$ for $K\in M_2(I)$ such that 
 \begin{itemize}
 \item[$\bullet$] the $\Grs{A}{K_l}{K_r}$ form an $I^2$-partial algebra,
@@ -87,24 +62,18 @@ In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ (wi
 and for which the following compatibility relations are satisfied.
 \begin{enumerate}[label=(\alph*)]
 \item\label{Propa} (Comultiplication of Units) For all $k,l,m\in I$, one has 
-% $K = \begin{pmatrix} k & k\\p & p \end{pmatrix}$ and $L =\begin{pmatrix} p &p \\ l & l\end{pmatrix}$, one has 
 \[\Delta_{l,l}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m}.\]  
 \item\label{Propb} (Counit of Multiplication) For all $K,L\in M_2(I)$ with $K_r = L_l$ and all $a\in A(K)$ and $b\in A(L)$, \[\epsilon(ab) = \epsilon(a)\epsilon(b).\]% Subtlety is that you already have to know composition to be able to apply this rule.
 \item\label{Propc} (Non-degeneracy) For all $k\in I$, $\epsilon(\UnitC{k}{k})=1$. 
 \item\label{Propd} (Finiteness) For each $K\in M_2(I)$ and each $a\in A(K)$, the element $\Delta_{rs}(a)$ is zero except for a finite number of indices $r$ (resp. $s$) when $s$ (resp. $r$) is fixed.
-%\[\Grt{\Delta}{K}{L}(a)(1\otimes b) \neq0 \quad \textrm{or} \quad\Grt{\Delta}{K}{L}(a)(b\otimes 1) \neq 0.\]
-% We encode regularity this way: if asymmetrically we ask finiteness only for $r$ fixed, we are in the non-regular situation. (?)
 \item\label{Prope} (Comultiplication is multiplicative) For all $a\in A(K)$ and $b\in A(L)$ with $K_r= L_l$,  \[\Delta_{rs}(ab) = \sum_t \Delta_{rt}(a)\Delta_{ts}(b).\]
 \end{enumerate}
 \end{Def}
 
-% To do: introduce notion of connectedness which should assure the trivial corepresentation is irreducible. This should correspond to the dual notion of pureness in [Bohm-Nill-Szlachanyi], i.e. to the left and right base algebras having $\C$ as intersection. I suspect this is the same as proving $\UnitC{k}{l}\neq 0$ for all $k,l$ (maybe in the presence of antipode integrals), but could not prove it immediately. Update: indeed, under the presence of an antipode the relation $k\sim l$ iff $\Unit{k}{l}\neq 0$ gives an equivalence relation, and then fixing a non-trivial class $P$ and putting $c_k = \delta_{k\in P}, d_l = \delta_{l\in P}$, we obtain a non-trivial element $\sum_k c_k\lambda_k = \sum_l d_l \rho_l$ in the intersection.
+% To do: introduce notion of connectedness which should assure the trivial corepresentation is irreducible. This should correspond to the dual notion of pureness in [Bohm-Nill-Szlachanyi], i.e. to the left and right base algebras having $\C$ as intersection. This is the same as proving $\UnitC{k}{l}\neq 0$ in the presence of an antipode, since then the relation $k\sim l$ iff $\Unit{k}{l}\neq 0$ gives an equivalence relation, and fixing a non-trivial class $P$ and putting $c_k = \delta_{k\in P}, d_l = \delta_{l\in P}$, we obtain a non-trivial element $\sum_k c_k\lambda_k = \sum_l d_l \rho_l$ in the intersection.
 
 \begin{Rem} By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
 \end{Rem}
-
-%\begin{Rem}By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is well-defined. We can write it less pedantically as \[\Delta_{rs}(ab) = \sum_t \Delta_{rt}(a)\Delta_{ts}(b),\] where we abbreviate $\Delta_{rs} = \Delta_{(r,s)}$.
-%\end{Rem}
 
 We want to relate the notion of partial bialgebra to the recently introduced notion of weak multiplier bialgebra \cite{Boh1}. We first recall some notions concerning non-unital algebras \cite{Dau1,VDae1}.
 
@@ -134,7 +103,6 @@ If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \Uni
 \end{Rem} 
 
 To show that the total algebra of a partial bialgebra becomes a weak multiplier bialgebra, we will need some easy lemmas. 
-%In the following, we will use the grading for tensor products as in Remark \ref{RemGrad}, coupled with the multiplier interpretation as in Example \ref{ExaMult}.
 
 \begin{Lem} Let $\mathscr{A}$ be an $I$-partial bialgebra. Then for each $a\in A$, there exists a unique multiplier $\Delta(a) \in M(A\otimes A)$ such that \begin{align}\label{EqDel}
     \begin{aligned}
@@ -181,61 +149,10 @@ The following proposition gathers the properties of $\Delta$, $\epsilon$ and $\D
 \end{proof} 
 
 \begin{Rem} 
-%\begin{enumerate}\item 
 Since also the expressions $\Delta(a)(b\otimes 1)$ and $(1\otimes a)\Delta(b)$ are in $A\otimes A$ for all $a,b\in A$, we see that $(A,\Delta)$ is in fact a \emph{regular} weak multiplier bialgebra \cite[Definition 2.3]{Boh1}.
-%\item\label{RemStrongReg} In fact, for any multiplier $m$, all expressions of the form $\Delta(m)(1\otimes b)$ for $b\in A$ are already in $A\otimes A$. This follows from the fact that this holds for $m=1$. This is of course a very strong property for a general weak multiplier Hopf algebra.
-%\end{enumerate} 
 \end{Rem} 
 
-%\begin{proof} This follows from equalities of the form $\Delta(a)(1\otimes \lambda_s) = \sum_r \Delta_{rs}(a)$, where the sum on the right is finite dimensional.
-%\end{proof} 
-
-
-
 % Need to give a converse of the theorem, show that any weak multiplier bialgebra with object algebra $F_f(I)$ is of the above form?
-
-%\begin{Def}[B\"{o}hm] A \emph{multiplier weak bialgebra} consists of a non-degenerate idempotent algebra $A$, equipped with a homomorphism \[\Delta: A\rightarrow M(A\otimes A),\] a linear map $\varepsilon: A\rightarrow \C$ and an idempotent element $E\in M(A\otimes A)$ such that the following conditions are satisfied.
-%\begin{itemize}
-%\item[$\bullet$] For all $a,b\in A$, one has both $\Delta(a)(1\otimes b)$ and $(a\otimes 1)\Delta(b)$ inside $A\otimes A$. 
-%\item[$\bullet$] \emph{Coassociativity}: for all $a,b,c\in A$, one has \[(b\otimes 1\otimes 1)(\Delta\otimes \id)\left(\Delta(a)(1\otimes c)\right) = (\id\otimes \Delta)\left((b\otimes 1)\Delta(a)\right)(1\otimes 1\otimes c)\]
-%\item[$\bullet$] \emph{Counitality}: For all$ a,b\in A$, one has \[(\varepsilon \otimes \id)(\Delta(a)(1\otimes b) = ab = (\id\otimes \varepsilon)((a\otimes 1)\Delta(b)).\]
-%\item[$\bullet$] The space $\Delta(A)(A\otimes A)$ equals $E(A\otimes A)$, and similarly the space $(A\otimes A)\Delta(A)$ equals $(A\otimes A)E$.  % Nicer formulation?
-%\item[$\bullet$] 
-%\end{itemize}
-
-%\end{Def}
-
-%The \emph{multiplier algebra} $M(A)$ of $A$ is the set One easily shows that this definition is independent of the realization of $A$ as a total algebra, and that it coincides with the notion of multiplier algebra found for example in \cite[Appendix]{VDae1}.
-
-%In the following, we always view $A$ as a subalgebra of $M(A)$ in the natural way. Clearly $m$ is a multiplier if and only if for each $k$, the function $l\mapsto \eGrr{m}{k}{l}$ is almost everywhere zero, and similarly for each $l$, the function $k\mapsto \eGrr{m}{k}{l}$ is almost everywhere zero, while $m\in A$ if the function $(k,l)\mapsto \eGrr{m}{k}{l}$ is almost everywhere zero. The algebra $M(A)$ has a unit, $\eGrr{1}{k}{l} = \delta_{kl} e_k$. For $m\in M(A)$, we use the formal notation $m = \sum_{k,l} m_{kl}$ which can be justified as a topological sum using the multiplier topology. Then we may write the unit for example as $\sum_p e_p $.
-
-
-
-%In the following, we will also use the notation \[\lambda_k = \sum_l e\Grru{k}{l},\qquad \rho_l = \sum_k e\Grru{k}{l} \qquad \in M(A).\]
-
-%\begin{Lem} Let $(A(K),\Delta\Grru{K}{L})$ be a partial bialgebra. Then \[\Delta: M(A)\rightarrow M(A\otimes A),\quad a\mapsto \sum_{K,L,M} \Delta\Grru{K}{L}(a(M))\] is a well-defined homomorphism for which \begin{equation}\label{EqStrongMult} \Delta(A)(1\otimes A)\cup \Delta(A)(A\otimes 1)\cup (A\otimes 1)\Delta(A)\cup (1\otimes A)\Delta(A)\subseteq A\otimes A.\end{equation}
-%Moreover, $\Delta$ satisfies the coassociativity assumption \[(c\otimes 1\otimes 1)(\Delta\otimes \id)\Delta(a)(1\otimes b)  = \left((\id\otimes \Delta)(c\otimes 1)\Delta(a)\right)(1\otimes 1\otimes b),\qquad \forall a,b,c\in A.\] 
-%\end{Lem} 
-%\begin{proof} The algebra $A\otimes A$ is a locally unital algebra with units $e_K\otimes e_L$ for column vectors $K,L$. Let us first verify that for $a\in A(M)$, one has $\Delta\Grru{K}{L}(a)$ almost always zero if $K_l$ and $L_l$ (resp. $K_r$ and $L_r$) are fixed. Since this expression is zero when $K\cdot L \neq M$ or $\neg K\bmate L$, it follows from condition b) in Definition \ref{DefPartBiAlg} that this condition is indeed satisfied. Hence $\Delta(a(M)) \in M(A\otimes A)$, and moreover, one obtains then also immediately that the inclusion \eqref{EqStrongMult} holds.
-
-%If now $a\in M(A)$, we know that $a(M)$ is almost always zero if $m_{lu}$ and $m_{ru}$ (resp. $m_{ru}$ and $m_{rd}$) are fixed. It follows as before that $\Delta(a)$ is a well-defined multiplier.
-
-%It is now easy to check that $\Delta$ is a homomorphism by condition c) in Definition \ref{DefPartBiAlg}, and that is coassociative by the partial coassociativity of the $\Delta\Grru{K}{L}$.
-%\end{proof} 
-
-%We can write then for example \[\Delta(1) = \sum_p \rho_p\otimes \lambda_p \in M(A\otimes A).\]
-
-%In the following, we will use the Sweedler notation for $\Delta$, so \[\Delta(a) = a_{(1)}\otimes a_{(2)},\qquad a\in A.\] We will also use the notation \[\Delta\Gru{K}{L}(a) = a_{(1)K}\otimes a_{(2)L}.\]
-
-
-
-%\begin{Def} A partial $^*$-algebra is a partial algebra equipped with anti-linear maps \[A_{K}\rightarrow A_{K^{\circ}},\quad a\mapsto a^*\] for which the total algebra $A$ becomes a $^*$-algebra.
-%A partial $^*$-bialgebra is a partial bialgebra for which $\Grt{\Delta}{K}{L}(a)^* = \Grt{\Delta}{K^{\circ}}{L^{\circ}}(a^*)$ for all $a\in A$.
-%\end{Def} 
-
-%It is easily verified that in this case $\overline{\varepsilon_{K}(a)} = \varepsilon_{K^{\circ}}(a)$, and that $\Delta:A\rightarrow M(A\otimes A)$ becomes a $^*$-algebra homomorphism.
-
-% To complete
 
 Recall from \cite[Section 3]{Boh1} that a regular weak multiplier
 bialgebra admits four projections $A\rightarrow M(A)$, given
@@ -259,16 +176,11 @@ roughly that the legs of $\Delta(A)$ span $A$) by \cite[Theorem
  The maps $\Pi^{L}$ and $\Pi^{R}$ can also
 be written in the form
 \begin{align} \label{eq:pi} 
-%  \begin{aligned}
- %    \overline{\Pi}^L(a) &= \sum_{p} \epsilon(a\lambda_{p})\lambda_{p}, &
- % \overline{\Pi}^R(a) &=\sum_{p}\epsilon(\rho_{p}a)
- %    \rho_{p},\\
-    \Pi^L(a) &%= \sum_{p} \epsilon(\rho_{p}a)\lambda_{p}
+    \Pi^L(a) &
 =
     \sum_{p}\epsilon(\lambda_{p}a)\lambda_p, & \Pi^R(a) &
-%=\sum_{p} \epsilon(a\lambda_{p})\rho_{p}
+
 =    \sum_{p}\epsilon(a \rho_{p}) \rho_p
- % \end{aligned}
 \end{align}
 because $\epsilon(\lambda_{k}\rho_{m} a \lambda_{l}\rho_{n})=0$  if $(k,l)\neq(m,n)$. These relations and  \eqref{EqDel}, \eqref{eq:delta-lambda-rho} imply
 \begin{align} \label{eq:pi-l-delta}
@@ -278,15 +190,13 @@ because $\epsilon(\lambda_{k}\rho_{m} a \lambda_{l}\rho_{n})=0$  if $(k,l)\neq(m
   (\id \otimes \Pi^{R})(\Delta(a)) &= \sum_{p} a\rho_{p} \otimes \rho_{p}.
 \end{align}
 
-We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak multiplier Hopf algebra \cite{Boh1,VDW2,VDW1}. We will mainly refer to \cite{Boh1} for uniformity.% OK?
+We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak multiplier Hopf algebra \cite{Boh1,VDW2,VDW1}. We will mainly refer to \cite{Boh1} for uniformity.
 
  Let us denote $\circ$ for the inverse of $\wmult$, and $\bullet$ for the inverse of $\bmult$, so \[\begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ} = \begin{pmatrix} l & k \\ n & m \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\bullet} = \begin{pmatrix} m & n \\ k & l \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ \bullet} = \begin{pmatrix} n & m \\ l & k \end{pmatrix}.\] The notation $\circ$ (resp. $\bullet$) will also be used for row vectors (resp. column vectors).
 
-% Write this out more explicitly
 \begin{Def}\label{DefPartBiAlgAnt} An \emph{antipode} for an
   $I$-partial bialgebra $\mathscr{A}$ consists of linear
 maps \[S:A(K)\rightarrow A(K^{\circ\bullet})\]
-% $S: \eGr{A}{k}{l}{m}{n} \rightarrow \eGr{A}{n}{m}{l}{k}$ 
   such that the following property holds: for all $M,P\in M_2(I)$ and
   all $a\in A(M)$, \begin{align} \label{eq:antipode-pi-l}\underset{K\wmult
       L^{\circ\bullet}=P}{\sum_{K\bmult L = M}} a_{(1)K}S(a_{(2)L})&=
@@ -324,7 +234,7 @@ For $M,P\in M_{2}(I)$ and $a\in A(M)$, the left and the right hand side  of \eqr
 \end{proof}
 
 \begin{Lem}\label{LemAntiUnit} Let $\mathscr{A}$ be a partial Hopf algebra with antipode $S$. For all $k,l\in I$, $S(\UnitC{k}{l}) = \UnitC{l}{k}$.
-\end{Lem}% No need for invertibility of antipode for this, and needed to put this earlier since used in next proof.
+\end{Lem}
 \begin{proof} For example the first identity in Equation \eqref{eq:total-antipode} of Lemma \ref{lemma:antipode} applied to $\UnitC{k}{k}$ gives \[\sum_l S(\UnitC{l}{k}) = \sum_l \UnitC{k}{l}S(\UnitC{l}{k}) = \lambda_k,\] as $S(\UnitC{l}{k}) \in \Gr{A}{k}{k}{l}{l}$ and $\Pi^{L}(\UnitC{k}{k}) = \lambda_k$. This implies the lemma.
 
 \end{proof} 
@@ -334,8 +244,6 @@ the maps $T_{1},T_{2} \colon A \otimes A \to A\otimes A$ given by
 \begin{align} \label{eq:wt-12}
   T_{1} (a\otimes b)&= \Delta(a)(1 \otimes b), &
   T_{2} (a\otimes b)&= (a \otimes 1)\Delta(b).
-  % T_{3} (a\otimes b)&= (1 \otimes b)\Delta(a), &
-  % T_{4} (a\otimes b)&= \Delta(b)(a \otimes 1).
  \end{align}
 The precise formulation involves the linear maps $E_{i},G_{i}
  \colon A\otimes A\to A\otimes A$ given by
@@ -457,7 +365,7 @@ uniqueness of the counit  \cite[Theorem 2.8]{Boh1}, and the relation
 for the antipode from \cite[Proposition 4.11]{VDW1}.
 \end{proof}
 
-\begin{Def}% I think the condition needs to apply to a wider family of elements? Also, I think it's good to keep the word invariant around.
+\begin{Def}
   Let $\mathscr{A}$ be an $I$-partial bialgebra.  We call a family of
   functionals
 \begin{align} \label{eq:functionals}
@@ -485,7 +393,7 @@ I$ and
 \begin{Lem}
   \begin{enumerate}[label={(\arabic*)}]
   \item\label{LI1} If $\phi$ is a left or right invariant integral, then
-    $\phic{k}{m}(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.% Non-triviality of $\UnitC{k}{m}$ needs to be assumed!
+    $\phic{k}{m}(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.
   \item\label{LI2} If a left integral and a right invariant integral exist, then the two
     are equal and unique.
   \item\label{LI3} Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra with
@@ -512,22 +420,10 @@ algebra.
 We are finally ready to formulate our main definition.
 \begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a
   partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with an invariant integral  $\phi$ that is positive in the sense  that $\phi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
-%It is called \emph{connected} if the underlying partial algebra is connected, i.e.~ when $\UnitC{k}{l}\neq0$ for all $k,l$.  % Necessary to introduce?
 \end{Def} 
 
 \begin{Rem} Following \cite{Hay1}, we could also have called our objects \emph{compact quantum groups of face type}, but we feel this gives the wrong impression when the base algebra is infinite dimensional (i.e. the object set is not compact). When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. % Is this a clear enough motivation? 
 \end{Rem} 
-
-%As in \cite[Example 2.14]{Boh1}, one can take direct sums of partial compact quantum groups. The following lemma shows that any partial compact quantum group is a direct sum of connected ones. FALSE!
-
-%\begin{Lem} Let $\mathscr{A}$ define a partial compact quantum group. Then $\mathscr{A}\cong \oplus_k \mathscr{A}_j$ where the $\mathscr{A}_j$ define \emph{connected} partial compact quantum groups.
-%\end{Lem} 
-%\begin{proof} Let $I$ be the object set of $\mathscr{A}$, and say $k\sim l$ if $\UnitC{k}{l}\neq 0$. Then $\sim$ is an equivalence relation: as \[\Delta_{ll}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m},\] it is transitive. As $S(\UnitC{k}{l}) = \UnitC{l}{k}, it is symmetric. And as $\varepsilon(\UnitC{1}{k}{k})=1$, it is reflexive.
-
-%Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. 
-
-%\end{proof} 
-
 
 The total form of the invariance conditions
 \eqref{eq:integral}  reads as follows. 
