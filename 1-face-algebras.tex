@@ -35,21 +35,21 @@ Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
 \end{Rem} 
 
-%There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
-%We will need the notion of \emph{relator} between partial algebras. When $R\subseteq I\times J$ is a relation, we write, for $k\in I$, $R_k= \{l'\in J\mid (k',l')\in R\}$. We write $D_R = \{k\in I\mid \#R_k\neq0\}$.  
-%A \emph{functor} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a map $F:I\rightarrow J$ and linear maps $F_{k,l}:A(k,l)\rightarrow B(F(k),F(l))$ such that the $F_{k,l}$ respect the algebra and unit maps in the obvious ways. 
+There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
+% We will need the notion of \emph{relator} between partial algebras. When $R\subseteq I\times J$ is a relation, we write, for $k\in I$, $R_k= \{l'\in J\mid (k',l')\in R\}$. We write $D_R = \{k\in I\mid \#R_k\neq0\}$.  
+% A \emph{functor} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a map $F:I\rightarrow J$ and linear maps $F_{k,l}:A(k,l)\rightarrow B(F(k),F(l))$ such that the $F_{k,l}$ respect the algebra and unit maps in the obvious ways. 
 
-%\begin{Def} A \emph{relator} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a relation $F\subseteq I\times J$ and maps $F_{k',l'}:A(k,l)\rightarrow B(k',l')$ for $k'\in R_{k},l'\in R_{l}$ such that the following conditions hold.
-%\begin{itemize}
-%\item For all $k,l\in I$ and $a\in A(k,l)$, the $F_{k',l'}(a)$ are zero for almost all $k'\in R_{k}$ (resp. all $l'\in R_{l}$) when $l'$ (resp. $k'$) is fixed.  
-%\item For all $a\in A(k,l)$ and $b\in A(l,m)$, and all $k'\in R_{k}, m'\in R_{m}$, one has \[F_{k',m'}(ab) = \sum_{l',l'\in R_{l}} F_{k',l'}(a)F_{l',m'}(b).\] 
-%\item $F_{k',l'}(e_{k}) = \delta_{k',l'}e_{k'}$ for all $k'\in R_{k}$.  
-%\end{itemize}
-%\end{Def}
+% \begin{Def} A \emph{relator} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a relation $F\subseteq I\times J$ and maps $F_{k',l'}:A(k,l)\rightarrow B(k',l')$ for $k'\in R_{k},l'\in R_{l}$ such that the following conditions hold.
+% \begin{itemize}
+% \item For all $k,l\in I$ and $a\in A(k,l)$, the $F_{k',l'}(a)$ are zero for almost all $k'\in R_{k}$ (resp. all $l'\in R_{l}$) when $l'$ (resp. $k'$) is fixed.  
+% \item For all $a\in A(k,l)$ and $b\in A(l,m)$, and all $k'\in R_{k}, m'\in R_{m}$, one has \[F_{k',m'}(ab) = \sum_{l',l'\in R_{l}} F_{k',l'}(a)F_{l',m'}(b).\] 
+% \item $F_{k',l'}(e_{k}) = \delta_{k',l'}e_{k'}$ for all $k'\in R_{k}$.  
+% \end{itemize}
+% \end{Def}
 
 The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
 
-%Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
+% Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
 % Should provide shortcut for notation where only the new indices appear at $\Delta$ (so disregard the source): write $\Delta(K over L)$ as $Delta_{rs}$ for $r=K_{ld}$ and $s=K_{rd}$. 
 \begin{Def} A \emph{partial coalgebra} $\mathscr{A}=(\mathscr{A},\Delta)$ (over $\C$) consists of a set $I$ (the object set) together with 
 \begin{itemize}
@@ -72,6 +72,7 @@ We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ t
 %The $\Grt{A}{k}{l}$ can be combined into a comultiplication \[\Delta: \Prod_{K} A(K)\rightarrow \Prod_{L,M} \left(A(L)\otimes A(M)\right)\] which is coassociative in the obvious way. In the following, we will write elements of direct products as infinite sums.
 
 We can now superpose the notions of partial algebra and partial coalgebra. To formulate the condition that the coalgebra maps form a `morphism of partial algebras', we will need to impose a finiteness condition which is automatically satisfied when the cardinality of $I$ is finite.
+
 % Formally, a finite morphism between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ equipped with an injection $\phi$ of a subset of $J$ into $I$ consists of maps $F_{K,L}:A(\phi(K),\phi(L))\rightarrow B(K,L)$ for $K,L$ in the domain of $\phi$, such that the map $(K,L)\mapsto F_{K,L}(a)$ is finite in rows and columns when the values of $K,L$ are restricted to one fiber of$ \phi$, and such that then $F_{K,M}(ab) = \sum_L F_{K,L}(a)F_{L,M}(b)$. 
 % Should this more general notion be included?
 
@@ -326,7 +327,6 @@ For $M,P\in M_{2}(I)$ and $a\in A(M)$, the left and the right hand side  of \eqr
 \begin{Lem}\label{LemAntiUnit} Let $\mathscr{A}$ be a partial Hopf algebra with antipode $S$. For all $k,l\in I$, $S(\UnitC{k}{l}) = \UnitC{l}{k}$.
 \end{Lem}% No need for invertibility of antipode for this, and needed to put this earlier since used in next proof.
 \begin{proof} For example the first identity in Equation \eqref{eq:total-antipode} of Lemma \ref{lemma:antipode} applied to $\UnitC{k}{k}$ gives \[\sum_l S(\UnitC{l}{k}) = \sum_l \UnitC{k}{l}S(\UnitC{l}{k}) = \lambda_k,\] as $S(\UnitC{l}{k}) \in \Gr{A}{k}{k}{l}{l}$ and $\Pi^{L}(\UnitC{k}{k}) = \lambda_k$. This implies the lemma.
-
 \end{proof} 
 
 The existence of an antipode is closely related to partial invertibility of
@@ -413,11 +413,13 @@ partial Hopf algebra reverses the multiplication and
 comultiplication. Denote by $\Delta^{\op}$ the composition of
 $\Delta$ with the flip map.
 
-\begin{Cor} \label{corollary:antipode}
-Let $\mathscr{A}$ be a partial Hopf algebra. Then the total antipode
-$S:A\rightarrow A$ satisfies
-$S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
-for all $a,b\in A$. 
+\begin{Cor} \label{corollary:antipode} Let $\mathscr{A}$ be a partial
+  Hopf algebra. Then the total antipode $S:A\rightarrow A$ satisfies
+  $S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
+  for all $a,b\in A$. In particular, $S(\UnitC{k}{m})=\UnitC{m}{k}$
+  for all $k,m\in I$ if $S$ is bijective. \texttt{need for
+    corepresentations somewhere that $\epsilon \circ
+    S = \epsilon$}
 \end{Cor} 
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 

@@ -17,6 +17,9 @@ vector spaces $V=\bigoplus_{k,l\in I} \Gru{V}{k}{l}$ and whose
 morphisms are linear maps $T$ that preserve the grading and therefore
 can be written $T=\bigoplus_{k,l\in I} \Gru{T}{k}{l}$. 
 
+% Our definition of corepresentations is appropriate only when each of the components \Gru{H}{k}{l} is finite-dimensional (otherwise, the \Gr{X}{k}{l}{m}{n} would have to live in some multiplier bimodule). But then "seperately finitely supported" is the same as "separately finite-dimensional". So I think we should assume the second condition right from the start; in that case, I'd slightly prefer the terminology "row- and column-finite" (although both terms would be fine for me).
+    
+
 \begin{Def} \label{definition:corep} Let $\mathscr{A}$ be an $I$-partial bialgebra and let
   $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ be an $I^{2}$-graded vector space.  A \emph{corepresentation}
   $\mathscr{X}=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$  of $\mathscr{A}$ on $V$ is a family
@@ -87,7 +90,8 @@ similarly as we defined $ \Delta \colon A \to M(A\otimes A)$.
   \item $(\lambda_{k}\rho_{m} \otimes \id){X}(\lambda_{l}\rho_{n}
     \otimes \id) = (1 \otimes \lambda^{V}_{k}\rho^{V}_{l}){X}(1 \otimes
     \lambda^{V}_{m}\rho^{V}_{n}) = \Gr{X}{k}{l}{m}{n}$,
-  \item $(A \otimes 1){X}$ and $ {X}(A \otimes 1)$ are contained in $A \otimes \Hom_{\C}^{0}(V)$,
+  \item $(A \otimes 1){X}$, $ {X}(A \otimes 1)$ and $(1 \otimes
+    \Hom^{0}_{\C}(V))X(1 \otimes \Hom^{0}_{\C}(V))$ lie in $A \otimes \Hom_{\C}^{0}(V)$,
   \item $(\Delta\otimes \id)(X)=X_{13}X_{23}$, 
   \item the sum $(\epsilon \otimes \id)({X}) :=\sum (\epsilon \otimes
     \id)(\Gr{X}{k}{l}{m}{n})$ converges in $M(\Hom_{0}(V))$ strictly
@@ -101,6 +105,101 @@ similarly as we defined $ \Delta \colon A \to M(A\otimes A)$.
 \begin{proof}
  Straightforward.
 \end{proof}
+
+
+
+If $\mathscr{A}$ is a partial Hopf algebra,  then every
+corepresentation multiplier has a generalized inverse.
+\begin{Lem} \label{lemma:corep-invertible}
+  Let $\mathscr{X}$ be a corepresentation of an $I$-partial Hopf
+  algebra $\mathscr{A}$ on an $I^{2}$-graded vector space $V$. Then
+  \begin{align*}
+    \Gr{X}{k}{l}{m}{n}  (S \otimes
+      \id)(\Gr{X}{p}{q}{r}{s}) &=0 \text{ if } (l,m,n)\neq(s,p,q), &
+      \sum_{n} \Gr{X}{k}{l}{m}{n} \cdot (S \otimes
+      \id)(\Gr{X}{m}{n}{k'}{l}) &= \delta_{k,k'}\UnitC{k}{m} \otimes
+      \id_{\Gru{V}{k}{l}}, \\
+      (S \otimes \id)(\Gr{X}{k}{l}{m}{n}) \Gr{X}{p}{q}{r}{s} &= 0
+      \text{ if } (k,m,n)\neq (r,p,q), & \sum_{m}
+      (S \otimes \id)(\Gr{X}{k}{l}{m}{n}) \Gr{X}{m}{n}{k}{l'} &=
+      \delta_{l,l'} \UnitC{n}{l} \otimes \id_{\Gru{V}{k}{l}}.
+  \end{align*}
+  In particular, the multiplier $Z:=     (S \otimes
+  \id)(X) \in M(A \otimes \Hom_{\C}^{0}(V))$
+  satisfies
+  \begin{align} \label{eq:corep-generalized-inverse}
+    XZ &= \sum_{k} \lambda_{k} \otimes \lambda^{V}_{k}, &
+    ZX &= \sum_{n} \rho_{n} \otimes \rho^{V}_{n},
+  \end{align}
+  and is a generalized inverse of $X$ in the sense that $XZX=X$ and $ZXZ=Z$.
+\end{Lem}
+\begin{proof}
+  The first equation follows from \eqref{eq:corep-blocks} and the
+  relation  $S(\Gr{A}{p}{q}{r}{s})\subseteq \Gr{A}{s}{r}{q}{p}$. To
+  verify the second one, we use relations 2.\ and 3.\ in Definition
+  \ref{definition:corep} and \eqref{eq:antipode-pi-l} and find
+  \begin{align*}
+      \sum_{n} \Gr{X}{k}{l}{m}{n} \cdot (S \otimes
+      \id)(\Gr{X}{m}{n}{k'}{l}) &= \sum_{n} (m_{A} \circ (\id \otimes S)
+      \otimes \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{m}{n}{k'}{l})_{23})
+ \\ &= \sum_{n} (m_{A} \circ (\id \otimes S) \circ \Delta_{m,n} \otimes
+      \id)(\Gr{X}{k}{l}{k'}{l}) \\
+      &= \delta_{k,k'} \UnitC{k}{l} \otimes (\epsilon \otimes
+      \id)(\Gr{X}{k}{l}{k'}{l})
+      \\ &=
+\delta_{k,k'}\UnitC{k}{m} \otimes
+      \id_{\Gru{V}{k}{l}},  \end{align*}
+where $m_{A}$ denotes the multiplication of $A$. The third and fourth
+equation follow similarly, and the assertions concerning $Z$ are
+direct consequences.
+\end{proof}
+\begin{Rem}
+  Let $\mathscr{X}$ be a non-zero corepresentation of an $I$-partial
+  Hopf algebra $\mathscr{A}$ on an $I^{2}$-graded vector space $V$.
+  Then $\oplus_{l} \Gru{V}{k}{l}\neq 0$ for each $k$ and
+  $\oplus_{k} \Gru{V}{k}{l}\neq 0$ for each $l$. Indeed, if
+  $\Gru{V}{m}{n} = 0$ for some $m$ and all $n$, then the equations
+  above imply $\UnitC{k}{m} \otimes \id_{\Gru{V}{k}{l}}=0$ and hence
+  $\Gru{V}{k}{l}=0$ for all $k,l$.
+\end{Rem}
+
+For completeness, we mention the following following converse to Lemma \ref{lemma:corep-invertible}
+\begin{Lem}
+  Let $\mathscr{A}$ be an $I$-partial bialgebra,  $V$  an
+  $I^{2}$-graded vector space and $X,Z \in M(A \otimes
+  \Hom_{\C}^{0}(V))$. If  conditions 0.--2.\ in Lemma
+  \ref{lemma:corep-multiplier} and
+  \eqref{eq:corep-generalized-inverse} hold, then the corresponding family
+  $\mathscr{X}=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ is a corepresentation
+  of $\mathscr{A}$ on $V$.
+\end{Lem}
+\begin{proof}
+  We have to verify condition 3.\ in Lemma
+  \ref{lemma:corep-multiplier}.  If $(k,l) \neq (p,q)$, then
+  $\epsilon(\Gr{A}{k}{l}{p}{q})=0$ and hence $(\epsilon
+  \otimes \id)(\Gr{X}{k}{l}{p}{q}) =0$. The counit property and condition
+  2.\ in Lemma \ref{lemma:corep-multiplier} imply 
+\begin{align*}
+  \Gr{X}{k}{l}{m}{n} &= ((\epsilon\otimes \id)\circ  \Delta \otimes
+  \id)(  \Gr{X}{k}{l}{m}{n}) 
+\\ &  = \sum_{p,q} (\epsilon\otimes \id \otimes
+  \id)\left((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23}\right)
+  =  (1 \otimes \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n},
+\end{align*}
+where $\Gru{T}{k}{l}=(\epsilon \otimes \id)(\Gr{X}{k}{l}{k}{l}) \in
+\Hom_{\C}(\Gru{V}{k}{l})$.  Therefore,  $T=\sum_{k,l} T_{k,l}$  satisfies $(1 \otimes T)X =
+X$. Multiplying on the right by $Z$, we find
+$T\lambda^{V}_{k}=\lambda^{V}_{k}$ for all $k$. Thus, $T=\id_{V}$.
+\end{proof}
+\begin{Def}
+  Let $\mathscr{X}$ be a corepresentation of a partial Hopf
+  algebra. Then we denote the generalized inverse $(S \otimes \id)(X)$
+  of $X$ in Lemma \ref{lemma:corep-invertible} by $X^{-1}$ and let
+  \begin{align*}
+   \Gr{(X^{-1})}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{k}{l}{m}{n}). 
+  \end{align*}
+\end{Def}
+
 Morphisms of corepresentations are defined as follows.
 \begin{Def}
   Let $\mathscr{A}$ be an $I$-partial bialgebra.  A \emph{morphism}
@@ -113,40 +212,24 @@ Morphisms of corepresentations are defined as follows.
 \end{Def}
 We denote the category of all corepresentations of $\mathscr{A}$ by
 $\Corep(\mathscr{A})$.
-\begin{Rem}
-  Equivalently, a morphism between corepresentations $(V,\mathscr{X})$
-  and $(W,\mathscr{Y})$ is just a morphism of $I^{2}$-graded vector
-  spaces $T\colon V\to W$ satisfying $(1\otimes T) X= Y(1 \otimes T)$.
+\begin{Rem} \label{remark:corep-total-morphism}
+ Equivalently, a morphism between corepresentations
+    $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ is just a morphism of
+    $I^{2}$-graded vector spaces $T\colon V\to W$ satisfying
+    $(1\otimes T) X= Y(1 \otimes T)$. If $\mathscr{A}$ is  a
+    partial Hopf algebra, this condition is equivalent to each of the relations
+    \begin{align*}
+      Y^{-1}(1 \otimes T)X&=\sum_{m,n} \rho_{n} \otimes \Gru{T}{m}{n},
+      &
+    Y(1\otimes T)X^{-1} &=\sum_{k,l} \lambda_{k} \otimes \Gru{T}{k}{l}.
+    \end{align*}
 \end{Rem}
+
 Note that the categories $\Vecti$ and $\Corep(\mathscr{A})$ are
 $\C$-linear and that the forgetful functor $\Corep(\mathscr{A})\to
-\Vecti$ is faithful.
+\Vecti$ is faithful. 
 
-% We use here the standard leg numbering notation, e.g. $a_{12} =
-% a\otimes 1$.
-
-% We will sometimes for convenience consider $\Gr{X}{k}{l}{m}{n}$ as a map in $\Hom_\C(\Gru{V}{m}{n},\Gr{A}{k}{l}{m}{n}\otimes \Gru{V}{k}{l})$. % Or better to keep leg numbering notation because confusing otherwise? Or use $1\otimes $ notation?
-
-% \begin{Def} Let $(V,X)$ be a
-% corepresentation of a partial bialgebra $\mathscr{A}$. A family of subspaces
-% \[\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}\]
-% is called \emph{invariant} if \[(1\otimes \Gru{Q}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =0,\]
-% where $\Gru{P}{m}{n}:\Gru{W}{m}{n}\to\Gru{V}{m}{n}$ is the inclusion map and $\Gru{Q}{k}{l}:\Gru{V}{k}{l}\to\Gru{V}{k}{l}/\Gru{W}{k}{l}$
-% denotes the quotient map.
-% \end{Def}
-
-% The following analogue of Schur's Lemma holds.
-
-% \begin{Lem} Let $T$ be a morphism
-% of corepresentations $(V,X)$ and
-% $(W,Y)$. Then $ \bigoplus_{k,l} \ker \Gru{T}{k}{l}$ and
-% $\bigoplus_{k,l} \img \Gru{T}{k}{l}$ are invariant subspaces of
-% $V$ and $W$, respectively.
-% \end{Lem} 
-
-% In particular, if $(V,X)$ and $(W,Y)$ are irreducible, then a morphism $T$ from $V$ to $W$ either has all $\Gru{T}{k}{l}=0$ or all
-% $\Gru{T}{k}{l}$ isomorphisms.
-
+\subsection{The tensor product and duality}
 The category $\Vecti$ is a tensor category, where
 the product of $I^{2}$-graded vector spaces $V$ and $W$ is the sum of
 the subspaces
@@ -216,98 +299,53 @@ $\mathscr{A}$ on $V\itimes W$.
 This is clear.
 \end{proof}
 
-%  Antipode duality.% To continue.
+To every corepresentation of a partial Hopf algebra on an
+$I^{2}$-graded vector space, one can associate a dual or
+contragredient corepresentation as follows.
 
-
-If $\mathscr{A}$ is a partial Hopf algebra,  every
-corepresentation multiplier has a generalized inverse.
-\begin{Lem}
-  Let $\mathscr{X}$ be a corepresentation of an $I$-partial Hopf
-  algebra $\mathscr{A}$ on an $I^{2}$-graded vector space $V$. Then
-  \begin{align*}
-    \Gr{X}{k}{l}{m}{n}  (S \otimes
-      \id)(\Gr{X}{p}{q}{r}{s}) &=0 \text{ if } (l,m,n)\neq(s,p,q), &
-      \sum_{n} \Gr{X}{k}{l}{m}{n} \cdot (S \otimes
-      \id)(\Gr{X}{m}{n}{k'}{l}) &= \delta_{k,k'}\UnitC{k}{m} \otimes
-      \id_{\Gru{V}{k}{l}}, \\
-      (S \otimes \id)(\Gr{X}{k}{l}{m}{n}) \Gr{X}{p}{q}{r}{s} &= 0
-      \text{ if } (k,m,n)\neq (r,p,q), & \sum_{m}
-      (S \otimes \id)(\Gr{X}{k}{l}{m}{n}) \Gr{X}{m}{n}{k}{l'} &=
-      \delta_{l,l'} \UnitC{n}{l} \otimes \id_{\Gru{V}{k}{l}}.
-  \end{align*}
-  In particular, the multiplier $Z:=     (S \otimes
-  \id)(X) \in M(A \otimes \Hom_{\C}^{0}(V))$
-  satisfies
-  \begin{align} \label{eq:corep-generalized-inverse}
-    XZ &= \sum_{k} \lambda_{k} \otimes \lambda^{V}_{k}, &
-    ZX &= \sum_{n} \rho_{n} \otimes \rho^{V}_{n},
-  \end{align}
-  and is a generalized inverse of $X$ in the sense that $XZX=X$ and $ZXZ=Z$.
-\end{Lem}
-\begin{proof}
-  The first equation follows from \eqref{eq:corep-blocks} and the
-  relation  $S(\Gr{A}{p}{q}{r}{s})\subseteq \Gr{A}{s}{r}{q}{p}$. To
-  verify the second one, we use relations 2.\ and 3.\ in Definition
-  \ref{definition:corep} and \eqref{eq:antipode-pi-l} and find
-  \begin{align*}
-      \sum_{n} \Gr{X}{k}{l}{m}{n} \cdot (S \otimes
-      \id)(\Gr{X}{m}{n}{k'}{l}) &= \sum_{n} (m_{A} \circ (\id \otimes S)
-      \otimes \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{m}{n}{k'}{l})_{23})
- \\ &= \sum_{n} (m_{A} \circ (\id \otimes S) \circ \Delta_{m,n} \otimes
-      \id)(\Gr{X}{k}{l}{k'}{l}) \\
-      &= \delta_{k,k'} \UnitC{k}{l} \otimes (\epsilon \otimes
-      \id)(\Gr{X}{k}{l}{k'}{l})
-      \\ &=
-\delta_{k,k'}\UnitC{k}{m} \otimes
-      \id_{\Gru{V}{k}{l}},  \end{align*}
-where $m_{A}$ denotes the multiplication of $A$. The third and fourth
-equation follow similarly, and the assertions concerning $Z$ are
-direct consequences.
-\end{proof}
-For completeness, we mention the following following converse.
-\begin{Lem}
-  Let $\mathscr{A}$ be an $I$-partial bialgebra, let $V$ be an
-  $I^{2}$-graded vector space and let $X \in M(A \otimes
-  \Hom_{\C}^{0}(V))$. If $X$ satisfies conditions 0.--2.\ in Lemma
-  \ref{lemma:corep-multiplier} and  \eqref{eq:corep-generalized-inverse} for
-  some $Z \in M(A \otimes
-  \Hom_{\C}^{0}(V))$, then the corresponding family
-  $\mathscr{X}=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ is a corepresentation
-  of $\mathscr{A}$ on $V$.
-\end{Lem}
-\begin{proof}
-  We have to check condition 3.\ in Lemma
-  \ref{lemma:corep-multiplier}.   Let $\Gr{T}{k}{l}{m}{n}:=(\epsilon
-  \otimes \id)(\Gr{X}{k}{l}{m}{n}) \in
-  \Hom(\Gru{V}{m}{n},\Gru{V}{k}{l})$.  If $(k,l) \neq (m,n)$, then
-  $\epsilon(\Gr{A}{k}{l}{m}{n})=0$ and hence
-  $ \Gr{T}{k}{l}{m}{n} =0$.  Now,  the counit property and condition
-  2.\ in Lemma \ref{lemma:corep-multiplier} imply
+ Denote the dual of a vector space $V$ or a linear map $T$ by
+$\dual{V}$ and  $\dual{T}$, respectively, and define the dual
+of an $I^{2}$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ to
+be the space
 \begin{align*}
-  \Gr{X}{k}{l}{m}{n} &= ((\epsilon\otimes \id)\circ  \Delta \otimes
-  \id)(  \Gr{X}{k}{l}{m}{n}) 
-  = \sum_{p,q} (\epsilon\otimes \id \otimes
-  \id)\left((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23}\right)
-  =  (1 \otimes \Gr{T}{k}{l}{k}{l})\Gr{X}{k}{l}{m}{n}.
+  \dual{V}=\bigoplus_{k,l} \Gru{(\dual{V})}{k}{l}, \quad \text{where }
+\Gru{(\dual{V})}{k}{l} = \dual{(\Gru{V}{k}{l})}.
 \end{align*}
-The morphism of $V$ given by the family
-$T=(\Gr{T}{k}{l}{k}{l})_{k,l}$ therefore satisfies $(1 \otimes T)X =
-X$. Multiplying on the right by $Z$, we can conclude
-$T\lambda^{V}_{k}=\lambda^{V}_{k}$ for all $k$. Thus, $T=\id_{V}$.
-\end{proof}
-
-
-If $(A,\Delta)$ is a generalized Hopf face algebra over an index set
-$I$, one can use the antipode to construct a left and a right dual for
-each corepresentation that satisfies a certain finiteness
-assumption. We first recall the general notion of duality in monoidal
-categories, see also \cite{}, and then discuss the cases $\Vecti$ and
-$\Corep(A,\Delta)$.
-
-Let $X$ and $Y$ be objects in a strict tensor category
-$\mathcal{C}$. We say that $X $ is a \emph{right dual} of $Y$ and $Y$
-a \emph{left dual} of $X$ if there are morphisms $X \otimes Y \to 1$
-and $1 \to Y \otimes X$, where $1$ denotes the tensor unit of $\mathcal{C}$, such that the obvious compositions
+\begin{Lem}
+   Let $\mathscr{A}$ be an $I$-partial Hopf algebra and $\mathscr{X}$
+   a corepresentation of $\mathscr{A}$ on $V$. Then the elements
+   \begin{align*}
+     (S \otimes \dual{-})(\Gr{X}{n}{m}{l}{k}) \in \Gr{A}{k}{l}{m}{n}
+     \otimes \Hom_{C}(\Gru{(\dual{V})}{m}{n},\Gru{(\dual{V})}{k}{l})
+   \end{align*} 
+   form a corepresentation $\dual{\mathscr{X}}$ of $\mathscr{A}$ on
+   $\dual{V}$. If the antipode $S$ of $\mathscr{A}$ is bijective, then also
+   the elements $(S^{-1} \otimes \dual{-})(\Gr{X}{n}{m}{l}{k})$ form a
+   corepresentation $\predual{\mathscr{X}}$ of $\mathscr{A}$ on
+   $\dual{V}$.
+  \end{Lem}
+  \begin{proof}
+    Use the relations $\Delta \circ S = (S \otimes
+    S)\Delta^{\op}$ and $\epsilon \circ S = \epsilon$ from Corollary \ref{corollary:antipode}.
+  \end{proof}
+If  the corepresentation $\mathscr{X}$ satisfies the following finiteness
+  condition, then  $\dual{\mathscr{X}}$ of $\mathscr{A}$ (and
+  $\predual{\mathscr{X}}$) is a left dual (resp.\ right dual) of
+  $\mathscr{X}$ in the categorical sense.
+\begin{Def} An $I^2$-graded vector space $V$ is called
+  \emph{seperately finite dimensional (sfd)} if $\oplus_l
+  \Gru{V}{k}{l}$ (resp. $\oplus_l \Gru{V}{k}{l}$) is
+  finite-dimensional for $k$ (resp. $l$) fixed. Correspondingly, we
+  talk of an sfd corepresentation of a partial bialgebra
+  $\mathscr{A}$, and we denote by $\Corep_{\sfd}(\mathscr{A})$ the
+  full subcategory of $\Corep_{\sfs}(\mathscr{A})$ consisting of sfd
+  representations.
+\end{Def} 
+Recall that an object $X$ in a strict tensor category is called a
+\emph{right dual} of an object $Y$ and $Y$ is called a \emph{left
+  dual} of $X$, if there are morphisms $X \otimes Y \to 1$ and $1 \to
+Y \otimes X$, where $1$ denotes the tensor unit, such
+that the obvious compositions
   \begin{gather*}
  X \otimes 1 \to X\otimes Y\otimes X
   \to 1 \otimes X  \quad\text{and} \quad
@@ -317,371 +355,160 @@ and $1 \to Y \otimes X$, where $1$ denotes the tensor unit of $\mathcal{C}$, suc
   are the identity of $X$ and $Y$,
   respectively.  
 
-
-The next example fixes some notation.
-\begin{Exa} \label{exa:rigid-vect}
-A vector space $V$ has a left dual or a right dual if and
-only if it has finite dimension. In that case, a left dual of is given by the dual  space $V^{\vee}$ with the morphisms
-\begin{align*}
- &\colon V^{\vee}\otimes V
-\to \C, \ f \otimes v\mapsto f(v), & &\colon \C \to V
-\otimes V^{\vee}, \ \lambda  \mapsto
-\sum_{k} \lambda \xi_{k} \otimes \xi_{k}^{\vee},
-\end{align*}
-where $(\xi_{k})_{k}$ is an arbitrary basis of $V$ and
-$(\xi_{k}^{\vee})_{k}$ is the dual basis of $V^{\vee}$. Note that
-$coev_{V}(1)$ corresponds to $\id_{V}$ under the natural
-identification $V\otimes V^{\vee} \cong \Hom(V)$.  Identifying $V$
-with $(V^{\vee})^{\vee}$, we find that
-$(V^{\vee},\ev_{V^{\vee}},coev_{V^{\vee}})$ is a right dual of $V$.
-
-If $T$ is a linear map between finite-dimensional vector spaces $V$
-and $W$ and  $T^{\vee} \colon W^{\vee} \to V^{\vee}$ denotes the dual
-map, then
-\begin{align} \label{eq:coev-vee}
-(T \otimes \id_{V^{\vee}})\circ  coev_{V} &= (\id_{W} \otimes T^{\vee}) \circ coev_{W},
-& \ev_{W}(\id_{W^{\vee}} \otimes T) &= \ev_{V}(T^{\vee} \otimes \id_{V}).
+ \begin{Prop}
+   Let $(V,\mathscr{X})$ be an sfd corepresentation of a partial Hopf
+   algebra $\mathscr{A}$.  Then $(\dual{V},\dual{\mathscr{X}})$ is a
+right dual, and, if the antipode of $\mathscr{A}$ is bijective,
+   $(\dual{V},\predual{\mathscr{X}})$ is a left dual.
+\end{Prop}
+\begin{proof}
+Given a finite-dimensional vector space $W$, denote by $T_{W} \colon
+\dual{W} \otimes W \to \C$ the evaluation map and by $R_{W} \colon \C
+\to  W
+\otimes \dual{W}$ the coevaluation map, given by $1\mapsto \sum_{i}
+w_{i} \otimes \dual{w_{i}}$ if $(w_{i})_{i}$ and $(\dual{w_{i}})_{i}$
+are dual bases of $W$ and $\dual{W}$. With respect to these maps,
+$\dual{W}$ is a right dual of $W$. If $F\colon W_{1}\to W_{2}$ is a linear map between finite-dimensional  spaces, then
+\begin{align} \label{eq:coev-vee} (\id_{W_{2}} \otimes F^{\vee}) \circ R_{W_{2}} &= (F \otimes \id_{W_{1}^{\vee}})\circ
+  R_{W_{1}}, &
+T_{W_{1}}(F^{\vee}
+  \otimes \id_{W_{2}})&=  T_{W_{2}}(\id_{W_{2}^{\vee}} \otimes F).
 \end{align}
-\end{Exa}
 
+Now, define morphisms $R \colon \C^{(I)} \to V\itimes \dual{V}$ and
+$T \colon \dual{V} \itimes V \to \C^{(I)}$ by
+\begin{align*}
+  \Gru{R}{k}{l} &= \delta_{k,l} \sum_{p} R_{\footnotesize\Gru{V}{k}{p}} \colon
+  \C \to 
+    \Gru{(V\itimes \dual{V})}{k}{l}, &
+  \Gru{T}{k}{l} &= \delta_{k,l} \sum_{k,p} T_{(\Gru{V}{p}{k})} \colon
+    \Gru{(V\itimes \dual{V})}{k}{l} \to \C.
+\end{align*}
+One easily checks that with respect to these maps, $\dual{V}$ is a
+right dual of $V$ in $\Vecti$. 
 
-The next step is to consider the category $\Vecti$. We need some
-notation.
-
-Given an $I^{2}$-graded vector space $V$, denote by
-$\Gru{\overline{V}}{k}{l}$ the dual space of $\Gru{V}{l}{k}$ and
-identify it with the space of all functionals on $V$ that vanish on
-$\Gru{V}{m}{n}$ for $(m,n)\neq (k,l)$.  Then
-$\overline{V}:=\bigoplus_{k,l}\Gru{\overline{V}}{k}{l} \subseteq
-V^{\vee}$ is an $I^{2}$-graded vector space. Note that $V^{\vee}$ is
-row-/column-finite if and only if $V$ is column-/row-finite, and that
-the assignments $V \mapsto \overline{V}$ and $T\mapsto T^{\vee}$
-define an isomorphism of $\Vecti$ with its opposite category.
-
-An $I^{2}$-graded vector space $V$ has a right dual if and only if $V$
-is  row-finite, and in that case, a right dual is given by
-$\overline{V}$ and the morphisms
+We therefore only need to show that $R$ is a morphism from
+$\mathscr{X}\Circt\dual{\mathscr{X}}$ to $\mathscr{U}$ and that $T$ is
+a morphism from $\mathscr{U}$ to
+$\dual{\mathscr{X}}\Circt{\mathscr{X}}$.  But \eqref{eq:coev-vee} and
+Lemma \ref{lemma:corep-invertible} imply
   \begin{align*}
-    \begin{aligned}
-      \ev_{V} &\in \Hom_{I^{2}}(\overline{V} \itimes V, \C^{(I)}), &&
-      \text{where }
-      \Gru{(\ev_{V})}{k}{l}=\delta_{k,l} \ev_{(\Gru{V}{k}{})}, \\
-      coev_{V} & \in \Hom_{I^{2}}(\C^{(I)}, V \itimes \overline{V}),
-      && \text{where } \Gru{(coev_{V})}{k}{l}= \delta_{k,l}
-      coev_{(\Gru{V}{k}{})}.
-    \end{aligned}
+    (1\otimes \Gru{T}{k}{k})
+ \sum_{l,n}  \big(
+\Gr{(\dual{X})}{k}{l}{m}{n}\big)_{12}
+\big(\Gr{X}{l}{k}{n}{q}\big)_{13} &=
+    (1\otimes \Gru{T}{k}{k})
+ \sum_{l,n} 
+(S \otimes \dual{-})(\Gr{X}{n}{m}{l}{k})_{12}
+    (\Gr{X}{l}{k}{n}{q})_{13} \\ &=
+(\id\otimes \Gru{T}{m}{m})  \sum_{l,n}
+      (S \otimes \id)(\Gr{X}{n}{m}{l}{k})_{13}(\Gr{X}{l}{k}{n}{q})_{13} \\
+    &= \delta_{m,q}\UnitC{k}{q}\otimes \Gru{T}{m}{m} \\
+    &= \Gr{U}{k}{k}{m}{q}(1 \otimes \Gru{T}{m}{m}),
   \end{align*}
-  This follows easily from Example \ref{exa:rigid-vect}.  Likewise, an
-  $I^{2}$-graded vector space has a left dual if and only if it is
-  column-finite. In that case, $\overline{V}$ is row-finite, we can
-  identify $V$ with $\overline{\overline{V}}$, and
-  $(\overline{V},\ev_{\overline{V}},coev_{\overline{V}})$ is a left
-  dual of $V$.
- 
-  
-
-  The monoidal category $\Vectif$ is therefore rigid.
-
-  We next show that if $(A,\Delta)$ is a generalized Hopf face algebra
-  over an index set $I$, then $\Corep(A,\Delta)$ is rigid as
-  well. The left and right dual of a locally finite corepresentation
-  can be constructed with the help of the antipode as follows.
-\begin{Prop} \label{prop:corep-rigid} Let $(A,\Delta)$ be a generalized Hopf face
-  algebra over an index set $I$, where $A$ is a strong $I^{2}$-algebra.
-  \begin{enumerate}
-  \item Let $(V,X)$ be a locally finite corepresentation of $(A,\Delta)$. Then
-    $X^{S\otimes \vee}:=(S \otimes (-)^{\vee})(X) \in M(A \otimes
-    \Hom_{0}(\overline{V}))$ is locally finite corepresentation of
-    $(A,\Delta)$ on $\overline{V}$.
-  \item $((\overline{V},X^{S\otimes \vee}),\ev_{V},coev_{V})$ is a
-    right dual of dual of $(V,X)$.
-  \item The assignments $(V,X) \mapsto (\overline{V},X^{S\otimes
-      \top})$ and $T \mapsto T^{\vee}$ form an isomorphism between
-    $\Corep(A,\Delta)$ and its opposite category.
-  \item The monoidal category
-    $(\Corepf(A,\Delta),\itimes,(\C^{(I)},\tau))$ is rigid.
-  \end{enumerate}
-\end{Prop}
-\begin{proof}
-  1. Using \eqref{eq:antipode-comultiplication}, the verification is
-  straightforward:
-  \begin{align*}
-    \Gr{(X^{S\otimes \vee})}{k}{l}{m}{n} &=
-      (S \otimes (-)^{\vee})(\Gr{X}{n}{m}{l}{k})
-\\ &\in S(\Gr{A}{n}{m}{l}{k})
-    \otimes \Hom(\Gru{V}{n}{m},\Gru{V}{l}{k})^{\vee} =
-    \Gr{A}{k}{l}{m}{n} \otimes
-    \Hom(\Gru{\overline{V}}{k}{l},\Gru{\overline{V}}{m}{n}), \\
-    (\epsilon \otimes \id)(\Gr{(X^{S\otimes \vee})}{k}{l}{m}{n}) &= (\epsilon
-    \circ S \otimes \vee)(\Gr{X}{n}{m}{l}{k}) \\ &= (\epsilon \otimes
-    \id)(\Gr{X}{n} {m}{l}{k}) = \delta_{k,l}\delta_{m,n}
-    \id_{(\Gru{V}{l}{k})}^{\vee} = \delta_{k,l}\delta_{m,n}
-    \id_{(\Gru{\overline{V}}{k}{l})}, \\ % (\tilde \Delta
-    % \otimes \id)(\Gr{(X^{S\otimes \vee})}{k}{l}{m}{n}) & = (\sigma
-    % \circ (S \otimes S) \otimes (-)^{\vee})(\tilde\Delta \otimes
-    % \id)(\Gr{X}{n}{m}{l}{k}) \\
-    % &= \sum_{p,q} (\sigma \circ (S \otimes S) \otimes
-    % (-)^{\vee})((\Gr{X}{n}{m}{q}{p})_{13}(\Gr{X}{q}{p}{l}{k})_{23}) \\
-    % &= \sum_{p,q} (\Gr{(X^{S\otimes \vee})}{k}{l}{p}{q})_{13}
-    % (\Gr{(X^{S\otimes \vee})}{p}{q}{m}{n})_{23}.
- (\tilde \Delta \otimes \id)(X^{S\otimes \vee}) &=
- (\sigma \circ (S \otimes S)  \otimes (-)^{\vee})(\tilde \Delta
- \otimes \id)(X) \\ &=  (\sigma \circ (S \otimes S)  \otimes
- (-)^{\vee})(X_{13}X_{23})  
-= (X^{S\otimes \vee})_{13}(X^{S\otimes \vee})_{23}.
-  \end{align*}
-
-
-  2. We first show that $coev_{V}$ is a morphism from
-  $(\C^{(I)},\tau)$ to $(\overline{V},X^{S\otimes \vee}) \Circt
-  (V,X)$. Indeed,   the relations \eqref{eq:corep-blocks-tensor},
-  \eqref{eq:coev-vee} and Lemma \ref{lem:corep-partial-inverse} imply
+and a similar  calculation shows that 
 \begin{align*}
-  \Gr{(X \Circt X^{S\otimes \vee})}{k}{l}{m}{n}(1 \otimes
-\Gru{(coev_{V})}{m}{n})   &= \sum_{p,q} (\Gr{X}{k}{p}{m}{q})_{12} (S   \otimes
-(-)^{\vee})(\Gr{X}{q}{m}{l}{p})_{13}(1 \otimes \delta_{m,n} coev_{\Gru{V}{m}{}}) \\ &=
- \delta_{m,n} \sum_{p,q}
- (\Gr{X}{k}{p}{m}{q})_{12}  
- (S   \otimes \id)(\Gr{X}{q}{m}{l}{p})_{12}(1 \otimes
-coev_{\Gru{V}{l}{}}) \\
-  &=  \delta_{m,n} \delta_{k,l}(\lambda_{k}\rho_{m} \otimes 
-  \lambda^{V}_{k})_{12}(1 \otimes
-coev_{\Gru{V}{l}{}}) \\ &= 
- \delta_{m,n}  \delta_{k,l}\lambda_{k}\rho_{m} \otimes
- coev_{\Gru{V}{k}{}} \\
-&=   (1 \otimes \Gru{(coev_{V})}{k}{l}) \Gr{\tau}{k}{l}{m}{n}.
+ \sum_{l,n}  \big(
+\Gr{X}{k}{l}{m}{n}\big)_{12}
+\big(\Gr{(\dual{X})}{l}{p}{n}{m}\big)_{13} 
+    (1\otimes \Gru{R}{m}{m})
+&= \delta_{k,p} \UnitC{k}{m} \otimes \Gru{R}{k}{k} = (1 \otimes
+\Gru{R}{k}{k}) \Gr{U}{k}{p}{m}{m},
 \end{align*}
-A similar calculation shows that $\ev_{V}$ is a morphism from $(V,X)
-\Circt (\overline{V},X^{S\otimes \vee})$ to $(\C^{(I)},\tau)$.  Now,
-the assertion follows because $(\overline{V},\ev_{V},coev_{V})$ is a
-right dual of $V$ in $\Vectif$.
-
-3. Clearly, the assignments for a functor. Similar calculations as
-  above show that one can define for every corepresentation $(V,X)$ a corepresentation $(\overline{V},X^{S^{-1}
-    \otimes \vee})$, and the assignments $(V,X)
-  \mapsto (\overline{V},X^{S^{-1} \otimes \vee})$ and $T\mapsto
-  T^{\vee}$   form the inverse of the first functor.
-
-4. The discussion above  shows that every locally finite
-corepresentation $(V,X)$ has a right dual and is the right dual of the
-locally finite corepresentation $(\overline{V},X^{S^{-1} \otimes
-  \vee})$, which then is a left dual of $(V,X)$.
+whence the claim follows.
 \end{proof}
+\begin{Cor}
+  Let $\mathscr{A}$ be a partial Hopf algebra. Then
+  $\Corep_{\sfd}(\mathscr{A})$ is a tensor category with right
+  duals and, if the antipode of $\mathscr{A}$ is invertible, with left duals.
+\end{Cor}
 
-The tensor category
-\begin{Def} An $I^2$-graded vector space $V$ is called \emph{seperately finite dimensional (sfd)} if $\oplus_l \Gru{V}{k}{l}$ (resp. $\oplus_l \Gru{V}{k}{l}$) is finite dimensional for $k$ (resp. $l$) fixed. Correspondingly, we talk of an sfd corepresentation of a partial bialgebra $\mathscr{A}$, and we then denote by $\Corep_{\sfd}(\mathscr{A})$ the full subcategory of $\Corep_{\sfs}(\mathscr{A})$ consisting of sfd representations. 
-\end{Def} 
+\subsection{Averaging of morphisms and co-semi-simplicity}
 
-One easily sees that $\Corep_{\sfd}(\mathscr{A})$ is closed under $\Circt$. 
 
-\begin{Lem} Let $\mathscr{A}$ be a partial Hopf algebra. Then $\Corep_{\sfd}(\mathscr{A})$ is a tensor category with left duality. 
-\end{Lem} 
 
-\begin{proof} Let $X$ be an sfd corepresentation on a bigraded vector space $V$. Put \[\Gru{(V^*)}{k}{l} = (\Gru{V}{k}{l})^*,\] and let $V^*$ denote their direct sum bigraded vector space. Using the natural contravariant identification \[\Hom_\C(\Gru{V}{l}{k},\Gru{V}{n}{m})\cong \Hom_\C(\Gru{(V^*)}{m}{n},\Gru{(V^*)}{k}{l}),\] we see (by means of Lemma \ref{lemma:rep-corep}) that $X^{-1}$ gets transformed into a corepresentation $X^d$ on $V^*$. 
 
-We claim that $X^d$ is the left dual of $X$. To see this, consider the evaluation maps \[\Gru{T}{k}{m}: \Gru{(V^*\itimes V)}{k}{m} \supseteq (\Gru{V}{l}{k})^*\otimes \Gru{V}{l}{m}\rightarrow \delta_{k,m} \C = \Gru{\C_I}{k}{m}.\] Then from Lemma \ref{lemma:rep-corep}, we obtain \begin{eqnarray*} (1\otimes \Gru{T}{k}{p})\Big{(} \sum_{l,n} \big{(} \Gr{(X^d)}{k}{l}{m}{n}\big{)}_{12} \big{(}\Gr{X}{l}{p}{n}{q}\big{)}_{13}\Big{)} &=& \delta_{p,k}(\id\otimes \Gru{T}{m}{m}) \left( \sum_{l,n}  \Gr{(X^{-1})}{k}{l}{m}{n}\Gr{X}{l}{k}{n}{q}\right)_{13} \\ &=& \delta_{p,k}\UnitC{k}{q}\otimes \Gru{T}{m}{q}.\end{eqnarray*} Hence the $\Gru{T}{k}{l}$ define an intertwiner between $V^*\itimes V$ and $\C_I$. Similarly, the maps  \[\Gru{R}{k}{k}: \Gru{\C_I}{k}{k} = \C\rightarrow \Gru{(V\itimes V^*)}{k}{k},\quad 1\mapsto \sum_{l,i} \Gru{v_i}{k}{l}\otimes \Gru{\omega_i}{l}{k},\] where the $\{\Gru{v_i}{k}{l}\mid i\}$ and $\{\Gru{\omega_i}{l}{k} \mid i\}$ form a dual basis of $\Gru{V}{k}{l}$, can be shown to form an intertwiner. It is then easy to check that $T$ and $R$ make $X^d$ into the left dual of $X$. % More info?
-\end{proof}
-
-Let us now enhance our partial Hopf algebras to partial compact quantum groups. One then considers corepresentations on sfd bigraded \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition. We denote $B(\Hsp,\mathcal{G})$ for the linear space of bounded morphisms between Hilbert spaces.
-
-%\paragraph{Unitarity of corepresentations}
-
-\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
-\emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}\quad \textrm{in }\Gr{A}{k}{l}{m}{n}\otimes B(\Gru{\Hsp}{l}{k},\Gru{\Hsp}{n}{m}).\]  
-\end{Def} 
-\begin{Rem} \begin{enumerate} \item In the Hilbert space setting, it is more natural to let $\Hsp$ be the \emph{closed} (instead of the purely algebraic) direct sum of all (finite-dimensional) $\Gru{\Hsp}{k}{l}$. This does not change the notion of corepresentation, which had a local definition.
-\item Concerning morphisms, we will say a collection of $\Gru{T}{k}{l}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus \Gru{T}{k}{l}$ is bounded. We will denote by $\Corep_{\sfd,u}(\mathscr{A})$ the category of unitary sfd corepresentations with arbitrary morphisms, and $\Corep_{\sfd,u}^{\infty}(\mathscr{A})$ for the category with bounded morphisms.
-% Give a more prominent place, or check later if it is actually worthwhile to make this distinction.
-\end{enumerate}
-\end{Rem}
-
-Our aim now is to show that every irreducible sfd corepresentation is
-equivalent to a unitary one. We show this by embedding the corepresentation into a restriction of the
-regular corepresentation.
-
-\begin{Exa} \label{exa:rep-regular}
-  Let $\mathscr{A}$ define a partial compact quantum group with normalized positive invariant functional $\phi$. 
-
-  Let $\Gru{\mathcal{H}}{m}{n} \subseteq \bigoplus_{k,l}
-  \Gr{A}{k}{l}{m}{n}$ be finite dimensional subspaces satisfying
+Given corepresentations $\mathscr{X}$ and $\mathscr{Y}$ of
+a partial bialgebra $\mathscr{A}$ on respective $I^{2}$-graded vector spaces $V$ and $W$,
+we  obtain an $I^{2}$-graded vector space $V\oplus W$ by taking
+component-wise direct sums, and use the canonical embedding 
 \begin{align*}
-  \Delta^{\op}_{pq}(\Gru{\mathcal{H}}{m}{n}) \subseteq
- \Gr{A}{p}{q}{m}{n} \otimes \Gru{\mathcal{H}}{p}{q}.
+  \Hom(\Gru{V}{m}{n},\Gru{V}{k}{l}) \oplus
+  \Hom(\Gru{W}{m}{n},\Gru{W}{k}{l}) \hookrightarrow
+  \Hom(\Gru{V}{m}{n} \oplus \Gru{W}{m}{n},\Gru{V}{k}{l} \oplus
+  \Gru{W}{k}{l})
 \end{align*}
-for all indices.
-Equip each $\Gru{\mathcal{H}}{k}{l}$ with the scalar product $\langle
-a|b\rangle:=\phi(a^{*}b)$. By Lemma \ref{LemFaith}, these are finite-dimensional Hilbert spaces. Take the Hilbert space direct sum
-$\mathcal{H}:=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$.
-Define \[ \Gr{V}{k}{l}{m}{n} \in \Hom_\C(\Gru{\mathcal{H}}{m}{n}, \Gr{A}{k}{l}{m}{n} \otimes \Gru{\mathcal{H}}{k}{l}) \cong \Gr{A}{k}{l}{m}{n} \otimes 
-\mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})\]  by the
-equation
-\begin{align*}
-  \Gr{V}{k}{l}{m}{n}a &= \Delta^{\co}_{kl}(a).
-\end{align*}
-%where $\Gr{V}{k}{l}{m}{n}|a\rangle_{2}$  denotes the application of
-%the second leg of
-%$\Gr{V}{k}{l}{m}{n}$  to $a \in \Gru{\mathcal{H}}{m}{n}$. 
+to define the \emph{direct sum} $\mathscr{X} \oplus \mathscr{Y}$,
+which is a corepresentation of $\mathscr{A}$ on $V\oplus W$.
 
-\begin{Lem} The couple $(\mathcal{H},V)$ defines a unitary corepresentation. 
-\end{Lem} 
-\begin{proof} It is clear that $V$ defines a corepresentation. It then suffices to prove that \begin{equation}\label{EqUnit} \sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n} = \delta_{n,n'}\UnitC{l}{n}\otimes \id_{\Gru{\Hsp}{m}{n}}.\end{equation} Take $a\in \Gru{\Hsp}{m}{n}$ and $b\in \Gru{\Hsp}{m}{n'}$. Then writing \[\Lambda(a): \C\rightarrow \Gru{\Hsp}{m}{n}, \quad 1\mapsto a,\] and similarly for $b$, we compute \begin{eqnarray*}(1\otimes \Lambda(b)^*)\left(\sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n}\right) (1\otimes \Lambda(a)) &=& \sum_k (\id\otimes \phi)(\Delta_{kl}^{\op}(b)^*\Delta_{kl}^{\op}(a))\\ &=&  \sum_k (\id\otimes \phi)(\Delta_{lk}^{\op}(b^*)\Delta_{kl}^{\op}(a)) \\ &=& (\id\otimes \phi)(\Delta_{ll}^{\op}(b^*a))\\ &=&  (\phi\otimes \id)(\Delta_{ll}(b^*a)) \\ &=& \phi(b^*a)\UnitC{l}{n} \\&=& \delta_{n',n} \UnitC{l}{n} \otimes \Lambda(b)^*\Lambda(a).\end{eqnarray*} 
-This proves \eqref{EqUnit}.
-\end{proof} 
 
-We will call $(\mathcal{H},V)$  the 
-\emph{sfd restriction of the regular corepresentation}
-determined by the family $(\Gru{\mathcal{H}}{k}{l})_{k,l}$. 
-\fxnote{proof this}
-\end{Exa}
+% We will sometimes for convenience consider $\Gr{X}{k}{l}{m}{n}$ as a map in $\Hom_\C(\Gru{V}{m}{n},\Gr{A}{k}{l}{m}{n}\otimes \Gru{V}{k}{l})$. % Or better to keep leg numbering notation because confusing otherwise? Or use $1\otimes $ notation?
 
-In the following, we will use the notation \[\omega_{\xi,\eta}:B(\Hsp,\mathcal{G})\rightarrow \C,\quad x\mapsto \langle \xi,x\eta\rangle,\quad \xi\in \mathcal{G},\eta\in \Hsp.\]
 
-\begin{Lem} \label{lem:rep-morphism-regular}
-  Let $\mathscr{A}$ define a partial compact quantum group. Let $(\mathcal{H},X)$ be an sfd corepresentation on a Hilbert space, and let $\xi \in
-  \Gru{\mathcal{H}}{k}{l}$. Then the family of finite-dimensional
-  subspaces
-  \begin{align*}
-   \Gru{\mathcal{K}}{m}{n}  &=  \{ (\id \otimes
-   \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) : \eta \in
-   \Gru{\mathcal{H}}{m} {n}\} \subseteq \Gr{A}{k}{l}{m}{n}
-  \end{align*}% Should explain notation
-  defines an sfd restriction $(\mathcal{K},V)$ of the regular corepresentation, and the family of maps
-  \begin{align*}
-    \Gru{T_{(\xi)}}{m}{n} \colon \Gru{\mathcal{H}}{m}{n} \to
-    \Gru{\mathcal{K}}{m}{n}, \ \eta \mapsto (\id \otimes
-    \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),
-  \end{align*}
-  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$ in $\Corep_{\sfd,u}(\mathscr{A})$. % Should $\xi$ then also be in a subscript for $\mathcal{K}$?
-\end{Lem}
-Note that the family $(\Gru{\mathcal{K}}{m}{n})_{m,n}$ is sfd because $(\Gru{\mathcal{H}}{m}{n})_{m,n}$
-is. 
-\begin{proof} Both assertions  follow from the fact
-  that for all $\eta \in \Gru{\mathcal{H}}{p}{q}$,
-\begin{eqnarray*}
-\Delta^{\op}_{pq}(\Gru{T_{(\xi)}}{m}{n}(\eta)) &=&  \Delta_{pq}^{\op}\big((\id \otimes
-  \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})\big)\\
- &=&(\id \otimes \id \otimes \omega_{\xi,\eta})\big(
-  (\Gr{X}{k}{l}{p}{q})_{23}(\Gr{X}{p}{q}{m}{n})_{13})\big) \\ &=&(1
-  \otimes \Gru{T_{(\xi)}}{p}{q})\Gr{X}{p}{q}{m}{n} \eta.
-\end{eqnarray*}
-\end{proof}
-\begin{Prop}  \label{prop:rep-unitarisable}
-  Let $\mathscr{A}$ define a partial compact quantum group. Then every irreducible sfd corepresentation on a Hilbert space
-  is equivalent to a unitary sfd corepresentation.
-\end{Prop}
-\begin{proof}
-  Let $(\mathcal{H},X)$ be an irreducible sfd
-  corepresentation. Then for some $k,l$ and $\xi \in
-  \Gru{\mathcal{H}}{k}{l}$,  the operator  $T_{(\xi)}$  defined in
-  Lemma \ref{lem:rep-morphism-regular} has to be non-zero and hence,
-  by Schur's Lemma, injective. Thus, it forms an equivalence between
-  $(\mathcal{H},X)$ and a sub-corepresentation of an sfd
-  restriction of the regular corepresentation, which is unitary by
-  Example \ref{exa:rep-regular}.
-\end{proof}
+\begin{Def} Let $(V,\mathscr{X})$ be a corepresentation of a partial
+  bialgebra $\mathscr{A}$.  
 
-Our next goal is to obtain the analogue of Schur's orthogonality
-relations for matrix coefficients of corepresentations.
+  A family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$ is
+  called \emph{invariant} if 
+  \begin{align} \label{eq:corep-invariant}
+(1\otimes
+  \Gru{Q}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{P}{m}{n}) =0,    
+  \end{align}
+  where $\Gru{P}{m}{n}:\Gru{W}{m}{n}\to\Gru{V}{m}{n}$ is the inclusion
+  map and $\Gru{Q}{k}{l}:\Gru{V}{k}{l}\to\Gru{V}{k}{l}/\Gru{W}{k}{l}$
+  denotes the quotient map.
 
-\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. The space of \emph{matrix coefficients} $\mathcal{C}(X)$ of an sfd corepresentation $(\mathcal{H},X)$ is the sum of
-the subspaces
-\begin{align*}
-  \Gr{\mathcal{C}(X)}{k}{l}{m}{n} &= \span \left\{ (\id \otimes
-  \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) \mid \xi \in
-  \Gru{\mathcal{H}}{k}{l}, \eta \in \Gru{\mathcal{H}}{m}{n} \right\}
-\subseteq \Gr{A}{k}{l}{m}{n}.
-\end{align*}
+  The corepresentation $(V,\mathscr{X})$ is called \emph{irreducible}
+  if the only invariant families of subspaces are $(0)_{k,l}$ and
+  $(\Gru{V}{k}{l})_{k,l}$.
 \end{Def}
 
-\begin{Lem} Every sfd unitary corepresentation $(X,\Hsp)$ of $\mathscr{A}$ decomposes into a direct sum of irreducible sfd unitary corepresentations.
+
+The following analogue of Schur's Lemma holds. \texttt{Put that at the
+right place, maybe not here}
+
+\begin{Lem} Let $T$ be a morphism of corepresentations
+  $(V,\mathscr{X})$ and $(W,\mathscr{Y})$. Then the families of
+  subspaces $\ker \Gru{T}{k}{l} \subseteq \Gru{V}{k}{l}$ and
+  $\img\Gru{T}{k}{l} \subseteq \Gru{W}{k}{l}$ are invariant.  In
+  particular, if $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ are
+  irreducible, then either all $\Gru{T}{k}{l}$ are zero  or all
+  $\Gru{T}{k}{l}$ are  isomorphisms.
 \end{Lem} 
-\begin{proof} From the unarity assumption, it follows immediately that an invariant subspace of $\Hsp$ also has an invariant orthogonal complement. Hence irreducibility and indecomposability of unitary corepresentations coincide. More generally, one deduces that the bounded self-interwiners of $\Hsp$ form a (von Neumann) $^*$-algebra.
 
-% Trivial rep should maybe be introduced in a more conspicuous place
-Let us now first show that the trivial representation decomposes into irreducibles. Let $I$ be the object set of $\mathscr{A}$, and say $k\sim l$ if $\UnitC{k}{l}\neq 0$. Then $\sim$ is an equivalence relation: as \[\Delta_{ll}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m},\] the relation $\sim$ is transitive. As $S(\UnitC{k}{l}) = \UnitC{l}{k}$, we have that $\sim$ is symmetric. And as $\varepsilon(\UnitC{k}{k})=1$, we also have that $\sim$ is reflexive. 
-
-Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. Define $\C_{I_{\alpha}}\subseteq \C_I$ as the linear span of the homogeneous components with index in $\alpha$. It is clear then that the $\C_{I_{\alpha}}$ are invariant and irreducible.
-
-Consider now a general corepresentation $(X,\Hsp)$. Let $\Grd{\Hsp}{\alpha}{\beta}$ be the closed linear span of the homogeneous components with index in $\alpha\times \beta$. As we can identify \[\Grd{\Hsp}{\alpha}{\beta} \cong \C_{I_{\alpha}}\,\Circt\, \Hsp\,\Circt\, \C_{I_{\beta}},\] we see that $\Grd{\Hsp}{\alpha}{\beta}$ is an invariant subspace of $\Hsp$. Hence we may as well suppose that $\Hsp = \Grd{\Hsp}{\alpha}{\beta}$. 
-
-But let then $T$ be a bounded self-intertwiner of $\Hsp$. Then from the two equations in Remark \ref{RemMorRep}, we see that $T\rightarrow \Gru{T}{k}{l}$ is injective for any choice of $k\in \alpha,l\in \beta$. It follows that the algebra of self-intertwiners of $\Hsp$ is finite-dimensional. We then immediately conclude that $\Hsp$ is a finite direct sum of irreducible invariant subspaces.
-\end{proof} 
-
-\begin{Prop} \label{prop:rep-weak-pw}
-  Assume that $\mathscr{A}$ defines a partial compact quantum group. Then the total algebra $A$ is the sum of the matrix coefficients of
- irreducible unitary sfd corepresentations.
-\end{Prop}
-\begin{proof}
-  Let $a \in \Gr{A}{k}{l}{m}{n}$. Then
-  $\Delta^{\co}_{pq}(a) \in
-  \Gr{A}{p}{q}{m}{n} \otimes \Gr{A}{k}{l}{p}{q}$, and the subspace
-    \begin{align*}
-    \Gru{\mathcal{H}}{p}{q} &:= \span \{ (\omega \otimes \id)(
-    \Delta^{\co}_{pq}(a)) : \omega \in \Hom_{\C}(\Gr{A}{p}{q}{m}{n},\C) \} \subseteq
-    \Gr{A}{k}{l}{p}{q}
-  \end{align*}
-  has finite dimension. Since $a$ is fixed, the
-  $(\Gru{\mathcal{H}}{p}{q})_{p,q}$ are in fact sfd. Using
-  co-associativity, one checks that this family defines an sfd restriction $(\mathcal{H},V)$ of the regular
-  corepresentation. Evidently, $a \in \mathcal{C}(V)$. Decomposing
-  $(\mathcal{H},V)$, we find that
-  $a$ is contained in the sum of matrix coefficients of unitary
-  irreducible corepresentations.
-\end{proof}
-The key to the orthogonality relations is the following averaging procedure.
-\begin{Lem} \label{lem:rep-average}
-  Let $\mathscr{A}$ define a partial compact quantum group, and let  $\phi$ be any invariant functional for $\mathscr{A}$. Let
-  $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be sfd corepresentations of $\mathscr{A}$ and let $T$ be
-  a family of operators $\Gru{T}{k}{l} \in
-  \mathcal{B}(\Gru{\mathcal{H}}{k}{l},\Gru{\mathcal{K}}{k}{l})$.
-  
-  Then for any fixed $n$, the family of linear maps
+An integral allows to average morphisms of vector spaces so that one
+obtains morphisms of corepresentations. In particular, 
+\begin{Lem} \label{lem:rep-average} Let $\mathscr{A}$ be a partial
+  Hopf algebra with an integral $\phi$. Let $(V,\mathscr{X})$ and
+  $(W,\mathscr{Y})$ be sfd corepresentations of $\mathscr{A}$ and let
+  $\Gru{T}{k}{l} \in \Hom_{\C}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ for all $k,l\in I$. Then the families
   \begin{align*}
-    \Gru{\check T_n}{k}{l} &:= \sum_{m} (\phi \otimes
-    \id)(\Gr{(Y^{-1})}{n}{m}{l}{k}(1\otimes
-    \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l})
-   \end{align*} 
-   
-  define a morphism $\check T_n$ from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$ in $\Corep_{\sfd,u}(\mathscr{A})$.
-
-     Similarly, for fixed $m$, the      
-    
-  \begin{align*} \Gru{\hat T_m}{k}{l} &:= \sum_{n} (\phi \otimes
+    \Gr{\check T}{k}{l}{}{n} &:= \sum_{m} (\phi \otimes
+    \id)(\Gr{(Y^{-1})}{k}{l}{m}{n}(1\otimes
+    \Gru{T}{m}{n})\Gr{X}{m}{n}{k}{l}), \\
+    \Gr{\hat T}{k}{l}{m}{} &:= \sum_{n} (\phi \otimes
     \id)(\Gr{Y}{k}{l}{m}{n}(1\otimes
-    \Gru{T}{m}{n})\Gr{(X^{-1})}{l}{k}{n}{m})
+    \Gru{T}{m}{n})\Gr{(X^{-1})}{m}{n}{k}{l})
   \end{align*}
-  define a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$. % Slightly changed the averaging so that I do not need a restriction of finite support on $T$.
+form  morphisms $\Grd{\check{T}}{}{n}$ and $\Grd{\hat{T}}{m}{}$ from $(V,\mathscr{X})$ to $(W,\mathscr{Y})$. % Slightly changed the averaging so that I do not need a restriction of finite support on $T$.
 \end{Lem} 
 \begin{proof}
- Using Remark \ref{RemMorRep}, the assertion concerning the $\check{T}$ follows
-  from the calculation
+  In total form, $\check{T}=(\phi \otimes \id)(Y^{-1}(1 \otimes T)X)$
+  and $\hat{T}=(\phi \otimes \id)(Y(1 \otimes T)X^{-1})$.  Now, Lemma
+  \ref{lemma:corep-multiplier} and \ref{lemma:total-integral} 
+  imply
   \begin{align*}
-    &\sum_{m} \Gr{(Y^{-1})}{n}{m}{l'}{k}(1 \otimes
-    \Gru{\check{T}_q}{m}{n})\Gr{X}{m}{n}{k}{l} = \\
-    &=\sum_{m,p} (\phi \otimes \id \otimes
-    \id)\left(\left(\Gr{(Y^{-1})}{n}{m}{l'}{k}\right)_{23}
-      \left(\Gr{(Y^{-1})}{q}{p}{n}{m}\right)_{13}(1 \otimes 1 \otimes
-      \Gru{T}{p}{q})\left(\Gr{X}{p}{q}{m}{n}\right)_{13}\left(\Gr{X}{m}{n}{k}{l}\right)_{23}\right)
-    \\
-    % &= \sum_{m,p,q}(\phi \otimes \id \otimes \id)\left((1 \otimes
-    %   \lambda_{n} \otimes 1)(\tilde \Delta \otimes
-    %   \id)\left(\Gr{(Y^{-1})}{k}{l'}{p}{q}\right)(\rho_{m} \otimes 1
-    %   \otimes \Gru{T}{p}{q})(\tilde \Delta \otimes
-    %   \id)\left(\Gr{(X}{p}{q}{k}{l}\right)(1 \otimes\lambda_{n}
-    %   \otimes 1)\right) \\
-    &= \sum_{m,p} (\left((\phi \otimes \id)
-    \circ \Delta_{mn}\right) \otimes \id)\left(\Gr{(Y^{-1})}{q}{p}{l'}{k}(1
-      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}\right) 
-    \\
-    &= \delta_{l',l}\UnitC{n}{l}\otimes \left(\sum_{p,q} (\phi \otimes \id)\left(\Gr{(Y^{-1})}{q}{p}{l}{k}(1 
-      \otimes \Gru{T}{p}{q})\Gr{X}{p}{q}{k}{l}\right)\right)\\
-  &= \delta_{l,l'}\UnitC{n}{l} \otimes \Gru{\check{T}_q}{k}{l},
+    Y^{-1}(1 \otimes \check{T})X &= (\phi \otimes \id \otimes
+    \id)((Y^{-1})_{23}(Y^{-1})_{13}(1 \otimes 1
+    \otimes T)X_{13}X_{23})  \\
+    &= ((\phi \otimes\id) \circ \Delta  \otimes \id)(Y^{-1}(1 \otimes T)X) \\
+    &= \sum_{n} \rho_{n} \otimes (\phi \otimes \id)((\rho_{n} \otimes
+    1)Y^{-1}(1 \otimes T)X)  \\
+    &= \sum_{m,n} \rho_{n} \otimes \Gru{\check T}{m}{n},
   \end{align*}
-  where we used the relation $\phi(\Gr{A}{r}{s}{l'}{l})=0$ for $l'\neq l$
-  for the last equality. 
-  
-  A similar calculation proves the assertion
-  concerning the $\hat{T}$. 
+  whence $\check{T}$ is a morphism from $\mathscr{X}$ to $\mathscr{Y}$
+  by Remark \ref{remark:corep-total-morphism}. The assertion on $\hat
+  T$ follows similarly.
 \end{proof}
 
 % Choose a representative family of unitary irreducible locally finite
@@ -694,191 +521,185 @@ The key to the orthogonality relations is the following averaging procedure.
 %   \Gr{\omega}{k}{l}{(\alpha)}{i,j})( )
 % \end{align*}
 
+\begin{Lem}
+  Let $\mathscr{A}$ be a partial Hopf algebra with an integral $\phi$.
+  Let $(V,\mathscr{X})$ be a sfd corepresentation and $\Gru{W}{k}{l}
+  \subseteq \Gru{V}{k}{l}$ and invariant family of subspaces. Then
+  there exists an idempotent endomorphism $T$  of $(V,\mathscr{X})$
+  such that $\Gru{W}{k}{l}=\img\Gru{T}{k}{l}$ for all $k,l$. 
+\end{Lem}
+\begin{proof}
+  Choose idempotent endomorphisms $\Gru{T}{k}{l}$ of $\Gru{V}{k}{l}$
+  with image $\Gru{W}{k}{l}$. We apply the preceding lemma, obtain an
+  endomorphism $\Grd{\check{T}}{}{n}$ of $(V,\mathscr{X})$, and show
+  that $\img \Gr{\check{T}}{k}{l}{}{n} = \img\Gru{T}{k}{l}= \Gru{W}{k}{l}$.   In
+  total form, invariance of $W$ implies  $(1 \otimes T)X(1
+  \otimes T)=X(1\otimes T)$. Applying
+ $(S \otimes \id)$, we get   $(1 \otimes T)X^{-1}(1
+  \otimes T)=X^{-1}(1\otimes T)$.
+Now, we combine  Lemma
+  \ref{lemma:corep-multiplier}, Lemma \ref{lemma:corep-invertible} and
+  normalisation of $\phi$, and find
+  \begin{align*}
+    \check{T}_{n} T &= (\phi \otimes \id)(X^{-1}(1 \otimes
+    T\rho_{n}^{V})X(1 \otimes T)) \\ &=
+(\phi \otimes \id)(X^{-1}X(\lambda_{n} \otimes T))
+ = \sum_{m} \phi(\UnitC{n}{m}) \rho^{V}_{m}T =T
+  \end{align*}
+  and similarly $T\check{T}_{n}=T$. Therefore,
+  $\img{\check{T}_{n}}=\img T$. \texttt{Need to insert a remark on the
+  choice of $n$, taking into account the decomposition into components
+of corepresentations --- namely, there exists an $n$ such that
+$\Gru{V}{}{m}=0$ whenever $\UnitC{n}{m}=0$}
+\end{proof}
+\begin{Prop} 
+  Let $\mathscr{A}$ be a partial Hopf algebra with an integral.  Then
+  every sfd corepresentation $(X,\Hsp)$ of $\mathscr{A}$ decomposes
+  into a direct sum of irreducible sfd corepresentations.
+\end{Prop} 
+\begin{proof} 
+The preceding lemma shows that  every corepresentation is either
+irreducible or the direct sum of two corepresentations. 
+
+% Trivial rep should maybe be introduced in a more conspicuous place
+\texttt{Put that into the first or second subsection}
+Let us now first show that the trivial representation decomposes into irreducibles. Let $I$ be the object set of $\mathscr{A}$, and say $k\sim l$ if $\UnitC{k}{l}\neq 0$. Then $\sim$ is an equivalence relation: as \[\Delta_{ll}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m},\] the relation $\sim$ is transitive. As $S(\UnitC{k}{l}) = \UnitC{l}{k}$, we have that $\sim$ is symmetric. And as $\varepsilon(\UnitC{k}{k})=1$, we also have that $\sim$ is reflexive. 
+
+Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. Define $\C_{I_{\alpha}}\subseteq \C_I$ as the linear span of the homogeneous components with index in $\alpha$. It is clear then that the $\C_{I_{\alpha}}$ are invariant and irreducible.
+
+Consider now a general corepresentation $(X,\Hsp)$. Let $\Grd{\Hsp}{\alpha}{\beta}$ be the closed linear span of the homogeneous components with index in $\alpha\times \beta$. As we can identify \[\Grd{\Hsp}{\alpha}{\beta} \cong \C_{I_{\alpha}}\,\Circt\, \Hsp\,\Circt\, \C_{I_{\beta}},\] we see that $\Grd{\Hsp}{\alpha}{\beta}$ is an invariant subspace of $\Hsp$. Hence we may as well suppose that $\Hsp = \Grd{\Hsp}{\alpha}{\beta}$. 
+
+But let then $T$ be a bounded self-intertwiner of $\Hsp$. Then from the two equations in Remark \ref{RemMorRep}, we see that $T\rightarrow \Gru{T}{k}{l}$ is injective for any choice of $k\in \alpha,l\in \beta$. It follows that the algebra of self-intertwiners of $\Hsp$ is finite-dimensional. We then immediately conclude that $\Hsp$ is a finite direct sum of irreducible invariant subspaces.
+\end{proof} 
+
+\begin{Cor}
+  Let $\mathscr{A}$ be a partial Hopf algebra with an integral. Then
+  every irreducible sfd corepresentation $(V,\mathscr{X})$ of
+  $\mathscr{A}$ is equivalent to its right bidual
+  $(V,\dual{\dual{\mathscr{X}}{}\!})$.
+\end{Cor}
+\begin{proof}
+  The corepresentations above are a left and a right dual of
+  $(\dual{V},\dual{\mathscr{X}})$. But in every semi-simple tensor
+  category, left and right duals are isomorphic \cite{}. 
+\end{proof}
+
+\subsection{Schur's orthogonality relations and the Peter-Weyl
+  theorem}
+
+Our next goal is to obtain the analogue of Schur's orthogonality
+relations for matrix coefficients of corepresentations.
+
+Given finite-dimensional vector spaces $V$ and $W$, the dual space of
+$\Hom_{\C}(V,W)$ is linearly spanned by functionals of the form
+\begin{align*}
+  \omega_{w,v} \colon \Hom_{\C}(V,W) \to \C, \quad T \mapsto  (w|Tv),
+\end{align*}
+where $v\in
+V$, $w\in \dual{W}$, and $(-|-)$ denotes the natural pairing of
+$\dual{W}$ with $W$.
+\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. The space of \emph{matrix coefficients} $\mathcal{C}(\mathscr{X})$ of an sfd corepresentation $(V,\mathscr{X})$ is the sum of
+the subspaces
+\begin{align*}
+  \Gr{\mathcal{C}(\mathscr{X})}{k}{l}{m}{n} &= \span \left\{ (\id \otimes
+    \omega_{w,v})(\Gr{X}{k}{l}{m}{n}) \mid v\in \Gru{V}{m}{n}, w \in
+    \dual{(\Gru{V}{k}{l})} \right\} \subseteq \Gr{A}{k}{l}{m}{n}.
+\end{align*}
+\end{Def}
+
+\begin{Prop} \label{prop:rep-weak-pw} Let $\mathscr{A}$ be a partial
+  Hopf algebra with an integral. Then the total algebra $A$ is the sum
+  of the matrix coefficients of irreducible sfd corepresentations.
+\end{Prop}
+\begin{proof} \texttt{Adapt this. } 
+  Let $a \in \Gr{A}{k}{l}{m}{n}$. Then
+  $\Delta^{\co}_{pq}(a) \in
+  \Gr{A}{p}{q}{m}{n} \otimes \Gr{A}{k}{l}{p}{q}$, and the subspace
+    \begin{align*}
+    \Gru{V}{p}{q} &:= \span \{ (\omega \otimes \id)(
+    \Delta^{\co}_{pq}(a)) : \omega \in \Hom_{\C}(\Gr{A}{p}{q}{m}{n},\C) \} \subseteq
+    \Gr{A}{k}{l}{p}{q}
+  \end{align*}
+  has finite dimension. Since $a$ is fixed, the
+  $(\Gru{V}{p}{q})_{p,q}$ are in fact sfd. Using 
+  co-associativity, one checks that this family defines an sfd restriction $(V,V)$ of the regular
+  corepresentation. Evidently, $a \in \mathcal{C}(V)$. Decomposing
+  $(\mathcal{H},V)$, we find that
+  $a$ is contained in the sum of matrix coefficients of unitary
+  irreducible corepresentations.
+\end{proof}
+
+
 The first part of the orthogonality relations concerns matrix
-coefficients of inequivalent irreducible corepresentations.
-\begin{Prop} \label{prop:rep-orthogonality-1}
-  Let $(\mathcal{H},X)$ and $(\mathcal{K},Y)$ be inequivalent unitary
-  irreducible sfd corepresentations, and let
-  $\phi$ be an invariant functional for $(A,\Delta)$.  Then
-  \[\phi(S(b)a) =\phi(b^{*}a) = \phi(bS(a))=\phi(ba^{*})=0\] for all
-  $a\in \mathcal{C}(X), b \in \mathcal{C}(Y)$.
+coefficients of inequivalent irreducible corepresentations. 
+\begin{Prop} \label{prop:rep-orthogonality-1} Let $\mathcal{A}$ be a
+  partial Hopf algebra with an integral $\phi$ and inequivalent
+  irreducible sfd corepresentations $(V,\mathscr{X})$ and
+  $(W,\mathscr{Y})$.  Then  for all
+  $a\in \mathcal{C}(X), b \in \mathcal{C}(Y)$,
+  \[\phi(S(b)a) = \phi(bS(a))=0.\]
 \end{Prop}
 \begin{proof}
-  Let $a=(\id \otimes \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})$ and
-  $b=(\id \otimes \omega_{\eta,\eta'})(\Gr{Y}{p}{q}{r}{s})$, where
-  $\xi \in \Gru{\mathcal{H}}{k}{l}, \xi' \in \Gru{\mathcal{H}}{m}{n}$
-  and $\eta \in \Gru{\mathcal{K}}{p}{q}, \eta' \in
-  \Gru{\mathcal{K}}{r}{s}$. 
-  
-  If $(p,q,r,s) \neq (m,n,k,l)$, then clearly $\phi(S(b)a) = 0 = \phi(bS(a))$.
-  
-   If $(p,q,r,s) = (m,n,k,l)$,  then Lemma \ref{lem:rep-average}, applied to the 
-  family $\Gru{T}{p}{q}= \delta_{p,k}\delta_{q,l}
-  |\eta'\rangle\langle\xi|$, yields  morphisms $\check{T}_l,\hat{T}_k$
-  from $(\mathcal{H},X)$ to $(\mathcal{K},Y)$ which necessarily are
-  $0$. Inserting the definition of $\check{T}_l$, we find
+Since $\phi$ vanishes on $S(\Gr{A}{k}{l}{m}{n})\Gr{A}{p}{q}{r}{s}$ and
+on $\Gr{A}{p}{q}{r}{s}S(\Gr{A}{k}{l}{m}{n})$ unless
+$(p,q,r,s) = (m,n,k,l)$, it suffices to prove the assertion for  elements of the form
+\begin{align*}
+  a&=(\id \otimes \omega_{v,v'})(\Gr{X}{k}{l}{m}{n})  && \text{and} &
+  b&=(\id \otimes \omega_{w,w'})(\Gr{Y}{k}{l}{m}{n})
+\end{align*}
+where $v\in \dual{(\Gru{V}{k}{l})}, v' \in \Gru{V}{m}{n}$ and $w \in
+\dual{(\Gru{W}{k}{l})}, w' \in \Gru{W}{m}{n}$.  Lemma
+\ref{lem:rep-average}, applied to the family
+  \begin{align*}
+    \Gru{T}{p}{q} \colon \Gru{V}{p}{q} \to \Gru{W}{p}{q}, \quad x
+    \mapsto  \delta_{p,k}\delta_{q,l}  v(x)w',
+  \end{align*}
+  yields morphisms $\check{T}_l,\hat{T}_k$ from $(V,\mathscr{X})$ to
+  $(W,\mathscr{Y})$ which necessarily are $0$. Inserting the
+  definition of $\check{T}_l$, we find
   \begin{align*}
     \phi(S(b)a) &= \phi\big((S \otimes
-    \omega_{\eta,\eta'})(\Gr{Y}{m}{n}{k}{l}) \cdot (\id \otimes
-    \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})\big) \\ &= (\phi \otimes
-    \id)\left((1\otimes \langle\eta|) \Gr{(Y^{-1})}{l}{k}{n}{m}(1 \otimes
-      |\eta'\rangle\langle \xi|)
-      \Gr{X}{k}{l}{m}{n}(1\otimes |\xi'\rangle)\right) 
-   \\ &= (1\otimes \langle \eta|) \Gru{\check{T}_l}{m}{n}(1\otimes |\xi'\rangle) = 0.
+    \omega_{w,w'})(\Gr{Y}{m}{n}{k}{l}) \cdot (\id \otimes
+    \omega_{v,v'})(\Gr{X}{k}{l}{m}{n})\big) \\ &= (\phi \otimes \omega_{w,v'})\left(\Gr{(Y^{-1})}{l}{k}{n}{m}(1 \otimes
+      \Gru{T}{k}{l} )     \Gr{X}{k}{l}{m}{n}\right) 
+    = \omega_{w,v'}( \Gru{\check{T}_l}{m}{n}) = 0.
   \end{align*}% Resort notation on using leg notation, physics bra-ket, etc.
   
   A similar calculation involving $\hat{T}$ shows that
   $\phi(bS(a))=0$.  
-  
-  Using the relation $X^{*}=X^{-1}=(S\otimes
-  \id)(X)$ and $Y^{*}=(S\otimes \id)(Y)$, we conclude
-  $\phi(b^{*}a)=\phi(ba^{*})=0$.
 \end{proof}
 
-The second part of the orthogonality relations concerns inner products
-as above but with $a,b\in \mathcal{C}(X)$ for some irreducible
-corepresentation  $X$. It involves the conjugate corepresentation,
-which is defined as follows.
-
-Given Hilbert spaces $\Hsp,\mathcal{K}$, we denote by $\overline{\Hsp},\overline{\mathcal{K}}$
-the conjugate Hilbert spaces, by $T \mapsto \overline{T}$ the
-canonical conjugate-linear isomorphism $\mathcal{B}(\Hsp,\mathcal{K}) \to
-\mathcal{B}(\overline{\Hsp},\overline{\mathcal{K}})$, and by $T \mapsto
-T^{\top}:=\overline{T}^{*}$ the linear anti-isomorphism % Or contravariant isomorphism?
-$\mathcal{B}(\Hsp,\mathcal{K}) \to \mathcal{B}(\overline{\mathcal{K}},\overline{\Hsp})$.
-
-\begin{Lem} \label{lemma:rep-functors}Let $\Corep_{\sfd,\Hilb}(\mathscr{A})$ denote the category of (not necessarily unitary) corepresentations of $\mathscr{A}$ on sfd bigraded Hilbert spaces. 
-   Then on $\Corep_{\sfd,\Hilb}(\mathscr{A})$ there exist
+\begin{Theorem} \label{thm:rep-orthogonality} Let $\mathscr{A}$ define
+  a partial compact quantum group.  Let $\phi$ be a positive
+  normalized invariant functional. Let $(V,\mathscr{X})$ be a unitary
+  irreducible sfd corepresentation of $\mathscr{A}$,  let $F_{\mathscr{X}}$
+  be an isomorphism from $(V,\mathscr{X})$ to
+  $(V,\dual{(\dual{\mathscr{X}})})$ and $G_{\mathscr{X}}=F_{\mathscr{X}}^{-1}$.
   \begin{enumerate}
-  \item a covariant antilinear functor $(\mathcal{H},X) \mapsto
-    (\overline{\mathcal{H}},\overline{X})$ and $T \mapsto
-    \overline{T}$, where
-    \begin{align*}
-      \Gru{\overline{\mathcal{H}}}{k}{l} &= \overline{\Gru{\mathcal{H}}{l}{k}},
-      & \Gr{\overline{X}}{k}{l}{m}{n} &= (\Gr{X}{l}{k}{n}{m})^{(*
-        \otimes \overline{(\ \cdot \ ) })}
-      =((\Gr{X}{l}{k}{n}{m})^{*})^{\id \otimes \top}, &
-      \Gru{\overline{T}}{k}{l} &= \overline{\Gru{T}{l}{k}};
-    \end{align*}
-  \item a contravariant linear functor $(\mathcal{H},X) \mapsto
-    (\overline{\mathcal{H}},X^{S\otimes \top})$ and
-    $T\mapsto T^{\top}$, where 
-    \begin{align*}\Gru{\overline{\mathcal{H}}}{k}{l} &= \overline{\Gru{\mathcal{H}}{l}{k}},&
-     & \Gr{(X^{S\otimes \top})}{k}{l}{m}{n} = (S \otimes (\ \cdot \
-      )^{\top})(\Gr{X}{n}{m}{l}{k}), & \Gru{(T^{\top})}{k}{l}
-      &=(\Gru{T}{l}{k})^{\top};
-    \end{align*}
-  \item a covariant linear functor  $(\mathcal{H},X) \mapsto (\mathcal{H},X^{S^{2}\otimes \id})$
-    and $T\mapsto T$, where the grading is unchanged and \[\Gr{(X^{S^{2}\otimes \id})}{k}{l}{m}{n}=(S^{2} \otimes
-  \id)(\Gr{X}{k}{l}{m}{n}).\]
-  \end{enumerate}
-  If $(\mathcal{H},X)$ is unitary, then $\overline{X}=X^{S\otimes \top}$.\end{Lem}
-\begin{proof}
-The first assertion follows immediately from the fact that $\Delta_{rs}(a^*)=\Delta_{sr}(a)^*$ and the $^*$-compatibility of $\epsilon$. The second assertion follows from the fact that $\Delta_{pq}\circ S  = (S\otimes S)\circ \Delta_{qp}^{\op}$ and $\epsilon\circ S = \epsilon$. The final functor is just the square of the second functor. 
-
-The fact that $\overline{X}=X^{S\otimes \top}$ for $X$ unitary is just by definition. % yes?
- % Some of these properties should be mentioned before.
-  
-  
-  %\begin{align*}
-  %  (\Delta_{pq} \otimes \id)( \Gr{\overline{X}}{k}{l}{m}{n}) &=
-    %( \Gr{\overline{X}}{k}{l}{p}{q})_{13}
-    %( \Gr{\overline{X}}{p}{q}{m}{n})_{23}, \\
-    %(\epsilon \otimes \id)(\Gr{\overline{X}}{k}{l}{m}{n}) &=
-   % \overline{(\epsilon \otimes \id)(\Gr{X}{l}{k}{n}{m})}
-   % = \delta_{l,n}\delta_{k,m}
-   % \overline{\id_{\Gru{\mathcal{H}}{l}{k}}}
-   % = \delta_{l,n}\delta_{k,m} \id_{\Gru{\overline{\mathcal{H}}}{k}{l}}.
- % \end{align*}
-  
-\end{proof}
-We call $(\overline{\mathcal{H}},\overline{X})$ the \emph{conjugate} of 
-$(\mathcal{H},X)$.   
-
-\begin{Prop} \label{prop:rep-f}
-  Let $\mathscr{A}$ define a partial compact quantum group, and let $\phi$ be a positive normalized
-  invariant functional. Let $(\mathcal{H},X)$ be a unitary
-  irreducible sfd corepresentation. 
-  \begin{enumerate}
-  \item The conjugate $\overline{\mathcal{H}}$ with the family
-    $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{l}{k}{n}{m}\big)^{*}$
-    form an sfd corepresentation, and there
-    exists an invertible, positive morphism $\overline{F_{X}}$ from
-    $(\overline{\mathcal{H}},\overline{X})$ to
-    $(\overline{\mathcal{H}},\overline{X}^{-*})$. % Better notation?
-  \item The family
-    $\Gru{F_{X}}{k}{l}:=\overline{\Gru{\overline{F_{X}}}{l}{k}}$ is an
-    invertible, positive operator implementing a morphism from $(\mathcal{H},X)$ to
-    $(\mathcal{H},X^{S^{2} \otimes \id})$.
-  \end{enumerate}
-\end{Prop}
-\begin{proof}
-(1) By Proposition \ref{prop:rep-unitarisable},
-$(\overline{\mathcal{H}},\overline{X})$ is equivalent to a unitary
-corepresentation, that is, there exists a family of invertible operators
-$\Gru{T}{k}{l} \in \mathcal{B}(\Gru{\overline{\mathcal{H}}}{k}{l})$
-such that the family 
-\begin{align*}
-\Gr{Z}{k}{l}{m}{n}:= (1 \otimes
-\Gru{T}{k}{l})\Gr{\overline{X}}{k}{l}{m}{n}(1 \otimes
-\Gru{T}{m}{n})^{-1} 
-\end{align*}
- is a unitary corepresentation. The relation
- $\Gr{(Z^{-1})}{n}{m}{l}{k}=\big(\Gr{Z}{m}{n}{k}{l})^{*}$ then implies
- \begin{align*}
-   \Gr{Z}{k}{l}{m}{n} = (1 \otimes
-   (\Gru{T}{k}{l})^{-1})^{*}\big(\Gr{(\overline{X}^{-1})}{l}{k}{n}{m}\big)^{*}(1
-   \otimes \Gru{T}{m}{n})^{*}
- \end{align*}
- and hence the family 
- $\Gr{(\overline{X}^{-*})}{k}{l}{m}{n}:=\big(\Gr{(\overline{X}^{-1})}{l}{k}{n}{m}\big)^{*}$
- is an irreducible sfd corepresentation. The maps
- $\Gru{\overline{F}_{X}}{k}{l}:=(\Gru{T}{k}{l})^{*}\Gru{T}{k}{l} \in
-  \mathcal{B}(\Gru{\overline{\mathcal{H}}}{k}{l})$
-then form an isomorphism from $(\overline{\mathcal{H}},\overline{X})$ to
-$(\overline{\mathcal{H}},\overline{X}^{-*})$.   
-
-(2) The morphism $T$  from $(\overline{\mathcal{H}},\overline{X})$  to
-$(\overline{\mathcal{H}},Z)$ yields morphisms $\overline{T}$ from
-$(\mathcal{H},X)$ to $(\mathcal{H},\overline{Z})$ and $T^{\top}$ from $(\mathcal{H},Z^{S\otimes\top})$ to
-$(\mathcal{H},\overline{X}^{S \otimes \top})$. Since $X$ and $Z$ are
-unitary, $\overline{Z}=Z^{S\otimes \top}$ and  $\overline{X}^{S \otimes
-  \top} = X^{S^{2} \otimes \id}$. Thus $T^{\top}\overline{T} =
-\overline{T^{*}T}$ is a morphism from $(\mathcal{H},X)$ to
-$(\mathcal{H},X^{S^{2}\otimes \id})$.
-\end{proof}
-
-
-\begin{Theorem} \label{thm:rep-orthogonality} Let $\mathscr{A}$ define a partial
-compact quantum group. 
-  Let $\phi$ be a positive normalized invariant functional. Let $(\mathcal{H},X)$ be a unitary irreducible sfd corepresentation of $\mathscr{A}$, and let $F_{X}$ be a
-  non-zero morphism from $(\mathcal{H},X)$ to $(\mathcal{H},X^{S^{2}
-  \otimes \id})$.
-  \begin{enumerate}
-  \item The numbers $\alpha:=\sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l})$
-    and $\beta:=\sum_{n} \Tr(\Gru{F_{X}}{m}{n})$ do not depend on $l$
+  \item The numbers $\alpha:=\sum_{k} \Tr (\Gr{G}{k}{l}{}{\mathscr{X}})$
+    and $\beta:=\sum_{n} \Tr (\Gr{F}{m}{n}{}{\mathscr{X}})$ do not depend on $l$
     or $n$.
   \item  For all $k,l,m,n$,
     \begin{align*}
-      (\phi \otimes \id)((\Gr{X}{k}{l}{m}{n})^{*}\Gr{X}{k}{l}{m}{n})
-      &=\alpha^{-1}{\Tr(\Gru{(F^{-1}_{X})}{k}{l})} \cdot
-      \id_{\Gru{\mathcal{H}}{m}{n}}, \\
-      (\phi \otimes \id)(\Gr{X}{k}{l}{m}{n}(\Gr{X}{k}{l}{m}{n})^{*})
-      &=\beta^{-1}{\Tr( \Gru{(F_{X})}{m}{n})} \cdot
-      \id_{\Gru{\mathcal{H}}{k}{l}}.
+      (\phi \otimes \id)(\Gr{(X^{-1})}{m}{n}{k}{l}\Gr{X}{k}{l}{m}{n})
+      &=\alpha^{-1}\Tr(\Gr{G}{k}{l}{}{\mathscr{X}})
+      \id_{\Gru{V}{m}{n}}, \\
+      (\phi \otimes \id)(\Gr{X}{k}{l}{m}{n}\Gr{(X^{-1})}{m}{n}{k}{l})
+      &=\beta^{-1}\Tr(\Gr{F}{m}{n}{}{\mathscr{X}})
+      \id_{\Gru{V}{k}{l}}.
     \end{align*}
-  \item Denote by $\Sigma_{klmn}$ the flip map $\Gru{\mathcal{H}}{k}{l}
-    \otimes \Gru{\mathcal{H}}{m}{n} \to \Gru{\mathcal{H}}{m}{n}
-    \otimes \Gru{\mathcal{H}}{k}{l}$. Then
+  \item Denote by $\Sigma_{klmn}$ the flip map $\Gru{V}{k}{l}
+    \otimes \Gru{V}{m}{n} \to \Gru{V}{m}{n}
+    \otimes \Gru{V}{k}{l}$. Then
  \begin{align*}
    (\phi \otimes \id \otimes
-   \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13}) &=
+   \id)((\Gr{(X^{-1})}{m}{n}{k}{l})_{12}(\Gr{X}{k}{l}{m}{n})_{13}) &=
    \alpha^{-1}
-   (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{(F_{X}^{-1})}{k}{l})
+   (\id_{\Gru{V}{m}{n}} \otimes \Gr{G}{k}{l}{}{\mathscr{X}})
    \circ \Sigma_{klmn}, \\
    (\phi \otimes \id \otimes
-   \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})_{12}^{*}) &= \beta^{-1} (\Gru{F_{X}}{m}{n}
-   \otimes \id_{\Gru{\mathcal{H}}{k}{l}}) \circ \Sigma_{klmn}.
+   \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{(X^{-1})}{m}{n}{k}{l})_{12}) &= \beta^{-1} (\Gr{F}{m}{n}{}{\mathscr{X}}
+   \otimes \id_{\Gru{V}{k}{l}}) \circ \Sigma_{klmn}.
  \end{align*}
 \end{enumerate}
   \end{Theorem}
@@ -890,20 +711,20 @@ compact quantum group.
   %$\Gru{\mathcal{H}}{p}{q} \otimes \Gru{\mathcal{H}}{r}{s} \to
   %\Gru{\mathcal{H}}{r}{s} \otimes \Gru{\mathcal{H}}{p}{q}$.  
   Consider
-  the following endomorphism $F_{m,n,k,l}$ of $\Gru{\mathcal{H}}{m}{n}\otimes \Gru{\mathcal{H}}{k}{l}$, 
+  the following endomorphism $F_{m,n,k,l}$ of $\Gru{V}{m}{n}\otimes \Gru{V}{k}{l}$, 
   \begin{align*}
     F_{m,n,k,l}
-    &:=(\phi \otimes \id \otimes \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})
+    &:=(\phi \otimes \id \otimes \id)(\Gr{(X^{-1})}{m}{n}{k}{l})_{12}(\Gr{X}{k}{l}{m}{n})_{13})
     \circ \Sigma_{mnkl} \\ &= (\phi \otimes \id \otimes
-    \id)\left((\Gr{(X^{-1})}{l}{k}{n}{m})_{12}
+    \id)\left(\Gr{(X^{-1})}{m}{n}{k}{l})_{12}
       \Sigma_{klkl,23}(\Gr{X}{k}{l}{m}{n})_{12}\right).
   \end{align*}
   By applying Lemma \ref{lem:rep-average} with respect to the flip map $\Sigma_{klkl}$, we see that the family $(F_{m,n,k,l})_{m,n}$ is
-  an endomorphism of $(\mathcal{H} \otimes \Gru{\mathcal{H}}{k}{l}, X_{12})$ and hence
+  an endomorphism of $(V \otimes \Gru{V}{k}{l}, X_{12})$ and hence
   \begin{align}
-    F_{m,n,k,l} &= \id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
+    F_{m,n,k,l} &= \id_{\Gru{V}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
   \end{align}
-  with some $\Gru{R}{k}{l} \in \mathcal{B}(\Gru{\mathcal{H}}{k}{l})$ not
+  with some $\Gru{R}{k}{l} \in \Hom_{\C}(\Gru{V}{k}{l})$ not
   depending on $m,n$. % In using irreducibility, do we not miss any subtlety in allowing non-bounded morphisms?
   On the other hand, 
   \begin{align*}
@@ -913,38 +734,37 @@ compact quantum group.
     &= (\phi\circ S^{-1} \otimes \id \otimes \id)\left(((S \otimes
       \id)(\Gr{X}{k}{l}{m}{n}))_{13}
       ((S^{2} \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{12}\right)     \circ \Sigma_{mnkl}\\
-    &= (\phi\circ S^{-1} \otimes \id \otimes \id)\left(((S \otimes
-      \id)(\Gr{X}{k}{l}{m}{n}))_{13} (\Sigma_{mnmn})_{23} ((S^{2}
-      \otimes \id)(\Gr{X}{m}{n}{k}{l}))_{13}\right).
+    &= (\phi\circ S^{-1} \otimes \id \otimes
+    \id)\left((\Gr{(X^{-1})}{k}{l}{m}{n})_{13} (\Sigma_{mnmn})_{23}
+      (\Gr{(\dual{\dual{X}{}\!})}{m}{n}{k}{l})_{13}\right).
   \end{align*}
   Since $\phi\circ S^{-1}$ is an invariant functional for
   $\mathscr{A}$, we can again apply Lemma \ref{lem:rep-average} and
   find that the family $(F_{m,n,k,l})_{k,l}$ is a morphism \[(F_{m,n,k,l})_{k,l}:
-  (\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H}, (X^{S^{2} \otimes
-    \id})_{13})\rightarrow (\Gru{\mathcal{H}}{m}{n} \otimes \mathcal{H},
-  X_{13}).\] Therefore,
+  (\Gru{V}{m}{n} \otimes V, (\dual{\dual{\mathscr{X}}{}\!})_{13})\rightarrow (\Gru{V}{m}{n} \otimes V,
+ \mathscr{X}_{13}).\] Therefore,
   \begin{align}
-    F_{m,n,k,l} &= \Gru{T}{m}{n} \otimes (\Gru{F_{X}}{k}{l})^{-1} \label{eq:rep-orthogonal-2}
+    F_{m,n,k,l} &= \Gru{T}{m}{n} \otimes \Gr{G}{k}{l}{}{\mathscr{X}} \label{eq:rep-orthogonal-2}
   \end{align}
-  with some $\Gru{T}{m}{n} \in \mathcal{B}(\Gru{\mathcal{H}}{m}{n})$
+  with some $\Gru{T}{m}{n} \in \mathcal{\Hom_{\C}}(\Gru{V}{m}{n})$
   not depending on $k,l$. Combining \eqref{eq:rep-orthogonal-1} and
   \eqref{eq:rep-orthogonal-2}, we conclude that, for some $\lambda\in \C$, \[F_{m,n,k,l} = \lambda
-  (\id_{\Gru{\mathcal{H}}{m}{n}} \otimes (\Gru{F_{X}}{k}{l})^{-1})\]
+  (\id_{\Gru{V}{m}{n}} \otimes \Gr{G}{k}{l}{}{\mathscr{X}})\]
   
-  Choose a basis
-  $(\zeta_{i})_{i}$ for $\Gru{\mathcal{H}}{k}{l}$. Then
+  Choose dual  bases
+  $(v_{i})_{i}$ for $\Gru{V}{k}{l}$ and $(\dual{v}_{i})_{i}$ for  $\dual{(\Gru{V}{k}{l})}$. Then
   \begin{align*}
-    \lambda \cdot \id_{\Gru{\mathcal{H}}{m}{n}} \cdot
-    \Tr((\Gru{F_{X}}{k}{l})^{-1}) &= \sum_{i} (\id \otimes
-    \omega_{\zeta_{i},\zeta_{i}})(F_{m,n,k,l}) = (\phi \otimes
+    \lambda   \Tr( \Gr{G}{k}{l}{}{\mathscr{X}}) \id_{\Gru{V}{m}{n}}
+ &= \sum_{i} (\id \otimes
+    \omega_{\dual{v}_{i},v_{i}})(F_{m,n,k,l}) = (\phi \otimes
     \id)((\Gr{X}{k}{l}{m}{n})^{*} \Gr{X}{k}{l}{m}{n}).
   \end{align*}
   Taking $n=l$ and summing over $k$, the relations $\sum_{k}
   (\Gr{X}{k}{l}{m}{n})^{*} \Gr{X}{k}{l}{m}{n} = \UnitC{l}{n}
-  \otimes \id_{\Gru{\mathcal{H}}{m}{n}}$ and
+  \otimes \id_{\Gru{V}{m}{n}}$ and
   $\phi(\UnitC{l}{l})=1$ give
 \begin{align*}
-\lambda \cdot  \sum_{k} \Tr((\Gru{F_{X}}{k}{l})^{-1}) = 1.
+\lambda \cdot  \sum_{k} \Tr(\Gr{G}{k}{l}{}{\mathscr{X}}) = 1.
 \end{align*}
 Now all assertions in (1)--(3) concerning $\alpha$ follow.
  % the second formula, we use the first formula for the
@@ -955,36 +775,27 @@ Now all assertions in (1)--(3) concerning $\alpha$ follow.
  %    and therefore $F_{X}$ gets replaced by $F_{X}^{-1}$.
 \end{proof}
 \begin{Cor}\label{CorOrth}
-  Assume that $\mathscr{A}$ defines a partial compact quantum group, and let $\phi$ be a normalized positive  invariant functional. Let $(\mathcal{H},X)$ be a unitary
+  Assume that $\mathscr{A}$ defines a partial compact quantum group,
+  and let $\phi$ be a normalized positive  invariant functional. Let
+  $(V,\mathscr{X})$ be an
   irreducible sfd corepresentation of $\mathscr{A}$, let
-  $F_{X}$ be a non-zero morphism from $(\mathcal{H},X)$ to
-  $(\mathcal{H},(S^{2} \otimes \id)(X))$, and let $a=(\id \otimes
-  \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
-  \omega_{\eta,\eta'})(\Gr{X}{k}{l}{m}{n})$, where $\xi,\eta \in
-  \Gru{\mathcal{H}}{k}{l}$ and $\xi',\eta' \in \Gru{\mathcal{H}}{m}{n}$.
+  $F_{\mathscr{X}}$ be an isomorphism from $(V,\mathscr{X})$ to
+  $(V,\dual{\dual{\mathscr{X}}{}\!})$ and
+  $G_{\mathscr{X}}=F^{-1}_{{\mathscr{X}}}$, and let $a=(\id \otimes
+  \omega_{v,v'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
+  \omega_{w,w'})(\Gr{X}{k}{l}{m}{n})$, where $v,w \in
+  \dual{(\Gru{V}{k}{l})}$ and $v',w' \in \Gru{V}{m}{n}$.
   Then
 \begin{align*}
-  \phi(b^{*}a) &= \frac{\langle \eta'|\xi'\rangle \langle
-    \xi|F^{-1}_{X}\eta\rangle}{\sum_{m}
-    \Tr(\Gru{(F^{-1}_{X})}{m}{n})}, & \phi(ab^{*}) = \frac{\langle
-    \eta'|F_{X}\xi'\rangle \langle \xi|\eta\rangle}{\sum_{n}
-    \Tr(\Gru{F_{X}}{m}{n})}.
+  \phi(S(b)a) &= \frac{(w|v')(v|G_{\mathscr{X}}w')}{\sum_{m}
+    \Tr(\Gr{G}{m}{n}{}{\mathscr{X}})}, & \phi(aS(b)) = \frac{(w|F_{\mathscr{X}}v')(v|w')}{\sum_{n}
+    \Tr(\Gr{F}{m}{n}{}{\mathscr{X}})}.
 \end{align*}
 \end{Cor}
 \begin{proof}
-  By Theorem \ref{thm:rep-orthogonality}, 
-  \begin{align*}
-    \phi(b^{*}a) &= (\phi \otimes \omega_{\eta',\eta} \otimes
-    \omega_{\xi,\xi'})((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})
-    \\
-    &= \frac{1}{\sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l})} 
-    (\omega_{\eta',\eta} \otimes
-    \omega_{\xi,\xi'})(   (
-    \id_{\Gru{\mathcal{H}}{m}{n}} \otimes \Gru{(F_{X}^{-1})}{k}{l})
-    \circ \Sigma_{k,l,m,n}). 
-  \end{align*}
-  The formula for $\phi(ab^{*})$ follows similarly or by considering
-  the co-opposite of $\mathscr{A}$.
+Apply $\omega_{w,w'} \otimes
+    \omega_{v,v'}$ to the formulas in  Theorem
+    \ref{thm:rep-orthogonality} 3.
 \end{proof}
 \begin{Cor} \label{cor:rep-pw}
   Let $\mathscr{A}$ define a partial compact quantum group. Let
@@ -1034,8 +845,7 @@ C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$.
   \begin{enumerate}[label={(\arabic*)}]\setcounter{enumi}{4}
   \item $f_z(ab) = f_z(a)f_z(b)$ for $a\in A(K)$ and $b\in A(L)$ with $K_r = L_l$. 
   \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$.
-  \item $f_{z}(\UnitC{l}{n})=\delta_{l,n}$,  $f_{z} \circ S = f_{-z}$,
-and    $f_{z}(a^*) = \overline{f_{-\overline{z}}(a)}$ for all $a\in A$.
+  \item $f_{z}(\UnitC{l}{n})=\delta_{l,n}$ and $f_{z} \circ S = f_{-z}$ for all $a\in A$.
 \end{enumerate}
 \end{Theorem}
 
@@ -1058,16 +868,16 @@ Note that condition (3) is meaningful by condition (1).
     \begin{align*}
       f_{z}((\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})) &=
       \delta_{k,m}\delta_{l,n} \cdot
-      \omega_{\xi,\eta}((\Gru{F_{X}}{k}{l})^{z}) \quad \text{for all }
+      \omega_{\xi,\eta}((\Gru{F_{\mathscr{X}}}{k}{l})^{z}) \quad \text{for all }
       \xi \in \Gru{\mathcal{H}}{k}{l},\eta \in
       \Gru{\mathcal{H}}{m}{n},
     \end{align*}
     or, equivalently,
     \begin{align*}
       (f_{z} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
-      \delta_{k,m}\delta_{l,n} \cdot (\Gru{F_{X}}{k}{l})^{z},
+      \delta_{k,m}\delta_{l,n} \cdot (\Gru{F_{\mathscr{X}}}{k}{l})^{z},
     \end{align*}
-    where $F_{X}$ is a non-zero positive operator implementing a morphism from $(\mathcal{H},X)$ to
+    where $F_{\mathscr{X}}$ is a non-zero positive operator implementing a morphism from $(\mathcal{H},X)$ to
     $(\mathcal{H}, (S^{2} \otimes \id)(X))$, scaled such that
     \begin{align*}
       \alpha_{X}:= \sum_{k} \Tr(\Gru{(F_{X}^{-1})}{k}{l}) = \sum_{n}
@@ -1225,6 +1035,142 @@ $\sigma$ and with $R$ in the obvious sense,
 
 
 
+\subsection{Unitary corepresentations and the involutive case}
+
+
+Let us now enhance our partial Hopf algebras to partial compact quantum groups. One then considers corepresentations on sfd bigraded \emph{Hilbert spaces} such that the inverse of the corepresentation coincides with its adjoint. More precisely, we have the following definition. We denote $B(\Hsp,\mathcal{G})$ for the linear space of bounded morphisms between Hilbert spaces.
+
+%\paragraph{Unitarity of corepresentations}
+
+\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group. We call an sfd corepresentation $(\mathcal{H},X)$ on an sfd $I^2$-graded Hilbert space $\mathcal{H}$
+\emph{unitary} if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}\quad \textrm{in }\Gr{A}{k}{l}{m}{n}\otimes B(\Gru{\Hsp}{l}{k},\Gru{\Hsp}{n}{m}).\]  
+\end{Def} 
+\begin{Rem} \begin{enumerate} \item In the Hilbert space setting, it is more natural to let $\Hsp$ be the \emph{closed} (instead of the purely algebraic) direct sum of all (finite-dimensional) $\Gru{\Hsp}{k}{l}$. This does not change the notion of corepresentation, which had a local definition.
+\item Concerning morphisms, we will say a collection of $\Gru{T}{k}{l}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus \Gru{T}{k}{l}$ is bounded. We will denote by $\Corep_{\sfd,u}(\mathscr{A})$ the category of unitary sfd corepresentations with arbitrary morphisms, and $\Corep_{\sfd,u}^{\infty}(\mathscr{A})$ for the category with bounded morphisms.
+% Give a more prominent place, or check later if it is actually worthwhile to make this distinction.
+\end{enumerate}
+\end{Rem}
+
+Our aim now is to show that every irreducible sfd corepresentation is
+equivalent to a unitary one. We show this by embedding the corepresentation into a restriction of the
+regular corepresentation.
+
+\begin{Exa} \label{exa:rep-regular}
+  Let $\mathscr{A}$ define a partial compact quantum group with normalized positive invariant functional $\phi$. 
+
+  Let $\Gru{\mathcal{H}}{m}{n} \subseteq \bigoplus_{k,l}
+  \Gr{A}{k}{l}{m}{n}$ be finite dimensional subspaces satisfying
+\begin{align*}
+  \Delta^{\op}_{pq}(\Gru{\mathcal{H}}{m}{n}) \subseteq
+ \Gr{A}{p}{q}{m}{n} \otimes \Gru{\mathcal{H}}{p}{q}.
+\end{align*}
+for all indices.
+Equip each $\Gru{\mathcal{H}}{k}{l}$ with the scalar product $\langle
+a|b\rangle:=\phi(a^{*}b)$. By Lemma \ref{LemFaith}, these are finite-dimensional Hilbert spaces. Take the Hilbert space direct sum
+$\mathcal{H}:=\bigoplus_{k,l} \Gru{\mathcal{H}}{k}{l}$.
+Define \[ \Gr{V}{k}{l}{m}{n} \in \Hom_\C(\Gru{\mathcal{H}}{m}{n}, \Gr{A}{k}{l}{m}{n} \otimes \Gru{\mathcal{H}}{k}{l}) \cong \Gr{A}{k}{l}{m}{n} \otimes 
+\mathcal{B}(\Gru{\mathcal{H}}{m}{n},\Gru{\mathcal{H}}{k}{l})\]  by the
+equation
+\begin{align*}
+  \Gr{V}{k}{l}{m}{n}a &= \Delta^{\co}_{kl}(a).
+\end{align*}
+%where $\Gr{V}{k}{l}{m}{n}|a\rangle_{2}$  denotes the application of
+%the second leg of
+%$\Gr{V}{k}{l}{m}{n}$  to $a \in \Gru{\mathcal{H}}{m}{n}$. 
+
+\begin{Lem} The couple $(\mathcal{H},V)$ defines a unitary corepresentation. 
+\end{Lem} 
+\begin{proof} It is clear that $V$ defines a corepresentation. It then suffices to prove that \begin{equation}\label{EqUnit} \sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n} = \delta_{n,n'}\UnitC{l}{n}\otimes \id_{\Gru{\Hsp}{m}{n}}.\end{equation} Take $a\in \Gru{\Hsp}{m}{n}$ and $b\in \Gru{\Hsp}{m}{n'}$. Then writing \[\Lambda(a): \C\rightarrow \Gru{\Hsp}{m}{n}, \quad 1\mapsto a,\] and similarly for $b$, we compute \begin{eqnarray*}(1\otimes \Lambda(b)^*)\left(\sum_{k} (\Gr{V}{k}{l}{m}{n'})^* \Gr{V}{k}{l}{m}{n}\right) (1\otimes \Lambda(a)) &=& \sum_k (\id\otimes \phi)(\Delta_{kl}^{\op}(b)^*\Delta_{kl}^{\op}(a))\\ &=&  \sum_k (\id\otimes \phi)(\Delta_{lk}^{\op}(b^*)\Delta_{kl}^{\op}(a)) \\ &=& (\id\otimes \phi)(\Delta_{ll}^{\op}(b^*a))\\ &=&  (\phi\otimes \id)(\Delta_{ll}(b^*a)) \\ &=& \phi(b^*a)\UnitC{l}{n} \\&=& \delta_{n',n} \UnitC{l}{n} \otimes \Lambda(b)^*\Lambda(a).\end{eqnarray*} 
+This proves \eqref{EqUnit}.
+\end{proof} 
+
+We will call $(\mathcal{H},V)$  the 
+\emph{sfd restriction of the regular corepresentation}
+determined by the family $(\Gru{\mathcal{H}}{k}{l})_{k,l}$. 
+\fxnote{proof this}
+\end{Exa}
+
+In the following, we will use the notation \[\omega_{\xi,\eta}:B(\Hsp,\mathcal{G})\rightarrow \C,\quad x\mapsto \langle \xi,x\eta\rangle,\quad \xi\in \mathcal{G},\eta\in \Hsp.\]
+
+\begin{Lem} \label{lem:rep-morphism-regular}
+  Let $\mathscr{A}$ define a partial compact quantum group. Let $(\mathcal{H},X)$ be an sfd corepresentation on a Hilbert space, and let $\xi \in
+  \Gru{\mathcal{H}}{k}{l}$. Then the family of finite-dimensional
+  subspaces
+  \begin{align*}
+   \Gru{\mathcal{K}}{m}{n}  &=  \{ (\id \otimes
+   \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}) : \eta \in
+   \Gru{\mathcal{H}}{m} {n}\} \subseteq \Gr{A}{k}{l}{m}{n}
+  \end{align*}% Should explain notation
+  defines an sfd restriction $(\mathcal{K},V)$ of the regular corepresentation, and the family of maps
+  \begin{align*}
+    \Gru{T_{(\xi)}}{m}{n} \colon \Gru{\mathcal{H}}{m}{n} \to
+    \Gru{\mathcal{K}}{m}{n}, \ \eta \mapsto (\id \otimes
+    \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),
+  \end{align*}
+  is a morphism from $(\mathcal{H},X)$ to $(\mathcal{K},V)$ in $\Corep_{\sfd,u}(\mathscr{A})$. % Should $\xi$ then also be in a subscript for $\mathcal{K}$?
+\end{Lem}
+Note that the family $(\Gru{\mathcal{K}}{m}{n})_{m,n}$ is sfd because $(\Gru{\mathcal{H}}{m}{n})_{m,n}$
+is. 
+\begin{proof} Both assertions  follow from the fact
+  that for all $\eta \in \Gru{\mathcal{H}}{p}{q}$,
+\begin{eqnarray*}
+\Delta^{\op}_{pq}(\Gru{T_{(\xi)}}{m}{n}(\eta)) &=&  \Delta_{pq}^{\op}\big((\id \otimes
+  \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})\big)\\
+ &=&(\id \otimes \id \otimes \omega_{\xi,\eta})\big(
+  (\Gr{X}{k}{l}{p}{q})_{23}(\Gr{X}{p}{q}{m}{n})_{13})\big) \\ &=&(1
+  \otimes \Gru{T_{(\xi)}}{p}{q})\Gr{X}{p}{q}{m}{n} \eta.
+\end{eqnarray*}
+\end{proof}
+\begin{Prop}  \label{prop:rep-unitarisable}
+  Let $\mathscr{A}$ define a partial compact quantum group. Then every irreducible sfd corepresentation on a Hilbert space
+  is equivalent to a unitary sfd corepresentation.
+\end{Prop}
+\begin{proof}
+  Let $(\mathcal{H},X)$ be an irreducible sfd
+  corepresentation. Then for some $k,l$ and $\xi \in
+  \Gru{\mathcal{H}}{k}{l}$,  the operator  $T_{(\xi)}$  defined in
+  Lemma \ref{lem:rep-morphism-regular} has to be non-zero and hence,
+  by Schur's Lemma, injective. Thus, it forms an equivalence between
+  $(\mathcal{H},X)$ and a sub-corepresentation of an sfd
+  restriction of the regular corepresentation, which is unitary by
+  Example \ref{exa:rep-regular}.
+\end{proof}
+
+\begin{Lem} Every sfd unitary corepresentation $(X,\Hsp)$ of $\mathscr{A}$ decomposes into a direct sum of irreducible sfd unitary corepresentations.
+\end{Lem} 
+\begin{proof} From the unarity assumption, it follows immediately that an invariant subspace of $\Hsp$ also has an invariant orthogonal complement. Hence irreducibility and indecomposability of unitary corepresentations coincide. More generally, one deduces that the bounded self-interwiners of $\Hsp$ form a (von Neumann) $^*$-algebra.
+
+% Trivial rep should maybe be introduced in a more conspicuous place
+Let us now first show that the trivial representation decomposes into irreducibles. Let $I$ be the object set of $\mathscr{A}$, and say $k\sim l$ if $\UnitC{k}{l}\neq 0$. Then $\sim$ is an equivalence relation: as \[\Delta_{ll}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m},\] the relation $\sim$ is transitive. As $S(\UnitC{k}{l}) = \UnitC{l}{k}$, we have that $\sim$ is symmetric. And as $\varepsilon(\UnitC{k}{k})=1$, we also have that $\sim$ is reflexive. 
+
+Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. Define $\C_{I_{\alpha}}\subseteq \C_I$ as the linear span of the homogeneous components with index in $\alpha$. It is clear then that the $\C_{I_{\alpha}}$ are invariant and irreducible.
+
+Consider now a general corepresentation $(X,\Hsp)$. Let $\Grd{\Hsp}{\alpha}{\beta}$ be the closed linear span of the homogeneous components with index in $\alpha\times \beta$. As we can identify \[\Grd{\Hsp}{\alpha}{\beta} \cong \C_{I_{\alpha}}\,\Circt\, \Hsp\,\Circt\, \C_{I_{\beta}},\] we see that $\Grd{\Hsp}{\alpha}{\beta}$ is an invariant subspace of $\Hsp$. Hence we may as well suppose that $\Hsp = \Grd{\Hsp}{\alpha}{\beta}$. 
+
+But let then $T$ be a bounded self-intertwiner of $\Hsp$. Then from the two equations in Remark \ref{RemMorRep}, we see that $T\rightarrow \Gru{T}{k}{l}$ is injective for any choice of $k\in \alpha,l\in \beta$. It follows that the algebra of self-intertwiners of $\Hsp$ is finite-dimensional. We then immediately conclude that $\Hsp$ is a finite direct sum of irreducible invariant subspaces.
+\end{proof} 
+
+\begin{Prop} \label{prop:rep-weak-pw}
+  Assume that $\mathscr{A}$ defines a partial compact quantum group. Then the total algebra $A$ is the sum of the matrix coefficients of
+ irreducible unitary sfd corepresentations.
+\end{Prop}
+\begin{proof}
+  Let $a \in \Gr{A}{k}{l}{m}{n}$. Then
+  $\Delta^{\co}_{pq}(a) \in
+  \Gr{A}{p}{q}{m}{n} \otimes \Gr{A}{k}{l}{p}{q}$, and the subspace
+    \begin{align*}
+    \Gru{\mathcal{H}}{p}{q} &:= \span \{ (\omega \otimes \id)(
+    \Delta^{\co}_{pq}(a)) : \omega \in \Hom_{\C}(\Gr{A}{p}{q}{m}{n},\C) \} \subseteq
+    \Gr{A}{k}{l}{p}{q}
+  \end{align*}
+  has finite dimension. Since $a$ is fixed, the
+  $(\Gru{\mathcal{H}}{p}{q})_{p,q}$ are in fact sfd. Using
+  co-associativity, one checks that this family defines an sfd restriction $(\mathcal{H},V)$ of the regular
+  corepresentation. Evidently, $a \in \mathcal{C}(V)$. Decomposing
+  $(\mathcal{H},V)$, we find that
+  $a$ is contained in the sum of matrix coefficients of unitary
+  irreducible corepresentations.
+\end{proof}
 
 %  consider
 %   the family
@@ -1320,6 +1266,10 @@ $\sigma$ and with $R$ in the obvious sense,
 % where $\Gru{\overline{F_{X}}}{}{l}=\bigoplus_{k}
 % \Gru{\overline{F_{X}}}{k}{l}$. Inserting this relation into
 % \eqref{eq:rep-orthogonal-2}, we finally obtain the assertion.
+
+
+% We use here the standard leg numbering notation, e.g. $a_{12} =
+% a\otimes 1$.
 
 
 %%% Local Variables: 
