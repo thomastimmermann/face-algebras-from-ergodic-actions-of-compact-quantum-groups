@@ -1,0 +1,1622 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.19)  16 JUL 2014 17:10
+entering extended mode
+**dyn-suq-main.tex
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen103
+\Hy@linkcounter=\count87
+\Hy@pagecounter=\count88
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count89
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count90
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen104
+\Fld@menulength=\count91
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count92
+\c@Item=\count93
+\c@Hfootnote=\count94
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count95
+\c@bookmark@seq@number=\count96
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fixme\fixme.sty"
+Package: fixme 2013/01/28 v4.2 Collaborative annotations for LaTeX2e
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count97
+File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
+))
+\c@fixmecount=\count98
+\c@fxnotecount=\count99
+\c@fxwarningcount=\count100
+\c@fxerrorcount=\count101
+\c@fxfatalcount=\count102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\mathrsfs.sty"
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count103
+\Gm@cntv=\count104
+\c@Gm@tempcnt=\count105
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks19
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks20
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip44
+\thm@postskip=\skip45
+\thm@headsep=\skip46
+\dth@everypar=\toks26
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsxtra.sty"
+Package: amsxtra 1999/11/15 v1.2c
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip47
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks27
+\ex@=\dimen115
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen116
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen117
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip11
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks28
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks29
+\eqnshift@=\dimen118
+\alignsep@=\dimen119
+\tagshift@=\dimen120
+\tagwidth@=\dimen121
+\totwidth@=\dimen122
+\lineht@=\dimen123
+\@envbody=\toks30
+\multlinegap=\skip48
+\multlinetaggap=\skip49
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+LaTeX Info: Redefining \nobreakspace on input line 65.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathabx\mathabx.sty"
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup8
+\symmathb=\mathgroup9
+\symmathx=\mathgroup10
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\mathabx\mathabx.dcl"
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 280.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 285.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 286.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 287.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 296.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 297.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 327.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 328.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 329.
+LaTeX Font Info:    Redeclaring math symbol \doublecap on input line 331.
+LaTeX Font Info:    Redeclaring math symbol \doublecup on input line 333.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 350.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 351.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 352.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 353.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 354.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 355.
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 357.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 358.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 359.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
+
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410
+.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416
+.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 42
+7.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 42
+8.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 4
+29.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 443.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 445.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 451.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 452.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 453.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 454.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 455.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 456.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 458.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 459.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 461.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 462.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 465.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 466.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 467.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 468.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 469.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 470.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 472.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 473.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 476.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 477.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 478.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 479.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 482.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 483.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 485.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 486.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 488.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 489.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 500.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 501.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 503.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 508.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 509.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 512.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 513.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 517.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 521.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 522.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 523.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 524.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 527.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 528.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
+LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568
+.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+9.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594
+.
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 615.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 617.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 619.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642
+.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+646.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
+\mayacnter=\count118
+\mayacnta=\count119
+\mayacntb=\count120
+\mayacntc=\count121
+\mayawidth=\dimen124
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip50
+\enit@outerparindent=\dimen125
+\enit@toks=\toks32
+\enit@inbox=\box28
+\enitdp@description=\count122
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count123
+\calc@Bcount=\count124
+\calc@Adimen=\dimen126
+\calc@Bdimen=\dimen127
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count125
+\calc@Cskip=\skip53
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count126
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen128
+\Gin@req@width=\dimen129
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box29
+\AM@toc@title=\toks33
+\c@AM@survey=\count127
+\AM@templatesizebox=\box30
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eepic\epic.sty"
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count128
+\d@lta=\count129
+\@delta=\dimen130
+\@@delta=\dimen131
+\@gridcnt=\count130
+\@joinkind=\count131
+\@dotgap=\dimen132
+\@ddotgap=\dimen133
+\@x@diff=\count132
+\@y@diff=\count133
+\x@diff=\dimen134
+\y@diff=\dimen135
+\@dotbox=\box31
+\num@segments=\count134
+\num@segmentsi=\count135
+\@datafile=\read2
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fouridx\fouridx.sty"
+Package: fouridx 2008/03/27 v1.00 Four indices
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\parskip.sty"
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+\c@Theorem=\count136
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.aux
+
+LaTeX Warning: Label `prop:rep-weak-pw' multiply defined.
+
+
+LaTeX Warning: Label `thm:rep-characters' multiply defined.
+
+
+LaTeX Warning: Label `figy' multiply defined.
+
+
+LaTeX Warning: Label `figy' multiply defined.
+
+
+LaTeX Warning: Label `figy' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring OFF on input line 253.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count137
+)
+LaTeX Info: Redefining \ref on input line 253.
+LaTeX Info: Redefining \pageref on input line 253.
+LaTeX Info: Redefining \nameref on input line 253.
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.out)
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.out)
+\@outlinefile=\write3
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count138
+\scratchdimen=\dimen136
+\scratchbox=\box33
+\nofMPsegments=\count139
+\nofMParguments=\count140
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count141
+\MPscratchDim=\dimen137
+\MPnumerator=\count142
+\makeMPintoPDFobject=\count143
+\everyMPtoPDFconversion=\toks35
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 260.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 260.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 260.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 260.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.toc [1
+
+{C:/Users/Kenny/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
+\tf@toc=\write4
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\1-face-algebras.tex [2]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 54.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 54.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 55.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 56.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 65.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 65.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 65.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
+
+[3]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 78.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 78.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 85.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 90.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 90.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 90.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 92.
+
+[4]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 124.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 124.
+
+[5]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 148.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 148.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
+
+[6]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 173.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 173.
+
+[7] [8]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
+
+[9] [10]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 347.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 347.
+
+[11]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 397.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 397.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 405.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 410.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 427.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 429.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+[12] [13])
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\2-representations.tex
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 5.
+
+[14]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 59.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 59.
+
+[15]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+
+
+Overfull \hbox (20.84198pt too wide) in paragraph at lines 157--157
+[] 
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 193.
+
+[16] [17] [18]
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 41
+7.
+
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 41
+7.
+
+[19]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 439.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 439.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 448.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 448.
+
+[20]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 579.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 579.
+
+[21]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 584.
+
+
+Overfull \hbox (2.22441pt too wide) in paragraph at lines 579--585
+\OT1/cmtt/m/n/10.95 the choice of $\OML/cmm/m/it/10.95 n$\OT1/cmtt/m/n/10.95 , 
+taking into account the decomposition into components of
+ []
+
+
+Overfull \hbox (4.64453pt too wide) in paragraph at lines 579--585
+\OT1/cmtt/m/n/10.95 corepresentations --- namely, there exists an $\OML/cmm/m/i
+t/10.95 n$ \OT1/cmtt/m/n/10.95 such that $ [][] \U/matha/m/n/10.95  \OT1/cmr/m
+/n/10.95 0$ \OT1/cmtt/m/n/10.95 whenever
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+
+
+LaTeX Warning: Reference `RemMorRep' on page 22 undefined on input line 603.
+
+[22] [23] [24] [25]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 849.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 851.
+
+[26]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 947.
+
+[27]
+
+LaTeX Warning: Reference `prop:rep-f' on page 28 undefined on input line 985.
+
+
+LaTeX Warning: Reference `prop:rep-f' on page 28 undefined on input line 1041.
+
+[28]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1052.
+
+
+LaTeX Warning: Reference `eq:rep-delta2' on page 29 undefined on input line 105
+2.
+
+[29] [30]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1178.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1178.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1178.
+
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 1185.
+FiXme Note: 'proof this' on input line 1185.
+
+LaTeX Warning: Reference `lem:rep-morphism-regular' on page 31 undefined on inp
+ut line 1196.
+
+[31])
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\3-tannaka.tex
+Overfull \hbox (39.24403pt too wide) in paragraph at lines 1--1
+[]\OT1/cmr/bx/n/14.4 Tannaka-Krein du-al-ity for par-tial com-pact quan-tum gro
+upoids 
+ []
+
+[32] [33] [34]
+Overfull \hbox (42.66815pt too wide) in alignment at lines 87--87
+ [][][] []
+ []
+
+[35]
+Overfull \hbox (19.95937pt too wide) in paragraph at lines 112--112
+[]\OT1/cmr/m/n/10.95 Let $\OML/cmm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \U/msb/m/n
+/10.95 C \U/matha/m/n/10.95 Ñ \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 be com-ple
+x con-ju-ga-tion. Then we can write $\OML/cmm/m/it/10.95 I[]e[]e[]J[] \U/matha/
+m/n/10.95  p\OML/cmm/m/it/10.95 I[]e[]C\U/matha/m/n/10.95 qp\OML/cmm/m/it/10.9
+5 Ce[]J[]\U/matha/m/n/10.95 q$\OT1/cmr/m/n/10.95 .
+ []
+
+[36] [37]
+Overfull \hbox (42.0021pt too wide) in paragraph at lines 148--149
+\OT1/cmr/m/n/10.95 By the defin-ing prop-er-ties of $\OML/cmm/m/it/10.95 I[]$ \
+OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 J[]$\OT1/cmr/m/n/10.95 , this ex-pre
+s-sion be-comes $[][]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10
+.95 q[] [][]x\OML/cmm/m/it/10.95 e[]; J[]x[]yJ[]e[]\U/matha/m/n/10.95 y$\OT1/cm
+r/m/n/10.95 ,
+ []
+
+[38]
+Overfull \hbox (24.59605pt too wide) in paragraph at lines 164--164
+\OT1/cmr/m/n/10.95 be de-ter-mined as the el-e-ment im-ple-ment-ing the non-deg
+enerate pair-ing $\OML/cmm/m/it/10.95 B\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 
+F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10.95 q[]\OML/cmm/m/it
+/10.95 ; F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10.95 q[]q b$
+
+ []
+
+[39]
+Overfull \hbox (12.61499pt too wide) detected at line 181
+\OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 X \U/matha/m/n/10.
+95 b \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q  \OML/cmm/m/it/10.95 F[]\U/math
+a/m/n/10.95 p\OML/cmm/m/it/10.95 X \U/matha/m/n/10.95 b \OML/cmm/m/it/10.95 Y\U
+/matha/m/n/10.95 q ` \OML/cmm/m/it/10.95 F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/1
+0.95 X \U/matha/m/n/10.95 b \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q [] p\OML/
+cmm/m/it/10.95 F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 X\U/matha/m/n/10.95 q
+ [] \OML/cmm/m/it/10.95 F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 Y\U/matha/m/
+n/10.95 qq ` p\OML/cmm/m/it/10.95 F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 X\
+U/matha/m/n/10.95 q b \OML/cmm/m/it/10.95 F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/
+10.95 Y\U/matha/m/n/10.95 qq  \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p\OML/cm
+m/m/it/10.95 X\U/matha/m/n/10.95 q [] \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p
+\OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q
+ []
+
+[40])
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\4-op-alg.tex
+
+LaTeX Warning: Reference `' on page 41 undefined on input line 8.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 31.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 36.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 36.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 36.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 36.
+
+
+LaTeX Warning: Reference `' on page 41 undefined on input line 37.
+
+[41]
+
+LaTeX Warning: Reference `' on page 42 undefined on input line 81.
+
+[42]
+Overfull \hbox (5.82503pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/it/10.95 algebra $\OML/cmm/m/it/10.95 A$ \OT1/cmr/m/it/10.95 and as-
+so-ci-ated Hilbert space $\OML/cmm/m/it/10.95 L[]\U/matha/m/n/10.95 p\U/rsfs/m/
+n/10.95 G\U/matha/m/n/10.95 q$\OT1/cmr/m/it/10.95 . Then there ex-ists a unique
+ $\U/matha/m/n/10.95 $\OT1/cmr/m/it/10.95 -homomorphism
+ []
+
+[43]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 223.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 223.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 231.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 231.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 231.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 231.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 231.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 231.
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 239.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (5.20357pt too wide) in paragraph at lines 245--245
+[] 
+ []
+
+
+LaTeX Warning: Reference `' on page 44 undefined on input line 251.
+
+[44]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 275.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 275.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 279.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 279.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 279.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 279.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 280.
+
+
+Overfull \hbox (3.80753pt too wide) in paragraph at lines 324--324
+[] 
+ []
+
+[45] [46] [47])
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\5-free.tex [48] [49]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 56.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 58.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 59.
+
+[50]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 67.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
+
+
+Overfull \hbox (10.59474pt too wide) detected at line 68
+[] []\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 k\U/matha/m/n/10.95 q[] []  [] []
+p\OML/cmm/m/it/10.95 k\U/matha/m/n/10.95 q[] [] \OML/cmm/m/it/10.95 :
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
+
+[51]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
+
+[52])
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\6-dyn-suq.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 12.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 12.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 12.
+
+[53]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 27.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 27.
+
+[54] [55] [56]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 101.
+
+[57] [58] [59]
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\specx0-even.epic)
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\specx0-odd.epic)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\specx12-even.epic)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\specx12-odd.epic)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.bbl [60] [61])
+
+FiXme Summary: Number of notes: 1,
+(FiXme)        Number of warnings: 0,
+(FiXme)        Number of errors: 0,
+(FiXme)        Number of fatal errors: 0,
+(FiXme)        Total: 1.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
+[62]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
+
+(C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
+quantum-groups\dyn-suq-main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
+Package rerunfilecheck Info: File `dyn-suq-main.out' has not changed.
+(rerunfilecheck)             Checksum: AE482BB40BE59612C97C5E48F236A022;1169.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
+ ) 
+Here is how much of TeX's memory you used:
+ 9726 strings out of 493921
+ 139140 string characters out of 3144876
+ 270436 words of memory out of 3000000
+ 12482 multiletter control sequences out of 15000+200000
+ 38802 words of font info for 148 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 37i,19n,60p,1798b,626s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi6
+00\matha12.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
+mathabx\dpi720\matha12.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\public\mathabx\dpi600\matha5.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\public\mathabx\dpi480\mathx10.pk> <C:\Users\Kenny\AppData\Local
+\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi657\mathb10.pk> <C:\Users\Kenny\A
+ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi657\mathx10.pk> <C:\U
+sers\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi657\matha
+10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\
+dpi600\matha6.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publ
+ic\mathabx\dpi600\matha10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk
+\ljfour\public\mathabx\dpi600\matha8.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\public\mathabx\dpi864\matha12.pk><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+s8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/hoekwater/rsfs/rsfs10.pfb>
+Output written on dyn-suq-main.pdf (62 pages, 683236 bytes).
+PDF statistics:
+ 1118 PDF objects out of 1200 (max. 8388607)
+ 326 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+
