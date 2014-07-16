@@ -28,10 +28,10 @@ Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
 \end{Rem} 
 
-<<<<<<< HEAD
+%<<<<<<< HEAD
 The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. 
 
-=======
+%=======
 There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
 % We will need the notion of \emph{relator} between partial algebras. When $R\subseteq I\times J$ is a relation, we write, for $k\in I$, $R_k= \{l'\in J\mid (k',l')\in R\}$. We write $D_R = \{k\in I\mid \#R_k\neq0\}$.  
 % A \emph{functor} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a map $F:I\rightarrow J$ and linear maps $F_{k,l}:A(k,l)\rightarrow B(F(k),F(l))$ such that the $F_{k,l}$ respect the algebra and unit maps in the obvious ways. 
@@ -48,7 +48,7 @@ The notion of partial algebra dualizes. For this we consider again $I^2$ as the 
 
 % Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
 % Should provide shortcut for notation where only the new indices appear at $\Delta$ (so disregard the source): write $\Delta(K over L)$ as $Delta_{rs}$ for $r=K_{ld}$ and $s=K_{rd}$. 
->>>>>>> origin/master
+%>>>>>>> origin/master
 \begin{Def} A \emph{partial coalgebra} $\mathscr{A}=(\mathscr{A},\Delta)$ (over $\C$) consists of a set $I$ (the object set) together with 
 \begin{itemize}
 \item[$\bullet$] for each $K=\Grru{k}{l}\in I^2$ a vector space $A(K) = \Grt{A}{k}{l}=\!\!\GrRA{A}{k}{l}$,
@@ -68,12 +68,12 @@ Similarly, if $K = \Grt{}{k}{l}$ and $L = \Grt{}{l}{m}$, we abbreviate $\Delta_l
 We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $K_d \neq L_u$. Similarly $\epsilon$ is seen as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
 
 We can now superpose the notions of partial algebra and partial coalgebra. To formulate the condition that the coalgebra maps form a `morphism of partial algebras', we will need to impose a finiteness condition which is automatically satisfied when the cardinality of $I$ is finite.
-<<<<<<< HEAD
-=======
+%<<<<<<< HEAD
+%=======
 
 % Formally, a finite morphism between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ equipped with an injection $\phi$ of a subset of $J$ into $I$ consists of maps $F_{K,L}:A(\phi(K),\phi(L))\rightarrow B(K,L)$ for $K,L$ in the domain of $\phi$, such that the map $(K,L)\mapsto F_{K,L}(a)$ is finite in rows and columns when the values of $K,L$ are restricted to one fiber of$ \phi$, and such that then $F_{K,M}(ab) = \sum_L F_{K,L}(a)F_{L,M}(b)$. 
 % Should this more general notion be included?
->>>>>>> origin/master
+%>>>>>>> origin/master
 
 Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with two compositions, namely $\cdot$ (viewing $M_2(I)$ as a row vector of column vectors) and $*$ (viewing $M_2(I)$ as a column vector of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact as a \emph{vacant} double groupoid in the sense of \cite{AN1}. 
 
@@ -201,11 +201,7 @@ roughly that the legs of $\Delta(A)$ span $A$) by \cite[Theorem
  The maps $\Pi^{L}$ and $\Pi^{R}$ can also
 be written in the form
 \begin{align} \label{eq:pi} 
-    \Pi^L(a) &
-=
-    \sum_{p}\epsilon(\lambda_{p}a)\lambda_p, & \Pi^R(a) &
-
-=    \sum_{p}\epsilon(a \rho_{p}) \rho_p
+    \Pi^L(a) & = \sum_{p}\epsilon(\lambda_{p}a)\lambda_p, & \Pi^R(a) & =    \sum_{p}\epsilon(a \rho_{p}) \rho_p
 \end{align}
 because $\epsilon(\lambda_{k}\rho_{m} a \lambda_{l}\rho_{n})=0$  if $(k,l)\neq(m,n)$. These relations and  \eqref{EqDel}, \eqref{eq:delta-lambda-rho} imply
 \begin{align} \label{eq:pi-l-delta}

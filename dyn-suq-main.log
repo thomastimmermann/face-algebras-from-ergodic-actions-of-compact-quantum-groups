@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.19)  4 JUL 2014 15:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.19)  16 JUL 2014 17:10
 entering extended mode
 **dyn-suq-main.tex
 
@@ -695,6 +695,12 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.aux
 
+LaTeX Warning: Label `prop:rep-weak-pw' multiply defined.
+
+
+LaTeX Warning: Label `thm:rep-characters' multiply defined.
+
+
 LaTeX Warning: Label `figy' multiply defined.
 
 
@@ -704,22 +710,22 @@ LaTeX Warning: Label `figy' multiply defined.
 LaTeX Warning: Label `figy' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 248.
+Package hyperref Info: Link coloring OFF on input line 253.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -728,9 +734,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 248.
-LaTeX Info: Redefining \pageref on input line 248.
-LaTeX Info: Redefining \nameref on input line 248.
+LaTeX Info: Redefining \ref on input line 253.
+LaTeX Info: Redefining \pageref on input line 253.
+LaTeX Info: Redefining \nameref on input line 253.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.out)
@@ -786,435 +792,475 @@ quantum-groups\dyn-suq-main.out)
 \makeMPintoPDFobject=\count143
 \everyMPtoPDFconversion=\toks35
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 255.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 260.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 255.
+LaTeX Font Info:    Try loading font information for U+msa on input line 260.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 255.
+LaTeX Font Info:    Try loading font information for U+msb on input line 260.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 255.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 260.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\dyn-suq-main.toc)
+quantum-groups\dyn-suq-main.toc [1
+
+{C:/Users/Kenny/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write4
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\1-face-algebras.tex [1
+quantum-groups\1-face-algebras.tex [2]
 
-{C:/Users/Kenny/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 50.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 50.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 50.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 50.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 47.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 54.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 54.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 55.
 
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 56.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 56.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 65.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 57.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 65.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 58.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 65.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 67.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 67.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 67.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 70.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 70.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 78.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 78.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
 
 [3]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 78.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 78.
+
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 85.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 91.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 90.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 91.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 90.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 91.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 90.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 93.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 92.
 
 [4]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 130.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 124.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 130.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 124.
 
 [5]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 153.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 153.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 153.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 146.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 155.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 148.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 155.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 148.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 
 [6]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 180.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 173.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 180.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 173.
 
 [7] [8]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 326.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 326.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 257.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 328.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 328.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 328.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 328.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 328.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 328.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 259.
 
 [9] [10]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 465.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 347.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 465.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 465.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 465.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 467.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 467.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 474.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 474.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 474.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 474.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 474.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 474.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 475.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 479.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 479.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 479.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 479.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 479.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 479.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 480.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 347.
 
 [11]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 488.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 488.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 488.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 497.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 395.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 499.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 397.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 397.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 404.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 405.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 503.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 409.
 
-[12])
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 410.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 427.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 429.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 433.
+
+[12] [13])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\2-representations.tex
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 5.
 
-[13]
+[14]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 56.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 56.
-
-[14] [15]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 237.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 59.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 237.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 59.
+
+[15]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 237.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 237.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
 
 
-Overfull \hbox (20.84198pt too wide) in paragraph at lines 237--237
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 157.
+
+
+Overfull \hbox (20.84198pt too wide) in paragraph at lines 157--157
 [] 
  []
 
-[16]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 262.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 262.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 262.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 262.
-
-[17] [18]
-
-LaTeX Warning: Reference `eq:antipode-comultiplication' on page 19 undefined on
- input line 406.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
 
 
-LaTeX Warning: Reference `eq:corep-blocks-tensor' on page 19 undefined on input
- line 437.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 182.
 
 
-LaTeX Warning: Reference `lem:corep-partial-inverse' on page 19 undefined on in
-put line 438.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 193.
+
+[16] [17] [18]
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 41
+7.
+
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 41
+7.
 
 [19]
 
-LaTeX Warning: Reference `lemma:rep-corep' on page 20 undefined on input line 4
-80.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 439.
 
 
-LaTeX Warning: Reference `lemma:rep-corep' on page 20 undefined on input line 4
-82.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 439.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 482.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 448.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 448.
 
 [20]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 527.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 579.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 527.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 527.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 579.
 
 [21]
-Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
-line 534.
-FiXme Note: 'proof this' on input line 534.
- [22]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 584.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+Overfull \hbox (2.22441pt too wide) in paragraph at lines 579--585
+\OT1/cmtt/m/n/10.95 the choice of $\OML/cmm/m/it/10.95 n$\OT1/cmtt/m/n/10.95 , 
+taking into account the decomposition into components of
+ []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+Overfull \hbox (4.64453pt too wide) in paragraph at lines 579--585
+\OT1/cmtt/m/n/10.95 corepresentations --- namely, there exists an $\OML/cmm/m/i
+t/10.95 n$ \OT1/cmtt/m/n/10.95 such that $ [][] \U/matha/m/n/10.95  \OT1/cmr/m
+/n/10.95 0$ \OT1/cmtt/m/n/10.95 whenever
+ []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 601.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Warning: Reference `RemMorRep' on page 23 undefined on input line 607.
-
-[23]
-
-LaTeX Warning: Reference `RemMorRep' on page 24 undefined on input line 656.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 679.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 679.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 679.
+LaTeX Warning: Reference `RemMorRep' on page 22 undefined on input line 603.
+
+[22] [23] [24] [25]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 849.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 679.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 851.
 
-[24] [25] [26] [27]
+[26]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 943.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 947.
+
+[27]
+
+LaTeX Warning: Reference `prop:rep-f' on page 28 undefined on input line 985.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 945.
+LaTeX Warning: Reference `prop:rep-f' on page 28 undefined on input line 1041.
 
 [28]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1037.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1052.
+
+
+LaTeX Warning: Reference `eq:rep-delta2' on page 29 undefined on input line 105
+2.
 
 [29] [30]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1143.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1178.
 
 
-LaTeX Warning: Reference `eq:rep-delta2' on page 31 undefined on input line 114
-3.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1178.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1178.
+
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 1185.
+FiXme Note: 'proof this' on input line 1185.
+
+LaTeX Warning: Reference `lem:rep-morphism-regular' on page 31 undefined on inp
+ut line 1196.
 
 [31])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\3-tannaka.tex [32] [33]
-Overfull \hbox (42.66815pt too wide) in alignment at lines 54--54
+quantum-groups\3-tannaka.tex
+Overfull \hbox (39.24403pt too wide) in paragraph at lines 1--1
+[]\OT1/cmr/bx/n/14.4 Tannaka-Krein du-al-ity for par-tial com-pact quan-tum gro
+upoids 
+ []
+
+[32] [33] [34]
+Overfull \hbox (42.66815pt too wide) in alignment at lines 87--87
  [][][] []
  []
 
-[34] [35]
-Overfull \hbox (19.95937pt too wide) in paragraph at lines 79--79
+[35]
+Overfull \hbox (19.95937pt too wide) in paragraph at lines 112--112
 []\OT1/cmr/m/n/10.95 Let $\OML/cmm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \U/msb/m/n
 /10.95 C \U/matha/m/n/10.95 Ñ \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 be com-ple
 x con-ju-ga-tion. Then we can write $\OML/cmm/m/it/10.95 I[]e[]e[]J[] \U/matha/
@@ -1223,7 +1269,7 @@ m/n/10.95  p\OML/cmm/m/it/10.95 I[]e[]C\U/matha/m/n/10.95 qp\OML/cmm/m/it/10.9
  []
 
 [36] [37]
-Overfull \hbox (42.0021pt too wide) in paragraph at lines 115--116
+Overfull \hbox (42.0021pt too wide) in paragraph at lines 148--149
 \OT1/cmr/m/n/10.95 By the defin-ing prop-er-ties of $\OML/cmm/m/it/10.95 I[]$ \
 OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 J[]$\OT1/cmr/m/n/10.95 , this ex-pre
 s-sion be-comes $[][]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10
@@ -1232,7 +1278,7 @@ r/m/n/10.95 ,
  []
 
 [38]
-Overfull \hbox (24.59605pt too wide) in paragraph at lines 131--131
+Overfull \hbox (24.59605pt too wide) in paragraph at lines 164--164
 \OT1/cmr/m/n/10.95 be de-ter-mined as the el-e-ment im-ple-ment-ing the non-deg
 enerate pair-ing $\OML/cmm/m/it/10.95 B\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 
 F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10.95 q[]\OML/cmm/m/it
@@ -1241,7 +1287,7 @@ F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 u[]\U/matha/m/n/10.95 q[]\OML/cmm/m/it
  []
 
 [39]
-Overfull \hbox (12.61499pt too wide) detected at line 148
+Overfull \hbox (12.61499pt too wide) detected at line 181
 \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 X \U/matha/m/n/10.
 95 b \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q  \OML/cmm/m/it/10.95 F[]\U/math
 a/m/n/10.95 p\OML/cmm/m/it/10.95 X \U/matha/m/n/10.95 b \OML/cmm/m/it/10.95 Y\U
@@ -1256,13 +1302,12 @@ m/m/it/10.95 X\U/matha/m/n/10.95 q [] \OML/cmm/m/it/10.95 F\U/matha/m/n/10.95 p
 \OML/cmm/m/it/10.95 Y\U/matha/m/n/10.95 q
  []
 
-)
+[40])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\4-op-alg.tex
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 8.
+LaTeX Warning: Reference `' on page 41 undefined on input line 8.
 
-[40]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 31.
 
@@ -1281,10 +1326,11 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 36.
 
 LaTeX Warning: Reference `' on page 41 undefined on input line 37.
 
-
-LaTeX Warning: Reference `' on page 41 undefined on input line 81.
-
 [41]
+
+LaTeX Warning: Reference `' on page 42 undefined on input line 81.
+
+[42]
 Overfull \hbox (5.82503pt too wide) in paragraph at lines 132--138
 \OT1/cmr/m/it/10.95 algebra $\OML/cmm/m/it/10.95 A$ \OT1/cmr/m/it/10.95 and as-
 so-ci-ated Hilbert space $\OML/cmm/m/it/10.95 L[]\U/matha/m/n/10.95 p\U/rsfs/m/
@@ -1292,7 +1338,7 @@ n/10.95 G\U/matha/m/n/10.95 q$\OT1/cmr/m/it/10.95 . Then there ex-ists a unique
  $\U/matha/m/n/10.95 $\OT1/cmr/m/it/10.95 -homomorphism
  []
 
-[42]
+[43]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 223.
 
@@ -1325,10 +1371,10 @@ Overfull \hbox (5.20357pt too wide) in paragraph at lines 245--245
 [] 
  []
 
-[43]
 
 LaTeX Warning: Reference `' on page 44 undefined on input line 251.
 
+[44]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 275.
 
@@ -1350,7 +1396,7 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 279.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 280.
 
-[44]
+
 Overfull \hbox (3.80753pt too wide) in paragraph at lines 324--324
 [] 
  []
@@ -1367,6 +1413,7 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 58.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 59.
 
+[50]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 67.
 
@@ -1382,7 +1429,7 @@ p\OML/cmm/m/it/10.95 k\U/matha/m/n/10.95 q[] [] \OML/cmm/m/it/10.95 :
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 68.
 
-[50]
+[51]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 71.
 
@@ -1431,7 +1478,7 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 74.
 
-[51])
+[52])
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\6-dyn-suq.tex
 
@@ -1459,7 +1506,7 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 12.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 12.
 
-[52] [53]
+[53]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 27.
@@ -1468,17 +1515,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 27.
 
-[54] [55]
+[54] [55] [56]
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 101.
 
-[56] [57] [58]
+[57] [58] [59]
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\specx0-even.epic)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\specx0-odd.epic)
 
@@ -1498,7 +1541,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
-quantum-groups\dyn-suq-main.bbl [59] [60])
+quantum-groups\dyn-suq-main.bbl [60] [61])
 
 FiXme Summary: Number of notes: 1,
 (FiXme)        Number of warnings: 0,
@@ -1506,16 +1549,16 @@ FiXme Summary: Number of notes: 1,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 1.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
-[61]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
+[62]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
 
 (C:\Users\Kenny\Documents\GitHub\face-algebras-from-ergodic-actions-of-compact-
 quantum-groups\dyn-suq-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 309.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
 Package rerunfilecheck Info: File `dyn-suq-main.out' has not changed.
-(rerunfilecheck)             Checksum: 52C8426DEE88CD7B8DB0B79B3388D549;776.
+(rerunfilecheck)             Checksum: AE482BB40BE59612C97C5E48F236A022;1169.
 
 
 LaTeX Warning: There were undefined references.
@@ -1523,16 +1566,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 9695 strings out of 493921
- 138712 string characters out of 3144876
- 271178 words of memory out of 3000000
- 12470 multiletter control sequences out of 15000+200000
- 37684 words of font info for 143 fonts, out of 3000000 for 9000
+ 9726 strings out of 493921
+ 139140 string characters out of 3144876
+ 270436 words of memory out of 3000000
+ 12482 multiletter control sequences out of 15000+200000
+ 38802 words of font info for 148 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,19n,60p,1797b,531s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,19n,60p,1798b,626s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi6
 00\matha12.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
 mathabx\dpi720\matha12.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\lj
@@ -1540,37 +1583,40 @@ four\public\mathabx\dpi600\matha5.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\
 fonts\pk\ljfour\public\mathabx\dpi480\mathx10.pk> <C:\Users\Kenny\AppData\Local
 \MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi657\mathb10.pk> <C:\Users\Kenny\A
 ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi657\mathx10.pk> <C:\U
-sers\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi600\matha
-6.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\d
-pi657\matha10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publ
+sers\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\dpi657\matha
+10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mathabx\
+dpi600\matha6.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publ
 ic\mathabx\dpi600\matha10.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2.9\fonts\pk
 \ljfour\public\mathabx\dpi600\matha8.pk> <C:\Users\Kenny\AppData\Local\MiKTeX\2
 .9\fonts\pk\ljfour\public\mathabx\dpi864\matha12.pk><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
-10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/lcirc
-le1.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/hoekwater/rsfs/rsfs10
-.pfb>
-Output written on dyn-suq-main.pdf (61 pages, 646344 bytes).
+2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+s8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/hoekwater/rsfs/rsfs10.pfb>
+Output written on dyn-suq-main.pdf (62 pages, 683236 bytes).
 PDF statistics:
- 1065 PDF objects out of 1200 (max. 8388607)
- 312 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1118 PDF objects out of 1200 (max. 8388607)
+ 326 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
