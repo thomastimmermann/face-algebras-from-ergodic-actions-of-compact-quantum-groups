@@ -1,0 +1,309 @@
+% Remarks:
+% Podles sphere can be defined as an algebra in $\Rep(SU_q(2))$. Hence, it should make sense as an algebra under the forgetful functor to SU_q(2)-dynamical. By duality for coideals, the same should hold for passage to SU_q(1,1) in fact...
+%
+% link with article `Racah - Wigner quantum 6j Symbols, Ocneanu Cells for AN diagrams and quantum groupoids' by Coquereaux?
+% Ref to Schauenburg that face algebras are weak Hopf algebras
+% Thanks to Makoto, Piotr (?), Leonid
+% Cf. Enocks quantum groupoids of compact type
+% Donin, J.(IL-BILN); Mudrov, A.(IL-BILN), Quantum groupoids and dynamical categories. 
+% Leonid, cf. talk www.fields.utoronto.ca/programs/scientific/13-14/.../Vainerman.pdf
+% Stokman vertex irf babelon cocycle twist
+% Level 2 Hecke algebras Brundan
+% Concerning locally unital algebras ask J. Vercruysse on recent work 
+% Say construction groupoids from forgetful functors on temperley-Lieb already in Enock-Ostrik remark
+% Say partial compact quantum groups are proper locally compact quantum groupoids with a discrete base set. Can this be made precise? Is e.g. every measured quantum groupoid which has commutative discrete base and which is `proper' (finiteness integrals on components) of this type? Also compare with properness Timmermann.
+% Horizontally categorified algebra is algebroid, but that terminology would be too overused if applied to quantum groupoids
+% Mention generalization of Neshveyev
+
+\documentclass[11pt]{article}
+
+\usepackage{hyperref}
+\usepackage{fixme}
+\usepackage{mathrsfs}
+\usepackage[a4paper]{geometry}
+\usepackage{amssymb, amsthm, amsfonts, amsxtra, amsmath}
+\usepackage{latexsym}
+\usepackage{mathabx}
+\usepackage{enumitem}
+\usepackage[all]{xy}
+\usepackage{graphics}
+\usepackage{pdfpages}
+\usepackage{epic}
+\usepackage{fouridx}
+\usepackage{parskip} % paragraphs have no indents and vertical spacings inbetween
+\makeatletter % need this to avoid the conflict between amsthm and parskip
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
+
+\DeclareMathOperator{\adj}{\mathrm{adj}}
+\DeclareMathOperator{\can}{\mathrm{can}}
+\DeclareMathOperator{\Char}{\mathrm{Char}}
+\DeclareMathOperator{\dyn}{\mathrm{dyn}}
+\DeclareMathOperator{\ext}{\mathrm{e}}
+\DeclareMathOperator{\End}{\mathrm{End}}
+\DeclareMathOperator{\fin}{\mathrm{f}}
+\DeclareMathOperator{\hol}{\mathrm{hol}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\Ind}{\mathrm{Ind}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ker}{\mathrm{Ker}}
+\DeclareMathOperator{\op}{\mathrm{op}}
+\DeclareMathOperator{\Pol}{\mathrm{P}}
+\DeclareMathOperator{\Par}{\mathrm{Par}}
+\DeclareMathOperator{\Ran}{\mathrm{Ran}}
+\DeclareMathOperator{\reg}{\mathrm{reg}}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+\DeclareMathOperator{\Zz}{\mathrm{Z}}
+
+
+\newcommand{\dual}[1]{#1^{\vee}}
+\newcommand{\predual}[1]{{^{\vee}\!#1}}
+\newcommand{\co}{\mathrm{co}}
+\newcommand{\Corep}{\mathrm{Corep}}
+\newcommand{\Corepf}{\mathrm{Corep}^{f}}
+\newcommand{\sff}{\textrm{s.f.~}}
+\newcommand{\sfs}{\mathrm{sfs}}
+\newcommand{\sfd}{\mathrm{sfd}}
+
+\newcommand{\Circt}{{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
+\newcommand{\Circtv}[1]{\underset{#1}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
+\newcommand{\smCirct}{\mathop{\ooalign{$\scriptstyle\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptscriptstyle\mathsf T\mkern2.8mu$}\cr}}}  % Woronowicz style tensor product, SCRIPT SIZE
+
+\newcommand{\nc}{\R}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+
+\newcommand{\kk}{\mathfrak{k}}
+\newcommand{\ttt}{\mathfrak{t}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\llll}{\mathfrak{l}}
+\newcommand{\uu}{\mathfrak{u}}
+\newcommand{\bb}{\mathfrak{b}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\ssl}{\mathfrak{sl}}
+\newcommand{\SSL}{\mathrm{SL}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\spp}{\mathfrak{sp}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\e}{\mathfrak{e}}
+\newcommand{\s}{\mathfrak{s}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Ss}{\mathbb{S}}
+\newcommand{\ZZ}{\mathscr{Z}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\Hsp}{\mathcal{H}}
+\newcommand{\qn}[2]{\lbrack #1 \rbrack_{#2}}
+\newcommand{\fqn}[2]{\lbrack #1 \rbrack_{#2}!}
+\newcommand{\bqn}[3]{\left\lbrack \begin{array}{c} \!#1\! \\ \!#2\! \end{array}\right\rbrack_{#3}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\RR}{\mathcal{R}}
+\newcommand{\rd}{\mathrm{d}}
+\newcommand{\res}{\mathrm{res}}
+\newcommand{\cop}{\mathrm{cop}}
+\newcommand{\opp}{\mathrm{op}}
+\newcommand{\coop}{\mathrm{coop}}
+\newcommand{\Rm}{\mathcal{R}}
+\newcommand{\wt}{\mathrm{wt}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\CatC}{\mathcal{C}}
+\newcommand{\CatD}{\mathcal{D}}
+\newcommand{\CatCC}{\mathscr{C}}
+\newcommand{\CatDD}{\mathscr{D}}
+\newcommand{\Corr}{\mathrm{Corr}}
+
+\newcommand{\Vectf}{\mathrm{Vect}^{f}}
+\newcommand{\Vecti}{\mathrm{Vect}_{I^{2}}}
+\newcommand{\Vectif}{\mathrm{Vect}^{f}_{I^{2}}}
+\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Hilbf}{\mathrm{Hilb}^{\mathrm{f}}}
+\newcommand{\Hilbi}{\mathrm{Hilb}_{I^{2}}}
+\newcommand{\Hilbif}{\mathrm{Hilb}_{I^{2}}^{\mathrm{f}}}
+
+\newcommand{\Star}[2]{{}_{#1}\!*_{#2}}
+\newcommand{\vot}{\bar{\otimes}}
+\newcommand{\A}{\mathcal{B}}
+\newcommand{\Aa}{\mathscr{B}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\alg}{\mathrm{alg}}
+\newcommand{\Gg}{\mathscr{G}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\coev}{\mathrm{coev}}
+\newcommand{\Rtimes}{\underset{\R}{\times}}
+\newcommand{\Rb}{\R^{\bullet}}
+\newcommand{\vtimes}{\bar{\otimes}}
+\newcommand{\Rr}{\mathscr{R}}
+\newcommand{\Tt}{\mathscr{T}}
+\newcommand{\Fun}{\mathrm{Fun}}
+\newcommand{\Ff}{\Fun_{\fin}}
+%\newcommand{\fin}{\mathrm{fin}}
+%\newcommand{\iitimes}{\underset{I}{\otimes}}
+\newcommand{\itimes}{\underset{I}{\otimes}}
+\newcommand{\osum}[1]{\underset{#1}{\sum}^{\oplus}}
+\newcommand{\osumc}[1]{\underset{#1}{\sum}^{\bar{\oplus}}}
+\newcommand{\oplusc}{\bar{\oplus}}
+\newcommand{\wDelta}{\widetilde{\Delta}}
+\newcommand{\f}{\mathrm{fin}}
+%\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Rho}{\mathrm{P}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\DA}{\mathcal{A}}
+%\newcommand{\Circt}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}} % Woronowicz style tensor product, USUAL SIZE
+\newcommand{\even}{\mathrm{even}}
+\newcommand{\odd}{\mathrm{odd}}
+\newcommand{\fd}{\mathrm{fd}}
+\newcommand{\Forget}{F}
+\newcommand{\Vect}{\mathrm{Vect}}
+
+
+\newcommand{\GrHA}[3]{#1{\begin{pmatrix} #2,  #3\end{pmatrix}}}% Horizontal grading ordinary style, with argument
+\newcommand{\Grs}[3]{#1{\begin{pmatrix} #2,  #3\end{pmatrix}}}
+
+\newcommand{\GrDA}[3]{\;{}_{\;#2}#1_{#3}} % Horizontal grading bottom style, with argument
+%\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
+
+\newcommand{\GrVA}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} % Vertical grading ordinary style, with argument
+\newcommand{\Grt}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} 
+
+\newcommand{\GrRA}[3]{#1^{#2}_{#3}} % Vertical grading right style, with argument
+
+\newcommand{\Unit}{\mathbf{1}}
+\newcommand{\UnitC}[2]{\Grt{\mathbf{1}}{#1}{#2}} 
+\newcommand{\Grru}[2]{{\tiny \begin{pmatrix} #1 \\ #2\end{pmatrix}}}
+
+\newcommand{\eGr}[5]{#1{{\tiny \begin{pmatrix} #2 \quad #3 \\ #4 \quad #5\end{pmatrix}}}}
+
+\newcommand{\pma}[4]{\begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}
+\newcommand{\pmat}[4]{{\tiny \begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}}
+
+\newcommand{\UT}[2]{#1{\tiny #2 }}
+\newcommand{\Gr}[5]{\fourIdx{#2}{#4}{#3}{#5}{#1}}%TODO: better typesetting
+\newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
+\newcommand{\Gru}[3]{\Gr{#1}{#2}{#3}{}{}}
+\newcommand{\Grd}[3]{\Gr{#1}{}{}{#2}{#3}}
+% \newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+% %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
+% %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} \, #2\;\\ #3 \qquad #4 \\ \,#5\;\end{pmatrix}}}
+% \newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
+% \newcommand{\Gru}[3]{{}^{\;#2}#1^{#3}}
+% \newcommand{\Grd}[3]{{}_{\;#2}#1_{#3}}
+\newcommand{\gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
+\newcommand{\eGrr}[3]{#1_{{\tiny \left(#2, #3\right)}}}
+\newcommand{\eGrt}[4]{#1{{\tiny \begin{pmatrix} #2 \\ #3 \\ #4 \end{pmatrix}}}}
+\newcommand{\Grr}[4]{\begin{pmatrix}#1 \quad #2\\#3&#4\end{pmatrix}}
+
+\newcommand{\Grss}[3]{\UT{#1}{\begin{pmatrix} #2 \; #3\end{pmatrix}}}
+\newcommand{\Grb}[7]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\\ #6 \quad #7\end{pmatrix}}}
+\newcommand{\un}[2]{e{{\tiny \begin{pmatrix}#1\\ #2\end{pmatrix}}}}
+\newcommand{\unn}[3]{e{{\tiny \begin{pmatrix}#1\\ #2\\#3\end{pmatrix}}}}
+
+\newcommand{\wmult}{\cdot}
+\newcommand{\bmult}{*}
+\newcommand{\wmate}{\rightarrow}% Change this to source/target notation l(eft) r(ight)
+\newcommand{\bmate}{\downarrow}% Change this to source/target notation u(p) d(own)
+
+\newcommand{\aste}[1]{\underset{#1}{\ast}}
+
+\newcommand{\Vv}{\mathcal{V}}
+
+\newcommand{\dT}{\dot T}
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Lem}[Theorem]{Lemma}
+\newtheorem{Prop}[Theorem]{Proposition}
+\newtheorem{Cor}[Theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{Def}[Theorem]{Definition}
+\newtheorem{Rem}[Theorem]{Remark}
+\newtheorem{Exa}[Theorem]{Example}
+\newtheorem{Not}[Theorem]{Notation}
+\newtheorem{Que}[Theorem]{Question}
+\newtheorem{Con}[Theorem]{Conjecture}
+
+%%%%%%%%%%%%%%%%%%%
+% Further notation for Section 1
+\newcommand{\phic}[2]{\Grt{\phi}{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%
+% Notation for Section 4
+\newcommand{\LGtwo}{L^{2}(\mathscr{G})}
+\newcommand{\LGinf}{L^{\infty}(\mathscr{G})}
+\newcommand{\CrG}{C^{r}_{0}(\mathscr{G})}
+\newcommand{\CuG}{C^{u}_{0}(\mathscr{G})}
+\newcommand{\vnDelta}{\overline{\Delta}}
+\newcommand{\vnE}{\overline{E}}
+\newcommand{\astrl}{\underset{l^{\infty}(I)}{_{\rho}\ast_{\lambda}}}
+\newcommand{\otimesrl}{\underset{\nu{}}{_{\rho}\otimes_{\lambda}}}
+\newcommand{\vnphi}{\overline{\phi}}
+\newcommand{\vnphic}[2]{\Grt{\vnphi}{#1}{#2}}
+\newcommand{\vnR}{\overline{R}}
+\newcommand{\vntau}{\overline{\tau}}
+
+\date{}
+
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\title{Partial compact quantum groups}
+
+\author{Kenny De Commer\thanks{Department of Mathematics, Vrije Universiteit Brussel, VUB, B-1050 Brussels, Belgium, email: {\tt kenny.de.commer@vub.ac.be}}
+\and Thomas Timmermann\thanks{University of M\"{u}nster}}
+
+\maketitle
+
+% Terminology `compact' might have to be adapted if we work with infinitely many objects.
+\begin{abstract}
+\noindent Compact quantum groups of face type, as introduced by Hayashi, form a class of quantum groupoids with a classical, finite set of objects. Using the notions of weak multiplier bialgebra and weak multiplier Hopf algebra (resp.~ due to B{\"o}hm--G\'{o}mez-Torrecillas--L\'{o}pez-Centella and Van Daele--Wang), %Correct hyphenation?
+ we generalize Hayashi's definition to allow for an infinite set of objects, and call the resulting objects partial compact quantum groups. We prove a Tannaka-Krein-Woronowicz reconstruction result for such partial compact quantum groups. We also study their connection to the Lesieur-Enock theory of measured quantum groupoids. As an application, we show how any quantum homogeneous space of an ordinary compact quantum group leads to a partial compact quantum group. 
+%In a follow-up article, this construction is applied to the non-standard Podle\'{s} spheres. We obtain in this way partial compact quantum groups which are operator algebraic versions of the dynamical quantum $SU(2)$-group as studied by Etingof-Varchenko and Koelink-Rosengren.% References ok?
+\end{abstract}
+
+
+%\emph{Keywords}:
+
+%AMS 2010 \emph{Mathematics subject classification}:
+
+
+%17B37: Quantum groups, quantized enveloping algebras
+%20G42: quantized function algebras
+%46L65: Functional analysis, deformations, quantizations
+%81R50: Quantum groups and related algebraic methods
+%16T05: Hopf algebras and their applications
+%16T10: Bialgebras
+%16T15: Coalgebras and comodules; corings
+%46L08  $C^*$-modules
+
+
+\tableofcontents
+
+\section{Introduction}
+
+In the following, we follow the physicist's convention that inner products on Hilbert spaces are anti-linear in their \emph{first} argument. Whenever convenient, we will also identify $\mathscr{H}$ with $B(\C,\mathscr{H})$, so that we can write $\langle \xi,\eta\rangle = \xi^*\eta$.
+
+\input{1-partial-algebras.tex}
+\input{2-partial-categories.tex}
+\input{3-corepresentations.tex}
+\input{4-tannaka-krein.tex}
+\input{5-op-alg.tex}
+
+
+
+
+
+
+\bibliographystyle{abbrv}
+\bibliography{references}
+
+\end{document}

@@ -1,8 +1,8 @@
-\section{Tannaka-Krein duality for partial compact quantum groupoids}
-% Rough version. 
+\section{Tannaka-Krein for partial compact quantum groups}
 
 
-In this section, we prove a Tannaka-Krein result for partial compact quantum groupoids. In the previous section, we saw that a partial Hopf algebra $(\mathscr{A},\Delta)$ gives rise to a tensor category with duals $(\CatC,\otimes)$, its category of row and column-finite corepresentations. Its unit is in general not an irreducible object. When $\mathscr{A}$ defnes a compact quantum groupoid, we moreover have that endomorphism spaces are $^*$-algebras, and upon imposing a uniform boundedness condition (as in ...), they are finite von Neumann algebras of type $I$ with discrete center, i.e. a von Neumann algebraic direct product of matrix algebras. General morphism spaces are then Hilbert W$^*$-bimodules between the endomorphism algebras of their source and target. Let us formalize this notion. % See how corep category for 
+
+We are now set to prove a Tannaka-Krein result for partial compact quantum groupoids. In the previous section, we saw that a partial Hopf algebra $(\mathscr{A},\Delta)$ gives rise to a tensor category with duals $(\CatC,\otimes)$, its category of row and column-finite corepresentations. Its unit is in general not an irreducible object. When $\mathscr{A}$ defnes a compact quantum groupoid, we moreover have that endomorphism spaces are $^*$-algebras, and upon imposing a uniform boundedness condition (as in ...), they are finite von Neumann algebras of type $I$ with discrete center, i.e. a von Neumann algebraic direct product of matrix algebras. General morphism spaces are then Hilbert W$^*$-bimodules between the endomorphism algebras of their source and target. Let us formalize this notion. % See how corep category for 
 
 % but the endomorphism ring of the unit is a direct sum of copies of the ground field $\C$. %We have to properly define homomorphisms so that they only live on finitely many components! But then we have problems for the unit and 
 
@@ -16,6 +16,7 @@ As we have remarked before, tensor W$^*$-categories with decomposable unit can a
 
 \begin{Exa} Weak Morita equivalence. 
 \end{Exa}
+% Concrete implementation, helps to define the concept in more general analytic context.
 
 Now if $\mathscr{A}$ defines a partial compact quantum group over the base set $I$, then its $\CatC = \Corep_{u,f}(\mathscr{A})$ comes equipped with a faithful forgetful $^*$-functor $\Forget: \CatC \rightarrow \Hilb_f^{I\times I}$. This $\Forget$ is equipped with a natural unitary strong monoidal structure.  Such pairs $((\CatC,\otimes),\Forget)$ also arise in other situations.
 
@@ -33,13 +34,13 @@ We will also fix once and for all orthonormal bases $f_{c,j}^{a,b}$ for $\Mor(u_
 \begin{Def} For $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) = B(\Forget(u_a)_{kl},\Forget(u_a)_{mn}).\] Write \[\Gr{A}{k}{l}{m}{n} = \underset{a\in J}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\qquad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] The $a$-spectral subspace $A(a)$ of $A$ is defined as \[A(a) = \osum{k,l,m,n} \Gr{A}{k}{l}{m}{n}(a).\] For any element $x\in A$, its component in the $a$-spectral subspace is written $x_a$.
 \end{Def} 
 
-Our goal is to turn $A$ into to the total weak Hopf $^*$-algebra of a generalized compact Hopf face algebra with base set $I$. 
+Our goal is to turn $A$ into to the total weak multiplier Hopf $^*$-algebra of a generalized compact Hopf face algebra with base set $I$. 
 
 %Let $I$ be a (countable) set. We will write $\Hilb_{I^2}$ for the monoidal tensor C$^*$-category of $I$-bigraded Hilbert spaces $\Hsp = \osumc{r,s}\Hsp_{rs}$, where the direct sum on the right is understood as the completion of the ordinary algebraic one. The tensor product $\itimes$ in $\Hilb_{I^2}$ is defined by $(\Hsp\itimes \mathscr{G})_{rs} = \oplusc_t \left(\Hsp_{rt}\otimes\mathscr{G}_{ts}\right)$. The unit of $\Hilb_{I^2}$ is $l^2(I)$ with the obvious $I^2$-grading. We will view this monoidal category as being strict.
 
 %We will be interested in strong tensor C$^*$-functors $F$ from $\CatC$ to $\Hilb_{I^2}$. As shown in [DCY], 
 
-Let us denote the unitary compatibility morphisms of $\Forget$ by $\phi_{X,Y}:F(X)\itimes F(Y)\rightarrow F(X\otimes Y)$, where we recall that they are assumed to satisfy the coherence conditions  \[\phi_{X,Y\otimes Z}(\id_X\otimes \phi_{Y,Z}) = \phi_{X\otimes Y,Z}(\phi_{X,Y}\otimes \id_Z),\qquad \phi_{o,a} = \phi_{a,o} = \id_a.\] It will be convenient to extend $\phi_{X,Y}$ to a coisometry $F(X)\otimes F(Y)\rightarrow F(X\otimes Y)$, defining it to be zero on the orthogonal complement of $F(X)\itimes F(Y)$. Note however that then $\phi_{X,o}$ becomes the coisometry $F(X)\otimes l^2(I)\rightarrow F(X)$ sending $F(X)_{rs} \otimes \C\delta_t$ canonically onto $\delta_{s,t}F(X)_{rs}$, and similarly for $\phi_{o,X}$. Whenever $X,Y$ are clear, we will abbreviate $\phi_{X,Y}$ as $\phi$. We will use the notation \[F^{a,b}_{c,j} = \phi^* F(f^{a,b}_{c,j}) \in B(F(u_c),F(u_a)\otimes F(u_b)).\]
+Let us denote the unitary compatibility morphisms of $\Forget$ by $\phi_{X,Y}:F(X)\itimes F(Y)\rightarrow F(X\otimes Y)$, where we recall that they are assumed to satisfy the coherence conditions  \[\phi_{X,Y\otimes Z}(\id_X\otimes \phi_{Y,Z}) = \phi_{X\otimes Y,Z}(\phi_{X,Y}\otimes \id_Z),\qquad \phi_{o,a} = \phi_{a,o} = \id_a.\] It will be convenient to extend $\phi_{X,Y}$ to a coisometry $F(X)\otimes F(Y)\rightarrow F(X\otimes Y)$, defining it to be zero on the orthogonal complement of $F(X)\itimes F(Y)$. Note however that then $\phi_{X,\mathbf{1}_{\CatC}}$ becomes the coisometry $F(X)\otimes l^2(I)\rightarrow F(X)$ sending $F(X)_{rs} \otimes \C\delta_t$ canonically onto $\delta_{s,t}F(X)_{rs}$, and similarly for $\phi_{\mathbf{1}_{\CatC},X}$. Whenever $X,Y$ are clear, we will abbreviate $\phi_{X,Y}$ as $\phi$. We will use the notation \[F^{a,b}_{c,j} = \phi^* F(f^{a,b}_{c,j}) \in B(F(u_c),F(u_a)\otimes F(u_b)).\]
 
 %As $\CatC$ is rigid, each $F(X)$ will be column-finite in the sense that for each $X$ in $\CatC$ and each fixed $s$ in $I$, the direct sum $\osum{r} F(X)_{rs}$ will be finite-dimensional. Similarly, each $F(X)$ will be row-finite. See ...
 
@@ -55,7 +56,12 @@ Let us denote the unitary compatibility morphisms of $\Forget$ by $\phi_{X,Y}:F(
 
 %If $\xi_a \in F(u_a)_{rs}$ and $\eta_b\in F(u_b)_{st}$, we will denote by $(\xi_a\otimes \eta_b)_c$ the $c$-component of the vector $\phi_{a,b}(\xi_a\otimes \eta_b)_c$ inside $F(u_a\otimes u_b)_{rt}$. Similarly, if $\xi^a \in \overline{F(u_a)_{rs}}$ and $\eta_b\in \overline{F(u_b)_{st}}$, we denote by $(\xi^a\otimes \eta^b)^c$ the vector $\overline{(\bar{\xi}_a\otimes \bar{\eta}_b)_c}$.
 
-We first turn $A$ into an algebra. The multiplication $x\cdot y$ of $x\in \Gr{A}{k}{l}{m}{n}(a)$ and $y\in \Gr{A}{p}{q}{r}{s}(b)$ is the element in $\Gr{A}{k}{q}{m}{s}$ defined by the formula \[(x\cdot y)_c = \sum_{j\in J^{a,b}_c} \left(F^{a,b}_{c,j}\right)^*(x\otimes y)\left( F^{a,b}_{c,j}\right).\] Note that the product is independent of the specific choice of orthogonal bases $f^{a,b}_{c,j}$. We will continue to use the $\cdot$-notation to distinguish this product from the ordinary multiplication of operators.
+We first turn $A$ into the total algebra of a partial algebra.
+
+\begin{Def} Let  $x\in \Gr{A}{k}{l}{m}{n}(a)$ and $y\in \Gr{A}{l}{q}{n}{s}(b)$. We define $x\cdot y$ as the element in $\Gr{A}{k}{q}{m}{s}$ with \[(x\cdot y)_c = \sum_{j\in J^{a,b}_c} \left(F^{a,b}_{c,j}\right)^*(x\otimes y)\left( F^{a,b}_{c,j}\right).\] 
+
+\end{Def} 
+Note that the product is independent of the specific choice of orthogonal bases $f^{a,b}_{c,j}$. 
 
 \begin{Lem} With the above product, $A$ becomes a faithful strong $I^2$-algebra.
 \end{Lem}
@@ -64,6 +70,8 @@ We first turn $A$ into an algebra. The multiplication $x\cdot y$ of $x\in \Gr{A}
 
 Define $1_{rs} \in B(F(u_o)_{rr},F(u_o)_{ss}) = \Gr{A}{r}{r}{s}{s}(o)$ as the map sending $\delta_r$ to $\delta_s$. By the compatibility assumption for $\phi_{a,o}$ and $\phi_{o,a}$, the map $\Ff(I^2)\rightarrow A$ mapping $\delta_{(r,s)}$ to $1_{rs}$ is an algebra homomorphism. Thus $A$ becomes a faithful strong $I^2$-algebra.
 \end{proof}
+
+We will continue to use the $\cdot$-notation to distinguish this product from the ordinary multiplication of operators.
 
 In the following, we will again write $\lambda_r = \sum_s 1_{rs}$ and $\rho_s = \sum_r 1_{rs}$ inside $M(A)$, using the notation as at the end of the proof of the previous lemma.
 

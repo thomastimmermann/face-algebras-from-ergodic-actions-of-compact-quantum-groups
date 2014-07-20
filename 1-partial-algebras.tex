@@ -1,10 +1,12 @@
 \section{Partial compact quantum groups}
 
-We generalize Hayashi's definition of a compact quantum group of face type \cite{Hay1} to the case where the commutative base algebra is no longer finite-dimensional. We will present two approaches, based on \emph{partial bialgebras} and \emph{weak multiplier bialgebras} \cite{Boh1}. The first approach is piecewise and concrete, but requires some bookkeeping. The second approach is global but more abstract. As we will see from the general theory and the concrete examples, both approaches have their intrinsic value.
+We generalize Hayashi's definition of a compact quantum group of face type \cite{Hay1} to the case where the commutative base algebra is no longer finite-dimensional. We will present two approaches, based on \emph{partial bialgebras} and \emph{weak multiplier bialgebras} \cite{Boh1,VDW1}. The first approach is piecewise and concrete, but requires some bookkeeping. The second approach is global but more abstract. As we will see from the general theory and the concrete examples, both approaches have their intrinsic value.
+
+\subsection{Partial algebras}
 
 Let $I$ be a set. We consider $I^2=I\times I$ as the pair groupoid with $\wmult$ denoting composition. That is, an element $K=(k,l)\in I^2$ has source $K_l = k$ and target $K_r=l$, and if $K=(k,l)$ and $L=(l,m)$ we write $K\wmult L = (k,m)$. 
 
-\begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a small $\C$-linear category, that is, a set $I$ (the object set) together with 
+\begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a set $I$ (the object set) together with 
 \begin{itemize}
 \item[$\bullet$] for each $K=(k,l)\in I^2$ a vector space $A(K) = \Grs{A}{k}{l}=\!\!\GrDA{A}{k}{l}$ (possibly the zero vector space),
 \item[$\bullet$] for each $K,L$ with $K_r = L_l$ a multiplication map \[M(K,L):A(K) \otimes A(L)\rightarrow A(K\cdot L),\qquad a\otimes b \mapsto ab\]  and 
@@ -15,24 +17,72 @@ such that the obvious associativity and unit conditions are satisfied.
 By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I$.
 \end{Def}
 
-\begin{Rem}We allow the local units $\Unit_k$ to be zero. %When none of the units are zero, we will call the partial algebra \emph{coconnected}. (Coconnected because we are working contravariantly: we say F(G) (the function algebra) has a property if G has that property. But a partial algebra is the `group algebra' of a linear category, so it's dual gets to be called connected, and the partial algebra itself coconnected)
+% Also known as $\C$-algebroid
+
+\begin{Rem}
+\begin{itemize}\item[$\bullet$] We allow the local units $\Unit_k$ to be zero. %When none of the units are zero, we will call the partial algebra \emph{coconnected}. (Coconnected because we are working contravariantly: we say F(G) (the function algebra) has a property if G has that property. But a partial algebra is the `group algebra' of a linear category, so it's dual gets to be called connected, and the partial algebra itself coconnected)
+\item[$\bullet$] A partial algebra is by definition the same as a small $\C$-linear category. However, we do not emphasize this viewpoint, as the natural notion of morphism for partial algebras will be \emph{contravariant} on objects, see Definition \ref{DefMor}.
+\end{itemize}
 \end{Rem}
 
 Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $K\wmult L$ is ill-defined, i.e. $K_r\neq L_l$. We then let $\Grs{M}{K}{L}$ be the zero map.
 
-\begin{Def} The \emph{total algebra} $A$ of an $I$-partial algebra $\mathscr{A}$ is the vector space \[A = \oplus_{K\in I^2} A(K)\] endowed with the unique multiplication whose restriction to $A(K)\otimes A(L)$ concides with $M(K,L)$.  
+\begin{Def} The \emph{total algebra} $A$ of an $I$-partial algebra $\mathscr{A}$ is the vector space \[A = \oplus_{K\in I^2} A(K)\] endowed with the unique multiplication whose restriction to $A(K)\otimes A(L)$ concides with $M(K,L)$. 
+
+The subalgebra $A_0$ spanned by all $\Unit_k$ will be called the \emph{base algebra} of $A$. 
 \end{Def} 
 % Should a reference to the notion of locally unital algebra be given? I had a reference to Quillen, but no precise article, and I don't seem to find the link anymore...
-Clearly $A$ is an associative algebra. If $I$ is infinite it will not possess a unit, but it is a \emph{locally unital algebra} as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
+Clearly $A$ is an associative algebra. If $A_0$ is infinite-dimensional it will not possess a unit, but it is a \emph{locally unital algebra} as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
-\end{Rem} 
+\end{Rem}
 
-%<<<<<<< HEAD
+Working with non-unital algebras necessitates the use of their \emph{multiplier algebra}. Let us first recall some general notions concerning non-unital algebras from \cite{Dau1,VDae1}.
+
+\begin{Def} Let $A$ be an algebra over $\C$, not necessarily with unit. We call $A$ \emph{non-degenerate} if $A$ is faithfully represented on itself by left and right multiplication. It is called \emph{idempotent} if $A^2 = A$. 
+\end{Def}
+
+\begin{Def} Let $A$ be an algebra. A \emph{multiplier} $m$ for $A$ consists of a couple of maps \begin{eqnarray*} L_m:A\rightarrow A,\quad a\mapsto ma\\ R_m:A\rightarrow A,\quad a\mapsto am\end{eqnarray*} such that $(am)b = a(mb)$ for all $a,b\in A$. 
+
+The set of all multipliers forms an algebra under composition for the $L$-maps and anti-composition for the $R$-maps. It is called the \emph{multiplier algebra} of $A$, and is denoted $M(A)$.
+\end{Def}
+
+One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate,  this homomorphism is injective, and we can then identify $A$ as a subalgebra of the (unital) algebra $M(A)$. We then also have inclusions \[A\otimes A\subseteq M(A)\otimes M(A)\subseteq M(A\otimes A).\]
+
+\begin{Exa}\label{ExaMult} \begin{enumerate}
+\item Let $I$ be a set, and $\Fun_{\fin}(I)$ the algebra of all finite support functions on $I$. Then $M(\Fun_{\fin}(I)) = \Fun(I)$, the algebra of all functions on $I$. 
+\item Let $A$ be the total algebra of an $I$-partial algebra $\mathscr{A}$. As $A$ has local units, it is non-degenerate and idempotent. Then one can identify $M(A)$ with \[M(A) = \left(\prod_l \oplus_k A(k,l)\right) \bigcap \left(\prod_k\oplus_l A(k,l)\right) \subseteq \prod_{k,l} A(k,l),\] i.e. with the space of functions \[m:I^2\rightarrow A,\quad m_{kl}\in A(k,l)\] which have finite support in either one of the variables when the other variable has been fixed. The multiplication is given by the formula \[(mn)_{kl} = \sum_p m_{kp}n_{pl}.\]
+\item Let $m_i$ be any collection of multipliers of $A$, and assume that for each $a\in A$, $m_ia =0$ for almost all $i$, and similarly $am_i=0$ for almost all $i$. Then one can define a multiplier $\sum_i m_i$ in the obvious way by termwise multiplication. One says that the sum $\sum_i m_i$ converges in the \emph{strict} topology. 
+\end{enumerate}
+\end{Exa}
+
+% Added part on morphisms anyway because it will appear in the generalisation to partial tensor categories
+Let us comment on the notion of morphism for partial algebras. We first introduce the piecewise definition.
+
+\begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I_A$ and $I_B$-partial algebras. A \emph{(unital) homomorphism} from $\mathscr{A}$ to $\mathscr{B}$ consists of a map \[I_B  \rightarrow I_A, \quad r \mapsto r'\] and maps \[\GrDA{f}{r}{s}: A(r'\;s')\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] satisfying 
+\begin{itemize}
+\item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{r'})}{r}{r} = \Unit_r$.
+\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in I_B$ (resp.~ $s\in I_B$), there exist only finitely many $s\in I_B$ (resp.~ $r\in I_B$) such that $r'=k$, $s'=l$ and $\GrDA{f(a)}{r}{s} \neq 0$. 
+\item[$\bullet$] (Multiplicativity) For all $r,t\in I_B$, all $k\in I_A$ and all $a\in A(r'\;k)$ and $b\in A(k\;t')$, one has \[\GrDA{f(ab)}{r}{t} = \sum_{s,s'=k} \GrDA{f(a)}{r}{s}\GrDA{f(b)}{s}{t}.\]
+\end{itemize} 
+\end{Def}
+
+Note that the multiplicativity condition makes sense because of the local finiteness condition.
+
+The following lemma provides the global viewpoint concerning morphisms. We will make use of the natural embedding $M(A_0) \subseteq M(A)$. We leave the proof of the lemma to the reader. % Or I'll fill it in when less tired.
+
+\begin{Lem} There is a one-to-one correspondence between morphisms $\mathscr{A}\rightarrow\mathscr{B}$ and homomorphisms $f:A\rightarrow M(B)$ such that $f(A_0)\subseteq M(B_0)$ and $f(A_0)B_0 = B_0$. 
+\end{Lem} 
+
+\begin{Rem} For \emph{non-unital morphisms}, one should allow for the map $r\rightarrow r'$ in Definition \ref{DefMor} to be ill-defined at certain indices, in which case the $f$-maps containing such an index should be treated as zero maps. In the multiplier picture, this means one allows for $f$ where one only has $f(A_0)B_0\subseteq B_0$.
+\end{Rem}
+% Refer to remark in bialgebra section.
+
+\subsection{Partial coalgebras}
+
 The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. 
 
-%=======
-There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
+%There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
 % We will need the notion of \emph{relator} between partial algebras. When $R\subseteq I\times J$ is a relation, we write, for $k\in I$, $R_k= \{l'\in J\mid (k',l')\in R\}$. We write $D_R = \{k\in I\mid \#R_k\neq0\}$.  
 % A \emph{functor} between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ consists of a map $F:I\rightarrow J$ and linear maps $F_{k,l}:A(k,l)\rightarrow B(F(k),F(l))$ such that the $F_{k,l}$ respect the algebra and unit maps in the obvious ways. 
 
@@ -67,9 +117,9 @@ Similarly, if $K = \Grt{}{k}{l}$ and $L = \Grt{}{l}{m}$, we abbreviate $\Delta_l
 
 We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ the zero map when $K_d \neq L_u$. Similarly $\epsilon$ is seen as the zero functional on $A(K)$ when $K=\Grt{}{k}{l}$ with $k\neq l$. 
 
+\subsection{Partial bialgebras}
+
 We can now superpose the notions of partial algebra and partial coalgebra. To formulate the condition that the coalgebra maps form a `morphism of partial algebras', we will need to impose a finiteness condition which is automatically satisfied when the cardinality of $I$ is finite.
-%<<<<<<< HEAD
-%=======
 
 % Formally, a finite morphism between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ equipped with an injection $\phi$ of a subset of $J$ into $I$ consists of maps $F_{K,L}:A(\phi(K),\phi(L))\rightarrow B(K,L)$ for $K,L$ in the domain of $\phi$, such that the map $(K,L)\mapsto F_{K,L}(a)$ is finite in rows and columns when the values of $K,L$ are restricted to one fiber of$ \phi$, and such that then $F_{K,M}(ab) = \sum_L F_{K,L}(a)F_{L,M}(b)$. 
 % Should this more general notion be included?
@@ -100,25 +150,7 @@ and for which the following compatibility relations are satisfied.
 \begin{Rem} By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
 \end{Rem}
 
-We want to relate the notion of partial bialgebra to the recently introduced notion of weak multiplier bialgebra \cite{Boh1}. We first recall some notions concerning non-unital algebras \cite{Dau1,VDae1}.
-
-\begin{Def} Let $A$ be an algebra over $\C$, not necessarily with unit. We call $A$ \emph{non-degenerate} if $A$ is faithfully represented on itself by left and right multiplication. It is called \emph{idempotent} if $A^2 = A$. 
-\end{Def}
-
-\begin{Def} Let $A$ be an algebra. A \emph{multiplier} $m$ for $A$ consists of a couple of maps \begin{eqnarray*} L_m:A\rightarrow A,\quad a\mapsto ma\\ R_m:A\rightarrow A,\quad a\mapsto am\end{eqnarray*} such that $(am)b = a(mb)$ for all $a,b\in A$. 
-
-The set of all multipliers forms an algebra under composition for the $L$-maps and anti-composition for the $R$-maps. It is called the \emph{multiplier algebra} of $A$, and is denoted $M(A)$.
-\end{Def}
-
-One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate,  this homomorphism is injective, and we can then identify $A$ as a subalgebra of the (unital) algebra $M(A)$. We then also have inclusions \[A\otimes A\subseteq M(A)\otimes M(A)\subseteq M(A\otimes A).\]
-
-\begin{Exa}\label{ExaMult} \begin{enumerate}
-\item Let $A$ be the total algebra of an $I$-partial algebra $\mathscr{A}$. As $A$ has local units, it is non-degenerate and idempotent. Then one can identify $M(A)$ with \[M(A) = \left(\prod_l \oplus_k A(k,l)\right) \bigcap \left(\prod_k\oplus_l A(k,l)\right) \subseteq \prod_{k,l} A(k,l),\] i.e. with the space of functions \[m:I^2\rightarrow A,\quad m_{kl}\in A(k,l)\] which have finite support in either one of the variables when the other variable has been fixed. The multiplication is given by the formula \[(mn)_{kl} = \sum_p m_{kp}n_{pl}.\]
-\item Let $m_i$ be any collection of multipliers of $A$, and assume that for each $a\in A$, $m_ia =0$ for almost all $i$, and similarly $am_i=0$ for almost all $i$. Then one can define a multiplier $\sum_i m_i$ in the obvious way by termwise multiplication. One says that the sum $\sum_i m_i$ converges in the \emph{strict} topology. 
-\end{enumerate}
-\end{Exa}
-
-Using the notion introduced in Example \ref{ExaMult}.2, we can introduce the following notation.
+We want to relate the notion of partial bialgebra to the recently introduced notion of weak multiplier bialgebra \cite{Boh1}. Let us first introduce the following notation, using the notion introduced in Example \ref{ExaMult}.2.
 
 \begin{Not}
 If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \UnitC{k}{l},\qquad \rho_l = \sum_k\UnitC{k}{l} \qquad \in M(A).\]
@@ -210,6 +242,8 @@ because $\epsilon(\lambda_{k}\rho_{m} a \lambda_{l}\rho_{n})=0$  if $(k,l)\neq(m
   (\Pi^{R} \otimes \id)(\Delta(a)) &= \sum_{p} \rho_{p} \otimes a\lambda_{p}, &
   (\id \otimes \Pi^{R})(\Delta(a)) &= \sum_{p} a\rho_{p} \otimes \rho_{p}.
 \end{align}
+
+\subsection{Partial Hopf algebras}
 
 We now formulate the notion of partial Hopf algebra, whose total form will correspond to a weak multiplier Hopf algebra \cite{Boh1,VDW2,VDW1}. We will mainly refer to \cite{Boh1} for uniformity.
 
@@ -358,6 +392,9 @@ $\Delta$ with the flip map.
     corepresentations somewhere that $\epsilon \circ
     S = \epsilon$}
 \end{Cor} 
+
+\subsection{Partial compact quantum groups}
+
 We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
 
 \begin{Def} A \emph{partial $^*$-algebra} $\mathscr{A}$ is a partial
