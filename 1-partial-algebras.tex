@@ -28,8 +28,6 @@ By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I
 Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $K\wmult L$ is ill-defined, i.e. $K_r\neq L_l$. We then let $\Grs{M}{K}{L}$ be the zero map.
 
 \begin{Def} The \emph{total algebra} $A$ of an $I$-partial algebra $\mathscr{A}$ is the vector space \[A = \oplus_{K\in I^2} A(K)\] endowed with the unique multiplication whose restriction to $A(K)\otimes A(L)$ concides with $M(K,L)$. 
-
-The subalgebra $A_0$ spanned by all $\Unit_k$ will be called the \emph{base algebra} of $A$. 
 \end{Def} 
 % Should a reference to the notion of locally unital algebra be given? I had a reference to Quillen, but no precise article, and I don't seem to find the link anymore...
 Clearly $A$ is an associative algebra. If $A_0$ is infinite-dimensional it will not possess a unit, but it is a \emph{locally unital algebra} as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
@@ -59,24 +57,32 @@ One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate, 
 % Added part on morphisms anyway because it will appear in the generalisation to partial tensor categories
 Let us comment on the notion of morphism for partial algebras. We first introduce the piecewise definition.
 
-\begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I_A$ and $I_B$-partial algebras. A \emph{(unital) homomorphism} from $\mathscr{A}$ to $\mathscr{B}$ consists of a map \[I_B  \rightarrow I_A, \quad r \mapsto r'\] and maps \[\GrDA{f}{r}{s}: A(r'\;s')\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] satisfying 
+\begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I$ and $J$-partial algebras. A \emph{homomorphism} (based on $\phi$) from $\mathscr{A}$ to $\mathscr{B}$ consists of an assigment  \[\phi: I \ni k \mapsto J_k \subseteq J\] with the $J_k$ disjoint, and linear maps \[\GrDA{f}{r}{s}: A(k\;l)\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] for all $r\in I_k, s\in I_l$, satisfying 
 \begin{itemize}
-\item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{r'})}{r}{r} = \Unit_r$.
-\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in I_B$ (resp.~ $s\in I_B$), there exist only finitely many $s\in I_B$ (resp.~ $r\in I_B$) such that $r'=k$, $s'=l$ and $\GrDA{f(a)}{r}{s} \neq 0$. 
-\item[$\bullet$] (Multiplicativity) For all $r,t\in I_B$, all $k\in I_A$ and all $a\in A(r'\;k)$ and $b\in A(k\;t')$, one has \[\GrDA{f(ab)}{r}{t} = \sum_{s,s'=k} \GrDA{f(a)}{r}{s}\GrDA{f(b)}{s}{t}.\]
+\item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{k})}{r}{s} = \delta_{rs}\delta_{r\in I_k}\Unit_r$.
+\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in J_k$ (resp.~ $s\in J_l$), there exist only finitely many $s\in J_l$ (resp.~ $r\in J_k$) such that $\GrDA{f(a)}{r}{s} \neq 0$. 
+\item[$\bullet$] (Multiplicativity) For all $k,l,m\in I$, all $r\in J_k$ and all $t\in J_m$, and all $a\in A(k\;l)$ and $b\in A(l\;m)$, one has \[\GrDA{f(ab)}{r}{t} = \sum_{s\in J_l} \GrDA{f(a)}{r}{s}\GrDA{f(b)}{s}{t}.\]
 \end{itemize} 
+The homomorphism is called \emph{unital} if $\{J_k\mid k\in I\}$ is a partition of $J$. 
 \end{Def}
 
 Note that the multiplicativity condition makes sense because of the local finiteness condition.
 
-The following lemma provides the global viewpoint concerning morphisms. We will make use of the natural embedding $M(A_0) \subseteq M(A)$. We leave the proof of the lemma to the reader. % Or I'll fill it in when less tired.
+\begin{Rem} If $\{J_k\}$ is a partition, we can of course interpret $\phi$ as a map $J\rightarrow I, r\in J_k\mapsto k$. In case $\{J_k\}$ is not a partition, we obtain a function $J\rightarrow I^*$, where $I^*$ is $I$ with an extra point `at infinity' added.
 
-\begin{Lem} There is a one-to-one correspondence between morphisms $\mathscr{A}\rightarrow\mathscr{B}$ and homomorphisms $f:A\rightarrow M(B)$ such that $f(A_0)\subseteq M(B_0)$ and $f(A_0)B_0 = B_0$. 
-\end{Lem} 
-
-\begin{Rem} For \emph{non-unital morphisms}, one should allow for the map $r\rightarrow r'$ in Definition \ref{DefMor} to be ill-defined at certain indices, in which case the $f$-maps containing such an index should be treated as zero maps. In the multiplier picture, this means one allows for $f$ where one only has $f(A_0)B_0\subseteq B_0$.
 \end{Rem}
-% Refer to remark in bialgebra section.
+
+The following lemma provides the global viewpoint concerning homomorphisms. 
+
+\begin{Lem} Let $\mathscr{A}$ and $\mathscr{B}$ be respective $I$- and $J$-partial algebras, and fix an assigment $\phi: k\mapsto J_k$. Then there is a one-to-one correspondence between homomorphisms $\mathscr{A}\rightarrow \mathscr{B}$ based on $\phi$ and homomorphism $f:A\rightarrow M(B)$ with $f(\Unit_k) = \sum_{r\in J_k} \Unit_r$. 
+\end{Lem} 
+\begin{proof}
+Straightforward.
+\end{proof}
+
+Note that the assigment $k\mapsto J_k$ has to be kept as part of the information since local units are allowed to be zero. 
+
+% Make reference to this lemma in bialgebra section.
 
 \subsection{Partial coalgebras}
 
