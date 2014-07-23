@@ -6,7 +6,7 @@ We generalize Hayashi's definition of a compact quantum group of face type \cite
 
 Let $I$ be a set. We consider $I^2=I\times I$ as the pair groupoid with $\wmult$ denoting composition. That is, an element $K=(k,l)\in I^2$ has source $K_l = k$ and target $K_r=l$, and if $K=(k,l)$ and $L=(l,m)$ we write $K\wmult L = (k,m)$. 
 
-\begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a set $I$ (the object set) together with 
+\begin{Def} A \emph{partial algebra} $\mathscr{A}=(\mathscr{A},M)$ (over $\C$) is a set $I$ (the \emph{object} set) together with 
 \begin{itemize}
 \item[$\bullet$] for each $K=(k,l)\in I^2$ a vector space $A(K) = \Grs{A}{k}{l}=\!\!\GrDA{A}{k}{l}$ (possibly the zero vector space),
 \item[$\bullet$] for each $K,L$ with $K_r = L_l$ a multiplication map \[M(K,L):A(K) \otimes A(L)\rightarrow A(K\cdot L),\qquad a\otimes b \mapsto ab\]  and 
@@ -20,8 +20,8 @@ By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I
 % Also known as $\C$-algebroid
 
 \begin{Rem}
-\begin{itemize}\item[$\bullet$] We allow the local units $\Unit_k$ to be zero. %When none of the units are zero, we will call the partial algebra \emph{coconnected}. (Coconnected because we are working contravariantly: we say F(G) (the function algebra) has a property if G has that property. But a partial algebra is the `group algebra' of a linear category, so it's dual gets to be called connected, and the partial algebra itself coconnected)
-\item[$\bullet$] A partial algebra is by definition the same as a small $\C$-linear category. However, we do not emphasize this viewpoint, as the natural notion of morphism for partial algebras will be \emph{contravariant} on objects, see Definition \ref{DefMor}.
+\begin{itemize}\item[$\bullet$] It will be important to allow the local units $\Unit_k$ to be zero.
+\item[$\bullet$] A partial algebra is by definition the same as a small $\C$-linear category. However, we do not emphasize this viewpoint, as the natural notion of morphism for partial algebras will be \emph{contravariant} on objects, see Definition \ref{DefMor}.% Is this correct, or are local units = 0 not allowed? 
 \end{itemize}
 \end{Rem}
 
@@ -54,33 +54,41 @@ One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate, 
 \end{enumerate}
 \end{Exa}
 
+% Better location?
+\begin{Rem} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with zero element/object \emph{row-and column-finite} if the assigment has finite support in either one of the variables when the other variable has been fixed. % More succinct terminology would be banded, but that seems to imply a uniform band
+\end{Rem} 
+
 % Added part on morphisms anyway because it will appear in the generalisation to partial tensor categories
 Let us comment on the notion of morphism for partial algebras. We first introduce the piecewise definition.
 
-\begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I$ and $J$-partial algebras. A \emph{homomorphism} (based on $\phi$) from $\mathscr{A}$ to $\mathscr{B}$ consists of an assigment  \[\phi: I \ni k \mapsto J_k \subseteq J\] with the $J_k$ disjoint, and linear maps \[\GrDA{f}{r}{s}: A(k\;l)\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] for all $r\in I_k, s\in I_l$, satisfying 
+\begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I$ and $J$-partial algebras. Let \[\phi: I \ni k \mapsto J_k \subseteq J\] with the $J_k$ disjoint. A \emph{homomorphism} (based on $\phi$) from $\mathscr{A}$ to $\mathscr{B}$ consists of linear maps \[\GrDA{f}{r}{s}: A(k\;l)\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] for all $r\in J_k, s\in J_l$, satisfying 
 \begin{itemize}
-\item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{k})}{r}{s} = \delta_{rs}\delta_{r\in I_k}\Unit_r$.
-\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in J_k$ (resp.~ $s\in J_l$), there exist only finitely many $s\in J_l$ (resp.~ $r\in J_k$) such that $\GrDA{f(a)}{r}{s} \neq 0$. 
+\item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{k})}{r}{s} = \delta_{rs}\Unit_r$ for all $r,s\in J_k$.
+\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in J_k$ (resp.~ $s\in J_l$), the assigment $(r,s)\rightarrow \GrDA{f(a)}{r}{s}$ on $J_k\times J_l$ is row-and columnfinite. 
 \item[$\bullet$] (Multiplicativity) For all $k,l,m\in I$, all $r\in J_k$ and all $t\in J_m$, and all $a\in A(k\;l)$ and $b\in A(l\;m)$, one has \[\GrDA{f(ab)}{r}{t} = \sum_{s\in J_l} \GrDA{f(a)}{r}{s}\GrDA{f(b)}{s}{t}.\]
 \end{itemize} 
-The homomorphism is called \emph{unital} if $\{J_k\mid k\in I\}$ is a partition of $J$. 
+The homomorphism is called \emph{unital} if $J=\bigcup \{J_k\mid k\in I\}$. % Can't call this a partition since $J_k$ can be empty 
 \end{Def}
-
+\begin{Rem}
+\begin{enumerate}
+\item
 Note that the multiplicativity condition makes sense because of the local finiteness condition.
-
-\begin{Rem} If $\{J_k\}$ is a partition, we can of course interpret $\phi$ as a map $J\rightarrow I, r\in J_k\mapsto k$. In case $\{J_k\}$ is not a partition, we obtain a function $J\rightarrow I^*$, where $I^*$ is $I$ with an extra point `at infinity' added.
-
+\item
+If $J = \bigcup\{J_k\}$, we can interpret $\phi$ as a map \[J\rightarrow I,\quad r\mapsto k \iff r\in J_k.\] In the more general case, we obtain a function $J\rightarrow I^*$, where $I^*$ is $I$ with an extra point `at infinity' added.
+\end{enumerate}
 \end{Rem}
 
 The following lemma provides the global viewpoint concerning homomorphisms. 
 
-\begin{Lem} Let $\mathscr{A}$ and $\mathscr{B}$ be respective $I$- and $J$-partial algebras, and fix an assigment $\phi: k\mapsto J_k$. Then there is a one-to-one correspondence between homomorphisms $\mathscr{A}\rightarrow \mathscr{B}$ based on $\phi$ and homomorphism $f:A\rightarrow M(B)$ with $f(\Unit_k) = \sum_{r\in J_k} \Unit_r$. 
+\begin{Lem} Let $\mathscr{A}$ and $\mathscr{B}$ be respective $I$- and $J$-partial algebras, and fix an assigment $\phi: k\mapsto J_k$. Then there is a one-to-one correspondence between homomorphisms $\mathscr{A}\rightarrow \mathscr{B}$ based on $\phi$ and homomorphisms $f:A\rightarrow M(B)$ with $f(\Unit_k) = \sum_{r\in J_k} \Unit_r$. 
 \end{Lem} 
 \begin{proof}
-Straightforward.
+Straightforward, using the characterisation of the multiplier algebra provided in Remark \ref{ExaMult}.2.
 \end{proof}
 
-Note that the assigment $k\mapsto J_k$ has to be kept as part of the information since local units are allowed to be zero. 
+\begin{Rem}% Necessary?
+Note that the assigment $k\mapsto J_k$ has to be kept as part of the information also in the global description, since local units are allowed to be zero. 
+\end{Rem}
 
 % Make reference to this lemma in bialgebra section.
 
@@ -135,15 +143,15 @@ Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arr
 
 In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ (without parentheses) or $rs$ in an index. We also follow Notation \ref{NotCom}, but the reader should be aware that the index of $\Delta$ will now be a 1$\times$2 vector in $I^2$ as we will work with partial coalgebras over $I^2$.
 
-\begin{Def}\label{DefPartBiAlg} A \emph{partial bialgebra} $\mathscr{A}=(\mathscr{A},M,\Delta)$ consists of a set $I$ and a collection of vector spaces $A(K)$ for $K\in M_2(I)$ such that 
+\begin{Def}\label{DefPartBiAlg} A \emph{partial bialgebra} $\mathscr{A}=(\mathscr{A},M,\Delta)$ consists of a set $I$ (the \emph{object set}) and a collection of vector spaces $A(K)$ for $K\in M_2(I)$ such that 
 \begin{itemize}
 \item[$\bullet$] the $\Grs{A}{K_l}{K_r}$ form an $I^2$-partial algebra,
 \item[$\bullet$] the $\Grt{A}{K_u}{K_d}$ form an $I^2$-partial coalgebra,
 \end{itemize} 
 and for which the following compatibility relations are satisfied.
 \begin{enumerate}[label=(\alph*)]
-\item\label{Propa} (Comultiplication of Units) For all $k,l,m\in I$, one has 
-\[\Delta_{l,l}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m}.\]  
+\item\label{Propa} (Comultiplication of Units) For all $k,l,l',m\in I$, one has 
+\[\Delta_{l,l'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}.\]  
 \item\label{Propb} (Counit of Multiplication) For all $K,L\in M_2(I)$ with $K_r = L_l$ and all $a\in A(K)$ and $b\in A(L)$, \[\epsilon(ab) = \epsilon(a)\epsilon(b).\]% Subtlety is that you already have to know composition to be able to apply this rule.
 \item\label{Propc} (Non-degeneracy) For all $k\in I$, $\epsilon(\UnitC{k}{k})=1$. 
 \item\label{Propd} (Finiteness) For each $K\in M_2(I)$ and each $a\in A(K)$, the element $\Delta_{rs}(a)$ is zero except for a finite number of indices $r$ (resp. $s$) when $s$ (resp. $r$) is fixed.
@@ -153,10 +161,22 @@ and for which the following compatibility relations are satisfied.
 
 % To do: introduce notion of connectedness which should assure the trivial corepresentation is irreducible. This should correspond to the dual notion of pureness in [Bohm-Nill-Szlachanyi], i.e. to the left and right base algebras having $\C$ as intersection. This is the same as proving $\UnitC{k}{l}\neq 0$ in the presence of an antipode, since then the relation $k\sim l$ iff $\Unit{k}{l}\neq 0$ gives an equivalence relation, and fixing a non-trivial class $P$ and putting $c_k = \delta_{k\in P}, d_l = \delta_{l\in P}$, we obtain a non-trivial element $\sum_k c_k\lambda_k = \sum_l d_l \rho_l$ in the intersection.
 
-\begin{Rem} By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
+\begin{Rem}\begin{enumerate}
+\item By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
+\item Note that the object set of the above $\mathscr{A}$ as a partial bialgebra is $I$, but the object set of its underlying partial algebra is $I^2$.
+\item Properties \ref{Propa},\ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ based over the assignment $\phi:I^2\rightarrow \mathscr{P}(I^2\times I^2)$ such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
+\end{enumerate}
 \end{Rem}
 
-We want to relate the notion of partial bialgebra to the recently introduced notion of weak multiplier bialgebra \cite{Boh1}. Let us first introduce the following notation, using the notion introduced in Example \ref{ExaMult}.2.
+%There is a natural partition of the object set $I$ of a partial bialgebra into \emph{connected components}.
+
+%\begin{Lem} Let $\mathscr{A}$ be a partial bialgebra over the object set $I$. Write $k\sim l$ if $\un{k}{l}\neq 0$. Then $\sim$ is an equivalence relation.
+%\end{Lem}
+%\begin{proof} Clearly $\un{k}{k}\neq 0$, by applying the counit. If $k\sim l$ and $l \sim m$, then $\Delta_{ll}(\un{k}{m}) = \un{k}{l}\otimes \un{l}{m}$ shows $k\sim m$. Finally, if $k\sim l$, then applying $(\id\otimes \epsilon)$ to $\Delta_{ll}(\un{k}{k}) = \un{k}{l}\otimes \un{l}{k}$ shows $\un{l}{k}\neq 0$. 
+
+%\end{proof}
+
+We relate the notion of partial bialgebra to the recently introduced notion of weak multiplier bialgebra \cite{Boh1}. Let us first introduce the following notation, using the notion introduced in Example \ref{ExaMult}.2.
 
 \begin{Not}
 If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \UnitC{k}{l},\qquad \rho_l = \sum_k\UnitC{k}{l} \qquad \in M(A).\]
@@ -175,7 +195,7 @@ To show that the total algebra of a partial bialgebra becomes a weak multiplier 
 \end{align}  for all $r,s\in I$, all $K\in M_2(I)$ and all $a\in A(K)$. 
 
 The resulting map \[\Delta:A\rightarrow M(A\otimes A),\quad a\mapsto \Delta(a)\] is a homomorphism.
-\end{Lem}
+\end{Lem} % Maybe write this up on the level of general homs and then refer to there. 
 \begin{proof} For $a\in A$ homogeneous, we can define $\Delta(a) = \sum_{rs} \Delta_{rs}(a) \in M(A\otimes A)$, where the sum converges in the strict topology of $A\otimes A$ because of the property \ref{Propd} of Definition \ref{DefPartBiAlg}. This expression clearly satisfies the identities stated in the lemma. In turn, these identities uniquely define $\Delta(a)$ as a multiplier, as they determine the value of $\Delta(a)$ when cut down to the left and right with the local units of $\mathscr{A}\otimes \mathscr{A}$.
 
 We can then extend $\Delta$ to $A$ by linearity. Since, for $a,b$ homogeneous, $\Delta_{rt}(a)\Delta_{t's}(b)=0$ unless $t=t'$, it follows from property \ref{Prope} of Definition \ref{DefPartBiAlg} that $\Delta$ is a homomorphism. 
@@ -306,7 +326,7 @@ For $M,P\in M_{2}(I)$ and $a\in A(M)$, the left and the right hand side  of \eqr
   \end{align*}
 is an equivalence relation. Indeed, it is reflexive and transitive by
 assumptions (c) and (a) in Definition \ref{DefPartBiAlg}, and
-symmetric by the preceding result.
+symmetric by the preceding result. We call the set $I_0$ of equivalence classes the \emph{hyperobject} set of $\mathscr{A}$. % Reference to Szlachanyi. 
 \end{Rem}
 The existence of an antipode is closely related to partial invertibility of
 the maps $T_{1},T_{2} \colon A \otimes A \to A\otimes A$ given by
