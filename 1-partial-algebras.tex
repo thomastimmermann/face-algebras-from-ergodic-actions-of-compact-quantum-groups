@@ -20,9 +20,9 @@ By \emph{$I$-partial algebra} will be meant a partial algebra with object set $I
 % Also known as $\C$-algebroid
 
 \begin{Rem}
-\begin{itemize}\item[$\bullet$] It will be important to allow the local units $\Unit_k$ to be zero.
-\item[$\bullet$] A partial algebra is by definition the same as a small $\C$-linear category. However, we do not emphasize this viewpoint, as the natural notion of morphism for partial algebras will be \emph{contravariant} on objects, see Definition \ref{DefMor}.% Is this correct, or are local units = 0 not allowed? 
-\end{itemize}
+\begin{enumerate}\item It will be important to allow the local units $\Unit_k$ to be zero.
+\item A partial algebra is by definition the same as a small $\C$-linear category. However, we do not emphasize this viewpoint, as the natural notion of morphism for partial algebras will be \emph{contravariant} on objects, see Definition \ref{DefMor}.% Is this correct, or are local units = 0 not allowed? 
+\end{enumerate}
 \end{Rem}
 
 Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0\}$ when $K\wmult L$ is ill-defined, i.e. $K_r\neq L_l$. We then let $\Grs{M}{K}{L}$ be the zero map.
@@ -55,7 +55,7 @@ One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate, 
 \end{Exa}
 
 % Better location?
-\begin{Rem} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with zero element/object \emph{row-and column-finite} if the assigment has finite support in either one of the variables when the other variable has been fixed. % More succinct terminology would be banded, but that seems to imply a uniform band
+\begin{Rem} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with a distinguished zero element \emph{row-and column-finite} if the assignment has finite support in either one of the variables when the other variable has been fixed. % More succinct terminology would be banded, but that seems to imply a uniform band
 \end{Rem} 
 
 % Added part on morphisms anyway because it will appear in the generalisation to partial tensor categories
@@ -94,7 +94,7 @@ Note that the assigment $k\mapsto J_k$ has to be kept as part of the information
 
 \subsection{Partial coalgebras}
 
-The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. 
+%The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. 
 
 %There are two natural notions of morphism between partial algebras, functors and co-functors. %Different name? How natural are these?
 % We will need the notion of \emph{relator} between partial algebras. When $R\subseteq I\times J$ is a relation, we write, for $k\in I$, $R_k= \{l'\in J\mid (k',l')\in R\}$. We write $D_R = \{k\in I\mid \#R_k\neq0\}$.  
@@ -133,13 +133,11 @@ We also make again the convention that $A(K*L)=\{0\}$ and $\Grt{\Delta}{K}{L}$ t
 
 \subsection{Partial bialgebras}
 
-We can now superpose the notions of partial algebra and partial coalgebra. To formulate the condition that the coalgebra maps form a `morphism of partial algebras', we will need to impose a finiteness condition which is automatically satisfied when the cardinality of $I$ is finite.
-
 % Formally, a finite morphism between an $I$-partial algebra $\mathscr{A}$ and $J$-partial algebra $\mathscr{B}$ equipped with an injection $\phi$ of a subset of $J$ into $I$ consists of maps $F_{K,L}:A(\phi(K),\phi(L))\rightarrow B(K,L)$ for $K,L$ in the domain of $\phi$, such that the map $(K,L)\mapsto F_{K,L}(a)$ is finite in rows and columns when the values of $K,L$ are restricted to one fiber of$ \phi$, and such that then $F_{K,M}(ab) = \sum_L F_{K,L}(a)F_{L,M}(b)$. 
 % Should this more general notion be included?
 %>>>>>>> origin/master
 
-Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with two compositions, namely $\cdot$ (viewing $M_2(I)$ as a row vector of column vectors) and $*$ (viewing $M_2(I)$ as a column vector of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact as a \emph{vacant} double groupoid in the sense of \cite{AN1}. 
+We can now superpose the notions of partial algebra and partial coalgebra. Let $I$ be a set, and let $M_2(I)$ be the set of 4-tuples of elements of $I$ arranged as 2$\times$2-matrices. We can endow $M_2(I)$ with two compositions, namely $\cdot$ (viewing $M_2(I)$ as a row vector of column vectors) and $*$ (viewing $M_2(I)$ as a column vector of row vectors). When $K\in M_2(I)$, we will write $K = \Grs{}{K_l}{K_r} = \Grt{}{K_u}{K_d} = \eGr{}{K_{lu}}{K_{ru}}{K_{ld}}{K_{rd}}$. One can view $M_2(I)$ as a double groupoid, and in fact as a \emph{vacant} double groupoid in the sense of \cite{AN1}. 
 
 In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ (without parentheses) or $rs$ in an index. We also follow Notation \ref{NotCom}, but the reader should be aware that the index of $\Delta$ will now be a 1$\times$2 vector in $I^2$ as we will work with partial coalgebras over $I^2$.
 
@@ -163,8 +161,8 @@ and for which the following compatibility relations are satisfied.
 
 \begin{Rem}\begin{enumerate}
 \item By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
-\item Note that the object set of the above $\mathscr{A}$ as a partial bialgebra is $I$, but the object set of its underlying partial algebra is $I^2$.
-\item Properties \ref{Propa},\ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ based over the assignment $\phi:I^2\rightarrow \mathscr{P}(I^2\times I^2)$ such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
+\item Note that the object set of the above $\mathscr{A}$ as a partial bialgebra is $I$, but the object set of its underlying partial algebra (or coalgebra) is $I^2$.
+\item Properties \ref{Propa},\ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ of partial algebras based over the assignment $I^2\rightarrow \mathscr{P}(I^2\times I^2)$, the power set of $I^2\times I^2$, such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
 \end{enumerate}
 \end{Rem}
 
@@ -319,7 +317,7 @@ For $M,P\in M_{2}(I)$ and $a\in A(M)$, the left and the right hand side  of \eqr
 \begin{proof} For example the first identity in Equation \eqref{eq:total-antipode} of Lemma \ref{lemma:antipode} applied to $\UnitC{k}{k}$ gives \[\sum_l S(\UnitC{l}{k}) = \sum_l \UnitC{k}{l}S(\UnitC{l}{k}) = \lambda_k,\] as $S(\UnitC{l}{k}) \in \Gr{A}{k}{k}{l}{l}$ and $\Pi^{L}(\UnitC{k}{k}) = \lambda_k$. This implies the lemma.
 \end{proof} 
 \begin{Rem} \label{remark:index-equivalence}
-  Let $\mathcal{A}$ be an $I$-partial Hopf algebra. Then the relation
+  Let $\mathscr{A}$ be an $I$-partial Hopf algebra. Then the relation
   on $I$ defined by
   \begin{align*}
     k \sim l \Leftrightarrow \UnitC{k}{l} \neq 0
@@ -338,10 +336,10 @@ The precise formulation involves the linear maps $E_{i},G_{i}
  \colon A\otimes A\to A\otimes A$ given by
 \begin{align} \label{eq:e1g1}
   G_{1}(a\otimes b) &=
- \sum_{p} a\rho_{p} \otimes \rho_{p}b, &  E_{1}(a \otimes b) &=E(a\otimes b)=\sum_{p} \rho_{p}a\otimes \lambda_{p}b, \\ \label{eq:e2g2}
+ \sum_{p} a\rho_{p} \otimes \rho_{p}b, &  E_{1}(a \otimes b) &=\Delta(1)(a\otimes b)=\sum_{p} \rho_{p}a\otimes \lambda_{p}b, \\ \label{eq:e2g2}
  G_{2}(a \otimes b) &= \sum_{p} a\lambda_{p} \otimes
     \lambda_{p}b, &
-E_{2}(a\otimes b) &= (a\otimes b)E=\sum_{p} a\rho_{p} \otimes b\lambda_{p}.
+E_{2}(a\otimes b) &= (a\otimes b)\Delta(1)=\sum_{p} a\rho_{p} \otimes b\lambda_{p}.
 \end{align}
 \begin{Prop} \label{prop:riti}
   Let $\mathscr{A}$ be a partial Hopf algebra with total algebra $A$,
@@ -413,11 +411,16 @@ $\Delta$ with the flip map.
 \begin{Cor} \label{corollary:antipode} Let $\mathscr{A}$ be a partial
   Hopf algebra. Then the total antipode $S:A\rightarrow A$ satisfies
   $S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
-  for all $a,b\in A$. In particular, $S(\UnitC{k}{m})=\UnitC{m}{k}$
-  for all $k,m\in I$ if $S$ is bijective. \texttt{need for
-    corepresentations somewhere that $\epsilon \circ
-    S = \epsilon$}
+  for all $a,b\in A$.
 \end{Cor} 
+
+We will need also the following relation between $\varepsilon$ and $S$ at some point.
+
+\begin{Lem} Let $(\mathscr{A},\Delta)$ be a partial Hopf algebra. Then $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{m}{n}$.
+\end{Lem}
+
+\begin{proof} Using the notation in Proposition \ref{prop:riti} and the discussion preceding it, we have that \[T_1: \sum_p(A\rho_p\otimes \rho_p A)\rightarrow \Delta(1)(A\otimes A)\] is a bijection with $R_1$ as inverse. As one easily verifies that $(\id\otimes \varepsilon)T_1 = \id\otimes \varepsilon$ by the partial multiplicativity and counit property of $\varepsilon$, it follows that also $(\id\otimes \varepsilon)R_1 = \id\otimes \varepsilon$ on $\Delta(1)(A\otimes A)$. Applying both sides to $a\otimes \UnitC{k}{k}$ with $a\in \Gr{A}{k}{l}{k}{l}$, we find \[(\id\otimes (\varepsilon\circ S))\Delta_{kl}(a) = a.\] Applying $\varepsilon$ to this identity, we find $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{k}{l}$, and hence on all $\Gr{A}{k}{l}{m}{n}$.
+\end{proof} 
 
 \subsection{Partial compact quantum groups}
 

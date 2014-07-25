@@ -77,28 +77,27 @@ The tensor product of $\CatC$ can be extended to $M(\CatC)$ by putting \[\left(\
 \begin{Exa}\label{ExaVectBiGr} Let $I$ be a set. We can consider the partial tensor category $\CatCC = \{\Vect_{\fin}\}_{i,j\in I}$ where each $\CatC_{ij}$ is a copy of the category of finite-dimensional vector spaces $\Vect_{\fin}$ and with $\otimes$ the ordinary tensor product. The total category $\CatC$ can then be identified with the category $\Vect^{I\times I}_{\fin}$ of finite-dimensional bi-graded vector spaces with the `balanced' tensor product over $I$. The multiplier category $M(\Vect^{I\times I}_{\fin})$ consists of bigraded vector spaces which are row- and column-finite.
 \end{Exa}
 
-We now formulate the appropriate notion of functor between partial tensor categories.
+We now formulate the appropriate notion of functor between partial tensor categories. Let us first give an auxiliary definition.
+
+\begin{Def} Let $\CatCC$ be a partial tensor category over $I_0$. If $J_0\subseteq I_0$, we call $\CatDD = \{\CatC_{rs}\}_{r,s\in J_0}$ a \emph{restriction} of $\CatCC$. 
+\end{Def} 
 
 \begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $I_0$ and $J_0$, and let \[\phi_0:J_0\twoheadrightarrow I_0,\quad k\mapsto k'\] determine a partition $J_0 = \{J_r\mid r\in I_0\}$ with $k\in J_r \iff \phi_0(k)=r$. 
-A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\alph*)]
+
+A \emph{unital morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\alph*)]
 \item (Unitality)  $\GrDA{F(\Unit_{r})}{k}{l}= 0$ if $k\neq l$ in $J_r$,
 \item (Local finiteness) For each $r,s\in I_0$ and $X\in \CatC_{rs}$, the application $(k,l)\mapsto \GrDA{F(X)}{k}{l}$ is row-and column-finite on $J_k\times J_l$. 
 \item (Multiplicativity) For all $X\in \CatC_{k's}$ and $Y\in \CatC_{sm'}$, one has\[\oplus_{l\in J_s} \iota^{(klm)}_{X,Y}: \left(\oplus_{l\in J_s} \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m}\right) \cong \GrDA{F(X\otimes Y)}{k}{m}.\]
 \item (Coherence) %should this be called coherence? 
 The $\iota^{(klm)}$ satisfy the 2-cocycle condition making \[\xymatrix{F(X)\otimes F(Y)\otimes F(Z) \ar[rr]^{\id\otimes \iota^{(lmn)}_{Y,Z}} \ar[d]_{\iota^{(klm)}_{X,Y}\otimes\id}&& F(X)\otimes F(Y\otimes Z)\ar[d]^{\iota^{(kln)}_{X,Y\otimes Z}}\\ F(X\otimes Y)\otimes F(Z) \ar[rr]_{\iota^{(kmn)}_{X\otimes Y,Z}}&& F(X\otimes Y \otimes Z)}\] commute for all $X\in \CatC_{k'l'},Y\in \CatC_{l'm'}, Z\in \CatC_{m'n'}$, and the $\mu_k$ satisfy the commutation relations \[\xymatrix{ \GrDA{F(X)}{k}{l}\otimes \Unit_l \ar[r]^{\!\!\!\!\id\otimes \mu_l} \ar@{=}[d] & \GrDA{F(X)}{k}{l} \otimes \GrDA{F(\Unit_{l'})}{l}{l} \ar[d]^{\iota^{(kll)}_{X, \Unit_{l'}}} \\ \GrDA{F(X)}{k}{l} & \ar@{=}[l] \GrDA{F(X\otimes \Unit_{l'})}{k}{l}} \qquad \xymatrix{  \Unit_k\otimes \GrDA{F(X)}{k}{l}\ar[r]^{\!\!\!\!\mu_k\otimes \id} \ar@{=}[d] & \GrDA{F(\Unit_{k'})}{k}{k} \otimes \GrDA{F(X)}{k}{l} \ar[d]^{\iota^{(kkl)}_{\Unit_{k'},X}} \\ \GrDA{F(X)}{k}{l} & \ar@{=}[l] \GrDA{ F(\Unit_{k'}\otimes X)}{k}{l}} \]
 \end{enumerate}
+
+A \emph{morphism} from $\CatCC$ to $\CatDD$ is a unital morphism from $\CatCC$ to a restriction of $\CatDD$. 
 \end{Def}
 
-\begin{Rem} 
-%\begin{enumerate}
-%\item 
-In comparison with the partial algebra case, this corresponds to a special case of a unital homomorphism (because of the restriction on the form of $\phi_0$). We will not need the more general case. 
-%\item The 2-cocycle and unit conditions can be formulated locally (locally lax monoidal structure). 
-%\end{enumerate}
-\end{Rem}
-The corresponding global notion is as follows.
+The corresponding global notion (of unital morphism) is as follows.
 
-\begin{Lem} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $I_0$ and $J_0$. Fix an application \[\phi_0: J_0\twoheadrightarrow I_0\] inducing a partition $\{J_k\mid k\in I_0\}$. Then there is a one-to-one correspondence between morphisms $\CatCC\rightarrow \CatDD$ based on $\phi_0$ and functors $F:\CatC \rightarrow M(\CatD)$ with isomorphisms \[\iota_{X,Y}:F(X)\otimes F(Y)\cong F(X\otimes Y),\qquad \mu_r:\oplus_{k\in J_r} \Unit_k \cong F(\Unit_r)\] satisfying the natural coherence conditions. 
+\begin{Lem} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $I_0$ and $J_0$. Fix an application \[\phi_0: J_0\twoheadrightarrow I_0\] inducing a partition $\{J_k\mid k\in I_0\}$. Then there is a one-to-one correspondence between unital morphisms $\CatCC\rightarrow \CatDD$ based on $\phi_0$ and functors $F:\CatC \rightarrow M(\CatD)$ with isomorphisms \[\iota_{X,Y}:F(X)\otimes F(Y)\cong F(X\otimes Y),\qquad \mu_r:\oplus_{k\in J_r} \Unit_k \cong F(\Unit_r)\] satisfying the natural coherence conditions. 
 \end{Lem} 
 %a partition $J_0 = \sqcup_{i\in I_0} J_{0,i}$ and a strong monoidal functor $F: \CatCC\rightarrow M(\CatDD)$ with accompanying coherence isomorphisms $\alpha_{X,Y}: F(X)\otimes F(Y) \rightarrow F(X\otimes Y)$ and $\eta_i: F(\Unit_i) \rightarrow \oplus_{j\in J_{0,i}} \Unit_j$ satisfying the obvious compatibility conditions. % Don't overuse obvious.   
 
@@ -118,12 +117,22 @@ The following definition introduces the notion of duality for partial tensor cat
 
 \begin{Def} Let $\CatCC$ be a partial tensor category. 
 
-An object $X\in \CatC_{ij}$ is said to admit a \emph{left dual} if there exists an object $Y={}^*X \in \CatC_{ji}$ and morphisms $\ev_{j}: Y\otimes X \rightarrow \Unit_j$ and $\coev_i: \Unit_i\rightarrow X\otimes Y$ satisfying the obvious snake identities.
+An object $X\in \CatC_{ij}$ is said to admit a \emph{right dual} if there exists an object $Y=X^* \in \CatC_{ji}$ and morphisms $\ev_{X}: X\otimes Y \rightarrow \Unit_i$ and $\coev_X: \Unit_j\rightarrow Y\otimes X$ satisfying the obvious snake identities.
 
-We say $\CatCC$ \emph{admits left duality} if each object of each $\CatC_{ij}$ has a left dual.
+We say $\CatCC$ \emph{admits right duality} if each object of each $\CatC_{ij}$ has a right dual.
 \end{Def}
 
-Similarly, one defines right duality and (two-sided) duality. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
+Similarly, one defines left duality and (two-sided) duality. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
+
+\begin{Lem}\label{LemMorDua}
+\begin{enumerate}
+\item Let $\CatCC$ be a partial tensor category. If $X$ has right dual $X^*$, then $X$ is a left dual to $X^*$. 
+\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$. If $X\in \CatC_{k'l'}$ has a right dual, $F_{lk}(X^*)$ is a right dual to $F_{kl}(X)$.
+ \end{enumerate}
+\end{Lem}
+\begin{proof}
+TO COMPLETE
+\end{proof}
 
 A final ingredient which will be needed is an analytic structure on our partial tensor categories.
 
@@ -143,7 +152,7 @@ A final ingredient which will be needed is an analytic structure on our partial 
 
 The notion of morphism for partial semi-simple tensor C$^*$-categories has to be adapted in the following way.
 
-\begin{Def} Let $\CatCC$ and $\CatDD$ be partial semi-simple tensor C$^*$-categories over respective sets $I_0$ and $J_0$, and let $\phi_0:J_0\twoheadrightarrow I_0$. 
+\begin{Def} Let $\CatCC$ and $\CatDD$ be partial semi-simple tensor C$^*$-categories over respective sets $I_0$ and $J_0$, and let $\phi_0:J_0\rightarrow I_0$. 
 A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) is a $\phi_0$-based morphism $(F,\iota,\mu)$ from $\CatCC$ to $\CatDD$ as partial tensor categories, with the added requirement that all $F_{kl}$ are $^*$-functors and the $\iota$- and $\mu$-maps isometric. 
 \end{Def} 
 

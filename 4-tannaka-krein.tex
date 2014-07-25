@@ -1,4 +1,4 @@
-\section{Tannaka-Krein-Woronowicz for partial compact quantum groups}
+\section{Tannaka-Krein-Woronowicz duality for partial compact quantum groups}
 
 % Assume categories small?
 % See `Galois reconstruction of finite quantum groups' of Bichon for additional refs
@@ -64,22 +64,26 @@ Let us show now that the resulting bialgebra $\mathscr{A}$ has an invariant inte
 Let $\hat{\phi}^k_l$ be the natural transformation from $\Forget_{kk}$ to $\Forget_{ll}$ which has support on multiples of $\Unit_{k'}$, and with $(\hat{\phi}^k_l)_{\Unit_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $y\in \Nat(F_{kn},F_{ll})$, \[\hat{\phi}^l_m\circ y =\delta_{k,n} \UnitC{k}{l}(y)\hat{\phi}^k_m.\] % To complete? 
 \end{proof}
 
-So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits left duality.
+So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits right duality.
 
 \begin{Prop} The partial bialgebra $\mathscr{A}$ is a partial Hopf algebra.
 \end{Prop} 
 
-\begin{proof} It is easy to see that for $X\in \CatC_{rs}$, we have a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}({}^*X)^*.\] % Move this to section on partial tensor cats.
+\begin{proof} By Lemma \ref{LemMorDua}, we have for each $X\in \CatC_{rs}$ a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}(X^*)^*,\] since left and right duals coincide for $\Vect_{\fin}$.
 
-For a linear map $x$ between vector spaces, let us denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{kl},F_{mn})$, let us define $\hat{S}(x) \in \Nat(F_{nm},F_{lk})$ by \[\hat{S}(x)_X = \left(d^{(lk)}_X\right)^{-1} x_{{}^*X}^t d_X^{(nm)}.\] % Ugly formatting
+For a linear map $x$ between vector spaces, let us denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{kl},F_{mn})$, let us define $\hat{S}(x) \in \Nat(F_{nm},F_{lk})$ by \[\hat{S}(x)_X = \left(d^{(lk)}_X\right)^{-1} x_{X^*}^t d_X^{(nm)}.\] % Ugly formatting
 
 Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
 
 Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{km},F_{nn})\] where $\hat{M}^p_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{pr}$ and $\id\otimes S$. 
 
-Now let us fix $X\in \mathcal{C}_{k'l'}$, and let $e_i^{(kl)}$ be a basis for $F_{kl}(X)$. Let $(\;,\;)$ be the bilinear form rendering the $e_i^{(kl)}$ orthonormal. Let $f_i^{(lk)}$ be the basis of $F_{lk}({}^*X)$ dual to the basis $\{d_X^{(kl)}(e_i)\}$. Then for $x\in \Nat(F_{kl},F_{nr})$, $y\in \Nat(F_{lm},F_{rn})$ and $v \in F_{kl}(X)$, we have \begin{eqnarray*} \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)(v) &=& \sum_i (e_i^{(nr)},x_X(v))  d_X^{()-1}(y_{{}^*X}^{\tr}(f_i^{()*}))\\ &=& \sum_{i,j} (e_i^{(nr)},x_X(v))  (f_i^{()},y_{{}^*X}(f_j^{()}))e_j^{()} \\ &=& \sum_{i,j}(e_i^{()}\otimes f_j^{()},x_X(v)\otimes y_{{}^*X}(f_i^{()}))e_j^{()}.\end{eqnarray*} Hence \begin{eqnarray*} \sum_r \left(\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x)\right)_X(v) &=& \sum_{r,i,j}(e_i^{()}\otimes f_j^{()}, \pi_{{}^*X\otimes X}^{()}x_{{}^*X\otimes X}\iota_{{}^*X\otimes X}^{()}(v\otimes f_i^{()}))e_j^{()}\\ &=&  \sum_{r,i,j}(\iota_{{}^*X\otimes X}^{()}(e_i^{()}\otimes f_j^{()}), x_{{}^*X\otimes X}\iota_{{}^*X\otimes X}^{()}(v\otimes f_i^{()}))e_j^{()}
+Let us fix $X\in \mathcal{C}_{k'l'}$, and let $e_i^{(kl)}$ be a basis for $F_{kl}(X)$ with dual basis $\omega_i^{(kl)}$. Let $\chi_i^{(lk)} = d_X^{(kl)}(e_i)$, and let $f_i^{(lk)}$ be the basis of $F_{lk}(X^*)$ dual to the basis $\{\chi_i^{(lk)}\}$. Then it is easily verified that \[\pi^{(lkl)}_{X^*,X}F_{ll}(\coev_{X})(1) = \sum_i f_i^{(lk)}\otimes e_i^{(kl)},\quad F_{kk}(\ev_X)\iota^{klk}_{X,X^*} = \sum_i \omega_i^{(kl)}\otimes \chi_i^{(lk)},\] where we identified $\C\cong F_{kk}(\Unit_{k'})$. 
+
+Then for $x\in \Nat(F_{kl},F_{nr})$, $y\in \Nat(F_{lm},F_{rn})$ and $v \in F_{kl}(X)$, we have \begin{eqnarray*} \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)(v) &=& \sum_i \omega_i^{(nr)}\left(x_X(v)\right)  d_X^{(ml)-1}(y_{X^*}^{\tr}(\chi_i^{(rn)}))\\ &=& \sum_{i,j} \omega_i^{(nr)}\left(x_X(v)\right)  \chi_i^{(rn)}\left(y_{X^*}(f_j^{(lm)}))\right)e_j^{(ml)} \\ &=& \sum_{i,j}(\omega_i^{(nr)}\otimes \chi_i^{(rn)})\left(x_X(v)\otimes y_{X^*}(f_j^{(lm)})\right)e_j^{(ml)}.\end{eqnarray*} Hence for $ x\in \Nat(F_{km},F_{nn})$, \begin{eqnarray*} \sum_r \left(\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x)\right)_X(v) &=& \sum_{r,i,j}(\omega_i^{(nr)}\otimes \chi_i^{(rn)})\left( \pi_{X, X^*}^{(nrn)}x_{X\otimes X^*}\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})\right)e_j^{(ml)} \\ &=& \sum_{r,j} F_{nn}(\ev_X)\left(\iota_{X, X^*}^{(nrn)}\pi_{X, X^*}^{(nrn)}x_{X\otimes X^*}\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})\right)e_j^{(ml)}\\ &=&  \sum_{j} F_{nn}(\ev_X)x_{X\otimes X^*}\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})e_j^{(ml)}\\
+&=& \sum_{j}x_{\Unit_{k'}} F_{km}(\ev_X)\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})e_j^{(ml)}
+\\ &=& \delta_{km} \UnitC{k}{n}(x)  \sum_{i,j}  \omega_i^{(kl)}(v)\chi_i^{(lk)}(f_j^{(lk)})e_j^{(kl)}\\
+&=&  \delta_{km} \UnitC{k}{n}(x)  v.
 \end{eqnarray*}
-TO COMPLETE!
 \end{proof} 
 
 Now let us updgrade $\CatCC$ to a semisimple partial C$^*$-category with duality, and $\Forget$ to a morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{I\times I}$. Then we can of course still form the partial Hopf algebra $\mathscr{A}$ as above. Let us show that it becomes a partial Hopf $^*$-algebra with positive invariant integral.
@@ -111,6 +115,8 @@ We first introduce a $^*$-structure on $\mathscr{A}$.
 \end{proof}
 
 \section{Examples}
+
+\subsection{Classical examples}
 
 \subsection{Canonical partial compact quantum groupoids}
 
