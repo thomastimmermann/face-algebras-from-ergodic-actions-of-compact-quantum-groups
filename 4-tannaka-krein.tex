@@ -3,89 +3,136 @@
 % Assume categories small?
 % See `Galois reconstruction of finite quantum groups' of Bichon for additional refs
 
-In the previous section, we showed how any partial compact quantum group gave rise to a partial semi-simple tensor C$^*$-category with duality and indecomposable units, together with a morphism into a partial tensor C$^*$-category of finite dimensional Hilbert spaces. In this section, we reverse this construction, and show that the two structures are in duality with each other. As the proof does not differ too much from the usual Tannaka-Krein reconstruction process, we do not spell out all details, emphasizing only the novel points having to do with well-definedness of the constructions. 
+In the previous section, we showed how any partial compact quantum group gave rise to a partial semi-simple tensor C$^*$-category with duality and indecomposable units, together with a morphism into a partial tensor C$^*$-category of finite dimensional Hilbert spaces. In this section, we reverse this construction, and show that the two structures are in duality with each other. As the proof does not differ too much from the usual Tannaka-Krein reconstruction process, we do not spell out all details, emphasizing only the novel points having to do with well-definedness of the constructions.  % Say that implicitly, we do two steps at once: create a partial discrete quantum group, and then dualize. But we don't formally introduce partial discrete quantum groups.
 
 In the following, let us at first fix an indecomposable semi-simple partial tensor category $\CatCC$ over a base set $I_0$. We will again view the tensor product of $\CatC$ as being strict, for notational convenience. 
 
 Assume that we also have another set $I$ and a partition $I = \{I_k\mid k\in I_0\}$ with associated function \[\varphi_0:I\rightarrow I_0, \quad k\mapsto k'.\] Let $\Forget: \CatCC\rightarrow \{\Vect_{\fin}\}_{I\times I}$ be a morphism based on $\varphi_0$ (cf.a~ Example \ref{ExaVectBiGr}).  We will again denote by $\Forget_{kl}:\CatCC_{k'l'}\rightarrow \Vect_{\fin}$ the components of $\Forget$ at index $(k,l)$, and by $\iota$ and $\mu$ resp.~ the associativity and unit constraints.  For $X\in \CatC_{k's}$ and $Y\in \CatC_{sm'}$, we write the projection maps associated to the identification $\Forget_{km}(X\otimes Y)\cong \oplus_{l\in I_s} \left(\Forget_{kl}(X)\otimes \Forget_{lm}(Y)\right)$ as \[\pi^{(klm)}_{X,Y}:\Forget_{km}(X\otimes Y) \rightarrow \Forget_{kl}(X)\otimes \Forget_{lm}(Y).\]
 
-We choose a maximal family of mutually inequivalent irreducible objects $\{u_a\}_{a\in \mathcal{I}}$ in $\CatC$. We assume that the $u_a$ include the unit objects $\Unit_{k'}$ for $k'\in I_0$, and we may hence identify $I_0\subseteq \mathcal{I}$. For $a\in \mathcal{I}$, we will write $u_a \in \CatC_{s_a,t_a}$ with $s_a,t_a\in I_0$.
+We choose a maximal family of mutually inequivalent irreducible objects $\{u_a\}_{a\in \mathcal{I}}$ in $\CatC$. We assume that the $u_a$ include the unit objects $\Unit_{k'}$ for $k'\in I_0$, and we may hence identify $I_0\subseteq \mathcal{I}$. For $a\in \mathcal{I}$, we will write $u_a \in \CatC_{s_a,t_a}$ with $s_a,t_a\in I_0$. For $s,t\in I_0$ fixed, we write $\mathcal{I}_{rs}$ for the set of all $a\in \mathcal{I}$ with $s_a=s$ and $t_a=t$. When $a,b,c\in \mathcal{I}$ with $a\in \mathcal{I}_{rs},b\in \mathcal{I}_{st}$ and $c\in \mathcal{I}_{rt}$, we write $c\leq a\cdot b$ if $\Mor(u_c,u_a\otimes u_b)\neq \{0\}$. Note that with $a,b$ fixed, there is only a finite set of $c$ with $c\leq a\cdot b$. We also use this notation for multiple products.
 
-\begin{Def} For $a\in \mathcal{I}$, $k,l,m,n\in I$ with $k'=m'=a_s,l'=n'=a_t$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) = \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn})^*.\] Write \[\Gr{A}{k}{l}{m}{n} = \underset{a\in \mathcal{I}}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\qquad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] The $a$-spectral subspace $A(a)$ of $A$ is defined as \[A(a) = \osum{k,l,m,n} \Gr{A}{k}{l}{m}{n}(a).\] For any element $x\in A$, its component in the $a$-spectral subspace is written $x_a$.
+\begin{Def} For $a\in \mathcal{I}$ and $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) =  \delta_{k,m,s_a}\delta_{l,n,t_a} \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn})^*.\] Write \[\Gr{A}{k}{l}{m}{n} =\underset{a\in \mathcal{I}}{\oplus}\, \Gr{A}{k}{l}{m}{n}(a),\quad A(a) = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\quad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] 
+%For any element $x\in A$, its component in the $a$-spectral subspace is written $x_a$.
 \end{Def} 
 
-Note that by construction, $\Gr{A}{k}{l}{m}{n}=0$ if $k'\neq m'$ or $l'\neq n'$. 
+%Note that by construction, $\Gr{A}{k}{l}{m}{n}=0$ if $k'\neq m'$ or $l'\neq n'$. 
 
 We first turn the $\Gr{A}{k}{l}{m}{n}$ into a partial coalgebra $\mathscr{A}$ over $I^2$.
 
-\begin{Def} For $r,s\in I$, we define \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}\] as the direct sums of the duals of the composition maps \[\Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{rs}) \otimes \Hom_{\C}(\Forget(u_a)_{rs},\Forget(u_a)_{mn})\rightarrow \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn}),\]\[f\otimes g \mapsto g\circ f.\]
+\begin{Def} For $r,s\in I$, we define \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}\] as the direct sums of the duals of the composition maps \[\Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{rs}) \otimes \Hom_{\C}(\Forget(u_a)_{rs},\Forget(u_a)_{mn})\rightarrow \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn}),\]\[x\otimes y \mapsto y\circ x.\]
 \end{Def} 
 
-\begin{Lem} The couple $(\mathscr{A},\Delta)$ is a partial coalgebra with counit map \[\epsilon:\Gr{A(a)}{k}{l}{k}{l}\rightarrow \C,\quad x\mapsto x(\id_{\Forget(u_a)_{kl}}).\] Moreover, for each fixed $x\in \Gr{A(a)}{k}{l}{m}{n}$, the matrix $\left(\Delta_{rs}(x)\right)_{rs}$ is row- and column-finite.
+\begin{Lem} The couple $(\mathscr{A},\Delta)$ is a partial coalgebra with counit map \[\epsilon:\Gr{A(a)}{k}{l}{k}{l}\rightarrow \C,\quad f\mapsto f(\id_{\Forget(u_a)_{kl}}).\] Moreover, for each fixed $f\in \Gr{A(a)}{k}{l}{m}{n}$, the matrix $\left(\Delta_{rs}(f)\right)_{rs}$ is row- and column-finite.
 \end{Lem} 
 \begin{proof} Coassociativity and counitality are immediate by duality, as for each $a$ fixed the $\Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn})$ form a partial algebra with units $\id_{F(u_a)_{kl}}$. The row-and column-finiteness condition follows immediately from the local finiteness condition for the morphism $F$.
 \end{proof}
 
-In the next step, we define a partial algebra structure on $\mathscr{A}$. % Slight misuse of notation, $\mathscr{A}$ already the coalgebra.
-First note that we can identify $\Nat(\Forget_{kl},\Forget_{mn}) \cong \prod_a \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn})$. Similarly, we can identify \[\Nat(\Forget_{kl}\otimes \Forget_{rs},\Forget_{mn}\otimes \Forget_{pq}) \cong  \prod_{b,c} \Hom_{\C}(\Forget(u_b)_{kl}\otimes \Forget(u_c)_{rs} ,\Forget(u_b)_{mn}\otimes \Forget(u_c)_{pq}),\] where \[\Forget_{kl}\otimes \Forget_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fin},\quad X\times Y \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural paring of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
+In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{A}{k}{l}{m}{n}\mid k,l,m,n\}$. First note that we can identify \[\Nat(\Forget_{kl},\Forget_{mn}) \cong \underset{t_a=l'=n'}{\underset{s_a=k'=m'}{\prod_a}} \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn}),\] where $\Nat(\Forget_{kl},\Forget_{mn})$ denotes the space of natural transformations from $\Forget_{kl}$ to $\Forget_{mn}$ when $k'=m'$ and $l'=n'$. Similarly, we can identify \[\Nat(\Forget_{kl}\otimes \Forget_{rs},\Forget_{mn}\otimes \Forget_{pq}) \cong  \prod_{b,c} \Hom_{\C}(\Forget(u_b)_{kl}\otimes \Forget(u_c)_{rs} ,\Forget(u_b)_{mn}\otimes \Forget(u_c)_{pq}),\] with the product over the appropriate index set and where \[\Forget_{kl}\otimes \Forget_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fin},\quad (X,Y) \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural pairing of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
 
 % To expand. 
 
-\begin{Def} We define a product map $\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow  \Gr{A}{k}{m}{r}{t}$ by the formula \[(x\cdot y)(n) = (x\otimes y)( \hat{\Delta}^{l}_{s}(n)), \qquad  n \in \Nat(\Forget_{km},\Forget_{rt}),\] where $\hat{\Delta}^l_s(n)$ is the natural transformation\[\hat{\Delta}^l_s(n):  \Forget_{kl}\otimes \Forget_{lm}\rightarrow \Forget_{rs}\otimes \Forget_{st},\quad \hat{\Delta}^l_s(n)(X,Y) = \pi^{(rst)}n_{X\otimes Y} \iota^{(klm)},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
+\begin{Def} For $k'=r', l'=s'$ and $m'=t'$, we define a product map \[M:\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow  \Gr{A}{k}{m}{r}{t},\quad f\otimes g \mapsto f\cdot g\] by the formula \[(f\cdot g)(n) = (f\otimes g)( \hat{\Delta}^{l}_{s}(n)), \qquad  n \in \Nat(\Forget_{km},\Forget_{rt}),\] where $\hat{\Delta}^l_s(n)$ is the natural transformation\[\hat{\Delta}^l_s(n):  \Forget_{kl}\otimes \Forget_{lm}\rightarrow \Forget_{rs}\otimes \Forget_{st},\quad \hat{\Delta}^l_s(n)_{X,Y} = \pi^{(rst)}_{X,Y}n_{X\otimes Y} \iota^{(klm)}_{X,Y},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
 \end{Def}
 
-Note that we assumed here implicitly that $k'=r', l'=s'$ and $m'=t'$.
+\begin{Rem} It has to be argued that $f\cdot g$ has finite support (over $\mathcal{I})$ as a functional on $\Nat(\Forget_{km},\Forget_{rt})$. In fact, if $f$ is supported at $b\in \mathcal{I}_{rs}$ and $g$ at $c\in \mathcal{I}_{st}$, then $f\cdot g$ has support in the finite set of $a\in \mathcal{I}_{rt}$ with $a\leq b\cdot c$, since if $n$ is a natural transformation with support outside this set, one has $n_{u_b\otimes u_c}=0$, and hence any of the $\left(\hat{\Delta}^l_s(n)\right)_{u_b,u_c} =0$.
+\end{Rem}
 
-\begin{Lem} The above product maps turn the $\Gr{A}{k}{l}{m}{n}$ into a partial algebra $\mathscr{A}$.
+\begin{Lem} The above product maps turn $(\mathscr{A},M)$ into an $I^2$-partial algebra.
 \end{Lem}
-\begin{proof} The associativity follows from the 2-cocycle condition for the $\iota$ and $\pi$-maps, coupled with the naturality of $n$. The units are given by $\un{k}{m}\in \Gr{A}{k}{k}{m}{m}(\Unit_{k'})$  (for $k'=m'$) corresponding to $1$ in the canonical identifications  \[\Gr{A}{k}{k}{m}{m}(\Unit_{k'}) \cong \End_{\C}(\Forget_{km}(1_{k'}))^* \cong \C^* \cong \C.\]
+\begin{proof} We can extend the map $(\hat{\Delta}^l_s\otimes \id)$ on $\Nat(\Forget_{km},\Forget_{rt})\otimes \Nat(\Forget_{mn},\Forget_{tu})$ to a map \[(\hat{\Delta}^l_s\otimes \id): \Nat(\Forget_{km}\otimes \Forget_{mn},\Forget_{rt}\otimes \Forget_{tu}) \rightarrow  \Nat(\Forget_{kl}\otimes \Forget_{lm}\otimes \Forget_{mn},\Forget_{rs}\otimes \Forget_{st}\otimes \Forget_{tu}),\] \[(\hat{\Delta}^l_s\otimes \id)(x)_{X,Y,Z} = \left(\pi^{(rst)}_{X,Y}\otimes \id_{\Forget_{tu}(Z)}\right) x_{X\otimes Y, Z} \left(\iota^{(klm)}_{X,Y} \otimes \id_{\Forget_{mn}(Z)}\right).\]
+By finite support, we then have that \[((f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)(\hat{\Delta}^l_s\otimes \id)\hat{\Delta}^m_t(x))\] for all $f\in \Gr{A}{k}{l}{r}{s},g\in \Gr{A}{l}{m}{s}{t},h\in \Gr{A}{m}{n}{t}{u}$ and $x\in  \Nat(\Forget_{kn},\Forget_{ru})$. Similarly, \[(f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\id\otimes \hat{\Delta}^m_t)\hat{\Delta}^l_s(x).\] The associativity then follows from the 2-cocycle condition for the $\iota$- and $\pi$-maps. 
+
+By a similar argument, one sees that the (non-zero) units are given by $\UnitC{k}{r}\in \Gr{A}{k}{k}{l}{l}(\Unit_{r})$  (for $r=k'=l'$) corresponding to $1$ in the canonical identifications  \[\Gr{A}{k}{k}{l}{l}(r) \cong \Hom_{\C}(\Forget_{kk}(\Unit_{r}),\Forget_{ll}(\Unit_{r}))^*\cong \Hom_{\C}(\C,\C)^*  \cong \C^* \cong \C.\] Indeed, to prove for example the right unit property, we use that (essentially) $\pi_{u_a,\Unit_{r}}^{(kll)} =(\id\otimes \mu_l)$ and $\iota_{u_a,\Unit_{r}}^{(kll)} = (\id\otimes \mu_l^{-1})$, while \[\UnitC{k}{l}(\mu_ln_{\Unit_{r}}\mu_k^{-1}) = n_{\Unit_{r}} \in \C,\quad n\in \Nat(F_{kk},F_{ll}).\] % to complete
 \end{proof} 
 
 \begin{Prop} The partial algebra and coalgebra structures on $\mathscr{A}$ define a partial bialgebra structure on $\mathscr{A}$. 
 \end{Prop}
-\begin{proof} Let us check the properties in Definition \ref{DefPartBiAlg}. Properties \ref{Propa} and \ref{Propc} are immediate. Property \ref{Propd} was proven above. Property \ref{Propb} follows from the fact that \[\hat{\Delta}^{l}_s(\id_{F_{km}}) = \delta_{ls} \id_{F_{kl}}\otimes \id_{F_{lm}}.\] % To check more rigorously.
-It remains to show the multiplicativity property \ref{Prope}. This follows from the fact that $\oplus_s \pi^{(rst})\iota^{(rst)} \cong \id_{F_{rt}}$. 
+\begin{proof} Let us check the properties in Definition \ref{DefPartBiAlg}. Properties \ref{Propa} and \ref{Propc} are left to the reader. Property \ref{Propd} was proven above. Property \ref{Propb} follows from the fact that for $k'=l'=s'=m'$, \[\hat{\Delta}^{l}_s(\id_{F_{km}}) = \delta_{ls} \id_{F_{kl}}\otimes \id_{F_{lm}}.\] 
+It remains to show the multiplicativity property \ref{Prope}. This is equivalent with proving that, for each $x\in \Nat(F_{km},F_{uw})$ and $y\in \Nat(F_{uw},F_{rt})$ (with all first or second indices in the same class of $I_0$), one has (pointwise) that (for $l'=s'$) \[ \hat{\Delta}^l_s(y\circ x) = \sum_{v,v'=l'} \hat{\Delta}^v_s(y)\circ \hat{\Delta}^l_v(x).\] This follows from the fact that $\sum_v \pi^{(uvw)}_{X,Y}\iota^{(uvw)}_{X,Y} \cong \id_{\Forget_{uw}(X\otimes Y)}$ (where we again note that the left hand side sum is in fact finite).
 \end{proof} 
 
-\begin{Theorem}\label{TheoTKBialg} The assigment $\mathscr{A}\rightarrow \Corep(\mathscr{A})$ provides a one-to-one correspondence between cosemi-simple partial bialgebras $\mathscr{A}$ based over $(I,I_0,\varphi_0)$ % New terminology
-and semi-simple $I_0$-partial tensor categories $\CatCC$ with forgetful strongly monoidal functor $\Forget$ to $\Vect_f^{I\times I}$ based over $\varphi_0$. % To reformulate.
-\end{Theorem}
+Let us show now that the resulting bialgebra $\mathscr{A}$ has an invariant integral.
 
-Let us give some more info on the associated invariant integral.
-
-\begin{Lem} Under the above correspondence, the invariant integral on $\mathscr{A}$ is given by ...
-
-\end{Lem}
-
-The following proposition upgrades Theorem \ref{TheoTKBialg} under the presence of duality.
-
-\begin{Prop} The partial bialgebra $\mathscr{A}$ admits an antipode if and only if $\Corep(\mathscr{A})$ admits duality.
-\end{Prop} 
-
-Finally, we introduce some analytic structure. Let us say $\CatCC$ is a semisimple partial C$^*$-category if all $\CatCC$ are semisimple C$^*$-categories, and the associativity and unit constraints are unitary. For example, for a set $I$ we can form the semisimple partial C$^*$-category $\Hilb_{\fin}^{I\times I}$ where each block is a copy of $\Hilb_{\fin}$, the C$^*$-category of finite-dimensional Hilbert spaces, with tensor products as usual. Duality is defined as in the absence of a C$^*$-structure, but now we automatically have also right duals because of the presence of the $^*$-operation. A \emph{morphism} between semisimple partial tensor C$^*$-categories is then simply a collection of $^*$-functors for which the connecting maps $\iota^{rst}$ are isometric (and the unit constraints unitary). 
-
-Let us now fix a semisimple $I_0$-partial tensor C$^*$-category $\CatCC$ admitting duality and with forgetful functor $\Forget$ into $\Hilb_{\fin}^{I\times I}$ based over $I_0$. Then we can of course form the cosemisimple partial Hopf algebra $(\mathscr{A},\Delta)$ as before. Our next lemma shows that $\mathscr{A}$ acquires a $^*$-structure. To distinguish it from the $^*$-operations present on the C$^*$-category, we will denote it by $\dagger$.
-
-\begin{Def} We define $^\dag: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{l}{k}{n}{m}$ by ...
-
+\begin{Def} Define $\phi: \Gr{A}{k}{k}{m}{m} \rightarrow \C$ as the functional which is zero on $\Gr{A}{k}{k}{m}{m}(a)$ with $a\neq \Unit_{k'}$, and the canonical identification $\Gr{A}{k}{k}{m}{m}(k')\cong \C$ on the unit component (for $k'=m'$).
 \end{Def}
 
-\begin{Theorem} \label{TheoTKPCQG} The assigment $\mathscr{A}\rightarrow \Corep(\mathscr{A})$ provides a one-to-one correspondence between partial compact quantum groups based over $(I,I_0,\varphi_0)$ % New terminology
-and semi-simple $I_0$-partial tensor C$^*$-categories $\CatCC$ with forgetful strongly monoidal $^*$-functor $\Forget$ to $\Vect_f^{I\times I}$ based over $\varphi_0$. % To reformulate.
+\begin{Lem} The functional $\phi$ is an invariant integral.
+\end{Lem}
+
+\begin{proof} The normalisation condition $\phi(\UnitC{k}{k})=1$ is immediate by construction. Let us check left invariance - right invariance will follow similarly.
+
+Let $\hat{\phi}^k_l$ be the natural transformation from $\Forget_{kk}$ to $\Forget_{ll}$ which has support on multiples of $\Unit_{k'}$, and with $(\hat{\phi}^k_l)_{\Unit_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $y\in \Nat(F_{kn},F_{ll})$, \[\hat{\phi}^l_m\circ y =\delta_{k,n} \UnitC{k}{l}(y)\hat{\phi}^k_m.\] % To complete? 
+\end{proof}
+
+So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits left duality.
+
+\begin{Prop} The partial bialgebra $\mathscr{A}$ is a partial Hopf algebra.
+\end{Prop} 
+
+\begin{proof} It is easy to see that for $X\in \CatC_{rs}$, we have a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}({}^*X)^*.\] % Move this to section on partial tensor cats.
+
+For a linear map $x$ between vector spaces, let us denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{kl},F_{mn})$, let us define $\hat{S}(x) \in \Nat(F_{nm},F_{lk})$ by \[\hat{S}(x)_X = \left(d^{(lk)}_X\right)^{-1} x_{{}^*X}^t d_X^{(nm)}.\] % Ugly formatting
+
+Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
+
+Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{km},F_{nn})\] where $\hat{M}^p_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{pr}$ and $\id\otimes S$. 
+
+Now let us fix $X\in \mathcal{C}_{k'l'}$, and let $e_i^{(kl)}$ be a basis for $F_{kl}(X)$. Let $(\;,\;)$ be the bilinear form rendering the $e_i^{(kl)}$ orthonormal. Let $f_i^{(lk)}$ be the basis of $F_{lk}({}^*X)$ dual to the basis $\{d_X^{(kl)}(e_i)\}$. Then for $x\in \Nat(F_{kl},F_{nr})$, $y\in \Nat(F_{lm},F_{rn})$ and $v \in F_{kl}(X)$, we have \begin{eqnarray*} \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)(v) &=& \sum_i (e_i^{(nr)},x_X(v))  d_X^{()-1}(y_{{}^*X}^{\tr}(f_i^{()*}))\\ &=& \sum_{i,j} (e_i^{(nr)},x_X(v))  (f_i^{()},y_{{}^*X}(f_j^{()}))e_j^{()} \\ &=& \sum_{i,j}(e_i^{()}\otimes f_j^{()},x_X(v)\otimes y_{{}^*X}(f_i^{()}))e_j^{()}.\end{eqnarray*} Hence \begin{eqnarray*} \sum_r \left(\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x)\right)_X(v) &=& \sum_{r,i,j}(e_i^{()}\otimes f_j^{()}, \pi_{{}^*X\otimes X}^{()}x_{{}^*X\otimes X}\iota_{{}^*X\otimes X}^{()}(v\otimes f_i^{()}))e_j^{()}\\ &=&  \sum_{r,i,j}(\iota_{{}^*X\otimes X}^{()}(e_i^{()}\otimes f_j^{()}), x_{{}^*X\otimes X}\iota_{{}^*X\otimes X}^{()}(v\otimes f_i^{()}))e_j^{()}
+\end{eqnarray*}
+TO COMPLETE!
+\end{proof} 
+
+Now let us updgrade $\CatCC$ to a semisimple partial C$^*$-category with duality, and $\Forget$ to a morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{I\times I}$. Then we can of course still form the partial Hopf algebra $\mathscr{A}$ as above. Let us show that it becomes a partial Hopf $^*$-algebra with positive invariant integral.
+
+We first introduce a $^*$-structure on $\mathscr{A}$. 
+%To distinguish it from the $^*$-operations present on the C$^*$-category, we will denote it by $\dagger$.
+
+\begin{Def} We define $^*: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{l}{k}{n}{m}$ by the formula \[f^*(x) = \overline{f(\hat{S}(x)^*)},\qquad x\in \Nat(F_{lk},F_{nm}).\]
+\end{Def}
+
+\begin{Lem} The operation $^*$ is an anti-linear, anti-multiplicative involution.
+\end{Lem}
+
+\begin{proof} Anti-linearity is clear. Anti-multiplicativity follows from ... Involutiveness follows from ...
+
+\end{proof}
+
+\begin{Prop} The couple $(\mathscr{A},\Delta)$ with the above $^*$-structure defines a partial compact quantum group.
+\end{Prop}
+\begin{proof} ...
+
+\end{proof} 
+
+\begin{Theorem} \label{TheoTKPCQG} The assigment $\mathscr{A}\rightarrow (\Corep(\mathscr{A}),\Forget)$ is essentially a one-to-one correspondence between partial compact quantum groups based over $\varphi_0:I\twoheadrightarrow I_0$ and semi-simple $I_0$-partial tensor C$^*$-categories $\CatCC$ with forgetful strongly monoidal $^*$-functor $\Forget$ to $(\Hilb_f)_{I\times I}$ based over $\varphi_0$.
 \end{Theorem} 
 
 \begin{proof}
 
 \end{proof}
 
+\section{Examples}
 
-Let us now present some examples.
+\subsection{Canonical partial compact quantum groupoids}
 
-\begin{Exa} Let $I$ be a set. The category $\Hilb_f^{I\times I}$ of row and column-finite $I\times I$-graded Hilbert spaces with tensor product $\itimes$ forms a tensor W$^*$-category with duals and decomposable unit. 
-\end{Exa}
+$\CatCC$ acting on itself. Characterisation of resulting partial compact quantum groups? 
 
-\begin{Exa} Morita equivalence.
-\end{Exa}
+\subsection{Morita equivalence}
+
+% Caenepeel Galois theory weak Hopf algebras
+
+\begin{Def} Two partial compact quantum groups $\mathscr{G}$ and $\mathscr{H}$ are said to be \emph{Morita equivalent} if there exists an equivalence $\Rep(\mathscr{G}) \rightarrow \Rep(\mathscr{H})$ of partial tensor C$^*$-categories. % notion of equivalence to be explained? $\varphi_0$ is bijective, and all $F_{rs}$ are faithful and essentially surjective.
+\end{Def} 
+
+In particular, if $\mathscr{G}$ and $\mathscr{H}$ are Morita equivalent they have the same hyperobject set, but they need not share the same object set.
+
+\begin{Prop} The partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ over respective object sets $I_1$ and $I_2$ and with the same hyperobject set $I_0$ are Morita equivalent if and only if there exists a partial compact quantum group $\mathscr{G}$ over the object set $I_1\sqcup I_2$ such that the associated partial compact quantum group $\mathscr{A}$ has $\Gr{A}{k}{l}{m}{n}=\{0\}$ for $k,l$ or $m,n$ not in the same set $I_j$, such that $\Gr{A}{k}{l}{m}{n}\neq 0$ for ..., and such that the $\Gr{A}{k}{l}{m}{n}$ with all indices in the same set $I_j$, together with all $\Delta_{rs}$ with $rs$ also in this same set, form an isomorphic copy of the partial Hopf $^*$-algebra associated to $\mathscr{G}_j$. % Formulate more succinctly? 
+\end{Prop}
+\begin{proof} If $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent, we may identify the partial tensor C$^*$-categories of $\mathscr{G}_1$ and $\mathscr{G}_2$ with the same abstract partial tensor C$^*$-category $\CatCC$. Then the $\mathscr{G}_j$ are obtained from respective forgetful functors $F_j$ into $(\Hilb_{\fin})_{I_j\times I_j}$. Form $F_1\oplus F_j$, which is a morphism from $\CatCC$ into $(\Hilb_{\fin})_{(I_1\cup I_2)\times (I_1\cup I_2)}$. It is easily seen that the associated compact quantum groupoid is of the above form.
+
+Conversely, ...
+\end{proof} 
+
+For example, co-groupoid of Bichon. 
 
 Let $(A,\Delta)$ be a generalized Hopf face algebra over a set $I$. Assume that $I = I_1\sqcup I_2$, and let $\Lambda_j = \sum_{i\in I_j}\lambda_i$, resp. $\Rho_j = \sum_{i\in I_j} \rho_j$. If the $\Lambda_j$ and $\Rho_j$ are central in $M(A)$, then we can write $A = \osum{i,j} A(ij)$ where $A(ij) = \Lambda_i\Rho_jA$ are subalgebras. Moreover, the comultiplication $\wDelta$ splits into comultiplications \[\wDelta_{ij}^k:A(ij)\rightarrow M(A(ik)\otimes A(kj))\textrm{ s.t. } \wDelta = \wDelta_{ij}^1 +\wDelta_{ij}^2 \textrm{ on }A(ij).\] A similar decomposition holds for $\Delta$.
 
@@ -111,10 +158,35 @@ We will exploit the above extra structure in the following section to say someth
 \end{proof}
 
 
+\subsection{Weak Morita equivalence}
 
-\begin{Exa} Weak Morita equivalence. 
-\end{Exa}
 % Concrete implementation, helps to define the concept in more general analytic context.
+Cf. Muger. 
+
+\begin{Def} Two partial semi-simple tensor C$^*$-categories $\CatCC_1$ and $\CatC_2$ with duality over respective sets $I_1$ and $I_2$ are called \emph{Morita equivalent} if there exists a partial semi-simple tensor C$^*$-category $\CatCC$ with duality over the set $I=I_1\sqcup I_2$ such that the $\CatC_{rs}$ with $r,s$ in the same set $I_j$ form a copy of $\CatCC_j$, and such that each object in $\CatCC_{j}$ is a subobject of $X\otimes Y$ for some $X\in \CatCC_{kl}$ and $Y\in \CatCC{lk}$ with $k$ and $l$ in disjoint sets and $k\in I_j$. % Better formulation.
+
+We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent if their corepresentation categories are Morita equivalent. % ???
+\end{Def} 
+
+This is indeed generalisation of Morita equivalence. 
+
+Notion of co-Morita equivalence. Weak Morita equivalence = Morita equivalence + co-Morita equivalence. 
+
+%Induction of forgetful functor from $\CatCC_1$ to $\CatCC$.?? Maybe by internal representation of a module category by an algebra object. 
+
+% Concrete implementation of weak Morita equivalence... 
+
+\subsection{Ergodic actions of compact quantum group}
+
+Let us now give a rich source of examples coming from ergodic actions of compact quantum groups. We recall the main result from DC-Yamashita.
+
+Link with Morita equivalence. 
+
+Concrete example of dynamical quantum $SU(2)$ to be studied in particular in separate paper. 
+
+
+
+
 
 
 

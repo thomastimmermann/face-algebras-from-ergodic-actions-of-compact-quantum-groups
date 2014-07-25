@@ -80,7 +80,7 @@ The tensor product of $\CatC$ can be extended to $M(\CatC)$ by putting \[\left(\
 We now formulate the appropriate notion of functor between partial tensor categories.
 
 \begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $I_0$ and $J_0$, and let \[\phi_0:J_0\twoheadrightarrow I_0,\quad k\mapsto k'\] determine a partition $J_0 = \{J_r\mid r\in I_0\}$ with $k\in J_r \iff \phi_0(k)=r$. 
-A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\] monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\alph*)]
+A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\alph*)]
 \item (Unitality)  $\GrDA{F(\Unit_{r})}{k}{l}= 0$ if $k\neq l$ in $J_r$,
 \item (Local finiteness) For each $r,s\in I_0$ and $X\in \CatC_{rs}$, the application $(k,l)\mapsto \GrDA{F(X)}{k}{l}$ is row-and column-finite on $J_k\times J_l$. 
 \item (Multiplicativity) For all $X\in \CatC_{k's}$ and $Y\in \CatC_{sm'}$, one has\[\oplus_{l\in J_s} \iota^{(klm)}_{X,Y}: \left(\oplus_{l\in J_s} \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m}\right) \cong \GrDA{F(X\otimes Y)}{k}{m}.\]
