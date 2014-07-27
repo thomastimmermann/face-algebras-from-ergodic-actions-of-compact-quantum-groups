@@ -55,7 +55,7 @@ One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate, 
 \end{Exa}
 
 % Better location?
-\begin{Rem} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with a distinguished zero element \emph{row-and column-finite} if the assignment has finite support in either one of the variables when the other variable has been fixed. % More succinct terminology would be banded, but that seems to imply a uniform band
+\begin{Rem} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with a distinguished zero element \emph{row-and column-finite} (rcf) if the assignment has finite support in either one of the variables when the other variable has been fixed. % More succinct terminology would be banded, but that seems to imply a uniform band
 \end{Rem} 
 
 % Added part on morphisms anyway because it will appear in the generalisation to partial tensor categories
@@ -64,7 +64,7 @@ Let us comment on the notion of morphism for partial algebras. We first introduc
 \begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I$ and $J$-partial algebras. Let \[\phi: I \ni k \mapsto J_k \subseteq J\] with the $J_k$ disjoint. A \emph{homomorphism} (based on $\phi$) from $\mathscr{A}$ to $\mathscr{B}$ consists of linear maps \[\GrDA{f}{r}{s}: A(k\;l)\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] for all $r\in J_k, s\in J_l$, satisfying 
 \begin{itemize}
 \item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{k})}{r}{s} = \delta_{rs}\Unit_r$ for all $r,s\in J_k$.
-\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in J_k$ (resp.~ $s\in J_l$), the assigment $(r,s)\rightarrow \GrDA{f(a)}{r}{s}$ on $J_k\times J_l$ is row-and columnfinite. 
+\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in J_k$ (resp.~ $s\in J_l$), the assigment $(r,s)\rightarrow \GrDA{f(a)}{r}{s}$ on $J_k\times J_l$ is rcf. 
 \item[$\bullet$] (Multiplicativity) For all $k,l,m\in I$, all $r\in J_k$ and all $t\in J_m$, and all $a\in A(k\;l)$ and $b\in A(l\;m)$, one has \[\GrDA{f(ab)}{r}{t} = \sum_{s\in J_l} \GrDA{f(a)}{r}{s}\GrDA{f(b)}{s}{t}.\]
 \end{itemize} 
 The homomorphism is called \emph{unital} if $J=\bigcup \{J_k\mid k\in I\}$. % Can't call this a partition since $J_k$ can be empty 
@@ -416,11 +416,149 @@ $\Delta$ with the flip map.
 
 We will need also the following relation between $\varepsilon$ and $S$ at some point.
 
-\begin{Lem} Let $(\mathscr{A},\Delta)$ be a partial Hopf algebra. Then $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{m}{n}$.
+\begin{Lem}\label{LemCoAnt} Let $(\mathscr{A},\Delta)$ be a partial Hopf algebra. Then $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{m}{n}$.
 \end{Lem}
 
 \begin{proof} Using the notation in Proposition \ref{prop:riti} and the discussion preceding it, we have that \[T_1: \sum_p(A\rho_p\otimes \rho_p A)\rightarrow \Delta(1)(A\otimes A)\] is a bijection with $R_1$ as inverse. As one easily verifies that $(\id\otimes \varepsilon)T_1 = \id\otimes \varepsilon$ by the partial multiplicativity and counit property of $\varepsilon$, it follows that also $(\id\otimes \varepsilon)R_1 = \id\otimes \varepsilon$ on $\Delta(1)(A\otimes A)$. Applying both sides to $a\otimes \UnitC{k}{k}$ with $a\in \Gr{A}{k}{l}{k}{l}$, we find \[(\id\otimes (\varepsilon\circ S))\Delta_{kl}(a) = a.\] Applying $\varepsilon$ to this identity, we find $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{k}{l}$, and hence on all $\Gr{A}{k}{l}{m}{n}$.
 \end{proof} 
+
+\subsection{Invariant integrals}
+
+
+\begin{Def}
+  Let $\mathscr{A}$ be an $I$-partial bialgebra.  We call a family of
+  functionals
+\begin{align} \label{eq:functionals}
+  \phic{k}{m} \colon A\pmat{k}{k}{m}{m} \to \C
+\end{align}
+a \emph{left invariant} \emph{integral} if
+ $\phic{k}{k}(\UnitC{k}{k})=1$ for all $k\in
+I$ and
+\begin{align}
+  \label{eq:integral}
+   (\id \otimes \phic{l}{m})(\Delta_{ll}(a)) 
+&= \delta_{k,p} \phic{k}{m}(a)
+  \UnitC{k}{l} 
+\end{align}
+ for all $k,l,m,p\in I$, $a \in A\pmat{k}{p}{m}{m}$. 
+ 
+ We call them a \emph{right invariant}  \emph{integral} if instead one has \begin{align}
+  (\phic{k}{l} \otimes
+  \id)(\Delta_{ll}(a))&= \delta_{m,p} \phic{k}{m}(a) \UnitC{l}{m}\end{align}
+ for all $k,l,m,p\in I$, $a \in A\pmat{k}{k}{m}{p}$. 
+ 
+ A left integral which is at the same time a right invariant integral will simply be called an \emph{invariant integral}.
+\end{Def}
+
+As before, we can extend a (left or right) invariant integral to a functional $\phi$ on $A$ by linearity and by putting $\phi=0$ on $\Gr{A}{k}{l}{m}{n}$ if $k\neq l$ or $m\neq n$. The total form of the invariance conditions
+\eqref{eq:integral}  reads as follows. 
+
+\begin{Lem} \label{lemma:total-integral}
+  A family of functionals  as in   \eqref{eq:functionals}
+  is left invariant
+  %satisfies the conditions in \eqref{eq:integral} 
+  if and only if
+for all $a,b\in A$,
+  \begin{align*}
+(\id\otimes \phi)((b\otimes 1)\Delta(a)) &= \sum_{k}\phi(\lambda_{k}a)b\lambda_k.
+      \end{align*}
+      It defines a right invariant functional if and only if 
+   \begin{align*}   (\phi\otimes \id)(\Delta(a)(1\otimes b)) &= \sum_{n}
+\phi(\rho_{n} a)\rho_n b.\end{align*}
+\end{Lem}
+
+\begin{proof}
+  Straightforward.
+\end{proof}
+
+We have the following form of \emph{strong invariance}.
+
+\begin{Lem} \label{lemma:strong-invariance}
+  Let $\mathscr{A}$ be a partial Hopf algebra with left invariant integral $\phi$. Then
+  for all $a\in A$,
+  \begin{align*}
+    S\left(( \id\otimes
+    \phi)(\Delta(b)(1 \otimes a))\right) &= (\id \otimes \phi)((1 \otimes b)\Delta(a)).
+  \end{align*}
+  Similarly, if $\mathscr{A}$ is a partial Hopf algebra with right invariant integral $\phi$, then 
+   \begin{align*} S\left((\phi \otimes
+    \id)(\Delta(a)(1\otimes b))\right) &= (\phi \otimes \id)(\Delta(a)(b \otimes 1)).\end{align*}
+\end{Lem}
+\begin{proof}
+ The counit property, the relations \eqref{EqDel} and
+ \eqref{eq:total-antipode} and Lemma \ref{lemma:total-integral} imply
+  \begin{align*}
+    a_{(1)}\phi(ba_{(2)}) &= \sum_{n}
+    a_{(1)}\phi(\epsilon(b_{(1)}\rho_{n})b_{(2)}\lambda_{n}a_{(2)}) \\
+&= \sum_{n} \epsilon(b_{(1)}\rho_{n})\rho_{n}a_{(1)}\phi(b_{(2)}a_{(2)})
+\\
+&= S(b_{(1)})b_{(2)}a_{(1)}\phi(b_{(3)}a_{(2)}) =
+S(b_{(1)})\phi(b_{(2)}a)
+  \end{align*}
+for all $a,b \in A$. The second equation 
+follows similarly.
+\end{proof}
+
+%\begin{Lem}
+  %\begin{enumerate}[label={(\arabic*)}]
+  %\item\label{LI1} If $\phi$ is a left or right invariant integral, then
+   % $\phi(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.
+  %\item\label{LI2} If a left integral and a right invariant integral exist, then the two
+  %  are equal and unique.
+   % \end{enumerate}
+%\end{Lem}
+%\begin{proof}
+
+%To prove \ref{LI3}, assume that $\phi$ is a left or right invariant integral. Then
+%Corollary \ref{corollary:antipode} implies that $\phi\circ S$ is a
+%right or left invariant integral, and \ref{LI2} implies the claim.
+%\end{proof}
+
+\begin{Lem} Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra which admits an  invariant integral $\phi$. 
+Then the following hold.
+\begin{enumerate}[label = {(\arabic*)}]
+\item\label{LI1} $\phi(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.
+\item\label{LI2} $\phi S$ is invariant.
+\item\label{LI3} $\phi$ is unique.
+\item\label{LI4} $\phi S =\phi$.
+%\item\label{LI4} The  antipode of $\mathscr{A}$ is invertible.
+\end{enumerate}
+\end{Lem}
+
+\begin{proof} 
+To see \ref{LI1}, take  $a=\UnitC{k}{k}$ in \eqref{eq:integral}. 
+
+For $\ref{LI2}$, note that as the map $T_1$ of \eqref{eq:wt-12} has range $\Delta(1)(A\otimes A)$, any element of $A$ can be written as a linear combination of elements of the form $(\id\otimes \phi)(\Delta(b)(1\otimes a))$. But then we compute \begin{eqnarray*} (\id\otimes \phi S)\Delta((\id\otimes \phi)(\Delta(b)(1\otimes a))) &=& b_{(1)} \phi(S(\id\otimes \phi)(\Delta(b_{(2)})(1\otimes a)))) \\ &=& b_{(1)}(\phi\otimes \phi)((1\otimes b_{(2)})\Delta(a)) \\ &=& \sum_n  \phi(\rho_n a) (\id\otimes \phi)(\Delta(b)(1\otimes \rho_n))
+\\ &=& \sum_{n,k} \phi(\rho_na)\phi(\lambda_kb\rho_n)\lambda_k \\ &=& \sum_{n,k} \phi(\rho_na)\phi(\lambda_k\rho_n b)\lambda_k .
+\end{eqnarray*} This is precisely $\sum_k \phi(\lambda_k (\id \otimes \phi)(\Delta(b)(1\otimes a))) \lambda_k$, proving left invariance of $\phi\circ S$. Right invariance of $\phi S$ follows similarly.
+
+For \ref{LI3},
+assume that $\phi$ and $\psi$ are a  left and a
+ right invariant integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
+    \begin{align*}
+      \phic{k}{m}(a)  &= (\Grt{\psi}{k}{k} \otimes
+      \phic{k}{m})(\Delta_{kk}(a)) = \Grt{\psi}{k}{m}(a)\Grt{\phi}{k}{m}(\UnitC{k}{m}) = \Grt{\psi}{k}{m}(a) .
+    \end{align*}
+    
+    \ref{LI4} follows from combining \ref{LI2} and \ref{LI3}.
+ \end{proof} 
+
+
+We will need the following lemma at some point. It is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
+
+\begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a partial Hopf
+  algebra with bijective antipode and an invariant integral $\phi$. Then
+  $\phi$ is faithful in the following sense: if $a\in A$ and
+  $\phi(ab) =0$ (resp. $\phi(ba)=0$) for all $b\in A$, then
+  $a=0$.
+\end{Lem} 
+% Ref to Timmermann for case of quantum groupoids? Can be explicitly used here? Ask Fons if he has already derived this result, and acknowledge? 
+\begin{proof} Suppose  $\phi(ba)=0$ for all $b$. Then for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(a))$ satisfies \[(\id\otimes \phi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \phi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\phi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+
+The other case follows similarly, or by considering the opposite comultiplication.
+\end{proof} 
+
+
 
 \subsection{Partial compact quantum groups}
 
@@ -438,7 +576,7 @@ One can of course give an alternative definition directly in terms of the partia
 \begin{Def} A \emph{partial $^*$-bialgebra} $\mathscr{A}$ is a
  partial bialgebra whose underlying partial algebra has been
   endowed with a partial $^*$-algebra structure such that
-$\Delta(a)^* = \Delta(a^*)$ for all $a \in A$.
+$\Delta_{rs}(a)^* = \Delta_{sr}(a^*)$ for all $a \in \Gr{A}{k}{l}{m}{n}$.
 A \emph{partial Hopf $^*$-algebra} is a partial bialgebra which is at the same time a partial $^*$-bialgebra and a partial Hopf algebra.
 \end{Def} 
 Thus, a partial bialgebra is a partial
@@ -462,122 +600,14 @@ uniqueness of the counit  \cite[Theorem 2.8]{Boh1}, and the relation
 for the antipode from \cite[Proposition 4.11]{VDW1}.
 \end{proof}
 
-\begin{Def}
-  Let $\mathscr{A}$ be an $I$-partial bialgebra.  We call a family of
-  functionals
-\begin{align} \label{eq:functionals}
-  \phic{k}{m} \colon A\pmat{k}{k}{m}{m} \to \C
-\end{align}
-a \emph{left invariant} \emph{integral} if
- $\phic{k}{k}(\UnitC{k}{k})=1$ for all $k\in
-I$ and
-\begin{align}
-  \label{eq:integral}
-   (\id \otimes \phic{l}{m})(\Delta_{l,l}(a)) 
-&= \delta_{k,p} \phic{k}{m}(a)
-  \UnitC{k}{l} 
-\end{align}
- for all $k,l,m,p\in I$, $a \in A\pmat{k}{p}{m}{m}$. 
- 
- We call them a \emph{right invariant}  \emph{integral} if instead one has \begin{align}
-  (\phic{k}{l} \otimes
-  \id)(\Delta_{l,l}(a))&= \delta_{m,p} \phic{k}{m}(a) \UnitC{l}{m}\end{align}
- for all $k,l,m,p\in I$, $a \in A\pmat{k}{k}{m}{p}$. 
- 
- If $\phi$ is a left
- and a right invariant integral, we call $\phi$ an \emph{invariant integral}.
-\end{Def}
-\begin{Lem}
-  \begin{enumerate}[label={(\arabic*)}]
-  \item\label{LI1} If $\phi$ is a left or right invariant integral, then
-    $\phic{k}{m}(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.
-  \item\label{LI2} If a left integral and a right invariant integral exist, then the two
-    are equal and unique.
-  \item\label{LI3} Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra with
-    bijective antipode $S$.  If $\phi$ is a left or right invariant integral,
-    then it is unique, an invariant integral, and equal to $\phi\circ S$.
-    \end{enumerate}
-\end{Lem}
-\begin{proof}
-To see \ref{LI1}, take  $a=\UnitC{k}{k}$ in \eqref{eq:integral}. For \ref{LI2},
-assume that $\phi$ and $\psi$ are a  left and a
- right invariant integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
-    \begin{align*}
-      \phic{k}{m}(a)  &= (\Grt{\psi}{k}{k} \otimes
-      \phic{k}{m})(\Delta_{k,k}(a)) = \Grt{\psi}{k}{m}(a)\Grt{\phi}{k}{m}(\UnitC{k}{m}) = \Grt{\psi}{k}{m}(a) .
-    \end{align*}
-To prove \ref{LI3}, assume that $\phi$ is a left or right invariant integral. Then
-Corollary \ref{corollary:antipode} implies that $\phi\circ S$ is a
-right or left invariant integral, and \ref{LI2} implies the claim.
-\end{proof}
-Given a family of functionals as in \eqref{eq:functionals}, we denote
-by $\phi \colon A \to \C$ the corresponding functional on the total
-algebra.
 
 We are finally ready to formulate our main definition.
 \begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a
   partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with an invariant integral  $\phi$ that is positive in the sense  that $\phi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
 \end{Def} 
 
-\begin{Rem} Following \cite{Hay1}, we could also have called our objects \emph{compact quantum groups of face type}, but we feel this gives the wrong impression when the base algebra is infinite dimensional (i.e. the object set is not compact). When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. % Is this a clear enough motivation? 
+\begin{Rem} Following \cite{Hay1}, we could also have called our objects \emph{compact quantum groups of face type}, but we feel this gives the wrong impression when the base algebra is infinite dimensional (i.e.~ the object set is not compact). When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. % Is this a clear enough motivation? 
 \end{Rem} 
-
-The total form of the invariance conditions
-\eqref{eq:integral}  reads as follows. 
-\begin{Lem} \label{lemma:total-integral}
-  A family of functionals $\phi$ as in   \eqref{eq:functionals}
-  satisfies the conditions in \eqref{eq:integral} if and only if
-for all $a\in A$,
-  \begin{align*}
-(\phi\otimes \id)(\Delta(a)(1\otimes b)) &= \sum_{n}
-\phi(\rho_{n} a)\rho_n b
-&& \big(\text{or} &
-(\id\otimes \phi)((b\otimes 1)\Delta(a)) &= \sum_{k}\phi(\lambda_{k}a)b\lambda_k.\big)
-      \end{align*}
-\end{Lem}
-\begin{proof}
-  Straightforward.
-\end{proof}
-
-
-We will need the following lemma at some point, which is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
-
-\begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a partial Hopf
-  algebra with bijective antipode and an integral $\phi$. Then
-  $\phi$ is faithful in the following sense: if $a\in A$ and
-  $\phi(ab) =0$ (resp. $\phi(ba)=0$) for all $b\in A$, then
-  $a=0$.
-\end{Lem} 
-% Ref to Timmermann for case of quantum groupoids? Can be explicitly used here? Ask Fons if he has already derived this result, and acknowledge? 
-\begin{proof} Suppose  $\phi(ba)=0$ for all $b$. Then for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(a))$ satisfies \[(\id\otimes \phi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \phi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\phi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
-
-The other case follows similarly, or by considering the opposite comultiplication.
-\end{proof} 
-
-\begin{Lem} \label{lemma:strong-invariance}
-  Let $\mathscr{A}$ be a partial Hopf algebra with  integral $\phi$. Then
-  for all $a\in A$,
-  \begin{align*}
-    (\id \otimes \phi)((1 \otimes b)\Delta(a)) &= (S \otimes
-    \phi)(\Delta(b)(1 \otimes a)), \\
-    (\phi \otimes \id)(\Delta(a)(b \otimes 1)) &= (\phi \otimes
-    S)(\Delta(a)(1\otimes b)).
-  \end{align*}
-\end{Lem}
-\begin{proof}
- The counit property, the relations \eqref{EqDel} and
- \eqref{eq:total-antipode} and Lemma \ref{lemma:total-integral} imply
-  \begin{align*}
-    a_{(1)}\phi(ba_{(2)}) &= \sum_{n}
-    a_{(1)}\phi(\epsilon(b_{(1)}\rho_{n})b_{(2)}\lambda_{n}a_{(2)}) \\
-&= \sum_{n} \epsilon(b_{(1)}\rho_{n})\rho_{n}a_{(1)}\phi(b_{(2)}a_{(2)})
-\\
-&= S(b_{(1)})b_{(2)}a_{(1)}\phi(b_{(3)}a_{(2)}) =
-S(b_{(1)})\phi(b_{(2)}a)
-  \end{align*}
-for all $a,b \in A$. The second equation 
-follows similarly.
-\end{proof}
 
 %%% Local Variables: 
 %%% mode: latex

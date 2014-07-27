@@ -15,6 +15,8 @@
 % Horizontally categorified algebra is algebroid, but that terminology would be too overused if applied to quantum groupoids
 % Mention generalization of Neshveyev
 % Include ref to Joyal-Street
+% Uniformize enumerates and itemizes
+% Reference to Larson paper on cosemisimplicity
 
 \documentclass[11pt]{article}
 
@@ -56,8 +58,10 @@
 \DeclareMathOperator{\Pol}{\mathrm{P}}
 \DeclareMathOperator{\Par}{\mathrm{Par}}
 \DeclareMathOperator{\Ran}{\mathrm{Ran}}
+\DeclareMathOperator{\rcf}{\mathrm{rcf}}
 \DeclareMathOperator{\reg}{\mathrm{reg}}
 \DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\Span}{\mathrm{span}}
 \DeclareMathOperator{\Spec}{\mathrm{Spec}}
 \DeclareMathOperator{\tr}{\mathrm{tr}}
 \DeclareMathOperator{\Zz}{\mathrm{Z}}
@@ -126,12 +130,14 @@
 \newcommand{\Corr}{\mathrm{Corr}}
 
 \newcommand{\Vectf}{\mathrm{Vect}^{f}}
-\newcommand{\Vecti}{\mathrm{Vect}_{I^{2}}}
-\newcommand{\Vectif}{\mathrm{Vect}^{f}_{I^{2}}}
+\newcommand{\Vecti}{\mathrm{Vect}^{I^{2}}}
+\newcommand{\Vectif}{\mathrm{Vect}_{f}^{I^{2}}}
+\newcommand{\Vectrcf}{\mathrm{Vect}_{rcf}^{I^{2}}}
 \newcommand{\Hilb}{\mathrm{Hilb}}
-\newcommand{\Hilbf}{\mathrm{Hilb}^{\mathrm{f}}}
-\newcommand{\Hilbi}{\mathrm{Hilb}_{I^{2}}}
-\newcommand{\Hilbif}{\mathrm{Hilb}_{I^{2}}^{\mathrm{f}}}
+\newcommand{\Hilbf}{\mathrm{Hilb}_{\mathrm{f}}}
+\newcommand{\Hilbi}{\mathrm{Hilb}^{I^{2}}}
+\newcommand{\Hilbif}{\mathrm{Hilb}^{I^{2}}_{\mathrm{f}}}
+\newcommand{\Hilbrcf}{\mathrm{Hilb}^{I^2}_{\mathrm{rcf}}}
 
 \newcommand{\Star}[2]{{}_{#1}\!*_{#2}}
 \newcommand{\vot}{\bar{\otimes}}
@@ -192,8 +198,8 @@
 \newcommand{\UT}[2]{#1{\tiny #2 }}
 \newcommand{\Gr}[5]{\fourIdx{#2}{#4}{#3}{#5}{#1}}%TODO: better typesetting
 \newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
-\newcommand{\Gru}[3]{\Gr{#1}{#2}{#3}{}{}}
-\newcommand{\Grd}[3]{\Gr{#1}{}{}{#2}{#3}}
+\newcommand{\Gru}[3]{\Gr{#1}{}{}{#2}{#3}}
+\newcommand{\Grd}[3]{\Gr{#1}{#2}{#3}{}{}}
 % \newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
 % %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
 % %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} \, #2\;\\ #3 \qquad #4 \\ \,#5\;\end{pmatrix}}}
