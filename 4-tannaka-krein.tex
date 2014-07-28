@@ -12,7 +12,7 @@ Assume that we also have another set $I$ and a partition $I = \{I_k\mid k\in I_0
 
 We choose a maximal family of mutually inequivalent irreducible objects $\{u_a\}_{a\in \mathcal{I}}$ in $\CatC$. We assume that the $u_a$ include the unit objects $\Unit_{k'}$ for $k'\in I_0$, and we may hence identify $I_0\subseteq \mathcal{I}$. For $a\in \mathcal{I}$, we will write $u_a \in \CatC_{s_a,t_a}$ with $s_a,t_a\in I_0$. For $s,t\in I_0$ fixed, we write $\mathcal{I}_{rs}$ for the set of all $a\in \mathcal{I}$ with $s_a=s$ and $t_a=t$. When $a,b,c\in \mathcal{I}$ with $a\in \mathcal{I}_{rs},b\in \mathcal{I}_{st}$ and $c\in \mathcal{I}_{rt}$, we write $c\leq a\cdot b$ if $\Mor(u_c,u_a\otimes u_b)\neq \{0\}$. Note that with $a,b$ fixed, there is only a finite set of $c$ with $c\leq a\cdot b$. We also use this notation for multiple products.
 
-\begin{Def} For $a\in \mathcal{I}$ and $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) =  \delta_{k,m,s_a}\delta_{l,n,t_a} \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn})^*.\] Write \[\Gr{A}{k}{l}{m}{n} =\underset{a\in \mathcal{I}}{\oplus}\, \Gr{A}{k}{l}{m}{n}(a),\quad A(a) = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\quad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] 
+\begin{Def} For $a\in \mathcal{I}$ and $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) =  \delta_{k,m,s_a}\delta_{l,n,t_a} \Hom_{\C}(\Forget(u_a)_{mn},\Forget(u_a)_{kl})^*.\] Write \[\Gr{A}{k}{l}{m}{n} =\underset{a\in \mathcal{I}}{\oplus}\, \Gr{A}{k}{l}{m}{n}(a),\quad A(a) = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\quad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] 
 %For any element $x\in A$, its component in the $a$-spectral subspace is written $x_a$.
 \end{Def} 
 
@@ -20,36 +20,36 @@ We choose a maximal family of mutually inequivalent irreducible objects $\{u_a\}
 
 We first turn the $\Gr{A}{k}{l}{m}{n}$ into a partial coalgebra $\mathscr{A}$ over $I^2$.
 
-\begin{Def} For $r,s\in I$, we define \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}\] as the direct sums of the duals of the composition maps \[\Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{rs}) \otimes \Hom_{\C}(\Forget(u_a)_{rs},\Forget(u_a)_{mn})\rightarrow \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn}),\]\[x\otimes y \mapsto y\circ x.\]
+\begin{Def} For $r,s\in I$, we define \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}\] as the direct sums of the duals of the composition maps \[\Hom_{\C}(\Forget(u_a)_{rs},\Forget(u_a)_{kl}) \otimes \Hom_{\C}(\Forget(u_a)_{mn},\Forget(u_a)_{rs})\rightarrow \Hom_{\C}(\Forget(u_a)_{mn},\Forget(u_a)_{kl}),\]\[x\otimes y \mapsto x\circ y.\]
 \end{Def} 
 
 \begin{Lem} The couple $(\mathscr{A},\Delta)$ is a partial coalgebra with counit map \[\epsilon:\Gr{A(a)}{k}{l}{k}{l}\rightarrow \C,\quad f\mapsto f(\id_{\Forget(u_a)_{kl}}).\] Moreover, for each fixed $f\in \Gr{A(a)}{k}{l}{m}{n}$, the matrix $\left(\Delta_{rs}(f)\right)_{rs}$ is row- and column-finite.
 \end{Lem} 
-\begin{proof} Coassociativity and counitality are immediate by duality, as for each $a$ fixed the $\Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn})$ form a partial algebra with units $\id_{F(u_a)_{kl}}$. The row-and column-finiteness condition follows immediately from the local finiteness condition for the morphism $F$.
+\begin{proof} Coassociativity and counitality are immediate by duality, as for each $a$ fixed the $\Hom_{\C}(\Forget(u_a)_{mn},\Forget(u_a)_{kl})$ form a partial algebra with units $\id_{F(u_a)_{kl}}$. The row-and column-finiteness condition follows immediately from the local finiteness condition for the morphism $F$.
 \end{proof}
 
-In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{A}{k}{l}{m}{n}\mid k,l,m,n\}$. First note that we can identify \[\Nat(\Forget_{kl},\Forget_{mn}) \cong \underset{t_a=l'=n'}{\underset{s_a=k'=m'}{\prod_a}} \Hom_{\C}(\Forget(u_a)_{kl},\Forget(u_a)_{mn}),\] where $\Nat(\Forget_{kl},\Forget_{mn})$ denotes the space of natural transformations from $\Forget_{kl}$ to $\Forget_{mn}$ when $k'=m'$ and $l'=n'$. Similarly, we can identify \[\Nat(\Forget_{kl}\otimes \Forget_{rs},\Forget_{mn}\otimes \Forget_{pq}) \cong  \prod_{b,c} \Hom_{\C}(\Forget(u_b)_{kl}\otimes \Forget(u_c)_{rs} ,\Forget(u_b)_{mn}\otimes \Forget(u_c)_{pq}),\] with the product over the appropriate index set and where \[\Forget_{kl}\otimes \Forget_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fin},\quad (X,Y) \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural pairing of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
+In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{A}{k}{l}{m}{n}\mid k,l,m,n\}$. First note that we can identify \[\Nat(\Forget_{mn},\Forget_{kl}) \cong \underset{t_a=l'=n'}{\underset{s_a=k'=m'}{\prod_a}} \Hom_{\C}(\Forget(u_a)_{mn},\Forget(u_a)_{kl}),\] where $\Nat(\Forget_{mn},\Forget_{kl})$ denotes the space of natural transformations from $\Forget_{mn}$ to $\Forget_{kl}$ when $k'=m'$ and $l'=n'$. Similarly, we can identify \[\Nat(\Forget_{mn}\otimes \Forget_{pq},\Forget_{kl}\otimes \Forget_{rs}) \cong  \prod_{b,c} \Hom_{\C}(\Forget(u_b)_{mn}\otimes \Forget(u_c)_{pq} ,\Forget(u_b)_{kl}\otimes \Forget(u_c)_{rs}),\] with the product over the appropriate index set and where \[\Forget_{kl}\otimes \Forget_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fin},\quad (X,Y) \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural pairing of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
 
 % To expand. 
 
-\begin{Def} For $k'=r', l'=s'$ and $m'=t'$, we define a product map \[M:\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow  \Gr{A}{k}{m}{r}{t},\quad f\otimes g \mapsto f\cdot g\] by the formula \[(f\cdot g)(n) = (f\otimes g)( \hat{\Delta}^{l}_{s}(n)), \qquad  n \in \Nat(\Forget_{km},\Forget_{rt}),\] where $\hat{\Delta}^l_s(n)$ is the natural transformation\[\hat{\Delta}^l_s(n):  \Forget_{kl}\otimes \Forget_{lm}\rightarrow \Forget_{rs}\otimes \Forget_{st},\quad \hat{\Delta}^l_s(n)_{X,Y} = \pi^{(rst)}_{X,Y}n_{X\otimes Y} \iota^{(klm)}_{X,Y},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
+\begin{Def} For $k'=r', l'=s'$ and $m'=t'$, we define a product map \[M:\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow  \Gr{A}{k}{m}{r}{t},\quad f\otimes g \mapsto f\cdot g\] by the formula \[(f\cdot g)(x) = (f\otimes g)( \hat{\Delta}^{l}_{s}(x)), \qquad  x \in \Nat(\Forget_{rt},\Forget_{km}),\] where $\hat{\Delta}^l_s(n)$ is the natural transformation\[\hat{\Delta}^l_s(x):  \Forget_{rs}\otimes \Forget_{st}\rightarrow \Forget_{kl}\otimes \Forget_{lm},\quad \hat{\Delta}^l_s(x)_{X,Y} = \pi^{(klm)}_{X,Y}x_{X\otimes Y} \iota^{(rst)}_{X,Y},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
 \end{Def}
 
-\begin{Rem} It has to be argued that $f\cdot g$ has finite support (over $\mathcal{I})$ as a functional on $\Nat(\Forget_{km},\Forget_{rt})$. In fact, if $f$ is supported at $b\in \mathcal{I}_{rs}$ and $g$ at $c\in \mathcal{I}_{st}$, then $f\cdot g$ has support in the finite set of $a\in \mathcal{I}_{rt}$ with $a\leq b\cdot c$, since if $n$ is a natural transformation with support outside this set, one has $n_{u_b\otimes u_c}=0$, and hence any of the $\left(\hat{\Delta}^l_s(n)\right)_{u_b,u_c} =0$.
+\begin{Rem} It has to be argued that $f\cdot g$ has finite support (over $\mathcal{I})$ as a functional on $\Nat(\Forget_{rt},\Forget_{km})$. In fact, if $f$ is supported at $b\in \mathcal{I}_{r's'}$ and $g$ at $c\in \mathcal{I}_{s't'}$, then $f\cdot g$ has support in the finite set of $a\in \mathcal{I}_{r't'}$ with $a\leq b\cdot c$, since if $x$ is a natural transformation with support outside this set, one has $x_{u_b\otimes u_c}=0$, and hence any of the $\left(\hat{\Delta}^l_s(x)\right)_{u_b,u_c} =0$.
 \end{Rem}
 
 \begin{Lem} The above product maps turn $(\mathscr{A},M)$ into an $I^2$-partial algebra.
 \end{Lem}
-\begin{proof} We can extend the map $(\hat{\Delta}^l_s\otimes \id)$ on $\Nat(\Forget_{km},\Forget_{rt})\otimes \Nat(\Forget_{mn},\Forget_{tu})$ to a map \[(\hat{\Delta}^l_s\otimes \id): \Nat(\Forget_{km}\otimes \Forget_{mn},\Forget_{rt}\otimes \Forget_{tu}) \rightarrow  \Nat(\Forget_{kl}\otimes \Forget_{lm}\otimes \Forget_{mn},\Forget_{rs}\otimes \Forget_{st}\otimes \Forget_{tu}),\] \[(\hat{\Delta}^l_s\otimes \id)(x)_{X,Y,Z} = \left(\pi^{(rst)}_{X,Y}\otimes \id_{\Forget_{tu}(Z)}\right) x_{X\otimes Y, Z} \left(\iota^{(klm)}_{X,Y} \otimes \id_{\Forget_{mn}(Z)}\right).\]
-By finite support, we then have that \[((f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)(\hat{\Delta}^l_s\otimes \id)\hat{\Delta}^m_t(x))\] for all $f\in \Gr{A}{k}{l}{r}{s},g\in \Gr{A}{l}{m}{s}{t},h\in \Gr{A}{m}{n}{t}{u}$ and $x\in  \Nat(\Forget_{kn},\Forget_{ru})$. Similarly, \[(f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\id\otimes \hat{\Delta}^m_t)\hat{\Delta}^l_s(x).\] The associativity then follows from the 2-cocycle condition for the $\iota$- and $\pi$-maps. 
+\begin{proof} We can extend the map $(\hat{\Delta}^l_s\otimes \id)$ on $\Nat(\Forget_{rt},\Forget_{km})\otimes \Nat(\Forget_{tu},\Forget_{mn})$ to a map \[(\hat{\Delta}^l_s\otimes \id): \Nat(\Forget_{rt}\otimes \Forget_{tu},\Forget_{km}\otimes \Forget_{mn}) \rightarrow  \Nat(\Forget_{rs}\otimes \Forget_{st}\otimes \Forget_{tu},\Forget_{kl}\otimes \Forget_{lm}\otimes \Forget_{mn}),\] \[(\hat{\Delta}^l_s\otimes \id)(x)_{X,Y,Z} = \left(\pi^{(klm)}_{X,Y}\otimes \id_{\Forget_{mn}(Z)}\right) x_{X\otimes Y, Z} \left(\iota^{(rst)}_{X,Y} \otimes \id_{\Forget_{tu}(Z)}\right).\]
+By finite support, we then have that \[((f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)(\hat{\Delta}^l_s\otimes \id)\hat{\Delta}^m_t(x))\] for all $f\in \Gr{A}{k}{l}{r}{s},g\in \Gr{A}{l}{m}{s}{t},h\in \Gr{A}{m}{n}{t}{u}$ and $x\in  \Nat(\Forget_{ru},\Forget_{kn})$. Similarly, \[(f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\id\otimes \hat{\Delta}^m_t)\hat{\Delta}^l_s(x).\] The associativity then follows from the 2-cocycle condition for the $\iota$- and $\pi$-maps. 
 
-By a similar argument, one sees that the (non-zero) units are given by $\UnitC{k}{r}\in \Gr{A}{k}{k}{l}{l}(\Unit_{r})$  (for $r=k'=l'$) corresponding to $1$ in the canonical identifications  \[\Gr{A}{k}{k}{l}{l}(r) \cong \Hom_{\C}(\Forget_{kk}(\Unit_{r}),\Forget_{ll}(\Unit_{r}))^*\cong \Hom_{\C}(\C,\C)^*  \cong \C^* \cong \C.\] Indeed, to prove for example the right unit property, we use that (essentially) $\pi_{u_a,\Unit_{r}}^{(kll)} =(\id\otimes \mu_l)$ and $\iota_{u_a,\Unit_{r}}^{(kll)} = (\id\otimes \mu_l^{-1})$, while \[\UnitC{k}{l}(\mu_ln_{\Unit_{r}}\mu_k^{-1}) = n_{\Unit_{r}} \in \C,\quad n\in \Nat(F_{kk},F_{ll}).\] % to complete
+By a similar argument, one sees that the (non-zero) units are given by $\UnitC{k}{l}\in \Gr{A}{k}{k}{l}{l}(\Unit_{r})$  (for $r=k'=l'$) corresponding to $1$ in the canonical identifications  \[\Gr{A}{k}{k}{l}{l}(r) \cong \Hom_{\C}(\Forget_{ll}(\Unit_{r}),\Forget_{kk}(\Unit_{r}))^*\cong \Hom_{\C}(\C,\C)^*  \cong \C^* \cong \C.\] Indeed, to prove for example the right unit property, we use that (essentially) $\pi_{u_a,\Unit_{r}}^{(kll)} =(\id\otimes \mu_l)$ and $\iota_{u_a,\Unit_{r}}^{(kll)} = (\id\otimes \mu_l^{-1})$, while \[\UnitC{k}{l}(\mu_kx_{\Unit_{r}}\mu_l^{-1}) = x_{\Unit_{r}} \in \C,\quad x\in \Nat(F_{ll},F_{kk}).\] % to complete
 \end{proof} 
 
 \begin{Prop} The partial algebra and coalgebra structures on $\mathscr{A}$ define a partial bialgebra structure on $\mathscr{A}$. 
 \end{Prop}
 \begin{proof} Let us check the properties in Definition \ref{DefPartBiAlg}. Properties \ref{Propa} and \ref{Propc} are left to the reader. Property \ref{Propd} was proven above. Property \ref{Propb} follows from the fact that for $k'=l'=s'=m'$, \[\hat{\Delta}^{l}_s(\id_{F_{km}}) = \delta_{ls} \id_{F_{kl}}\otimes \id_{F_{lm}}.\] 
-It remains to show the multiplicativity property \ref{Prope}. This is equivalent with proving that, for each $x\in \Nat(F_{km},F_{uw})$ and $y\in \Nat(F_{uw},F_{rt})$ (with all first or second indices in the same class of $I_0$), one has (pointwise) that (for $l'=s'$) \[ \hat{\Delta}^l_s(y\circ x) = \sum_{v,v'=l'} \hat{\Delta}^v_s(y)\circ \hat{\Delta}^l_v(x).\] This follows from the fact that $\sum_v \pi^{(uvw)}_{X,Y}\iota^{(uvw)}_{X,Y} \cong \id_{\Forget_{uw}(X\otimes Y)}$ (where we again note that the left hand side sum is in fact finite).
+It remains to show the multiplicativity property \ref{Prope}. This is equivalent with proving that, for each $x\in \Nat(F_{uw},F_{km})$ and $y\in \Nat(F_{rt},F_{uw})$ (with all first or second indices in the same class of $I_0$), one has (pointwise) that (for $l'=s'$) \[ \hat{\Delta}^l_s(x\circ y) = \sum_{v,v'=l'} \hat{\Delta}^v_s(x)\circ \hat{\Delta}^l_v(y).\] This follows from the fact that $\sum_v \pi^{(uvw)}_{X,Y}\iota^{(uvw)}_{X,Y} \cong \id_{\Forget_{uw}(X\otimes Y)}$ (where we again note that the left hand side sum is in fact finite).
 \end{proof} 
 
 Let us show now that the resulting bialgebra $\mathscr{A}$ has an invariant integral.
@@ -62,29 +62,36 @@ Let us show now that the resulting bialgebra $\mathscr{A}$ has an invariant inte
 
 \begin{proof} The normalisation condition $\phi(\UnitC{k}{k})=1$ is immediate by construction. Let us check left invariance - right invariance will follow similarly.
 
-Let $\hat{\phi}^k_l$ be the natural transformation from $\Forget_{kk}$ to $\Forget_{ll}$ which has support on multiples of $\Unit_{k'}$, and with $(\hat{\phi}^k_l)_{\Unit_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $y\in \Nat(F_{kn},F_{ll})$, \[\hat{\phi}^l_m\circ y =\delta_{k,n} \UnitC{k}{l}(y)\hat{\phi}^k_m.\] % To complete? 
+Let $\hat{\phi}^k_l$ be the natural transformation from $\Forget_{ll}$ to $\Forget_{kk}$ which has support on multiples of $\Unit_{k'}$, and with $(\hat{\phi}^k_l)_{\Unit_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $x\in \Nat(F_{ll},F_{kn})$, \[x\circ \hat{\phi}^l_m =\delta_{k,n} \UnitC{k}{l}(y)\hat{\phi}^k_m.\] % To complete? 
 \end{proof}
 
-So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits right duality.
+So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits duality.
 
-\begin{Prop} The partial bialgebra $\mathscr{A}$ is a partial Hopf algebra.
+\begin{Prop}\label{PropAnti} The partial bialgebra $\mathscr{A}$ is a regular partial Hopf algebra.
 \end{Prop} 
 
-\begin{proof} By Lemma \ref{LemMorDua}, we have for each $X\in \CatC_{rs}$ a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}(X^*)^*,\] since left and right duals coincide for $\Vect_{\fin}$.
+\begin{proof} By Lemma \ref{LemMorDua}, we have for each $X\in \CatC_{rs}$ a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}({}^*X)^*.\] 
 
-For a linear map $x$ between vector spaces, let us denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{kl},F_{mn})$, let us define $\hat{S}(x) \in \Nat(F_{nm},F_{lk})$ by \[\hat{S}(x)_X = \left(d^{(lk)}_X\right)^{-1} x_{X^*}^t d_X^{(nm)}.\] % Ugly formatting
+For a linear map $x$ between vector spaces, let us denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{mn},F_{kl})$, let us define $\hat{S}(x) \in \Nat(F_{lk},F_{nm})$ by \[\hat{S}(x)_X = \left(d^{(nm)}_X\right)^{-1} x_{X^*}^{\tr} d_X^{(lk)}.\] % Ugly formatting
 
 Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
 
-Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{km},F_{nn})\] where $\hat{M}^p_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{pr}$ and $\id\otimes S$. 
+Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. The other antipode identity follows similarly.
 
-Let us fix $X\in \mathcal{C}_{k'l'}$, and let $e_i^{(kl)}$ be a basis for $F_{kl}(X)$ with dual basis $\omega_i^{(kl)}$. Let $\chi_i^{(lk)} = d_X^{(kl)}(e_i)$, and let $f_i^{(lk)}$ be the basis of $F_{lk}(X^*)$ dual to the basis $\{\chi_i^{(lk)}\}$. Then it is easily verified that \[\pi^{(lkl)}_{X^*,X}F_{ll}(\coev_{X})(1) = \sum_i f_i^{(lk)}\otimes e_i^{(kl)},\quad F_{kk}(\ev_X)\iota^{klk}_{X,X^*} = \sum_i \omega_i^{(kl)}\otimes \chi_i^{(lk)},\] where we identified $\C\cong F_{kk}(\Unit_{k'})$. 
+By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{nn},F_{km})\] where $\hat{M}^n_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{nr}$ and $\id\otimes S$. 
 
-Then for $x\in \Nat(F_{kl},F_{nr})$, $y\in \Nat(F_{lm},F_{rn})$ and $v \in F_{kl}(X)$, we have \begin{eqnarray*} \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)(v) &=& \sum_i \omega_i^{(nr)}\left(x_X(v)\right)  d_X^{(ml)-1}(y_{X^*}^{\tr}(\chi_i^{(rn)}))\\ &=& \sum_{i,j} \omega_i^{(nr)}\left(x_X(v)\right)  \chi_i^{(rn)}\left(y_{X^*}(f_j^{(lm)}))\right)e_j^{(ml)} \\ &=& \sum_{i,j}(\omega_i^{(nr)}\otimes \chi_i^{(rn)})\left(x_X(v)\otimes y_{X^*}(f_j^{(lm)})\right)e_j^{(ml)}.\end{eqnarray*} Hence for $ x\in \Nat(F_{km},F_{nn})$, \begin{eqnarray*} \sum_r \left(\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x)\right)_X(v) &=& \sum_{r,i,j}(\omega_i^{(nr)}\otimes \chi_i^{(rn)})\left( \pi_{X, X^*}^{(nrn)}x_{X\otimes X^*}\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})\right)e_j^{(ml)} \\ &=& \sum_{r,j} F_{nn}(\ev_X)\left(\iota_{X, X^*}^{(nrn)}\pi_{X, X^*}^{(nrn)}x_{X\otimes X^*}\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})\right)e_j^{(ml)}\\ &=&  \sum_{j} F_{nn}(\ev_X)x_{X\otimes X^*}\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})e_j^{(ml)}\\
-&=& \sum_{j}x_{\Unit_{k'}} F_{km}(\ev_X)\iota_{X, X^*}^{(klm)}(v\otimes f_j^{(lm)})e_j^{(ml)}
-\\ &=& \delta_{km} \UnitC{k}{n}(x)  \sum_{i,j}  \omega_i^{(kl)}(v)\chi_i^{(lk)}(f_j^{(lk)})e_j^{(kl)}\\
-&=&  \delta_{km} \UnitC{k}{n}(x)  v.
+Let us fix $X\in \mathcal{C}_{k'l'}$, and let $e_i^{(kl)}$ be a basis for $F_{kl}(X)$ with dual basis $\omega_i^{(kl)}$. Let $\chi_i^{(lk)} = d_X^{(kl)}(e_i^{(kl)})$, and let $f_i^{(lk)}$ be the basis of $F_{lk}(X^*)$ dual to the basis $\{\chi_i^{(lk)}\}$. Then it is easily verified that \[\pi^{(klk)}_{X,{}^*X}F_{kk}(\coev_{X})(1) = \sum_i e_i^{(kl)}\otimes f_i^{(lk)},\quad F_{ll}(\ev_X)\iota^{(lkl)}_{{}^*X,X} = \sum_i \chi_i^{(lk)}\otimes \omega_i^{(kl)},\] where we identified $\C\cong F_{kk}(\Unit_{k'})$. We then check that for $x\in \Nat(F_{mn},F_{kl})$ and $v\in F_{lk}(X)$, one has \[\hat{S}(x)_Xv = \sum_{i,j} \omega_i^{(lk)}(v)\chi_i^{(kl)}(x_{X^*}f_j^{(mn)})e_j^{(nm)}.\] 
+
+
+Hence for $x\in \Nat(F_{nr},F_{kl})$, $y\in \Nat(F_{rn},F_{lm})$ and $v \in F_{ml}(X)$, we have \begin{eqnarray*} \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)_X(v) &=& \sum_i \omega_i^{(ml)}\left(v\right)  x_Xd_X^{(nr)-1}(y_{X^*}^{\tr}(\chi_i^{(lm)}))\\ &=& \sum_{i,j} \omega_i^{(ml)}\left(v\right)  \chi_i^{(lm)}\left(y_{X^*}(f_j^{(rn)}))\right)x_Xe_j^{(nr)} \\ &=& \sum_{i,j}(\omega_i^{(ml)}\otimes \chi_i^{(lm)})\left(v\otimes y_{X^*}(f_j^{(rn)})\right)x_Xe_j^{(nr)}.\end{eqnarray*} So for $ x\in \Nat(F_{nn},F_{km})$ and $\omega \in F(X)_{kl}^*$,  \begin{eqnarray*} \omega\left(\sum_r\left(\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x)\right)_X(v) \right)&=& \sum_{r,i,j}
+\omega_i^{(ml)}(v)(\omega\otimes \chi_i^{(lm)})(\pi_{X,{}^*X}^{(mlm)}x_{X\otimes {}^*X}\iota_{X,{}^*X}^{(nrn)}(e_j^{(nr)}\otimes f_j^{(rn)})) \\
+&=&  \sum_{i}
+\omega_i^{(ml)}(v)(\omega\otimes \chi_i^{(lm)})(\pi_{X,{}^*X}^{(mlm)}x_{X\otimes {}^*X}F_{nn}(\coev_X)1)\\ &=&  \delta_{km} \UnitC{k}{n}(x)  \sum_{i}
+\omega_i^{(kl)}(v)(\omega\otimes \chi_i^{(lk)})(\pi_{X,{}^*X}^{(klk)}F_{kk}(\coev_X)1) \\ &=&  \delta_{km} \UnitC{k}{n}(x)  \sum_{i,j}
+\omega_i^{(kl)}(v)(\omega\otimes \chi_i^{(lk)})(e_j^{(kl)}\otimes f_j^{(lk)}) \\ &=&  \delta_{km} \UnitC{k}{n}(x)  \omega(v).
 \end{eqnarray*}
+
+Similarly, one shows that $\mathscr{A}$ with the opposite multiplication has an antipode, using right duality. It follows that $\mathscr{A}$ is a regular partial Hopf algebra.  
 \end{proof} 
 
 Now let us updgrade $\CatCC$ to a semisimple partial C$^*$-category with duality, and $\Forget$ to a morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{I\times I}$. Then we can of course still form the partial Hopf algebra $\mathscr{A}$ as above. Let us show that it becomes a partial Hopf $^*$-algebra with positive invariant integral.
@@ -92,27 +99,32 @@ Now let us updgrade $\CatCC$ to a semisimple partial C$^*$-category with duality
 We first introduce a $^*$-structure on $\mathscr{A}$. 
 %To distinguish it from the $^*$-operations present on the C$^*$-category, we will denote it by $\dagger$.
 
-\begin{Def} We define $^*: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{l}{k}{n}{m}$ by the formula \[f^*(x) = \overline{f(\hat{S}(x)^*)},\qquad x\in \Nat(F_{lk},F_{nm}).\]
+\begin{Def} We define $^*: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{l}{k}{n}{m}$ by the formula \[f^*(x) = \overline{f(\hat{S}(x)^*)},\qquad x\in \Nat(F_{nm},F_{lk}).\]
 \end{Def}
 
-\begin{Lem} The operation $^*$ is an anti-linear, anti-multiplicative involution.
+\begin{Lem} The operation $^*$ is an anti-linear, anti-multiplicative, comultiplicative involution.
 \end{Lem}
 
-\begin{proof} Anti-linearity is clear. Anti-multiplicativity follows from ... Involutiveness follows from ...
-
+\begin{proof} Anti-linearity is clear. Comultiplicativity follows from the fact that $(xy)^* = y^*x^*$ and $\hat{S}(xy) = \hat{S}(y)\hat{S}(x)$ for natural transformations. To see anti-multiplicativity of $^*$, note first that, since $S$ is antimultiplicative for $\mathscr{A}$, $\hat{S}$ is anti-comultiplicative on natural transformations. Now as $(\iota_{X,Y}^{(klm)})^* = \pi_{X,Y}^{(klm)}$ by assumption, we also have $\hat{\Delta}^l_s(x)^* = \hat{\Delta}^s_l(x^*)$, which proves anti-multiplicativity of $^*$ on $\mathscr{A}$.  Finally, involutivity follows from the involutivity of $x\mapsto \hat{S}(x)^*$, which is a consequence of the identity $d_{X^*} = d_X^{\tr}$. %More info.
 \end{proof}
 
 \begin{Prop} The couple $(\mathscr{A},\Delta)$ with the above $^*$-structure defines a partial compact quantum group.
 \end{Prop}
-\begin{proof} ...
+\begin{proof} The only thing which is left to prove is that our invariant integral $\phi$ is a positive functional. Now it is easily seen from the definition of $\phi$ that the $\Gr{A}{k}{l}{m}{n}(a)$ are all mutually orthogonal. Hence it suffices to prove that the sesquilinear inner product \[\langle f,g\rangle = \phi(f^*g)\] on $\Gr{A}{k}{l}{m}{n}(a)$ is positive-definite. 
+
+Let us write $\bar{f}(x) = \overline{f(x^*)}$. Let again $\hat{\phi}^k_m$ be the natural transformation from $F_{mm}$ to $F_{kk}$ which is the identity on $\Unit_{k'}$ and zero on other irreducible objects. Then by definition, \[\phi(f^*g) = (\bar{f}\otimes g)((\hat{S}\otimes \id)\hat{\Delta}^k_m(\hat{\phi}^l_n)).\] Recall now the notation of Proposition \ref{PropAnti}. Let us write $\omega_i^{(kl)} = \langle E_i^{(kl)},-\rangle$ and $\chi_i^{(kl)} = \langle F_i^{(kl)},-\rangle$. Assume further that $f(x) = \langle v',x_a v\rangle$ and $g(x) = \langle w',x_aw\rangle$ for $v,w\in F_{mn}(u_a)$ and $v',w'\in F_{kl}(u_a)$. Then using the expression for $\hat{S}$ as in Proposition \ref{PropAnti}, we find that \[\phi(f^*g) = \sum_{ij} \langle v,e_j^{(mn)}\rangle\langle F_i^{(lk)}\otimes w',\hat{\Delta}_m^k(\hat{\phi}^{l}_n)_{\bar{a}\otimes a} (f_j^{(nm)}\otimes w)\rangle \langle E_i^{(kl)}, v'\rangle .\] However, up to a positive non-zero scalar, which we may assume to be 1 by proper rescaling, we have \[\hat{\Delta}^k_m(\hat{\phi}^l_n)_{\bar{a}\otimes a} = \sum_{i,j} \mid F_j^{(lk)} \otimes E_j^{(kl)}\rangle \langle F_i^{(nm)}\otimes E_i^{(mn)}\mid.\] Hence \begin{eqnarray*} \phi(f^*g) &=&\left(\sum_{ij}\langle v,e_j^{(mn)}\rangle \langle F_i^{(nm)},f_j^{(nm)}\rangle\langle E_i^{(mn)},w\rangle \right)  \left(\sum_{ij}  \langle w',E_j^{(kl)}\rangle \langle F_i^{(lk)},F_j^{(lk)}\rangle\langle E_i^{(kl)},v'\rangle\right)\\ &=& \langle v,w\rangle  \left(\sum_{ij}  \langle w',E_j^{(kl)}\rangle \langle F_i^{(lk)},F_j^{(lk)}\rangle\langle E_i^{(kl)},v'\rangle\right).
+\end{eqnarray*} It follows that $\phi(f^*f)\geq 0$ for all $f$.
 
 \end{proof} 
 
-\begin{Theorem} \label{TheoTKPCQG} The assigment $\mathscr{A}\rightarrow (\Corep(\mathscr{A}),\Forget)$ is essentially a one-to-one correspondence between partial compact quantum groups based over $\varphi_0:I\twoheadrightarrow I_0$ and semi-simple $I_0$-partial tensor C$^*$-categories $\CatCC$ with forgetful strongly monoidal $^*$-functor $\Forget$ to $(\Hilb_f)_{I\times I}$ based over $\varphi_0$.
+\begin{Theorem} \label{TheoTKPCQG}
+
+The assigment $\mathscr{A}\rightarrow (\Corep(\mathscr{A}),\Forget)$ is (up to isomorphism/equivalence) a one-to-one correspondence between partial compact quantum groups based over $\varphi_0:I\twoheadrightarrow I_0$ and semi-simple $I_0$-partial tensor C$^*$-categories $\CatCC$ with duality and with forgetful strongly monoidal $^*$-functor $\Forget$ to $(\Hilb_f)_{I\times I}$ based over $\varphi_0$. 
 \end{Theorem} 
 
-\begin{proof}
+\begin{proof} Fix first $\mathscr{A}$, and let $\mathscr{B}$ be the partial Hopf $^*$-algebra constructed from $\Corep(\mathscr{A})$ with its natural forgetful functor. Then we have a map $\mathscr{B} \rightarrow \mathscr{A}$ by \[ \Gr{B}{k}{l}{m}{n}(a) = \Hom(\Gr{V}{}{(a)}{m}{n},\Gr{V}{}{(a)}{k}{l})^* \rightarrow \Gr{A}{k}{l}{m}{n}(a):  f \mapsto (\id\otimes f)X_a,\] where the $(V^{(a)},X_a)$ run over all irreducible unitary corepresentations of $\mathscr{A}$. It is easy to check from the definitions of $\mathscr{B}$ that this map is an isomorphism of Hopf $^*$-algebras. As the matrix coefficients of irreducible unitary corepresentations span $\mathscr{A}$, the map is surjective. By the Schur orthogonality relations, it is bijective.
 
+Conversely, let $\CatCC$ be a semi-simple $I_0$-partial tensor C$^*$-category with duality and with forgetful strongly monoidal $^*$-functor $\Forget$ to $(\Hilb_f)_{I\times I}$ based over $\varphi_0$. Let $\mathscr{A}$ be the associated Hopf $^*$-algebra. For each irreducible $u_a \in \CatCC$, let $V^{(a)} = F(u_a)$, and \[\Gr{(X_a)}{k}{l}{m}{n} = \sum_i e_i^*\otimes e_i,\] where $e_i$ is a basis of $\Nat(F_{mn},F_{kl})$ and $e_i^*$ a dual basis. Then from the definition of $\mathscr{A}$ it easily follows that $X_a$ is a unitary corepresentation for $\mathscr{A}$. Since $\Nat(F_{mn},F_{kl})$ spans the total space of operators at any irreducibel object, it follows that $X_a$ is irreducible. As the matrix coefficients of the $X_a$ span $\mathscr{A}$, it follows that the $X_a$ form a maximal class of non-isomorphic unitary corepresentations of $\mathscr{A}$. Hence we can make a unique equivalence \[\CatCC\rightarrow \Corep(\mathscr{A}), \quad u \mapsto (F(u),X_u)\] such that $u_a\rightarrow X_a$. From the definitions of the coproduct and product in $\mathscr{A}$, it is readily verified that the natural morphisms $\iota^{(klm)}_{u,v}:F_{kl}(u)\otimes F{lm}(v)\rightarrow F_{km}(u\otimes v)$ turn it into a monoidal equivalence. 
 \end{proof}
 
 \section{Examples}

@@ -409,10 +409,12 @@ comultiplication. Denote by $\Delta^{\op}$ the composition of
 $\Delta$ with the flip map.
 
 \begin{Cor} \label{corollary:antipode} Let $\mathscr{A}$ be a partial
-  Hopf algebra. Then the total antipode $S:A\rightarrow A$ satisfies
+  Hopf algebra. Then the total antipode $S:A\rightarrow A$ is uniquely determined and satisfies
   $S(ab) = S(b)S(a)$ and $\Delta(S(a)) = (S\otimes S)\Delta^{\op}(a)$
   for all $a,b\in A$.
 \end{Cor} 
+\begin{proof} Uniqueness of the antipode follows from the identities \eqref{eq:total-antipode}, see also \cite[Remark 2.8.(ii)]{VDW1}. 
+\end{proof} 
 
 We will need also the following relation between $\varepsilon$ and $S$ at some point.
 
@@ -421,6 +423,13 @@ We will need also the following relation between $\varepsilon$ and $S$ at some p
 
 \begin{proof} Using the notation in Proposition \ref{prop:riti} and the discussion preceding it, we have that \[T_1: \sum_p(A\rho_p\otimes \rho_p A)\rightarrow \Delta(1)(A\otimes A)\] is a bijection with $R_1$ as inverse. As one easily verifies that $(\id\otimes \varepsilon)T_1 = \id\otimes \varepsilon$ by the partial multiplicativity and counit property of $\varepsilon$, it follows that also $(\id\otimes \varepsilon)R_1 = \id\otimes \varepsilon$ on $\Delta(1)(A\otimes A)$. Applying both sides to $a\otimes \UnitC{k}{k}$ with $a\in \Gr{A}{k}{l}{k}{l}$, we find \[(\id\otimes (\varepsilon\circ S))\Delta_{kl}(a) = a.\] Applying $\varepsilon$ to this identity, we find $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{k}{l}$, and hence on all $\Gr{A}{k}{l}{m}{n}$.
 \end{proof} 
+
+In practice, it is convenient to have an \emph{invertible} antipode around. Although the invertibility often comes for free in case extra structure is around, we will mostly just impose it to make life easier. The following definition follows the terminology of \cite{VDae1}. 
+
+\begin{Def} Let $\mathscr{A}$ be a partial Hopf algebra. We call $\mathscr{A}$ a \emph{regular} partial Hopf algebra if the antipode of $\mathscr{A}$ is invertible.
+\end{Def}
+
+From the uniqueness of the antipode, it follows immediately that $S^{-1}$ is then an antipode for $(\mathscr{A},\Delta^{\op})$. Conversely, if both $(\mathscr{A},\Delta)$ and $(\mathscr{A},\Delta{\op})$ have antipodes, then $(\mathscr{A},\Delta)$ is a regular partial Hopf algebra. 
 
 \subsection{Invariant integrals}
 
@@ -514,40 +523,47 @@ follows similarly.
 %right or left invariant integral, and \ref{LI2} implies the claim.
 %\end{proof}
 
-\begin{Lem} Assume that $\mathscr{A}$ is an $I$-partial Hopf algebra which admits an  invariant integral $\phi$. 
-Then the following hold.
+\begin{Lem} Assume that $\mathscr{A}$ is an regular  $I$-partial Hopf algebra which admits a left invariant integral $\phi$. Then the following hold.
 \begin{enumerate}[label = {(\arabic*)}]
 \item\label{LI1} $\phi(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.
-\item\label{LI2} $\phi S$ is invariant.
-\item\label{LI3} $\phi$ is unique.
-\item\label{LI4} $\phi S =\phi$.
-%\item\label{LI4} The  antipode of $\mathscr{A}$ is invertible.
+\item\label{LI2} $\phi$ is uniquely determined.
+\item\label{LI3} $\phi=\phi S$.
+\item\label{LI4} $\phi$ is invariant.
 \end{enumerate}
 \end{Lem}
 
 \begin{proof} 
-To see \ref{LI1}, take  $a=\UnitC{k}{k}$ in \eqref{eq:integral}. 
+To see \ref{LI1}, take $a=\UnitC{k}{k}$ in \eqref{eq:integral}. 
 
-For $\ref{LI2}$, note that as the map $T_1$ of \eqref{eq:wt-12} has range $\Delta(1)(A\otimes A)$, any element of $A$ can be written as a linear combination of elements of the form $(\id\otimes \phi)(\Delta(b)(1\otimes a))$. But then we compute \begin{eqnarray*} (\id\otimes \phi S)\Delta((\id\otimes \phi)(\Delta(b)(1\otimes a))) &=& b_{(1)} \phi(S(\id\otimes \phi)(\Delta(b_{(2)})(1\otimes a)))) \\ &=& b_{(1)}(\phi\otimes \phi)((1\otimes b_{(2)})\Delta(a)) \\ &=& \sum_n  \phi(\rho_n a) (\id\otimes \phi)(\Delta(b)(1\otimes \rho_n))
-\\ &=& \sum_{n,k} \phi(\rho_na)\phi(\lambda_kb\rho_n)\lambda_k \\ &=& \sum_{n,k} \phi(\rho_na)\phi(\lambda_k\rho_n b)\lambda_k .
-\end{eqnarray*} This is precisely $\sum_k \phi(\lambda_k (\id \otimes \phi)(\Delta(b)(1\otimes a))) \lambda_k$, proving left invariance of $\phi\circ S$. Right invariance of $\phi S$ follows similarly.
-
-For \ref{LI3},
-assume that $\phi$ and $\psi$ are a  left and a
+Now by Corollary \ref{corollary:antipode}, we have that $\phi S$ is right invariant. But assume that $\psi$ is any
  right invariant integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
     \begin{align*}
       \phic{k}{m}(a)  &= (\Grt{\psi}{k}{k} \otimes
       \phic{k}{m})(\Delta_{kk}(a)) = \Grt{\psi}{k}{m}(a)\Grt{\phi}{k}{m}(\UnitC{k}{m}) = \Grt{\psi}{k}{m}(a) .
     \end{align*}
+  This proves \ref{LI2},\ref{LI3} and \ref{LI4}.  
     
-    \ref{LI4} follows from combining \ref{LI2} and \ref{LI3}.
+
+%For $\ref{LI2}$, note that as the map $T_1$ of \eqref{eq:wt-12} has range $\Delta(1)(A\otimes A)$, any element of $A$ can be written as a linear combination of elements of the form $(\id\otimes \phi)(\Delta(b)(1\otimes a))$. But then we compute \begin{eqnarray*} (\id\otimes \phi S)\Delta((\id\otimes \phi)(\Delta(b)(1\otimes a))) &=& b_{(1)} \phi(S(\id\otimes \phi)(\Delta(b_{(2)})(1\otimes a)))) \\ &=& b_{(1)}(\phi\otimes \phi)((1\otimes b_{(2)})\Delta(a)) \\ &=& \sum_n  \phi(\rho_n a) (\id\otimes \phi)(\Delta(b)(1\otimes \rho_n))
+%\\ &=& \sum_{n,k} \phi(\rho_na)\phi(\lambda_kb\rho_n)\lambda_k \\ &=& \sum_{n,k} \phi(\rho_na)\phi(\lambda_k\rho_n b)\lambda_k .
+%\end{eqnarray*} This is precisely $\sum_k \phi(\lambda_k (\id \otimes \phi)(\Delta(b)(1\otimes a))) \lambda_k$, proving left invariance of $\phi\circ S$. Right invariance of $\phi S$ follows similarly.
+
+%For \ref{LI3},
+%assume that $\phi$ and $\psi$ are a  left and a
+ %right invariant integral.     Then for all $k,l,m\in I$, $a\in A\pmat{k}{k}{m}{m}$,
+  %  \begin{align*}
+   %   \phic{k}{m}(a)  &= (\Grt{\psi}{k}{k} \otimes
+    %  \phic{k}{m})(\Delta_{kk}(a)) = \Grt{\psi}{k}{m}(a)\Grt{\phi}{k}{m}(\UnitC{k}{m}) = \Grt{\psi}{k}{m}(a) .
+    %\end{align*}
+    
+ %   \ref{LI4} follows from combining \ref{LI2} and \ref{LI3}.
  \end{proof} 
 
 
 We will need the following lemma at some point. It is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
 
-\begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a partial Hopf
-  algebra with bijective antipode and an invariant integral $\phi$. Then
+\begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a regular partial Hopf
+  algebra with an invariant integral $\phi$. Then
   $\phi$ is faithful in the following sense: if $a\in A$ and
   $\phi(ab) =0$ (resp. $\phi(ba)=0$) for all $b\in A$, then
   $a=0$.

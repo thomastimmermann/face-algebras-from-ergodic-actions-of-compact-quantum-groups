@@ -672,18 +672,18 @@ Let $V$ be in any object of $\Corep(\mathscr{A})_{rs}$ for $r,s\in I_0$.  From t
 \end{proof} 
 
 
-Another corollary is the following. % Needed? Or can this better be proven directly in our case later on?
+%Another corollary is the following. % Needed? Or can this better be proven directly in our case later on?
 
 % Reference to be added!
-\begin{Cor} \label{cor:rep-irreducible-bidual}
-  Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral. Then
-  every irreducible rcf corepresentation $(V,\mathscr{X})$ of
-  $\mathscr{A}$ is equivalent to its right bidual
-  $(V,\dual{\dual{\mathscr{X}}{}\!})$.
-\end{Cor}
-\begin{proof} In any tensor category, a right dual of an object $X$ has $X$ as its left dual. The corollary then follows as in every semi-simple tensor
-  category, left and right duals are isomorphic \cite{}. 
-\end{proof}
+%\begin{Cor} \label{cor:rep-irreducible-bidual}
+ % Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral. Then
+ % every irreducible rcf corepresentation $(V,\mathscr{X})$ of
+ % $\mathscr{A}$ is equivalent to its right bidual
+ % $(V,\dual{\dual{\mathscr{X}}{}\!})$.
+%\end{Cor}
+%\begin{proof} In any tensor category, a right dual of an object $X$ has $X$ as its left dual. The corollary then follows as in every semi-simple tensor
+%  category, left and right duals are isomorphic \cite{}. 
+%\end{proof}
 
 \subsection{Matrix coefficients of irreducible corepresentations}
 
@@ -825,9 +825,10 @@ where $f\in \dual{(\Gru{V}{k}{l})}, v \in \Gru{V}{m}{n}$ and $g \in
   $\phi(bS(a))=0$.  
 \end{proof}
 
-% Next theorem still to adapt!
+From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has bijective antipode). %Remark that this is in fact automatic in presence of invariant functional.
+
 \begin{Theorem} \label{thm:rep-orthogonality} Let $\mathcal{A}$ be a
-  partial Hopf algebra with an invariant integral $\phi$. Let $r,s\in I_0$, the hyperobject set, and $I_r,I_s$ the associated subsets of $I$. Let $(V,\mathscr{X})$
+  regular partial Hopf algebra with an invariant integral $\phi$. Let $r,s\in I_0$, the hyperobject set, and $I_r,I_s$ the associated subsets of $I$. Let $(V,\mathscr{X})$
   be an irreducible rcf corepresentation of $\mathscr{A}$ inside $\Corep(\mathscr{A})_{rs}$. Suppose
   $F_{\mathscr{X}}=F$ is an isomorphism from $(V,\mathscr{X})$ to
   $(V,\dual{\dual{\mathscr{X}}\!{}})$ with inverse
@@ -929,16 +930,16 @@ Now all assertions in (a)--(c) concerning $\alpha$ follow.
  %    and therefore $F_{X}$ gets replaced by $F_{X}^{-1}$.
 \end{proof}
 
-\begin{Rem} 
+%\begin{Rem} 
 %\begin{enumerate}
 %\item From the faithfulness of $\phi$ and Proposition \ref{prop:rep-orthogonality-1}, it follows that not all $F_{m,n,k,l}$ are zero, and hence $G_{\mathscr{X}}$ is a non-zero morphism from the bidual of $\mathscr{X}$ to $\mathscr{X}$. Hence we do not need to invoke Corollary \ref{cor:rep-irreducible-bidual}. % Rephrase, in fact problematic: faithfulness of $\phi$ used bijectivity $S$ 
 %\item 
-As the bidual of $\mathscr{X}$ is isomorphic to $\mathscr{X}$, it follows as well that $S^2$ is an isomorphism, hence $S$ bijective. % Put this elsewhere?
+%As the bidual of $\mathscr{X}$ is isomorphic to $\mathscr{X}$, it follows as well that $S^2$ is an isomorphism, hence $S$ bijective. % Put this elsewhere?
 %\end{enumerate}
-\end{Rem}
+%\end{Rem}
 
 \begin{Cor}\label{CorOrth}
-  Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral $\phi$, let
+  Let $\mathscr{A}$ be a regular partial Hopf algebra with an invariant integral $\phi$, let
   $(V,\mathscr{X})$ be an irreducible rcf corepresentation of
   $\mathscr{A}$, let $F_{\mathscr{X}}$ be an isomorphism from
   $(V,\mathscr{X})$ to $(V,\dual{\dual{\mathscr{X}}{}\!})$ and
@@ -977,7 +978,7 @@ Apply $\omega_{g,w} \otimes
 \begin{proof} This follows from Proposition \ref{prop:rep-weak-pw}, Proposition \ref{prop:rep-orthogonality-1} and Corollary \ref{CorOrth}.
 \end{proof}
 \begin{Cor} \label{cor:rep-pw-morphisms}
-  Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral, let
+  Let $\mathscr{A}$ be a regular partial Hopf algebra with an invariant integral, let
   $((V_{\alpha},\mathscr{X}_{\alpha}))_{\alpha}$ be a representative
   family of all irreducible rcf corepresentations of $\mathscr{A}$,
   fix $\alpha,k,l$ and denote by $\Gr{\mathscr{Y}}{k}{l}{}{\alpha}$
