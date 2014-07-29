@@ -129,17 +129,17 @@ The following definition introduces the notion of duality for partial tensor cat
 
 \begin{Def} Let $\CatCC$ be a partial tensor category. 
 
-An object $X\in \CatC_{ij}$ is said to admit a \emph{right dual} if there exists an object $Y=X^* \in \CatC_{ji}$ and morphisms $\ev_{X}: X\otimes Y \rightarrow \Unit_i$ and $\coev_X: \Unit_j\rightarrow Y\otimes X$ satisfying the obvious snake identities.
+An object $X\in \CatC_{ij}$ is said to admit a \emph{left dual} if there exists an object $Y={}^*X \in \CatC_{ji}$ and morphisms $\ev_{X}: Y\otimes X \rightarrow \Unit_j$ and $\coev_X: \Unit_i\rightarrow X\otimes Y$ satisfying the obvious snake identities.
 
-We say $\CatCC$ \emph{admits right duality} if each object of each $\CatC_{ij}$ has a right dual.
+We say $\CatCC$ \emph{admits left duality} if each object of each $\CatC_{ij}$ has a left dual.
 \end{Def}
 
-Similarly, one defines left duality and (two-sided) duality. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
+Similarly, one defines right duality and (two-sided) duality. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
 
 \begin{Lem}\label{LemMorDua}
 \begin{enumerate}
-\item Let $\CatCC$ be a partial tensor category. If $X$ has right dual $X^*$, then $X$ is a left dual to $X^*$. 
-\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$. If $X\in \CatC_{k'l'}$ has a right dual, $F_{lk}(X^*)$ is a right dual to $F_{kl}(X)$.
+\item Let $\CatCC$ be a partial tensor category. If $X$ has left dual $^*{}X$, then $X$ is a right dual to ${}^*X$. 
+\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$. If $X\in \CatC_{k'l'}$ has a left dual, $F_{lk}({}^*X)$ is a left dual to $F_{kl}(X)$.
  \end{enumerate}
 \end{Lem}
 \begin{proof}
@@ -156,8 +156,9 @@ A final ingredient which will be needed is an analytic structure on our partial 
 
 \begin{Rem}
 \begin{enumerate}
-\item If $\CatCC$ is a partial tensor C$^*$-category, the total category $\CatC$ only has pre-C$^*$-algebras as endomorphism spaces, as the morphisms spaces need not be closed in the C$^*$-norm. On the other hand, $M(\CatC)$ only has $^*$-algebras as endomorphism spaces, since we did not restrict our direct products. However, since we demand the constraints to be unitary, there is no problem to restrict to morphisms in $M(\CatC)$ which have bounded norm in the multiplier tensor category. We will denote the resulting category by $M_b(\CatC)$. % To expand? Necessary to include?
-\item The notion of right duality for a partial tensor C$^*$-category is the same as in the absence of a C$^*$-structure. However, because of the presence of the $^*$-structure, any right dual is automatically a two-sided dual, and the dual object of $X$ is then simply denoted $\overline{X}$.  
+\item If $\CatCC$ is a partial tensor C$^*$-category, the total category $\CatC$ only has pre-C$^*$-algebras as endomorphism spaces, as the morphisms spaces need not be closed in the C$^*$-norm. On the other hand, $M(\CatC)$ only has $^*$-algebras as endomorphism spaces, since we did not restrict our direct products. 
+%However, since we demand the constraints to be unitary, there is no problem to restrict to morphisms in $M(\CatC)$ which have bounded norm in the multiplier tensor category. We will denote the resulting category by $M_b(\CatC)$. % To expand? Necessary to include?
+\item The notion of duality for a partial tensor C$^*$-category is the same as in the absence of a C$^*$-structure. However, because of the presence of the $^*$-structure, any left dual is automatically a two-sided dual, and the dual object of $X$ is then simply denoted $\overline{X}$.  
 \end{enumerate}
 \end{Rem}
 
