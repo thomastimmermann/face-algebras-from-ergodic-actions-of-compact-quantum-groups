@@ -64,7 +64,7 @@ Let us comment on the notion of morphism for partial algebras. We first introduc
 \begin{Def}\label{DefMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I$ and $J$-partial algebras. Let \[\phi: I \ni k \mapsto J_k \subseteq J\] with the $J_k$ disjoint. A \emph{homomorphism} (based on $\phi$) from $\mathscr{A}$ to $\mathscr{B}$ consists of linear maps \[\GrDA{f}{r}{s}: A(k\;l)\rightarrow B(r\;s),\quad a\mapsto \GrDA{f(a)}{r}{s}\] for all $r\in J_k, s\in J_l$, satisfying 
 \begin{itemize}
 \item[$\bullet$] (Unitality) $\GrDA{f(\Unit_{k})}{r}{s} = \delta_{rs}\Unit_r$ for all $r,s\in J_k$.
-\item[$\bullet$] (Local finiteness) For each $k,l\in I$, $a\in A(k\;l)$ and $r\in J_k$ (resp.~ $s\in J_l$), the assigment $(r,s)\rightarrow \GrDA{f(a)}{r}{s}$ on $J_k\times J_l$ is rcf. 
+\item[$\bullet$] (Local finiteness) For each $k,l\in I$ and $a\in A(k\;l)$, the assigment $(r,s)\rightarrow \GrDA{f(a)}{r}{s}$ on $J_k\times J_l$ is rcf. 
 \item[$\bullet$] (Multiplicativity) For all $k,l,m\in I$, all $r\in J_k$ and all $t\in J_m$, and all $a\in A(k\;l)$ and $b\in A(l\;m)$, one has \[\GrDA{f(ab)}{r}{t} = \sum_{s\in J_l} \GrDA{f(a)}{r}{s}\GrDA{f(b)}{s}{t}.\]
 \end{itemize} 
 The homomorphism is called \emph{unital} if $J=\bigcup \{J_k\mid k\in I\}$. % Can't call this a partition since $J_k$ can be empty 
@@ -108,7 +108,7 @@ Note that the assigment $k\mapsto J_k$ has to be kept as part of the information
 % \end{itemize}
 % \end{Def}
 
-The notion of partial algebra dualizes. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
+The notion of partial algebra nicely dualizes, one of the main benefits of the local approach. For this we consider again $I^2$ as the pair groupoid, but now with elements considered as column vectors, and with $\bmult$ denoting the (vertical) composition. So $K=\Grt{}{k}{l}$ has source $K_u = k$ and target $K_d = l$, and if $K=\Grt{}{k}{l}$ and $L=\Grt{}{l}{m}$ then $K\bmult L = \Grt{}{k}{m}$. %We write $K\bmate L$ if $K$ and $L$ are composable. 
 
 % Then we have maps  \[\Grt{\Delta}{K}{L}: A(K\bmult L)\rightarrow A(K)\otimes A(L),\] which we interpret as zero maps when $\neg K\bmate L$. We also interpret $\Grt{\Delta}{K}{L}$ as the zero map on $A(M)$ if $M\neq K\bmult L$. The coassociativity condition can now be written  \[(\id\otimes \Grt{\Delta}{L}{M})\Grt{\Delta}{K}{L\bmult M} = ( \Grt{\Delta}{K}{L}\otimes \id)\Grt{\Delta}{K\bmult L}{M}.\]
 % Should provide shortcut for notation where only the new indices appear at $\Delta$ (so disregard the source): write $\Delta(K over L)$ as $Delta_{rs}$ for $r=K_{ld}$ and $s=K_{rd}$. 
@@ -147,7 +147,7 @@ In the following, a vector $(r,s)$ will sometimes be written simply as $r,s$ (wi
 \item[$\bullet$] the $\Grt{A}{K_u}{K_d}$ form an $I^2$-partial coalgebra,
 \end{itemize} 
 and for which the following compatibility relations are satisfied.
-\begin{enumerate}[label=(\alph*)]
+\begin{enumerate}[label=(\arabic*)]
 \item\label{Propa} (Comultiplication of Units) For all $k,l,l',m\in I$, one has 
 \[\Delta_{l,l'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}.\]  
 \item\label{Propb} (Counit of Multiplication) For all $K,L\in M_2(I)$ with $K_r = L_l$ and all $a\in A(K)$ and $b\in A(L)$, \[\epsilon(ab) = \epsilon(a)\epsilon(b).\]% Subtlety is that you already have to know composition to be able to apply this rule.
@@ -162,7 +162,7 @@ and for which the following compatibility relations are satisfied.
 \begin{Rem}\begin{enumerate}
 \item By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
 \item Note that the object set of the above $\mathscr{A}$ as a partial bialgebra is $I$, but the object set of its underlying partial algebra (or coalgebra) is $I^2$.
-\item Properties \ref{Propa},\ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ of partial algebras based over the assignment $I^2\rightarrow \mathscr{P}(I^2\times I^2)$, the power set of $I^2\times I^2$, such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
+\item Properties \ref{Propa}, \ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ of partial algebras based over the assignment $I^2\rightarrow \mathscr{P}(I^2\times I^2)$, the power set of $I^2\times I^2$, such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
 \end{enumerate}
 \end{Rem}
 
@@ -213,7 +213,7 @@ For example, note that
   (\lambda_{k} \otimes 1)\Delta(1), & \Delta(\rho_{m}) &= (1 \otimes \rho_{m})\Delta(1).
 \end{align}
 
-The following proposition gathers the properties of $\Delta$, $\epsilon$ and $\Delta(1)$ which guarantee that $(A,\Delta)$ forms a weak multiplier bialgebra in the sense of \cite[Definition 2.1]{Boh1}.
+The following proposition gathers the properties of $\Delta$, $\epsilon$ and $\Delta(1)$ which guarantee that $(A,\Delta)$ forms a weak multiplier bialgebra in the sense of \cite[Definition 2.1]{Boh1}. We will call it the \emph{total weak multiplier bialgebra} associated to $\mathscr{A}$.
 
 \begin{Prop} Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$, total comultiplication $\Delta$ and counit $\epsilon$. Then the following properties are satisfied.
 \begin{enumerate}[label={(\arabic*)}]
@@ -272,7 +272,7 @@ Let us now show a converse. If $(A,\Delta)$ is a regular weak multiplier bialgeb
 \begin{Rem}\label{RemNak} We could also have used the map $\bar{\sigma}(\Pi^L(a)) = \bar{\Pi}^R(a)$ to identify $A^L$ and $A^R$. As it turns out, $\bar{\sigma}^{-1}\sigma$ is the (unique) Nakayama automorphism for some functional $\varepsilon$ on $A^L$, cf. \cite[Proposition 4.9]{Boh1}. Hence if $A^L$ is commutative, it follows that $\sigma = \bar{\sigma}$.
 \end{Rem} 
 
-\begin{Prop} Let $(A,\Delta)$ be a left and right full regular weak multiplier bialgebra whose base algebra is isomorphic to $\Fun_f(I)$ for some set $I$, and such that moreover $A^LA^R \subseteq A$. Then $(A,\Delta)$ is the total weak multiplier bialgebra of a uniquely determined partial bialgebra over $I$.
+\begin{Prop} Let $(A,\Delta)$ be a left and right full regular weak multiplier bialgebra whose base algebra is isomorphic to $\Fun_f(I)$ for some set $I$, and such that moreover $A^LA^R \subseteq A$. Then $(A,\Delta)$ is the total weak multiplier bialgebra of a uniquely determined partial bialgebra $\mathscr{A}$ over $I$.
 \end{Prop} 
 
 \begin{Rem} The condition $A^LA^R \subseteq A$ is of course essential, as we want $A$ to behave locally as a bialgebra, not a multiplier bialgebra. Indeed, in case $A^L= \C$, the condition simply says that $A$ is unital.
@@ -282,17 +282,17 @@ Let us now show a converse. If $(A,\Delta)$ is a regular weak multiplier bialgeb
 
 Define \[\Delta_{rs}(a) = (\rho_r\otimes \lambda_r)\Delta(a)(\rho_s\otimes \lambda_s).\] From \cite[Lemma 3.3]{Boh1}, it follows that $\Delta_{rs}$ is a map from $\Gr{A}{k}{l}{m}{n}$ to $\Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}$. That same lemma, together with the coassociativity of $\Delta$, show that the $\Delta_{rs}$ form a coassociative family.  
 
-Now by \cite[Lemma 3.9]{Boh1}, we have $(\rho_k\otimes 1)\Delta(a) = (1\otimes \lambda_k)\Delta(a)$ for all $a$. By that same lemma and Remark \ref{RemNak}, we have as well $\Delta(a)(\rho_k\otimes 1) = \Delta(a)(1\otimes \lambda_k)$. Hence we may as well write \begin{eqnarray*} \Delta_{rs}(a) &=& (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) \\ &=& (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s)\end{eqnarray*}  It is now straightforward that the counit map of $(A,\Delta)$ also provides a counit for the $\Delta_{rs}$, hence the $\Gr{A}{k}{l}{m}{n}$ also form a coalgebra. 
+Now by \cite[Lemma 3.9]{Boh1}, we have $(\rho_k\otimes 1)\Delta(a) = (1\otimes \lambda_k)\Delta(a)$ for all $a$. By that same lemma and Remark \ref{RemNak}, we have as well $\Delta(a)(\rho_k\otimes 1) = \Delta(a)(1\otimes \lambda_k)$. Hence we may as well write \begin{eqnarray*} \Delta_{rs}(a) &=& (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) \\ &=& (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s)\end{eqnarray*}  It is now straightforward that the counit map of $(A,\Delta)$ also provides a counit for the $\Delta_{rs}$, hence the $\Gr{A}{k}{l}{m}{n}$ also form a partial coalgebra. 
 
-As $\Delta(a)(1\otimes \lambda_s)$ and $\Delta(a)(\rho_r\otimes 1)$ are already in $A\otimes A$, it is also clear that $\Delta_{rs}(a)$ is rcf for each $a$. The multiplicativity of the $\Delta_{rs}$ is then immediate from the multiplicativity of $\Delta$.
+As $\Delta(a)(1\otimes \lambda_s)$ and $(1\otimes \lambda_r)\Delta(a)$ are already in $A\otimes A$, it is also clear that $\Delta_{rs}(a)$ is rcf for each $a$. The multiplicativity of the $\Delta_{rs}$ is then immediate from the multiplicativity of $\Delta$.
 
-To show that $\Delta_{ll'}(\UnitC{k}{m}) = \delta_l \UnitC{k}{l}\otimes \UnitC{l}{m}$, it suffices to show that $\Delta(1) = \sum_k \rho_k\otimes \lambda_k$. Now as $\Delta(1)(A\otimes A)  = \Delta(A)(A\otimes A)$, and as clearly $\Delta(a) = \sum_{r,s}\Delta_{rs}(a)$ in the strict topology for all $a\in A$, it follows that \[\Delta(1) = \left(\sum_k \rho_k\otimes \lambda_k\right)\Delta(1).\]  Similarly, $\Delta(1) = \Delta(1)\left(\sum_k\rho_k\otimes \lambda_k\right)$. On the other hand, by \cite[Lemma 4.10]{Boh1} it follows that we can then write \[\sum_{k\in I'} \rho_k\otimes \lambda_k\] for some subset $I'\subseteq I$. As by definition $\bar{\Pi}^L(A) = \Fun_{\fin}(I)$, we deduce that $I=I'$. 
+To show that $\Delta_{ll'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}$, it suffices to show that $\Delta(1) = \sum_k \rho_k\otimes \lambda_k$. Now as $\Delta(1)(A\otimes A)  = \Delta(A)(A\otimes A)$, and as clearly $\Delta(a) = \sum_{r,s}\Delta_{rs}(a)$ in the strict topology for all $a\in A$, it follows that \[\Delta(1) = \left(\sum_k \rho_k\otimes \lambda_k\right)\Delta(1).\]  Similarly, $\Delta(1) = \Delta(1)\left(\sum_k\rho_k\otimes \lambda_k\right)$. On the other hand, by \cite[Lemma 4.10]{Boh1} it follows that we can then write \[\sum_{k\in I'} \rho_k\otimes \lambda_k\] for some subset $I'\subseteq I$. As by definition $\bar{\Pi}^L(A) = \Fun_{\fin}(I)$, we deduce that $I=I'$. 
 
-For $a\in \Gr{A}{k}{l}{p}{q}$ and $b\in \Gr{A}{l}{m}{q}{r}$, we then have $\epsilon(ab) = \epsilon(a\Unit{l}{q}b) = \epsilon(a)\epsilon(b)$ by \cite[Proposition 2.6.(4)]{Boh1}. 
+For $a\in \Gr{A}{k}{l}{p}{q}$ and $b\in \Gr{A}{l}{m}{q}{r}$, we then have $\epsilon(ab) = \epsilon(a\UnitC{l}{q}b) = \epsilon(a)\epsilon(b)$ by \cite[Proposition 2.6.(4)]{Boh1}, which shows the partial multiplicativity of $\epsilon$. 
 
-Finally, assume that $k$ was such that $\varepsilon(\UnitC{k}{k})=0$. Then by the partial multiplication law, $\varepsilon$ is zero on all $\Gr{A}{k}{l}{k}{l}$. Using the counit property, it follows that $\Gr{A}{k}{l}{m}{n}=0$ for all $l,m,n$. In particular, $\UnitC{k}{m}=0$ for all $m$. But this entails $\lambda_k=0$, a contradiction. Hence $\varepsilon(\UnitC{k}{k})$. From the partial multiplication law, it follows that $\varepsilon(\UnitC{k}{k})^2 = \varepsilon(\UnitC{k}{k})$, hence $\varepsilon(\UnitC{k}{k})=1$.
+Finally, assume that $k$ was such that $\epsilon(\UnitC{k}{k})=0$. Then by the partial multiplication law, $\epsilon$ is zero on all $\Gr{A}{k}{l}{k}{l}$. Applying $\Delta_{kl}$ to $\Gr{A}{k}{l}{m}{n}$ and using the counit property on the first leg, it follows that $\Gr{A}{k}{l}{m}{n}=0$ for all $l,m,n$. In particular, $\UnitC{k}{m}=0$ for all $m$. But this entails $\lambda_k=0$, a contradiction. Hence $\epsilon(\UnitC{k}{k})\neq 0$. From the partial multiplication law, it follows that $\epsilon(\UnitC{k}{k})^2 = \epsilon(\UnitC{k}{k})$, hence $\epsilon(\UnitC{k}{k})=1$.
 
-This concludes the proof that $(A,\Delta)$ determines a partial bialgebra $\mathscr{A}$. It is immediate that $(A,\Delta)$ is in fact the total multiplier bialgebra of $\mathscr{A}$. 
+This concludes the proof that $(A,\Delta)$ determines a partial bialgebra $\mathscr{A}$. It is immediate that $(A,\Delta)$ is in fact the total weak multiplier bialgebra of $\mathscr{A}$. 
 \end{proof} 
 
 \subsection{Partial Hopf algebras}
@@ -352,7 +352,7 @@ For $M,P\in M_{2}(I)$ and $a\in A(M)$, the left and the right hand side  of \eqr
   \end{align*}
 is an equivalence relation. Indeed, it is reflexive and transitive by
 assumptions (c) and (a) in Definition \ref{DefPartBiAlg}, and
-symmetric by the preceding result. We call the set $I_0$ of equivalence classes the \emph{hyperobject} set of $\mathscr{A}$. % Reference to Szlachanyi. 
+symmetric by the preceding result. We call the set $\mathscr{I}$ of equivalence classes the \emph{hyperobject} set of $\mathscr{A}$. % Reference to Szlachanyi. 
 \end{Rem}
 The existence of an antipode is closely related to partial invertibility of
 the maps $T_{1},T_{2} \colon A \otimes A \to A\otimes A$ given by
@@ -444,21 +444,21 @@ $\Delta$ with the flip map.
 \begin{proof} Uniqueness of the antipode follows from the identities \eqref{eq:total-antipode}, see also \cite[Remark 2.8.(ii)]{VDW1}. 
 \end{proof} 
 
-We will need the following relation between $\varepsilon$ and $S$ at some point.
+We will need the following relation between $\epsilon$ and $S$ at some point.
 
-\begin{Lem}\label{LemCoAnt} Let $(\mathscr{A},\Delta)$ be a partial Hopf algebra. Then $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{m}{n}$.
+\begin{Lem}\label{LemCoAnt} Let $(\mathscr{A},\Delta)$ be a partial Hopf algebra. Then $\epsilon\circ S = \epsilon$ on each $\Gr{A}{k}{l}{m}{n}$.
 \end{Lem}
 
-\begin{proof} Using the notation in Proposition \ref{prop:riti} and the discussion preceding it, we have that \[T_1: \sum_p(A\rho_p\otimes \rho_p A)\rightarrow \Delta(1)(A\otimes A)\] is a bijection with $R_1$ as inverse. As one easily verifies that $(\id\otimes \varepsilon)T_1 = \id\otimes \varepsilon$ by the partial multiplicativity and counit property of $\varepsilon$, it follows that also $(\id\otimes \varepsilon)R_1 = \id\otimes \varepsilon$ on $\Delta(1)(A\otimes A)$. Applying both sides to $a\otimes \UnitC{k}{k}$ with $a\in \Gr{A}{k}{l}{k}{l}$, we find \[(\id\otimes (\varepsilon\circ S))\Delta_{kl}(a) = a.\] Applying $\varepsilon$ to this identity, we find $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{k}{l}$, and hence on all $\Gr{A}{k}{l}{m}{n}$.
+\begin{proof} Using the notation in Proposition \ref{prop:riti} and the discussion preceding it, we have that \[T_1: \sum_p(A\rho_p\otimes \rho_p A)\rightarrow \Delta(1)(A\otimes A)\] is a bijection with $R_1$ as inverse. As one easily verifies that $(\id\otimes \epsilon)T_1 = \id\otimes \epsilon$ by the partial multiplicativity and counit property of $\epsilon$, it follows that also $(\id\otimes \epsilon)R_1 = \id\otimes \epsilon$ on $\Delta(1)(A\otimes A)$. Applying both sides to $a\otimes \UnitC{k}{k}$ with $a\in \Gr{A}{k}{l}{k}{l}$, we find \[(\id\otimes (\epsilon\circ S))\Delta_{kl}(a) = a.\] Applying $\epsilon$ to this identity, we find $\epsilon\circ S = \epsilon$ on each $\Gr{A}{k}{l}{k}{l}$, and hence on all $\Gr{A}{k}{l}{m}{n}$.
 \end{proof} 
 
 
 In practice, it is convenient to have an \emph{invertible} antipode around. Although the invertibility often comes for free in case extra structure is around, we will mostly just impose it to make life easier. The following definition follows the terminology of \cite{VDae1}. 
 
-\begin{Def} Let $\mathscr{A}$ be a partial Hopf algebra. We call $\mathscr{A}$ a \emph{regular} partial Hopf algebra if the antipode of $\mathscr{A}$ is invertible.
+\begin{Def} Let $\mathscr{A}$ be a partial Hopf algebra. We call $\mathscr{A}$ a \emph{regular} partial Hopf algebra if the antipode maps on $\mathscr{A}$ are invertible.
 \end{Def}
 
-From the uniqueness of the antipode, it follows immediately that $S^{-1}$ is then an antipode for $(\mathscr{A},\Delta^{\op})$. Conversely, if both $(\mathscr{A},\Delta)$ and $(\mathscr{A},\Delta{\op})$ have antipodes, then $(\mathscr{A},\Delta)$ is a regular partial Hopf algebra. 
+From the uniqueness of the antipode, it follows immediately that $S^{-1}$ is then an antipode for $(\mathscr{A},\Delta^{\op})$. Conversely, if both $(\mathscr{A},\Delta)$ and $(\mathscr{A},\Delta^{\op})$ have antipodes, then $(\mathscr{A},\Delta)$ is a regular partial Hopf algebra. 
 
 \subsection{Invariant integrals}
 
@@ -552,7 +552,7 @@ follows similarly.
 %right or left invariant integral, and \ref{LI2} implies the claim.
 %\end{proof}
 
-\begin{Lem} Assume that $\mathscr{A}$ is an regular  $I$-partial Hopf algebra which admits a left invariant integral $\phi$. Then the following hold.
+\begin{Lem} Assume that $\mathscr{A}$ is a regular  $I$-partial Hopf algebra which admits a left invariant integral $\phi$. Then the following hold.
 \begin{enumerate}[label = {(\arabic*)}]
 \item\label{LI1} $\phi(\UnitC{k}{m})=1$ for all $k,m\in I$ with $\UnitC{k}{m}\neq 0$.
 \item\label{LI2} $\phi$ is uniquely determined.
@@ -570,7 +570,7 @@ Now by Corollary \ref{corollary:antipode}, we have that $\phi S$ is right invari
       \phic{k}{m}(a)  &= (\Grt{\psi}{k}{k} \otimes
       \phic{k}{m})(\Delta_{kk}(a)) = \Grt{\psi}{k}{m}(a)\Grt{\phi}{k}{m}(\UnitC{k}{m}) = \Grt{\psi}{k}{m}(a) .
     \end{align*}
-  This proves \ref{LI2},\ref{LI3} and \ref{LI4}.  
+  This proves \ref{LI2}, \ref{LI3} and \ref{LI4}.  
     
 
 %For $\ref{LI2}$, note that as the map $T_1$ of \eqref{eq:wt-12} has range $\Delta(1)(A\otimes A)$, any element of $A$ can be written as a linear combination of elements of the form $(\id\otimes \phi)(\Delta(b)(1\otimes a))$. But then we compute \begin{eqnarray*} (\id\otimes \phi S)\Delta((\id\otimes \phi)(\Delta(b)(1\otimes a))) &=& b_{(1)} \phi(S(\id\otimes \phi)(\Delta(b_{(2)})(1\otimes a)))) \\ &=& b_{(1)}(\phi\otimes \phi)((1\otimes b_{(2)})\Delta(a)) \\ &=& \sum_n  \phi(\rho_n a) (\id\otimes \phi)(\Delta(b)(1\otimes \rho_n))
@@ -589,7 +589,7 @@ Now by Corollary \ref{corollary:antipode}, we have that $\phi S$ is right invari
  \end{proof} 
 
 
-We will need the following lemma at some point. It is an almost verbatim transcription of the argument in \cite[Proposition 3.4]{VDae2}.
+We will need the following lemma at some point, cf.~ \cite[Proposition 3.4]{VDae2}.
 
 \begin{Lem}\label{LemFaith} Let $\mathscr{A}$ be a regular partial Hopf
   algebra with an invariant integral $\phi$. Then
@@ -598,7 +598,11 @@ We will need the following lemma at some point. It is an almost verbatim transcr
   $a=0$.
 \end{Lem} 
 % Ref to Timmermann for case of quantum groupoids? Can be explicitly used here? Ask Fons if he has already derived this result, and acknowledge? 
-\begin{proof} Suppose  $\phi(ba)=0$ for all $b$. Then for all $d\in A$ and all functionals $\omega$ on $A$, the element $p = (\omega\otimes \id)((d\otimes 1)\Delta(a))$ satisfies \[(\id\otimes \phi)((1\otimes c)\Delta(p)) = 0.\] Continuing as in the proof of \cite[Proposition 3.4]{VDae2}, we obtain from the antipode trick that \[\sum_n \phi(cS(q)\rho_n)\epsilon(p\lambda_n)=0.\] Choosing now for $c$ and $q$ local units of the form $\lambda_k\rho_l$, the normalization condition on $\phi$ gives that $\epsilon(p\lambda_n)=0$ for all $n$, hence $\epsilon(p)=0$. This implies $\omega(da)=0$. As $\omega$ and $d$ were arbitrary, it follows that $a=0$.
+\begin{proof} Suppose $a\in A$ and $\phi(ba)=0$ for all $b\in A$. We will first show that necessarily $\epsilon(a)=0$. 
+
+Indeed, the condition on $a$ implies also $(\id\otimes \phi)(\Delta(b)(1\otimes a))=0$ for all $b\in A$. Applying the strong invariance identity, we deduce \begin{equation}\label{EqSwitch}(\id\otimes \phi)((1\otimes b)\Delta(a))=0,\qquad \forall b\in A.\end{equation} As in \cite[Proposition 3.4]{VDae2} (and using idempotency of $A$), it follows from this that we also have $0 = \phi(bS(a_{(1)})a_{(2)}) = \phi(b\Pi^R(a)) = \sum_p \phi(b\rho_p)\epsilon(a\rho_p)$.  Taking $b=\UnitC{k}{k}$, we see $\epsilon(a\rho_k)=0$ for all $k$, hence $\epsilon(a)=0$.
+
+Note now that from \eqref{EqSwitch}, it follows that for any functional $\omega$ on $A$ and any $c\in A$, also $a'=(\omega\otimes \id)((c\otimes 1)\Delta(a))$ satisfies $\phi(ba')=0$ for all $b\in A$. Hence, by what we have just shown, $\epsilon(a')=0$, i.e.~ $\omega(ca)=0$. As $\omega$ and $c$ were arbitrary, we deduce $a=0$.
 
 The other case follows similarly, or by considering the opposite comultiplication.
 \end{proof} 
@@ -607,9 +611,9 @@ The other case follows similarly, or by considering the opposite comultiplicatio
 
 \subsection{Partial compact quantum groups}
 
-We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras.
-
-\begin{Def} A \emph{partial $^*$-algebra} $\mathscr{A}$ is a partial
+We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras (see Section 7).
+ 
+\begin{Def} A \emph{partial $*$-algebra} $\mathscr{A}$ is a partial
   algebra whose total algebra $A$ is equipped with an antilinear,
   antimultiplicative involution $*\colon A\rightarrow A$, $ a\mapsto
   a^*$,  such that the $\mathbf{1}_k$ are selfadjoint for all $k$ in
@@ -618,11 +622,11 @@ We now turn towards the structures which will allow us to build operator algebra
 
 One can of course give an alternative definition directly in terms of the partial algebra structure by requiring that we are given antilinear maps $A(k,l)\rightarrow A(l,k)$ satisfying the obvious antimultiplicativity and involution properties.
 
-\begin{Def} A \emph{partial $^*$-bialgebra} $\mathscr{A}$ is a
+\begin{Def} A \emph{partial $*$-bialgebra} $\mathscr{A}$ is a
  partial bialgebra whose underlying partial algebra has been
-  endowed with a partial $^*$-algebra structure such that
+  endowed with a partial $*$-algebra structure such that
 $\Delta_{rs}(a)^* = \Delta_{sr}(a^*)$ for all $a \in \Gr{A}{k}{l}{m}{n}$.
-A \emph{partial Hopf $^*$-algebra} is a partial bialgebra which is at the same time a partial $^*$-bialgebra and a partial Hopf algebra.
+A \emph{partial Hopf $*$-algebra} is a partial bialgebra which is at the same time a partial $*$-bialgebra and a partial Hopf algebra.
 \end{Def} 
 Thus, a partial bialgebra is a partial
 $*$-bialgebra if and only if the underlying weak multiplier bialgebra
@@ -631,9 +635,9 @@ $*$-bialgebra if and only if the underlying weak multiplier bialgebra
 From Theorem \ref{theorem:partial-hopf-algebra} and \cite{Boh1},
 \cite{VDW1}, we can deduce:
 \begin{Cor} \label{cor:involutive}
-  An $I$-partial $^*$-bialgebra $\mathscr{A}$ is an $I$-partial Hopf
-  $^*$-algebra if and only if the weak multiplier $^*$-bialgebra
-  $(A,\Delta)$ is a weak multiplier Hopf $^*$-algebra. In that case,
+  An $I$-partial $*$-bialgebra $\mathscr{A}$ is an $I$-partial Hopf
+  $*$-algebra if and only if the weak multiplier $*$-bialgebra
+  $(A,\Delta)$ is a weak multiplier Hopf $*$-algebra. In that case,
   the counit and antipode satisfy
   $\epsilon(a^{*})=\overline{\epsilon(a)}$ and $S(S(a)^{*})^{*}=a$ for
   all $a\in A$. In particular, the total antipode is bijective.
@@ -648,7 +652,7 @@ for the antipode from \cite[Proposition 4.11]{VDW1}.
 
 We are finally ready to formulate our main definition.
 \begin{Def} A \emph{partial compact quantum group} $\mathscr{G}$ is a
-  partial Hopf $^*$-algebra $\mathscr{A} = P(\mathscr{G})$ with an invariant integral  $\phi$ that is positive in the sense  that $\phi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
+  partial Hopf $*$-algebra $\mathscr{A} = P(\mathscr{G})$ with an invariant integral  $\phi$ that is positive in the sense  that $\phi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
 \end{Def} 
 
 \begin{Rem} Following \cite{Hay1}, we could also have called our objects \emph{compact quantum groups of face type}, but we feel this gives the wrong impression when the base algebra is infinite dimensional (i.e.~ the object set is not compact). When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. % Is this a clear enough motivation? 

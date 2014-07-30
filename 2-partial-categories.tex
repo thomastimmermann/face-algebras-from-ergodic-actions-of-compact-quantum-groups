@@ -5,9 +5,9 @@
 The notion of partial algebra has a nice categorification. % Level of generality could possibly be avoided, but seems nice to incorporate a categorified version which neatly mimicks the local behaviour.  
 Recall first that the appropriate (vertical) categorification of a unital $\C$-algebra is a $\C$-linear additive tensor category. From now on, by `category' we will by default mean a $\C$-linear additive category. 
 
-\begin{Def} A \emph{partial tensor category} $\CatCC$ over a set $I_0$ consists of 
-\begin{enumerate}[label=(\alph*)]
-\item a collection of (small) categories $\mathcal{C}_{ij}$ with $i,j\in I_0$, 
+\begin{Def} A \emph{partial tensor category} $\CatCC$ over a set $\mathscr{I}$ consists of 
+\begin{enumerate}[label=(\arabic*)]
+\item a collection of (small) categories $\mathcal{C}_{ij}$ with $i,j\in \mathscr{I}$, 
 \item $\C$-bilinear functors \[\otimes: \CatC_{ij}\times \CatC_{jk}\rightarrow \CatC_{ik},\] 
 \item natural isomorphisms \[ \alpha_{X,Y,Z}: (X\otimes Y)\otimes Z \rightarrow X\otimes (Y\otimes Z),\qquad X \in \CatC_{ij},Y\in \CatC_{jk},Z\in \CatC_{kl},\] 
 \item non-zero objects $\Unit_{i} \in \CatC_{ii}$,
@@ -22,11 +22,11 @@ satisfying the obvious associativity and unit constraints.
 
 The corresponding total notion is as follows. 
 
-\begin{Def} A \emph{tensor category with local units (indexed by $I_0$)} consists of
-\begin{enumerate}[label=(\alph*)]
+\begin{Def} A \emph{tensor category with local units (indexed by $\mathscr{I}$)} consists of
+\begin{enumerate}[label=(\arabic*)]
 \item a (small) category $\CatC$, 
 \item a $\C$-bilinear functor $\otimes: \CatC\times \CatC \rightarrow \CatC$ with compatible associativity constraint $\alpha$, 
-\item\label{FinSup} a collection $\{\Unit_i\}_{i\in I_0}$ of objects such that 
+\item\label{FinSup} a collection $\{\Unit_i\}_{i\in \mathscr{I}}$ of objects such that 
 \begin{itemize}\item[$\bullet$] $\Unit_i\otimes \Unit_j \cong 0$ for each $i\neq j$, and
 \item[$\bullet$] for each object $X$,  $\Unit_i\otimes X \cong 0 \cong X\otimes \Unit_i$ for all but a finite set of $i$,
 \end{itemize}
@@ -50,48 +50,48 @@ Note that the condition \ref{UnCon} makes sense because of the local support con
 
 %The following lemma is trivial. 
 
-\begin{Lem} Up to the appropriate notion of equivalence, there is a canonical one-to-one correspondence between partial tensor categories and tensor categories with local units. 
+\begin{Lem} Up to equivalence, there is a canonical one-to-one correspondence between partial tensor categories and tensor categories with local units. 
 \end{Lem}
 
-We will not expand upon the appropriate notion of equivalence, as it can easily be furnished by the reader. % OK?
+The reader can easily cook up the definition of equivalence referred to in this lemma.
 
-\begin{proof} Let $(\CatC,\otimes,\{\Unit_i\}_{i\in I_0})$ be a tensor category with local units indexed by $I_0$. Then the $\CatC_{ij} = \{X \in \CatC\mid X_{ij} \underset{\eta_{ij}}{\cong} X\}$, seen as full subcategories of $\CatC$, form a partial tensor category upon restriction of $\otimes$.
+\begin{proof} Let $(\CatC,\otimes,\{\Unit_i\}_{i\in \mathscr{I}})$ be a tensor category with local units indexed by $\mathscr{I}$. Then the $\CatC_{ij} = \{X \in \CatC\mid X_{ij} \underset{\eta_{ij}}{\cong} X\}$, seen as full subcategories of $\CatC$, form a partial tensor category upon restriction of $\otimes$.
 
 Conversely, let $\CatCC$ be a partial tensor category. Then we let $\CatC$ be the category formed by formal finite direct sums $\oplus X_{ij}$ with $X_{ij}\in \CatC_{ij}$, and with \[\Mor(\oplus X_{ij},\oplus Y_{ij}) := \oplus_{ij} \Mor(X_{ij},Y_{ij}).\] The tensor product can be extended to $\CatC$ by putting $X_{ij} \otimes X_{kl} = 0$ when $k\neq j$. The associativity constraints can then be summed to an associativity constraint for $\CatC$. It is evident that the $\Unit_i$ provide local units for $\CatC$. 
 \end{proof}
 
-\begin{Rem} Another global viewpoint is to see the collection of $\CatC_{ij}$ as a 2-category with 0-cells indexed by the set $I_0$, the objects of the $C_{ij}$ as 1-cells, and  the morphisms of the $C_{ij}$ as 2-cells. As for partial algebras vs.~ linear categories, we will not emphasize this way of looking at our structures, as this viewpoint is not compatible with the notion of monoidal functor between partial tensor categories.
+\begin{Rem} Another global viewpoint is to see the collection of $\CatC_{ij}$ as a 2-category with 0-cells indexed by the set $\mathscr{I}$, the objects of the $C_{ij}$ as 1-cells, and  the morphisms of the $C_{ij}$ as 2-cells. As for partial algebras vs.~ linear categories, we will not emphasize this way of looking at our structures, as this viewpoint is not compatible with the notion of monoidal functor between partial tensor categories.
 \end{Rem} 
 
 Continuing the analogy with the algebra case, we define the enveloping \emph{multiplier tensor category} of a tensor category with local units. 
 %This notion is important for the formulation of the global notion of morphism between tensor categories with local units. 
 
-\begin{Def} Let $\CatCC$ be a partial tensor category over $I_0$ with total tensor category $\CatC$. The \emph{multiplier tensor category} $M(\CatC)$ of $\CatC$ is defined to be the category consisting of formal sums $\oplus X_{ij}$ which are rcf, and with \[\Mor(\oplus X_{ij},\oplus Y_{ij}) = \left(\prod_j\oplus_i  \Mor(X_{ij},Y_{ij}) \right) \cap \left(\prod_i\oplus_j \Mor(X_{ij},Y_{ij})\right),\] the composition of morphisms being entry-wise (`Hadamard product'). 
+\begin{Def} Let $\CatCC$ be a partial tensor category over $\mathscr{I}$ with total tensor category $\CatC$. The \emph{multiplier tensor category} $M(\CatC)$ of $\CatC$ is defined to be the category consisting of formal sums $\oplus_{i,j\in \mathscr{I}} X_{ij}$ which are rcf, and with \[\Mor(\oplus X_{ij},\oplus Y_{ij}) = \left(\prod_j\oplus_i  \Mor(X_{ij},Y_{ij}) \right) \cap \left(\prod_i\oplus_j \Mor(X_{ij},Y_{ij})\right),\] the composition of morphisms being entry-wise (`Hadamard product'). 
 \end{Def}
 
 \begin{Rem} Because of the rcf condition on objects, we could in fact have written simply $\Mor(\oplus X_{ij},\oplus Y_{ij}) = \prod_{ij} \Mor(X_{ij},Y_{ij})$. 
 \end{Rem} 
 
-The tensor product of $\CatC$ can be extended to $M(\CatC)$ by putting \[\left(\oplus X_{ij}\right)\otimes \left(\oplus Y_{ij}\right) = \oplus_{i,j,k} \left(X_{ij}\otimes Y_{jk}\right),\] and similarly for morphism spaces. This makes sense because of the rcf condition of the objects of $M(\CatC)$. The associativity constraints of the $\CatC_{ij}$ can be summed to an associativity constraint for $M(\CatC)$, while $\Unit := \oplus_{i\in I_0} \Unit_i$ becomes a unit for $M(\CatC)$, rendering $M(\CatC)$ into an ordinary tensor category (with unit object).
+The tensor product of $\CatC$ can be extended to $M(\CatC)$ by putting \[\left(\oplus X_{ij}\right)\otimes \left(\oplus Y_{ij}\right) = \oplus_{i,j,k} \left(X_{ij}\otimes Y_{jk}\right),\] and similarly for morphism spaces. This makes sense because of the rcf condition of the objects of $M(\CatC)$. The associativity constraints of the $\CatC_{ij}$ can be summed to an associativity constraint for $M(\CatC)$, while $\Unit := \oplus_{i\in \mathscr{I}} \Unit_i$ becomes a unit for $M(\CatC)$, rendering $M(\CatC)$ into an ordinary tensor category (with unit object).
 
 \begin{Rem} With some effort, a more intrinsic construction of the multiplier tensor category can be given in terms of couples of endofunctors, in the same vein as the construction of the multiplier algebra of a non-unital algebra.
 \end{Rem} 
 %Alternatively, one could define $M(\CatC)$ more intrinsically (as in the algebra case) as a collection of couples of functors $L_X,R_X:\CatC\rightarrow \CatC$ together with natural isomorphisms $L_X(Y\otimes Z)\rightarrow L_X(Y)\otimes Z$ and $R_X(Y\otimes Z)\rightarrow Y\otimes R_X(Z)$ satisfying appropriate coherence conditions. % Cf. Leinster, Sketch of proof 1.2.15 in higher operads book
 
-\begin{Exa}\label{ExaVectBiGr} Let $I$ be a set. We can consider the partial tensor category $\CatCC = \{\Vect_{\fin}\}_{i,j\in I}$ where each $\CatC_{ij}$ is a copy of the category of finite-dimensional vector spaces $\Vect_{\fin}$, and with each $\otimes$ the ordinary tensor product. The total category $\CatC$ can then be identified with the category $\Vectif$ of finite-dimensional bi-graded vector spaces with the `balanced' tensor product over $I$. More precisely, the tensor product of $V$ and $W$ is $V\itimes W$ with components \[\Gru{V\itimes W}{k}{m} = \oplus_l \;\Gru{V}{k}{l}\otimes \Gru{W}{l}{m}\subseteq V\otimes W.\] The multiplier category $M(\Vect^{I^2}_{\fin})$ equals $\Vectrcf$, the category of bigraded vector spaces which are rcf.
+\begin{Exa}\label{ExaVectBiGr} Let $I$ be a set. We can consider the partial tensor category $\CatCC = \{\Vect_{\fin}\}_{i,j\in I}$ where each $\CatC_{ij}$ is a copy of the category of finite-dimensional vector spaces $\Vect_{\fin}$, and with each $\otimes$ the ordinary tensor product. The total category $\CatC$ can then be identified with the category $\Vectif$ of finite-dimensional bi-graded vector spaces with the `balanced' tensor product over $I$. More precisely, the tensor product of $V$ and $W$ is $V\itimes W$ with components \[\Gru{(}{k}{}V\itimes W\Gru{)}{}{m} = \oplus_l \;(\Gru{V}{k}{l}\otimes \Gru{W}{l}{m})\subseteq V\otimes W.\] The multiplier category $M(\Vect^{I^2}_{\fin})$ equals $\Vectrcf$, the category of bigraded vector spaces which are rcfd (i.e.~ finite-dimensional on each row and column).
 \end{Exa}
 
 We now formulate the appropriate notion of functor between partial tensor categories. Let us first give an auxiliary definition.
 
-\begin{Def} Let $\CatCC$ be a partial tensor category over $I_0$. If $J_0\subseteq I_0$, we call $\CatDD = \{\CatC_{rs}\}_{r,s\in J_0}$ a \emph{restriction} of $\CatCC$. 
+\begin{Def} Let $\CatCC$ be a partial tensor category over $\mathscr{I}$. If $\mathscr{J}\subseteq \mathscr{I}$, we call $\CatDD = \{\CatC_{rs}\}_{r,s\in \mathscr{J}}$ a \emph{restriction} of $\CatCC$. 
 \end{Def} 
 
-\begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $I_0$ and $J_0$, and let \[\phi_0:J_0\twoheadrightarrow I_0,\quad k\mapsto k'\] determine a partition $J_0 = \{J_r\mid r\in I_0\}$ with $k\in J_r \iff \phi_0(k)=r$. 
+\begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $\mathscr{I}$ and $\mathscr{J}$, and let \[\phi:\mathscr{J}\twoheadrightarrow \mathscr{I},\quad k\mapsto k'\] determine a partition $\mathscr{J} = \{\mathscr{J}_r\mid r\in \mathscr{I}\}$ with $k\in \mathscr{J}_r \iff \phi(k)=r$. 
 
-A \emph{unital morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\alph*)]
-\item (Unitality)  $\GrDA{F(\Unit_{r})}{k}{l}= 0$ if $k\neq l$ in $J_r$,
-\item (Local finiteness) For each $r,s\in I_0$ and $X\in \CatC_{rs}$, the application $(k,l)\mapsto \GrDA{F(X)}{k}{l}$ is rcf on $J_k\times J_l$. 
-\item (Multiplicativity) For all $X\in \CatC_{k's}$ and $Y\in \CatC_{sm'}$, one has\[\oplus_{l\in J_s} \iota^{(klm)}_{X,Y}: \left(\oplus_{l\in J_s} \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m}\right) \cong \GrDA{F(X\otimes Y)}{k}{m}.\]
+A \emph{unital morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\quad X\mapsto F_{kl}(X) = \Gru{F(X)}{k}{l}\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\arabic*)]
+\item (Unitality)  $\GrDA{F(\Unit_{r})}{k}{l}= 0$ if $k\neq l$ in $\mathscr{J}_r$,
+\item (Local finiteness) For each $r,s\in \mathscr{I}$ and $X\in \CatC_{rs}$, the application $(k,l)\mapsto \GrDA{F(X)}{k}{l}$ is rcf on $\mathscr{J}_k\times \mathscr{J}_l$. 
+\item (Multiplicativity) For all $X\in \CatC_{k's}$ and $Y\in \CatC_{sm'}$, one has\[\oplus_{l\in \mathscr{J}_s} \iota^{(klm)}_{X,Y}: \left(\oplus_{l\in \mathscr{J}_s} \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m}\right) \cong \GrDA{F(X\otimes Y)}{k}{m}.\]
 \item (Coherence) %should this be called coherence? 
 The $\iota^{(klm)}$ satisfy the 2-cocycle condition making \[\xymatrix{F(X)\otimes F(Y)\otimes F(Z) \ar[rr]^{\id\otimes \iota^{(lmn)}_{Y,Z}} \ar[d]_{\iota^{(klm)}_{X,Y}\otimes\id}&& F(X)\otimes F(Y\otimes Z)\ar[d]^{\iota^{(kln)}_{X,Y\otimes Z}}\\ F(X\otimes Y)\otimes F(Z) \ar[rr]_{\iota^{(kmn)}_{X\otimes Y,Z}}&& F(X\otimes Y \otimes Z)}\] commute for all $X\in \CatC_{k'l'},Y\in \CatC_{l'm'}, Z\in \CatC_{m'n'}$, and the $\mu_k$ satisfy the commutation relations \[\xymatrix{ \GrDA{F(X)}{k}{l}\otimes \Unit_l \ar[r]^{\!\!\!\!\id\otimes \mu_l} \ar@{=}[d] & \GrDA{F(X)}{k}{l} \otimes \GrDA{F(\Unit_{l'})}{l}{l} \ar[d]^{\iota^{(kll)}_{X, \Unit_{l'}}} \\ \GrDA{F(X)}{k}{l} & \ar@{=}[l] \GrDA{F(X\otimes \Unit_{l'})}{k}{l}} \qquad \xymatrix{  \Unit_k\otimes \GrDA{F(X)}{k}{l}\ar[r]^{\!\!\!\!\mu_k\otimes \id} \ar@{=}[d] & \GrDA{F(\Unit_{k'})}{k}{k} \otimes \GrDA{F(X)}{k}{l} \ar[d]^{\iota^{(kkl)}_{\Unit_{k'},X}} \\ \GrDA{F(X)}{k}{l} & \ar@{=}[l] \GrDA{ F(\Unit_{k'}\otimes X)}{k}{l}} \]
 \end{enumerate}
@@ -101,11 +101,11 @@ A \emph{morphism} from $\CatCC$ to $\CatDD$ is a unital morphism from $\CatCC$ t
 
 The corresponding global notion (of unital morphism) is as follows.
 
-\begin{Lem} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $I_0$ and $J_0$. Fix an application \[\phi_0: J_0\twoheadrightarrow I_0\] inducing a partition $\{J_k\mid k\in I_0\}$. Then there is a one-to-one correspondence between unital morphisms $\CatCC\rightarrow \CatDD$ based on $\phi_0$ and functors $F:\CatC \rightarrow M(\CatD)$ with isomorphisms \[\iota_{X,Y}:F(X)\otimes F(Y)\cong F(X\otimes Y),\qquad \mu_r:\oplus_{k\in J_r} \Unit_k \cong F(\Unit_r)\] satisfying the natural coherence conditions. 
+\begin{Lem} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $\mathscr{I}$ and $\mathscr{J}$. Fix an application \[\phi: \mathscr{J}\twoheadrightarrow \mathscr{I}\] inducing a partition $\{\mathscr{J}_k\mid k\in \mathscr{I}\}$. Then there is a one-to-one correspondence between unital morphisms $\CatCC\rightarrow \CatDD$ based on $\phi$ and functors $F:\CatC \rightarrow M(\CatD)$ with isomorphisms \[\iota_{X,Y}:F(X)\otimes F(Y)\cong F(X\otimes Y),\qquad \mu_r:\oplus_{k\in \mathscr{J}_r} \Unit_k \cong F(\Unit_r)\] satisfying the natural coherence conditions. 
 \end{Lem} 
 %a partition $J_0 = \sqcup_{i\in I_0} J_{0,i}$ and a strong monoidal functor $F: \CatCC\rightarrow M(\CatDD)$ with accompanying coherence isomorphisms $\alpha_{X,Y}: F(X)\otimes F(Y) \rightarrow F(X\otimes Y)$ and $\eta_i: F(\Unit_i) \rightarrow \oplus_{j\in J_{0,i}} \Unit_j$ satisfying the obvious compatibility conditions. % Don't overuse obvious.   
 
-The reader will have no problem in furnishing the definition of \emph{equivalence} of partial tensor categories. There is a closely related but weaker notion of equivalence corresponding to chopping up a partial tensor category into smaller pieces (or, vice versa, gluing certain blocks of a partial tensor category together). Let us formalize this in the following definition.
+The reader has already furnished for himself the notion of equivalence of partial tensor categories. There is a closely related but weaker notion of equivalence corresponding to chopping up a partial tensor category into smaller pieces (or, vice versa, gluing certain blocks of a partial tensor category together). Let us formalize this in the following definition.
 
 \begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories. We say $\CatDD$ is a \emph{partitioning} of $\CatCC$ (or $\CatCC$ a \emph{globalisation} of $\CatDD$) if there exists a unital morphism $\CatCC\rightarrow \CatDD$ inducing an equivalence of categories $\CatC\rightarrow \CatD$.
 \end{Def}
@@ -129,45 +129,45 @@ The following definition introduces the notion of duality for partial tensor cat
 
 \begin{Def} Let $\CatCC$ be a partial tensor category. 
 
-An object $X\in \CatC_{ij}$ is said to admit a \emph{left dual} if there exists an object $Y={}^*X \in \CatC_{ji}$ and morphisms $\ev_{X}: Y\otimes X \rightarrow \Unit_j$ and $\coev_X: \Unit_i\rightarrow X\otimes Y$ satisfying the obvious snake identities.
+An object $X\in \CatC_{ij}$ is said to admit a \emph{left dual} if there exists an object $Y=\hat{X} \in \CatC_{ji}$ and morphisms $\ev_{X}: Y\otimes X \rightarrow \Unit_j$ and $\coev_X: \Unit_i\rightarrow X\otimes Y$ satisfying the obvious snake identities.
 
 We say $\CatCC$ \emph{admits left duality} if each object of each $\CatC_{ij}$ has a left dual.
 \end{Def}
 
-Similarly, one defines right duality and (two-sided) duality. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
+Similarly, one defines right duality $X\rightarrow \check{X}$ and (two-sided) duality $X\rightarrow \bar{X}$. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
 
 \begin{Lem}\label{LemMorDua}
 \begin{enumerate}
-\item Let $\CatCC$ be a partial tensor category. If $X$ has left dual $^*{}X$, then $X$ is a right dual to ${}^*X$. 
-\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$. If $X\in \CatC_{k'l'}$ has a left dual, $F_{lk}({}^*X)$ is a left dual to $F_{kl}(X)$.
+\item Let $\CatCC$ be a partial tensor category. If $X$ has left dual $\hat{X}$, then $X$ is a right dual to $\hat{X}$. 
+\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$ based over $\phi:\mathscr{J}\rightarrow \mathscr{I}$. If $X\in \CatC_{k'l'}$ has a left dual, $F_{lk}(\hat{X})$ is a left dual to $F_{kl}(X)$.
  \end{enumerate}
 \end{Lem}
 \begin{proof}
-We can consider the restriction $\CatCC'$ of $\CatCC$ to any two-element set $J_0$ of $I_0$, and apply the  usual arguments to $\CatCC'$ and the global functor $F:\CatC'\rightarrow M(\CatD)$ (using that local units are self-dual and that duality behaves anti-multiplicatively w.r.t.~ tensor products). % OK?
+We can consider the restriction $\CatCC'$ of $\CatCC$ to any two-element subset $\mathscr{I}'$ of $\mathscr{I}$, and the first property then follows from the usual argument inside the global (unital) tensor category $\CatCC'$. For the second property, consider also the associated restriction $\mathscr{D}'$ to $\phi^{-1}(\mathscr{I})$. We can then again apply the usual arguments to the associated global category $\CatC'$ and global unital morphism $F:\CatC'\rightarrow M(\CatD')$ to see that $F(\hat{X})\cong \widehat{F(X)}$. Using that local units are evidently self-dual and that duality behaves anti-multiplicatively w.r.t.~ tensor products, we can cut down with unit objects on both sides to obtain the statement in the lemma.
 \end{proof}
 
 A final ingredient which will be needed is an analytic structure on our partial tensor categories.
 
-\begin{Def} A \emph{partial semi-simple tensor C$^*$-category} is a partial tensor category $(\CatC_{ij},\otimes)$ such that all $\CatC_{ij}$ are semi-simple C$^*$-categories, such that all functors $\otimes$ are $^*$-functors (in the sense that $(f\otimes g)^* = f^*\otimes g^*$ for morphisms), and such that the associativity and unit constraints are unitary.
+\begin{Def} A \emph{partial fusion C$^*$-category} is a partial tensor category $(\CatC_{ij},\otimes)$ with duality such that all $\CatC_{ij}$ are semi-simple C$^*$-categories, such that all functors $\otimes$ are $^*$-functors (in the sense that $(f\otimes g)^* = f^*\otimes g^*$ for morphisms), and such that the associativity and unit constraints are unitary.
 \end{Def} 
 % Terminology not completely appropriate, i.e. we shouldn't assume semi-simplicity, but we just do this for convenience of language. 
-
-
 
 \begin{Rem}
 \begin{enumerate}
 \item If $\CatCC$ is a partial tensor C$^*$-category, the total category $\CatC$ only has pre-C$^*$-algebras as endomorphism spaces, as the morphisms spaces need not be closed in the C$^*$-norm. On the other hand, $M(\CatC)$ only has $^*$-algebras as endomorphism spaces, since we did not restrict our direct products. 
 %However, since we demand the constraints to be unitary, there is no problem to restrict to morphisms in $M(\CatC)$ which have bounded norm in the multiplier tensor category. We will denote the resulting category by $M_b(\CatC)$. % To expand? Necessary to include?
 \item The notion of duality for a partial tensor C$^*$-category is the same as in the absence of a C$^*$-structure. However, because of the presence of the $^*$-structure, any left dual is automatically a two-sided dual, and the dual object of $X$ is then simply denoted $\overline{X}$.  
+\item We slightly abuse the terminology `fusion', as strictly speaking this would require there to be only a finite set of mutually non-equivalent irreducible objects in each $\CatC_{rs}$.
+\item In the same vein, the total C$^*$-category with local units associated to a partial fusion C$^*$-category could be called a \emph{multiplier fusion C$^*$-category}.
 \end{enumerate}
 \end{Rem}
 
-\begin{Exa} Let $I$ be a set. Then we can consider the partial semi-simple tensor C$^*$-category $\CatCC = \{\Hilb_{\fin}\}_{I\times I}$ of finite-dimensional Hilbert spaces, with all $\otimes$ the ordinary tensor product. The associated global category is the category $\Hilbif$ of finite-dimensional bi-graded Hilbert spaces. Note that $\CatCC$ has duality, with the dual of a Hilbert space $\Hsp \in \CatC_{ij}$ being the ordinary dual Hilbert space $\Hsp^* \cong \overline{\Hsp}$, but considered in the category $\CatC_{ji}$. 
+\begin{Exa} Let $I$ be a set. Then we can consider the partial fusion C$^*$-category $\CatCC = \{\Hilb_{\fin}\}_{I\times I}$ of finite-dimensional Hilbert spaces, with all $\otimes$ the ordinary tensor product. The associated global category is the category $\Hilbif$ of finite-dimensional bi-graded Hilbert spaces. The dual of a Hilbert space $\Hsp \in \CatC_{ij}$ is just the ordinary dual Hilbert space $\Hsp^* \cong \overline{\Hsp}$, but considered in the category $\CatC_{ji}$. 
 \end{Exa}
 
 The notion of morphism for partial semi-simple tensor C$^*$-categories has to be adapted in the following way.
 
-\begin{Def} Let $\CatCC$ and $\CatDD$ be partial semi-simple tensor C$^*$-categories over respective sets $I_0$ and $J_0$, and let $\phi_0:J_0\rightarrow I_0$. 
-A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi_0$) is a $\phi_0$-based morphism $(F,\iota,\mu)$ from $\CatCC$ to $\CatDD$ as partial tensor categories, with the added requirement that all $F_{kl}$ are $^*$-functors and the $\iota$- and $\mu$-maps isometric. 
+\begin{Def} Let $\CatCC$ and $\CatDD$ be partial fusion C$^*$-categories over respective sets $\mathscr{I}$ and $\mathscr{J}$, and let $\phi:\mathscr{J}\rightarrow \mathscr{I}$. 
+A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) is a $\phi$-based morphism $(F,\iota,\mu)$ from $\CatCC$ to $\CatDD$ as partial tensor categories, with the added requirement that all $F_{kl}$ are $^*$-functors and the $\iota$- and $\mu$-maps isometric. 
 \end{Def} 
 
