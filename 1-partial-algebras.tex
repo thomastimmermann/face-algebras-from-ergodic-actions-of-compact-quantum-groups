@@ -152,7 +152,7 @@ and for which the following compatibility relations are satisfied.
 \[\Delta_{l,l'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}.\]  
 \item\label{Propb} (Counit of Multiplication) For all $K,L\in M_2(I)$ with $K_r = L_l$ and all $a\in A(K)$ and $b\in A(L)$, \[\epsilon(ab) = \epsilon(a)\epsilon(b).\]% Subtlety is that you already have to know composition to be able to apply this rule.
 \item\label{Propc} (Non-degeneracy) For all $k\in I$, $\epsilon(\UnitC{k}{k})=1$. 
-\item\label{Propd} (Finiteness) For each $K\in M_2(I)$ and each $a\in A(K)$, the element $\Delta_{rs}(a)$ is zero except for a finite number of indices $r$ (resp. $s$) when $s$ (resp. $r$) is fixed.
+\item\label{Propd} (Finiteness) For each $K\in M_2(I)$ and each $a\in A(K)$, the assignment $(r,s)\rightarrow \Delta_{rs}(a)$ is rcf.
 \item\label{Prope} (Comultiplication is multiplicative) For all $a\in A(K)$ and $b\in A(L)$ with $K_r= L_l$,  \[\Delta_{rs}(ab) = \sum_t \Delta_{rt}(a)\Delta_{ts}(b).\]
 \end{enumerate}
 \end{Def}
@@ -266,6 +266,34 @@ because $\epsilon(\lambda_{k}\rho_{m} a \lambda_{l}\rho_{n})=0$  if $(k,l)\neq(m
   (\Pi^{R} \otimes \id)(\Delta(a)) &= \sum_{p} \rho_{p} \otimes a\lambda_{p}, &
   (\id \otimes \Pi^{R})(\Delta(a)) &= \sum_{p} a\rho_{p} \otimes \rho_{p}.
 \end{align}
+
+Let us now show a converse. If $(A,\Delta)$ is a regular weak multiplier bialgebra, let us write $A^L = \Pi^L(A) = \bar{\Pi}^L(A)\subseteq M(A)$ and $A^R = \Pi^R(A)= \bar{\Pi}^R(A)\subseteq M(A)$ for the base algebras, where the identities follow from \cite[Theorem 3.13]{Boh1}. Then if moreover $(A,\Delta)$ is left and right full, we have that $A^L$ is (canonically) anti-isomorphic to $A^R$ by the map \[\sigma: A^L \rightarrow A^R, \quad \bar{\Pi}^L(a) \rightarrow \Pi^R(a), \qquad a\in A,\] by \cite[Lemma 4.8]{Boh1}. We then simply refer to $A^L$ as \emph{the} base algebra. 
+
+\begin{Rem}\label{RemNak} We could also have used the map $\bar{\sigma}(\Pi^L(a)) = \bar{\Pi}^R(a)$ to identify $A^L$ and $A^R$. As it turns out, $\bar{\sigma}^{-1}\sigma$ is the (unique) Nakayama automorphism for some functional $\varepsilon$ on $A^L$, cf. \cite[Proposition 4.9]{Boh1}. Hence if $A^L$ is commutative, it follows that $\sigma = \bar{\sigma}$.
+\end{Rem} 
+
+\begin{Prop} Let $(A,\Delta)$ be a left and right full regular weak multiplier bialgebra whose base algebra is isomorphic to $\Fun_f(I)$ for some set $I$, and such that moreover $A^LA^R \subseteq A$. Then $(A,\Delta)$ is the total weak multiplier bialgebra of a uniquely determined partial bialgebra over $I$.
+\end{Prop} 
+
+\begin{Rem} The condition $A^LA^R \subseteq A$ is of course essential, as we want $A$ to behave locally as a bialgebra, not a multiplier bialgebra. Indeed, in case $A^L= \C$, the condition simply says that $A$ is unital.
+\end{Rem} 
+
+\begin{proof} Let us write the standard generators (Dirac functions) of $A^L$ as $\lambda_k$ for $k\in I$, and write $\sigma(\lambda_k) = \rho_k\in A^R$. By assumption, $\UnitC{k}{l} = \lambda_k\rho_l\in A$. Further $A= AA^R = AA^L = A^LA=A^RA$, cf.~ the proof of \cite[Theorem 3.13]{Boh1}. Hence the $\UnitC{k}{l}$ make $A$ into a the total algebra of an $I\times I$-partial algebra, as $A^L$ and $A^R$ pointwise commute by \cite[Lemma 3.5]{Boh1}. 
+
+Define \[\Delta_{rs}(a) = (\rho_r\otimes \lambda_r)\Delta(a)(\rho_s\otimes \lambda_s).\] From \cite[Lemma 3.3]{Boh1}, it follows that $\Delta_{rs}$ is a map from $\Gr{A}{k}{l}{m}{n}$ to $\Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}$. That same lemma, together with the coassociativity of $\Delta$, show that the $\Delta_{rs}$ form a coassociative family.  
+
+Now by \cite[Lemma 3.9]{Boh1}, we have $(\rho_k\otimes 1)\Delta(a) = (1\otimes \lambda_k)\Delta(a)$ for all $a$. By that same lemma and Remark \ref{RemNak}, we have as well $\Delta(a)(\rho_k\otimes 1) = \Delta(a)(1\otimes \lambda_k)$. Hence we may as well write \begin{eqnarray*} \Delta_{rs}(a) &=& (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) \\ &=& (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s)\end{eqnarray*}  It is now straightforward that the counit map of $(A,\Delta)$ also provides a counit for the $\Delta_{rs}$, hence the $\Gr{A}{k}{l}{m}{n}$ also form a coalgebra. 
+
+As $\Delta(a)(1\otimes \lambda_s)$ and $\Delta(a)(\rho_r\otimes 1)$ are already in $A\otimes A$, it is also clear that $\Delta_{rs}(a)$ is rcf for each $a$. The multiplicativity of the $\Delta_{rs}$ is then immediate from the multiplicativity of $\Delta$.
+
+To show that $\Delta_{ll'}(\UnitC{k}{m}) = \delta_l \UnitC{k}{l}\otimes \UnitC{l}{m}$, it suffices to show that $\Delta(1) = \sum_k \rho_k\otimes \lambda_k$. Now as $\Delta(1)(A\otimes A)  = \Delta(A)(A\otimes A)$, and as clearly $\Delta(a) = \sum_{r,s}\Delta_{rs}(a)$ in the strict topology for all $a\in A$, it follows that \[\Delta(1) = \left(\sum_k \rho_k\otimes \lambda_k\right)\Delta(1).\]  Similarly, $\Delta(1) = \Delta(1)\left(\sum_k\rho_k\otimes \lambda_k\right)$. On the other hand, by \cite[Lemma 4.10]{Boh1} it follows that we can then write \[\sum_{k\in I'} \rho_k\otimes \lambda_k\] for some subset $I'\subseteq I$. As by definition $\bar{\Pi}^L(A) = \Fun_{\fin}(I)$, we deduce that $I=I'$. 
+
+For $a\in \Gr{A}{k}{l}{p}{q}$ and $b\in \Gr{A}{l}{m}{q}{r}$, we then have $\epsilon(ab) = \epsilon(a\Unit{l}{q}b) = \epsilon(a)\epsilon(b)$ by \cite[Proposition 2.6.(4)]{Boh1}. 
+
+Finally, assume that $k$ was such that $\varepsilon(\UnitC{k}{k})=0$. Then by the partial multiplication law, $\varepsilon$ is zero on all $\Gr{A}{k}{l}{k}{l}$. Using the counit property, it follows that $\Gr{A}{k}{l}{m}{n}=0$ for all $l,m,n$. In particular, $\UnitC{k}{m}=0$ for all $m$. But this entails $\lambda_k=0$, a contradiction. Hence $\varepsilon(\UnitC{k}{k})$. From the partial multiplication law, it follows that $\varepsilon(\UnitC{k}{k})^2 = \varepsilon(\UnitC{k}{k})$, hence $\varepsilon(\UnitC{k}{k})=1$.
+
+This concludes the proof that $(A,\Delta)$ determines a partial bialgebra $\mathscr{A}$. It is immediate that $(A,\Delta)$ is in fact the total multiplier bialgebra of $\mathscr{A}$. 
+\end{proof} 
 
 \subsection{Partial Hopf algebras}
 
@@ -416,13 +444,14 @@ $\Delta$ with the flip map.
 \begin{proof} Uniqueness of the antipode follows from the identities \eqref{eq:total-antipode}, see also \cite[Remark 2.8.(ii)]{VDW1}. 
 \end{proof} 
 
-We will need also the following relation between $\varepsilon$ and $S$ at some point.
+We will need the following relation between $\varepsilon$ and $S$ at some point.
 
 \begin{Lem}\label{LemCoAnt} Let $(\mathscr{A},\Delta)$ be a partial Hopf algebra. Then $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{m}{n}$.
 \end{Lem}
 
 \begin{proof} Using the notation in Proposition \ref{prop:riti} and the discussion preceding it, we have that \[T_1: \sum_p(A\rho_p\otimes \rho_p A)\rightarrow \Delta(1)(A\otimes A)\] is a bijection with $R_1$ as inverse. As one easily verifies that $(\id\otimes \varepsilon)T_1 = \id\otimes \varepsilon$ by the partial multiplicativity and counit property of $\varepsilon$, it follows that also $(\id\otimes \varepsilon)R_1 = \id\otimes \varepsilon$ on $\Delta(1)(A\otimes A)$. Applying both sides to $a\otimes \UnitC{k}{k}$ with $a\in \Gr{A}{k}{l}{k}{l}$, we find \[(\id\otimes (\varepsilon\circ S))\Delta_{kl}(a) = a.\] Applying $\varepsilon$ to this identity, we find $\varepsilon\circ S = \varepsilon$ on each $\Gr{A}{k}{l}{k}{l}$, and hence on all $\Gr{A}{k}{l}{m}{n}$.
 \end{proof} 
+
 
 In practice, it is convenient to have an \emph{invertible} antipode around. Although the invertibility often comes for free in case extra structure is around, we will mostly just impose it to make life easier. The following definition follows the terminology of \cite{VDae1}. 
 

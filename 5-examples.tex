@@ -14,6 +14,9 @@ Extend the $I^2$-bigrading to an $I^4$-bigrading by putting $\Gr{A}{k}{l}{m}{n} 
 
 % Vacant double groupoids?
 
+\begin{Exa} Let $\mathscr{A}$ and $\mathscr{B}$ define two partial compact quantum groups $\mathscr{G}$ and $\mathscr{H}$ over respective sets $I$ and $J$. Then we can make a tensor product partial Hopf $^*$-algebra $\mathscr{A}\otimes \mathscr{B}$ over the index set $I\times J$ by putting \[\Gr{(A\otimes B)}{(k,k')}{(l,l')}{(m,m')}{(n,n')} = \Gr{A}{k}{l}{m}{n}\otimes \Gr{B}{k'}{l'}{m'}{n'}\] with the factorwise product and with coproducts \[\Delta_{(r,r'),(s,s')} = \sigma_{23}(\Delta_{rs}\otimes \Delta_{r',s'}),\] $\sigma$ being the switch map. It is easily seen that the tensor products of the positive invariant integrals for $\mathscr{A}$ and $\mathscr{B}$ produce a positive invariant integral on $\mathscr{A}\otimes \mathscr{B}$. Hence $\mathscr{A}\otimes \mathscr{B}$ defines a partial compact quantum group, which we will denote $\mathscr{G}\times \mathscr{H}$.
+\end{Exa}
+
 \subsection{Canonical partial compact quantum groupoids}
 
 The following generalizes Hayashi's original construction.
@@ -25,7 +28,10 @@ Let $\CatCC$ be a semi-simple partial tensor C$^*$-category with duality based o
 It is readily verified that $F$ defines a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$ based over the partition \[\mathcal{I}_r = \bigcup_{t} \Gru{\mathcal{I}}{r}{t},\quad r\in I_0.\] From the Tannaka-Krein-Woronowicz reconstruction result, we obtain a partial compact quantum group $\mathscr{A}_{\CatCC}$ with object set $\mathcal{I}$, which we call the \emph{canonical partial compact quantum group} associated with $\CatCC$. 
 \end{Exa} 
 
+\begin{Exa} More generally, let $\CatCC$ be a semi-simple partial tensor C$^*$-category with duality based over a set $I_0$, and let $\CatDD$ be a \emph{semi-simple partial $\CatCC$-module C$^*$-category} based over a set $I_1$. That is, $\CatDD$ consists of a collection of semi-simple C$^*$-categories $\CatD_{rs}$ with $r\in I_0,s\in I_1$, together with tensor products $\otimes: \CatC_{rs}\times \CatD_{st}\rightarrow \CatC{rt}$ satisfying the appropriate associativity and unit constraints. Then if $\mathcal{I}$ labels a distinguished maximal set $\{u_k\}$ of mutually non-isomorphic irreducible objects of $\CatD$, with associated bigrading $\Gru{\mathcal{I}}{r}{s}$ over $I_0\times I_1$, we can again define \[F_{kl}(X)  = \Hom(u_k,  X\otimes u_l),\qquad X\in \Gru{\CatC}{r}{s}, k\in \Gru{\mathcal{I}}{r}{t},l\in \Gru{\mathcal{I}}{s}{t},\] and we obtain a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$. The associated partial compact quantum group $\mathscr{A}_{\CatCC}$ will be called the \emph{canonical partial compact quantum group} associated with $(\CatCC,\CatDD)$. The previous construction coincides with the special case $\CatCC= \CatDD$.
+\end{Exa}
 
+For example, let $\G$ be a compact quantum group, and consider an ergodic action of $\G$ on a unital C$^*$-algebra $C(\mathbb{X})$. Then the collection of finitely generated $\G$-equivariant $C(\mathbb{X})$-Hilbert modules forms a module C$^*$-category over $\Rep(\G)$, cf. []. 
 
 \subsection{Morita equivalence}
 
@@ -47,6 +53,7 @@ If $\mathscr{A}$ defines a linking partial compact quantum group, we can split $
 \begin{Prop} Two partial compact quantum groups are Morita equivalent iff they arise as the corners of a linking partial compact quantum group.
 \end{Prop}
 
+% Some stylisation needed.
 \begin{proof} Suppose first that $\mathscr{G}_1$ and $\mathscr{G}_2$ are partial compact quantum groups with associated partial Hopf $^*$-algebras $\mathscr{A}_1$ and $\mathscr{A}_2$ over respective sets $I_1$ and $I_2$. Then we may identify their corepresentation categories with the same abstract partial tensor C$^*$-category $\CatCC$ (based over $I_0$) which comes endowed with two forgetful functors $F_i$ to $\{\Hilb_{\fin}\}_{I_i\times I_i}$ corresponding respectively to the $\mathscr{A}_i$.
 
 With $I = I_1\sqcup I_2$, we may then as well combine the $F_i$ into a global unital morphism $F:\CatCC \rightarrow \{\Hilb_{\fin}\}_{I\times I}$, with $F_{kl}(X)=F_i(X)$ if $k,l\in I_i$ and $F_{kl}(X)=0$ otherwise. Let $\mathscr{A}$ be the associated partial compact quantum group constructed from the Tannaka-Krein-Woronowicz reconstruction procedure. 
@@ -55,55 +62,97 @@ From the precise form of this reconstruction, it follows immediately that $\Gr{A
 
 Moreover, fix $k\in I_i$ and any $l\in I_{i+1}$ with $k'=l'$. Then $\Nat(F_{ll},F_{kk})\neq \{0\}$. It follows that $\UnitC{k}{l}\neq 0$. Hence $\mathscr{A}$ is a linking compact quantum groupoid. It is clear that $\mathscr{A}_1$ and $\mathscr{A}_2$ are the corners of $\mathscr{A}$. 
 
-Conversely, suppose that $\mathscr{A}_1$ and $\mathscr{A}_2$ arise from the corners of a linking partial compact quantum groupoid defined by $\mathscr{A}$. We will show that in fact the associated partial compact quantum groups $\mathscr{G}$ and $\mathscr{G}_1$ are Morita equivalent. Then by symmetry $\mathscr{G}$ and $\mathscr{G}_2$ are Morita equivalent, and hence also $\mathscr{G}_1$ and $\mathscr{G}_2$.
+Conversely, suppose that $\mathscr{A}_1$ and $\mathscr{A}_2$ arise from the corners of a linking partial compact quantum groupoid defined by $\mathscr{A}$ with invariant integral $\phi$. We will show that in fact the associated partial compact quantum groups $\mathscr{G}$ and $\mathscr{G}_1$ are Morita equivalent. Then by symmetry $\mathscr{G}$ and $\mathscr{G}_2$ are Morita equivalent, and hence also $\mathscr{G}_1$ and $\mathscr{G}_2$.
 
 For $(V,X) \in \Corep(\mathscr{A})$, let $F(V,X) = (W,Y)$ be the pair obtained from $(V,X)$ by restricting all indices to those appearing to $I_1$. As the $\UnitC{i}{j}$ are central, it is easy to see that $(W,Y)$ is a unitary corepresentation of $\mathscr{A}_1$, and that the functor $F$ hence becomes a unital morphism in a trivial way. What remains to show is that $F$ is an equivalence of categories, i.e.~ that $F$ is faithful and essentially surjective. 
 
-Let $X$ define a unitary corepresentation of $\mathscr{A}_1$ on a partial Hilbert space $W= \{\Gru{W}{k}{l}\}$. For $m,n\in I_{2}$, define \[\Gru{Z}{m}{n} = \{z \in \left(\prod_k\oplus_l\cap \prod_l\oplus_k\right) \Gr{A}{k}{l}{m}{n}\otimes \Gru{W}{k}{l}\mid (\Delta_{rs}\otimes \id)(z_{kl}) = (\Gr{X}{k}{l}{r}{s})_{13}(z_{rs})_{23},\quad \forall r,s\in I_1\}.\] We want to show that $(m,n)\mapsto \Gru{Z}{m}{n}$ is row- and column finite. For example, fix $m$, and let us show that $m \mapsto \Gru{Z}{m}{n}$ has finite support for $n$ fixed. By assumption, we can take $s\in I_1$ with $\UnitC{s}{n}\neq 0$. Now as the map \[ \Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{s}{s}{n}{n} \rightarrow \oplus_r \Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n},\quad x\otimes y \mapsto \sum_r \Delta_{rs}(x)(1\otimes y)\] is injective, it follows that $\oplus_r\Delta_{rs}$ is injective. It follows that if $z \in \Gru{Z}{m}{n}$ has $z_{rs}=0$ for all $r$, then $z=0$. Hence the map $z\mapsto (z_{rs})_r$ is injective. But the set of $m$ for which $\Gr{A}{r}{s}{m}{n}$ is non-zero for (the finite set of) all $r$ with $z_{rs}\neq 0$ is finite. This proves the finite support of $\Gru{Z}{m}{n}$ over $m$ when $n$ is fixed. The finite support over $n$ when $m$ is fixed can be proven similarly. 
+Let us first argue that any rcf corepresentation $W$ of $\mathscr{A}_1$ arises as a summand of some $F(V)$. Indeed, we may assume that $W$ is an irreducible corepresentation, and arises as regular corepresentation. Taking any non-zero element of this corepresentation, and considering an rcf regular corepresentation of $\mathscr{A}$ containing this element, we obtain an rcf corepresentation of $\mathscr{A}$ whose restriction contains $W$.
 
-Suppose now that $V$ is a corepresentation of $\mathscr{A}$. Let $Z$ be obtained as above from the restriction $W$ of $V$. We claim that the maps \[\theta_{mn}:\Gru{V}{m}{n}\rightarrow \Gru{Z}{m}{n},\quad v \mapsto \sum_{k,l\in I_1} \Gr{X}{k}{l}{m}{n}(1\otimes v),\quad m,n\in I_2\]  are well-defined linear isomorphisms. In fact, well-definedness is immediate. To show that the map is an isomorphism, let us construct a concrete inverse map. Pick again an $s\in I_1$ with $\UnitC{s}{n}\neq 0$. Define then \[\gamma_{mn}:\Gru{Z}{m}{n} \rightarrow \Gru{V}{m}{n},\quad z \mapsto (\phi\otimes \id)\sum_{k\in I_1} \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks},\] where the summation over $k$ makes sense because of the finite support condition on $z$. It follows immediately from the definition of $X^{-1}$ (and the fact that $\UnitC{s}{n}\neq 0$) that $\phi_{mn}\theta_{mn} = \id_{\Gru{V}{m}{n}}$. To show the reverse identity $\theta_{mn}\phi_{mn} = \id_{\Gru{Z}{m}{n}}$, it suffices to show that $z_{ks} = (\theta_{mn}\phi_{mn}(z))_{ks}$. This will follows once we show that \[\UnitC{s}{n}\otimes \sum_k (\phi\otimes \id)(\Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}) = \sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}.\] Apply $\Delta\otimes \id$. 
+Let now $X$ define a unitary corepresentation of $\mathscr{A}_1$ on a partial Hilbert space $W= \{\Gru{W}{k}{l}\}$. For $m,n\in I_{2}$, define $G_{mn}(W) = \Gru{Z}{m}{n}$ by \[ \Gru{Z}{m}{n} = \{z \in \left(\prod_k\oplus_l\cap \prod_l\oplus_k\right) \Gr{A}{k}{l}{m}{n}\otimes \Gru{W}{k}{l}\mid (\Delta_{rs}\otimes \id)(z_{kl}) = (\Gr{X}{k}{l}{r}{s})_{13}(z_{rs})_{23},\quad \forall r,s\in I_1\}.\] We aim to show that $G_{mn}(W)$ is rcf. In fact, $G$ is clearly functorial and linear. By the previous paragraph, we may thus assume that $W$ arises as the restriction of some corepresentation $V$ of $\mathscr{A}$. 
 
+Let then $Z$ be obtained as above from the restriction $W$ of $V$. We claim that the maps \[\theta_{mn}:\Gru{V}{m}{n}\rightarrow \Gru{Z}{m}{n},\quad v \mapsto \sum_{k,l\in I_1} \Gr{X}{k}{l}{m}{n}(1\otimes v),\quad m,n\in I_2\]  are well-defined linear isomorphisms. In fact, well-definedness is immediate. To show that the map is an isomorphism, let us construct a concrete inverse map. Fix $m,n$, and pick an $s\in I_1$ with $\UnitC{s}{n}\neq 0$, which is possible by assumption. Define then \[\gamma_{mn}:\Gru{Z}{m}{n} \rightarrow \Gru{V}{m}{n},\quad z \mapsto (\phi\otimes \id)\sum_{k\in I_1} \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks},\] where we note that the summation over $k$ is in fact finite as the variables $m,n,s$ are fixed. It follows immediately from the definition of $X^{-1}$ (and the fact that $\UnitC{s}{n}\neq 0$) that $\phi_{mn}\theta_{mn} = \id_{\Gru{V}{m}{n}}$. To show the reverse identity $\theta_{mn}\phi_{mn} = \id_{\Gru{Z}{m}{n}}$, it suffices to show that $z_{ks} = (\theta_{mn}\gamma_{mn}(z))_{ks}$. Let us first show that \begin{equation}\label{EqIdz} \UnitC{s}{n}\otimes \sum_k (\phi\otimes \id)(\Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}) = \sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}.\end{equation} Apply $\Delta_{nn}\otimes \id$ to the right hand side and use the invertibility of $X$ to conclude that  \[(\Delta_{nn}\otimes \id)\left(\sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}\right) = \UnitC{s}{n}\otimes \Gr{(X^{-1})}{n}{n}{n}{m}z_{nn}.\] Apply the counit to the second leg to conclude that in fact $\sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks} \in \UnitC{s}{n} \otimes \Gru{W}{m}{n}$, from which $\eqref{EqIdz}$ follows. Similarly, for $n\neq n'$ we find  \[(\Delta_{n'n}\otimes \id)\left(\sum_k \Gr{(X^{-1})}{s}{k}{n'}{m}z_{ks}\right) =0,\] and applying the counit gives \begin{equation}\label{EqIdz2} \sum_k \Gr{(X^{-1})}{s}{k}{n'}{m}z_{ks} =0.\end{equation} From \eqref{EqIdz} and \eqref{EqIdz2}, we then conclude 
+\begin{eqnarray*} (\theta_{mn}\gamma_{mn}(z))_{ks} &=& \sum_{k'} \Gr{X}{k}{s}{m}{n}\Gr{(X^{-1})}{s}{k'}{n}{m}z_{k's} \\ &=& \sum_{k',n'} \Gr{X}{k}{s}{m}{n'}\Gr{(X^{-1})}{s}{k'}{n'}{m}z_{k's} \\ &=& z_{ks}.\end{eqnarray*} 
 
+In a similar way, one shows that $W\cong W'$ with, for $m,n\in I_1$, \[ \Gru{W'}{m}{n} = \{z \in \left(\prod_k\oplus_l\cap \prod_l\oplus_k\right) \Gr{A}{k}{l}{m}{n}\otimes \Gru{W}{k}{l}\mid (\Delta_{rs}\otimes \id)(z_{kl}) = (\Gr{X}{k}{l}{r}{s})_{13}(z_{rs})_{23},\quad \forall r,s\in I_1\}.\] 
 
-
-Essential surjectivity by regular decomposition.
+Let us now take again an arbitrary unitary corepresentation $(W,Y)$ of $\mathscr{A}_1$. By the above, $\Gru{Z}{m}{n} = G_{mn}(W)$ is rcf. It is easy to see that we can then build an rcf corepresentation $U$ of $\mathscr{A}$ over $Z\oplus W'$ by putting \[\Gr{U}{k}{l}{m}{n}(1\otimes z) = (\Delta_{kl}^{\op}\otimes \id)(z),\qquad z\in \Gru{Z}{m}{n}, \quad m,n\in I_2,k,l\in I,\] and similarly for $W'$. It is then easy to see that, when $V$ is an rcf corepresentation, $V$ is equivariantly isomorphic to $Z\oplus W'$ for $W$ the restriction of $V$, while any $W$ is isomorphic to the restriction of $Z\oplus W'$.  This proves essential surjectivity and faithfulness.
 \end{proof}
 
+\begin{Exa} If $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent compact quantum groups, the total partial compact quantum group is the co-groupoid constructed by Bichon []. 
+\end{Exa}
 
-
-For example, co-groupoid of Bichon. 
+\begin{Exa}  Let $\G$ be a compact quantum group with ergodic action on a unital C$^*$-algebra $C(\mathbb{X})$. Consider the module C$^*$-category $\CatD$ of finitely generaetd $\G$-equivariant Hilbert $C(\mathbb{X})$-modules as before. Then $\G$ is Morita equivalent with the canonical partial compact quantum group constructed from $(\CatC,\CatD)$. The off-diagonal part of the associated linking partial compact quantum group was studied in ... We will make a detailed study of the case $\G = SU_q(2)$ in [], particularly for $\X$ a Podle\'{s} sphere, which will lead us to partial compact quantum group versions of the dynamical quantum $SU(2)$-group.
+\end{Exa}
 
 
 \subsection{Weak Morita equivalence}
 
 % Concrete implementation, helps to define the concept in more general analytic context.
-Cf. Muger. 
 
-\begin{Def} Two partial semi-simple tensor C$^*$-categories $\CatCC_1$ and $\CatC_2$ with duality over respective sets $I_1$ and $I_2$ are called \emph{Morita equivalent} if there exists a partial semi-simple tensor C$^*$-category $\CatCC$ with duality over the set $I=I_1\sqcup I_2$ such that the $\CatC_{rs}$ with $r,s$ in the same set $I_j$ form a copy of $\CatCC_j$, and such that each object in $\CatCC_{j}$ is a subobject of $X\otimes Y$ for some $X\in \CatCC_{kl}$ and $Y\in \CatCC{lk}$ with $k$ and $l$ in disjoint sets and $k\in I_j$. % Better formulation.
 
-We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent if their corepresentation categories are Morita equivalent. % ???
+\begin{Def} A \emph{linking} partial tensor C$^*$-category with duality consists of a partial tensor C$^*$-category with duality $\CatCC$ with a distinguished partition $I_0 =I_1 \cup I_2$ such that for each $r\in I_1$, there exists $s \in I_{2}$ with $\CatC_{rs}\neq \{0\}$.
+
+The \emph{corners} of $\CatCC$ are the restrictions of $\CatCC$ to $I_1$ and $I_2$.
+\end{Def}
+
+The following notion was introduced by M. M\"{u}ger []. % Sort out if definition is really the same + precise setting.
+
+\begin{Def} Two partial semi-simple tensor C$^*$-categories $\CatCC_1$ and $\CatCC_2$ with duality over respective sets $I_1$ and $I_2$ are called \emph{Morita equivalent} if there exists a linking partial semi-simple tensor C$^*$-category $\CatCC$ with duality over the set $I=I_1\sqcup I_2$ whose corners are isomorphic to $\CatCC_1$ and $\CatCC_2$.
+
+We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are \emph{weakly Morita equivalent} if their corepresentation categories $\Corep_u(\mathscr{G}_i)$ are Morita equivalent. 
 \end{Def} 
 
-This is indeed generalisation of Morita equivalence. 
+A particular example of weak Morita equivalence arises as follows.
 
-Notion of co-Morita equivalence. Weak Morita equivalence = Morita equivalence + co-Morita equivalence. 
+\begin{Def} A \emph{co-linking partial compact quantum group} consists of a partial compact quantum group $\mathscr{G}$ defined by a Hopf $^*$-algebra $\mathscr{A}$ over an index set $I$, together with a distinguished partition $I = I_1\cup I_2$ such that each $\UnitC{k}{l}=0$ for $k,l$ in distinct sets, and such that for each $k\in I_1$, there exists $l\in I_2$ with $\Gr{A}{k}{l}{k}{l}\neq 0$.  
+\end{Def} 
 
-For compact quantum groups, still have to pass through partial compact quantum groups for this statement to stay true.
+\begin{Rem} For finite compact quantum groupoids, one can easily show that the notion of co-linking partial compact quantum group is dual to the notion of linking partial compact quantum group.\end{Rem}
 
-%Induction of forgetful functor from $\CatCC_1$ to $\CatCC$.?? Maybe by internal representation of a module category by an algebra object. 
+It is again easy to see that if we restrict all indices of a co-linking partial compact quantum group to one of the distinguished sets, we obtain a partial compact quantum group which we will again call a corner.
 
-% Concrete implementation of weak Morita equivalence... 
+\begin{Def} We call two partial compact quantum groups \emph{co-Morita equivalent} if there exists a \emph{co-linking partial compact quantum group} having these partial compact quantum groups as its corners.
+\end{Def}
 
-\subsection{Ergodic actions of compact quantum group}
+\begin{Lem} Co-Morita equivalence is an equivalence relation. % To stylise
+\end{Lem} 
+\begin{proof} Symmetry is clear. Co-Morita equivalence of $\mathscr{A}$ with itself follows by considering as co-linking quantum groupoid the product of $\mathscr{A}$ with the partial compact quantum groupoid $M_2(\C)$, where $\Delta(e_{ij}) = e_{ij}\otimes e_{ij}$. 
 
-Let us now give a rich source of examples coming from ergodic actions of compact quantum groups. We recall the main result from DC-Yamashita.
+Let us show transitivity. Suppose $\mathscr{G}$ defines a co-linking quantum groupoid between $\mathscr{G}_1$ and $\mathscr{G}_2$, and $\mathscr{H}$ a co-linking quantum groupoid between $\mathscr{G}_2$ and $\mathscr{G}_3$. We can write the total algebra of the partial Hopf $^*$-algebra $\mathscr{A}$ of $\mathscr{G}$ in the form $\begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22}\end{pmatrix}$, and the total algebra of the partial Hopf $^*$-algebra $\mathscr{B}$ of $\mathscr{H}$ as $\begin{pmatrix} A_{22} & A_{23} \\ A_{32} & A_{33}\end{pmatrix}$, where the $A_{ii}$ are the total algebras associated to the $\mathscr{G}_i$. 
 
-Link with Morita equivalence. 
+Let us show that $A_{12}A_{21} = A_{11}$. 
 
-Concrete example of dynamical quantum $SU(2)$ to be studied in particular in separate paper. 
+Similarly,  $A_{21}A_{12} = A_{22}$, and the same statements hold for $\mathscr{B}$. 
 
+Define now $A_{13} = A_{12}\underset{A_{22}}{\otimes} A_{23}$ and $A_{31} = A_{32}\underset{A_{22}}{\otimes} A_{21}$. Then we can make a partial $^*$-algebra $\mathscr{C}$ whose total algebra is $\begin{pmatrix} A_{11} & A_{13}\\ A_{31}& A_{33}\end{pmatrix}$, where for example the product of $A_{13}$ and $A_{31}$ is given by $(x\otimes y)(z\otimes w) =x(yz)w$, while $(x\otimes y)^* = y^*\otimes x^*$. We can make $A_{13}$ into a coalgebra by putting $\Delta(x\otimes y) = (x_{(1)}\otimes y_{(1)})\otimes (x_{(2)}\otimes y_{(2)})$, and similarly for $A_{31}$. Together with the coproducts on $A_{11}$ and $A_{33}$, this then forms a regular Hopf $^*$-algebra. It is easily checked that with $\phi$ the invariant integral on $A_{11}$ and $A_{33}$ and zero $A_{13}$ and $A_{31}$, this is a regular Hopf $^*$-algebra with invariant integral. It is obviously defines a co-linking quantum groupoid between $\mathscr{G}_{11}$ and $\mathscr{G}_{33}$. 
+\end{proof} 
 
+%This is indeed generalisation of Morita equivalence. 
 
+\begin{Prop} Assume that two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are co-Morita equivalent. Then they are weakly Morita equivalent.
+\end{Prop} 
+\begin{proof} % Stylise
+Consider the corepresentation category $\CatCC$ of a co-linking partial compact quantum group $\mathscr{A}$ over $I = I_1\cup I_2$. Fix $r\in I_0$, and choose a corresponding partition $I_0 = J_1\cup J_2$ with $I_i \twoheadrightarrow J_i$ the associated partition. We want to show that $\Corep(\mathscr{A})_{rs} \neq \{0\}$ for $r\in J_1$ and $s\in J_2$. But  the collection of all $\Gr{A}{k}{l}{m}{n}$ with $k'=m'=r$ and $l=n=s'$ form a partial co-algebra under the $\Delta_{pq}$ with $p'=r$ and $q'=s$.  By assumption, this collection is not trivial. Hence any irreducible regular corepresentation in this class forms a non-trivial element of $\Corep(\mathscr{A})_{rs}$.
+\end{proof}
+
+%Notion of co-Morita equivalence. Weak Morita equivalence = Morita equivalence + co-Morita equivalence. 
+
+\begin{Prop} Let $\CatCC$ be a linking partial tensor C$^*$-category with duals. Then the associated canonical partial compact quantum group is a co-linking partial compact quantum group. 
+\end{Prop} 
+
+\begin{proof}
+
+\end{proof} 
+
+\begin{Theorem} Two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent if and only if they are connected by a string of Morita and co-Morita equivalences. 
+\end{Theorem}
+
+\begin{proof} The direction back has already been shown. Conversely, assume $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent. Then $\mathscr{G}_i$ is weakly equivalent with the canonical partial compact quantum group associated to its corepresentation categories. But we have shown that then these canonical partial compact quantum groups are co-Morita equivalent. 
+\end{proof} 
+
+\begin{Rem} Note that it is essential that we allow the string of equivalences to pass through partial compact quantum groups, even if we start out with (genuine) compact quantum groups.\end{Rem}
+
+% Gives concrete implementation of weak Morita equivalence.
 
 
 
