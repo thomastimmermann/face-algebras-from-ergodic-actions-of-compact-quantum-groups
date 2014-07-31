@@ -67,7 +67,7 @@
 \DeclareMathOperator{\Pol}{\mathrm{P}}
 \DeclareMathOperator{\Par}{\mathrm{Par}}
 \DeclareMathOperator{\Ran}{\mathrm{Ran}}
-\DeclareMathOperator{\rcf}{\mathrm{rcf}}
+\DeclareMathOperator{\rcf}{\mathrm{rcfd}}
 \DeclareMathOperator{\rd}{\mathrm{d}}
 \DeclareMathOperator{\reg}{\mathrm{reg}}
 \DeclareMathOperator{\sgn}{\mathrm{sgn}}
@@ -77,7 +77,10 @@
 \DeclareMathOperator{\Zz}{\mathrm{Z}}
 
 
-\newcommand{\dual}[1]{#1^{\vee}}
+\newcommand{\dual}[1]{#1^{*}}
+\newcommand{\dualop}[1]{#1^{\tr}}
+\newcommand{\dualco}[1]{\hat{#1}}
+\newcommand{\dualcor}[1]{\check{#1}}
 \newcommand{\predual}[1]{{^{\vee}\!#1}}
 \newcommand{\co}{\mathrm{co}}
 \newcommand{\Corep}{\mathrm{Corep}}
@@ -311,6 +314,9 @@
 \section{Introduction}
 
 In the following, we follow the physicist's convention that inner products on Hilbert spaces are anti-linear in their \emph{first} argument. Whenever convenient, we will also identify $\mathscr{H}$ with $B(\C,\mathscr{H})$, so that we can write $\langle \xi,\eta\rangle = \xi^*\eta$.
+
+
+
 
 \input{1-partial-algebras.tex}
 \input{2-partial-categories.tex}
