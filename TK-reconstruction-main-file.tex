@@ -1,29 +1,18 @@
 % Remarks:
 % Podles sphere can be defined as an algebra in $\Rep(SU_q(2))$. Hence, it should make sense as an algebra under the forgetful functor to SU_q(2)-dynamical. By duality for coideals, the same should hold for passage to SU_q(1,1) in fact...
-%
 % link with article `Racah - Wigner quantum 6j Symbols, Ocneanu Cells for AN diagrams and quantum groupoids' by Coquereaux?
-% Ref to Schauenburg that face algebras are weak Hopf algebras
 % Thanks to Makoto, Piotr (?), Leonid
-% Cf. Enocks quantum groupoids of compact type
 % Donin, J.(IL-BILN); Mudrov, A.(IL-BILN), Quantum groupoids and dynamical categories. 
 % Leonid, cf. talk www.fields.utoronto.ca/programs/scientific/13-14/.../Vainerman.pdf
-% Stokman vertex irf babelon cocycle twist
 % Level 2 Hecke algebras Brundan
 % Concerning locally unital algebras ask J. Vercruysse on recent work 
 % Say construction groupoids from forgetful functors on temperley-Lieb already in Enock-Ostrik remark
 % Say partial compact quantum groups are proper locally compact quantum groupoids with a discrete base set. Can this be made precise? Is e.g. every measured quantum groupoid which has commutative discrete base and which is `proper' (finiteness integrals on components) of this type? Also compare with properness Timmermann.
-% Horizontally categorified algebra is algebroid, but that terminology would be too overused if applied to quantum groupoids
 % Mention generalization of Neshveyev
-% Include ref to Joyal-Street
 % Uniformize enumerates and itemizes
 % Reference to Larson paper on cosemisimplicity
-% Implement sufficiently many references to Hayashi
-% Notion of multiplier fusion category (interpolates between fusion and multifusion category)
-% benefit partial approach: notion of partial coalgebra possble
-% Change rcf to rcfd at appropriate places
 % Van Daele and Khang reference?
 % More direct references to Gaby's paper on comodules? 
-% look up G. D. Abrams, Morita equivalence for rings with local units for section on co-Morita 
 % Caenepeel paper on Galois theory weak Hopf algebras.
 
 \documentclass[11pt]{article}
@@ -169,19 +158,15 @@
 \newcommand{\Tt}{\mathscr{T}}
 \newcommand{\Fun}{\mathrm{Fun}}
 \newcommand{\Ff}{\Fun_{\fin}}
-%\newcommand{\fin}{\mathrm{fin}}
-%\newcommand{\iitimes}{\underset{I}{\otimes}}
 \newcommand{\itimes}{\underset{I}{\otimes}}
 \newcommand{\osum}[1]{\underset{#1}{\sum}^{\oplus}}
 \newcommand{\osumc}[1]{\underset{#1}{\sum}^{\bar{\oplus}}}
 \newcommand{\oplusc}{\bar{\oplus}}
 \newcommand{\wDelta}{\widetilde{\Delta}}
 \newcommand{\f}{\mathrm{fin}}
-%\newcommand{\Hilb}{\mathrm{Hilb}}
 \newcommand{\Rho}{\mathrm{P}}
 \newcommand{\Rep}{\mathrm{Rep}}
 \newcommand{\DA}{\mathcal{A}}
-%\newcommand{\Circt}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\even}{\mathrm{even}}
 \newcommand{\odd}{\mathrm{odd}}
 \newcommand{\fd}{\mathrm{fd}}
@@ -193,7 +178,6 @@
 \newcommand{\Grs}[3]{#1{\begin{pmatrix} #2,  #3\end{pmatrix}}}
 
 \newcommand{\GrDA}[3]{{}_{\;#2}#1_{#3}} % Horizontal grading bottom style, with argument
-%\newcommand{\Grd}[3]{\;{}_{\;#2}#1_{#3}}
 
 \newcommand{\GrVA}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} % Vertical grading ordinary style, with argument
 \newcommand{\Grt}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} 
@@ -214,12 +198,6 @@
 \newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
 \newcommand{\Gru}[3]{\Gr{#1}{}{}{#2}{#3}}
 \newcommand{\Grd}[3]{\Gr{#1}{#2}{#3}{}{}}
-% \newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
-% %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
-% %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} \, #2\;\\ #3 \qquad #4 \\ \,#5\;\end{pmatrix}}}
-% \newcommand{\Grl}[3]{\;{}^{\;#2}_{#3}#1}%TODO: better typesetting
-% \newcommand{\Gru}[3]{{}^{\;#2}#1^{#3}}
-% \newcommand{\Grd}[3]{{}_{\;#2}#1_{#3}}
 \newcommand{\gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
 \newcommand{\eGrr}[3]{#1_{{\tiny \left(#2, #3\right)}}}
 \newcommand{\eGrt}[4]{#1{{\tiny \begin{pmatrix} #2 \\ #3 \\ #4 \end{pmatrix}}}}
@@ -259,7 +237,7 @@
 \newcommand{\phic}[2]{\Grt{\phi}{#1}{#2}}
 
 %%%%%%%%%%%%%%%%%%%
-% Notation for Section 4
+% Notation for Section 6
 \newcommand{\LGtwo}{L^{2}(\mathscr{G})}
 \newcommand{\LGinf}{L^{\infty}(\mathscr{G})}
 \newcommand{\CrG}{C^{r}_{0}(\mathscr{G})}
@@ -286,12 +264,9 @@
 
 \maketitle
 
-% Terminology `compact' might have to be adapted if we work with infinitely many objects.
 \begin{abstract}
 \noindent Compact quantum groups of face type, as introduced by Hayashi, form a class of quantum groupoids with a classical, finite set of objects. Using the notions of weak multiplier bialgebra and weak multiplier Hopf algebra (resp.~ due to B{\"o}hm--G\'{o}mez-Torrecillas--L\'{o}pez-Centella and Van Daele--Wang), %Correct hyphenation?
  we generalize Hayashi's definition to allow for an infinite set of objects, and call the resulting objects partial compact quantum groups. We prove a Tannaka-Krein-Woronowicz reconstruction result for such partial compact quantum groups using the notion of partial fusion C$^*$-category. We also study their connection to the Lesieur--Enock theory of measured quantum groupoids.
- % As an application, we show how any quantum homogeneous space of an ordinary compact quantum group leads to a partial compact quantum group. 
-%In a follow-up article, this construction is applied to the non-standard Podle\'{s} spheres. We obtain in this way partial compact quantum groups which are operator algebraic versions of the dynamical quantum $SU(2)$-group as studied by Etingof-Varchenko and Koelink-Rosengren.% References ok?
 \end{abstract}
 
 
@@ -315,8 +290,6 @@
 
 \section*{Introduction}
 
-%Groupoids are mathematical objects which interpolate between spaces and groups. 
-
 The concept of \emph{face algebra} was introduced by T. Hayashi in \cite{Hay2}, motivated by the theory of solvable lattice models in statistical mechanics. It was further studied in \cite{Hay1,Hay3,Hay4,Hay5,Hay6,Hay7}, where for example associated C$^*$-structures and a canonical Tannaka duality were developed. This canonical Tannaka duality allows one to construct a canonical face algebra from any fusion (C$^*$)-category. For example, a face algebra can be associated to the fusion C$^*$-category of a quantum group at root unity, for which no genuine quantum group implementation can be found. 
 
 In \cite{Nil1,Sch1,Sch2}, it was shown that face algebras are particular kinds of $\times_R$-algebras \cite{Tak2} and of weak bialgebras \cite{Boh3}. More intuitively, they can be considered as quantum groupoids with a classical, finite object set. The wider framework of weak bialgebras allows one to streamline part of the algebraic theory, at the cost perhaps of becoming less intuitive. 
@@ -326,6 +299,8 @@ In this article, we want to extend Hayashi's theory by allowing for an \emph{inf
 The passage to the infinite object case is delicate at points, and requires imposing the proper finiteness conditions on associated structures. However, once all conditions are in place, many of the proofs are similar in spirit to the finite object case. % Rephrase? Don't downplay too much?
 
 Our main result is a Tannaka-Krein-Woronowicz duality result which states that partial compact quantum groups are in one-to-one correspondence with \emph{concrete partial fusion C$^*$-categories}. In its essence, a partial fusion C$^*$-category is a multifusion C$^*$-category \cite{ENO1}, except that we allow an infinite number of irreducible objects as well as an infinite number of summands inside the unit object. By a \emph{concrete} multifusion C$^*$-category, we mean a multifusion C$^*$-category realized inside a category of (locally finite dimensional) bigraded Hilbert spaces. 
+
+% Refs to other TK results, as well as surveys: Tannaka, Krein, Hayashi, Hai, German guy, Szlachanyi, Schauenburg, Woronowicz, Neshveyev-Tuset, Joyal-Street
 
 As an application, we generalize Hayashi's Tannaka duality by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In the follow-up article \cite{DCT2}, we will consider the particular case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce (C$^*$-algebraic versions of) the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{EtN1}, and will provide another viewpoint on the main result of \cite{Sto1}. The construction of the operator algebraic versions of dynamical quantum $SU(2)$-groups was the main motivation for writing and developing the theory of the present paper. % Look more carefully at EtN1 ref
 
@@ -339,10 +314,7 @@ In the \emph{fifth section}, we provide some examples of our structures and appl
 
 In the final \emph{sixth section}, we show that our partial compact quantum groups have C$^*$-algebraic and von Neumann algebraic completions, and we relate our theory to Lesieur and Enock's theory of measured quantum groupoids \cite{Les1,Eno2,Eno3,Eno4}. 
 
-%Measured quantum groupoids + compact version by Enock + commutative base by Enock.
-
 \emph{Note}: we follow the physicist's convention that inner products on Hilbert spaces are anti-linear in their \emph{first} argument. 
-% Whenever convenient, we will also identify $\mathscr{H}$ with $B(\C,\mathscr{H})$, so that we can write $\langle \xi,\eta\rangle = \xi^*\eta$.
 
 
 

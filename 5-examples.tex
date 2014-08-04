@@ -12,8 +12,6 @@ Extend the $I^2$-bigrading to an $I^4$-bigrading by putting $\Gr{A}{k}{l}{m}{n} 
 
 \end{Exa}
 
-% Vacant double groupoids?
-
 \begin{Exa} Let $\mathscr{A}$ and $\mathscr{B}$ define two partial compact quantum groups $\mathscr{G}$ and $\mathscr{H}$ over respective sets $I$ and $J$. Then we can make a tensor product partial Hopf $^*$-algebra $\mathscr{A}\otimes \mathscr{B}$ over the index set $I\times J$ by putting \[\Gr{(A\otimes B)}{(k,k')}{(l,l')}{(m,m')}{(n,n')} = \Gr{A}{k}{l}{m}{n}\otimes \Gr{B}{k'}{l'}{m'}{n'}\] with the factorwise product and with coproducts \[\Delta_{(r,r'),(s,s')} = \sigma_{23}(\Delta_{rs}\otimes \Delta_{r',s'}),\] $\sigma$ being the switch map. It is easily seen that the tensor products of the positive invariant integrals for $\mathscr{A}$ and $\mathscr{B}$ produce a positive invariant integral on $\mathscr{A}\otimes \mathscr{B}$. Hence $\mathscr{A}\otimes \mathscr{B}$ defines a partial compact quantum group, which we will denote $\mathscr{G}\times \mathscr{H}$.
 \end{Exa}
 
@@ -21,7 +19,6 @@ Extend the $I^2$-bigrading to an $I^4$-bigrading by putting $\Gr{A}{k}{l}{m}{n} 
 
 The following generalizes Hayashi's original construction.
 
-% Notion of faithfulness to remark upon.
 \begin{Exa} 
 Let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category. Let $\mathcal{I}$ label a distinguished maximal set $\{u_k\}$ of mutually non-isomorphic irreducible objects of $\CatC$, with associated bigrading $\Gru{\mathcal{I}}{\alpha}{\beta}$ over $\mathscr{I}$. Define \[F_{kl}(X)  = \Hom(u_k,  X\otimes u_l),\qquad X\in \Gru{\CatC}{\alpha}{\beta}, k\in \Gru{\mathcal{I}}{\alpha}{\gamma},l\in \Gru{\mathcal{I}}{\beta}{\gamma}.\] Then each $F_{kl}(X)$ is a Hilbert space by the inner product $\langle f,g\rangle = f^*g$. Put $F_{kl}(X) = 0$ for $k,l$ outside their proper domains. Then clearly the application $(k,l)\mapsto F_{kl}(X)$ is rcf. Moreover, we have isometric compatibility morphisms \[F_{kl}(X)\otimes F_{lm}(Y)\rightarrow F_{km}(X\otimes Y),\quad f\otimes g \mapsto (\id\otimes g)f,\] while $F_{kl}(\Unit_{\alpha}) \cong \delta_{kl} \C$ for $k,l\in \Gru{\mathcal{I}}{\alpha}{\alpha}$. 
 
@@ -38,7 +35,7 @@ It is readily verified that $F$ defines a unital morphism from $\CatCC$ to $\{\H
 
 % Caenepeel Galois theory weak Hopf algebras
 
-\begin{Def} Two partial compact quantum groups $\mathscr{G}$ and $\mathscr{H}$ are said to be \emph{Morita equivalent} if there exists an equivalence $\Rep_u(\mathscr{G}) \rightarrow \Rep_u(\mathscr{H})$ of partial fusion C$^*$-categories. % notion of equivalence to be explained? $\varphi_0$ is bijective, and all $F_{rs}$ are faithful and essentially surjective.
+\begin{Def} Two partial compact quantum groups $\mathscr{G}$ and $\mathscr{H}$ are said to be \emph{Morita equivalent} if there exists an equivalence $\Rep_u(\mathscr{G}) \rightarrow \Rep_u(\mathscr{H})$ of partial fusion C$^*$-categories. 
 \end{Def} 
 
 In particular, if $\mathscr{G}$ and $\mathscr{H}$ are Morita equivalent they have the same hyperobject set, but they need not share the same object set.
@@ -46,7 +43,6 @@ In particular, if $\mathscr{G}$ and $\mathscr{H}$ are Morita equivalent they hav
 Our goal is to give a concrete implementation of Morita equivalence, as has been done for compact quantum groups \cite{BDV1}. Note that we slightly changed their terminology of monoidal equivalence into Morita equivalence, as we feel the monoidality is intrinsic to the context. We introduce the following definition, in which indices are considered modulo 2. 
 
 \begin{Def} A \emph{linking partial compact quantum group} consists of a partial compact quantum group $\mathscr{G}$ defined by a partial Hopf $^*$-algebra $\mathscr{A}$ over a set $I$ with a distinguished partition $I = I_1\sqcup I_2$ such that the units $\UnitC{i}{j} = \sum_{k\in I_i,l\in I_j} \UnitC{k}{l} \in M(A)$ are central, and such that for each $r\in I_i$, there exists $s\in I_{i+1}$ such that $\UnitC{r}{s}\neq 0$.
-%moreover for each $a\in \Gr{A}{k}{l}{m}{n}$ with $k,l,m,n\in I_i$ we can find $r,s \in I_{i+1}$ such that $\Delta_{rs}(a) \neq0$. 
 \end{Def}
 
 If $\mathscr{A}$ defines a linking partial compact quantum group, we can split $A$ into four components $A^i_j = A\UnitC{i}{j}$. It is readily verified that the $A^i_i$ together with all $\Delta_{rs}$ with $r,s \in I_i$ define themselves partial compact quantum groups, which we call the \emph{corner} partial compact quantum groups of $\mathscr{A}$. 
@@ -54,7 +50,6 @@ If $\mathscr{A}$ defines a linking partial compact quantum group, we can split $
 \begin{Prop} Two partial compact quantum groups are Morita equivalent iff they arise as the corners of a linking partial compact quantum group.
 \end{Prop}
 
-% Some stylisation needed.
 \begin{proof} Suppose first that $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent partial compact quantum groups with associated partial Hopf $^*$-algebras $\mathscr{A}_1$ and $\mathscr{A}_2$ over respective sets $I_1$ and $I_2$. Then we may identify their corepresentation categories with the same abstract partial tensor C$^*$-category $\CatCC$ based over their common hyperobject set $\mathscr{I}$. Then $\CatCC$ comes endowed with two forgetful functors $F_i$ to $\{\Hilb_{\fin}\}_{I_i\times I_i}$ corresponding to the respective $\mathscr{A}_i$.
 
 With $I = I_1\sqcup I_2$, we may then as well combine the $F_i$ into a global unital morphism $F:\CatCC \rightarrow \{\Hilb_{\fin}\}_{I\times I}$, with $F_{kl}(X)=F_i(X)$ if $k,l\in I_i$ and $F_{kl}(X)=0$ otherwise. Let $\mathscr{A}$ be the associated partial Hopf $^*$-algebra constructed from the Tannaka-Krein-Woronowicz reconstruction procedure. 
@@ -88,14 +83,12 @@ Let us now take again an arbitrary unitary rcfd corepresentation $(W,\mathscr{Y}
 
 \subsection{Weak Morita equivalence}
 
-% Concrete implementation, helps to define the concept in more general analytic context.
-
 \begin{Def} A \emph{linking} partial fusion C$^*$-category consists of a partial fusion C$^*$-category with a distinguished partition $\mathscr{I} =\mathscr{I}_1 \cup \mathscr{I}_2$ such that for each $\alpha\in \mathscr{I}_1$, there exists $\beta \in \mathscr{I}_{2}$ with $\CatC_{\alpha\beta}\neq \{0\}$.
 
 The \emph{corners} of $\CatCC$ are the restrictions of $\CatCC$ to $\mathscr{I}_1$ and $\mathscr{I}_2$.
 \end{Def}
 
-The following notion is essentially the same as the one by M. M\"{u}ger \cite{Mug1}. % Sort out if definition is really the same + precise setting.
+The following notion is essentially the same as the one by M. M\"{u}ger \cite{Mug1}. 
 
 \begin{Def} Two partial semi-simple tensor C$^*$-categories $\CatCC_1$ and $\CatCC_2$ with duality over respective sets $\mathscr{I}_1$ and $\mathscr{I}_2$ are called \emph{Morita equivalent} if there exists a linking partial fusion C$^*$-category $\CatCC$ over the set $\mathscr{I}=\mathscr{I}_1\sqcup \mathscr{I}_2$ whose corners are isomorphic to $\CatCC_1$ and $\CatCC_2$.
 
@@ -114,7 +107,7 @@ It is again easy to see that if we restrict all indices of a co-linking partial 
 \begin{Def} We call two partial compact quantum groups \emph{co-Morita equivalent} if there exists a \emph{co-linking partial compact quantum group} having these partial compact quantum groups as its corners.
 \end{Def}
 
-\begin{Lem} Co-Morita equivalence is an equivalence relation. % To stylise
+\begin{Lem} Co-Morita equivalence is an equivalence relation. 
 \end{Lem} 
 
 \begin{proof} Symmetry is clear. Co-Morita equivalence of $\mathscr{A}$ with itself follows by considering as co-linking quantum groupoid the product of $\mathscr{A}$ with the partial compact quantum groupoid $M_2(\C)$, where $\Delta(e_{ij}) = e_{ij}\otimes e_{ij}$. 
@@ -128,18 +121,13 @@ Let now $\phi$ be the functional which is zero on the off-diagonal entries $A_{i
 We claim that the subspace $\mathscr{A}_{\{1,3\}}$ (in the obvious notation) defines a co-linking compact quantum group between $\mathscr{G}_1$ and $\mathscr{G}_2$. In fact, it is clear that the $\mathscr{A}_{11}$ and $\mathscr{A}_{33}$ are corners of $\mathscr{A}_{\{1,3\}}$, and that $\UnitC{k}{l}=0$ for $k,l$ not both in $I_1$ and $I_{3}$. To finish the proof, it is sufficient to show now that for each $k\in I_1$, there exists $l\in I_{3}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$, as the other case follows by symmetry using the antipode. But there exists $m\in I_2$ with $\Gr{A}{k}{m}{k}{m} \neq \{0\}$, and $l\in I_3$ with $\Gr{A}{m}{l}{m}{l}\neq\{0\}$. As in the discussion following Definition \ref{DefCoLink}, this implies that there exists $a\in \Gr{A}{k}{m}{k}{m}$ and $b\in \Gr{A}{m}{l}{m}{l}$ with $\epsilon(a)=\epsilon(b)=1$. Hence $\epsilon(ab)=1$, showing $\Gr{A}{k}{l}{k}{l}\neq \{0\}$.
 \end{proof} 
 
-%This is indeed generalisation of Morita equivalence. 
-
 \begin{Prop}\label{PropCoWeak} Assume that two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are co-Morita equivalent. Then they are weakly Morita equivalent.
 \end{Prop} 
-\begin{proof} % Stylise
+\begin{proof} 
 Consider the corepresentation category $\CatCC$ of a co-linking partial compact quantum group $\mathscr{A}$ over $I = I_1\cup I_2$. Let $\varphi:I\rightarrow \mathscr{I}$ define the corresponding partition along the hyperobject set. Then by the defining property of a co-linking partial compact quantum group, also $\mathscr{I} = \mathscr{I}_1\cup \mathscr{I}_2$ with $\mathscr{I}_i=\varphi(I_i)$ is a partition. Hence $\CatCC$ decomposes into parts $\CatCC_{ij}$ with $i,j\in \{1,2\}$ and $\CatC_{ii}\cong \Rep_u(\mathscr{G}_i)$. 
 
 To show that $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent, it thus suffices to show that $\{\CatCC_{ij}\}$ forms a linking partial fusion C$^*$-category. But fix $\alpha\in I_1$ and $k\in I_{\alpha}$. Then as $\mathscr{A}$ is co-linking, there exists $l \in I_2$ with $\Gr{A}{k}{l}{k}{l}\neq \{0\}$. Hence there exists a non-zero regular rcfd unitary corepresentation inside $\oplus_{m,n}\Gr{A}{k}{l}{m}{n}$. If then $l\in I_{\beta}$ with $\beta\in \mathscr{I}_2$, it follows that $\CatC_{\alpha\beta}\neq 0$. By symmetry, we also have that for each $\alpha \in \mathscr{I}_2$ there exists $\beta \in \mathscr{I}_1$ with $\CatC_{\alpha\beta}\neq \{0\}$. This proves that the $\{\CatCC_{ij}\}$ forms a linking partial fusion C$^*$-category.
 \end{proof}
-
-
-%Notion of co-Morita equivalence. Weak Morita equivalence = Morita equivalence + co-Morita equivalence. 
 
 \begin{Prop}\label{PropCoLink} Let $\CatCC$ be a linking $\mathscr{I}$-partial fusion C$^*$-category. Then the associated canonical partial compact quantum group is a co-linking partial compact quantum group. 
 \end{Prop} 
@@ -165,8 +153,6 @@ Conversely, assume $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equival
 \end{proof} 
 
 \begin{Rem} Note that it is essential that we allow the string of equivalences to pass through partial compact quantum groups, even if we start out with (genuine) compact quantum groups.\end{Rem}
-
-% Gives concrete implementation of weak Morita equivalence.
 
 
 

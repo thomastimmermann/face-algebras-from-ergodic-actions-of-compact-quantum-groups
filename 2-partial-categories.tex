@@ -1,9 +1,6 @@
 \section{Partial tensor categories}
 
-% Rough version. 
-
-The notion of partial algebra has a nice categorification. % Level of generality could possibly be avoided, but seems nice to incorporate a categorified version which neatly mimicks the local behaviour.  
-Recall first that the appropriate (vertical) categorification of a unital $\C$-algebra is a $\C$-linear additive tensor category. From now on, by `category' we will by default mean a $\C$-linear additive category. 
+The notion of partial algebra has a nice categorification. Recall first that the appropriate (vertical) categorification of a unital $\C$-algebra is a $\C$-linear additive tensor category. From now on, by `category' we will by default mean a $\C$-linear additive category. 
 
 \begin{Def} A \emph{partial tensor category} $\CatCC$ over a set $\mathscr{I}$ consists of 
 \begin{enumerate}[label=(\arabic*)]
@@ -15,7 +12,6 @@ Recall first that the appropriate (vertical) categorification of a unital $\C$-a
 \end{enumerate}
 satisfying the obvious associativity and unit constraints. 
 \end{Def}
-% This definition should be in a previous section.
 
 \begin{Rem} In true analogy with the partial algebra case, we could let the $\Unit_\alpha$ also be zero objects, but this generalisation will not be needed in the following. 
 \end{Rem}
@@ -33,9 +29,6 @@ The corresponding total notion is as follows.
 \item\label{UnCon} natural isomorphisms $\lambda_X:\oplus_\alpha (\Unit_\alpha\otimes X) \rightarrow X$ and $\rho_X:\oplus_\alpha(X\otimes \Unit_\alpha)\rightarrow X$ satisfying the obvious unit conditions. 
 \end{enumerate} 
 \end{Def}
-% Notion of local finiteness for abelian categories: finite-dim hom spaces and each object finite length
-
-% Distinction between monoidal category and tensor category sometimes: latter abelian with irreducible unit. 
 
 Note that the condition \ref{UnCon} makes sense because of the local support condition in \ref{FinSup}. 
 
@@ -47,8 +40,6 @@ Note that the condition \ref{UnCon} makes sense because of the local support con
 
 \begin{Not} If $(\CatC,\otimes,\{\Unit_\alpha\})$ is a tensor category with local units, and $X\in \CatC$, we define \[X_{\alpha\beta} = \Unit_\alpha\otimes X \otimes \Unit_\beta,\] and we denote by \[\eta_{\alpha\beta}:X_{\alpha\beta} \rightarrow \oplus_{\gamma,\delta} \left(\Unit_\gamma \otimes X \otimes \Unit_\delta\right) \cong X\] the natural inclusion maps. 
 \end{Not}
-
-%The following lemma is trivial. 
 
 \begin{Lem} Up to equivalence, there is a canonical one-to-one correspondence between partial tensor categories and tensor categories with local units. 
 \end{Lem}
@@ -64,7 +55,6 @@ Conversely, let $\CatCC$ be a partial tensor category. Then we let $\CatC$ be th
 \end{Rem} 
 
 Continuing the analogy with the algebra case, we define the enveloping \emph{multiplier tensor category} of a tensor category with local units. 
-%This notion is important for the formulation of the global notion of morphism between tensor categories with local units. 
 
 \begin{Def} Let $\CatCC$ be a partial tensor category over $\mathscr{I}$ with total tensor category $\CatC$. The \emph{multiplier tensor category} $M(\CatC)$ of $\CatC$ is defined to be the category consisting of formal sums $\oplus_{\alpha,\beta\in \mathscr{I}} X_{\alpha\beta}$ which are rcf, and with \[\Mor(\oplus X_{\alpha\beta},\oplus Y_{\alpha\beta}) = \left(\prod_\beta\oplus_\alpha  \Mor(X_{\alpha\beta},Y_{\alpha\beta}) \right) \cap \left(\prod_\alpha\oplus_\beta \Mor(X_{\alpha\beta},Y_{\alpha\beta})\right),\] the composition of morphisms being entry-wise (`Hadamard product'). 
 \end{Def}
@@ -76,7 +66,6 @@ The tensor product of $\CatC$ can be extended to $M(\CatC)$ by putting \[\left(\
 
 \begin{Rem} With some effort, a more intrinsic construction of the multiplier tensor category can be given in terms of couples of endofunctors, in the same vein as the construction of the multiplier algebra of a non-unital algebra.
 \end{Rem} 
-%Alternatively, one could define $M(\CatC)$ more intrinsically (as in the algebra case) as a collection of couples of functors $L_X,R_X:\CatC\rightarrow \CatC$ together with natural isomorphisms $L_X(Y\otimes Z)\rightarrow L_X(Y)\otimes Z$ and $R_X(Y\otimes Z)\rightarrow Y\otimes R_X(Z)$ satisfying appropriate coherence conditions. % Cf. Leinster, Sketch of proof 1.2.15 in higher operads book
 
 \begin{Exa}\label{ExaVectBiGr} Let $I$ be a set. We can consider the partial tensor category $\CatCC = \{\Vect_{\fin}\}_{i,j\in I}$ where each $\CatC_{ij}$ is a copy of the category of finite-dimensional vector spaces $\Vect_{\fin}$, and with each $\otimes$ the ordinary tensor product. The total category $\CatC$ can then be identified with the category $\Vectif$ of finite-dimensional bi-graded vector spaces with the `balanced' tensor product over $I$. More precisely, the tensor product of $V$ and $W$ is $V\itimes W$ with components \[\Gru{(}{k}{}V\itimes W\Gru{)}{}{m} = \oplus_l \;(\Gru{V}{k}{l}\otimes \Gru{W}{l}{m})\subseteq V\otimes W.\] The multiplier category $M(\Vect^{I^2}_{\fin})$ equals $\Vectrcf$, the category of bigraded vector spaces which are rcfd (i.e.~ finite-dimensional on each row and column).
 \end{Exa}
@@ -87,7 +76,6 @@ We now formulate the appropriate notion of functor between partial tensor catego
 \end{Def} 
 
 \begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $\mathscr{I}$ and $\mathscr{J}$, and let \[\phi:\mathscr{J}\rightarrow \mathscr{I},\quad k \mapsto k'\] determine a decomposition $\mathscr{J} = \{\mathscr{J}_\alpha\mid \alpha\in \mathscr{I}\}$ with $k\in \mathscr{J}_\alpha \iff \phi(k)=\alpha$. 
-% Write k' = \alpha_k?
 
 A \emph{unital morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\quad X\mapsto F_{kl}(X) = \Gru{F(X)}{k}{l}\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unit_k \cong \GrDA{F(\Unit_{k'})}{k}{k}\] with \begin{enumerate}[label=(\arabic*)]
 \item (Unitality)  $\GrDA{F(\Unit_{\alpha})}{k}{l}= 0$ if $k\neq l$ in $\mathscr{J}_\alpha$,
@@ -100,14 +88,12 @@ A \emph{morphism} from $\CatCC$ to $\CatDD$ is a unital morphism from $\CatCC$ t
 \end{Def}
 
 \begin{Rem} If $J_{\alpha}=\emptyset$, this means that $\Unit_{\alpha}$ is sent to the zero object.
-%In principle, we could relax the condition that $\{\mathscr{J}_\alpha\}$ is a partition by allowing certain $\mathscr{J}_\alpha$ to be empty, but it will be more convenient to disallow this possibility in the context of this paper.
 \end{Rem} 
 
 The corresponding global notion (of unital morphism) is as follows.
 
 \begin{Lem} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $\mathscr{I}$ and $\mathscr{J}$. Fix an application \[\phi: \mathscr{J}\rightarrow \mathscr{I}\] inducing a disjoint decomposition $\{\mathscr{J}_\alpha\mid \alpha\in \mathscr{I}\}$. Then there is a one-to-one correspondence between unital morphisms $\CatCC\rightarrow \CatDD$ based on $\phi$ and functors $F:\CatC \rightarrow M(\CatD)$ with isomorphisms \[\iota_{X,Y}:F(X)\otimes F(Y)\cong F(X\otimes Y),\qquad \mu_\alpha:\oplus_{k\in \mathscr{J}_\alpha} \Unit_k \cong F(\Unit_\alpha)\] satisfying the natural coherence conditions. 
 \end{Lem} 
-%a partition $J_0 = \sqcup_{i\in I_0} J_{0,i}$ and a strong monoidal functor $F: \CatCC\rightarrow M(\CatDD)$ with accompanying coherence isomorphisms $\alpha_{X,Y}: F(X)\otimes F(Y) \rightarrow F(X\otimes Y)$ and $\eta_i: F(\Unit_i) \rightarrow \oplus_{j\in J_{0,i}} \Unit_j$ satisfying the obvious compatibility conditions. % Don't overuse obvious.   
 
 The reader has already furnished for himself the notion of equivalence of partial tensor categories. There is a closely related but weaker notion of equivalence corresponding to chopping up a partial tensor category into smaller pieces (or, vice versa, gluing certain blocks of a partial tensor category together). Let us formalize this in the following definition.
 
@@ -116,17 +102,12 @@ The reader has already furnished for himself the notion of equivalence of partia
 
 The partial tensor categories that we will be interested in will be required to have some further structure. 
 
-%We will need partial tensor categories with more properties or structure, such as \emph{semi-simplicity}, \emph{duality} and \emph{C$^*$-structure}.
-
 \begin{Def} A partial tensor category $\CatCC$ is called \emph{semi-simple} if all $\CatC_{\alpha\beta}$ are semi-simple. 
 
 A partial tensor category is said to have \emph{indecomposable units} if all units $\Unit_\alpha$ are indecomposable. 
 \end{Def}
 
 It is easy to see that any semi-simple tensor category can be partitioned into a semi-simple tensor category with indecomposable units.  Hence we will from now on only consider semi-simple partial tensor categories with indecomposable units.
-
-
-%Let $\CatCC$ be an $I_0$ partial semi-simple tensor category over an index set $I_0$. Then we may decompose the units $\Unit_k$ as direct summands $\Unit_k = \oplus_{r\in J_k} \Unit_r$ for certain finite sets $J_k$, with $\Unit_r$ indecomposable. Since $\CatCC_{kk}$ is a tensor category with unit, we know that $\End(\Unit_k)$ is abelian, hence $\Unit_r\cong \Unit_{r'}$ if and only if $r=r'$ in $J_k$. It is then easy to see that the associated total tensor category $\CatC$ also has a system of local units over the index set $J_0=\sqcup\{J_k\mid k\in I_0\}$ with associated map $\phi_0:J_0 \twoheadrightarrow I_0$. The associated $J_0$-partial tensor category $\CatDD$ is then semi-simple with indecomposable units, and admits a morphism $\CatDD\rightarrow \CatCC$ based on $\phi_0$. It is easy to see from this that there is no loss in generalisation by
  
 
 The following definition introduces the notion of duality for partial tensor categories.
@@ -154,12 +135,10 @@ A final ingredient which will be needed is an analytic structure on our partial 
 
 \begin{Def} A \emph{partial fusion C$^*$-category} is a partial tensor category $(\CatC_{\alpha\beta},\otimes)$ with duality such that all $\CatC_{\alpha\beta}$ are semi-simple C$^*$-categories, such that all functors $\otimes$ are $^*$-functors (in the sense that $(f\otimes g)^* = f^*\otimes g^*$ for morphisms), and such that the associativity and unit constraints are unitary.
 \end{Def} 
-% Terminology not completely appropriate, i.e. we shouldn't assume semi-simplicity, but we just do this for convenience of language. 
 
 \begin{Rem}
 \begin{enumerate}
 \item If $\CatCC$ is a partial tensor C$^*$-category, the total category $\CatC$ only has pre-C$^*$-algebras as endomorphism spaces, as the morphisms spaces need not be closed in the C$^*$-norm. On the other hand, $M(\CatC)$ only has $^*$-algebras as endomorphism spaces, since we did not restrict our direct products. 
-%However, since we demand the constraints to be unitary, there is no problem to restrict to morphisms in $M(\CatC)$ which have bounded norm in the multiplier tensor category. We will denote the resulting category by $M_b(\CatC)$. % To expand? Necessary to include?
 \item The notion of duality for a partial tensor C$^*$-category is the same as in the absence of a C$^*$-structure. However, because of the presence of the $^*$-structure, any left dual is automatically a two-sided dual, and the dual object of $X$ is then simply denoted $\overline{X}$.  
 \item We slightly abuse the terminology `fusion', as strictly speaking this would require there to be only a finite set of mutually non-equivalent irreducible objects in each $\CatC_{\alpha\beta}$.
 \item In the same vein, the total C$^*$-category with local units associated to a partial fusion C$^*$-category could be called a \emph{multiplier fusion C$^*$-category}.

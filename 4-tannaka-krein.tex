@@ -1,15 +1,10 @@
-% Corep should read Corep_u$ further on
 % Correct writing Krein
 
 \section{Tannaka-Krein-Woronowicz duality for partial compact quantum groups}
 
-% Assume categories small?
 % See `Galois reconstruction of finite quantum groups' of Bichon for additional refs
-% Any faithfulness conditions necessary on forgetful functor? 
 
 In the previous section, we showed how any partial compact quantum group gave rise to a partial fusion C$^*$-category with a unital morphism into a partial tensor C$^*$-category of finite dimensional Hilbert spaces. In this section we reverse this construction, and show that the two structures are in duality with each other. The proof does not differ much from the usual Tannaka-Krein reconstruction process, but one has to pay some extra care to the well-definedness of certain constructions. Implicitly, we build our reconstruction process by passing first through the construction of the discrete dual of a partial compact quantum group, which we however refrain from formally introducing.
-
-%Mwe do not spell out all details, emphasizing only the novel points having to do with   % Say that implicitly, we do two steps at once:
 
 Let us at first fix an indecomposable semi-simple partial tensor category $\CatCC$ over a base set $\mathscr{I}$. We will again view the tensor product of $\CatC$ as being strict, for notational convenience. 
 
@@ -18,10 +13,7 @@ Assume that we also have another set $I$ and a partition $I = \{I_\alpha\mid \al
 We choose a maximal family of mutually inequivalent irreducible objects $\{u_a\}_{a\in \mathcal{I}}$ in $\CatC$. We assume that the $u_a$ include the unit objects $\Unit_{\alpha}$ for $\alpha\in \mathscr{I}$, and we may hence identify $\mathscr{I}\subseteq \mathcal{I}$. For $a\in \mathcal{I}$, we will write $u_a \in \CatC_{\lambda_a,\rho_a}$ with $\lambda_a,\rho_a\in \mathscr{I}$. For $\alpha,\beta\in \mathscr{I}$ fixed, we write $\mathcal{I}_{\alpha\beta}$ for the set of all $a\in \mathcal{I}$ with $\lambda_a=\alpha$ and $\rho_a=\beta$. When $a,b,c\in \mathcal{I}$ with $a\in \mathcal{I}_{\alpha\beta},b\in \mathcal{I}_{\beta\gamma}$ and $c\in \mathcal{I}_{\gamma\delta}$, we write $c\leq a\cdot b$ if $\Mor(u_c,u_a\otimes u_b)\neq \{0\}$. Note that with $a,b$ fixed, there is only a finite set of $c$ with $c\leq a\cdot b$. We also use this notation for multiple products.
 
 \begin{Def} For $a\in \mathcal{I}$ and $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) =  \delta_{k,m,\lambda_a}\delta_{l,n,\rho_a} \Hom_{\C}(F(u_a)_{mn},F(u_a)_{kl})^*.\] Write \[\Gr{A}{k}{l}{m}{n} =\underset{a\in \mathcal{I}}{\oplus}\, \Gr{A}{k}{l}{m}{n}(a),\quad A(a) = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\quad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] 
-%For any element $x\in A$, its component in the $a$-spectral subspace is written $x_a$.
 \end{Def} 
-
-%Note that by construction, $\Gr{A}{k}{l}{m}{n}=0$ if $k'\neq m'$ or $l'\neq n'$. 
 
 We first turn the $\Gr{A}{k}{l}{m}{n}$ into a partial coalgebra $\mathscr{A}$ over $I^2$.
 
@@ -34,8 +26,6 @@ We first turn the $\Gr{A}{k}{l}{m}{n}$ into a partial coalgebra $\mathscr{A}$ ov
 \end{proof}
 
 In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{A}{k}{l}{m}{n}\mid k,l,m,n\}$. First note that we can identify \[\Nat(F_{mn},F_{kl}) \cong \underset{\rho_a=l'=n'}{\underset{\lambda_a=k'=m'}{\prod_a}} \Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a)),\] where $\Nat(F_{mn},F_{kl})$ denotes the space of natural transformations from $F_{mn}$ to $F_{kl}$ when $k'=m'$ and $l'=n'$. Similarly, we can identify \[\Nat(F_{mn}\otimes F_{pq},F_{kl}\otimes F_{rs}) \cong  \prod_{b,c} \Hom_{\C}(F_{mn}(u_b)\otimes F_{pq}(u_c) ,F_{kl}(u_b)\otimes F_{rs}(u_c)),\] with the product over the appropriate index set and where \[F_{kl}\otimes F_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fin},\quad (X,Y) \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural pairing of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
-
-% To expand. 
 
 \begin{Def} For $k'=r', l'=s'$ and $m'=t'$, we define a product map \[M:\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow  \Gr{A}{k}{m}{r}{t},\quad f\otimes g \mapsto f\cdot g\] by the formula \[(f\cdot g)(x) = (f\otimes g)( \hat{\Delta}^{l}_{s}(x)), \qquad  x \in \Nat(F_{rt},F_{km}),\] where $\hat{\Delta}^l_s(n)$ is the natural transformation\[\hat{\Delta}^l_s(x):  F_{rs}\otimes F_{st}\rightarrow F_{kl}\otimes F_{lm},\quad \hat{\Delta}^l_s(x)_{X,Y} = \pi^{(klm)}_{X,Y}x_{X\otimes Y} \iota^{(rst)}_{X,Y},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
 \end{Def}
@@ -67,7 +57,7 @@ Let us show now that the resulting partial bialgebra $\mathscr{A}$ has an invari
 
 \begin{proof} The normalisation condition $\phi(\UnitC{k}{k})=1$ is immediate by construction. Let us check left invariance, as right invariance will follow similarly.
 
-Let $\hat{\phi}^k_l$ be the natural transformation from $F_{ll}$ to $F_{kk}$ which has support on multiples of $\Unit_{k'}$, and with $(\hat{\phi}^k_l)_{\Unit_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $x\in \Nat(F_{ll},F_{kn})$, \[x\circ \hat{\phi}^l_m =\delta_{k,n} \UnitC{k}{l}(x)\hat{\phi}^k_m.\] % To complete? 
+Let $\hat{\phi}^k_l$ be the natural transformation from $F_{ll}$ to $F_{kk}$ which has support on multiples of $\Unit_{k'}$, and with $(\hat{\phi}^k_l)_{\Unit_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $x\in \Nat(F_{ll},F_{kn})$, \[x\circ \hat{\phi}^l_m =\delta_{k,n} \UnitC{k}{l}(x)\hat{\phi}^k_m.\] 
 \end{proof}
 
 So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits duality.
@@ -77,7 +67,7 @@ So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{
 
 \begin{proof} By Lemma \ref{LemMorDua}, we have for each $X\in \CatC_{rs}$ a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}(\hat{X})^*.\] 
 
-For a linear map $x$ between vector spaces, let us again denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{mn},F_{kl})$, let us define $\hat{S}(x) \in \Nat(F_{lk},F_{nm})$ by \[\hat{S}(x)_X = \left(d^{(nm)}_X\right)^{-1} x_{\hat{X}}^{\tr} d_X^{(lk)}.\] % Ugly formatting
+For a linear map $x$ between vector spaces, let us again denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{mn},F_{kl})$, let us define $\hat{S}(x) \in \Nat(F_{lk},F_{nm})$ by \[\hat{S}(x)_X = \left(d^{(nm)}_X\right)^{-1} x_{\hat{X}}^{\tr} d_X^{(lk)}.\] 
 
 Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
 
@@ -102,7 +92,6 @@ Similarly, one shows that $\mathscr{A}$ with the opposite multiplication has an 
 Now let us upgrade $\CatCC$ to a partial fusion C$^*$-category, and $F$ to a morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{I\times I}$. Then we can of course still form the partial Hopf algebra $\mathscr{A}$ as above. Let us show that it becomes a partial Hopf $^*$-algebra with positive invariant integral.
 
 We first introduce a $^*$-structure on $\mathscr{A}$. 
-%To distinguish it from the $^*$-operations present on the C$^*$-category, we will denote it by $\dagger$.
 
 \begin{Def} We define $^*: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{l}{k}{n}{m}$ by the formula \[f^*(x) = \overline{f(\hat{S}(x)^*)},\qquad x\in \Nat(F_{nm},F_{lk}).\]
 \end{Def}
@@ -110,7 +99,7 @@ We first introduce a $^*$-structure on $\mathscr{A}$.
 \begin{Lem} The operation $^*$ is an anti-linear, anti-multiplicative, comultiplicative involution.
 \end{Lem}
 
-\begin{proof} Anti-linearity is clear. Comultiplicativity follows from the fact that $(xy)^* = y^*x^*$ and $\hat{S}(xy) = \hat{S}(y)\hat{S}(x)$ for natural transformations. To see anti-multiplicativity of $^*$, note first that, since $S$ is anti-multiplicative for $\mathscr{A}$, $\hat{S}$ is anti-comultiplicative on natural transformations. Now as $(\iota_{X,Y}^{(klm)})^* = \pi_{X,Y}^{(klm)}$ by assumption, we also have $\hat{\Delta}^l_s(x)^* = \hat{\Delta}^s_l(x^*)$, which proves anti-multiplicativity of $^*$ on $\mathscr{A}$.  Finally, involutivity follows from the involutivity of $x\mapsto \hat{S}(x)^*$, which is a consequence of the identity $d_{\hat{X}} = d_X^{\tr}$. %More info.
+\begin{proof} Anti-linearity is clear. Comultiplicativity follows from the fact that $(xy)^* = y^*x^*$ and $\hat{S}(xy) = \hat{S}(y)\hat{S}(x)$ for natural transformations. To see anti-multiplicativity of $^*$, note first that, since $S$ is anti-multiplicative for $\mathscr{A}$, $\hat{S}$ is anti-comultiplicative on natural transformations. Now as $(\iota_{X,Y}^{(klm)})^* = \pi_{X,Y}^{(klm)}$ by assumption, we also have $\hat{\Delta}^l_s(x)^* = \hat{\Delta}^s_l(x^*)$, which proves anti-multiplicativity of $^*$ on $\mathscr{A}$.  Finally, involutivity follows from the involutivity of $x\mapsto \hat{S}(x)^*$, which is a consequence of the identity $d_{\hat{X}} = d_X^{\tr}$. 
 \end{proof}
 
 \begin{Prop} The couple $(\mathscr{A},\Delta)$ with the above $^*$-structure defines a partial compact quantum group.

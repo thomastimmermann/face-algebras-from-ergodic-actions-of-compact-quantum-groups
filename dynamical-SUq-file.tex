@@ -71,6 +71,7 @@
 \DeclareMathOperator{\dyn}{\mathrm{dyn}}
 \DeclareMathOperator{\Spec}{\mathrm{Spec}}
 \DeclareMathOperator{\adj}{\mathrm{adj}}
+\DeclareMathOperator{\rcfd}{\mathrm{rcfd}}
 
 
 \newcommand{\Circt}{{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
@@ -190,7 +191,7 @@
 \newcommand{\UT}[2]{#1{\tiny #2 }}
 \newcommand{\Gr}[5]{\fourIdx{#2}{#4}{#3}{#5}{#1}}%TODO: better typesetting
 \newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
-\newcommand{\Gru}[3]{\Gr{#1}{#2}{#3}{}{}}
+\newcommand{\Gru}[3]{\Gr{#1}{}{}{#2}{#3}}
 \newcommand{\Grd}[3]{\Gr{#1}{}{}{#2}{#3}}
 % \newcommand{\Gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
 % %\newcommand{\Gr}[5]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\end{pmatrix}}}
@@ -264,9 +265,8 @@
 
 \maketitle
 
-% Terminology `compact' might have to be adapted if we work with infinitely many objects.
 \begin{abstract}
-\noindent Compact quantum groups of face type, as introduced by T. Hayashi, form a class of quantum groupoids with a classical, finite set of objects. In a previous paper, we generalized Hayashi's definition to allow for an infinite set of objects. The resulting objects were called partial compact quantum groups, and a Tannaka-Krein result for them was proven. In this paper, we apply this Tannaka-Krein result to study the dynamical quantum $SU(2)$-group (as studied by Etingof-Varchenko and Koelink-Rosengren) on the operator algebraic level. 
+\noindent In a previous paper, we introduced the notion of partial compact quantum group, based on Hayashi's notion of compact face algebra. In this paper, we classify all partial compact quantum groups which the fusion rules of $SU(2)$. In particular, we obtain operator algebraic versions of the dynamical quantum $SU(2)$-group (as studied by Etingof-Varchenko and Koelink-Rosengren), and we make a detailed study of the resulting C$^*$-algebras. 
 %We then show how any quantum homogeneous space of an ordinary compact quantum group leads to a partial compact quantum group. In particular, when this construction is applied to the non-standard Podle\'{s} spheres, we obtain partial compact quantum groups which are operator algebraic versions of % References ok?
 \end{abstract}
 
@@ -296,7 +296,7 @@
 \input{8-dyn-suq.tex}
 
 \bibliographystyle{abbrv}
-\bibliography{references}
+\bibliography{referencesSUq}
 % \begin{thebibliography}{99}
 % \bibitem{AN1} N. Andruskiewitsch and S. Natale, Double categories and quantum groupoids, \emph{Publ. Mat. Urug.} \textbf{10}, 11--51 (2005).
 % \bibitem{BDV1} J. Bichon, A. De Rijdt and S. Vaes, Ergodic coactions with large multiplicity and monoidal equivalence of quantum groups, \emph{Comm. Math. Phys.} \textbf{262} (2006), 703--728.

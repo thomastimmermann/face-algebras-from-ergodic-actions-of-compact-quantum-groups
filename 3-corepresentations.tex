@@ -1,12 +1,8 @@
-% Formulate this already as one arrow in the TK-reconstruction process.
-% Ref to Gaby
+% Ref to Gaby's comodule paper
 
 \section{Representation theory of partial compact quantum groups}
 
 In this section, the representation theory of partial compact quantum groups is investigated. In what follows, the homogeneous component $A(K) = \eGr{A}{k}{l}{m}{n}$ of a partial bialgebra will now be mainly written as $A(K) = \Gr{A}{k}{l}{m}{n}$. 
-
-%As the situation is quite similar to the case already studied by Hayashi \cite{Hay1}, we do not always provide fully written out proofs, but only draw attention to those parts of the theory which need modification.
-
 
 \subsection{Corepresentations of partial Hopf algebras}
 
@@ -15,21 +11,16 @@ Let $\mathscr{A}$ be an $I$-partial bialgebra. We write
 $\Hom_\C(V,W)$ for the vector space of linear maps between two vector
 spaces $V$ and $W$.
 
-Recall that $\Vectrcf$ denotes the category whose objects are $I^{2}$-graded
-vector spaces $V=\bigoplus_{k,l\in I} \Gru{V}{k}{l}$  which are row-and column-finite dimensional. Morphisms are linear maps $T$ that preserve the grading and therefore
+Let us first formally introduce a notion which already appeared in the previous section.
+
+\begin{Def} Let $I$ be a set. An $I^{2}$-graded vector space $V=\bigoplus_{k,l\in I} \Gru{V}{k}{l}$ will be called \emph{row-and column finite dimensional} (rcfd) if the $\oplus_l V_{kl}$ (resp.~ $\oplus_k V_{kl}$) are finite dimensional for each $k$ (resp.~ $l$) fixed. 
+
+We denote by  $\Vectrcf$ the category whose objects are rcfd $I^{2}$-graded vector spaces. Morphisms are linear maps $T$ that preserve the grading and therefore
 can be written $T=\prod_{k,l\in I} \Gru{T}{k}{l}$. 
-%The subcategory ofis written $\Vectrcf$ (this is a slight redefinition of the term rcf!). %Parenthetical remark formulated differently? 
-
-
-%Clearly, this
-%category is abelian and $\C$-linear.  We call an $I^{2}$-graded vector
-%space $V=\bigoplus_{k,l\in I} \Gru{V}{k}{l}$ \emph{row- and
-  %column-finite} if $\oplus_l \Gru{V}{k}{l}$ (resp. $\oplus_l
-%\Gru{V}{k}{l}$) is finite-dimensional for $k$ (resp. $l$) fixed.
-%We henceforth abbreviate ``row- and column-finite'' by rcf.
+\end{Def} 
 
 \begin{Def} \label{definition:corep} Let $\mathscr{A}$ be an
-  $I$-partial bialgebra and let $V=\bigoplus_{k,l} \Gru{V}{k}{l}$ % lower the indices?
+  $I$-partial bialgebra and let $V=\bigoplus_{k,l} \Gru{V}{k}{l}$
    be
 an rcfd $I^{2}$-graded vector space.  A \emph{corepresentation}
   $\mathscr{X}=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ of $\mathscr{A}$ on $V$
@@ -118,12 +109,12 @@ similarly as we defined $ \Delta \colon A \to M(A\otimes A)$.
   \otimes \Hom_{\C}^{0}(V))
   \end{align}
  converges strictly and satisfies the following conditions:
-  \begin{enumerate}[label=(\arabic*)] %\setcounter{enumi}{-1}
+  \begin{enumerate}[label=(\arabic*)] 
   \item\label{repma} $(\lambda_{k}\rho_{m} \otimes \id){X}(\lambda_{l}\rho_{n}
     \otimes \id) = (1 \otimes \lambda^{V}_{k}\rho^{V}_{l}){X}(1 \otimes
     \lambda^{V}_{m}\rho^{V}_{n}) = \Gr{X}{k}{l}{m}{n}$,
   \item\label{repmb} $(A \otimes 1){X}$, $ {X}(A \otimes 1)$ and $(1 \otimes
-    \Hom^{0}_{\C}(V))X(1 \otimes \Hom^{0}_{\C}(V))$ lie in $A \otimes \Hom_{\C}^{0}(V)$,%Last inlcusion superfluous, necessary to include?
+    \Hom^{0}_{\C}(V))X(1 \otimes \Hom^{0}_{\C}(V))$ lie in $A \otimes \Hom_{\C}^{0}(V)$,
   \item\label{repmc} $(\Delta\otimes \id)(X)=X_{13}X_{23}$, 
   \item\label{repmd} the sum $(\epsilon \otimes \id)({X}) :=\sum (\epsilon \otimes
     \id)(\Gr{X}{k}{l}{m}{n})$ converges in $M(\Hom^{0}_{\C}(V))$ strictly
@@ -189,7 +180,7 @@ direct consequences.
   \begin{align*}
    \Gr{(X^{-1})}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{l}{k}{n}{m}) \in
    \Gr{A}{k}{l}{m}{n} \otimes \Hom_{\C}(\Gru{V}{l}{k},\Gru{V}{n}{m})
-  \end{align*}% Prefer to have grading in this way...
+  \end{align*}
 \end{Def}
 For completeness, we mention the following following converse to Lemma \ref{lemma:rep-invertible}
 \begin{Lem}
@@ -265,8 +256,7 @@ We call $(V,\mathscr{X})$
 \end{Def}
 
 The next lemmas deal with restriction, factorisation and Schur's lemma. We skip their proofs which are straightforward.
-
-%In the next lemma, we show that if a corepresentation has an invariant subspace, it restricts to it and factorizes to the quotient.
+-
 \begin{Lem}
   Let $(V,\mathscr{X})$ be an rcfd corepresentation
   of a partial bialgebra and let $\Gru{W}{k}{l}
@@ -275,10 +265,7 @@ The next lemmas deal with restriction, factorisation and Schur's lemma. We skip 
   $(W,\iota_{W}^{*}\mathscr{X})$ and $(V/W,(\pi_{W})_{*}\mathscr{X})$ 
   such that $\iota_{W}$  and  $\pi_{W}$  are  morphisms  $(W,\iota_{W}^{*}\mathscr{X}) \to (V,\mathscr{X}) \to (V/W,(\pi_{W})_{*}\mathscr{X})$.
 \end{Lem}
-%\begin{proof}
- % Straightforward.
-%\end{proof}
-%The following analogue of Schur's Lemma holds.
+
 \begin{Lem} Let $T$ be a morphism of rcfd
   corepresentations $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of a
   partial bialgebra. Then the families of subspaces $\ker
@@ -288,9 +275,6 @@ The next lemmas deal with restriction, factorisation and Schur's lemma. We skip 
   all $\Gru{T}{k}{l}$ are zero or all $\Gru{T}{k}{l}$ are
   isomorphisms.
 \end{Lem} 
-%\begin{proof}
-  %Straightforward again.
-%\end{proof}
 
 
 Given corepresentations $\mathscr{X}$ and $\mathscr{Y}$ of
@@ -331,11 +315,6 @@ which is a corepresentation on $\bigoplus_{\alpha} V_{\alpha}$.
 Recall from Example \ref{ExaVectBiGr} that the category $\Vectrcf$ is a tensor category. The tensor product of morphisms is the
 restriction of the ordinary tensor product.  We will interpret this product as being strictly associative.  The unit for this product is the vector
 space $\C^{(I)}=\bigoplus_{k\in I} \C$. 
-%Indeed, for every
-%$I^{2}$-graded vector space $V$, there exist obvious natural
-%isomorphisms $\C^{(I)} \itimes V \cong V \cong V \itimes \C^{(I)}$.
-
-%Note that $V\itimes W$ is  rcf if $V$ and $W$ are.
 
 Given $V$ and $W$ in $\Vectrcf$, we identify $\Hom_\C(\Gru{V}{m}{n},\Gru{V}{k}{l})\otimes
    \Hom_\C(\Gru{W}{n}{q},\Gru{W}{l}{p})$ with a subspace of
@@ -391,8 +370,6 @@ $\mathscr{A}$ on $V\itimes W$.
 This is clear.
 \end{proof}
 
-
-% Change notation from right duals to left duals !
 Given an rcfd corepresentation of a partial Hopf algebra, one can use the
 antipode to define a contragredient corepresentation on a dual space.
 Denote the dual of vector spaces $V$ and  linear maps $T$ by
@@ -403,22 +380,6 @@ the space
   \dual{V}=\bigoplus_{k,l} \Gru{(\dual{V})}{k}{l}, \quad \text{where }
 \Gru{(\dual{V})}{k}{l} = \dual{(\Gru{V}{l}{k})}.
 \end{align*}
-
-
-%Recall that an object $X$ in a strict tensor category is called a
-%\emph{right dual} of an object $Y$ and $Y$ is called a \emph{left
- % dual} of $X$, if there are morphisms $X \otimes Y \to 1$ and $1 \to
-%Y \otimes X$, where $1$ denotes the tensor unit, such
-%that the obvious compositions
- % \begin{gather*}
- %X \otimes 1 \to X\otimes Y\otimes X
- % \to 1 \otimes X  \quad\text{and} \quad
-  %   1 \otimes Y \to Y \otimes X \otimes Y \to Y
-   % \otimes 1 
-  %\end{gather*}
- % are the identity of $X$ and $Y$,
- % respectively.  
-
 
 \begin{Prop}
   Let $\mathscr{A}$ be an $I$-partial Hopf algebra with antipode $S$
@@ -496,16 +457,6 @@ Lemma \ref{lemma:rep-invertible} imply
     &= \Gr{U}{k}{k}{m}{q}(1 \otimes \Gru{\ev}{m}{m}).
   \end{align*}
 A similar  calculation shows that also $\coev$ is a morphism, whence the claim follows.
-
-%\begin{align*}
- %\sum_{l,n}  \big(
-%\Gr{X}{k}{l}{m}{n}\big)_{12}
-%\big(\Gr{(\dual{X})}{l}{p}{n}{m}\big)_{13} 
- %   (1\otimes \Gru{\coev}{m}{m})
-%&= \delta_{k,p} \UnitC{k}{m} \otimes \Gru{\coev}{k}{k} = (1 \otimes
-%\Gru{\coev}{k}{k}) \Gr{U}{k}{p}{m}{m},
-%\end{align*}
-%whence the claim follows.
 \end{proof}
 \begin{Cor} \label{cor:rep-tensor-duality}
   Let $\mathscr{A}$ be a partial Hopf algebra. Then
@@ -539,10 +490,6 @@ Immediate from the fact that $\Gr{U}{k}{k}{m}{m} =
 
 It is easily seen that $\Corep(\mathscr{A})$ is then a tensor category with local units indexed by $\mathscr{I}$. We will use the same notation for the associated partial tensor category. 
 
-%The decomposition of the tensor unit leads to a decomposition of the
-%whole tensor category into full subcategories, where the tensor
-%product acts like the multiplication in a partial algebra.
-
 
 \subsection{Decomposition into irreducible corepresentations}
 
@@ -560,9 +507,9 @@ When there is an invariant integral around, one can average morphisms of vector 
     \Gr{\hat T}{m}{n}{k}{l} &:=(\phi \otimes
     \id)(\Gr{Y}{k}{l}{m}{n}(1\otimes
     \Gru{T}{m}{n})\Gr{(X^{-1})}{l}{k}{n}{m})
-  \end{align*}
-  % think it's ok to keep this notation as we did not apply the previous hat and check to operators...
-form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\mathscr{X})$ to $(W,\mathscr{Y})$. % Slightly changed the averaging so that I do not need a restriction of finite support on $T$.
+  \end{align*} % think it's ok to keep this notation as we did not apply the previous hat and check to operators...
+form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\mathscr{X})$ to $(W,\mathscr{Y})$. 
+% Slightly changed the averaging so that I do not need a restriction of finite support on $T$.
 \end{Lem} 
 \begin{proof} Clearly, we may suppose that $T$ is supported only on the component at index $(m,n)$, and we may then drop the upper indices and simply write $\Gru{\check{T}}{k}{l}$ and $\Gru{\hat{T}}{k}{l}$. Then 
  in total form, $\check{T}=(\phi \otimes \id)(Y^{-1}(1 \otimes T)X)$
@@ -583,15 +530,6 @@ form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\math
   T$ follows similarly.
 \end{proof}
 
-% Choose a representative family of unitary irreducible locally finite
-% corepresentations
-% $(\Grd{\mathcal{H}}{(\alpha)}{},{_{(\alpha)}X})_{\alpha}$ and a basis
-% $(\Gr{\zeta}{k}{l}{(\alpha)}{i})_{i}$ for each
-% $\Gr{\mathcal{H}}{k}{l}{(\alpha)}{}$, and let
-% \begin{align*}
-%   (\Gr{(u_{\alpha})}{k}{l}{m}{n}){i,j} &:= (\id \otimes
-%   \Gr{\omega}{k}{l}{(\alpha)}{i,j})( )
-% \end{align*}
 
 \begin{Lem}
   Let $\mathscr{A}$ be an $I$-partial Hopf algebra with an invariant integral $\phi$.
@@ -605,7 +543,7 @@ form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\math
 By a direct sum decomposition, we may assume that $V$ is in a fixed component $\Corep(\mathscr{A})_{\alpha\beta}$. For all $k\in I_{\alpha},l\in I_{\beta}$, choose idempotent endomorphisms $\Gru{T}{k}{l}$ of $\Gru{V}{k}{l}$
   with image $\Gru{W}{k}{l}$. By Lemma \ref{lem:rep-average}, we obtain
   endomorphisms $\Grd{\check{T}}{m}{n}$ of $(V,\mathscr{X})$. We want to show
-  that linear combinations of these provide the sought-after morphism. %$\img \Gru{\check{T}}{k}{l}= \Gru{W}{k}{l}$. 
+  that linear combinations of these provide the sought-after morphism.
   
     In
   total form, invariance of $W$ implies  \[(1 \otimes T)X(1
@@ -626,11 +564,8 @@ Now choose $n\in I_{\beta}$ and write $\Grd{\check{T}}{}{n} = \sum_m \Grd{\check
  since we only have to sum over $l\in I_{\beta}$ and $n\in \mathscr{I}_{\beta}$ by assumption. 
  
  Now as $W$ is invariant and $T$ sends $V$ into $W$, we have that $\Gr{\check{T}}{}{n}{k}{l}$ sends $\Gru{V}{k}{l}$ into $\Gru{W}{k}{l}$. Hence it follows that $\img{\check{T}^{n}}=\img T$, and $\check{T}^{n}$ is the sought-after intertwiner.
-
-  %  Similarly, $T\check{T}_{n} =T$. Therefore,
-  
 \end{proof}
-% Make the notion of cosemisimplicity formal, show equivalence existence invariant functionals and cosemisimplicity.
+
 \begin{Cor}  \label{cor:rep-cosemisimple}% Changed! See if later refs are still ok.
   Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral.  Then
   every rcfd corepresentation of $\mathscr{A}$ decomposes into a (possibly infinite) direct
@@ -641,10 +576,7 @@ The preceding lemma shows that  every non-zero corepresentation is either
 irreducible or the direct sum of two non-zero corepresentations, and we can apply Zorn's lemma.
 \end{proof}
 
-% Trivial rep should maybe be introduced in a more conspicuous place
-
 % Semi-simplicity requires that each element is a finite direct sum! But possibly this is convention
-
 We can now prove that the category $\Corep(\mathscr{A})$ of a partial Hopf algebra with invariant integral is semisimple, that is, any object is a finite direct sum of irreducible objects. If one allows a more relaxed definition of semisimplicity allowing infinite direct sums, this will be true also for the a potentially bigger category $\Corep_{\rcf}(\mathscr{A})$.
 
 We will first state a lemma which will also be convenient at other occasions.
@@ -659,30 +591,8 @@ We will first state a lemma which will also be convenient at other occasions.
 \end{Prop}
 \begin{proof} 
 
-%\texttt{Put that into the first or second subsection}
-%Let us now first show that the trivial representation decomposes into irreducibles. Let $I$ be the object set of $\mathscr{A}$, and say $k\sim l$ if $\UnitC{k}{l}\neq 0$. Then $\sim$ is an equivalence relation: as \[\Delta_{ll}(\UnitC{k}{m}) = \UnitC{k}{l}\otimes \UnitC{l}{m},\] the relation $\sim$ is transitive. As $S(\UnitC{k}{l}) = \UnitC{l}{k}$, we have that $\sim$ is symmetric. And as $\varepsilon(\UnitC{k}{k})=1$, we also have that $\sim$ is reflexive. 
-
-%Let then $I = \sqcup_{\alpha\in \mathscr{I}} I_{\alpha}$ be a labeled partition associated to $\sim$. Define $\C_{I_{\alpha}}\subseteq \C_I$ as the linear span of the homogeneous components with index in $\alpha$. It is clear then that the $\C_{I_{\alpha}}$ are invariant and irreducible.
-
-%Consider now a general corepresentation $(X,\Hsp)$. Let $\Grd{\Hsp}{\alpha}{\beta}$ be the closed linear span of the homogeneous components with index in $\alpha\times \beta$. As we can identify \[\Grd{\Hsp}{\alpha}{\beta} \cong \C_{I_{\alpha}}\,\Circt\, \Hsp\,\Circt\, \C_{I_{\beta}},\] we see that $\Grd{\Hsp}{\alpha}{\beta}$ is an invariant subspace of $\Hsp$. Hence we may as well suppose that $\Hsp = \Grd{\Hsp}{\alpha}{\beta}$. 
-
 Let $V$ be in any object of $\Corep(\mathscr{A})_{\alpha\beta}$ for $\alpha,\beta\in \mathscr{I}$.  From the previous lemma, we see that for $T$ a morphism in $\Corep(\mathscr{A})_{\alpha\beta}$, the map $T\mapsto \sum_{k\in I_\alpha} \Gru{T}{k}{l}$ is injective for any choice of $l\in I_\beta$. It follows by column-finiteness of $V$ that the algebra of self-intertwiners of $V$ is finite-dimensional. We then immediately conclude from the previous corollary that $V$ is a finite direct sum of irreducible invariant subspaces.
-%But let then $T$ be a bounded self-intertwiner of $\Hsp$.
 \end{proof} 
-
-
-%Another corollary is the following. % Needed? Or can this better be proven directly in our case later on?
-
-% Reference to be added!
-%\begin{Cor} \label{cor:rep-irreducible-bidual}
- % Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral. Then
- % every irreducible rcf corepresentation $(V,\mathscr{X})$ of
- % $\mathscr{A}$ is equivalent to its right bidual
- % $(V,\dual{\dual{\mathscr{X}}{}\!})$.
-%\end{Cor}
-%\begin{proof} In any tensor category, a right dual of an object $X$ has $X$ as its left dual. The corollary then follows as in every semi-simple tensor
-%  category, left and right duals are isomorphic \cite{}. 
-%\end{proof}
 
 \subsection{Matrix coefficients of irreducible corepresentations}
 
@@ -818,13 +728,13 @@ where $f\in \dual{(\Gru{V}{k}{l})}, v \in \Gru{V}{m}{n}$ and $g \in
     \omega_{f,v})(\Gr{X}{k}{l}{m}{n})\big) \\ &= (\phi \otimes \omega_{g,v})\left(\Gr{(Y^{-1})}{l}{k}{n}{m}(1 \otimes
       \Gru{T}{k}{l} )     \Gr{X}{k}{l}{m}{n}\right) 
     = \omega_{g,v}( \Gr{\check{T}}{k}{l}{m}{n}) = 0.
-  \end{align*}% Resort notation on using leg notation, physics bra-ket, etc.
+  \end{align*}
   
   A similar calculation involving $\hat{T}$ shows that
   $\phi(bS(a))=0$.  
 \end{proof}
 
-From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has bijective antipode). %Remark that this is in fact automatic in presence of invariant functional.
+From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has bijective antipode).
 
 \begin{Theorem} \label{thm:rep-orthogonality} Let $\mathcal{A}$ be a
   regular partial Hopf algebra with an invariant integral $\phi$. Let $\alpha,\beta\in \mathscr{I}$, and let $(V,\mathscr{X})$
@@ -862,9 +772,6 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
   We prove the assertions and equations involving $d_G$ in (1), (2)
   and (3)  simultaneously; the assertions involving $d_F$  follow similarly.
 
-  %As above, we denote by $\Sigma_{p,q,r,s}$ the flip
-  %$\Gru{\mathcal{H}}{p}{q} \otimes \Gru{\mathcal{H}}{r}{s} \to
-  %\Gru{\mathcal{H}}{r}{s} \otimes \Gru{\mathcal{H}}{p}{q}$.  
   Consider
   the following endomorphism $F_{m,n,k,l}$ of $\Gru{V}{m}{n}\otimes \Gru{V}{k}{l}$, 
   \begin{align*}
@@ -880,7 +787,8 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
     F_{m,n,k,l} &= \id_{\Gru{V}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
   \end{align}
   with some $\Gru{R}{k}{l} \in \Hom_{\C}(\Gru{V}{k}{l})$ not
-  depending on $m,n$. % In using irreducibility, do we not miss any subtlety in allowing non-bounded morphisms?
+  depending on $m,n$. 
+  
   On the other hand, since $\phi = \phi S$,
   \begin{align*}
     F_{m,n,k,l} &= (\phi \otimes \id \otimes \id)((S \otimes
@@ -918,15 +826,9 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
   \otimes \id_{\Gru{V}{m}{n}}$ and
   $\phi(\UnitC{l}{l})=1$ give
 \begin{align*}
-\lambda \cdot  \sum_{k} \Tr(\Gr{G}{k}{l}{}{\mathscr{X}}) = 1.  %Problem if $\Gru{V}{m}{n}=0$!
+\lambda \cdot  \sum_{k} \Tr(\Gr{G}{k}{l}{}{\mathscr{X}}) = 1.  
 \end{align*}
 Now all assertions in (1)--(3) concerning $d_G$ follow.
- % the second formula, we use the first formula for the
- %    opposite of $(A,\Delta)$. For this opposite, $\phi$ still is a
- %    faithful, positive, normalized invariant functional and
- %    $(\mathcal{H},X)$ still is a unitary irreducible locally finite
- %    corepresentation, but the antipode $S$ gets replaced by $S^{-1}$
- %    and therefore $F_{X}$ gets replaced by $F_{X}^{-1}$.
 \end{proof}
 
 \begin{Rem} For semi-simple tensor categories with duals, it is known that any object is isomorphic to its left bidual, hence there always exists an $F_{\mathscr{X}}$ as in the previous Theorem. In fact, from the faithfulness of $\phi$ and Proposition \ref{prop:rep-orthogonality-1}, it follows that not all $F_{m,n,k,l}$ in the previous proof are zero. Hence $G_{\mathscr{X}}$ is a non-zero morphism and thus an isomorphism from the left bidual of $\mathscr{X}$ to $\mathscr{X}$.  
@@ -995,37 +897,18 @@ Apply $\omega_{g,w} \otimes
 Let us now enhance our partial Hopf algebras to partial compact
 quantum groups. We write $B(\Hsp,\mathcal{G})$ for the linear space of
 bounded morphisms between Hilbert spaces $\Hsp$ and $\mathcal{G}$. 
-%To be consistent in terminology, we mean by representation of a partial compact quantum group a corepresentation of its associated partial Hopf $^*$-algebra.
-
-
-%One then considers corepresentations on 
-
-%rcf bigraded
-%\emph{Hilbert spaces} such that the inverse of the corepresentation
-%coincides with its adjoint. More precisely, we have the following
-%definition. 
-%Unitary corepresentations act on $I^{2}$-graded Hilbert spaces $\Hsp =
-%\bigoplus_{k,l} \Gru{\Hsp}{k}{l}$ which are row- and column-finite,
-%where the sum is a direct sum of Hilbert spaces. Associated to each
-%such $I^{2}$-graded Hilbert space is the $I^{2}$-graded vector space
-%which is obtained by taking the algebraic direct sum of the
-%components. 
 
 \begin{Def} Let $\mathscr{A}$ define a partial compact quantum
   group. We call an rcfd corepresentation $\mathscr{X}$ of $\mathscr{A}$ on a collection of Hilbert spaces $\Gru{\Hsp}{k}{l}$ 
    \emph{unitary}
-  if \[\Gr{(X^{-1})}{n}{m}{l}{k}=(\Gr{X}{l}{k}{n}{m})^{*}\quad
+  if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}\quad
   \textrm{in }\Gr{A}{k}{l}{m}{n}\otimes
   B(\Gru{\Hsp}{l}{k},\Gru{\Hsp}{n}{m}).\]
 \end{Def} 
 
 
-\begin{Rem} %\begin{enumerate} \item 
+\begin{Rem}
 The total object $\Hsp$ will then only be a pre-Hilbert space, but as the local components are finite-dimensional, this will not be an issue.
-%In the Hilbert space setting, it is more natural to let the total object $\Hsp$ be the \emph{closed} (instead of the purely algebraic) direct sum of all (finite-dimensional) $\Gru{\Hsp}{k}{l}$. This does not change the notion of corepresentation, which had a local definition.
-%\item Concerning morphisms, we will say a collection of $\Gru{T}{k}{l}$ defines a \emph{bounded} intertwiner or morphism if the total operator $T= \oplus \Gru{T}{k}{l}$ is bounded. We will denote by $\Corep_{u}(\mathscr{A})$ the category of unitary rcf corepresentations with arbitrary morphisms, and $\Corep_{u}^{\infty}(\mathscr{A})$ for the category with bounded morphisms.
-% Give a more prominent place, or check later if it is actually worthwhile to make this distinction.
-%\end{enumerate}
 \end{Rem}
 
 \begin{Exa}\label{example:rep-trivial-unitary}
@@ -1100,44 +983,12 @@ This proves \eqref{EqUnit}.
   corepresentation on $\Grd{\mathcal{C}(\mathscr{X})}{k}{l}$, which is
   unitary by Lemma \ref{lemma:rep-regular-unitary}.
 \end{proof}
-%This result and Proposition \ref{prop:rep-cosemisimple}
-%imply that the category $\Corep_{u}(\mathscr{A})$ is semisimple:
 \begin{Cor} The partial C$^*$-tensor category $\Corep_u(\mathscr{A})$ is a partial fusion category.
 \end{Cor}
 
 \begin{Rem}If $\mathscr{A}$ defines a partial compact quantum group $\mathscr{G}$, we will also write $\Corep_u(\mathscr{A})= \Rep_u(\mathscr{G})$, and talk of (unitary) rcfd representations of $\mathscr{G}$.
  \end{Rem}  
    
-
-%With the evident definition on morphisms, we obtain a tensor product
-%on $\Corep_{u}(\mathscr{A})$.  This tensor
-%category is \emph{rigid} in the sense that every object has a
-%left and a right dual:
-%\begin{Cor}
- % Let $\mathscr{A}$ define a partial compact quantum group. Then the
- % category $\Corep_{u}(\mathscr{A})$ is a rigid tensor category.
-%\end{Cor}
-%\begin{proof}
-  %Since the antipode of $\mathscr{A}$ is invertible (Corollary
-  %\ref{cor:involutive}), every unitary rcf corepresentation
-  %$(\Hsp,\mathscr{X})$ has a left and a right dual in
-  %$\Corep(\mathscr{A})$ (Corollary \ref{cor:rep-tensor-duality}),
-  %and these are equivalent isomorphic to unitary rcf corepresentations
-  %(Proposition \ref{prop:rep-unitarisable}).
-%\end{proof}
-%Note that in $\Corep(\mathscr{A})$, the left dual of a unitary rcfd
-%corepresentation $(\Hsp,\mathscr{X})$ is given by the $I^{2}$-graded
-%vector space
-%$\dual{\Hsp}$  and the corepresentation multiplier
-%\begin{align} \label{eq:rep-unitary-right-dual}
- % (S\otimes -^{\vee})(X) = (\id \otimes -^{\vee})(X^{-1}) )=
-  %(-^{*}\otimes -^{*\vee})(X).
-%\end{align}
-%By Corollary \ref{cor:rep-irreducible-bidual},
-%$(\mathcal{H},\mathscr{X})$ is isomorphic to the right bidual, which
-%is given by the $\Hsp$ and $(S^{2} \otimes \id)(X)$. This isomorphism can be
-%chosen to be positive, as the next proposition shows.
-
 Let now $\mathscr{X}$ be a unitary corepresentation of $\mathscr{A}$. Then there exists an isomorphism from $\mathscr{X}$ to $\dualco{\dualco{\mathscr{X}}} = (S^2\otimes \id)\mathscr{X}$. The following proposition shows that it can be implemented by positive operators.
 
 \begin{Prop} \label{prop:rep-unitary-bidual}
@@ -1159,8 +1010,7 @@ respectively to find
  \dualco{\dualco{X}}(1 \otimes \dualop{T}) &= (1 \otimes
   \dualop{T})\dualco{Y}, & (1 \otimes T^{*\tr})X=\dualco{Y}(1\otimes T^{*\tr}).
 \end{align*}
-%Here, we identify the the dual of a Hilbert space with its conjugate
-%Hilbert space to make sense of $T^{*\tr}$.  
+
 Combining both equations, we
 find $\dualco{\dualco{X}}(1 \otimes \dualop{T}T^{*\tr})=(1 \otimes
 \dualop{T}T^{*\tr})X$. Thus, we can take
@@ -1216,8 +1066,6 @@ defines a partial compact quantum group.
 
 \subsection{Analogues of Woronowicz's  characters}
 
-% We already need positivity here to define $F^z$!
-
 Let $\mathscr{A}$ be a partial bialgebra, and $a\in \Gr{A}{k}{l}{m}{n}$. Then for $\omega \in \Hom_{\C}(A,\C)$, we can define
 \begin{align*}
   \omega \aste{p,q} a
@@ -1264,7 +1112,6 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
   Let us now prove existence.  By Theorem \ref{thm:rep-orthogonality}, Corollary \ref{cor:rep-pw} and Proposition \ref{prop:rep-unitary-bidual}, we can
   define for each $z\in \C$ a functional $f_{z} \colon A \to \C$ such
   that for every 
-  %$\alpha,\beta$ in the hyperobject set $\mathscr{I}$ and each 
   irreducible rcfd corepresentation
   $(V,\mathscr{X})$ in $\Corep_{u}(\mathscr{A})$,
     \begin{align*}
@@ -1288,9 +1135,8 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
     for all $l$ in the right and all $m$ in the left hyperobject support of $\mathscr{X}$. By
     construction, (1) and (2) hold. We show that the $(f_{z})_{z}$ satisfy the
     assertions (3)--(7). 
-    %We have already argued that (5) is satisfied
-    %$f_{z}$ is a character. 
-    Throughout the following arguments, let 
+
+        Throughout the following arguments, let 
     $(V,\mathscr{X})$ be a unitary irreducible corepresentation
     $(V,\mathscr{X})$ and let $F=F_{\mathscr{X}}$ be as above.
 
@@ -1312,8 +1158,7 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
     Applying slice maps of the form $\id
     \otimes \omega_{\xi,\xi'}$ and invoking Theorem \ref{thm:rep-orthogonality}, this proves (3).
 
-% Again? Check if this has already been used before   
-    To prove (4), write again $ \Delta^{(2)} = (
+To prove (4), write $ \Delta^{(2)} = (
     \Delta \otimes \id)\circ  \Delta = (\id \otimes 
     \Delta) \circ \Delta$, and put \[\theta_{z,z'}:=(f_{z'} \otimes \id
     \otimes f_{z})\circ  \Delta^{(2)}.\] Then
@@ -1353,16 +1198,6 @@ We have then already argued that the property (5) automatically holds. To show t
      Finally, (1), (2) and (4)
      immediately imply the relation
      $f_{z}(\UnitC{k}{m})=\delta_{k,m}$. As both $z \rightarrow f_{-z}$ and $z\rightarrow f_z\circ S$ satisfy the conditions (1)--(4) for $\mathscr{A}$ with the opposite product and coproduct (using the partial character property (5) and the invariance of $\phi$ with respect to $S$), we find $f_{-z} = f_{z} \circ S$
-     
-     %The concrete construction of $f_z$ combined with property (3), the identity \eqref{eq:rep-delta2} and the partial character property (5) gives the equality
-     %\begin{align}
-      % (f_{-z} \otimes \id) (\Gr{X}{k}{l}{k}{l})=
-       %(\Gru{(F_{\mathscr{X}})}{k}{l})^{-z} &=\left( (f_{z} \otimes
-       %\id)(\Gr{X}{k}{l}{k}{l})\right)^{-1} \\ &= (f_{z} \otimes
-       %\id)(\Gr{(X^{-1})}{l}{k}{l}{k}) = ((f_{z} \circ S) \otimes
-       %\id)(\Gr{X}{k}{l}{k}{l}).
-     %\end{align}
-%Therefore, .
 \end{proof}
 \begin{Cor} \label{cor:rep-characters} Let $\mathscr{A}$ be a 
   partial Hopf $^*$-algebra with positive invariant integral $\phi$ and define $\theta_{z,z'} \colon A
@@ -1419,10 +1254,6 @@ $\sigma$ and with $R$ in the obvious sense,
 
 The relation with the $*$-structure is determined by the following proposition.
 
-%Finally, we consider the functionals $f_{z}$, the automorphisms
-%$\theta_{z,z'}$, $\tau_{z}$, $\sigma_{z}$ and the anti-isomorphism $R$
-%introduced in Theorem \ref{thm:rep-characters}, Corollary
-%\ref{cor:rep-characters} and \eqref{eq:rep-groups}.
 \begin{Prop} \label{prop:rep-unitary-characters}  Let $\mathscr{A}$ be a 
   partial Hopf $^*$-algebra with positive invariant integral $\phi$.  Then $f_{z}(a^*) =
    \overline{f_{-\overline{z}}(a)}$ and $\theta_{z,w}(a^*) = \overline{\theta_{-\overline{z},-\overline{w}}(a)}$ for all $z,w\in \C$ and $a\in A$. In
@@ -1455,105 +1286,6 @@ corepresentations span $A$, we can conclude $\bar{f}_{z}=f_{-\overline{z}}$.
 \end{proof}
 
 
-
-%  consider
-%   the family
-%   \begin{align*}
-%     (\Gru{F}{m}{n})^{\top} \circ  \overline{\Sigma_{m,n,k,l}} &=
-% \phi((\Gr{X}{k}{l}{m}{n})_{12}^{*}(\Gr{X}{k}{l}{m}{n})_{13})^{\top}
-% \circ  \overline{\Sigma_{m,n,k,l}} \\
-%  &=
-%  \phi((\Gr{X}{k}{l}{m}{n})_{12}^{*\circ (\id \otimes
-%   \top)}(\overline{\Sigma_{k,l,k,l}})_{23} (\Gr{X}{k}{l}{m}{n})^{\id \otimes
-%   \top}_{12})  \\
-% &=\phi((\Gr{\overline{X}}{l}{k}{n}{m})_{12}(\overline{\Sigma_{k,l,k,l}})_{23}
-%  (\Gr{\overline{X}}{l}{k}{n}{m})_{12}).
-% \end{align*} \fxnote{Treat $X^{\id \otimes \top}$}
-% By Lemma \ref{lem:rep-average}, this family is a morphism from to
-% $(\overline{\mathcal{H}}\otimes \overline{K},\overline{X}^{-*} \otimes
-% \id_{\overline{K}})$  to
-% $(\overline{\mathcal{H}}\otimes \overline{K},\overline{X} \otimes
-% \id_{\overline{K}})$ and hence of the form
-% $(\Gru{\overline{F_{X}}}{n}{m})^{-1} \otimes T$ with $T \in
-% \mathcal{B}(\overline{K})$ not depending on $m,n$.
-
-% Thus,
-% \begin{align*}
-%  (\id \otimes R)  \circ \Sigma_{k,l,m,n} =   \Gru{F}{m}{n} =
-%  \Sigma_{k,l,m,n} \circ (\Gru{\overline{F_{X}}}{n}{m})^{-\top} \otimes T^{\top})
-% \end{align*}
-
-  
-%   We may assume $(k,l,m,n)=(p,q,r,s)$ because otherwise both sides of
-%   the equation that we want to prove vanish.
-
-%   Applying Lemma \ref{lem:rep-average} to the corepresentation $X$ and
-%   the family $\Gru{T}{p}{q}=
-%   \delta_{p,k}\delta_{q,l} |\eta\rangle\langle\xi|$, we obtain an
-%   endomorphism $\check{T}$ of $(\mathcal{H},X)$ which
-%   necessarily has the form $\check{T}=\lambda(\xi,\eta) \id$ for some
-%   $\lambda(\xi,\eta) \in \C$. Inserting the definition of
-%   $\check{T}$, we find
-%   \begin{align}\nonumber
-%     \phi(b^{*}a) &= \phi\big((\id \otimes
-%     \omega_{\eta',\eta})((\Gr{X}{k}{l}{m}{n})^{*}) \cdot (\id \otimes
-%     \omega_{\xi,\xi'})(\Gr{X}{k}{l}{m}{n})\big) \\  &= (\phi \otimes
-%     \id)\left(\langle\eta'|_{2} \Gr{(X^{-1})}{m}{n}{k}{l}(1 \otimes
-%       |\eta\rangle\langle \xi|)
-%       \Gr{X}{k}{l}{m}{n}|\xi'\rangle_{2}\right) 
-%     = \langle \eta'|_{2} \Gru{\check{T}}{m}{n}|\xi'\rangle_{2} =
-%     \lambda(\xi,\eta) \langle\eta'|\xi'\rangle. \label{eq:rep-orthogonal-1}
-%   \end{align}
-%   Next, we apply Lemma \ref{lem:rep-average} to the corepresentations
-%   $\overline{X}$ and $\overline{X}^{-*}$ and the family
-%   $\Gru{R}{p}{q}=\delta_{p,m}\delta_{q,n}|\overline{
-%     \xi'}\rangle\langle\overline{\eta'}|$, and obtain a morphism
-%   $\hat{R}$ from $\overline{X}^{-*}$ to $\overline{X}$ which
-%   necessarily has the form $\hat{R}=\mu(\eta',\xi')\overline{F_{X}}$
-%   for some $\mu(\eta',\xi') \in \C$. Using the relation
-%   \begin{align*}
-%     a &= (\id \otimes
-%     \omega_{\overline{\xi},\overline{\xi'}})(\Gr{\overline{X}}{l}{k}{n}{m})^{*},
-%     & b&= (\id \otimes
-%     \omega_{\overline{\eta},\overline{\eta'}})(\Gr{\overline{X}}{k}{l}{m}{n})^{*}
-%   \end{align*}
-%   and the definition of $\hat{R}$, we obtain
-%   \begin{align}
-%     \phi(b^{*}a) &= (\phi \otimes \id)\left(\langle
-%       \overline{\eta}|_{2} \Gr{\overline{X}}{k}{l}{m}{n}(1 \otimes
-%       |\overline{\eta}'\rangle\langle \overline{\xi'}|)
-%       \Gr{(\overline{X}^{*})}{m}{n}{k}{l} \right) \nonumber \\
-%     &=\langle \overline{\eta}| \Gru{\hat{R}}{k}{l}
-%     |\overline{\xi}\rangle = \langle
-%     \overline{\eta}|\Gru{\overline{F_{X}}}{k}{l}\overline{\xi}\rangle
-%     \mu(\eta',\xi'). \label{eq:rep-orthogonal-2}
-%   \end{align}
-%   We choose a basis $(\zeta_{i})_{i}$ for
-%   $\bigoplus_{k}\Gru{\mathcal{H}}{k}{l}$ and calculate
-%   \begin{align*}
-%  \langle
-%     \eta'|\xi'\rangle &=  (\phi \otimes
-%     \id)(\langle\eta'|_{2}(\lambda_{l}\rho_{n} \otimes
-%     \id_{\Gru{\mathcal{H}}{m}{n}})|\xi'\rangle_{2}) \\
-%  &=
-%     \sum_{k} (\phi \otimes \id)\left(\langle\eta'|_{2}
-%       \Gr{(X^{-1})}{m}{n}{k}{l}
-%       \Gr{X}{k}{l}{m}{n}|\xi'\rangle_{2}\right)
-%     \\ &=    \sum_{i} \lambda(\zeta_{i},\zeta_{i}) \langle
-%     \eta'|\xi'\rangle 
-%     \\
-%     &=\sum_{i} \langle
-%     \overline{\zeta_{i}}| \Gru{\overline{F_{X}}}{}{l}\overline{\zeta_{i}}\rangle
-%     \mu(\eta',\xi') 
-% \\ &    = \mu(\eta',\xi') \cdot \sum_{k} \Tr(\Gru{F_{(X)}}{k}{l}),
-%   \end{align*}
-% where $\Gru{\overline{F_{X}}}{}{l}=\bigoplus_{k}
-% \Gru{\overline{F_{X}}}{k}{l}$. Inserting this relation into
-% \eqref{eq:rep-orthogonal-2}, we finally obtain the assertion.
-
-
-% We use here the standard leg numbering notation, e.g. $a_{12} =
-% a\otimes 1$.
 
 
 %%% Local Variables: 
