@@ -14,6 +14,7 @@
 % Van Daele and Khang reference?
 % More direct references to Gaby's paper on comodules? 
 % Caenepeel paper on Galois theory weak Hopf algebras.
+% Ref to Vainerman?
 
 \documentclass[11pt]{article}
 
@@ -265,8 +266,8 @@
 \maketitle
 
 \begin{abstract}
-\noindent Compact quantum groups of face type, as introduced by Hayashi, form a class of quantum groupoids with a classical, finite set of objects. Using the notions of weak multiplier bialgebra and weak multiplier Hopf algebra (resp.~ due to B{\"o}hm--G\'{o}mez-Torrecillas--L\'{o}pez-Centella and Van Daele--Wang), %Correct hyphenation?
- we generalize Hayashi's definition to allow for an infinite set of objects, and call the resulting objects partial compact quantum groups. We prove a Tannaka-Krein-Woronowicz reconstruction result for such partial compact quantum groups using the notion of partial fusion C$^*$-category. We also study their connection to the Lesieur--Enock theory of measured quantum groupoids.
+\noindent Compact quantum groups of face type, as introduced by Hayashi, form a class of quantum groupoids with a classical, finite set of objects. Using the notions of weak multiplier bialgebra and weak multiplier Hopf algebra (resp.~ due to B{\"o}hm--G\'{o}mez-Torrecillas--L\'{o}pez-Centella and Van Daele--Wang), we generalize Hayashi's definition to allow for an infinite set of objects, and call the resulting objects partial compact quantum groups. We prove a Tannaka-Krein-Woronowicz reconstruction result for such partial compact quantum groups using the notion of partial fusion C$^*$-category. As examples, we consider the dynamical quantum $SU(2)$-groups from the point of view of partial compact quantum groups.
+ %We also study their connection to the Lesieur--Enock theory of measured quantum groupoids.
 \end{abstract}
 
 
@@ -294,7 +295,7 @@ The concept of \emph{face algebra} was introduced by T. Hayashi in \cite{Hay2}, 
 
 In \cite{Nil1,Sch1,Sch2}, it was shown that face algebras are particular kinds of $\times_R$-algebras \cite{Tak2} and of weak bialgebras \cite{Boh3}. More intuitively, they can be considered as quantum groupoids with a classical, finite object set. The wider framework of weak bialgebras allows one to streamline part of the algebraic theory, at the cost perhaps of becoming less intuitive. 
 
-In this article, we want to extend Hayashi's theory by allowing for an \emph{infinite} (but still discrete) object set. This requires passing from weak bialgebras to weak \emph{multiplier} bialgebras \cite{Boh1}. At the same time, our structures admit a piecewise description by what we call a \emph{partial bialgebra}, which is more in the spirit of Hayashi's original definition. In the presence of an antipode and a compatible $^*$-structure, we call our structures \emph{partial compact quantum groups}. 
+In this article, we want to extend Hayashi's theory by allowing for an \emph{infinite} (but still discrete) object set. This requires passing from weak bialgebras to weak \emph{multiplier} bialgebras \cite{Boh1}. At the same time, our structures admit a piecewise description by what we call a \emph{partial bialgebra}, which is more in the spirit of Hayashi's original definition. In the presence of an antipode, an invariant integral and a compatible $^*$-structure, we call our structures \emph{partial compact quantum groups}. 
 
 The passage to the infinite object case is delicate at points, and requires imposing the proper finiteness conditions on associated structures. However, once all conditions are in place, many of the proofs are similar in spirit to the finite object case. % Rephrase? Don't downplay too much?
 
@@ -302,7 +303,7 @@ Our main result is a Tannaka-Krein-Woronowicz duality result which states that p
 
 % Refs to other TK results, as well as surveys: Tannaka, Krein, Hayashi, Hai, German guy, Szlachanyi, Schauenburg, Woronowicz, Neshveyev-Tuset, Joyal-Street
 
-As an application, we generalize Hayashi's Tannaka duality by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In the follow-up article \cite{DCT2}, we will consider the particular case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce (C$^*$-algebraic versions of) the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{EtN1}, and will provide another viewpoint on the main result of \cite{Sto1}. The construction of the operator algebraic versions of dynamical quantum $SU(2)$-groups was the main motivation for writing and developing the theory of the present paper. % Look more carefully at EtN1 ref
+As an application, we generalize Hayashi's Tannaka duality by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In particular,  we will consider the particular case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce partial compact quantum group versions of the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{EtN1}, and will provide another viewpoint on the main result of \cite{Sto1}. This construction will immediately provide the right setting for the operator algebraic versions of these dynamical quantum $SU(2)$-groups, which will be studied in the follow-up article \cite{DCT2}.
 
 The precise layout of the paper is as follows.
 
@@ -310,9 +311,9 @@ The first two sections introduce the basic theory of the structures which we wil
 
 In the third and fourth section, our main result is proven, namely the Tannaka-Krein-Woronowicz duality. In the \emph{third section} we develop the corepresentation theory of partial Hopf algebras and the representation theory of partial compact quantum groups, and we show that the latter allows one to construct a concrete partial fusion C$^*$-category. In the \emph{fourth} section, we show conversely how any concrete partial fusion C$^*$-category allows one to construct a partial compact quantum group, and we briefly show how the two constructions are inverses of each other.
 
-In the \emph{fifth section}, we provide some examples of our structures and applications of our main result. Our first application is the construction of a canonical partial compact quantum group from any module C$^*$-category for a partial fusion C$^*$-category. As a second application, we introduce the notions of \emph{Morita}, \emph{co-Morita} and \emph{weak Morita equivalence} \cite{Mug1} of partial compact quantum groups, and show that two partial compact quantum groups are weakly Morita equivalent if and only if they can be connected by a string of Morita and co-Morita equivalences. 
+In the \emph{fifth and sixth section}, we provide some examples of our structures and applications of our main result. In the \emph{fifth section}, we first consider the construction of a canonical partial compact quantum group from any module C$^*$-category for a partial fusion C$^*$-category. As a second application, we introduce the notions of \emph{Morita}, \emph{co-Morita} and \emph{weak Morita equivalence} \cite{Mug1} of partial compact quantum groups, and show that two partial compact quantum groups are weakly Morita equivalent if and only if they can be connected by a string of Morita and co-Morita equivalences. In the \emph{sixth section}, we study in more detail a concrete example of a canonical partial compact quantum group, constructed from an ergodic action of quantum $SU(2)$. In particular, we obtain a partial compact quantum group version of the dynamical quantum $SU(2)$-group. 
 
-In the final \emph{sixth section}, we show that our partial compact quantum groups have C$^*$-algebraic and von Neumann algebraic completions, and we relate our theory to Lesieur and Enock's theory of measured quantum groupoids \cite{Les1,Eno2,Eno3,Eno4}. 
+%In the final \emph{sixth section}, we show that our partial compact quantum groups have C$^*$-algebraic and von Neumann algebraic completions, and we relate our theory to Lesieur and Enock's theory of measured quantum groupoids \cite{Les1,Eno2,Eno3,Eno4}. 
 
 \emph{Note}: we follow the physicist's convention that inner products on Hilbert spaces are anti-linear in their \emph{first} argument. 
 
@@ -323,7 +324,8 @@ In the final \emph{sixth section}, we show that our partial compact quantum grou
 \input{3-corepresentations.tex}
 \input{4-tannaka-krein.tex}
 \input{5-examples.tex}
-\input{6-op-alg.tex}
+\input{7-free.tex}
+%\input{6-op-alg.tex}
 
 
 \bibliographystyle{habbrv}
