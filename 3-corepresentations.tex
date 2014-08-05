@@ -4,7 +4,7 @@
 
 In this section, the representation theory of partial compact quantum groups is investigated. In what follows, the homogeneous component $A(K) = \eGr{A}{k}{l}{m}{n}$ of a partial bialgebra will now be mainly written as $A(K) = \Gr{A}{k}{l}{m}{n}$. 
 
-\subsection{Corepresentations of partial Hopf algebras}
+\subsection{Corepresentations of partial bialgebras}
 
 
 Let $\mathscr{A}$ be an $I$-partial bialgebra. We write
@@ -131,6 +131,20 @@ similarly as we defined $ \Delta \colon A \to M(A\otimes A)$.
 
 \begin{Def} If $\mathscr{X}$ and $X$ are as in Lemma \ref{lemma:rep-multiplier}, we will call $X$ the \emph{corepresentation multiplier} of $\mathscr{X}$. 
 \end{Def}
+
+Let us relate the notion of corepresentation multiplier to the notion of full comodule for a weak multiplier bialgebra introduced in \cite[Definition 2.2 and Definition 4.2]{Boh2}. Recall first from \cite[Theorem 4.5]{Boh2} that if $(A,\Delta)$ is a weak multiplier bialgebra, then any full comodule over $A$ carries the structure of a firm bimodule over the base algebra. In particular, if $A$ arises from a partial bialgebra, any comodule is bigraded over the object set. 
+
+\begin{Prop} Let $\mathscr{A}$ be a partial bialgebra with corepresentation $X$ on $V = \oplus_{m,n} \Gru{V}{m}{n}$. Then the couple \[\lambda_X: V\otimes A \rightarrow V\otimes A,\quad v\otimes a \rightarrow X_{21}(v\otimes a),\] 
+\[\rho_X: V\otimes A\rightarrow V\otimes A,\quad v\otimes a \mapsto (1\otimes a)X_{21}(v\otimes 1)\] is well-defined and defines a full comodule for the weak multiplier bialgebra $(A,\Delta)$. Conversely, any full comodule which is rcfd for the induced bigrading arises in this way.
+\end{Prop} 
+
+\begin{proof} Well-definedness of the couple $(\lambda_X,\rho_X)$ is immediate from the local support condition, and it is clear then that $(1\otimes a)\lambda_X(v\otimes b) = \rho_X(v\otimes a)(1\otimes b)$.  The conditions $(2.11)$ and $(2.12)$ in \cite[Definition 2.12]{Boh2} are then easily seen to follow from the identity $(\Delta\otimes \id)(X) = X_{13}X_{23}$. Finally, as for $v\in \Gru{V}{m}{n}$ one has $(\id\otimes \varepsilon)(X_{21}(v\otimes \UnitC{n}{n}) = (\varepsilon\otimes \id)(\Gr{X}{m}{n}{m}{n}) v  = v$, it follows that $(\lambda_X,\rho_X)$ is full.
+
+Assume now conversely that $(\lambda,\rho)$ defines a full comodule structure on $V = \oplus_{m,n} \Gru{V}{m}{n}$. From the definition of the grading, it follows that we obtain maps \[\Gru{V}{m}{n}\rightarrow \Gru{V}{k}{l}\otimes \Gru{A}{k}{l}{m}{n},\quad v \mapsto (1\otimes \UnitC{k}{k})\lambda(v\otimes \UnitC{l}{l}).\] As the $\Gru{V}{m}{n}$ are finitedimensional, there hence exists $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}\otimes \Hom_{\C}(\Gru{V}{m}{n},\Gru{V}{k}{l})$ such that  
+\[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes 1)=(1\otimes \UnitC{k}{k})\lambda(v\otimes \UnitC{l}{l}).\] As $(\lambda,\rho)$ form a multiplier, it is then moreover immediate that in fact \[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes a) = (1\otimes \UnitC{k}{k})\lambda(v\otimes a).\] From (2.12) in \cite[Definition 2.12]{Boh2}, it is then immediate that the $\Gr{X}{k}{l}{m}{n}$ satisfy \eqref{eq:rep-comultiplication}. Moreover, from the proof of \cite[Theorem 4.5]{Boh2} it follows that for $v\in \Gru{V}{m}{n}$, one has \[v = (\id\otimes \epsilon)(X_{21}(v\otimes \UnitC{n}{n}),\] hence \eqref{eq:rep-counit} holds, and $\mathscr{X}$ forms a corepresentation. % Maybe some more info on associated grading
+\end{proof}
+
+\subsection{Corepresentations of partial Hopf algebras}
 
 
 If $\mathscr{A}$ is a partial Hopf algebra,  then every
