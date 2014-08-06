@@ -349,7 +349,7 @@ Let $\mathscr{A}$ be an $I$-partial algebra. We define $A(K\wmult L)$ to be $\{0
 \begin{Def} The \emph{total algebra} $A$ of an $I$-partial algebra $\mathscr{A}$ is the vector space \[A = \oplus_{K\in I^2} A(K)\] endowed with the unique multiplication whose restriction to $A(K)\otimes A(L)$ concides with $M(K,L)$. 
 \end{Def} 
 
-Clearly $A$ is an associative algebra. If $A_0$ is infinite-dimensional it will not possess a unit, but it is a \emph{locally unital algebra} as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
+Clearly $A$ is an associative algebra. It will in general not possess a unit, but it is a \emph{locally unital algebra} as there exist mutually orthogonal idempotents $\mathbf{1}_k$ with $A = \osum{k,l} \mathbf{1}_kA\mathbf{1}_l$. An element $a\in A$ can be interpreted as a function assigning to each element $(k,l)\in I^2$ an element $a_{kl}\in A(k,l)$, namely the $(k,l)$-th component of $a$. This identifies $A$ with finite support $I$-indexed matrices whose $(k,l)$-th entry lies in $A(k,l)$, equipped with the natural matrix multiplication. 
 
 \begin{Rem}\label{RemGrad} When $\mathscr{A}$ is an $I$-partial algebra with total algebra $A$, then $A\otimes A$ can be naturally identified with the total algebra of an $I\times I$-partial algebra $\mathscr{A}\otimes \mathscr{A}$, where \[(A\otimes A)((k,k'),(l,l')) = A(k,l)\otimes A(k',l')\] with the obvious tensor product multiplications and the $\Unit_{k,k'} = \Unit_k\otimes \Unit_{k'}$ as units. 
 \end{Rem}
@@ -376,7 +376,7 @@ One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate, 
 
 The condition appearing in the second example above will appear time and again, so we introduce it formally in the next definition.
 
-\begin{Def} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with a distinguished zero element \emph{row-and column-finite} (rcf) if the assignment has finite support in either one of the variables when the other variable has been fixed. 0
+\begin{Def} We will call any general assignment $(k,l)\rightarrow m_{kl}$ into a set with a distinguished zero element \emph{row-and column-finite} (rcf) if the assignment has finite support in either one of the variables when the other variable has been fixed. 
 \end{Def} 
 
 Let us comment on the notion of morphism for partial algebras. We first introduce the piecewise definition.
@@ -484,7 +484,7 @@ We can then extend $\Delta$ to $A$ by linearity. Since, for $a,b$ homogeneous, $
 
 We will refer to $\Delta: A\rightarrow M(A\otimes A)$ as the \emph{total comultiplication} of $\mathscr{A}$. We will then also use the suggestive Sweedler notation for this map, \[\Delta(a) = a_{(1)}\otimes a_{(2)}.\] Note for example that \[\Delta(\UnitC{k}{m}) = \sum_{l}\UnitC{k}{l}\otimes \UnitC{l}{m} = \sum_l \lambda_k\rho_l\otimes \lambda_l\rho_m.\]
 
-\begin{Lem} The element $E = \sum_{k,l,m} \UnitC{k}{l}\otimes \UnitC{l}{m}= \sum_l \rho_l\otimes \lambda_l$ is a well-defined idempotent in $A\otimes A$, and satisfies \[\Delta(A)(A\otimes A)=E(A\otimes A),\quad (A\otimes A)\Delta(A)= (A\otimes A)E.\]
+\begin{Lem} The element $E = \sum_{k,l,m} \UnitC{k}{l}\otimes \UnitC{l}{m}= \sum_l \rho_l\otimes \lambda_l$ is a well-defined idempotent in $M(A\otimes A)$, and satisfies \[\Delta(A)(A\otimes A)=E(A\otimes A),\quad (A\otimes A)\Delta(A)= (A\otimes A)E.\]
 \end{Lem} 
 \begin{proof} Clearly the sum defining $E$ is strictly convergent, and makes $E$ into an idempotent. It is moreover immediate that $E\Delta(a)=\Delta(a) = \Delta(a)E$ for all $a\in A$. Since \[E(\UnitC{k}{l}\otimes \UnitC{m}{n}) = \Delta(\UnitC{k}{n})(\UnitC{k}{l}\otimes \UnitC{m}{n}) \] by the property \ref{Propa} of Definition \ref{DefPartBiAlg}, and analogously for multiplication with $E$ on the right, the lemma is proven. 
 \end{proof} 
@@ -524,7 +524,7 @@ by \begin{align*} \bar{\Pi}^L(a) = (\epsilon\otimes \id)((a\otimes
   \id)(\Delta(1)(a\otimes 1)),\quad& \Pi^R(a) =
   (\id\otimes\epsilon)((1\otimes a)\Delta(1)),\end{align*} where the
 right hand side expressions are interpreted as multipliers in the
-obvious way. The relation  $\Delta(1)=\sum_{p} \rho_{p} \otimes \lambda_{p}$ and  condition (c) in Definition \ref{DefPartBiAlg} imply
+obvious way. The relation  $\Delta(1)=\sum_{p} \rho_{p} \otimes \lambda_{p}$ and  condition \ref{Propc} in Definition \ref{DefPartBiAlg} imply
 \begin{align*}
   \bar \Pi^{L}(A) &=\mathrm{span}\{\lambda_{p}:p\in I\} =  \Pi^{L}(A), &
   \bar \Pi^{R}(A) &= \mathrm{span}\{\rho_{p}:p\in I\} =\Pi^{R}(A).
@@ -558,7 +558,7 @@ Let us now show a converse. If $(A,\Delta)$ is a regular weak multiplier bialgeb
 \begin{Rem} The condition $A^LA^R \subseteq A$ is of course essential, as we want $A$ to behave locally as a bialgebra, not a multiplier bialgebra. Indeed, in case $A^L= \C$, the condition simply says that $A$ is unital. In general, it should be considered as a \emph{properness} condition. % Ref to Timmermann?
 \end{Rem} 
 
-\begin{proof} Let us write the standard generators (Dirac functions) of $A^L$ as $\lambda_k$ for $k\in I$, and write $\sigma(\lambda_k) = \rho_k\in A^R$. By assumption, $\UnitC{k}{l} = \lambda_k\rho_l\in A$. Further $A= AA^R = AA^L = A^LA=A^RA$, cf.~ the proof of \cite[Theorem 3.13]{Boh1}. Hence the $\UnitC{k}{l}$ make $A$ into a the total algebra of an $I\times I$-partial algebra, as $A^L$ and $A^R$ pointwise commute by \cite[Lemma 3.5]{Boh1}. 
+\begin{proof} Let us write the standard generators (Dirac functions) of $A^L$ as $\lambda_k$ for $k\in I$, and write $\sigma(\lambda_k) = \rho_k\in A^R$. By assumption, $\UnitC{k}{l} = \lambda_k\rho_l\in A$. Further $A= AA^R = AA^L = A^LA=A^RA$, cf.~ the proof of \cite[Theorem 3.13]{Boh1}. Hence the $\UnitC{k}{l}$ make $A$ into the total algebra of an $I\times I$-partial algebra, as $A^L$ and $A^R$ pointwise commute by \cite[Lemma 3.5]{Boh1}. 
 
 Define \[\Delta_{rs}(a) = (\rho_r\otimes \lambda_r)\Delta(a)(\rho_s\otimes \lambda_s).\] From \cite[Lemma 3.3]{Boh1}, it follows that $\Delta_{rs}$ is a map from $\Gr{A}{k}{l}{m}{n}$ to $\Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}$. That same lemma, together with the coassociativity of $\Delta$, show that the $\Delta_{rs}$ form a coassociative family.  
 
@@ -566,7 +566,7 @@ Now by \cite[Lemma 3.9]{Boh1}, we have $(\rho_k\otimes 1)\Delta(a) = (1\otimes \
 
 As $\Delta(a)(1\otimes \lambda_s)$ and $(1\otimes \lambda_r)\Delta(a)$ are already in $A\otimes A$, it is also clear that $\Delta_{rs}(a)$ is rcf for each $a$. The multiplicativity of the $\Delta_{rs}$ is then immediate from the multiplicativity of $\Delta$.
 
-To show that $\Delta_{ll'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}$, it suffices to show that $\Delta(1) = \sum_k \rho_k\otimes \lambda_k$. Now as $\Delta(1)(A\otimes A)  = \Delta(A)(A\otimes A)$, and as clearly $\Delta(a) = \sum_{r,s}\Delta_{rs}(a)$ in the strict topology for all $a\in A$, it follows that \[\Delta(1) = \left(\sum_k \rho_k\otimes \lambda_k\right)\Delta(1).\]  Similarly, $\Delta(1) = \Delta(1)\left(\sum_k\rho_k\otimes \lambda_k\right)$. On the other hand, by \cite[Lemma 4.10]{Boh1} it follows that we can then write \[\sum_{k\in I'} \rho_k\otimes \lambda_k\] for some subset $I'\subseteq I$. As by definition $\bar{\Pi}^L(A) = \Fun_{\fin}(I)$, we deduce that $I=I'$. 
+To show that $\Delta_{ll'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}$, it suffices to show that $\Delta(1) = \sum_k \rho_k\otimes \lambda_k$. Now as $\Delta(1)(A\otimes A)  = \Delta(A)(A\otimes A)$, and as clearly $\Delta(a) = \sum_{r,s}\Delta_{rs}(a)$ in the strict topology for all $a\in A$, it follows that \[\Delta(1) = \left(\sum_k \rho_k\otimes \lambda_k\right)\Delta(1).\]  Similarly, $\Delta(1) = \Delta(1)\left(\sum_k\rho_k\otimes \lambda_k\right)$. On the other hand, by \cite[Lemma 4.10]{Boh1} it follows that we can then write \[\Delta(1) = \sum_{k\in I'} \rho_k\otimes \lambda_k\] for some subset $I'\subseteq I$. As by definition $\bar{\Pi}^L(A) = \Fun_{\fin}(I)$, we deduce that $I=I'$. 
 
 For $a\in \Gr{A}{k}{l}{p}{q}$ and $b\in \Gr{A}{l}{m}{q}{r}$, we then have $\epsilon(ab) = \epsilon(a\UnitC{l}{q}b) = \epsilon(a)\epsilon(b)$ by \cite[Proposition 2.6.(4)]{Boh1}, which shows the partial multiplicativity of $\epsilon$. 
 
@@ -912,16 +912,17 @@ We are finally ready to formulate our main definition.
 
 \section{Partial tensor categories}
 
+
 The notion of partial algebra has a nice categorification. Recall first that the appropriate (vertical) categorification of a unital $\C$-algebra is a $\C$-linear additive tensor category. From now on, by `category' we will by default mean a $\C$-linear additive category. 
 
 \begin{Def} A \emph{partial tensor category} $\CatCC$ over a set $\mathscr{I}$ consists of 
-\begin{enumerate}[label=(\arabic*)]
-\item a collection of (small) categories $\mathcal{C}_{\alpha\beta}$ with $\alpha,\beta\in \mathscr{I}$, 
-\item $\C$-bilinear functors \[\otimes: \CatC_{\alpha\beta}\times \CatC_{\beta\gamma}\rightarrow \CatC_{\alpha\gamma},\] 
-\item natural isomorphisms \[ a_{X,Y,Z}: (X\otimes Y)\otimes Z \rightarrow X\otimes (Y\otimes Z),\qquad X \in \CatC_{\alpha\beta},Y\in \CatC_{\beta\gamma},Z\in \CatC_{\alpha\beta},\] 
-\item non-zero objects $\Unitb_{\alpha} \in \CatC_{\alpha\alpha}$,
-\item natural isomorphisms \[\lambda_X^{(\alpha)}:\Unitb_\alpha\otimes X \rightarrow X,\qquad \rho_X^{(\beta)}:X\otimes \Unitb_\beta\rightarrow X, \qquad X\in \CatC_{\alpha\beta},\]
-\end{enumerate}
+\begin{itemize}
+\item[$\bullet$] a collection of (small) categories $\mathcal{C}_{\alpha\beta}$ with $\alpha,\beta\in \mathscr{I}$, 
+\item[$\bullet$] $\C$-bilinear functors \[\otimes: \CatC_{\alpha\beta}\times \CatC_{\beta\gamma}\rightarrow \CatC_{\alpha\gamma},\] 
+\item[$\bullet$] natural isomorphisms \[ a_{X,Y,Z}: (X\otimes Y)\otimes Z \rightarrow X\otimes (Y\otimes Z),\qquad X \in \CatC_{\alpha\beta},Y\in \CatC_{\beta\gamma},Z\in \CatC_{\alpha\beta},\] 
+\item[$\bullet$] non-zero objects $\Unitb_{\alpha} \in \CatC_{\alpha\alpha}$,
+\item[$\bullet$] natural isomorphisms \[\lambda_X^{(\alpha)}:\Unitb_\alpha\otimes X \rightarrow X,\qquad \rho_X^{(\beta)}:X\otimes \Unitb_\beta\rightarrow X, \qquad X\in \CatC_{\alpha\beta},\]
+\end{itemize}
 satisfying the obvious associativity and unit constraints. 
 \end{Def}
 
@@ -931,15 +932,16 @@ satisfying the obvious associativity and unit constraints.
 The corresponding total notion is as follows. 
 
 \begin{Def} A \emph{tensor category with local units (indexed by $\mathscr{I}$)} consists of
-\begin{enumerate}[label=(\arabic*)]
-\item a (small) category $\CatC$, 
-\item a $\C$-bilinear functor $\otimes: \CatC\times \CatC \rightarrow \CatC$ with compatible associativity constraint $a$, 
-\item\label{FinSup} a collection $\{\Unitb_\alpha\}_{\alpha\in \mathscr{I}}$ of objects such that 
-\begin{itemize}\item[$\bullet$] $\Unitb_\alpha\otimes \Unitb_\beta \cong 0$ for each $\alpha\neq \beta$, and
-\item[$\bullet$] for each object $X$,  $\Unitb_\alpha\otimes X \cong 0 \cong X\otimes \Unitb_\alpha$ for all but a finite set of $\alpha$,
-\end{itemize}
-\item\label{UnCon} natural isomorphisms $\lambda_X:\oplus_\alpha (\Unitb_\alpha\otimes X) \rightarrow X$ and $\rho_X:\oplus_\alpha(X\otimes \Unitb_\alpha)\rightarrow X$ satisfying the obvious unit conditions. 
-\end{enumerate} 
+\begin{itemize}
+\item[$\bullet$] a (small) category $\CatC$, 
+\item[$\bullet$] a $\C$-bilinear functor $\otimes: \CatC\times \CatC \rightarrow \CatC$ with compatible associativity constraint $a$, 
+\item[$\bullet$]\label{FinSup} a collection $\{\Unitb_\alpha\}_{\alpha\in \mathscr{I}}$ of objects such that 
+\begin{enumerate}[label=(\arabic*)] 
+\item $\Unitb_\alpha\otimes \Unitb_\beta \cong 0$ for each $\alpha\neq \beta$, and
+\item for each object $X$,  $\Unitb_\alpha\otimes X \cong 0 \cong X\otimes \Unitb_\alpha$ for all but a finite set of $\alpha$,
+\end{enumerate}
+\item[$\bullet$]\label{UnCon} natural isomorphisms $\lambda_X:\oplus_\alpha (\Unitb_\alpha\otimes X) \rightarrow X$ and $\rho_X:\oplus_\alpha(X\otimes \Unitb_\alpha)\rightarrow X$ satisfying the obvious unit conditions. 
+\end{itemize} 
 \end{Def}
 
 Note that the condition \ref{UnCon} makes sense because of the local support condition in \ref{FinSup}. 
@@ -2559,7 +2561,7 @@ Conversely, suppose that $\mathscr{A}_1$ and $\mathscr{A}_2$ arise from the corn
 
 For $(V,\mathscr{X}) \in \Corep_u(\mathscr{A})$, let $F(V,\mathscr{X}) = (W,\mathscr{Y})$ be the pair obtained from $(V,\mathscr{X})$ by restricting all indices to those appearing to $I_1$. It is immediate that $(W,\mathscr{Y})$ is a unitary rcfd corepresentation of $\mathscr{A}_1$, and that the functor $F$ hence becomes a unital morphism in a trivial way. What remains to show is that $F$ is an equivalence of categories, i.e.~ that $F$ is faithful and essentially surjective. 
 
-Let us first argue that any unitary rcfd corepresentation $(W,\mathscr{Y})$ of $\mathscr{A}_1$ arises as a summand of some $F(V,\mathscr{X})$. Indeed, we may assume that $W$ is an irreducible corepresentation, and arises as regular corepresentation inside $A$. Taking any non-zero element of this corepresentation, and considering a regular rcfd corepresentation of $\mathscr{A}$ containing this element, we obtain an rcfd corepresentation of $\mathscr{A}$ whose restriction contains $W$.
+Let us first argue that $F$ is dominant, i.e.~ any unitary rcfd corepresentation $(W,\mathscr{Y})$ of $\mathscr{A}_1$ arises as a summand of some $F(V,\mathscr{X})$. Indeed, we may assume that $W$ is an irreducible corepresentation, and arises as regular corepresentation inside $A$. Taking any non-zero element of this corepresentation, and considering a regular rcfd corepresentation of $\mathscr{A}$ containing this element, we obtain an rcfd corepresentation of $\mathscr{A}$ whose restriction contains $W$.
 
 Let now $\mathscr{Y}$ define a unitary corepresentation of $\mathscr{A}_1$ on a partial Hilbert space $W= \{\Gru{W}{k}{l}\}$. For $m,n\in I_{2}$, define $G_{mn}(W) = \Gru{Z}{m}{n}$ by \[ \Gru{Z}{m}{n} = \{z \in \left(\prod_k\oplus_l\cap \prod_l\oplus_k\right) \Gr{A}{k}{l}{m}{n}\otimes \Gru{W}{k}{l}\mid (\Delta_{rs}\otimes \id)(z_{kl}) = (\Gr{Y}{k}{l}{r}{s})_{13}(z_{rs})_{23},\quad \forall r,s\in I_1\}.\] We aim to show that $G_{mn}(W)$ is rcfd. In fact, $G$ is clearly functorial and linear. By the previous paragraph, we may thus assume that $(W,\mathscr{Y})$ arises as the restriction of some corepresentation $(V,\mathscr{X})$ of $\mathscr{A}$. 
 
