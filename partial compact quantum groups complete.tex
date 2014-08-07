@@ -16,8 +16,9 @@
 % Caenepeel paper on Galois theory weak Hopf algebras.
 % Ref to Vainerman?
 % Ref to dynamical functor Mudrov
+% Ref to `Module categories, weak Hopf algebras and modular invariants' by Ostrik, in particular wrt canonical partial CQG from module C*-cat
 
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage{hyperref}
 \usepackage{fixme}
@@ -294,7 +295,7 @@
 
 \section*{Introduction}
 
-The concept of \emph{face algebra} was introduced by T. Hayashi in \cite{Hay2}, motivated by the theory of solvable lattice models in statistical mechanics. It was further studied in \cite{Hay1,Hay3,Hay4,Hay5,Hay6,Hay7}, where for example associated C$^*$-structures and a canonical Tannaka duality were developed. This canonical Tannaka duality allows one to construct a canonical face algebra from any (finite) fusion (C$^*$)-category. For example, a face algebra can be associated to the fusion C$^*$-category of a quantum group at root unity, for which no genuine quantum group implementation can be found. 
+The concept of \emph{face algebra} was introduced by T. Hayashi in \cite{Hay2}, motivated by the theory of solvable lattice models in statistical mechanics. It was further studied in \cite{Hay1,Hay3,Hay4,Hay5,Hay6,Hay7,Hay8}, where for example associated C$^*$-structures and a canonical Tannaka duality were developed. This canonical Tannaka duality allows one to construct a canonical face algebra from any (finite) fusion (C$^*$)-category. For example, a face algebra can be associated to the fusion C$^*$-category of a quantum group at root unity, for which no genuine quantum group implementation can be found. 
 
 In \cite{Nil1,Sch1,Sch2}, it was shown that face algebras are particular kinds of $\times_R$-algebras \cite{Tak2} and of weak bialgebras \cite{Boh3}. More intuitively, they can be considered as quantum groupoids with a classical, finite object set. The wider framework of weak bialgebras allows one to streamline part of the algebraic theory, at the cost perhaps of becoming less intuitive. 
 
@@ -302,11 +303,15 @@ In this article, we want to extend Hayashi's theory by allowing an \emph{infinit
 
 The passage to the infinite object case is delicate at points, and requires imposing the proper finiteness conditions on associated structures. However, once all conditions are in place, many of the proofs are similar in spirit to the finite object case. % Rephrase? Don't downplay too much?
 
-Our main result is a Tannaka-Krein-Woronowicz duality result which states that partial compact quantum groups are in one-to-one correspondence with \emph{concrete partial fusion C$^*$-categories}. In its essence, a partial fusion C$^*$-category is a multifusion C$^*$-category \cite{ENO1}, except that we allow an infinite number of irreducible objects as well as an infinite number of summands inside the unit object. By a \emph{concrete} multifusion C$^*$-category, we mean a multifusion C$^*$-category realized inside a category of (locally finite dimensional) bigraded Hilbert spaces. 
+Our main result is a Tannaka-Krein-Woronowicz duality result which states that partial compact quantum groups are in one-to-one correspondence with \emph{concrete partial fusion C$^*$-categories}. In its essence, a partial fusion C$^*$-category is a multifusion C$^*$-category \cite{ENO1}, except that (in a slight abuse of terminology) we allow an infinite number of irreducible objects as well as an infinite number of summands inside the unit object. By a \emph{concrete} multifusion C$^*$-category, we mean a multifusion C$^*$-category realized inside a category of (locally finite dimensional) bigraded Hilbert spaces. Of course, Tannaka reconstruction is by now a standard procedure. % Almost standard procedure?
+For closely related results most relevant to our work, we mention \cite{Wor2,Sch3,Hay8,Ost1,Hai1,Szl1,Pfe1,DCY1} as well as the surveys \cite{JoS1} and \cite[Section 2.3]{NeT1}.
 
-% Refs to other TK results, as well as surveys: Tannaka, Krein, Hayashi, Hai, German guy, Szlachanyi, Schauenburg, Woronowicz, Neshveyev-Tuset, Joyal-Street, Mudrov
 
-As an application, we generalize Hayashi's Tannaka duality by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In particular,  we consider the case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce partial compact quantum group versions of the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{EtN1}, and will provide another viewpoint on the main result of \cite{Sto1}. This construction will immediately provide the right setting for the operator algebraic versions of these dynamical quantum $SU(2)$-groups, which will be studied elsewhere \cite{DCT2}.
+
+% Refs to other TK results, as well as surveys: Tannaka, Krein, Hayashi, Hai, German guy, Szlachanyi, Schauenburg, Woronowicz, Neshveyev-Tuset, Joyal-Street, Mudrov, Ostrik, DCY
+
+As an application, we generalize Hayashi's Tannaka duality \cite{Hay8} (see also \cite{Ost1}) by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. % See Ostrik
+By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In particular,  we consider the case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce partial compact quantum group versions of the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{EtN1}, and will provide another viewpoint on the main result of \cite{Sto1}. This construction will immediately provide the right setting for the operator algebraic versions of these dynamical quantum $SU(2)$-groups, which will be studied elsewhere \cite{DCT2}.
 
 The precise layout of the paper is as follows.
 
@@ -907,7 +912,7 @@ We are finally ready to formulate our main definition.
   partial Hopf $*$-algebra $\mathscr{A} = P(\mathscr{G})$ with an invariant integral  $\phi$ that is positive in the sense  that $\phi(a^*a)\geq 0$ for all $a\in A$. We also say that $\mathscr{G}$ is the partial compact quantum group \emph{defined by} $\mathscr{A}$.
 \end{Def} 
 
-\begin{Rem} Following \cite{Hay1}, we could also have called our objects \emph{compact quantum groups of face type}, but we feel this gives the wrong impression when the base algebra is infinite dimensional (i.e.~ the object set is not compact). When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. 
+\begin{Rem} It will follow from our Proposition \ref{prop:rep-cosemisimple} and  \cite[Theorem 3.3 and Theorem 4.4]{Hay1} that for $I$ finite, a partial compact quantum group is precisely a compact quantum group of face type \cite[Definition 4.1]{Hay1}. However, we feel that terminology could be misleading if the object set is not finite. When referring to partial compact quantum groups, we feel that it is better reflected that only the \emph{parts} of this object are to be considered compact, not the total object. 
 \end{Rem} 
 
 \section{Partial tensor categories}
@@ -1158,13 +1163,28 @@ Then the  elements $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
   \emph{regular corepresentation on $V$}. 
 \end{Exa}
 
+
+Morphisms of corepresentations are defined as follows.
+\begin{Def}
+  Let $\mathscr{A}$ be an $I$-partial bialgebra.  A \emph{morphism}
+  $T$ between rcfd corepresentations
+  $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of $\mathscr{A}$ is a family
+  of linear maps
+  \[\Gru{T}{k}{l} \in
+  \Hom_\C(\Gru{V}{k}{l},\Gru{W}{k}{l})\] satisfying \[(1 \otimes
+  \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} = \Gr{Y}{k}{l}{m}{n}(1 \otimes
+  \Gru{T}{m}{n})\]
+\end{Def}
+
+We denote the category of all corepresentations of $\mathscr{A}$ on rcfd $I^2$-graded vector spaces by $\Corep_{\rcf}(\mathscr{A})$.
+
 We next consider the total form of a corepresentation.
 
 Let $\mathscr{A}$ be a partial bialgebra with total algebra $A$, and
 let $V$ be an rcfd $I^{2}$-graded vector space.
 Denote by $\lambda^{V}_{k},\rho^{V}_{l} \in \Hom_{\C}(V)$ the
 projections onto the summands $\Gru{V}{k}{} = \bigoplus_{q}
-\Gru{V}{k}{q}$, write $\Gru{V}{}{l}=\bigoplus_{p}\Gru{V}{p}{l}$,
+\Gru{V}{k}{q}$ and $\Gru{V}{}{l}=\bigoplus_{p}\Gru{V}{p}{l}$
 respectively, and identify $\Hom_{\C}(\Gru{V}{m}{n},\Gru{V}{k}{l})$ with
 $\lambda^{V}_{k}\rho^{V}_{l}\Hom_{\C}(V)\lambda^{V}_{m}\rho^{V}_{n}$. Denote by $\Hom_{\C}^{0}(V) \subseteq \Hom_{\C}(V)$ the algebraic sum of all
 these subspaces. Then we can define a homomorphism
@@ -1216,6 +1236,79 @@ Let us relate the notion of corepresentation multiplier to the notion of full co
 Assume now conversely that $(\lambda,\rho)$ defines a full comodule structure on $V = \oplus_{m,n} \Gru{V}{m}{n}$. From the definition of the grading, it follows that we obtain maps \[\Gru{V}{m}{n}\rightarrow \Gru{V}{k}{l}\otimes \Gru{A}{k}{l}{m}{n},\quad v \mapsto (1\otimes \UnitC{k}{k})\lambda(v\otimes \UnitC{l}{l}).\] As the $\Gru{V}{m}{n}$ are finitedimensional, there hence exists $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}\otimes \Hom_{\C}(\Gru{V}{m}{n},\Gru{V}{k}{l})$ such that  
 \[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes 1)=(1\otimes \UnitC{k}{k})\lambda(v\otimes \UnitC{l}{l}).\] As $(\lambda,\rho)$ form a multiplier, it is then moreover immediate that in fact \[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes a) = (1\otimes \UnitC{k}{k})\lambda(v\otimes a).\] From (2.12) in \cite[Definition 2.12]{Boh2}, it is then immediate that the $\Gr{X}{k}{l}{m}{n}$ satisfy \eqref{eq:rep-comultiplication}. Moreover, from the proof of \cite[Theorem 4.5]{Boh2} it follows that for $v\in \Gru{V}{m}{n}$, one has \[v = (\id\otimes \epsilon)(X_{21}(v\otimes \UnitC{n}{n}),\] hence \eqref{eq:rep-counit} holds, and $\mathscr{X}$ forms a corepresentation. % Maybe some more info on associated grading
 \end{proof}
+
+We present some more general constructions for corepresentations of partial bialgebras. Given an rcfd $I^{2}$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$
+and a family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$, we
+denote by $\iota_{W}\colon W\to V$ and $\pi_{W} \colon V \to
+V/W=\bigoplus_{k,l} \Gru{V}{k}{l}/\Gru{W}{k}{l}$ the embedding and the
+quotient map.
+\begin{Def} Let $(V,\mathscr{X})$ be an rcfd
+  corepresentation of a partial bialgebra $\mathscr{A}$.  We call a
+  family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$
+  \emph{invariant (w.r.t.\ $\mathscr{X}$)} if
+ \begin{align} \label{eq:rep-invariant} (1\otimes
+   \Gr{\pi}{k}{l}{}{W})\Gr{X}{k}{l}{m}{n}(1 \otimes
+   \Gr{\iota}{m}{n}{}{W}) =0.
+  \end{align}
+We call $(V,\mathscr{X})$ 
+ \emph{irreducible} if the only invariant families of subspaces are
+ $(0)_{k,l}$ and $(\Gru{V}{k}{l})_{k,l}$.
+\end{Def}
+
+The next lemmas deal with restriction, factorisation and Schur's lemma. We skip their proofs which are straightforward.
+
+\begin{Lem}
+  Let $(V,\mathscr{X})$ be an rcfd corepresentation
+  of a partial bialgebra and let $\Gru{W}{k}{l}
+  \subseteq \Gru{V}{k}{l}$ be an invariant family of subspaces. Then
+  there exist unique rcfd corepresentations
+  $(W,\iota_{W}^{*}\mathscr{X})$ and $(V/W,(\pi_{W})_{*}\mathscr{X})$ 
+  such that $\iota_{W}$  and  $\pi_{W}$  are  morphisms  $(W,\iota_{W}^{*}\mathscr{X}) \to (V,\mathscr{X}) \to (V/W,(\pi_{W})_{*}\mathscr{X})$.
+\end{Lem}
+
+\begin{Lem} Let $T$ be a morphism of rcfd
+  corepresentations $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of a
+  partial bialgebra. Then the families of subspaces $\ker
+  \Gru{T}{k}{l} \subseteq \Gru{V}{k}{l}$ and $\img\Gru{T}{k}{l}
+  \subseteq \Gru{W}{k}{l}$ are invariant.  In particular, if
+  $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ are irreducible, then either
+  all $\Gru{T}{k}{l}$ are zero or all $\Gru{T}{k}{l}$ are
+  isomorphisms.
+\end{Lem} 
+
+
+Given corepresentations $\mathscr{X}$ and $\mathscr{Y}$ of
+a partial bialgebra $\mathscr{A}$ on respective rcfd $I^{2}$-graded vector spaces $V$ and $W$,
+we  obtain an $I^{2}$-graded vector space $V\oplus W$ by taking
+component-wise direct sums, and use the canonical embedding 
+\begin{align*}
+  \Hom(\Gru{V}{m}{n},\Gru{V}{k}{l}) \oplus
+  \Hom(\Gru{W}{m}{n},\Gru{W}{k}{l}) \hookrightarrow
+  \Hom(\Gru{V}{m}{n} \oplus \Gru{W}{m}{n},\Gru{V}{k}{l} \oplus
+  \Gru{W}{k}{l})
+\end{align*}
+to define the \emph{direct sum} $\mathscr{X} \oplus \mathscr{Y}$,
+which is a corepresentation of $\mathscr{A}$ on $V\oplus W$. Then the
+natural embeddings from $V$ and $W$ into $V\oplus W$ and the
+projections onto $V$ and $W$ are evidently morphisms of
+corepresentations.  More generally, given a family of rcfd corepresentations
+$((V_{\alpha},\mathscr{X}_{\alpha}))_{\alpha}$ such that the sum
+$\bigoplus_{\alpha} V_{\alpha}$ is rcfd again, one
+can form the direct sum $\bigoplus_{\alpha} \mathscr{X}_{\alpha}$,
+which is a corepresentation on $\bigoplus_{\alpha} V_{\alpha}$.
+\begin{Prop}
+  Let $\mathscr{A}$ be an $I$-partial bialgebra. Then $\Corep_{\rcf}(\mathscr{A})$
+  is a $\C$-linear abelian category, and the forgetful functor
+  $\Corep_{\rcf}(\mathscr{A}) \to \Vectrcf$ lifts kernels, cokernels and biproducts.
+\end{Prop}
+\begin{proof}
+  The preceding considerations show that the forgetful functor lifts
+  kernels, cokernels and biproducts. Moreover, in
+  $\Corep_{\rcf}(\mathscr{A})$, every monic is a kernel
+  and every epic is a cokernel because the same is true in $\Vecti$
+  and because kernels and cokernels lift.
+\end{proof}
+
 
 \subsection{Corepresentations of partial Hopf algebras}
 
@@ -1297,104 +1390,16 @@ X$. Multiplying on the right by $Z$, we find
 $T\lambda^{V}_{k}=\lambda^{V}_{k}$ for all $k$. Thus, $T=\id_{V}$.
 \end{proof}
 
-Morphisms of corepresentations are defined as follows.
-\begin{Def}
-  Let $\mathscr{A}$ be an $I$-partial bialgebra.  A \emph{morphism}
-  $T$ between rcfd corepresentations
-  $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of $\mathscr{A}$ is a family
-  of linear maps
-  \[\Gru{T}{k}{l} \in
-  \Hom_\C(\Gru{V}{k}{l},\Gru{W}{k}{l})\] satisfying \[(1 \otimes
-  \Gru{T}{k}{l})\Gr{X}{k}{l}{m}{n} = \Gr{Y}{k}{l}{m}{n}(1 \otimes
-  \Gru{T}{m}{n})\]
-\end{Def}
-We denote the category of all corepresentations of $\mathscr{A}$ on rcfd $I^2$-graded vector spaces by
-$\Corep_{\rcf}(\mathscr{A})$.
-\begin{Rem} \label{remark:rep-total-morphism}
- Equivalently, a morphism between
-    $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ is just a morphism of
-    $I^{2}$-graded vector spaces $T\colon V\to W$ satisfying
-    $(1\otimes T) X= Y(1 \otimes T)$. If $\mathscr{A}$ is  a
-    partial Hopf algebra, this condition is equivalent to each of the relations
+\begin{Lem} \label{lemma:rep-total-morphism}
+ A bigraded map $T$ defines a morphism from 
+    $(V,\mathscr{X})$ to $(W,\mathscr{Y})$ if and only if one of the following relations hold:
     \begin{align*}
       Y^{-1}(1 \otimes T)X&=\sum_{m,n} \rho_{n} \otimes \Gru{T}{m}{n},
       &
     Y(1\otimes T)X^{-1} &=\sum_{k,l} \lambda_{k} \otimes \Gru{T}{k}{l}.
     \end{align*}
-\end{Rem}
-
-
-Given an rcfd $I^{2}$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$
-and a family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$, we
-denote by $\iota_{W}\colon W\to V$ and $\pi_{W} \colon V \to
-V/W=\bigoplus_{k,l} \Gru{V}{k}{l}/\Gru{W}{k}{l}$ the embedding and the
-quotient map.
-\begin{Def} Let $(V,\mathscr{X})$ be an rcfd
-  corepresentation of a partial bialgebra $\mathscr{A}$.  We call a
-  family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$
-  \emph{invariant (w.r.t.\ $\mathscr{X}$)} if
- \begin{align} \label{eq:rep-invariant} (1\otimes
-   \Gr{\pi}{k}{l}{}{W})\Gr{X}{k}{l}{m}{n}(1 \otimes
-   \Gr{\iota}{m}{n}{}{W}) =0.
-  \end{align}
-We call $(V,\mathscr{X})$ 
- \emph{irreducible} if the only invariant families of subspaces are
- $(0)_{k,l}$ and $(\Gru{V}{k}{l})_{k,l}$.
-\end{Def}
-
-The next lemmas deal with restriction, factorisation and Schur's lemma. We skip their proofs which are straightforward.
--
-\begin{Lem}
-  Let $(V,\mathscr{X})$ be an rcfd corepresentation
-  of a partial bialgebra and let $\Gru{W}{k}{l}
-  \subseteq \Gru{V}{k}{l}$ be an invariant family of subspaces. Then
-  there exist unique rcfd corepresentations
-  $(W,\iota_{W}^{*}\mathscr{X})$ and $(V/W,(\pi_{W})_{*}\mathscr{X})$ 
-  such that $\iota_{W}$  and  $\pi_{W}$  are  morphisms  $(W,\iota_{W}^{*}\mathscr{X}) \to (V,\mathscr{X}) \to (V/W,(\pi_{W})_{*}\mathscr{X})$.
 \end{Lem}
 
-\begin{Lem} Let $T$ be a morphism of rcfd
-  corepresentations $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of a
-  partial bialgebra. Then the families of subspaces $\ker
-  \Gru{T}{k}{l} \subseteq \Gru{V}{k}{l}$ and $\img\Gru{T}{k}{l}
-  \subseteq \Gru{W}{k}{l}$ are invariant.  In particular, if
-  $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ are irreducible, then either
-  all $\Gru{T}{k}{l}$ are zero or all $\Gru{T}{k}{l}$ are
-  isomorphisms.
-\end{Lem} 
-
-
-Given corepresentations $\mathscr{X}$ and $\mathscr{Y}$ of
-a partial bialgebra $\mathscr{A}$ on respective rcfd $I^{2}$-graded vector spaces $V$ and $W$,
-we  obtain an $I^{2}$-graded vector space $V\oplus W$ by taking
-component-wise direct sums, and use the canonical embedding 
-\begin{align*}
-  \Hom(\Gru{V}{m}{n},\Gru{V}{k}{l}) \oplus
-  \Hom(\Gru{W}{m}{n},\Gru{W}{k}{l}) \hookrightarrow
-  \Hom(\Gru{V}{m}{n} \oplus \Gru{W}{m}{n},\Gru{V}{k}{l} \oplus
-  \Gru{W}{k}{l})
-\end{align*}
-to define the \emph{direct sum} $\mathscr{X} \oplus \mathscr{Y}$,
-which is a corepresentation of $\mathscr{A}$ on $V\oplus W$. Then the
-natural embeddings from $V$ and $W$ into $V\oplus W$ and the
-projections onto $V$ and $W$ are evidently morphisms of
-corepresentations.  More generally, given a family of rcfd corepresentations
-$((V_{\alpha},\mathscr{X}_{\alpha}))_{\alpha}$ such that the sum
-$\bigoplus_{\alpha} V_{\alpha}$ is rcfd again, one
-can form the direct sum $\bigoplus_{\alpha} \mathscr{X}_{\alpha}$,
-which is a corepresentation on $\bigoplus_{\alpha} V_{\alpha}$.
-\begin{Prop}
-  Let $\mathscr{A}$ be an $I$-partial bialgebra. Then $\Corep_{\rcf}(\mathscr{A})$
-  is a $\C$-linear abelian category, and the forgetful functor
-  $\Corep_{\rcf}(\mathscr{A}) \to \Vectrcf$ lifts kernels, cokernels and biproducts.
-\end{Prop}
-\begin{proof}
-  The preceding considerations show that the forgetful functor lifts
-  kernels, cokernels and biproducts. Moreover, in
-  $\Corep_{\rcf}(\mathscr{A})$, every monic is a kernel
-  and every epic is a cokernel because the same is true in $\Vecti$
-  and because kernels and cokernels lift.
-\end{proof}
 
 
 \subsection{Tensor product and duality}
@@ -1441,7 +1446,7 @@ $\mathscr{A}$ on $V\itimes W$.
   of $\epsilon$.
 \end{proof}
 \begin{Rem} \label{remark:rep-tensor-multiplier}
-  The `total' multiplier corepresentation associated to $\mathscr{X}\Circt
+  The corepresentation multiplier associated to $\mathscr{X}\Circt
   \mathscr{Y}$   is  just $X_{12}Y_{13}$.
 \end{Rem}
 
@@ -1613,7 +1618,7 @@ form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\math
     &= \sum_{k,l} \rho_{l} \otimes \Gru{\check T}{k}{l},
   \end{align*}
   whence $\check{T}$ is a morphism from $\mathscr{X}$ to $\mathscr{Y}$
-  by Remark \ref{remark:rep-total-morphism}. The assertion for $\hat
+  by Lemma \ref{lemma:rep-total-morphism}. The assertion for $\hat
   T$ follows similarly.
 \end{proof}
 
@@ -1671,14 +1676,14 @@ We will first state a lemma which will also be convenient at other occasions.
 \begin{Lem}\label{LemInjMor}  Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral, and fix $\alpha,\beta$ in the hyperobject set.  Then if $T$ is a morphism in $\Corep(\mathscr{A})_{\alpha\beta}$ and $\sum_{k\in I_\alpha} \Gru{T}{k}{l}=0$ for some $l \in I_\beta$, then $T=0$.
 \end{Lem} 
 
-\begin{proof} This follows from the equations in Remark \ref{remark:rep-total-morphism}
+\begin{proof} This follows from the equations in Lemma \ref{lemma:rep-total-morphism}
 \end{proof}
 
 \begin{Prop}\label{prop:rep-cosemisimple} Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral.   Then the components of the partial tensor category $\Corep(\mathscr{A})$ are semisimple.
 \end{Prop}
 \begin{proof} 
 
-Let $V$ be in any object of $\Corep(\mathscr{A})_{\alpha\beta}$ for $\alpha,\beta\in \mathscr{I}$.  From the previous lemma, we see that for $T$ a morphism in $\Corep(\mathscr{A})_{\alpha\beta}$, the map $T\mapsto \sum_{k\in I_\alpha} \Gru{T}{k}{l}$ is injective for any choice of $l\in I_\beta$. It follows by column-finiteness of $V$ that the algebra of self-intertwiners of $V$ is finite-dimensional. We then immediately conclude from the previous corollary that $V$ is a finite direct sum of irreducible invariant subspaces.
+Let $V$ be in any object of $\Corep(\mathscr{A})_{\alpha\beta}$ for $\alpha,\beta\in \mathscr{I}$.  From Lemma \ref{LemInjMor}, we see that for $T$ a morphism in $\Corep(\mathscr{A})_{\alpha\beta}$, the map $T\mapsto \sum_{k\in I_\alpha} \Gru{T}{k}{l}$ is injective for any choice of $l\in I_\beta$. It follows by column-finiteness of $V$ that the algebra of self-intertwiners of $V$ is finite-dimensional. We then immediately conclude from Corollary \ref{cor:rep-cosemisimple} that $V$ is a finite direct sum of irreducible invariant subspaces.
 \end{proof} 
 
 \subsection{Matrix coefficients of irreducible corepresentations}
