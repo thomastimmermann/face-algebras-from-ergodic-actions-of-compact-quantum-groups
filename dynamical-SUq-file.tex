@@ -72,7 +72,8 @@
 \DeclareMathOperator{\Spec}{\mathrm{Spec}}
 \DeclareMathOperator{\adj}{\mathrm{adj}}
 \DeclareMathOperator{\rcfd}{\mathrm{rcfd}}
-
+\DeclareMathOperator{\rcf}{\mathrm{rcfd}}
+\DeclareMathOperator{\weps}{\tilde{\epsilon}}
 
 \newcommand{\Circt}{{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\Circtv}[1]{\underset{#1}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
@@ -178,6 +179,8 @@
 \newcommand{\Grt}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} 
 
 \newcommand{\GrRA}[3]{#1^{#2}_{#3}} % Vertical grading right style, with argument
+
+\newcommand{\GrLA}[3]{{}^{#2}_{#3}#1} % Vertical grading left style, with argument
 
 \newcommand{\Unit}{\mathbf{1}}
 \newcommand{\UnitC}[2]{\Grt{\mathbf{1}}{#1}{#2}} 
@@ -288,12 +291,10 @@
 
 \tableofcontents
 
-%\input{1-face-algebras.tex}
-%\input{2-representations.tex}
-%\input{3-tannaka.tex}
-%\input{4-op-alg.tex}
-\input{7-free.tex}
-\input{8-dyn-suq.tex}
+\input{1-op-alg.tex}
+\input{2-coamenability.tex}
+\input{3-free.tex}
+\input{4-dyn-suq.tex}
 
 \bibliographystyle{abbrv}
 \bibliography{referencesSUq}
