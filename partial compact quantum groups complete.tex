@@ -1060,7 +1060,6 @@ A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) is a $\phi$-based 
 \begin{Rem} If a morphism of partial fusion C$^*$-categories is based over a \emph{surjective} map $\varphi: \mathscr{J}\rightarrow \mathscr{I}$, then it is automatically faithful. Indeed, by semisimplicity a non-faithful morphism would send some irreducible object to zero. However, by the duality assumption this would mean that some irreducible unit is sent to zero, which is excluded by surjectivity of $\varphi$ and the definition of morphism.
 \end{Rem}
 
-% Ref to Gaby's comodule paper
 
 \section{Representation theory of partial compact quantum groups}
 
@@ -1907,6 +1906,7 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
 Now all assertions in (1)--(3) concerning $d_G$ follow.
 \end{proof}
 
+% Ref to Ostrik paper, but again no reference or proof... Actually, there it is presupposed that right duals exist. I guess this is necessary!
 \begin{Rem} For semi-simple tensor categories with duals, it is known that any object is isomorphic to its left bidual, hence there always exists an $F_{\mathscr{X}}$ as in the previous Theorem. In fact, from the faithfulness of $\phi$ and Proposition \ref{prop:rep-orthogonality-1}, it follows that not all $F_{m,n,k,l}$ in the previous proof are zero. Hence $G_{\mathscr{X}}$ is a non-zero morphism and thus an isomorphism from the left bidual of $\mathscr{X}$ to $\mathscr{X}$.  
 \end{Rem}
 
@@ -2513,7 +2513,7 @@ Let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category. Let $\mathcal{I}
 It is readily verified that $F$ defines a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$ based over the partition \[\mathcal{I}_{\alpha} = \bigcup_{\beta} \Gru{\mathcal{I}}{\alpha}{\beta},\quad\alpha\in \mathscr{I}.\] From the Tannaka-Krein-Woronowicz reconstruction result, we obtain a partial compact quantum group $\mathscr{A}_{\CatCC}$ with object set $\mathcal{I}$, which we call the \emph{canonical partial compact quantum group} associated with $\CatCC$. 
 \end{Exa} 
 
-\begin{Exa} More generally, let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category, and let $\CatDD$ be a \emph{semi-simple partial $\CatCC$-module C$^*$-category} based over a set $\mathscr{J}$. That is, $\CatDD$ consists of a collection of semi-simple C$^*$-categories $\CatD_{\alpha\beta}$ with $\alpha\in \mathscr{I},\beta\in \mathscr{J}$, together with tensor products $\otimes: \CatC_{\alpha\beta}\times \CatD_{\beta\gamma}\rightarrow \CatC{\alpha\gamma}$ satisfying the appropriate associativity and unit constraints. Then if $\mathcal{I}$ labels a distinguished maximal set $\{u_k\}$ of mutually non-isomorphic irreducible objects of $\CatD$, with associated bigrading $\Gru{\mathcal{I}}{\alpha}{\beta}$ over $\mathscr{I}\times \mathscr{J}$, we can again define \[F_{kl}(X)  = \Hom(u_k,  X\otimes u_l),\qquad X\in \Gru{\CatC}{\alpha}{\beta}, k\in \Gru{\mathcal{I}}{\alpha}{\gamma},l\in \Gru{\mathcal{I}}{\beta}{\gamma},\] and we obtain a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$. The associated partial compact quantum group $\mathscr{A}_{\CatCC}$ will be called the \emph{canonical partial compact quantum group} associated with $(\CatCC,\CatDD)$. The previous construction coincides with the special case $\CatCC= \CatDD$.
+\begin{Exa} More generally, let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category, and let $\CatDD$ be a \emph{semi-simple partial $\CatCC$-module C$^*$-category} based over a set $\mathscr{J}$ and function $\phi:\mathscr{J}\rightarrow \mathscr{I},k\mapsto k'$. That is, $\CatDD$ consists of a collection of semi-simple C$^*$-categories $\CatD_{k}$ with $k\in \mathscr{J}$, together with tensor products $\otimes: \CatC_{k'l'}\times \CatD_{l}\rightarrow \CatC_{k}$ satisfying the appropriate associativity and unit constraints. Then if $\mathcal{I}$ labels a distinguished maximal set $\{u_a\}$ of mutually non-isomorphic irreducible objects of $\CatD$, with associated grading $\mathcal{I}_{k}$ over $\mathscr{J}$, we can again define \[F_{ab}(X)  = \Hom(u_a,  X\otimes u_b),\qquad X\in \Gru{\CatC}{k'}{l'}, a\in \mathcal{I}_{k},b\in\mathcal{I}_{l},\] and we obtain a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$. The associated partial compact quantum group $\mathscr{A}_{\CatCC}$ will be called the \emph{canonical partial compact quantum group} associated with $(\CatCC,\CatDD)$. The previous construction coincides with the special case $\CatCC= \CatDD$ with $\mathscr{J} = \mathscr{I}\times \mathscr{I}$ and $\phi$ projection to the first factor.
 \end{Exa}
 
 \begin{Exa}\label{ExaErgo} As a particular instance, let $\G$ be a compact quantum group, and consider an ergodic action of $\G$ on a unital C$^*$-algebra $C(\mathbb{X})$. Then the collection of finitely generated $\G$-equivariant $C(\mathbb{X})$-Hilbert modules forms a module C$^*$-category over $\Rep_u(\G)$, cf.~ \cite{DCY1}. 
@@ -2583,7 +2583,7 @@ The following notion is essentially the same as the one by M. M\"{u}ger \cite{Mu
 We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are \emph{weakly Morita equivalent} if their corepresentation categories $\Corep_u(\mathscr{G}_i)$ are Morita equivalent. 
 \end{Def} 
 
-Although it is possible to prove directly that this is indeed an equivalence relation, we will take a roundabout way and first consider a more concrete notion based on the notion of \emph{co-Morita equivalence} of partial compact quantum groups.
+One can prove that this is indeed an equivalence relation. %ref to add! 
 
 \begin{Def}\label{DefCoLink} A \emph{co-linking partial compact quantum group} consists of a partial compact quantum group $\mathscr{G}$ defined by a Hopf $^*$-algebra $\mathscr{A}$ over an index set $I$, together with a distinguished partition $I = I_1\cup I_2$ such that each $\UnitC{k}{l}=0$ for $k\in I_i$ and $l\in I_{i+1}$, and such that for each $k\in I_i$, there exists $l\in I_{i+1}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$.  
 \end{Def} 
@@ -2625,33 +2625,23 @@ To show that $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent, i
 Fix now $k\in I_{\alpha}$ for some $\alpha \in I_i$. Pick $\beta\in I_{i+1}$ with $\CatC_{\alpha\beta}\neq\{0\}$, and let $(V,\mathscr{X})$ be a non-zero irreducible corepresentation inside $\CatC_{\alpha\beta}$. Then by irreducibility, we know that $\oplus_l \Gru{V}{k}{l} \neq \{0\}$, hence there exists $l\in I_{\beta}$ with $\Gru{V}{k}{l}\neq \{0\}$. As $(\epsilon\otimes \id)\Gr{X}{k}{l}{k}{l} = \id_{\Gru{V}{k}{l}}$, it follows that $\Gr{A}{k}{l}{k}{l} \neq 0$. This proves that $\mathscr{A}$ defines a co-linking partial compact quantum group.
 \end{proof} 
 
-\begin{Cor} The notion of Morita equivalence of partial fusion C$^*$-categories is an equivalence relation.
-\end{Cor} 
-\begin{proof}  It is clear that the relation is symmetric and reflexive. Let us show transitivity.
-
-Let $\CatCC_1\underset{\textrm{Mor}}{\sim} \CatCC_2$ and $\CatCC_2\underset{\textrm{Mor}}{\sim} \CatCC_3$. Then $\mathscr{A}_{\CatCC_1}$ is co-Morita equivalent with  $\mathscr{A}_{\CatCC_2}$, which is in turn co-Morita equivalent with $\mathscr{A}_{\CatCC_3}$. This implies that $\mathscr{A}_{\CatCC_1}$ is co-Morita equivalent with $\mathscr{A}_{\CatCC_3}$, which proves $\CatCC_1\underset{\textrm{Mor}}{\sim} \CatCC_3$.
-\end{proof} 
+\begin{Rem} Note however that the corners of the canonical partial compact quantum group associated to linking $\mathscr{I}$-partial fusion C$^*$-category \emph{are not} the canonical partial compact quantum groups associated to the corners of the linking $\mathscr{I}$-partial fusion C$^*$-category. Rather, they are Morita equivalent copies of these.
+\end{Rem} 
 
 \begin{Theorem} Two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent if and only if they are connected by a string of Morita and co-Morita equivalences. 
 \end{Theorem}
 
 \begin{proof} Clearly if two partial compact quantum groups are Morita equivalent, they are weakly Morita equivalent. By Proposition \ref{PropCoWeak}, the same goes for co-Morita equivalence. This proves one direction of the theorem. 
 
-Conversely, assume $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent. Then $\mathscr{G}_i$ is Morita equivalent with the canonical partial compact quantum group associated to its corepresentation category. But Proposition \ref{PropCoLink} shows that these canonical partial compact quantum groups are co-Morita equivalent. 
+Conversely, assume $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent. Let $\CatCC$ be a linking fusion C$^*$-category between $\Rep_u(\mathscr{G}_1)$ and $\Rep_u(\mathscr{G}_2)$. Then $\mathscr{G}_i$ are Morita equivalent with the corners of the canonical partial compact quantum group associated to $\CatCC$. But Proposition \ref{PropCoLink} shows that these corners are co-Morita equivalent. 
 \end{proof} 
 
-\begin{Rem} Note that it is essential that we allow the string of equivalences to pass through partial compact quantum groups, even if we start out with (genuine) compact quantum groups.\end{Rem}
-
-
-% In definition of faithful $I^2$-algebra, we can indeed just suppose that the embedding $\Ff(I^2)\rightarrow M(A)$ is faithful.
-% Correct use of $\cdot$ versus operator product?
-
-% Podles sphere can be defined as an algebra in $\Rep(SU_q(2))$. Hence, it should make sense as an algebra under the forgetful functor to SU_q(2)-dynamical. By duality for coideals, the same should hold for passage to SU_q(1,1) in fact...
-
-% Also: direct construction should help in making non-compact construction
-
-% Thank Piotr, Makoto and ...(?) for discussions. Link with graph C*-algebras?
-
+\begin{Rem} 
+\begin{enumerate}
+\item Note that it is essential that we allow the string of equivalences to pass through partial compact quantum groups, even if we start out with (genuine) compact quantum groups.
+\item One can show that if $\mathscr{G}$ is a finite partial compact quantum group, then $\mathscr{G}$ is weakly Morita equivalent with its dual $\widehat{\mathscr{G}}$ (defined by the dual weak Hopf $^*$-algebra). In fact, if $\mathscr{G}$ is the canonical partial compact quantum group associated to a finite partial fusion C$^*$-category, then $\mathscr{G}$ is isomorphic to the co-opposite of its dual, e.g.~ the case of dynamical quantum $SU(2)$ at roots of unity. In any case, it follows that two finite quantum groups $H$ and $G$ are weakly Morita equivalent if and only if they can be connected by a string of 2-cocycle-elements and 2-cocycle functionals. % Ref to add! 
+\end{enumerate}
+\end{Rem}
 
 
 \section{Partial compact quantum groups from reciprocal random walks}
