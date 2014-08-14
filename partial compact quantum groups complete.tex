@@ -2425,32 +2425,72 @@ Let us show now that the resulting partial bialgebra $\mathscr{A}$ has an invari
 Let $\hat{\phi}^k_l$ be the natural transformation from $F_{ll}$ to $F_{kk}$ which has support on multiples of $\Unitb_{k'}$, and with $(\hat{\phi}^k_l)_{\Unitb_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $x\in \Nat(F_{ll},F_{kn})$, \[x\circ \hat{\phi}^l_m =\delta_{k,n} \UnitC{k}{l}(x)\hat{\phi}^k_m.\] 
 \end{proof}
 
-So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra $\mathscr{A}$ with invariant integral $\phi$. Let us further impose for the rest of this section that $\CatCC$ admits duality.
+So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra
+$\mathscr{A}$ with invariant integral $\phi$. Let us further impose
+for the rest of this section that $\CatCC$ admits duality.  We shall
+use the following straightforward observation.
+\begin{Lem}
+  For all $k,l$ and $X\in \mathcal{C}_{k',l'}$,  the maps
+  \begin{align*}
+    \coev^{kl}_{X}  &:=  \pi^{(klk)}_{X,\hat X} \circ F_{kk}(\coev_{X})\colon \C \to F_{kl}(X)
+    \otimes F_{lk}(\hat X), \\
+    \ev^{kl}_{X} &:=  F_{ll}(\ev_{X}) \circ \iota^{(lkl)}_{\hat X,X} \colon
+    F_{lk}(\hat X) \otimes F_{kl}(X) \to \C
+  \end{align*}
+  define a duality between $F_{kl}(X)$ and $F_{lk}(\hat X)$.
+\end{Lem}
+
 
 \begin{Prop}\label{PropAnti} The partial bialgebra $\mathscr{A}$ is a regular partial Hopf algebra.
 \end{Prop} 
 
-\begin{proof} By Lemma \ref{LemMorDua}, we have for each $X\in \CatC_{rs}$ a canonical isomorphism \[d^{(mn)}_X:F_{mn}(X) \cong F_{nm}(\hat{X})^*.\] 
-
-For a linear map $x$ between vector spaces, let us again denote $x^{\tr}$ for the transpose map between their duals. Then for any $x\in \Nat(F_{mn},F_{kl})$, let us define $\hat{S}(x) \in \Nat(F_{lk},F_{nm})$ by \[\hat{S}(x)_X = \left(d^{(nm)}_X\right)^{-1} x_{\hat{X}}^{\tr} d_X^{(lk)}.\] 
-
+\begin{proof} 
+  For any $x\in \Nat(F_{mn},F_{kl})$, let us define $\hat{S}(x) \in
+  \Nat(F_{lk},F_{nm})$ by
+\begin{align*}
+  \hat{S}(x)_X &= % \big(\id \otimes F_{kk}(\ev_{X})\iota^{(klk)}_{\hat
+  %   X,X}\big) \circ \big(\id \otimes x_{\hat X} \otimes \id\big) \circ
+  % \big(\pi^{(nmn)}_{X,\hat X} F_{nn}(\coev_{X}) \otimes \id\big) \\
+ % &= 
+(\id \otimes \coev^{lk}_{X}) \circ (\id \otimes x_{\hat X}
+  \otimes \id) \circ (\coev^{nm}_{X} \otimes \id).
+\end{align*}
 Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
 
 Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. The other antipode identity follows similarly.
 
 By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{nn},F_{km})\] where $\hat{M}^n_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{nr}$ and $\id\otimes S$. 
 
-Let us fix $X\in \mathcal{C}_{k'l'}$, and let $e_i^{(kl)}$ be a basis for $F_{kl}(X)$ with dual basis $\omega_i^{(kl)}$. Let $\chi_i^{(lk)} = d_X^{(kl)}(e_i^{(kl)})$, and let $f_i^{(lk)}$ be the basis of $F_{lk}(\hat{X})$ dual to the basis $\{\chi_i^{(lk)}\}$. Then it is easily verified that \[\pi^{(klk)}_{X,\hat{X}}F_{kk}(\coev_{X})(1) = \sum_i e_i^{(kl)}\otimes f_i^{(lk)},\quad F_{ll}(\ev_X)\iota^{(lkl)}_{\hat{X},X} = \sum_i \chi_i^{(lk)}\otimes \omega_i^{(kl)},\] where we identified $\C\cong F_{kk}(\Unitb_{k'})$. We then check that for $x\in \Nat(F_{mn},F_{kl})$ and $v\in F_{lk}(X)$, one has \[\hat{S}(x)_Xv = \sum_{i,j} \omega_i^{(lk)}(v)\chi_i^{(kl)}(x_{\hat{X}}f_j^{(mn)})e_j^{(nm)}.\] 
-
-
-Hence for $x\in \Nat(F_{nr},F_{kl})$, $y\in \Nat(F_{rn},F_{lm})$ and $v \in F_{ml}(X)$, we have \begin{eqnarray*} \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)_X(v) &=& \sum_i \omega_i^{(ml)}\left(v\right)  x_Xd_X^{(nr)-1}(y_{\hat{X}}^{\tr}(\chi_i^{(lm)}))\\ &=& \sum_{i,j} \omega_i^{(ml)}\left(v\right)  \chi_i^{(lm)}\left(y_{\hat{X}}(f_j^{(rn)}))\right)x_Xe_j^{(nr)} \\ &=& \sum_{i,j}(\omega_i^{(ml)}\otimes \chi_i^{(lm)})\left(v\otimes y_{X^*}(f_j^{(rn)})\right)x_Xe_j^{(nr)}.\end{eqnarray*} So for $ x\in \Nat(F_{nn},F_{km})$ and $\omega \in F(X)_{kl}^*$,  \begin{eqnarray*} && \hspace{-2cm} \omega\left(\sum_r\left(\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x)\right)_X(v) \right) \\ &=& \sum_{r,i,j}
-\omega_i^{(ml)}(v)(\omega\otimes \chi_i^{(lm)})(\pi_{X,\hat{X}}^{(mlm)}x_{X\otimes \hat{X}}\iota_{X,\hat{X}}^{(nrn)}(e_j^{(nr)}\otimes f_j^{(rn)})) \\
-&=&  \sum_{i}
-\omega_i^{(ml)}(v)(\omega\otimes \chi_i^{(lm)})(\pi_{X,\hat{X}}^{(mlm)}x_{X\otimes \hat{X}}F_{nn}(\coev_X)1)\\ &=&  \delta_{km} \UnitC{k}{n}(x)  \sum_{i}
-\omega_i^{(kl)}(v)(\omega\otimes \chi_i^{(lk)})(\pi_{X,\hat{X}}^{(klk)}F_{kk}(\coev_X)1) \\ &=&  \delta_{km} \UnitC{k}{n}(x)  \sum_{i,j}
-\omega_i^{(kl)}(v)(\omega\otimes \chi_i^{(lk)})(e_j^{(kl)}\otimes f_j^{(lk)}) \\ &=&  \delta_{km} \UnitC{k}{n}(x)  \omega(v).
-\end{eqnarray*}
-
+Let us fix $X\in \mathcal{C}_{k'l'}$. Then for any $x\in
+\Nat(F_{nr},F_{kl})$, $y\in \Nat(F_{rn},F_{lm})$, we have
+\begin{align*}
+  \left(\hat{M}^n_r(\id\otimes \hat{S})(x\otimes y)\right)_X =
+\big(\id \otimes \ev_{X}^{ml}\big)  \big(x_{X} \otimes y_{\hat X} \otimes \id\big) 
+  \big(\coev_{X}^{nr} \otimes \id\big).
+\end{align*}
+For any $x\in \Nat(F_{nn},F_{km})$, we therefore have
+\begin{align*}
+  \left(\hat{M}^n_r(\id\otimes \hat{S})\hat\Delta^{l}_{r}(x)\right)_X &=
+\big(\id \otimes \ev^{ml}_{X}\big)  \big(\pi^{(klm)}_{X,\hat X}x_{X\otimes \hat
+    X}\iota^{(nrm)}_{X,\hat X} \otimes \id\big) 
+  \big(\coev^{nr}_{X} \otimes \id\big).
+\end{align*}
+We sum over $r$, use naturality of $x$, and obtain
+\begin{align*}
+\sum_{r}    \left(\hat{M}^n_r(\id\otimes
+  \hat{S})\hat\Delta^{l}_{r}(x)\right)_X &=
+\big(\id \otimes \ev_{X}^{ml}\big) \big(\pi^{(klm)}_{X,\hat X}x_{X\otimes \hat
+    X}F_{nn}(\coev_{X}) \otimes \id\big) \\
+  &=\delta_{k,m} \UnitC{k}{n}(x)
+\big(\id \otimes \ev_{X}^{ml}\big) 
+\big(\pi^{(mlm)}_{X,\hat X}F_{mm}(\coev_{X})
+  \otimes \id\big) \\
+  &=\delta_{k,m} \UnitC{k}{n}(x)
+\big(\id \otimes \ev_{X}^{ml}\big) 
+\big(\coev^{ml}_{X}
+  \otimes \id\big) \\
+  &= \delta_{k,m} \UnitC{k}{n}(x) \id.
+\end{align*}
 Similarly, one shows that $\mathscr{A}$ with the opposite multiplication has an antipode, using right duality. It follows that $\mathscr{A}$ is a regular partial Hopf algebra.  
 \end{proof} 
 
@@ -2469,11 +2509,52 @@ We first introduce a $^*$-structure on $\mathscr{A}$.
 
 \begin{Prop} The couple $(\mathscr{A},\Delta)$ with the above $^*$-structure defines a partial compact quantum group.
 \end{Prop}
-\begin{proof} The only thing which is left to prove is that our invariant integral $\phi$ is a positive functional. Now it is easily seen from the definition of $\phi$ that the $\Gr{A}{k}{l}{m}{n}(a)$ are all mutually orthogonal. Hence it suffices to prove that the sesquilinear inner product \[\langle f| g\rangle = \phi(f^*g)\] on $\Gr{A}{k}{l}{m}{n}(a)$ is positive-definite. 
+\begin{proof} The only thing which is left to prove is that our
+  invariant integral $\phi$ is a positive functional. Now it is easily
+  seen from the definition of $\phi$ that the $\Gr{A}{k}{l}{m}{n}(a)$
+  are all mutually orthogonal. Hence it suffices to prove that the
+  sesquilinear inner product \[\langle f| g\rangle = \phi(f^*g)\] on
+  $\Gr{A}{k}{l}{m}{n}(a)$ is positive-definite.
 
-Let us write $\bar{f}(x) = \overline{f(x^*)}$. Let again $\hat{\phi}^k_m$ be the natural transformation from $F_{mm}$ to $F_{kk}$ which is the identity on $\Unitb_{k'}$ and zero on other irreducible objects. Then by definition, \[\phi(f^*g) = (\bar{f}\otimes g)((\hat{S}\otimes \id)\hat{\Delta}^k_m(\hat{\phi}^l_n)).\] Recall now the notation of Proposition \ref{PropAnti}. Let us write $\omega_i^{(kl)} = \langle E_i^{(kl)}| -\rangle$ and $\chi_i^{(kl)} = \langle F_i^{(kl)}| -\rangle$. Assume further that $f(x) = \langle v'| x_a v\rangle$ and $g(x) = \langle w' | x_aw\rangle$ for $v,w\in F_{mn}(u_a)$ and $v',w'\in F_{kl}(u_a)$. Then using the expression for $\hat{S}$ as in Proposition \ref{PropAnti}, we find that \[\phi(f^*g) = \sum_{ij} \langle v,e_j^{(mn)}\rangle\langle F_i^{(lk)}\otimes w' | \hat{\Delta}_m^k(\hat{\phi}^{l}_n)_{\bar{a}\otimes a} (f_j^{(nm)}\otimes w)\rangle \langle E_i^{(kl)}| v'\rangle .\] However, up to a positive non-zero scalar, which we may assume to be 1 by proper rescaling, we have \[\hat{\Delta}^k_m(\hat{\phi}^l_n)_{\bar{a}\otimes a} = \sum_{i,j} | F_j^{(lk)} \otimes E_j^{(kl)}\rangle \langle F_i^{(nm)}\otimes E_i^{(mn)}|.\] Hence \begin{eqnarray*} \phi(f^*g) &=&\left(\sum_{ij}\langle v| e_j^{(mn)}\rangle \langle F_i^{(nm)}| f_j^{(nm)}\rangle\langle E_i^{(mn)}| w\rangle \right)  \left(\sum_{ij}  \langle w' | E_j^{(kl)}\rangle \langle F_i^{(lk)}| F_j^{(lk)}\rangle\langle E_i^{(kl)}| v'\rangle\right)\\ &=& \langle v| w\rangle  \left(\sum_{ij}  \langle w'| E_j^{(kl)}\rangle \langle F_i^{(lk)}| F_j^{(lk)}\rangle\langle E_i^{(kl)}| v'\rangle\right).
-\end{eqnarray*} It follows that $\phi(f^*f)\geq 0$ for all $f$.
+  Let us write $\bar{f}(x) = \overline{f(x^*)}$. Let again
+  $\hat{\phi}^k_m$ be the natural transformation from $F_{mm}$ to
+  $F_{kk}$ which is the identity on $\Unitb_{k'}$ and zero on other
+  irreducible objects. Then by definition, \[\phi(f^*g) =
+  (\bar{f}\otimes g)((\hat{S}\otimes
+  \id)\hat{\Delta}^k_m(\hat{\phi}^l_n)).\] 
 
+Assume  that $f(x) = \langle v'| x_a v\rangle$ and
+  $g(x) = \langle w' | x_aw\rangle$ for $v,w\in F_{mn}(u_a)$ and
+  $v',w'\in F_{kl}(u_a)$. Then
+  $\overline{f}(x) = \langle v|x_{a} v'\rangle$ and
+ using the expression for $\hat{S}$ as
+  in Proposition \ref{PropAnti}, we find that
+  \begin{align*}
+    \phi(f^*g) &= \langle v \otimes w'|
+    (\ev_{a}^{kl})_{23} 
+    (\hat\Delta^{k}_{m}(\hat \phi^{l}_{n})_{\bar a, a})_{24} 
+    (\coev^{mn}_{a})_{12} (v'\otimes
+    w)\rangle.
+  \end{align*}
+  However, up to a positive non-zero scalar, which we may assume to be
+  1 by proper rescaling, we
+  have 
+  \[\hat{\Delta}^k_m(\hat{\phi}^l_n)_{\bar{a}, a} =
+  (\ev^{kl}_{a})^{*}(\ev^{kl}_{a}).\] Hence
+  \begin{align*}
+    \phi(f^*g) &=
+\langle v \otimes w'|     (\ev^{kl}_{a})_{23}  (
+  (\ev^{kl}_{a})^{*}(\ev^{kl}_{a}))_{24}
+ (\coev^{mn}_{a})_{12} (v'\otimes w)\rangle \\
+&= \langle v \otimes w'|        (\ev^{kl}_{a})_{23} 
+  (\ev^{kl}_{a})^{*}_{24}
+ (w\otimes v')\rangle \\
+    &= \langle v|w\rangle (\ev^{kl}_{a}|v'\rangle_{2})
+    (\ev_{a}^{kl}|w'\rangle_{2})^{*},
+  \end{align*}
+where $\ev_{a}^{kl}|z\rangle_{2}$ denotes the map $y \mapsto
+\ev_{a}^{kl}(y\otimes z)$.
+If $v=w$ and $v'=w'$, the expression above clearly becomes positives.
 \end{proof} 
 
 \begin{Theorem} \label{TheoTKPCQG}
