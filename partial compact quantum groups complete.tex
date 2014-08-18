@@ -1725,7 +1725,6 @@ form the regular corepresentation on this space.
   Denote by $\mathscr{Y}$ the regular corepresentation on
   $\bigoplus_{m,n } \Gr{\mathcal{C}(\mathscr{X})}{k}{l}{m}{n}$. Then
   \begin{align*}
-    \label{eq:1}
  \Gr{Y}{p}{q}{m}{n}    (1\otimes \Gr{T}{}{}{m}{n(f)}(v)) &= 
 (\Delta^{\op}_{pq} \otimes \omega_{f,v})( \Gr{X}{k}{l}{m}{n}) 
 \\ & = (\id \otimes \id \otimes
@@ -2176,8 +2175,10 @@ We shall say that an entire function $f$ has \emph{exponential growth
   on the right half-plane} if there exist $C,d>0$ such that $|f(x+iy)|\leq
 C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$. 
 
-\begin{Theorem} \label{thm:rep-characters} Let $\mathscr{A}$ be a partial Hopf $^*$-algebra with positive invariant integral $\phi$.  Then there exists a unique
-  family of linear functionals $f_{z} \colon A\to \C$ such that
+\begin{Theorem} \label{thm:rep-characters} Let $\mathscr{A}$ be a
+  partial Hopf algebra with an invariant integral $\phi$.  Then there
+  exists a unique family of linear functionals $f_{z} \colon A\to \C$
+  such that
 \begin{enumerate}[label={(\arabic*)}]
   \item $f_z$ vanishes on $A(K)$ when $K_u\neq K_d$.
   \item for each $a\in A$, the function $z\mapsto f_{z}(a)$ is entire
@@ -2191,6 +2192,8 @@ C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$.
   \item $f_z(ab) = f_z(a)f_z(b)$ for $a\in A(K)$ and $b\in A(L)$ with $K_r = L_l$. 
   \item $S^{2}(a)=f_{-1} \ast a \ast f_{1}$ for all $a\in A$.
   \item $f_{z}(\UnitC{l}{n})=\delta_{l,n}$ and $f_{z} \circ S = f_{-z}$ for all $a\in A$.
+  \item $\bar{f}_{z}=f_{-\overline{z}}$ if $\mathscr{A}$ is a partial
+    Hopf $^*$-algebra and $\phi$ is positive.
 \end{enumerate}
 \end{Theorem}
 
@@ -2210,7 +2213,7 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
   define for each $z\in \C$ a functional $f_{z} \colon A \to \C$ such
   that for every 
   irreducible rcfd corepresentation
-  $(V,\mathscr{X})$ in $\Corep_{u}(\mathscr{A})$,
+  $(V,\mathscr{X})$ in $\Corep(\mathscr{A})$,
     \begin{align*}
       f_{z}((\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})) &=
       \delta_{k,m}\delta_{l,n} \cdot
@@ -2223,7 +2226,7 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
       (f_{z} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
       \delta_{k,m}\delta_{l,n} \cdot (\Gru{(F_{\mathscr{X}})}{k}{l})^{z},
     \end{align*}
-    where $F_{\mathscr{X}}$ is a non-zero positive operator implementing a morphism from $(V,\mathscr{X})$ to
+    where $F_{\mathscr{X}}$ is a non-zero operator implementing a morphism from $(V,\mathscr{X})$ to
     $(V, \dualco{\dualco{\mathscr{X}}})$, scaled such that
     \begin{align*}
       d_{\mathscr{X}}:= \sum_{r} \Tr(\Gru{(F_{\mathscr{X}}^{-1})}{r}{l}) = \sum_{s}
@@ -2234,7 +2237,7 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
     assertions (3)--(7). 
 
         Throughout the following arguments, let 
-    $(V,\mathscr{X})$ be a unitary irreducible corepresentation
+    $(V,\mathscr{X})$ be an  irreducible corepresentation
     $(V,\mathscr{X})$ and let $F=F_{\mathscr{X}}$ be as above.
 
     We first prove property (3). This follows from the relations
@@ -2271,14 +2274,14 @@ To prove (4), write $ \Delta^{(2)} = (
     now $d_F= d_G=d_{\mathscr{X}}$ by our scaling of $F$, and obtain
     \begin{eqnarray*}
      && \hspace{-2cm} (\phi \otimes \id \otimes
-      \id)((\Gr{X}{k}{l}{m}{n})_{12}^{*}((\theta_{1,1} \otimes
+      \id)((\Gr{(X^{-1})}{l}{k}{n}{m})_{12}((\theta_{1,1} \otimes
       \id)(\Gr{X}{k}{l}{m}{n}))_{13})\\ && =d_{\mathscr{X}}^{-1}(\id \otimes
       \Gru{F}{k}{l}) (\id \otimes \Gru{(F^{-1})}{k}{l})
       \Sigma_{k,l,m,n} (\id \otimes
       \Gru{F}{m}{n}) \\
       &&=d_{\mathscr{X}}^{-1}(\Gru{F}{m}{n} \otimes \id) \Sigma_{k,l,m,n} \\
       &&= (\phi \otimes \id \otimes
-      \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})_{12}^{*}).
+      \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{(X^{-1})}{l}{k}{n}{m})_{12}).
     \end{eqnarray*}
     To conclude the proof of assertion (4), apply again slice maps of the form
     $\omega_{\xi,\xi'} \otimes \omega_{\eta,\eta'}$.
@@ -2292,78 +2295,23 @@ We have then already argued that the property (5) automatically holds. To show t
     \end{align*}
      Assertion (6) follows again by applying slice maps.
     
-     Finally, (1), (2) and (4)
-     immediately imply the relation
-     $f_{z}(\UnitC{k}{m})=\delta_{k,m}$. As both $z \rightarrow f_{-z}$ and $z\rightarrow f_z\circ S$ satisfy the conditions (1)--(4) for $\mathscr{A}$ with the opposite product and coproduct (using the partial character property (5) and the invariance of $\phi$ with respect to $S$), we find $f_{-z} = f_{z} \circ S$
-\end{proof}
-\begin{Cor} \label{cor:rep-characters} Let $\mathscr{A}$ be a 
-  partial Hopf $^*$-algebra with positive invariant integral $\phi$ and define $\theta_{z,z'} \colon A
-  \to A$ by $a \mapsto f_{z} \ast a \ast f_{z'}$ for each $z,z' \in
-  \C$, where the functionals $f_{z}$ are as in Theorem
-  \ref{thm:rep-characters}. Then for all $z,z',w,w'\in \C$, the
-  following conditions hold.
-  \begin{enumerate}[label={(\arabic*)}]
-  \item $\theta_{z,z'}$ is an algebra automorphism and preserves
-    each subspace $A(K)$. In particular,
-    $\theta_{z,z'}(\lambda_{k}\rho_{m}) = \lambda_{k}\rho_{m}$ for all
-    $k,m\in I$.
-  \item $\theta_{z,z'}\circ \theta_{w,w'} = \theta_{z+w,z'+w'}$.
-  \item $ (\theta_{w,z'} \otimes \theta_{z,-w}) \circ \Delta = \Delta
-    \circ \theta_{z,z'}$, $\epsilon \circ \theta_{z,z'} = f_{z+z'}$,
-    $\theta_{z,z'} \circ S = S \circ \theta_{-z',-z}$ and
-    $\phi \circ \theta_{z,z'} = \phi$.
-  \item For every linear map $\omega \colon A \to \C$ and every $a\in
-    A$, the map $(z,z') \mapsto \omega(\theta_{z,z'}(a))$ is entire.
-  \end{enumerate}
-\end{Cor}
-\begin{proof}
-  All of this follows easily from Theorem \ref{thm:rep-characters}.
-\end{proof}
-Using the two-parameter group $\theta$, we define the \emph{modular
-  automorphism group} $\sigma$, the \emph{scaling group} $\tau$   and
-the \emph{unitary antipode} of a partial compact quantum group $A$ by
-\begin{align} \label{eq:rep-groups}
-  \sigma_{z} &:=\theta_{iz,iz}, & \tau_{z} &:=\theta_{iz,-iz}, & R&:=S
-  \circ \tau_{i/2}.
-\end{align}
-Using Corollary \ref{cor:rep-characters}, one verifies that
-$\sigma,\tau,R$ share all the main relations known for locally compact
-quantum groups and measured quantum groupoids. For example, $\sigma$
-and $\tau$ are complex one-parameter groups of algebra automorphisms
-of $A$, the map $R$ is an anti-automorphism, the family  $\tau$ commutes with
-$\sigma$ and with $R$ in the obvious sense, 
-  \begin{gather}
-    \begin{aligned} \label{eq:modular}
-      \phi\circ \sigma_{z} &= \phi \circ \tau_{z} = \phi \circ R =
-      \phi, & \phi(ab) &= \phi(b\sigma_{-i}(a)),
-    \end{aligned}
-\\ \label{eq:scaling-modular-delta}
-    \begin{aligned} 
-    \Delta \circ \tau_{z} &= (\tau_{z} \otimes \tau_{z}) \circ \Delta = (\sigma_{-z}\otimes \sigma_{z})\circ\Delta,
-    & (\tau_{z} \otimes \sigma_{z}) \circ \Delta &= \Delta \circ
-    \sigma_{z} = (\sigma_{-z} \otimes \tau_{z}) \circ \Delta,      
-  \end{aligned} \\
-  \begin{aligned} \label{eq:unitary-antipode}
-    R^{2} &= \id_{A}, & \Delta \circ R &= (R \otimes R) \circ
-    \Delta^{\op}.
-  \end{aligned}
-  \end{gather}
+     To check, (7), note that (1), (2) and (4) immediately imply
+     $f_{z}(\UnitC{k}{m})=\delta_{k,m}$. As both $z \rightarrow
+     f_{-z}$ and $z\rightarrow f_z\circ S$ satisfy the conditions
+     (1)--(4) for $\mathscr{A}$ with the opposite product and
+     coproduct (using the partial character property (5) and the
+     invariance of $\phi$ with respect to $S$), we find $f_{-z} =
+     f_{z} \circ S$.
 
-The relation with the $*$-structure is determined by the following proposition.
-
-\begin{Prop} \label{prop:rep-unitary-characters}  Let $\mathscr{A}$ be a 
-  partial Hopf $^*$-algebra with positive invariant integral $\phi$.  Then $f_{z}(a^*) =
-   \overline{f_{-\overline{z}}(a)}$ and $\theta_{z,w}(a^*) = \overline{\theta_{-\overline{z},-\overline{w}}(a)}$ for all $z,w\in \C$ and $a\in A$. In
-  particular, $R$ is a $*$-anti-automorphism and $\theta_{it,is}$,
-  $\tau_{t}$ and $\sigma_{t}$ are $*$-automorphisms for all $s,t\in
-  \R$.
-\end{Prop}
-\begin{proof}
-  We only have to prove the first equation.  Write $\bar{f}_z(a) =
-  \overline{f_z(a^*)}$. Using the relations
-  $ (\Gr{X}{k}{l}{k}{l})^{*}=(S \otimes \id)(\Gr{X}{k}{l}{k}{l})$,  $f_{z} \circ S=f_{-z}$
-  (Theorem \ref{thm:rep-characters}) and
-  positivity of $\Gr{F}{k}{l}{}{\mathscr{X}}$ (Proposition \ref{prop:rep-unitary-bidual}), we conclude
+     Finally, we assume that $\mathscr{A}$ is a partial Hopf
+     $^*$-algebra with positive invariant integral $\phi$ and prove
+     (8).  By Proposition \ref{prop:rep-unitary-bidual}, we can assume
+     $\Gr{F}{k}{l}{}{\mathscr{X}}$ to be positive.  Write
+     $\bar{f}_z(a) = \overline{f_z(a^*)}$. Using the relations $
+     (\Gr{X}{k}{l}{k}{l})^{*}=(S \otimes \id)(\Gr{X}{k}{l}{k}{l})$,
+     $f_{z} \circ S=f_{-z}$  and
+     positivity of $\Gr{F}{k}{l}{}{\mathscr{X}}$ (Proposition
+     \ref{prop:rep-unitary-bidual}), we conclude
      \begin{align*}
        (\bar{f}_z \otimes
        \id)(\Gr{X}{k}{l}{k}{l})
@@ -2381,6 +2329,7 @@ $f_{-\overline{z}}$ vanish on $\Gr{A}{k}{l}{m}{n}$ if $(k,l)\neq
 (m,n)$ and the matrix coefficients of unitary 
 corepresentations span $A$, we can conclude $\bar{f}_{z}=f_{-\overline{z}}$.
 \end{proof}
+
 
 
 
