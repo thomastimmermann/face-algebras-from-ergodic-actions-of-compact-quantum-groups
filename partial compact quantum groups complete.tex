@@ -175,35 +175,35 @@
 
 \newcommand{\GrDA}[3]{{}_{\;#2}#1_{#3}} % Horizontal grading bottom style, with argument
 
-\newcommand{\GrVA}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} % Vertical grading ordinary style, with argument
-\newcommand{\Grt}[3]{#1{\tiny {\begin{pmatrix} #2\\#3\end{pmatrix}}}} 
+\newcommand{\GrVA}[3]{#1{\scriptscriptstyle{\begin{pmatrix} #2\\#3\end{pmatrix}}}} % Vertical grading ordinary style, with argument
+\newcommand{\Grt}[3]{#1{\scriptscriptstyle{\begin{pmatrix} #2\\#3\end{pmatrix}}}} 
 
 \newcommand{\GrRA}[3]{#1^{#2}_{#3}} % Vertical grading right style, with argument
 
 \newcommand{\Unit}{\mathbf{1}}
 \newcommand{\Unitb}{\mathbbm{1}}
 \newcommand{\UnitC}[2]{\Grt{\mathbf{1}}{#1}{#2}} 
-\newcommand{\Grru}[2]{{\tiny \begin{pmatrix} #1 \\ #2\end{pmatrix}}}
+\newcommand{\Grru}[2]{{\scriptscriptstyle \begin{pmatrix} #1 \\ #2\end{pmatrix}}}
 
-\newcommand{\eGr}[5]{#1{{\tiny \begin{pmatrix} #2 \quad #3 \\ #4 \quad #5\end{pmatrix}}}}
+\newcommand{\eGr}[5]{#1{{\scriptscriptstyle \begin{pmatrix} #2 \quad #3 \\ #4 \quad #5\end{pmatrix}}}}
 
 \newcommand{\pma}[4]{\begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}
-\newcommand{\pmat}[4]{{\tiny \begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}}
+\newcommand{\pmat}[4]{{\scriptscriptstyle \begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}}
 
-\newcommand{\UT}[2]{#1{\tiny #2 }}
+\newcommand{\UT}[2]{#1{\scriptscriptstyle #2 }}
 \newcommand{\Gr}[5]{\fourIdx{#2}{#4}{#3}{#5}{#1}}%TODO: better typesetting
 \newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
 \newcommand{\Gru}[3]{\Gr{#1}{}{}{#2}{#3}}
 \newcommand{\Grd}[3]{\Gr{#1}{#2}{#3}{}{}}
 \newcommand{\gr}[5]{\;{}^{\;#2}_{#4}#1_{#5}^{#3}}%TODO: better typesetting
-\newcommand{\eGrr}[3]{#1_{{\tiny \left(#2, #3\right)}}}
-\newcommand{\eGrt}[4]{#1{{\tiny \begin{pmatrix} #2 \\ #3 \\ #4 \end{pmatrix}}}}
+\newcommand{\eGrr}[3]{#1_{{\scriptscriptstyle \left(#2, #3\right)}}}
+\newcommand{\eGrt}[4]{#1{{\scriptscriptstyle \begin{pmatrix} #2 \\ #3 \\ #4 \end{pmatrix}}}}
 \newcommand{\Grr}[4]{\begin{pmatrix}#1 \quad #2\\#3&#4\end{pmatrix}}
 
 \newcommand{\Grss}[3]{\UT{#1}{\begin{pmatrix} #2 \; #3\end{pmatrix}}}
 \newcommand{\Grb}[7]{\UT{#1}{\begin{pmatrix} #2\quad #3 \\ #4 \quad #5\\ #6 \quad #7\end{pmatrix}}}
-\newcommand{\un}[2]{e{{\tiny \begin{pmatrix}#1\\ #2\end{pmatrix}}}}
-\newcommand{\unn}[3]{e{{\tiny \begin{pmatrix}#1\\ #2\\#3\end{pmatrix}}}}
+\newcommand{\un}[2]{e{{\scriptscriptstyle \begin{pmatrix}#1\\ #2\end{pmatrix}}}}
+\newcommand{\unn}[3]{e{{\scriptscriptstyle \begin{pmatrix}#1\\ #2\\#3\end{pmatrix}}}}
 
 \newcommand{\wmult}{\cdot}
 \newcommand{\bmult}{*}
@@ -442,7 +442,7 @@ and for which the following compatibility relations are satisfied.
 \begin{Rem}\begin{enumerate}
 \item By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
 \item Note that the object set of the above $\mathscr{A}$ as a partial bialgebra is $I$, but the object set of its underlying partial algebra (or coalgebra) is $I^2$.
-\item Properties \ref{Propa}, \ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ of partial algebras based over the assignment $I^2\rightarrow \mathscr{P}(I^2\times I^2)$, the power set of $I^2\times I^2$, such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
+\item Properties \ref{Propa}, \ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ of partial algebras based over the assignment $I^2\rightarrow \mathscr{P}(I^2\times I^2)$, the power set of $I^2\times I^2$, such that \[(I^2\times I^2)_{{\scriptscriptstyle \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
 \end{enumerate}
 \end{Rem}
 
@@ -841,7 +841,7 @@ We will need the following lemma at some point, cf.~ \cite[Proposition 3.4]{VDae
 
 \begin{proof} Suppose $a\in A$ and $\phi(ba)=0$ for all $b\in A$. By the support condition of $\phi$, we may suppose $a$ is homogeneous, $a\in \Gr{A}{k}{l}{m}{n}$.
 
-We will first show that necessarily $\epsilon(a)=0$, for which we may already assume $k=m$ and $l=n$. Indeed, the condition on $a$ implies also $(\id\otimes \phi)(\Delta_{lk}(b)(1\otimes a))=0$ for all $b\in \Gr{A}{s}{r}{l}{k}$. Applying the strong invariance identity, we deduce \begin{equation}\label{EqSwitch}(\id\otimes \phi)((1\otimes b)\Delta_{rs}(a))=0,\qquad \forall b\in \Gr{A}{s}{r}{l}{k}.\end{equation} Writing $\Delta_{rs}(a) = \sum_i p_i\otimes q_i$ with the $p_i$ linearly independent, we deduce $\phi(bq_i)=0$ for all $i$ and $b$, and so also $\sum_i \phi(S(p_i)q_i)=0$. Hence $0=\sum_r \phi(S(a_{(1){\tiny \begin{pmatrix} k & l \\ r & l \end{pmatrix}}})a_{(2){\tiny \begin{pmatrix} r & l \\ k & l\end{pmatrix}}}) = \phi(\epsilon(a) \UnitC{l}{l}) = \epsilon(a)$.
+We will first show that necessarily $\epsilon(a)=0$, for which we may already assume $k=m$ and $l=n$. Indeed, the condition on $a$ implies also $(\id\otimes \phi)(\Delta_{lk}(b)(1\otimes a))=0$ for all $b\in \Gr{A}{s}{r}{l}{k}$. Applying the strong invariance identity, we deduce \begin{equation}\label{EqSwitch}(\id\otimes \phi)((1\otimes b)\Delta_{rs}(a))=0,\qquad \forall b\in \Gr{A}{s}{r}{l}{k}.\end{equation} Writing $\Delta_{rs}(a) = \sum_i p_i\otimes q_i$ with the $p_i$ linearly independent, we deduce $\phi(bq_i)=0$ for all $i$ and $b$, and so also $\sum_i \phi(S(p_i)q_i)=0$. Hence $0=\sum_r \phi(S(a_{(1){\scriptscriptstyle \begin{pmatrix} k & l \\ r & l \end{pmatrix}}})a_{(2){\scriptscriptstyle \begin{pmatrix} r & l \\ k & l\end{pmatrix}}}) = \phi(\epsilon(a) \UnitC{l}{l}) = \epsilon(a)$.
 
 Note now that from \eqref{EqSwitch}, it follows that for any functional $\omega$ on $\Gr{A}{k}{l}{m}{n}$, also $a'=(\omega\otimes \id)\Delta_{mn}(a)$ satisfies $\phi(ba')=0$ for all $b\in A$. Hence, by what we have just shown, $\epsilon(a')=0$, i.e.~ $\omega(a)=0$. As $\omega$ was arbitrary, we deduce $a=0$.
 
@@ -1347,12 +1347,13 @@ direct consequences.
 \end{Def}
 For completeness, we mention the following following converse to Lemma \ref{lemma:rep-invertible}
 \begin{Lem}
-  Let $\mathscr{A}$ be an $I$-partial bialgebra, $V$ an rcfd $I^{2}$-graded vector space and $X,Z \in M(A \otimes
+  Let $\mathscr{A}$ be an $I$-partial bialgebra, $V$ an rcfd
+  $I^{2}$-graded vector space and $X,Z \in M(A \otimes
   \Hom_{\C}^{0}(V))$. If conditions \ref{repma}--\ref{repmc} in Lemma
-  \ref{lemma:rep-multiplier} and
-  \eqref{eq:rep-generalized-inverse} hold, then the corresponding
-  family $\mathscr{X}=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ is a
-  corepresentation of $\mathscr{A}$ on $V$.
+  \ref{lemma:rep-multiplier} and \eqref{eq:rep-generalized-inverse}
+  hold, then the corresponding family
+  $\mathscr{X}=(\Gr{X}{k}{l}{m}{n})_{k,l,m,n}$ is a corepresentation
+  of $\mathscr{A}$ on $V$.
 \end{Lem}
 \begin{proof}
   We have to verify condition \ref{repmd} in Lemma
@@ -1503,7 +1504,7 @@ the space
 Now, define morphisms $\coev \colon \C^{(I)} \to V\itimes \dual{V}$ and
 $\ev \colon \dual{V} \itimes V \to \C^{(I)}$ by
 \begin{align*}
-  \Gru{\coev}{k}{l} &= \delta_{k,l} \sum_{p} \coev_{\footnotesize\Gru{V}{k}{p}} \colon
+  \Gru{\coev}{k}{l} &= \delta_{k,l} \sum_{p} \coev_{\scriptscriptstyle\Gru{V}{k}{p}} \colon
   \C \to 
     \Gru{(}{k}{}V\itimes \dual{V}\Gru{)}{}{l}, &
   \Gru{\ev}{k}{l} &= \delta_{k,l} \sum_{p} \ev_{\Gru{V}{p}{k}} \colon
@@ -1718,7 +1719,7 @@ form the regular corepresentation on this space.
     f)(\Gr{X}{k}{l}{m}{n}(1 \otimes w)),
   \end{align*}
   is a morphism from $\mathscr{X}$ to the regular corepresentation on
-  $\Grd{\mathcal{C}(\mathscr{X})}{k}{l}$.
+  $\Grd{\mathcal{C}(\mathscr{X})}{k}{l}$. 
 \end{Lem}
 \begin{proof}
   Denote by $\mathscr{Y}$ the regular corepresentation on
@@ -1733,32 +1734,52 @@ f)((\Gr{X}{k}{l}{p}{q})_{23}(\Gr{X}{p}{q}{m}{n})_{13}(1 \otimes 1
   \end{align*}
 for all $v \in \Gru{V}{m}{n}$.
 \end{proof}
-\begin{Prop} \label{prop:rep-weak-pw} Let $\mathscr{A}$ be a partial
-  Hopf algebra with an invariant integral. Then the total algebra $A$ is the sum
-  of the matrix coefficients of irreducible rcfd corepresentations.
-\end{Prop}
-\begin{proof} 
-  Let $a \in \Gr{A}{k}{l}{m}{n}$. Write
+As before, we denote by $\dual{V}$ the dual of a vector space $V$.
+\begin{Lem} \label{lemma:regular-corep} Let $\mathscr{A}$ be a partial
+  Hopf algebra.
+  \begin{enumerate}
+  \item  Let $a \in \bigoplus_{k,l} \Gr{A}{k}{l}{m}{n}$. Then the family of
+  subspaces
+  \begin{align} \label{eq:element-reg-corep}
+    \Gru{V}{p}{q} = \{ (\id\otimes f)(\Delta_{pq}(a)) : f \in
+    \dual{(\Gr{A}{p}{q}{m}{n})}\}
+  \end{align}
+  is rcfd and satisfies $\Delta_{rs}(\Gru{V}{p}{q}) \subseteq
+  \Gru{V}{r}{s} \otimes \Gr{A}{r}{s}{p}{q}$ so that one can form the
+  restriction of the regular corepresentation
+  $(V,\mathscr{X})$. Moreover, $a \in \Gru{V}{m}{n}$.
+\item Let $(V,\mathscr{X})$ be an irreducible restriction of the
+  regular corepresentation. Then \eqref{eq:element-reg-corep} holds
+  for any non-zero $a \in \Gru{V}{m}{n}$.
+  \end{enumerate}
+\end{Lem}
+\begin{proof}
+1.  Taking $f=\epsilon$, one finds $a \in \Gru{V}{m}{n}$. Next, write
   \begin{align*}
     \Delta_{pq}(a)=\sum_{i} b_{pq}^{i} \otimes c^{i}_{pq}
   \end{align*}
- with linearly independent
-  $(c_{pq}^{i})_{i}$. Then the family of subspaces
-  \begin{align*}
-    \Gru{V}{p}{q} = \mathrm{span}\{b_{pq}^{i} : i \}\subseteq \bigoplus_{k,l}
-  \Gr{A}{k}{l}{p}{q}
-  \end{align*}
-is rcfd, and the relation
+  with linearly independent $(c_{pq}^{i})_{i}$. Then $ \Gru{V}{p}{q} =
+  \mathrm{span}\{b_{pq}^{i} : i \}$, and  $\Delta_{rs}(\Gru{V}{p}{q}) \subseteq
+  \Gru{V}{r}{s} \otimes \Gr{A}{r}{s}{p}{q}$ because
   \begin{align*}
  \sum_{i}
     \Delta_{rs}(b^{i}_{pq}) \otimes c^{i}_{pq} =
     (\Delta_{rs} \otimes \id)\Delta_{pq}(a) = (\id \otimes
     \Delta_{pq}) \Delta_{rs}(a) = \sum_{j} b^{j}_{rs} \otimes
-    \Delta_{pq}(c^{j}_{rs})
+    \Delta_{pq}(c^{j}_{rs}).
   \end{align*}
-  implies $\Delta_{rs}(\Gru{V}{p}{q}) \subseteq \Gru{V}{r}{s} \otimes
-  \Gr{A}{r}{s}{p}{q}$.  We can therefore form the regular
-  corepresentation $\mathscr{X}$ on $V$ as in Example \ref{example:rep-regular}, and
+  2.  If $a\in \Gru{V}{m}{n}$ is non-zero, then the right hand
+  sides of \eqref{eq:element-reg-corep} form a non-zero invariant
+  family of subspaces of $\Gru{V}{p}{q}$ by 1.
+\end{proof}
+\begin{Prop} \label{prop:rep-weak-pw} Let $\mathscr{A}$ be a partial
+  Hopf algebra with an invariant integral. Then the total algebra $A$ is the sum
+  of the matrix coefficients of irreducible rcfd corepresentations.
+\end{Prop}
+\begin{proof} 
+  Let $a \in \Gr{A}{k}{l}{m}{n}$, define $\Gru{V}{p}{q}$ as in
+  \eqref{eq:element-reg-corep} and form the restriction of the regular
+  corepresentation $(V,\mathscr{X})$. Then
   \begin{align*}
     a = (\id \otimes \epsilon)(\Delta^{\op}_{kl}(a)) =
     (\id \otimes \epsilon)(\Gr{X}{k}{l}{m}{n}(1 \otimes a)) \in
@@ -2457,7 +2478,7 @@ use the following straightforward observation.
 \end{align*}
 Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
 
-Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. The other antipode identity follows similarly.
+Let us check for example the formula \[\sum_r f_{(1){\scriptscriptstyle \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\scriptscriptstyle \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. The other antipode identity follows similarly.
 
 By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{nn},F_{km})\] where $\hat{M}^n_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{nr}$ and $\id\otimes S$. 
 
@@ -2629,18 +2650,46 @@ Moreover, fix $k\in I_i$ and any $l\in I_{i+1}$ with $k'=l'$. Then $\Nat(F_{ll},
 
 Conversely, suppose that $\mathscr{A}_1$ and $\mathscr{A}_2$ arise from the corners of a linking partial compact quantum groupoid defined by $\mathscr{A}$ with invariant integral $\phi$. We will show that in fact the associated partial compact quantum groups $\mathscr{G}$ and $\mathscr{G}_1$ are Morita equivalent. Then by symmetry $\mathscr{G}$ and $\mathscr{G}_2$ are Morita equivalent, and hence also $\mathscr{G}_1$ and $\mathscr{G}_2$.
 
+
 For $(V,\mathscr{X}) \in \Corep_u(\mathscr{A})$, let $F(V,\mathscr{X}) = (W,\mathscr{Y})$ be the pair obtained from $(V,\mathscr{X})$ by restricting all indices to those appearing to $I_1$. It is immediate that $(W,\mathscr{Y})$ is a unitary rcfd corepresentation of $\mathscr{A}_1$, and that the functor $F$ hence becomes a unital morphism in a trivial way. What remains to show is that $F$ is an equivalence of categories, i.e.~ that $F$ is faithful and essentially surjective. 
 
-Let us first argue that $F$ is dominant, i.e.~ any unitary rcfd corepresentation $(W,\mathscr{Y})$ of $\mathscr{A}_1$ arises as a summand of some $F(V,\mathscr{X})$. Indeed, we may assume that $W$ is an irreducible corepresentation, and arises as regular corepresentation inside $A$. Taking any non-zero element of this corepresentation, and considering a regular rcfd corepresentation of $\mathscr{A}$ containing this element, we obtain an rcfd corepresentation of $\mathscr{A}$ whose restriction contains $W$.
+Let us first show that $F$ is faithful.  Lemma
+\ref{lemma:rep-invertible} implies that for every $(V,\mathscr{X}) \in
+\Corep_u(\mathscr{A})$, we have $\Gru{V}{k}{l}=0$ whenever $k\in
+I_{i}$ and $l\in I_{i+1}$.  If $T$ is a morphism in
+$\Corep_u(\mathscr{A}_{\alpha\beta}$ and $\Grd{T}{k}{l}=0$ for all
+$k,l \in I_{1}$, we therefore get $\Grd{T}{k}{l}=0$ for all $k\in I$
+and $l\in I_{1}$. Since $I_{\beta}\cap I_{1}$ is non-empty by
+assumption, we can apply Lemma \ref{LemInjMor} and conclude that
+$T=0$.
 
-Let now $\mathscr{Y}$ define a unitary corepresentation of $\mathscr{A}_1$ on a partial Hilbert space $W= \{\Gru{W}{k}{l}\}$. For $m,n\in I_{2}$, define $G_{mn}(W) = \Gru{Z}{m}{n}$ by \[ \Gru{Z}{m}{n} = \{z \in \left(\prod_k\oplus_l\cap \prod_l\oplus_k\right) \Gr{A}{k}{l}{m}{n}\otimes \Gru{W}{k}{l}\mid (\Delta_{rs}\otimes \id)(z_{kl}) = (\Gr{Y}{k}{l}{r}{s})_{13}(z_{rs})_{23},\quad \forall r,s\in I_1\}.\] We aim to show that $G_{mn}(W)$ is rcfd. In fact, $G$ is clearly functorial and linear. By the previous paragraph, we may thus assume that $(W,\mathscr{Y})$ arises as the restriction of some corepresentation $(V,\mathscr{X})$ of $\mathscr{A}$. 
+To complete the proof, we only need to show that $F$ induces a
+bijection between isomorphism classes of irreducible unitary rcfd
+corepresentations of $\mathcal{A}$ and of $\mathcal{A}_{1}$. Note that
+by Proposition \ref{prop:rep-cosemisimple} and Lemma
+\ref{lemma:rep-regular-embedding}, each such class can be represented
+by a restriction of the regular corepresentation of $\mathcal{A}$ or
+$\mathcal{A}_{1}$, respectively.
 
-Let then $Z$ be obtained as above from the restriction $W$ of $V$. We claim that the maps \[\theta_{mn}:\Gru{V}{m}{n}\rightarrow \Gru{Z}{m}{n},\quad v \mapsto \sum_{k,l\in I_1} \Gr{X}{k}{l}{m}{n}(1\otimes v),\quad m,n\in I_2\]  are well-defined linear isomorphisms. In fact, well-definedness is immediate. To show that the map is an isomorphism, let us construct a concrete inverse map. Fix $m,n$, and pick an $s\in I_1$ with $\UnitC{s}{n}\neq 0$, which is possible by assumption. Define then \[\gamma_{mn}:\Gru{Z}{m}{n} \rightarrow \Gru{V}{m}{n},\quad z \mapsto (\phi\otimes \id)\sum_{k\in I_1} \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks},\] where we note that the summation over $k$ is in fact finite as the variables $m,n,s$ are fixed. It follows immediately from the definition of $X^{-1}$ (and the fact that $\UnitC{s}{n}\neq 0$) that $\phi_{mn}\theta_{mn} = \id_{\Gru{V}{m}{n}}$. To show the reverse identity $\theta_{mn}\phi_{mn} = \id_{\Gru{Z}{m}{n}}$, it suffices to show that $z_{ks} = (\theta_{mn}\gamma_{mn}(z))_{ks}$. Let us first show that \begin{equation}\label{EqIdz} \UnitC{s}{n}\otimes \sum_k (\phi\otimes \id)(\Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}) = \sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}.\end{equation} Apply $\Delta_{nn}\otimes \id$ to the right hand side and use the invertibility of $X$ to conclude that  \[(\Delta_{nn}\otimes \id)\left(\sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks}\right) = \UnitC{s}{n}\otimes \Gr{(X^{-1})}{n}{n}{n}{m}z_{nn}.\] Apply the counit to the second leg to conclude that in fact $\sum_k \Gr{(X^{-1})}{s}{k}{n}{m}z_{ks} \in \UnitC{s}{n} \otimes \Gru{W}{m}{n}$, from which $\eqref{EqIdz}$ follows. Similarly, for $n\neq n'$ we find  \[(\Delta_{n'n}\otimes \id)\left(\sum_k \Gr{(X^{-1})}{s}{k}{n'}{m}z_{ks}\right) =0,\] and applying the counit gives \begin{equation}\label{EqIdz2} \sum_k \Gr{(X^{-1})}{s}{k}{n'}{m}z_{ks} =0.\end{equation} From \eqref{EqIdz} and \eqref{EqIdz2}, we then conclude 
-\begin{eqnarray*} (\theta_{mn}\gamma_{mn}(z))_{ks} &=& \sum_{k'} \Gr{X}{k}{s}{m}{n}\Gr{(X^{-1})}{s}{k'}{n}{m}z_{k's} \\ &=& \sum_{k',n'} \Gr{X}{k}{s}{m}{n'}\Gr{(X^{-1})}{s}{k'}{n'}{m}z_{k's} \\ &=& z_{ks}.\end{eqnarray*} 
-
-As a special case, obtained by considering the trivial linking quantum groupoid between $\mathscr{A}$ and itself, one has that $\Gru{W}{m}{n}\cong G_{mn}(W)$ for $m,n\in I_1$ and with $G_{mn}(W)$ defined by the same expression as above.
-
-Let us now take again an arbitrary unitary rcfd corepresentation $(W,\mathscr{Y})$ of $\mathscr{A}_1$. By the above, $\Gru{V}{m}{n} := G_{mn}(W)$ is rcfd over $I$. It is easy to see that we can then build an rcfd corepresentation $\mathscr{X}$ of $\mathscr{A}$ on $V$ by putting \[\Gr{X}{k}{l}{m}{n}(1\otimes z) = (\Delta_{kl}^{\op}\otimes \id)(z),\qquad z\in \Gru{Z}{m}{n}, \quad k,l,m,n\in I.\] It is then easy to see that, when $V$ is a unitary rcfd corepresentation, $V$ is equivariantly isomorphic to $GF(V)$, while any unitary rcfd corepresentation $W$ of $\mathscr{A}$ is equivariantly isomorphic to $FG(W)$. This proves essential surjectivity and faithfulness.
+If $(V,\mathscr{X})$ is an irreducible restriction of the regular
+corepresentation of $\mathcal{A}$, then $F(V,\mathscr{X})$ is a
+restriction of the regular corepresentation of $\mathcal{A}_{1}$, and
+Lemma \ref{lemma:regular-corep} implies that it is irreducible.  
+If $(V,\mathscr{X}), (W,\mathscr{Y}) \in \Corep_{u}(\mathcal{A})$ are
+irreducible and inequivalent, then $\mathcal{C}(V,\mathscr{X}) \cap
+\mathcal{C}(W,\mathscr{Y})=0$ and hence $\mathcal{C}(F(V,\mathscr{X}))
+\cap\mathcal{C}(F(W,\mathscr{Y})) =0$, whence $F(V,\mathscr{X})$ and
+$F(W,\mathscr{Y})$ are inequivalent.
+Finally, assume that $(W,\mathscr{Y})$ is a restriction of the regular
+corepresentation of $\mathcal{A}_{1}$. Pick a non-zero $a \in
+\Gru{W}{m}{n}$, define $\Gru{V}{p}{q} \subseteq \Gr{A}{k}{l}{p}{q}$ as
+in \eqref{eq:element-reg-corep} and form the regular corepresentation
+$(V,\mathscr{X})$ of $\mathscr{A}$. Then Lemma
+\ref{lemma:regular-corep} 2., applied to the corepresentation
+$(W,\mathscr{Y})$ of $\mathcal{A}_{1}$, shows that $\Grd{V}{p}{q} =
+\Grd{W}{p}{q}$ for all $p,q\in I_{1}$ so that $F(V,\mathscr{X}) =
+(W,\mathscr{Y})$. Since $F$ is faithful, $(V,\mathscr{X})$ must be
+irreducible.
 \end{proof}
 
 \begin{Exa} If $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent compact quantum groups, the total partial compact quantum group is the co-groupoid constructed in \cite{Bic1}. 
