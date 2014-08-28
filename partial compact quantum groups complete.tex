@@ -2131,7 +2131,18 @@ given by $T \mapsto \langle v|Tv'\rangle$. Then
   (\id \otimes \omega_{v,v'})( (\Gr{X}{m}{n}{k}{l})^{*}) =
   (\id \otimes \omega_{v',v})(\Gr{X}{m}{n}{k}{l})^{*}.
 \end{align*}
-This equation and Corollary \ref{CorOrth} imply the following corollary.
+This equation, Proposition \ref{prop:rep-orthogonality-1},  Lemma
+\ref{LemFaith} and
+Corollary \ref{CorOrth} imply the following
+corollaries:
+\begin{Cor} \label{cor:rep-unitary-orthogonality-1}   Let $\mathscr{A}$ define a partial compact quantum group with
+  positive invariant integral $\phi$ and let   $(V,\mathscr{X})$ and
+  $(W,\mathscr{Y})$ be inequivalent irreducible unitary rcfd
+  corepresentations of $\mathcal{A}$.  Then for all $a\in
+  \mathcal{C}(X), b \in \mathcal{C}(Y)$,
+  \[\phi(b^{*}a) = \phi(ba^{*})=0.\] In particular, $\mathcal{C}(X)
+  \cap \mathcal{C}(Y)=0$.
+\end{Cor}
 \begin{Cor}\label{cor:rep-unitary-schur-orthogonality}
   Let $\mathscr{A}$ define a partial compact quantum group with
   positive invariant integral $\phi$, let $(\Hsp,\mathscr{X})$ be an irreducible
@@ -2620,25 +2631,34 @@ by Proposition \ref{prop:rep-cosemisimple} and Lemma
 by a restriction of the regular corepresentation of $\mathcal{A}$ or
 $\mathcal{A}_{1}$, respectively.
 
-If $(V,\mathscr{X})$ is an irreducible restriction of the regular
-corepresentation of $\mathcal{A}$, then $F(V,\mathscr{X})$ is a
-restriction of the regular corepresentation of $\mathcal{A}_{1}$, and
-Lemma \ref{lemma:regular-corep} implies that it is irreducible.  
-If $(V,\mathscr{X}), (W,\mathscr{Y}) \in \Corep_{u}(\mathcal{A})$ are
-irreducible and inequivalent, then $\mathcal{C}(V,\mathscr{X}) \cap
-\mathcal{C}(W,\mathscr{Y})=0$ and hence $\mathcal{C}(F(V,\mathscr{X}))
-\cap\mathcal{C}(F(W,\mathscr{Y})) =0$, whence $F(V,\mathscr{X})$ and
-$F(W,\mathscr{Y})$ are inequivalent.
-Finally, assume that $(W,\mathscr{Y})$ is a restriction of the regular
+
+So, let $(W,\mathscr{Y})$ be an irreducible restriction of the regular
 corepresentation of $\mathcal{A}_{1}$. Pick a non-zero $a \in
-\Gru{W}{m}{n}$, define $\Gru{V}{p}{q} \subseteq \Gr{A}{k}{l}{p}{q}$ as
-in \eqref{eq:element-reg-corep} and form the regular corepresentation
-$(V,\mathscr{X})$ of $\mathscr{A}$. Then Lemma
-\ref{lemma:regular-corep} 2., applied to the corepresentation
-$(W,\mathscr{Y})$ of $\mathcal{A}_{1}$, shows that $\Grd{V}{p}{q} =
-\Grd{W}{p}{q}$ for all $p,q\in I_{1}$ so that $F(V,\mathscr{X}) =
-(W,\mathscr{Y})$. Since $F$ is faithful, $(V,\mathscr{X})$ must be
+\Gru{W}{m}{n}$, define $\Gru{V}{p}{q} \subseteq \bigoplus_{k,l}
+\Gr{A}{k}{l}{p}{q}$ as in \eqref{eq:element-reg-corep} and form the
+regular corepresentation $(V,\mathscr{X})$ of $\mathscr{A}$. Then
+$\Gru{V}{p}{q} = \Gru{W}{p}{q}$ for all $p,q\in I_{1}$ by Lemma
+\ref{lemma:regular-corep} 2.\ and hence $F(V,\mathscr{X}) =
+(W,\mathscr{Y})$.  Since $F$ is faithful, $(V,\mathscr{X})$ must be
 irreducible.
+
+Conversely, let $(V,\mathscr{X})$ be an irreducible restriction of the
+regular corepresentation of $\mathcal{A}$. Since $F$ is faithful,
+there exist $k,l\in I_{1}$ such that $\Gru{V}{k}{l}\neq 0$. Applying
+Corollary \ref{cor:rep-pw-morphisms}, we may assume that
+$\Gru{V}{p}{q} \subseteq \Gr{A}{k}{l}{p}{q}$ for some $k,l\in I_{1}$
+and all $p,q\in I$. But then $F(V,\mathscr{X})$ is a restriction of
+the regular corepresentation of $\mathcal{A}_{1}$.  If
+$F(V,\mathscr{X})$ would decompose into a direct sum of several
+irreducible corepresentations, then the same would be true for
+$(V,\mathscr{X})$ by the argument above. Thus, $F(V,\mathscr{X})$ is irreducible.
+
+Finally, assume that
+$(V,\mathscr{X})$ and $(W,\mathscr{Y})$ are 
+inequivalent irreducible unitary corepresentations of $\mathcal{A}$. Then $\mathcal{C}(V,\mathscr{X}) \cap
+\mathcal{C}(W,\mathscr{Y})=0$ by Corollary \ref{cor:rep-unitary-orthogonality-1} and hence $\mathcal{C}(F(V,\mathscr{X}))
+\cap\mathcal{C}(F(W,\mathscr{Y})) =0$, whence $F(V,\mathscr{X})$ and
+$F(W,\mathscr{Y})$ are inequivalent.  
 \end{proof}
 
 \begin{Exa} If $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent compact quantum groups, the total partial compact quantum group is the co-groupoid constructed in \cite{Bic1}. 
@@ -2777,7 +2797,8 @@ Hence, by the universal property of $\Rep(SU_q(2))$ (\cite[Theorem 1.4]{DCY1}, b
 
 % Concrete reference to be added.
 
-It follows from the previous subsection and the Tannaka-Krein-Woronowicz duality of \cite[Theorem 4.14]{DCT1} that for each reciprocal random walk on a graph $\Gamma$, one obtains a $\Gamma^{(0)}$-partial compact quantum group $\mathscr{G}$, and conversely every partial compact quantum group $\mathscr{G}$ with the fusion rules of $SU(2)$ arises in this way. Our first aim is to give a direct representation of the associated algebras $A(\Gamma) = P(\mathscr{G})$ by generators and relations. We will write $\Gamma_{vw}\subseteq \Gamma^{(1)}$ for the set of edges with source $v$ and target $w$.
+It follows from the previous subsection and the
+Tannaka-Krein-Woronowicz in Theorem \ref{TheoTKPCQG} that for each reciprocal random walk on a graph $\Gamma$, one obtains a $\Gamma^{(0)}$-partial compact quantum group $\mathscr{G}$, and conversely every partial compact quantum group $\mathscr{G}$ with the fusion rules of $SU(2)$ arises in this way. Our first aim is to give a direct representation of the associated algebras $A(\Gamma) = P(\mathscr{G})$ by generators and relations. We will write $\Gamma_{vw}\subseteq \Gamma^{(1)}$ for the set of edges with source $v$ and target $w$.
 
 
 \begin{Theorem}\label{TheoGenRel} Let $0<|q|\leq 1$, and let $\Gamma = (\Gamma,w,\sgn,i)$ be a $-2_q$-reciprocal random walk. Let $A(\Gamma)$ be the total $^*$-algebra associated to the $\Gamma^{(0)}$-partial compact quantum group constructed from the fiber functor $F_{\Gamma}$ as in \eqref{EqForget}. Then $A(\Gamma)$ is the universal $^*$-algebra generated by a copy of the $^*$-algebra of finite support functions on $\Gamma^{(0)}\times \Gamma^{(0)}$ (with the Dirac functions written as $\UnitC{v}{w}$) and elements $(u_{e,f})_{e,f\in \Gamma^{(1)}}$ where $u_{e,f}\in \Gr{A(\Gamma)}{s(e)}{t(e)}{s(f)}{t(f)}$ and 
