@@ -916,17 +916,17 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
   \end{align*}
   Hence we can again apply Lemma \ref{lem:rep-average} and
   find that the family $(F_{m,n,k,l})_{k,l}$ is a morphism from $(\Gru{V}{m}{n} \otimes V, \hat{\hat{X}}_{13})$ to $(\Gru{V}{m}{n} \otimes V,
- X_{13})$. Therefore also $F_{m,n,k,l} = \Gru{T}{m}{n} \otimes \Gr{G}{k}{l}{}{\mathscr{X}}$
+ X_{13})$. Therefore also $F_{m,n,k,l} = \Gru{T}{m}{n} \otimes \GrDA{G}{k}{l}$
   with some $\Gru{T}{m}{n} \in \mathcal{\Hom_{\C}}(\Gru{V}{m}{n})$
   not depending on $k,l$. 
   
   We conclude from the above calculations that $F_{m,n,k,l} = \lambda
-  (\id_{\Gru{V}{m}{n}} \otimes \Gr{G}{k}{l}{}{\mathscr{X}})$  for some $\lambda\in \C$.
+  (\id_{\Gru{V}{m}{n}} \otimes \GrDA{G}{k}{l})$  for some $\lambda\in \C$.
    
   Choose now dual  bases
   $(v_{i})_{i}$ for $\Gru{V}{k}{l}$ and $(f_{i})_{i}$ for  $\dual{(\Gru{V}{k}{l})}$. Then
   \begin{align*}
-    \lambda   \Tr( \Gr{G}{k}{l}{}{\mathscr{X}}) \id_{\Gru{V}{m}{l}}
+    \lambda   \Tr( \GrDA{G}{k}{l}) \id_{\Gru{V}{m}{l}}
  &= \sum_{i} (\id \otimes
     \omega_{f_{i},v_{i}})(F_{m,l,k,l}) = (\phi \otimes
     \id)((\Gr{(X^{-1})}{l}{k}{l}{m}) \Gr{X}{k}{l}{m}{l}).
@@ -934,7 +934,7 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
    By Lemma \ref{LemInjMor}, we can choose $m\in I_{\alpha}$ with $\Gru{V}{m}{l}\neq 0$.   Then summing the previous relation over $k$, the relations $\sum_{k}
   (\Gr{(X^{-1})}{l}{k}{l}{m}) \Gr{X}{k}{l}{m}{l} = \UnitC{l}{l}
   \otimes \id_{\Gru{V}{m}{l}}$ and
-  $\phi(\UnitC{l}{l})=1$ give $\lambda \cdot  \sum_{k} \Tr(\Gr{G}{k}{l}{}{\mathscr{X}}) = 1.$
+  $\phi(\UnitC{l}{l})=1$ give $\lambda \cdot  \sum_{k} \Tr(\GrDA{G}{k}{l}) = 1.$
 Now all assertions in (1)--(3) concerning $d_G$ follow.
 \end{proof}
 
@@ -952,8 +952,8 @@ Note that for semi-simple tensor categories with duals, any object is isomorphic
   \dual{(\Gru{V}{m}{n})}$, $w \in  \Gru{V}{k}{l}$.  Then
 \begin{align*}
   \phi(S(b)a) &= \frac{(g|v)(f|G_{\mathscr{X}}w)}{\sum_{r}
-    \Tr(\Gr{G}{r}{n}{}{\mathscr{X}})}, & \phi(aS(b)) = \frac{(g|F_{\mathscr{X}}v)(f|w)}{\sum_{s}
-    \Tr(\Gr{F}{m}{s}{}{\mathscr{X}})}.
+    \Tr(\GrDA{(G_{\mathscr{X}})}{r}{n}}, & \phi(aS(b)) = \frac{(g|F_{\mathscr{X}}v)(f|w)}{\sum_{s}
+    \Tr(\GrDA{(F_{\mathscr{X}})}{m}{s})}.
 \end{align*}
 \end{Cor}
 \begin{proof}
@@ -1470,7 +1470,7 @@ $\mathcal{A}_{1}$, respectively.
 So, let $(W,\mathscr{Y})$ be an irreducible restriction of the regular
 corepresentation of $\mathcal{A}_{1}$. Pick a non-zero $a \in
 \Gru{W}{m}{n}$, define $\Gru{V}{p}{q} \subseteq \bigoplus_{k,l}
-\Gr{A}{k}{l}{p}{q}$ as in \eqref{eq:element-reg-corep} and form the
+\Gr{A}{k}{l}{p}{q}$ as in \eqref{lemma:regular-corep} and form the
 regular corepresentation $(V,\mathscr{X})$ of $\mathscr{A}$. Then
 $\Gru{V}{p}{q} = \Gru{W}{p}{q}$ for all $p,q\in I_{1}$ by Lemma
 \ref{lemma:regular-corep} 2.\ and hence $F(V,\mathscr{X}) =
@@ -1480,7 +1480,7 @@ irreducible.
 Conversely, let $(V,\mathscr{X})$ be an irreducible restriction of the
 regular corepresentation of $\mathcal{A}$. Since $F$ is faithful,
 there exist $k,l\in I_{1}$ such that $\Gru{V}{k}{l}\neq 0$. Applying
-Corollary \ref{cor:rep-pw-morphisms}, we may assume that
+Corollary \ref{cor:rep-pw}, we may assume that
 $\Gru{V}{p}{q} \subseteq \Gr{A}{k}{l}{p}{q}$ for some $k,l\in I_{1}$
 and all $p,q\in I$. But then $F(V,\mathscr{X})$ is a restriction of
 the regular corepresentation of $\mathcal{A}_{1}$.  If
@@ -1514,7 +1514,7 @@ We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ ar
 
 One can prove that this is indeed an equivalence relation. 
 
-The following notion is dual to that of linkin partial compact quantum group.
+The following notion is dual to that of linking partial compact quantum group.
 
 \begin{Def}\label{DefCoLink} A \emph{co-linking partial compact quantum group} consists of a partial compact quantum group $\mathscr{G}$ defined by a Hopf $^*$-algebra $\mathscr{A}$ over an index set $I$, together with a distinguished partition $I = I_1\cup I_2$ such that each $\UnitC{k}{l}=0$ for $k\in I_i$ and $l\in I_{i+1}$, and such that for each $k\in I_i$, there exists $l\in I_{i+1}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$.  
 \end{Def} 
@@ -1531,12 +1531,18 @@ It follows that $A_{11}$ and $A_{22}$ are Morita equivalent algebras.
 \begin{Def} We call two partial compact quantum groups \emph{co-Morita equivalent} if there exists a \emph{co-linking partial compact quantum group} having these partial compact quantum groups as its corners.
 \end{Def}
 
-For finite partial compact quantum groups, one can easily show that the notion of co-linking partial compact quantum group is dual to the notion of linking partial compact quantum group. 
-
 We skip the proof of the following lemma, which can be proven along similar lines to the proof that Morita equivalence of algebras defines an equivalence relation.
 
 \begin{Lem} Co-Morita equivalence is an equivalence relation. 
 \end{Lem} 
+
+\begin{proof} The idea is standard, and consists in building a 3 by 3 matrix $A_{\{1,2,3\}}= \begin{pmatrix} A_{11} & A_{12} &   A_{13} \\ A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33} \end{pmatrix}$ having two co-linking partial quantum groups in the upper left and lower right 2 by 2 corners between resp.~ $\mathscr{G}_1$ and $\mathscr{G}_2$, and $\mathscr{G}_2$ and $\mathscr{G}_3$. For example, $A_{13}$ is constructed as $A_{12}\underset{A_{22}}{\otimes } A_{23}$. It is straightforward to define a regular weak multiplier Hopf $^*$-algebra on $A_{\{1,2,3\}}$ satisfying the conditions of Proposition \ref{PropCharPBA}. 
+
+Let now $\phi$ be the functional which is zero on the off-diagonal entries $A_{ij}$ and which coincides with the invariant positive integrals on the $A_{ii}$. Then it is also easily checked that $\phi$ is invariant. To show that $\phi$ is positive, we invoke Remark \ref{RemPos}. Indeed, any irreducible corepresentation of $A_{\{1,2,3\}}$ has coefficients in a single $A_{ij}$. For those $i,j$ with $|i-j|\leq 1$, we know that the corepresentation is unitarizable by restricting to a corner $2\times 2$-block. If however the corepresentation $\mathscr{X}$ has coefficients living in (say) $A_{13}$, it follows from the identity $A_{12}A_{23}=A_{13}$ that the corepresentation is a direct summand of a product $\mathscr{Y}\Circt \mathscr{Z}$ of corepresentations with coefficients in respectively $A_{12}$ and $A_{23}$. This proves unitarizability of $\mathscr{X}$. It follows from Remark \ref{RemPos} that $\phi$ is positive, and hence $\mathscr{A}_{\{1,2,3\}}$ defines a partial compact quantum group.  
+
+We claim that the subspace $\mathscr{A}_{\{1,3\}}$ (in the obvious notation) defines a co-linking compact quantum group between $\mathscr{G}_1$ and $\mathscr{G}_3$. In fact, it is clear that the $\mathscr{A}_{11}$ and $\mathscr{A}_{33}$ are corners of $\mathscr{A}_{\{1,3\}}$, and that $\UnitC{k}{l}=0$ for $k,l$ not both in $I_1$ and $I_{3}$. To finish the proof, it is sufficient to show now that for each $k\in I_1$, there exists $l\in I_{3}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$, as the other case follows by symmetry using the antipode. But there exists $m\in I_2$ with $\Gr{A}{k}{m}{k}{m} \neq \{0\}$, and $l\in I_3$ with $\Gr{A}{m}{l}{m}{l}\neq\{0\}$. As in the discussion following Definition \ref{DefCoLink}, this implies that there exists $a\in \Gr{A}{k}{m}{k}{m}$ and $b\in \Gr{A}{m}{l}{m}{l}$ with $\epsilon(a)=\epsilon(b)=1$. Hence $\epsilon(ab)=1$, showing $\Gr{A}{k}{l}{k}{l}\neq \{0\}$.
+\end{proof} 
+
 
 \begin{Prop}\label{PropCoWeak} Assume that two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are co-Morita equivalent. Then they are weakly Morita equivalent.
 \end{Prop} 
