@@ -10,8 +10,8 @@
 % Ref to `Module categories, weak Hopf algebras and modular invariants' by Ostrik, in particular wrt canonical partial CQG from module C*-cat
 % Normalisation of Hayashi for Woronowicz characters seems to be different...
 
-\documentclass[10pt]{article}
-
+\documentclass[10pt]{amsart}
+\usepackage[foot]{amsaddr}
 \usepackage{hyperref}
 \usepackage{fixme}
 \usepackage{mathrsfs}
@@ -28,7 +28,7 @@
 \usepackage{fouridx}
 \usepackage{parskip} % paragraphs have no indents and vertical spacings inbetween
 \usepackage{bbm}
-
+\setcounter{tocdepth}{1}
 
 \makeatletter % need this to avoid the conflict between amsthm and parskip
 \def\thm@space@setup{%
@@ -256,10 +256,12 @@
 \begin{document}
 \title{Partial compact quantum groups}
 
-\author{Kenny De Commer\thanks{Department of Mathematics, Vrije Universiteit Brussel, VUB, B-1050 Brussels, Belgium, email: {\tt kenny.de.commer@vub.ac.be}}
-\and Thomas Timmermann\thanks{University of M\"{u}nster}}
+\author{Kenny De Commer$^{1}$}\address{$^{1}$Department of Mathematics, Vrije
+    Universiteit Brussel, VUB, B-1050 Brussels, Belgium}\email{kenny.de.commer@vub.ac.be}
+\author{Thomas Timmermann$^{2}$}\address{$^{2}$University of M\"{u}nster,
+  Einsteinstrasse 62, 48149 Muenster}\email{timmermt@uni-muenster.de}
+\thanks{second author supported by the SFB 878 of the DFG}
 
-\maketitle
 
 \begin{abstract}
 \noindent Compact quantum groups of face type, as introduced by
@@ -269,15 +271,15 @@ and weak multiplier Hopf algebra (resp.~ due to
 B{\"o}hm--G\'{o}mez-Torrecillas--L\'{o}pez-Centella and Van
 Daele--Wang), we generalize Hayashi's definition to allow for an
 infinite set of objects, and call the resulting objects partial
-compact quantum groups. We prove a Tannaka-Krein-Woronowicz
+compact quantum groups. We prove a Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz
 reconstruction result for such partial compact quantum groups using
 the notion of a partial fusion C$^*$-category. As examples, we consider the dynamical quantum $SU(2)$-groups from the point of view of partial compact quantum groups.
 \end{abstract}
 
 
-%\emph{Keywords}:
-
-%AMS 2010 \emph{Mathematics subject classification}:
+\keywords{quantum groups, quantum groupoids,  weak multiplier Hopf algebras,  fiber functors,
+Tannaka-Krein duality}
+\subjclass{81R50; 16T05, 16T15, 18D10, 20G42}
 
 
 %17B37: Quantum groups, quantized enveloping algebras
@@ -291,20 +293,26 @@ the notion of a partial fusion C$^*$-category. As examples, we consider the dyna
 %58B32: Geometry of quantum groups
 
 
+
+\maketitle
+
+%AMS 2010 \emph{Mathematics subject classification}:
+
+
+
 \tableofcontents
 
 \section*{Introduction}
 
 The concept of  a \emph{face algebra} was introduced by T. Hayashi in \cite{Hay2}, motivated by the theory of solvable lattice models in statistical mechanics. It was further studied in \cite{Hay1,Hay3,Hay4,Hay5,Hay6,Hay7,Hay8}, where for example associated $^*$-structures and a canonical Tannaka duality were developed. This canonical Tannaka duality allows one to construct a canonical face algebra from any (finite) fusion category. For example, a face algebra can be associated to the fusion category of a quantum group at root unity, for which no genuine quantum group implementation can be found. 
 
-In \cite{Nil1,Sch1,Sch2}, it was shown that face algebras are particular kinds of $\times_R$-algebras \cite{Tak2} and of weak bialgebras \cite{Boh3}. More intuitively, they can be considered as quantum groupoids with a classical, finite object set. In this article, we want to extend Hayashi's theory by allowing an \emph{infinite} (but still discrete) object set. This requires passing from weak bialgebras to weak \emph{multiplier} bialgebras \cite{Boh1}. At the same time, our structures admit a piecewise description by what we call a \emph{partial bialgebra}, which is more in the spirit of Hayashi's original definition. In the presence of an antipode, an invariant integral and a compatible $^*$-structure, we call our structures \emph{partial compact quantum groups}. 
+In \cite{Nil1,Sch1,Sch2}, it was shown that face algebras are particular kinds of $\times_R$-algebras \cite{Tak2} and of weak bialgebras \cite{Boh3,BCJ,Nik1}. More intuitively, they can be considered as quantum groupoids with a classical, finite object set. In this article, we want to extend Hayashi's theory by allowing an \emph{infinite} (but still discrete) object set. This requires passing from weak bialgebras to weak \emph{multiplier} bialgebras \cite{Boh1}. At the same time, our structures admit a piecewise description by what we call a \emph{partial bialgebra}, which is more in the spirit of Hayashi's original definition. In the presence of an antipode, an invariant integral and a compatible $^*$-structure, we call our structures \emph{partial compact quantum groups}. 
 
 The passage to the infinite object case is delicate at points, and requires imposing the proper finiteness conditions on associated structures. However, once all conditions are in place, many of the proofs are similar in spirit to the finite object case. % Rephrase? Don't downplay too much?
 
-Our main result is a Tannaka-Krein-Woronowicz duality result which states that partial compact quantum groups are in one-to-one correspondence with \emph{concrete partial fusion C$^*$-categories}. In its essence, a partial fusion C$^*$-category is a multifusion C$^*$-category \cite{ENO1}, except that (in a slight abuse of terminology) we allow an infinite number of irreducible objects as well as an infinite number of summands inside the unit object. By a \emph{concrete} multifusion C$^*$-category, we mean a multifusion C$^*$-category realized inside a category of (locally finite-dimensional) bigraded Hilbert spaces. Of course, Tannaka reconstruction is by now a standard procedure. % Almost standard procedure?
-For closely related results most relevant to our work, we mention \cite{Wor2,Sch3,Hay8,Ost1,Hai1,Szl1,Pfe1,DCY1,Nes1} as well as the surveys \cite{JoS1} and \cite[Section 2.3]{NeT1}.
+Our main result is a Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz duality result which states that partial compact quantum groups are in one-to-one correspondence with \emph{concrete partial fusion C$^*$-categories}. In essence, a partial fusion C$^*$-category is a multifusion C$^*$-category \cite{ENO1}, except that (in a slight abuse of terminology) we allow an infinite number of irreducible objects as well as an infinite number of summands inside the unit object. By a \emph{concrete} multifusion C$^*$-category, we mean a multifusion C$^*$-category realized inside a category of (locally finite-dimensional) bigraded Hilbert spaces. Of course, Tannaka reconstruction is by now a standard procedure. For closely related results most relevant to our work, we mention \cite{Wor2,Sch3,Hay8,Ost1,Hai1,Szl1,Pfe1,DCY1,Nes1} as well as the surveys \cite{JoS1} and \cite[Section 2.3]{NeT1}.
 
-As an application, we generalize Hayashi's Tannaka duality \cite{Hay8} (see also \cite{Ost1}) by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In particular,  we consider the case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce partial compact quantum group versions of the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{Sto1}. This construction will immediately provide the right setting for the operator algebraic versions of these dynamical quantum $SU(2)$-groups, which was the main motivation for writing this paper. These operator algebraic details will however be studied elsewhere \cite{DCT2}.
+As an application, we generalize Hayashi's Tannaka duality \cite{Hay8} (see also \cite{Ost1}) by showing that any module C$^*$-category over a multifusion C$^*$-category has an associated canonical partial compact quantum group. By the results of \cite{DCY1}, such data can be produced from ergodic actions of compact quantum groups. In particular,  we consider the case of ergodic actions of $SU_q(2)$ for $q$ a non-zero real. This will allow us to show that the construction of \cite{Hay4} generalizes to produce partial compact quantum group versions of the dynamical quantum $SU(2)$-groups of \cite{EtV1,KoR1}, see also \cite{Sto1} and references therein. This construction will immediately provide the right setting for the operator algebraic versions of these dynamical quantum $SU(2)$-groups, which was the main motivation for writing this paper. These operator algebraic details will be studied elsewhere \cite{DCT2}.
 
 The precise layout of the paper is as follows.
 
@@ -317,7 +325,7 @@ bialgebra \cite{Boh1}, weak multiplier Hopf algebra \cite{VDW1,VDW2}
 and compact quantum group of face type \cite{Hay1}. In the
 \emph{second section}, we introduce the corresponding notions of a \emph{partial tensor category} and \emph{partial fusion C$^*$-category}. 
 
-In the next two sections, our main result is proven, namely the Tannaka-Krein-Woronowicz duality. In the \emph{third section} we develop the corepresentation theory of partial Hopf algebras and the representation theory of partial compact quantum groups, and we show that the latter allows one to construct a concrete partial fusion C$^*$-category. In the \emph{fourth} section, we show conversely how any concrete partial fusion C$^*$-category allows one to construct a partial compact quantum group, and we briefly show how the two constructions are inverses of each other.
+In the next two sections, our main result is proven, namely the Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz duality. In the \emph{third section} we develop the corepresentation theory of partial Hopf algebras and the representation theory of partial compact quantum groups, and we show that the latter allows one to construct a concrete partial fusion C$^*$-category. In the \emph{fourth} section, we show conversely how any concrete partial fusion C$^*$-category allows one to construct a partial compact quantum group, and we briefly show how the two constructions are inverses of each other.
 
 In the final two sections, we provide some examples of our structures
 and applications of our main result. In the \emph{fifth section}, we
@@ -348,7 +356,7 @@ By an \emph{$I$-partial algebra} we will mean a partial algebra with object set 
 \end{Def}
 
 \begin{Rem}
-\begin{enumerate}\item It will be important to allow the local units $\Unit_k$ to be zero.
+\begin{enumerate}[label=(\arabic*)]\item It will be important to allow the local units $\Unit_k$ to be zero.
 \item A partial algebra is by definition the same as a small
   $\C$-linear category. However, we do not emphasize this viewpoint,
   as the natural notion of a morphism for partial algebras will be \emph{contravariant} on objects, see Definition \ref{DefMor}.% Is this correct, or are local units = 0 not allowed? 
@@ -372,13 +380,15 @@ Working with non-unital algebras necessitates the use of their \emph{multiplier 
 
 \begin{Def} Let $A$ be an algebra. A \emph{multiplier} $m$ for $A$ consists of a couple of maps \begin{eqnarray*} L_m:A\rightarrow A,\quad a\mapsto ma\\ R_m:A\rightarrow A,\quad a\mapsto am\end{eqnarray*} such that $(am)b = a(mb)$ for all $a,b\in A$. 
 
-The set of all multipliers forms an algebra under composition for the $L$-maps and anti-composition for the $R$-maps. It is called the \emph{multiplier algebra} of $A$, and is denoted $M(A)$.
+The set of all multipliers forms an algebra under composition for the
+$L$-maps and anti-composition for the $R$-maps. It is called the
+\emph{multiplier algebra} of $A$, and is denoted by $M(A)$.
 \end{Def}
 
 One has a natural homomorphism $A\rightarrow M(A)$. When $A$ is non-degenerate,  this homomorphism is injective, and we can then identify $A$ as a subalgebra of the (unital) algebra $M(A)$. We then also have inclusions \[A\otimes A\subseteq M(A)\otimes M(A)\subseteq M(A\otimes A).\]
 
 \begin{Exa}\label{ExaMult} 
-\begin{enumerate}
+\begin{enumerate}[label=(\arabic*)]
 \item Let $I$ be a set, and $\Fun_{\fin}(I)$ the algebra of all finitely supported functions on $I$. Then $M(\Fun_{\fin}(I)) = \Fun(I)$, the algebra of all functions on $I$. 
 \item Let $A$ be the total algebra of an $I$-partial algebra $\mathscr{A}$. As $A$ has local units, it is non-degenerate and idempotent. Then one can identify $M(A)$ with \[M(A) = \left(\prod_l \bigoplus_k A(k,l)\right) \bigcap \left(\prod_k\bigoplus_l A(k,l)\right) \subseteq \prod_{k,l} A(k,l),\] i.e.~ with the space of functions \[m:I^2\rightarrow A,\quad m_{kl}\in A(k,l)\] which have finite support in either one of the variables when the other variable has been fixed. The multiplication is given by the formula \[(mn)_{kl} = \sum_p m_{kp}n_{pl}.\]
 \item Let $m_i$ be any collection of multipliers of $A$, and assume that for each $a\in A$, $m_ia =0$ for almost all $i$, and similarly $am_i=0$ for almost all $i$. Then one can define a multiplier $\sum_i m_i$ in the obvious way by termwise multiplication. One says that the sum $\sum_i m_i$ converges in the \emph{strict} topology. 
@@ -401,7 +411,7 @@ Let us comment on the notion of a morphism for partial algebras. We first introd
 The homomorphism is called \emph{unital} if $J=\bigcup \{J_k\mid k\in I\}$. % Can't call this a partition since $J_k$ can be empty 
 \end{Def}
 \begin{Rem}
-\begin{enumerate}
+\begin{enumerate}[label=(\arabic*)]
 \item
 Note that the multiplicativity condition makes sense because of the local finiteness condition.
 \item
@@ -414,7 +424,8 @@ The following lemma provides the global viewpoint concerning homomorphisms.
 \begin{Lem}\label{LemPAMor} Let $\mathscr{A}$ and $\mathscr{B}$ be respectively $I$- and $J$-partial algebras, and fix an assignment $\phi: k\mapsto J_k$. Then there is a one-to-one correspondence between homomorphisms $\mathscr{A}\rightarrow \mathscr{B}$ based on $\phi$ and homomorphisms $f:A\rightarrow M(B)$ with $f(\Unit_k) = \sum_{r\in J_k} \Unit_r$. 
 \end{Lem} 
 \begin{proof}
-Straightforward, using the characterisation of the multiplier algebra provided in Remark \ref{ExaMult}.2.
+Straightforward, using the characterisation of the multiplier algebra
+provided in Remark \ref{ExaMult} (2).
 \end{proof}
 
 \subsection{Partial coalgebras}
@@ -462,7 +473,7 @@ and for which the following compatibility relations are satisfied.
 \end{enumerate}
 \end{Def}
 
-\begin{Rem}\label{RemBA}\begin{enumerate}
+\begin{Rem}\label{RemBA}\begin{enumerate}[label=(\arabic*)]
 \item By assumption \ref{Propd}, the sum on the right hand side in condition \ref{Prope} is in fact finite and hence well-defined. 
 \item Note that the object set of the above $\mathscr{A}$ as a partial bialgebra is $I$, but the object set of its underlying partial algebra (or coalgebra) is $I^2$.
 \item Properties \ref{Propa}, \ref{Propd} and \ref{Prope} simply say that $\Delta$ is a homomorphism $\mathscr{A}\rightarrow \mathscr{A}\otimes \mathscr{A}$ of partial algebras based over the assignment $I^2\rightarrow \mathscr{P}(I^2\times I^2)$, the power set of $I^2\times I^2$, such that \[(I^2\times I^2)_{{\tiny \begin{pmatrix} k\\m \end{pmatrix}}} = \{\left(\begin{pmatrix} k \\ l \end{pmatrix},\begin{pmatrix} l \\ m \end{pmatrix}\right)\mid l\in I\}.\] 
@@ -470,7 +481,9 @@ and for which the following compatibility relations are satisfied.
 \end{Rem}
 
 We relate the notion of a partial bialgebra to the recently introduced
-notion of a weak multiplier bialgebra \cite{Boh1}. Let us first introduce the following notation, using the notion introduced in Example \ref{ExaMult}.2.
+notion of a weak multiplier bialgebra \cite{Boh1}. Let us first
+introduce the following notation, using the notion introduced in
+Example \ref{ExaMult} (2).
 
 \begin{Not}
 If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \UnitC{k}{l},\qquad \rho_l = \sum_k\UnitC{k}{l} \qquad \in M(A).\]
@@ -481,7 +494,7 @@ If $\mathscr{A}$ is an $I$-partial bialgebra, we write \[\lambda_k = \sum_l \Uni
 
 To show that the total algebra of a partial bialgebra becomes a weak
 multiplier bialgebra, we will need some easy lemmas. The first one is
-an immediate consequence of Remark \ref{RemBA} 3.\ and Lemma \ref{LemPAMor}:
+an immediate consequence of Remark \ref{RemBA} (3) and Lemma \ref{LemPAMor}:
 
 \begin{Lem} Let $\mathscr{A}$ be an $I$-partial bialgebra. Then for each $a\in A$, there exists a unique multiplier $\Delta(a) \in M(A\otimes A)$ such that \begin{align}\label{EqDel}
     \begin{aligned}
@@ -566,7 +579,7 @@ Let us now show a converse. If $(A,\Delta)$ is a regular weak multiplier bialgeb
 \begin{Rem}\label{RemNak} We could also have used the map $\bar{\sigma}(\Pi^L(a)) = \bar{\Pi}^R(a)$ to identify $A^L$ and $A^R$. As it turns out, $\bar{\sigma}^{-1}\sigma$ is the (unique) Nakayama automorphism for some functional $\varepsilon$ on $A^L$, cf. \cite[Proposition 4.9]{Boh1}. Hence if $A^L$ is commutative, it follows that $\sigma = \bar{\sigma}$.
 \end{Rem} 
 
-\begin{Prop}\label{PropCharPBA} Let $(A,\Delta)$ be a left and right full regular weak multiplier bialgebra whose base algebra is isomorphic to $\Fun_f(I)$ for some set $I$, and such that moreover $A^LA^R \subseteq A$. Then $(A,\Delta)$ is the total weak multiplier bialgebra of a uniquely determined partial bialgebra $\mathscr{A}$ over $I$.
+\begin{Prop}\label{PropCharPBA} Let $(A,\Delta)$ be a left and right full regular weak multiplier bialgebra whose base algebra is isomorphic to $\Fun_{\fin}(I)$ for some set $I$, and such that moreover $A^LA^R \subseteq A$. Then $(A,\Delta)$ is the total weak multiplier bialgebra of a uniquely determined partial bialgebra $\mathscr{A}$ over $I$.
 \end{Prop} 
 
 \begin{Rem} The condition $A^LA^R \subseteq A$ is of course essential, as we want $A$ to behave locally as a bialgebra, not a multiplier bialgebra. Indeed, in case $A^L= \C$, the condition simply says that $A$ is unital. In general, it should be considered as a \emph{properness} condition. % Ref to Timmermann?
@@ -595,7 +608,7 @@ This concludes the proof that $(A,\Delta)$ determines a partial bialgebra $\math
 
 We now formulate the notion of a partial Hopf algebra, whose total form will correspond to a weak multiplier Hopf algebra \cite{Boh1,VDW2,VDW1}. We will mainly refer to \cite{Boh1} for uniformity.
 
- Let us denote $\circ$ for the inverse of $\wmult$, and $\bullet$ for the inverse of $\bmult$, so \[\begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ} = \begin{pmatrix} l & k \\ n & m \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\bullet} = \begin{pmatrix} m & n \\ k & l \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ \bullet} = \begin{pmatrix} n & m \\ l & k \end{pmatrix}.\] The notation $\circ$ (resp. $\bullet$) will also be used for row vectors (resp. column vectors).
+ Let us write $\circ$ for the inverse of $\wmult$, and $\bullet$ for the inverse of $\bmult$, so \[\begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ} = \begin{pmatrix} l & k \\ n & m \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\bullet} = \begin{pmatrix} m & n \\ k & l \end{pmatrix},\quad \begin{pmatrix} k & l \\ m & n \end{pmatrix}^{\circ \bullet} = \begin{pmatrix} n & m \\ l & k \end{pmatrix}.\] The notation $\circ$ (resp. $\bullet$) will also be used for row vectors (resp. column vectors).
 
 \begin{Def}\label{DefPartBiAlgAnt} An \emph{antipode} for an
   $I$-partial bialgebra $\mathscr{A}$ consists of linear
@@ -877,8 +890,7 @@ The other case follows similarly, or by considering the opposite comultiplicatio
 
 \subsection{Partial compact quantum groups}
 
-We now turn towards the structures which will allow us to build operator algebraic quantum groupoids out of our partial Hopf algebras (see Section 7).
- 
+Our main objects of interest are partial Hopf algebras with involutions and invariant integrals.
 \begin{Def} A \emph{partial $*$-algebra} $\mathscr{A}$ is a partial
   algebra whose total algebra $A$ is equipped with an antilinear,
   antimultiplicative involution $*\colon A\rightarrow A$, $ a\mapsto
@@ -933,7 +945,7 @@ The notion of a partial algebra has a nice categorification. Recall first that t
 \begin{itemize}
 \item[$\bullet$] a collection of (small) categories $\mathcal{C}_{\alpha\beta}$ with $\alpha,\beta\in \mathscr{I}$, 
 \item[$\bullet$] $\C$-bilinear functors \[\otimes: \CatC_{\alpha\beta}\times \CatC_{\beta\gamma}\rightarrow \CatC_{\alpha\gamma},\] 
-\item[$\bullet$] natural isomorphisms \[ a_{X,Y,Z}: (X\otimes Y)\otimes Z \rightarrow X\otimes (Y\otimes Z),\qquad X \in \CatC_{\alpha\beta},Y\in \CatC_{\beta\gamma},Z\in \CatC_{\alpha\beta},\] 
+\item[$\bullet$] natural isomorphisms \[ a_{X,Y,Z}: (X\otimes Y)\otimes Z \rightarrow X\otimes (Y\otimes Z),\qquad X \in \CatC_{\alpha\beta},Y\in \CatC_{\beta\gamma},Z\in \CatC_{\gamma\delta},\] 
 \item[$\bullet$] non-zero objects $\Unitb_{\alpha} \in \CatC_{\alpha\alpha}$,
 \item[$\bullet$] natural isomorphisms \[\lambda_X^{(\alpha)}:\Unitb_\alpha\otimes X \rightarrow X,\qquad \rho_X^{(\beta)}:X\otimes \Unitb_\beta\rightarrow X, \qquad X\in \CatC_{\alpha\beta},\]
 \end{itemize}
@@ -960,8 +972,8 @@ The corresponding total notion is as follows.
 
 Note that the condition \ref{UnCon} makes sense because of the local support condition in \ref{FinSup}. 
 
-\begin{Rem} \begin{enumerate}
-\item There is no problem in modifying Maclane's coherence theorem, and we will henceforth assume that our partial tensor categories and tensor categories with local units are strict, just to lighten notation. 
+\begin{Rem} \begin{enumerate}[label=(\arabic*)]
+\item There is no problem in modifying Mac Lane's coherence theorem, and we will henceforth assume that our partial tensor categories and tensor categories with local units are strict, just to lighten notation. 
 \item One can also see the global tensor category $\CatC$ as an inductive limit of (unital) tensor categories. 
 \end{enumerate}
 \end{Rem}
@@ -990,7 +1002,7 @@ Conversely, let $\CatCC$ be a partial tensor category. Then we let $\CatC$ be th
 
 Continuing the analogy with the algebra case, we define the enveloping \emph{multiplier tensor category} of a tensor category with local units. 
 
-\begin{Def} Let $\CatCC$ be a partial tensor category over $\mathscr{I}$ with total tensor category $\CatC$. The \emph{multiplier tensor category} $M(\CatC)$ of $\CatC$ is defined to be the category consisting of formal sums $\oplus_{\alpha,\beta\in \mathscr{I}} X_{\alpha\beta}$ which are rcf, and with \[\Mor(\oplus X_{\alpha\beta},\oplus Y_{\alpha\beta}) = \left(\prod_\beta\oplus_\alpha  \Mor(X_{\alpha\beta},Y_{\alpha\beta}) \right) \cap \left(\prod_\alpha\oplus_\beta \Mor(X_{\alpha\beta},Y_{\alpha\beta})\right),\] the composition of morphisms being entry-wise (`Hadamard product'). 
+\begin{Def} Let $\CatCC$ be a partial tensor category over $\mathscr{I}$ with total tensor category $\CatC$. The \emph{multiplier tensor category} $M(\CatC)$ of $\CatC$ is defined to be the category consisting of formal sums $\oplus_{\alpha,\beta\in \mathscr{I}} X_{\alpha\beta}$ which are rcf, and with \[\Mor(\oplus X_{\alpha\beta},\oplus Y_{\alpha\beta}) = \left(\prod_\beta\bigoplus_\alpha  \Mor(X_{\alpha\beta},Y_{\alpha\beta}) \right) \cap \left(\prod_\alpha\bigoplus_\beta \Mor(X_{\alpha\beta},Y_{\alpha\beta})\right),\] the composition of morphisms being entry-wise (`Hadamard product'). 
 \end{Def}
 
 \begin{Rem} Because of the rcf condition on objects, we could in fact have written simply $\Mor(\oplus X_{\alpha\beta},\oplus Y_{\alpha\beta}) = \prod_{\alpha\beta} \Mor(X_{\alpha\beta},Y_{\alpha\beta})$. 
@@ -998,10 +1010,13 @@ Continuing the analogy with the algebra case, we define the enveloping \emph{mul
 
 The tensor product of $\CatC$ can be extended to $M(\CatC)$ by putting \[\left(\oplus X_{\alpha\beta}\right)\otimes \left(\oplus Y_{\alpha\beta}\right) = \oplus_{\alpha,\beta,\gamma} \left(X_{\alpha\beta}\otimes Y_{\beta\gamma}\right),\] and similarly for morphism spaces. This makes sense because of the rcf condition of the objects of $M(\CatC)$. The associativity constraints of the $\CatC_{\alpha\beta}$ can be summed to an associativity constraint for $M(\CatC)$, while $\Unitb := \oplus_{\alpha\in \mathscr{I}} \Unitb_\alpha$ becomes a unit for $M(\CatC)$, rendering $M(\CatC)$ into an ordinary tensor category (with unit object).
 
-\begin{Rem} With some effort, a more intrinsic construction of the multiplier tensor category can be given in terms of couples of endofunctors, in the same vein as the construction of the multiplier algebra of a non-unital algebra.
+\begin{Rem} With some effort, a more intrinsic construction of the
+  multiplier tensor category can be given in terms of couples of
+  endofunctors, in the same vein as the construction of the multiplier
+  algebra of  a non-unital algebra.
 \end{Rem} 
 
-\begin{Exa}\label{ExaVectBiGr} Let $I$ be a set. We can consider the partial tensor category $\CatCC = \{\Vect_{\fin}\}_{i,j\in I}$ where each $\CatC_{ij}$ is a copy of the category of finite-dimensional vector spaces $\Vect_{\fin}$, and with each $\otimes$ the ordinary tensor product. The total category $\CatC$ can then be identified with the category $\Vectif$ of finite-dimensional bi-graded vector spaces with the `balanced' tensor product over $I$. More precisely, the tensor product of $V$ and $W$ is $V\itimes W$ with components \[\Gru{(}{k}{}V\itimes W\Gru{)}{}{m} = \oplus_l \;(\Gru{V}{k}{l}\otimes \Gru{W}{l}{m})\subseteq V\otimes W.\] The multiplier category $M(\Vectif)$ equals $\Vectrcf$, the category of bigraded vector spaces which are rcfd (i.e.~ finite-dimensional on each row and column).
+\begin{Exa}\label{ExaVectBiGr} Let $I$ be a set. We can consider the partial tensor category $\CatCC = \{\Vect_{\fd}\}_{i,j\in I}$ where each $\CatC_{ij}$ is a copy of the category of finite-dimensional vector spaces $\Vect_{\fd}$, and with each $\otimes$ the ordinary tensor product. The total category $\CatC$ can then be identified with the category $\Vectif$ of finite-dimensional bi-graded vector spaces with the `balanced' tensor product over $I$. More precisely, the tensor product of $V$ and $W$ is $V\itimes W$ with components \[\Gru{(}{k}{}V\itimes W\Gru{)}{}{m} = \oplus_l \;(\Gru{V}{k}{l}\otimes \Gru{W}{l}{m})\subseteq V\otimes W.\] The multiplier category $M(\Vectif)$ equals $\Vectrcf$, the category of bigraded vector spaces which are rcfd (i.e.~ finite-dimensional on each row and column).
 \end{Exa}
 
 We now formulate the appropriate notion of a functor between partial tensor categories. Let us first give an auxiliary definition.
@@ -1011,23 +1026,30 @@ We now formulate the appropriate notion of a functor between partial tensor cate
 
 \begin{Def} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $\mathscr{I}$ and $\mathscr{J}$, and let \[\phi:\mathscr{J}\rightarrow \mathscr{I},\quad k \mapsto k'\] determine a decomposition $\mathscr{J} = \{\mathscr{J}_\alpha\mid \alpha\in \mathscr{I}\}$ with $k\in \mathscr{J}_\alpha \iff \phi(k)=\alpha$. 
 
-A \emph{unital morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow \CatD_{kl},\quad X\mapsto F_{kl}(X) = \Gru{F(X)}{k}{l}\] natural monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:  \Unitb_k \cong \GrDA{F(\Unitb_{k'})}{k}{k}\] with \begin{enumerate}[label=(\arabic*)]
-\item (Unitality)  $\GrDA{F(\Unitb_{\alpha})}{k}{l}= 0$ if $k\neq l$ in $\mathscr{J}_\alpha$,
+A \emph{unital morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$)
+consists of $\C$-linear functors \[F_{kl}: \CatC_{k'l'}\rightarrow
+\CatD_{kl},\quad X\mapsto F_{kl}(X) = \Gru{F(X)}{k}{l}\] natural
+monomorphisms \[\iota^{(klm)}_{X,Y}: \GrDA{F(X)}{k}{l} \otimes
+\GrDA{F(Y)}{l}{m} \hookrightarrow \GrDA{F(X\otimes Y)}{k}{m}, \quad
+X\in \CatC_{k'l'},Y\in \CatD_{l'm'},\] and isomorphisms \[\mu_{k}:
+\Unitb_k \cong \GrDA{F(\Unitb_{k'})}{k}{k}\] satisfying the following conditions. \begin{enumerate}[label=(\arabic*)]
+\item (Unitality)  $\GrDA{F(\Unitb_{\alpha})}{k}{l}= 0$ if $k\neq l$ in $\mathscr{J}_\alpha$.
 \item (Local finiteness) For each $\alpha,\beta\in \mathscr{I}$ and $X\in \CatC_{\alpha\beta}$, the application $(k,l)\mapsto \GrDA{F(X)}{k}{l}$ is rcf on $\mathscr{J}_{\alpha}\times \mathscr{J}_{\beta}$. 
-\item (Multiplicativity) For all $X\in \CatC_{k'\beta}$ and $Y\in \CatC_{\beta m'}$, one has\[\oplus_{l\in \mathscr{J}_\beta} \iota^{(klm)}_{X,Y}: \left(\oplus_{l\in \mathscr{J}_\beta} \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m}\right) \cong \GrDA{F(X\otimes Y)}{k}{m}.\]
+\item (Multiplicativity) For all $X\in \CatC_{k'\beta}$ and $Y\in \CatC_{\beta m'}$, one has\[\bigoplus_{l\in \mathscr{J}_\beta} \iota^{(klm)}_{X,Y}: \left(\bigoplus_{l\in \mathscr{J}_\beta} \GrDA{F(X)}{k}{l} \otimes \GrDA{F(Y)}{l}{m}\right) \cong \GrDA{F(X\otimes Y)}{k}{m}.\]
 \item (Coherence) The $\iota^{(klm)}$ satisfy the 2-cocycle condition making \[\xymatrix{F_{kl}(X)\otimes F_{lm}(Y)\otimes F_{mn}(Z) \ar[rr]^{\id\otimes \iota^{(lmn)}_{Y,Z}} \ar[d]_{\iota^{(klm)}_{X,Y}\otimes\id}&& F_{kl}(X)\otimes F_{ln}(Y\otimes Z)\ar[d]^{\iota^{(kln)}_{X,Y\otimes Z}}\\ F_{km}(X\otimes Y)\otimes F_{mn}(Z) \ar[rr]_{\iota^{(kmn)}_{X\otimes Y,Z}}&& F_{kn}(X\otimes Y \otimes Z)}\] commute for all $X\in \CatC_{k'l'},Y\in \CatC_{l'm'}, Z\in \CatC_{m'n'}$, and the $\mu_k$ satisfy the commutation relations \[\xymatrix{ \GrDA{F(X)}{k}{l}\otimes \Unitb_l \ar[r]^{\!\!\!\!\id\otimes \mu_l} \ar@{=}[d] & \GrDA{F(X)}{k}{l} \otimes \GrDA{F(\Unitb_{l'})}{l}{l} \ar[d]^{\iota^{(kll)}_{X, \Unitb_{l'}}} \\ \GrDA{F(X)}{k}{l} & \ar@{=}[l] \GrDA{F(X\otimes \Unitb_{l'})}{k}{l}} \qquad \xymatrix{  \Unitb_k\otimes \GrDA{F(X)}{k}{l}\ar[r]^{\!\!\!\!\mu_k\otimes \id} \ar@{=}[d] & \GrDA{F(\Unitb_{k'})}{k}{k} \otimes \GrDA{F(X)}{k}{l} \ar[d]^{\iota^{(kkl)}_{\Unitb_{k'},X}} \\ \GrDA{F(X)}{k}{l} & \ar@{=}[l] \GrDA{ F(\Unitb_{k'}\otimes X)}{k}{l}} \]
 \end{enumerate}
 
 A \emph{morphism} from $\CatCC$ to $\CatDD$ is a unital morphism from $\CatCC$ to a restriction of $\CatDD$. 
 \end{Def}
 
-\begin{Rem} If $J_{\alpha}=\emptyset$, this means that $\Unitb_{\alpha}$ is sent to the zero object.
-\end{Rem} 
 
 The corresponding global notion (of a unital morphism) is as follows.
 
 \begin{Lem} Let $\CatCC$ and $\CatDD$ be partial tensor categories over respective sets $\mathscr{I}$ and $\mathscr{J}$. Fix an application \[\phi: \mathscr{J}\rightarrow \mathscr{I}\] inducing a disjoint decomposition $\{\mathscr{J}_\alpha\mid \alpha\in \mathscr{I}\}$. Then there is a one-to-one correspondence between unital morphisms $\CatCC\rightarrow \CatDD$ based on $\phi$ and functors $F:\CatC \rightarrow M(\CatD)$ with isomorphisms \[\iota_{X,Y}:F(X)\otimes F(Y)\cong F(X\otimes Y),\qquad \mu_\alpha:\oplus_{k\in \mathscr{J}_\alpha} \Unitb_k \cong F(\Unitb_\alpha)\] satisfying the natural coherence conditions. 
 \end{Lem} 
+\begin{Rem} If $J_{\alpha}=\emptyset$, the global functor $F$ sends
+  $\Unitb_{\alpha}$ to the zero object in $M(\mathcal{D})$.
+\end{Rem} 
 
 The reader has already furnished for himself the notion of 
 equivalence of partial tensor categories. There is a closely related
@@ -1043,7 +1065,8 @@ The partial tensor categories that we will be interested in will be required to 
 A partial tensor category is said to have \emph{indecomposable units} if all units $\Unitb_\alpha$ are indecomposable. 
 \end{Def}
 
-It is easy to see that any semi-simple tensor category can be partitioned into a semi-simple tensor category with indecomposable units.  Hence we will from now on only consider semi-simple partial tensor categories with indecomposable units.
+It is easy to see that any semi-simple partial tensor category can be
+partitioned into a semi-simple partial tensor category with indecomposable units.  Hence we will from now on only consider semi-simple partial tensor categories with indecomposable units.
  
 
 The following definition introduces the notion of duality for partial tensor categories.
@@ -1058,9 +1081,11 @@ We say $\CatCC$ \emph{admits left duality} if each object of each $\CatC_{\alpha
 Similarly, one defines right duality $X\rightarrow \check{X}$ and (two-sided) duality $X\rightarrow \bar{X}$. As for tensor categories with unit, if $X$ admits a (left or right) dual, it is unique up to isomorphism. 
 
 \begin{Lem}\label{LemMorDua}
-\begin{enumerate}
+\begin{enumerate}[label=(\arabic*)]
 \item Let $\CatCC$ be a partial tensor category. If $X$ has left dual $\hat{X}$, then $X$ is a right dual to $\hat{X}$. 
-\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$ based over $\phi:\mathscr{J}\rightarrow \mathscr{I}$. If $X\in \CatC_{k'l'}$ has a left dual, $F_{lk}(\hat{X})$ is a left dual to $F_{kl}(X)$.
+\item Let $F$ be a morphism $\CatCC\rightarrow \CatDD$ based over
+  $\phi:\mathscr{J}\rightarrow \mathscr{I}$. If $X\in \CatC_{k'l'}$
+  has a left dual $\hat X$, then $F_{lk}(\hat{X})$ is a left dual to $F_{kl}(X)$.
  \end{enumerate}
 \end{Lem}
 \begin{proof}
@@ -1069,49 +1094,66 @@ We can consider the restriction $\CatCC'$ of $\CatCC$ to any two-element subset 
 
 A final ingredient which will be needed is an analytic structure on our partial tensor categories.
 
-\begin{Def} A \emph{partial fusion C$^*$-category} is a partial tensor category $(\CatC_{\alpha\beta},\otimes)$ with duality such that all $\CatC_{\alpha\beta}$ are semi-simple C$^*$-categories, such that all functors $\otimes$ are $^*$-functors (in the sense that $(f\otimes g)^* = f^*\otimes g^*$ for morphisms), and such that the associativity and unit constraints are unitary.
+\begin{Def} A \emph{partial fusion C$^*$-category} is a partial tensor category $(\CatC,\otimes)$ with duality such that all $\CatC_{\alpha\beta}$ are semi-simple C$^*$-categories,  all functors $\otimes$ are $^*$-functors (in the sense that $(f\otimes g)^* = f^*\otimes g^*$ for morphisms), and the associativity and unit constraints are unitary.
 \end{Def} 
 
 \begin{Rem}
-\begin{enumerate}
+\begin{enumerate}[label=(\arabic*)]
 \item If $\CatCC$ is a partial tensor C$^*$-category, the total category $\CatC$ only has pre-C$^*$-algebras as endomorphism spaces, as the morphisms spaces need not be closed in the C$^*$-norm. On the other hand, $M(\CatC)$ only has $^*$-algebras as endomorphism spaces, since we did not restrict our direct products. 
-\item The notion of duality for a partial tensor C$^*$-category is the same as in the absence of a C$^*$-structure. However, because of the presence of the $^*$-structure, any left dual is automatically a two-sided dual, and the dual object of $X$ is then simply denoted $\overline{X}$.  
+\item The notion of duality for a partial tensor C$^*$-category is the
+  same as in the absence of a C$^*$-structure. However, because of the
+  presence of the $^*$-structure, any left dual is automatically a
+  two-sided dual, and the dual object of $X$ is then simply denoted by $\overline{X}$.  
 \item We slightly abuse the terminology `fusion', as strictly speaking this would require there to be only a finite set of mutually non-equivalent irreducible objects in each $\CatC_{\alpha\beta}$.
 \item In the same vein, the total C$^*$-category with local units associated to a partial fusion C$^*$-category could be called a \emph{multiplier fusion C$^*$-category}.
 \end{enumerate}
 \end{Rem}
 
-\begin{Exa} Let $I$ be a set. Then we can consider the partial fusion C$^*$-category $\CatCC = \{\Hilb_{\fin}\}_{I\times I}$ of finite-dimensional Hilbert spaces, with all $\otimes$ the ordinary tensor product. The associated global category is the category $\Hilbif$ of finite-dimensional bi-graded Hilbert spaces. The dual of a Hilbert space $\Hsp \in \CatC_{kl}$ is just the ordinary dual Hilbert space $\Hsp^* \cong \overline{\Hsp}$, but considered in the category $\CatC_{lk}$. 
+\begin{Exa} Let $I$ be a set. Then we can consider the partial fusion C$^*$-category $\CatCC = \{\Hilb_{\fd}\}_{I\times I}$ of finite-dimensional Hilbert spaces, with all $\otimes$ the ordinary tensor product. The associated global category is the category $\Hilbif$ of finite-dimensional bi-graded Hilbert spaces. The dual of a Hilbert space $\Hsp \in \CatC_{kl}$ is just the ordinary dual Hilbert space $\Hsp^* \cong \overline{\Hsp}$, but considered in the category $\CatC_{lk}$. 
 \end{Exa}
 
 The notion of a morphism for partial semi-simple tensor C$^*$-categories has to be adapted in the following way.
 
-\begin{Def} Let $\CatCC$ and $\CatDD$ be partial fusion C$^*$-categories over respective sets $\mathscr{I}$ and $\mathscr{J}$, and let $\phi:\mathscr{J}\rightarrow \mathscr{I}$. 
-A \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) is a $\phi$-based morphism $(F,\iota,\mu)$ from $\CatCC$ to $\CatDD$ as partial tensor categories, with the added requirement that all $F_{kl}$ are $^*$-functors and the $\iota$- and $\mu$-maps isometric. 
+\begin{Def} Let $\CatCC$ and $\CatDD$ be partial fusion
+  C$^*$-categories over respective sets $\mathscr{I}$ and
+  $\mathscr{J}$, and let $\phi:\mathscr{J}\rightarrow \mathscr{I}$.  A
+  \emph{morphism} from $\CatCC$ to $\CatDD$ (based on $\phi$) is a
+  $\phi$-based morphism $(F,\iota,\mu)$ from $\CatCC$ to $\CatDD$ as
+  partial tensor categories, with the added requirement that all
+  $F_{kl}$ are $^*$-functors and all $\iota$- and $\mu$-maps are
+  isometric.
 \end{Def} 
 
-\begin{Rem} If a morphism of partial fusion C$^*$-categories is based over a \emph{surjective} map $\varphi: \mathscr{J}\rightarrow \mathscr{I}$, then it is automatically faithful. Indeed, by semisimplicity a non-faithful morphism would send some irreducible object to zero. However, by the duality assumption this would mean that some irreducible unit is sent to zero, which is excluded by surjectivity of $\varphi$ and the definition of morphism.
+\begin{Rem} If a morphism of partial fusion C$^*$-categories is based over a \emph{surjective} map $\varphi: \mathscr{J}\rightarrow \mathscr{I}$, then it is automatically faithful. Indeed, by semi-simplicity a non-faithful morphism would send some irreducible object to zero. However, by the duality assumption this would mean that some irreducible unit is sent to zero, which is excluded by surjectivity of $\varphi$ and the definition of morphism.
 \end{Rem}
 
 
-\section{Representation theory of partial compact quantum groups}
+\section{Representations of partial compact quantum groups}
 
-In this section, the representation theory of partial compact quantum groups is investigated. In what follows, the homogeneous component $A(K) = \eGr{A}{k}{l}{m}{n}$ of a partial bialgebra will now be mainly written as $A(K) = \Gr{A}{k}{l}{m}{n}$. 
+In this section, the representation theory of partial compact quantum
+groups is investigated.
+
+
 
 \subsection{Corepresentations of partial bialgebras}
 
 
-Let $\mathscr{A}$ be an $I$-partial bialgebra. We write
-$\Hom_\C(V,W)$ for the vector space of linear maps between two vector
-spaces $V$ and $W$.
+Let $\mathscr{A}$ be an $I$-partial bialgebra. We will now write its
+homogeneous components in the form $A(K) = \eGr{A}{k}{l}{m}{n}
+\Gr{A}{k}{l}{m}{n}$.
 
-Let us first formally introduce a notion which already appeared in the previous section.
+We denote by $\Hom_\C(V,W)$  the vector space of linear
+maps between two vector spaces $V$ and $W$.
 
-\begin{Def} Let $I$ be a set. An $I^{2}$-graded vector space $V=\bigoplus_{k,l\in I} \Gru{V}{k}{l}$ will be called \emph{row-and column finite-dimensional} (rcfd) if the $\oplus_l V_{kl}$ (resp.~ $\oplus_k V_{kl}$) are finite-dimensional for each $k$ (resp.~ $l$) fixed. 
+Let $I$ be a set. As in Example \ref{ExaVectBiGr}, an $I^{2}$-graded
+vector space $V=\bigoplus_{k,l\in I} \Gru{V}{k}{l}$ will be called
+\emph{row-and column finite-dimensional} (rcfd) if the $\oplus_l
+V_{kl}$ (resp.~ $\oplus_k V_{kl}$) are finite-dimensional for each $k$
+(resp.~ $l$) fixed, and $\Vectrcf$ denotes the category whose objects are rcfd
+$I^{2}$-graded vector spaces. Morphisms are linear maps $T$ that
+preserve the grading and therefore can be written $T=\prod_{k,l\in I}
+\Gru{T}{k}{l}$.
 
-We denote by  $\Vectrcf$ the category whose objects are rcfd $I^{2}$-graded vector spaces. Morphisms are linear maps $T$ that preserve the grading and therefore
-can be written $T=\prod_{k,l\in I} \Gru{T}{k}{l}$. 
-\end{Def} 
 
 \begin{Def} \label{definition:corep} Let $\mathscr{A}$ be an
   $I$-partial bialgebra and let $V=\bigoplus_{k,l} \Gru{V}{k}{l}$
@@ -1133,8 +1175,8 @@ an rcfd $I^{2}$-graded vector space.  A \emph{corepresentation}
 (\epsilon \otimes
   \id)(\Gr{X}{k}{l}{m}{n})&=\delta_{k,m}\delta_{l,n}\id_{\Gru{V}{k}{l}}
  \end{align}
-  for all possible indices. We also call $(V,\mathscr{X})$ an
-  \emph{rcfd corepresentation}.
+  for all possible indices. We also call $(V,\mathscr{X})$ a
+  \emph{corepresentation}.
 \end{Def}
 Here, we use here the standard leg numbering notation, e.g.~ $a_{23}=1\otimes a$.
 \begin{Exa} \label{example:rep-triv} Equip the vector space
@@ -1183,7 +1225,7 @@ Then the  elements $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n} \otimes
 Morphisms of corepresentations are defined as follows.
 \begin{Def}
   Let $\mathscr{A}$ be an $I$-partial bialgebra.  A \emph{morphism}
-  $T$ between rcfd corepresentations
+  $T$ between  corepresentations
   $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of $\mathscr{A}$ is a family
   of linear maps
   \[\Gru{T}{k}{l} \in
@@ -1248,24 +1290,24 @@ notion of a full comodule for a weak multiplier bialgebra introduced in \cite[De
 \[\rho_X: V\otimes A\rightarrow V\otimes A,\quad v\otimes a \mapsto (1\otimes a)X_{21}(v\otimes 1)\] is well-defined and defines a full comodule for the weak multiplier bialgebra $(A,\Delta)$. Conversely, any full comodule which is rcfd for the induced bigrading arises in this way.
 \end{Prop} 
 
-\begin{proof} Well-definedness of the couple $(\lambda_X,\rho_X)$ is immediate from the local support condition, and it is clear then that $(1\otimes a)\lambda_X(v\otimes b) = \rho_X(v\otimes a)(1\otimes b)$.  The conditions $(2.11)$ and $(2.12)$ in \cite[Definition 2.12]{Boh2} are then easily seen to follow from the identity $(\Delta\otimes \id)(X) = X_{13}X_{23}$. Finally, as for $v\in \Gru{V}{m}{n}$ one has $(\id\otimes \varepsilon)(X_{21}(v\otimes \UnitC{n}{n}) = (\varepsilon\otimes \id)(\Gr{X}{m}{n}{m}{n}) v  = v$, it follows that $(\lambda_X,\rho_X)$ is full.
+\begin{proof} Well-definedness of the couple $(\lambda_X,\rho_X)$ is immediate from the local support condition, and it is clear then that $(1\otimes a)\lambda_X(v\otimes b) = \rho_X(v\otimes a)(1\otimes b)$.  The conditions (2.11) and (2.12) in \cite[Definition 2.12]{Boh2} are then easily seen to follow from the identity $(\Delta\otimes \id)(X) = X_{13}X_{23}$. Finally, as for $v\in \Gru{V}{m}{n}$ one has $(\id\otimes \varepsilon)(X_{21}(v\otimes \UnitC{n}{n}) = (\varepsilon\otimes \id)(\Gr{X}{m}{n}{m}{n}) v  = v$, it follows that $(\lambda_X,\rho_X)$ is full.
 
-Assume now conversely that $(\lambda,\rho)$ defines a full comodule structure on $V = \oplus_{m,n} \Gru{V}{m}{n}$. From the definition of the grading, it follows that we obtain maps \[\Gru{V}{m}{n}\rightarrow \Gru{V}{k}{l}\otimes \Gru{A}{k}{l}{m}{n},\quad v \mapsto (1\otimes \UnitC{k}{k})\lambda(v\otimes \UnitC{l}{l}).\] As the $\Gru{V}{m}{n}$ are finite-dimensional, there hence exists $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}\otimes \Hom_{\C}(\Gru{V}{m}{n},\Gru{V}{k}{l})$ such that  
-\[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes 1)=(1\otimes \UnitC{k}{k})\lambda(v\otimes \UnitC{l}{l}).\] As $(\lambda,\rho)$ form a multiplier, it is then moreover immediate that in fact \[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes a) = (1\otimes \UnitC{k}{k})\lambda(v\otimes a).\] From (2.12) in \cite[Definition 2.12]{Boh2}, it is then immediate that the $\Gr{X}{k}{l}{m}{n}$ satisfy \eqref{eq:rep-comultiplication}. Moreover, from the proof of \cite[Theorem 4.5]{Boh2} it follows that for $v\in \Gru{V}{m}{n}$, one has \[v = (\id\otimes \epsilon)(X_{21}(v\otimes \UnitC{n}{n}),\] hence \eqref{eq:rep-counit} holds, and $\mathscr{X}$ forms a corepresentation. % Maybe some more info on associated grading
+Assume now conversely that $(\lambda,\rho)$ defines a full comodule structure on $V = \oplus_{m,n} \Gru{V}{m}{n}$. From the definition of the grading, it follows that we obtain maps \[\Gru{V}{m}{n}\rightarrow \Gru{V}{k}{l}\otimes \Gr{A}{k}{l}{m}{n},\quad v \mapsto (1\otimes \UnitC{k}{m})\lambda(v\otimes \UnitC{l}{n}).\] As the $\Gru{V}{m}{n}$ are finite-dimensional, there hence exists $\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}\otimes \Hom_{\C}(\Gru{V}{m}{n},\Gru{V}{k}{l})$ such that  
+\[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes 1)=(1\otimes \UnitC{k}{m})\lambda(v\otimes \UnitC{l}{n}).\] As $(\lambda,\rho)$ form a multiplier, it is then moreover immediate that in fact \[(\Gr{X}{k}{l}{m}{n})_{21}(v\otimes a) = (1\otimes \UnitC{k}{m})\lambda(v\otimes a).\] From (2.12) in \cite[Definition 2.12]{Boh2}, it is then immediate that the $\Gr{X}{k}{l}{m}{n}$ satisfy \eqref{eq:rep-comultiplication}. Moreover, from the proof of \cite[Theorem 4.5]{Boh2} it follows that for $v\in \Gru{V}{m}{n}$, one has \[v = (\id\otimes \epsilon)(X_{21}(v\otimes \UnitC{n}{n}),\] hence \eqref{eq:rep-counit} holds, and $\mathscr{X}$ forms a corepresentation. % Maybe some more info on associated grading
 \end{proof}
 
 We present some more general constructions for corepresentations of partial bialgebras. Given an rcfd $I^{2}$-graded vector space $V=\bigoplus_{k,l} \Gru{V}{k}{l}$
 and a family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$, we
-denote by $\iota_{W}\colon W\to V$ and $\pi_{W} \colon V \to
+denote by $\iota^{W}\colon W\to V$ and $\pi^{W} \colon V \to
 V/W=\bigoplus_{k,l} \Gru{V}{k}{l}/\Gru{W}{k}{l}$ the embedding and the
 quotient map.
-\begin{Def} Let $(V,\mathscr{X})$ be an rcfd
+\begin{Def} Let $(V,\mathscr{X})$ be a
   corepresentation of a partial bialgebra $\mathscr{A}$.  We call a
   family of subspaces $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$
   \emph{invariant (w.r.t.\ $\mathscr{X}$)} if
  \begin{align} \label{eq:rep-invariant} (1\otimes
-   \Gr{\pi}{k}{l}{}{W})\Gr{X}{k}{l}{m}{n}(1 \otimes
-   \Gr{\iota}{m}{n}{}{W}) =0.
+   \Gr{\pi}{}{W}{k}{l})\Gr{X}{k}{l}{m}{n}(1 \otimes
+   \Gr{\iota}{}{W}{m}{n}) =0.
   \end{align}
 We call $(V,\mathscr{X})$ 
  \emph{irreducible} if the only invariant families of subspaces are
@@ -1275,15 +1317,15 @@ We call $(V,\mathscr{X})$
 The next lemmas deal with restriction, factorisation and Schur's lemma. We skip their proofs which are straightforward.
 
 \begin{Lem}
-  Let $(V,\mathscr{X})$ be an rcfd corepresentation
+  Let $(V,\mathscr{X})$ be a corepresentation
   of a partial bialgebra and let $\Gru{W}{k}{l}
   \subseteq \Gru{V}{k}{l}$ be an invariant family of subspaces. Then
-  there exist unique rcfd corepresentations
-  $(W,\iota_{W}^{*}\mathscr{X})$ and $(V/W,(\pi_{W})_{*}\mathscr{X})$ 
-  such that $\iota_{W}$  and  $\pi_{W}$  are  morphisms  $(W,\iota_{W}^{*}\mathscr{X}) \to (V,\mathscr{X}) \to (V/W,(\pi_{W})_{*}\mathscr{X})$.
+  there exist unique  corepresentations
+  $(W,(\iota^{W})^{*}\mathscr{X})$ and $(V/W,\pi^{W}_{*}\mathscr{X})$ 
+  such that $\iota^{W}$  and  $\pi^{W}$  are  morphisms  $(W,(\iota^{W})^{*}\mathscr{X}) \to (V,\mathscr{X}) \to (V/W,\pi^{W}_{*}\mathscr{X})$.
 \end{Lem}
 
-\begin{Lem} Let $T$ be a morphism of rcfd
+\begin{Lem} Let $T$ be a morphism of 
   corepresentations $(V,\mathscr{X})$ and $(W,\mathscr{Y})$ of a
   partial bialgebra. Then the families of subspaces $\ker
   \Gru{T}{k}{l} \subseteq \Gru{V}{k}{l}$ and $\img\Gru{T}{k}{l}
@@ -1308,7 +1350,7 @@ to define the \emph{direct sum} $\mathscr{X} \oplus \mathscr{Y}$,
 which is a corepresentation of $\mathscr{A}$ on $V\oplus W$. Then the
 natural embeddings from $V$ and $W$ into $V\oplus W$ and the
 projections onto $V$ and $W$ are evidently morphisms of
-corepresentations.  More generally, given a family of rcfd corepresentations
+corepresentations.  More generally, given a family of  corepresentations
 $((V_{\alpha},\mathscr{X}_{\alpha}))_{\alpha}$ such that the sum
 $\bigoplus_{\alpha} V_{\alpha}$ is rcfd again, one
 can form the direct sum $\bigoplus_{\alpha} \mathscr{X}_{\alpha}$,
@@ -1322,7 +1364,7 @@ which is a corepresentation on $\bigoplus_{\alpha} V_{\alpha}$.
   The preceding considerations show that the forgetful functor lifts
   kernels, cokernels and biproducts. Moreover, in
   $\Corep_{\rcf}(\mathscr{A})$, every monic is a kernel
-  and every epic is a cokernel because the same is true in $\Vecti$
+  and every epic is a cokernel because the same is true in $\Vectrcf$
   and because kernels and cokernels lift.
 \end{proof}
 
@@ -1333,7 +1375,7 @@ which is a corepresentation on $\bigoplus_{\alpha} V_{\alpha}$.
 If $\mathscr{A}$ is a partial Hopf algebra,  then every
 corepresentation multiplier has a generalized inverse.
 \begin{Lem} \label{lemma:rep-invertible}
-  Let $(V,\mathscr{X})$ be an rcfd corepresentation of an $I$-partial Hopf
+  Let $(V,\mathscr{X})$ be a corepresentation of a partial Hopf
   algebra $\mathscr{A}$. Then with $\Gr{Z}{k}{l}{m}{n} = (S\otimes \id)(\Gr{X}{n}{m}{l}{k})$, we have $\Gr{Z}{k}{l}{m}{n}\in \Gr{A}{k}{l}{m}{n}\otimes \Hom_{\C}(\Gru{V}{l}{k},\Gru{V}{n}{m})$ and
   \begin{align*}
     \Gr{X}{k}{l}{m}{n}  \cdot \Gr{Z}{l}{k'}{n}{m'} &=0 \text{ if } m'\neq m &
@@ -1371,11 +1413,11 @@ equations follow similarly, and the assertions concerning $Z$ are
 direct consequences.
 \end{proof}
 \begin{Def}
-  Let $\mathscr{X}$ be an rcfd corepresentation of a  partial Hopf
+  Let $\mathscr{X}$ be a corepresentation of a  partial Hopf
   algebra.  We  denote the generalized inverse $(S \otimes \id)(X)$
   of $X$  by $X^{-1}$ and let
   \begin{align*}
-   \Gr{(X^{-1})}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{l}{k}{n}{m}) \in
+   \Gr{(X^{-1})}{k}{l}{m}{n}=(S \otimes \id)(\Gr{X}{n}{m}{l}{k}) \in
    \Gr{A}{k}{l}{m}{n} \otimes \Hom_{\C}(\Gru{V}{l}{k},\Gru{V}{n}{m})
   \end{align*}
 \end{Def}
@@ -1449,7 +1491,7 @@ We can now construct a product of corepresentations as follows.
     Y)}{k}{p}{m}{q}\in \Gr{A}{k}{p}{m}{q} \otimes
   \Hom_\C(\Gru{(}{m}{}V\itimes W\Gru{)}{}{q},\Gru{(}{k}{}V\itimes W\Gru{)}{}{p})
 \]
-define an rcfd corepresentation $\mathscr{X} \Circt \mathscr{Y}$ of
+define a  corepresentation $\mathscr{X} \Circt \mathscr{Y}$ of
 $\mathscr{A}$ on $V\itimes W$. 
 \end{Lem} 
 \begin{proof}
@@ -1470,17 +1512,17 @@ $\mathscr{A}$ on $V\itimes W$.
 
 \begin{Prop} \label{prop:rep-tensor} Let $\mathscr{A}$ be an
   $I$-partial bialgebra. Then  $\Corep_{\rcf}(\mathscr{A})$ carries the
-  structure of strict tensor category such that the product of rcfd corepresentations $(V,\mathscr{X})$ and
+  structure of a strict tensor category such that the product of  corepresentations $(V,\mathscr{X})$ and
   $(W,\mathscr{Y})$ is the corepresentation $(V\itimes
   W,\mathscr{X}\Circt \mathscr{Y})$, the unit is the trivial
   corepresentation $(\C^{(I)},\mathscr{U})$, and the forgetful functor
-  $\Corep_{\rcf}(\mathscr{A}) \to \Vecti$ is a strict tensor functor.
+  $\Corep_{\rcf}(\mathscr{A}) \to \Vectrcf$ is a strict tensor functor.
 \end{Prop}
 \begin{proof}
 This is clear.
 \end{proof}
 
-Given an rcfd corepresentation of a partial Hopf algebra, one can use the
+Given a  corepresentation of a partial Hopf algebra, one can use the
 antipode to define a contragredient corepresentation on a dual space.
 Denote the dual of vector spaces $V$ and  linear maps $T$ by
 $\dual{V}$ and $\dualop{T}$, respectively, and define the dual of an
@@ -1493,20 +1535,20 @@ the space
 
 \begin{Prop}
   Let $\mathscr{A}$ be an $I$-partial Hopf algebra with antipode $S$
-  and  let $(V,\mathscr{X})$ be an rcfd
+  and  let $(V,\mathscr{X})$ be a 
   corepresentation of $\mathscr{A}$. Then $\dual{V}$ and the family
   $\dualco{\mathscr{X}}$ given by
    \begin{align} \label{eq:rep-left-dual}
 \Gr{\dualco{X}}{k}{l}{m}{n}   :=  (S \otimes \dualop{-})(\Gr{X}{n}{m}{l}{k}) 
    \end{align} 
-   form an rcfd corepresentation of $\mathscr{A}$  which is a left dual of $(V,\mathscr{X})$. If the antipode
+   form a  corepresentation of $\mathscr{A}$  which is a left dual of $(V,\mathscr{X})$. If the antipode
    $S$ of $\mathscr{A}$ is bijective, then $\dual{V}$ and the family
    $\dualcor{\mathscr{X}}$ given by 
    \begin{align} \label{eq:rep-right-dual}
  \Gr{\dualcor{X}}{k}{l}{m}{n} :=(S^{-1}
    \otimes \dualop{-})(\Gr{X}{n}{m}{l}{k})    
    \end{align}
- form an rcfd corepresentation
+ form a  corepresentation
  of $\mathscr{A}$ which is a
    right dual of $(V,\mathscr{X})$.
   \end{Prop}
@@ -1595,19 +1637,19 @@ Immediate from the fact that $\Gr{U}{k}{k}{m}{m} =
   \UnitC{k}{m}$  is $1$  if $k\sim m$  and $0$ if $k\not\sim m$. 
 \end{proof}
 
-\begin{Def} We denote by $\Corep(\mathscr{A})$ the category of rcfd corepresentations $(V,\mathscr{X})$ for which there exists a finite subset of the hyperobject set $\mathscr{I}$ such that $\Gru{V}{k}{l}=0$ for the equivalence classes of $k,l$ outside this subset.
+\begin{Def} We denote by $\Corep(\mathscr{A})$ the category of  corepresentations $(V,\mathscr{X})$ for which there exists a finite subset of the hyperobject set $\mathscr{I}$ such that $\Gru{V}{k}{l}=0$ for the equivalence classes of $k,l$ outside this subset.
 \end{Def}
 
 It is easily seen that $\Corep(\mathscr{A})$ is then a tensor category with local units indexed by $\mathscr{I}$. We will use the same notation for the associated partial tensor category. 
 
 
-\subsection{Decomposition into irreducible corepresentations}
+\subsection{Decomposition into irreducibles}
 
 
 
 When there is an invariant integral around, one can average morphisms of vector spaces to obtain morphisms of corepresentations. 
 \begin{Lem} \label{lem:rep-average}  Let $(V,\mathscr{X})$ and
-  $(W,\mathscr{Y})$ be rcfd corepresentations of  a partial
+  $(W,\mathscr{Y})$ be  corepresentations of  a partial
   Hopf algebra $\mathscr{A}$ with an invariant integral $\phi$, and let
   $\Gru{T}{k}{l} \in \Hom_{\C}(\Gru{V}{k}{l},\Gru{W}{k}{l})$ for all $k,l\in I$. Then for each $m,n$ fixed, the families
   \begin{align*}
@@ -1643,7 +1685,7 @@ form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\math
 
 \begin{Lem}
   Let $\mathscr{A}$ be an $I$-partial Hopf algebra with an invariant integral $\phi$.
-  Let $(V,\mathscr{X})$ be an rcfd corepresentation
+  Let $(V,\mathscr{X})$ be a  corepresentation
   and $\Gru{W}{k}{l} \subseteq \Gru{V}{k}{l}$ an invariant family of
   subspaces. Then there exists an idempotent endomorphism $T$ of
   $(V,\mathscr{X})$ such that $\Gru{W}{k}{l}=\img\Gru{T}{k}{l}$ for
@@ -1651,10 +1693,15 @@ form  morphisms $\Grd{\check{T}}{m}{n}$ and $\Grd{\hat{T}}{m}{n}$ from $(V,\math
 \end{Lem}
 \begin{proof}
 By a direct sum decomposition, we may assume that $V$ is in a fixed component $\Corep(\mathscr{A})_{\alpha\beta}$. For all $k\in I_{\alpha},l\in I_{\beta}$, choose idempotent endomorphisms $\Gru{T}{k}{l}$ of $\Gru{V}{k}{l}$
-  with image $\Gru{W}{k}{l}$. By Lemma \ref{lem:rep-average}, we obtain
-  endomorphisms $\Grd{\check{T}}{m}{n}$ of $(V,\mathscr{X})$. We want to show
-  that linear combinations of these provide the sought-after morphism.
-  
+  with image $\Gru{W}{k}{l}$.   Let
+  $\mathscr{Y}$ be the restriction of $\mathscr{X}$ to $W$.  By Lemma
+  \ref{lem:rep-average}, we obtain morphisms $\Grd{\check{T}}{m}{n}$
+  of $(V,\mathscr{X})$ to $(W,\mathscr{Y})$, which we can also
+  interpret as endomorphisms of $(V,\mathscr{X})$.  Fix $n\in
+  I_{\beta}$ and write $\Grd{\check{T}}{}{n} = \sum_m
+  \Grd{\check{T}}{m}{n}$ (using column-finiteness of $V$). We claim
+  that $W$ is the image of $\Grd{\check{T}}{}{n}$.
+
     In
   total form, invariance of $W$ implies  \[(1 \otimes T)X(1
   \otimes T)=X(1\otimes T).\] Applying
@@ -1673,13 +1720,16 @@ Now choose $n\in I_{\beta}$ and write $\Grd{\check{T}}{}{n} = \sum_m \Grd{\check
   \end{align*}
  since we only have to sum over $l\in I_{\beta}$ as $n \in I_{\beta}$ by assumption. 
  
- Now as $W$ is invariant and $T$ sends $V$ into $W$, we have that $\Gr{\check{T}}{}{n}{k}{l}$ sends $\Gru{V}{k}{l}$ into $\Gru{W}{k}{l}$. Hence it follows that $\img{\check{T}^{n}}=\img T$, and $\check{T}^{n}$ is the sought-after intertwiner.
+ Now as $W$ is invariant and $T$ sends $V$ into $W$, we have that
+ $\Gr{\check{T}}{}{n}{k}{l}$ sends $\Gru{V}{k}{l}$ into
+ $\Gru{W}{k}{l}$. Hence it follows that $\img{\check{T}^{n}}=\img T$,
+ and $\check{T}^{n}$ is the desired intertwiner.
 \end{proof}
 
 \begin{Cor}  \label{cor:rep-cosemisimple}% Changed! See if later refs are still ok.
   Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral.  Then
-  every rcfd corepresentation of $\mathscr{A}$ decomposes into a (possibly infinite) direct
-  sum of irreducible rcfd corepresentations.
+  every  corepresentation of $\mathscr{A}$ decomposes into a (possibly infinite) direct
+  sum of irreducible corepresentations.
 \end{Cor} 
 \begin{proof} 
 The preceding lemma shows that  every non-zero corepresentation is either
@@ -1687,17 +1737,17 @@ irreducible or the direct sum of two non-zero corepresentations, and we can appl
 \end{proof}
 
 % Semi-simplicity requires that each element is a finite direct sum! But possibly this is convention
-We can now prove that the category $\Corep(\mathscr{A})$ of a partial Hopf algebra with invariant integral is semisimple, that is, any object is a finite direct sum of irreducible objects. If one allows a more relaxed definition of semisimplicity allowing infinite direct sums, this will be true also for the a potentially bigger category $\Corep_{\rcf}(\mathscr{A})$.
+We can now prove that the category $\Corep(\mathscr{A})$ of a partial Hopf algebra with invariant integral is semi-simple, that is, any object is a finite direct sum of irreducible objects. If one allows a more relaxed definition of semisimplicity allowing infinite direct sums, this will be true also for the potentially bigger category $\Corep_{\rcf}(\mathscr{A})$.
 
 We will first state a lemma which will also be convenient at other occasions.
 
-\begin{Lem}\label{LemInjMor}  Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral, and fix $\alpha,\beta$ in the hyperobject set.  Then if $T$ is a morphism in $\Corep(\mathscr{A})_{\alpha\beta}$ and $\sum_{k\in I_\alpha} \Gru{T}{k}{l}=0$ for some $l \in I_\beta$, then $T=0$.
+\begin{Lem}\label{LemInjMor}  Let $\mathscr{A}$ be a partial Hopf algebra and fix $\alpha,\beta$ in the hyperobject set.  Then if $T$ is a morphism in $\Corep(\mathscr{A})_{\alpha\beta}$ and $\sum_{k\in I_\alpha} \Gru{T}{k}{l}=0$ for some $l \in I_\beta$, then $T=0$.
 \end{Lem} 
 
 \begin{proof} This follows from the equations in Lemma \ref{lemma:rep-total-morphism}
 \end{proof}
 
-\begin{Prop}\label{prop:rep-cosemisimple} Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral.   Then the components of the partial tensor category $\Corep(\mathscr{A})$ are semisimple.
+\begin{Prop}\label{prop:rep-cosemisimple} Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral.   Then the components of the partial tensor category $\Corep(\mathscr{A})$ are semi-simple.
 \end{Prop}
 \begin{proof} 
 
@@ -1717,7 +1767,7 @@ $\Hom_{\C}(V,W)$ is linearly spanned by functionals of the form
 where $v\in V$, $f\in \dual{W}$, and $(-|-)$ denotes the natural
 pairing of $\dual{W}$ with $W$.
 \begin{Def} Let $\mathscr{A}$ be a partial bialgebra. The space of
-  \emph{matrix coefficients} $\mathcal{C}(\mathscr{X})$ of an rcfd
+  \emph{matrix coefficients} $\mathcal{C}(\mathscr{X})$ of a 
   corepresentation $(V,\mathscr{X})$ is the sum of the subspaces
 \begin{align*}
   \Gr{\mathcal{C}(\mathscr{X})}{k}{l}{m}{n} &= \Span \left\{ (\id \otimes
@@ -1725,7 +1775,7 @@ pairing of $\dual{W}$ with $W$.
     \dual{(\Gru{V}{k}{l})} \right\} \subseteq \Gr{A}{k}{l}{m}{n}.
 \end{align*}
 \end{Def}
-Let $(V,\mathscr{X})$ be  an rcfd corepresentation of a partial bialgebra
+Let $(V,\mathscr{X})$ be  a  corepresentation of a partial bialgebra
 $\mathscr{A}$.  Condition \eqref{eq:rep-comultiplication} in Definition \ref{definition:corep}
 implies
 \begin{align} \label{eq:rep-matrix-delta}
@@ -1743,11 +1793,11 @@ $k,l$, the $I^{2}$-graded vector  space
 is rcfd, and the inclusion above shows that one can
 form the regular corepresentation on this space.
 \begin{Lem} \label{lemma:rep-regular-embedding}
-  Let $(V,\mathscr{X})$ be an rcfd corepresentation
+  Let $(V,\mathscr{X})$ be a  corepresentation
   of a partial bialgebra and let $f\in
   \dual{(\Gru{V}{k}{l})}$. Then the family of maps
   \begin{align*}
-    \Gr{T}{}{}{m}{n(f)} \colon \Gru{V}{m}{n} \to
+    \Gr{T}{}{(f)}{m}{n} \colon \Gru{V}{m}{n} \to
     \Gr{\mathcal{C}(\mathscr{X})}{k}{l}{m}{n}, \ w \mapsto (\id
     \otimes \omega_{f,w})(\Gr{X}{k}{l}{m}{n})=(\id \otimes
     f)(\Gr{X}{k}{l}{m}{n}(1 \otimes w)),
@@ -1759,18 +1809,18 @@ form the regular corepresentation on this space.
   Denote by $\mathscr{Y}$ the regular corepresentation on
   $\bigoplus_{m,n } \Gr{\mathcal{C}(\mathscr{X})}{k}{l}{m}{n}$. Then
   \begin{align*}
- \Gr{Y}{p}{q}{m}{n}    (1\otimes \Gr{T}{}{}{m}{n(f)}(v)) &= 
+ \Gr{Y}{p}{q}{m}{n}    (1\otimes \Gr{T}{}{(f)}{m}{n}(v)) &= 
 (\Delta^{\op}_{pq} \otimes \omega_{f,v})( \Gr{X}{k}{l}{m}{n}) 
 \\ & = (\id \otimes \id \otimes
 f)((\Gr{X}{k}{l}{p}{q})_{23}(\Gr{X}{p}{q}{m}{n})_{13}(1 \otimes 1
- \otimes v)) \\ &=(1 \otimes \Gr{T}{}{}{p}{q(f)})\Gr{X}{p}{q}{m}{n}(1 \otimes v)
+ \otimes v)) \\ &=(1 \otimes \Gr{T}{}{(f)}{p}{q})\Gr{X}{p}{q}{m}{n}(1 \otimes v)
   \end{align*}
 for all $v \in \Gru{V}{m}{n}$.
 \end{proof}
 As before, we denote by $\dual{V}$ the dual of a vector space $V$.
 \begin{Lem} \label{lemma:regular-corep} Let $\mathscr{A}$ be a partial
   Hopf algebra.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\arabic*)]
   \item  Let $a \in \bigoplus_{k,l} \Gr{A}{k}{l}{m}{n}$. Then the family of
   subspaces
   \begin{align} \label{eq:element-reg-corep}
@@ -1787,7 +1837,7 @@ As before, we denote by $\dual{V}$ the dual of a vector space $V$.
   \end{enumerate}
 \end{Lem}
 \begin{proof}
-1.  Taking $f=\epsilon$, one finds $a \in \Gru{V}{m}{n}$. Next, write
+(1)  Taking $f=\epsilon$, one finds $a \in \Gru{V}{m}{n}$. Next, write
   \begin{align*}
     \Delta_{pq}(a)=\sum_{i} b_{pq}^{i} \otimes c^{i}_{pq}
   \end{align*}
@@ -1801,13 +1851,13 @@ As before, we denote by $\dual{V}$ the dual of a vector space $V$.
     \Delta_{pq}) \Delta_{rs}(a) = \sum_{j} b^{j}_{rs} \otimes
     \Delta_{pq}(c^{j}_{rs}).
   \end{align*}
-  2.  If $a\in \Gru{V}{m}{n}$ is non-zero, then the right hand
+(2)  If $a\in \Gru{V}{m}{n}$ is non-zero, then the right hand
   sides of \eqref{eq:element-reg-corep} form a non-zero invariant
-  family of subspaces of $\Gru{V}{p}{q}$ by 1.
+  family of subspaces of $\Gru{V}{p}{q}$ by (1).
 \end{proof}
 \begin{Prop} \label{prop:rep-weak-pw} Let $\mathscr{A}$ be a partial
   Hopf algebra with an invariant integral. Then the total algebra $A$ is the sum
-  of the matrix coefficients of irreducible rcfd corepresentations.
+  of the matrix coefficients of irreducible  corepresentations.
 \end{Prop}
 \begin{proof} 
   Let $a \in \Gr{A}{k}{l}{m}{n}$, define $\Gru{V}{p}{q}$ as in
@@ -1820,7 +1870,7 @@ As before, we denote by $\dual{V}$ the dual of a vector space $V$.
   \end{align*}
   Decomposing $(V,\mathscr{X})$, we find that
   $a$ is contained in the sum of matrix coefficients of irreducible
-rcfd  corepresentations.
+  corepresentations.
 \end{proof}
 
 
@@ -1828,7 +1878,7 @@ The first part of the orthogonality relations concerns matrix
 coefficients of inequivalent irreducible corepresentations. 
 \begin{Prop} \label{prop:rep-orthogonality-1} Let $\mathcal{A}$ be a
   partial Hopf algebra with an invariant integral $\phi$ and inequivalent
-  irreducible rcfd corepresentations $(V,\mathscr{X})$ and
+  irreducible corepresentations $(V,\mathscr{X})$ and
   $(W,\mathscr{Y})$.  Then  for all
   $a\in \mathcal{C}(X), b \in \mathcal{C}(Y)$,
   \[\phi(S(b)a) = \phi(bS(a))=0.\]
@@ -1863,16 +1913,16 @@ where $f\in \dual{(\Gru{V}{k}{l})}, v \in \Gru{V}{m}{n}$ and $g \in
   $\phi(bS(a))=0$.  
 \end{proof}
 
-From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has bijective antipode).
+
 
 \begin{Theorem} \label{thm:rep-orthogonality} Let $\mathcal{A}$ be a
-  regular partial Hopf algebra with an invariant integral $\phi$. Let $\alpha,\beta\in \mathscr{I}$, and let $(V,\mathscr{X})$
-  be an irreducible rcfd corepresentation of $\mathscr{A}$ inside $\Corep(\mathscr{A})_{\alpha\beta}$. Suppose
-  $F_{\mathscr{X}}=F$ is an isomorphism from $(V,\mathscr{X})$ to
+ partial Hopf algebra with an invariant integral $\phi$. Let $\alpha,\beta\in \mathscr{I}$, and let $(V,\mathscr{X})$
+  be an irreducible corepresentation of $\mathscr{A}$ inside $\Corep(\mathscr{A})_{\alpha\beta}$. Suppose
+  $F=F_{\mathscr{X}}$ is an isomorphism from $(V,\mathscr{X})$ to
   $(V,\hat{\hat{\mathscr{X}}})$ with inverse
-  $G_{\mathscr{X}}= G$. Then the following hold.
+  $ G=F^{-1}$. Then the following hold.
   \begin{enumerate}[label=(\arabic*)]
-  \item The numbers $d_G:=\sum_{k} \Tr (\Gru{G}{k}{l})$ and $d_F:=\sum_{n} \Tr (\Gru{F}{m}{n})$ do not depend on the choice of $l \in I_\beta$ or $m\in I_\alpha$.
+  \item The numbers $d_G:=\sum_{k} \Tr (\Gru{G}{k}{l})$ and $d_F:=\sum_{n} \Tr (\Gru{F}{m}{n})$ are non-zero and do not depend on the choice of $l \in I_\beta$ or $m\in I_\alpha$.
     \item  For all $k,m \in I_\alpha$ and $l,n\in I_\beta$,
     \begin{align*}
       (\phi \otimes \id)(\Gr{(X^{-1})}{l}{k}{n}{m}\Gr{X}{k}{l}{m}{n})
@@ -1902,25 +1952,25 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
   and (3)  simultaneously; the assertions involving $d_F$  follow similarly.
 
   Consider
-  the following endomorphism $F_{m,n,k,l}$ of $\Gru{V}{m}{n}\otimes \Gru{V}{k}{l}$, 
+  the following endomorphism $F_{mnkl}$ of $\Gru{V}{m}{n}\otimes \Gru{V}{k}{l}$, 
   \begin{align*}
-    F_{m,n,k,l}
+    F_{mnkl}
     &:=(\phi \otimes \id \otimes \id)\left((\Gr{(X^{-1})}{l}{k}{n}{m})_{12}(\Gr{X}{k}{l}{m}{n})_{13}\right)
     \circ \Sigma_{mnkl} \\ &= (\phi \otimes \id \otimes
     \id)\left((\Gr{(X^{-1})}{m}{n}{k}{l})_{12}
       \Sigma_{klkl,23}(\Gr{X}{k}{l}{m}{n})_{12}\right).
   \end{align*}
-  By applying Lemma \ref{lem:rep-average} with respect to the flip map $\Sigma_{klkl}$, we see that the family $(F_{m,n,k,l})_{m,n}$ is
+  By applying Lemma \ref{lem:rep-average} with respect to the flip map $\Sigma_{klkl}$, we see that the family $(F_{mnkl})_{m,n}$ is
   an endomorphism of $(V \otimes \Gru{V}{k}{l}, X\otimes \id)$ and hence
   \begin{align}
-    F_{m,n,k,l} &= \id_{\Gru{V}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
+    F_{mnkl} &= \id_{\Gru{V}{m}{n}} \otimes \Gru{R}{k}{l} \label{eq:rep-orthogonal-1}
   \end{align}
   with some $\Gru{R}{k}{l} \in \Hom_{\C}(\Gru{V}{k}{l})$ not
   depending on $m,n$. 
   
   On the other hand, since $\phi = \phi S$,
   \begin{align*}
-    F_{m,n,k,l} &= (\phi \otimes \id \otimes \id)((S \otimes
+    F_{mnkl} &= (\phi \otimes \id \otimes \id)((S \otimes
     \id)(\Gr{X}{m}{n}{k}{l})_{12}(\Gr{X}{k}{l}{m}{n})_{13})
     \circ \Sigma_{mnkl} \\
     &= (\phi \otimes \id \otimes \id)\left(((S \otimes
@@ -1931,54 +1981,55 @@ From now on, we will assume that our partial Hopf algebra is regular (i.e.~ has 
       (\Gr{(\dual{\dual{X}{}\!})}{m}{n}{k}{l})_{13}\right).
   \end{align*}
   Hence we can again apply Lemma \ref{lem:rep-average} and
-  find that the family $(F_{m,n,k,l})_{k,l}$ is a morphism \[(F_{m,n,k,l})_{k,l}:
+  find that the family $(F_{mnkl})_{k,l}$ is a morphism \[(F_{mnkl})_{k,l}:
   (\Gru{V}{m}{n} \otimes V, \hat{\hat{X}}_{13})\rightarrow (\Gru{V}{m}{n} \otimes V,
  X_{13}).\] Therefore,
   \begin{align}
-    F_{m,n,k,l} &= \Gru{T}{m}{n} \otimes \Gr{G}{k}{l}{}{\mathscr{X}} \label{eq:rep-orthogonal-2}
+    F_{mnkl} &= \Gru{T}{m}{n} \otimes \Gru{G}{k}{l} \label{eq:rep-orthogonal-2}
   \end{align}
   with some $\Gru{T}{m}{n} \in \mathcal{\Hom_{\C}}(\Gru{V}{m}{n})$
   not depending on $k,l$. Combining \eqref{eq:rep-orthogonal-1} and
-  \eqref{eq:rep-orthogonal-2}, we conclude that, for some $\lambda\in \C$, \[F_{m,n,k,l} = \lambda
-  (\id_{\Gru{V}{m}{n}} \otimes \Gr{G}{k}{l}{}{\mathscr{X}})\]
+  \eqref{eq:rep-orthogonal-2}, we conclude that, for some $\lambda\in \C$, \[F_{mnkl} = \lambda
+  (\id_{\Gru{V}{m}{n}} \otimes \Gru{G}{k}{l})\]
   
   Choose dual  bases
   $(v_{i})_{i}$ for $\Gru{V}{k}{l}$ and $(f_{i})_{i}$ for  $\dual{(\Gru{V}{k}{l})}$. Then
   \begin{align*}
-    \lambda   \Tr( \Gr{G}{k}{l}{}{\mathscr{X}}) \id_{\Gru{V}{m}{n}}
+    \lambda   \Tr( \Gru{G}{k}{l}) \id_{\Gru{V}{m}{n}}
  &= \sum_{i} (\id \otimes
-    \omega_{f_{i},v_{i}})(F_{m,n,k,l}) = (\phi \otimes
-    \id)((\Gr{(X^{-1})}{l}{k}{n}{m}) \Gr{X}{k}{l}{m}{n}).
+    \omega_{f_{i},v_{i}})(F_{mnkl}) = (\phi \otimes
+    \id)(\Gr{(X^{-1})}{l}{k}{n}{m} \Gr{X}{k}{l}{m}{n}).
   \end{align*}
   Take now $n=l$.  By Lemma \ref{LemInjMor}, we can choose $m\in I_{\alpha}$ with $\Gru{V}{m}{n}\neq 0$.   Then summing the previous relation over $k$, the relations $\sum_{k}
-  (\Gr{(X^{-1})}{l}{k}{n}{m}) \Gr{X}{k}{l}{m}{n} = \UnitC{l}{n}
+  \Gr{(X^{-1})}{l}{k}{n}{m} \Gr{X}{k}{l}{m}{n} = \UnitC{l}{n}
   \otimes \id_{\Gru{V}{m}{n}}$ and
   $\phi(\UnitC{l}{l})=1$ give
 \begin{align*}
-\lambda \cdot  \sum_{k} \Tr(\Gr{G}{k}{l}{}{\mathscr{X}}) = 1.  
+\lambda \cdot  \sum_{k} \Tr(\Gru{G}{k}{l}) = 1.  
 \end{align*}
 Now all assertions in (1)--(3) concerning $d_G$ follow.
 \end{proof}
 
 % Ref to Ostrik paper, but again no reference or proof... Actually, there it is presupposed that right duals exist. I guess this is necessary!
 \begin{Rem} For semi-simple tensor categories with duals, it is known
-  that any object is isomorphic to its left bidual \cite[Proposition 2.1]{ENO1}, hence there always exists an $F_{\mathscr{X}}$ as in the previous Theorem. In fact, from the faithfulness of $\phi$ and Proposition \ref{prop:rep-orthogonality-1}, it follows that not all $F_{m,n,k,l}$ in the previous proof are zero. Hence $G_{\mathscr{X}}$ is a non-zero morphism and thus an isomorphism from the left bidual of $\mathscr{X}$ to $\mathscr{X}$.  
+  that any object is isomorphic to its left bidual \cite[Proposition
+  2.1]{ENO1}, hence there always exists an isomorphism $F_{\mathscr{X}}$ as in the previous Theorem. In fact, from the faithfulness of $\phi$ and Proposition \ref{prop:rep-orthogonality-1}, it follows that not all $F_{mnkl}$ in the previous proof are zero. Hence $G=F_{\mathscr{X}}^{-1}$ is a non-zero morphism and thus an isomorphism from the left bidual of $\mathscr{X}$ to $\mathscr{X}$.  
 \end{Rem}
 
 \begin{Cor}\label{CorOrth}
-  Let $\mathscr{A}$ be a regular partial Hopf algebra with an invariant integral $\phi$, let
-  $(V,\mathscr{X})$ be an irreducible rcfd corepresentation of
-  $\mathscr{A}$, let $F_{\mathscr{X}}$ be an isomorphism from
+  Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral $\phi$, let
+  $(V,\mathscr{X})$ be an irreducible corepresentation of
+  $\mathscr{A}$, let $F=F_{\mathscr{X}}$ be an isomorphism from
   $(V,\mathscr{X})$ to $(V,\dualco{\dualco{\mathscr{X}}})$ and
-  $G_{\mathscr{X}}=F^{-1}_{{\mathscr{X}}}$, and let $a=(\id \otimes
+  $G=F^{-1}$, and let $a=(\id \otimes
   \omega_{f,v})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
   \omega_{g,w})(\Gr{X}{m}{n}{k}{l})$, where 
   $f \in   \dual{(\Gru{V}{k}{l})}$, $v \in\Gru{V}{m}{n}$, $g \in
   \dual{(\Gru{V}{m}{n})}$, $w \in  \Gru{V}{k}{l}$.  Then
 \begin{align*}
-  \phi(S(b)a) &= \frac{(g|v)(f|G_{\mathscr{X}}w)}{\sum_{r}
-    \Tr(\Gr{G}{r}{n}{}{\mathscr{X}})}, & \phi(aS(b)) = \frac{(g|F_{\mathscr{X}}v)(f|w)}{\sum_{s}
-    \Tr(\Gr{F}{m}{s}{}{\mathscr{X}})}.
+  \phi(S(b)a) &= \frac{(g|v)(f|Gw)}{\sum_{r}
+    \Tr(\Gru{G}{r}{n})}, & \phi(aS(b)) = \frac{(g|Fv)(f|w)}{\sum_{s}
+    \Tr(\Gru{F}{m}{s})}.
 \end{align*}
 \end{Cor}
 \begin{proof}
@@ -1988,36 +2039,36 @@ Apply $\omega_{g,w} \otimes
 \end{proof}
 \begin{Cor} \label{cor:rep-pw}
   Let $\mathscr{A}$ be a partial Hopf algebra with an invariant integral and let
-  $((V_{i},\mathscr{X}_{i}))_{i \in \mathcal{I}}$ be a maximal family of mutually non-isomorphic irreducible rcfd corepresentations of
+  $((V^{(a)},\mathscr{X}_{a}))_{a \in \mathcal{I}}$ be a maximal family of mutually non-isomorphic irreducible corepresentations of
   $\mathscr{A}$. Then the map
   \begin{align*}
-    \bigoplus_{i \in \mathcal{I}} \bigoplus_{k,l,m,n}
-    (\dual{(\Gr{V}{k}{l}{}{i})} \otimes
-    \Gr{V}{m}{n}{}{i}) \to A
+    \bigoplus_{a} \bigoplus_{k,l,m,n}
+    (\dual{(\Gr{V}{}{(a)}{k}{l})} \otimes
+    \Gr{V}{}{(a)}{m}{n}) \to A
   \end{align*}
   that sends $f \otimes w \in
-  \dual{(\Gr{V}{k}{l}{}{\alpha})} \otimes
-  \Gr{V}{m}{n}{}{i}$ to $ (\id \otimes
-  \omega_{f,w})(\Gr{(X_{i})}{k}{l}{m}{n})$,
+  \dual{(\Gr{V}{}{(a)}{k}{l})} \otimes
+  \Gr{V}{}{(a)}{m}{n}$ to $ (\id \otimes
+  \omega_{f,w})(\Gr{(X_{a})}{k}{l}{m}{n})$,
   is a linear isomorphism. 
 \end{Cor}
 \begin{proof} This follows from Proposition \ref{prop:rep-weak-pw}, Proposition \ref{prop:rep-orthogonality-1} and Corollary \ref{CorOrth}.
 \end{proof}
 \begin{Cor} \label{cor:rep-pw-morphisms}
   Let $\mathscr{A}$ be a regular partial Hopf algebra with an invariant integral, let
-  $((V_{i},\mathscr{X}_{i}))_{i\in \mathcal{I}}$ be a maximal
-  family of mutually non-isomorphic irreducible rcfd corepresentations of $\mathscr{A}$,
-  fix $i \in \mathcal{I}$ and $k,l\in I$, and denote by $\Gr{\mathscr{Y}}{k}{l}{}{i}$
+  $((V^{(a)},\mathscr{X}_{a}))_{a\in \mathcal{I}}$ be a maximal
+  family of mutually non-isomorphic irreducible corepresentations of $\mathscr{A}$,
+  fix $a \in \mathcal{I}$ and $k,l\in I$, and denote by $\Gr{\mathscr{Y}}{k}{l}{}{a}$
   the regular corepresentation on
-  $\Grd{\mathcal{C}(\mathscr{X}_i)}{k}{l}$. Then there exists a
+  $\Grd{\mathcal{C}(\mathscr{X}_a)}{k}{l}$. Then there exists a
   linear isomorphism
   \begin{align*}
-    \dual{( \Gru{V}{k}{l})} \to
-    \Mor((V_{i},\mathscr{X}_{i}),
-    (\Grd{\mathcal{C}(\mathscr{X}_i)}{k}{l},\Gr{\mathscr{Y}}{k}{l}{}{i}))
+    \dual{( \Gr{V}{}{(a)}{k}{l})} \to
+    \Mor((V^{(a)},\mathscr{X}_{a}),
+    (\Grd{\mathcal{C}(\mathscr{X}_a)}{k}{l},\Gr{\mathscr{Y}}{k}{l}{}{a}))
   \end{align*}
-  assigning to each $f\in     \dual{( \Gru{V}{k}{l})}$ the morphism
-  $T_{(f)}$ of Lemma \ref{lemma:rep-regular-embedding}.
+  assigning to each $f\in     \dual{( \Gr{V}{}{(a)}{k}{l})}$ the morphism
+  $T^{(f)}$ of Lemma \ref{lemma:rep-regular-embedding}.
 \end{Cor}
 
 
@@ -2029,12 +2080,13 @@ Let us now enhance our partial Hopf algebras to partial compact
 quantum groups. We write $B(\Hsp,\mathcal{G})$ for the linear space of
 bounded morphisms between Hilbert spaces $\Hsp$ and $\mathcal{G}$. 
 
-\begin{Def} Let $\mathscr{A}$ define a partial compact quantum
-  group. We call an rcfd corepresentation $\mathscr{X}$ of $\mathscr{A}$ on a collection of Hilbert spaces $\Gru{\Hsp}{k}{l}$ 
-   \emph{unitary}
+\begin{Def} Let $\mathscr{A}$ define a partial compact quantum group
+  $\mathscr{G}$. We call a  corepresentation $\mathscr{X}$ of
+  $\mathscr{A}$ on a collection of Hilbert spaces $\Gru{\Hsp}{k}{l}$
+  \emph{unitary}
   if \[\Gr{(X^{-1})}{k}{l}{m}{n}=(\Gr{X}{l}{k}{n}{m})^{*}\quad
   \textrm{in }\Gr{A}{k}{l}{m}{n}\otimes
-  B(\Gru{\Hsp}{l}{k},\Gru{\Hsp}{n}{m}).\]
+  B(\Gru{\Hsp}{l}{k},\Gru{\Hsp}{n}{m}).\] 
 \end{Def} 
 
 
@@ -2047,24 +2099,18 @@ The total object $\Hsp$ will then only be a pre-Hilbert space, but as the local 
   trivial corepresentation $\mathscr{U}$ on $\C^{(I)}$ is unitary.
 \end{Exa}
 
-The tensor product of rcfd corepresentations lifts to a tensor product
+The tensor product of corepresentations lifts to a tensor product
 of unitary corepresentations as follows.  We define the tensor product
 of rcfd $I^{2}$-graded Hilbert spaces similarly as for rcfd
-$I^{2}$-graded vector spaces and pretend it to be strict again.
-\begin{Lem}\label{lemma:rep-unitary-tensor}
-  Let $(\Hsp,\mathscr{X})$ and $(\mathcal{G},\mathscr{Y})$ be unitary
-  rcfd representations associated to a partial compact quantum group. Then the
-  tensor product $(\Hsp \itimes \mathcal{G},\mathscr{X} \Circt
-  \mathscr{Y})$ is unitary again.
-\end{Lem}
-\begin{proof}
-In total form,  $(X\Circt Y)^{-1} = Y_{13}^{-1}X_{12}^{-1}
+$I^{2}$-graded vector spaces and pretend it to be strict again.  Let
+$(\Hsp,\mathscr{X})$ and $(\mathcal{G},\mathscr{Y})$ be unitary rcfd
+corepresentations. Then the tensor product $(\Hsp \itimes
+\mathcal{G},\mathscr{X} \Circt \mathscr{Y})$ is unitary again. Indeed,
+in  total form,  $(X\Circt Y)^{-1} = Y_{13}^{-1}X_{12}^{-1}
   =Y_{13}^{*}X_{12}^{*} = (X \Circt Y)^{*}$ by Remark \ref{remark:rep-tensor-multiplier}.
-\end{proof}
+We hence obtain a tensor C$^*$-category $\Corep_{u,\rcf}(\mathscr{A})$ of unitary corepresentations. We denote again by $\Corep_u(\mathscr{A})$ the subcategory of all corepresentations with finite support on the hyperobject set. It is the total tensor C$^*$-category with local units of a semi-simple partial tensor C$^*$-category.
 
-We hence obtain a tensor C$^*$-category $\Corep_{u,\rcf}(\mathscr{A})$ of unitary rcfd corepresentations. We denote again by $\Corep_u(\mathscr{A})$ the subcategory of all corepresentations with finite support on the hyperobject set. It is the total tensor C$^*$-category with local units of a semisimple partial tensor C$^*$-category.
-
-Our aim now is to show that every (irreducible) rcfd corepresentation is
+Our aim now is to show that every (irreducible) corepresentation is
 equivalent to a unitary one. We show this by embedding the
 corepresentation into a restriction of the regular corepresentation.
 \begin{Lem} \label{lemma:rep-regular-unitary}
@@ -2082,10 +2128,10 @@ By Lemma \ref{lemma:rep-invertible},  it suffices to show that
   \begin{equation}\label{EqUnit} \sum_{k}
     (\Gr{X}{k}{l}{m}{n'})^* \Gr{X}{k}{l}{m}{n} =
     \delta_{n,n'}\UnitC{l}{n}\otimes
-    \id_{\Gru{\Hsp}{m}{n}}.
+    \id_{\Gru{V}{m}{n}}.
   \end{equation} 
-Let  $a\in \Gru{\Hsp}{m}{n}$, $b\in \Gru{\Hsp}{m}{n'}$ and define $\omega_{b,a} \colon
-\Hom_{\C}(\Gru{\Hsp}{m}{n},\Gru{\Hsp}{m}{n}) \to \C$ by $T
+Let  $a\in \Gru{V}{m}{n}$, $b\in \Gru{V}{m}{n'}$ and define $\omega_{b,a} \colon
+\Hom_{\C}(\Gru{V}{m}{n},\Gru{V}{m}{n'}) \to \C$ by $T
 \mapsto \langle b|Ta\rangle$. Then
 \begin{eqnarray*}
 \sum_{k }(\id \otimes \omega_{b,a})
@@ -2099,32 +2145,29 @@ Let  $a\in \Gru{\Hsp}{m}{n}$, $b\in \Gru{\Hsp}{m}{n'}$ and define $\omega_{b,a} 
 This proves \eqref{EqUnit}.
 \end{proof} 
 
-\begin{Prop} \label{prop:rep-unitarisable} Every  rcfd
-  corepresentation of a partial compact quantum group $\mathscr{A}$ is
-  isomorphic to a unitary rcfd corepresentation.
+\begin{Prop} \label{prop:rep-unitarisable}   Let $\mathscr{A}$ define
+  a partial compact quantum group. Then every  
+  corepresentation of  $\mathscr{A}$  is
+  isomorphic to a unitary one.
 \end{Prop}
 \begin{proof}
-  By Proposition \ref{prop:rep-cosemisimple}, it suffices to prove the
-  assertion for every rcfd corepresentation $(V,\mathscr{X})$ that is
-  irreducible.  For some $k,l$ and $f \in
-  \dual{(\Gru{V}{k}{l})}$, the operator $T_{(f)}$ defined in
-  Lemma \ref{lemma:rep-regular-embedding} has to be non-zero and
-  hence, by Schur's Lemma, injective. Thus, it forms an equivalence
-  between $(V,\mathscr{X})$ and a restriction of the regular
-  corepresentation on $\Grd{\mathcal{C}(\mathscr{X})}{k}{l}$, which is
-  unitary by Lemma \ref{lemma:rep-regular-unitary}.
+  By Proposition \ref{prop:rep-cosemisimple} and Corollary
+  \ref{cor:rep-pw}, every corepresentation is isomorphic to a direct
+  sum of irreducible regular corepresentations, which are unitary by
+  Lemma \ref{lemma:rep-regular-unitary}.
 \end{proof}
-\begin{Cor} The partial C$^*$-tensor category $\Corep_u(\mathscr{A})$ is a partial fusion category.
+\begin{Cor} The partial C$^*$-tensor category $\Corep_u(\mathscr{A})$ is a partial fusion C$^{*}$-category.
 \end{Cor}
 
-\begin{Rem}If $\mathscr{A}$ defines a partial compact quantum group $\mathscr{G}$, we will also write $\Corep_u(\mathscr{A})= \Rep_u(\mathscr{G})$, and talk of (unitary) rcfd representations of $\mathscr{G}$.
+\begin{Rem}
+If $\mathscr{A}$ defines a partial compact quantum group $\mathscr{G}$, we will also write $\Corep_u(\mathscr{A})= \Rep_u(\mathscr{G})$, and talk of (unitary) representations of $\mathscr{G}$.
  \end{Rem}  
    
 Let now $\mathscr{X}$ be a unitary corepresentation of $\mathscr{A}$. Then there exists an isomorphism from $\mathscr{X}$ to $\dualco{\dualco{\mathscr{X}}} = (S^2\otimes \id)\mathscr{X}$. The following proposition shows that it can be implemented by positive operators.
 
 \begin{Prop} \label{prop:rep-unitary-bidual}
   Let $\mathscr{A}$ define a partial compact quantum group and let
-  $(\Hsp,\mathscr{X})$ be an irreducible unitary rcfd corepresentation of
+  $(\Hsp,\mathscr{X})$ be an irreducible unitary corepresentation of
   $\mathscr{A}$.  Then there exists an isomorphism $F=F_{\mathscr{X}}$
   from $(\Hsp,\mathscr{X})$ to 
   $(\Hsp,(S^{2} \otimes \id)(\mathscr{X}))$ in $\Corep(\mathscr{A})$ such
@@ -2133,7 +2176,7 @@ Let now $\mathscr{X}$ be a unitary corepresentation of $\mathscr{A}$. Then there
 \begin{proof}
  By Proposition \ref{prop:rep-unitarisable}, there exists an
   isomorphism $T \colon \dualco{\mathscr{X}} \to \mathscr{Y}$ for some
-  unitary rcfd corepresentation $\mathscr{Y}$ on $\dual{\Hsp}$, so that in total form,
+  unitary corepresentation $\mathscr{Y}$ on $\dual{\Hsp}$, so that in total form,
   $(1\otimes T)\dualco{X} = Y(1 \otimes T)$.
 We  apply   $S \otimes -^{\tr}$ and $-^{*} \otimes -^{*\tr}$,
 respectively to find 
@@ -2145,12 +2188,12 @@ respectively to find
 Combining both equations, we
 find $\dualco{\dualco{X}}(1 \otimes \dualop{T}T^{*\tr})=(1 \otimes
 \dualop{T}T^{*\tr})X$. Thus, we can take
-$F_{\mathscr{X}}:=\dualop{T}T^{*\tr}$.
+$F:=\dualop{T}T^{*\tr}$.
 \end{proof}
 
 The Schur orthogonality relations in Corollary \ref{CorOrth} can be
 rewritten using the involution instead of the antipode as follows.
-Let $(\Hsp,\mathscr{X})$ be a unitary rcfd corepresentation of
+Let $(\Hsp,\mathscr{X})$ be a unitary corepresentation of
 $\mathscr{A}$. Since $(S\otimes \id)(X)=X^{-1}=X^{*}$, the space of
 matrix coefficients $\mathcal{C}(\mathscr{X})$ satisfies
 \begin{align} \label{eq:rep-unitary-matrix-coefficients}
@@ -2172,7 +2215,7 @@ Corollary \ref{CorOrth} imply the following
 corollaries:
 \begin{Cor} \label{cor:rep-unitary-orthogonality-1}   Let $\mathscr{A}$ define a partial compact quantum group with
   positive invariant integral $\phi$ and let   $(V,\mathscr{X})$ and
-  $(W,\mathscr{Y})$ be inequivalent irreducible unitary rcfd
+  $(W,\mathscr{Y})$ be inequivalent irreducible unitary
   corepresentations of $\mathcal{A}$.  Then for all $a\in
   \mathcal{C}(X), b \in \mathcal{C}(Y)$,
   \[\phi(b^{*}a) = \phi(ba^{*})=0.\] In particular, $\mathcal{C}(X)
@@ -2181,26 +2224,26 @@ corollaries:
 \begin{Cor}\label{cor:rep-unitary-schur-orthogonality}
   Let $\mathscr{A}$ define a partial compact quantum group with
   positive invariant integral $\phi$, let $(\Hsp,\mathscr{X})$ be an irreducible
-  unitary rcfd corepresentation of $\mathscr{A}$, let $F_{\mathscr{X}}$ be a positive
+  unitary corepresentation of $\mathscr{A}$, let $F=F_{\mathscr{X}}$ be a positive
   isomorphism from $(\Hsp,\mathscr{X})$ to
   $(\Hsp,\dualco{\dualco{\mathscr{X}}})$ and
-  $G_{\mathscr{X}}=F^{-1}_{{\mathscr{X}}}$, and let $a=(\id \otimes
+  $G=F^{-1}$, and let $a=(\id \otimes
   \omega_{v,v'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
   \omega_{w,w'})(\Gr{X}{k}{l}{m}{n})$, where $v,w \in
   \Gru{\Hsp}{k}{l}$ and $v',w' \in \Gru{\Hsp}{m}{n}$.  Then
 \begin{align*}
-  \phi(b^{*}a) &= \frac{\langle w|v'\rangle\langle v|G_{\mathscr{X}}w'\rangle}{\sum_{r}
-    \Tr(\Gr{G}{r}{n}{}{\mathscr{X}})}, & \phi(ab^{*}) = \frac{\langle
-    w|F_{\mathscr{X}}v'\rangle \langle v|w'\rangle}{\sum_{s}
-    \Tr(\Gr{F}{m}{s}{}{\mathscr{X}})}.
+  \phi(b^{*}a) &= \frac{\langle w|v'\rangle\langle v|Gw'\rangle}{\sum_{r}
+    \Tr(\Gru{G}{r}{n})}, & \phi(ab^{*}) = \frac{\langle
+    w|Fv'\rangle \langle v|w'\rangle}{\sum_{s}
+    \Tr(\Gru{F}{m}{s})}.
 \end{align*}
 \end{Cor}
 As a consequence of Proposition \ref{prop:rep-weak-pw} and Proposition
 \ref{prop:rep-unitarisable} or Lemma \ref{lemma:rep-regular-unitary},
-the matrix coefficients of irreducible unitary rcfd corepresentations
+the matrix coefficients of irreducible unitary corepresentations
 span $\mathscr{A}$, and in the Corollary \ref{cor:rep-pw}, we may
-assume the irreducible rcfd corepresentations
-$(V_{i},\mathscr{X}_{i})$ to be unitary if $\mathscr{A}$
+assume the irreducible corepresentations
+$(V^{i},\mathscr{X}_{i})$ to be unitary if $\mathscr{A}$
 defines a partial compact quantum group.
 
 \begin{Rem}\label{RemPos} In fact, Proposition \ref{prop:rep-unitary-bidual} and Corollary \ref{cor:rep-unitary-schur-orthogonality} show the following. Let $\mathscr{A}$ be a partial Hopf $^*$-algebra admitting an invariant integral $\phi$, which a priori we do not assume to be positive. Suppose however that each irreducible corepresentation of $\mathscr{A}$ is equivalent to a unitary corepresentation. Then $\phi$ is necessarily positive.
@@ -2208,16 +2251,11 @@ defines a partial compact quantum group.
 
 \subsection{Analogues of Woronowicz's  characters}
 
-Let $\mathscr{A}$ be a partial bialgebra, and $a\in \Gr{A}{k}{l}{m}{n}$. Then for $\omega \in \Hom_{\C}(A,\C)$, we can define
-\begin{align*}
-  \omega \aste{p,q} a
-&:= (\id \otimes \omega) (\Delta_{pq}(a)), & a \aste{r,s}
-\omega&:=(\omega \otimes \id)(\Delta_{rs}(a)).\end{align*} Clearly we can define
-\begin{align*} \omega \aste{p,q} a \aste{r,s}
-\omega'&:= (\omega \aste{p,q} a)\aste{r,s} \omega' = \omega \aste{p,q}(a \aste{r,s} \omega').\end{align*}
-When $\omega$ has support on the $A(K)$ with $K_u=K_d$, we can write, for $a\in \Gr{A}{k}{l}{m}{n}$, \[\omega\ast a := \sum_{p,q} \omega\aste{p,q}a = \omega\aste{m,n}a,\quad  a\ast \omega = \sum_{r,s} a\aste{r,s}\omega = a\aste{k,l}\omega.\] 
+Let $\mathscr{A}$ be a partial bialgebra, and $a\in \Gr{A}{k}{l}{m}{n}$. Then for $\omega \in A^*$, we can define
+\begin{align*} \omega \aste{p,q} a = (\id \otimes \omega) (\Delta_{pq}(a)),&&a \aste{r,s}
+\omega:=(\omega \otimes \id)(\Delta_{rs}(a)),\end{align*}and this defines a bimodule structure with respect to the natural $I\times I$-partial convolution algebra structure on $\oplus \left(\Gr{A}{k}{l}{m}{n}\right)^*$. When $\omega$ has support on $\sum_{k,l}\Gr{A}{k}{l}{k}{l}$, it is meaningful to define \begin{align*} \omega\ast a := \sum_{p,q} \omega\aste{p,q}a && a\ast \omega = \sum_{r,s} a\aste{r,s}\omega \end{align*}
 
-We shall say that an entire function $f$ has \emph{exponential growth
+We recall that an entire function $f$ has \emph{exponential growth
   on the right half-plane} if there exist $C,d>0$ such that $|f(x+iy)|\leq
 C\mathrm{e}^{dx}$  for all $x,y\in \R$ with $x>0$. 
 
@@ -2258,33 +2296,32 @@ Note that conditions (3), (4) and (6) are meaningful by condition (1).
   Let us now prove existence.  By Theorem \ref{thm:rep-orthogonality}, Corollary \ref{cor:rep-pw} and Proposition \ref{prop:rep-unitary-bidual}, we can
   define for each $z\in \C$ a functional $f_{z} \colon A \to \C$ such
   that for every 
-  irreducible rcfd corepresentation
+  irreducible corepresentation
   $(V,\mathscr{X})$ in $\Corep(\mathscr{A})$,
     \begin{align*}
       f_{z}((\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})) &=
-      \delta_{k,m}\delta_{l,n} \cdot
-      \omega_{\xi,\eta}((\Gr{F}{k}{l}{}{\mathscr{X}})^{z}) \quad \text{for all }
+      \delta_{k,m}\delta_{l,n}
+      \omega_{\xi,\eta}((\Gru{F}{k}{l})^{z}) \quad \text{for all }
       \xi \in \Gru{V}{k}{l},\eta \in
       \Gru{V}{m}{n},
     \end{align*}
     or, equivalently,
     \begin{align*}
       (f_{z} \otimes \id)(\Gr{X}{k}{l}{m}{n}) =
-      \delta_{k,m}\delta_{l,n} \cdot (\Gru{(F_{\mathscr{X}})}{k}{l})^{z},
+      \delta_{k,m}\delta_{l,n} (\Gru{F}{k}{l})^{z},
     \end{align*}
-    where $F_{\mathscr{X}}$ is a non-zero operator implementing a morphism from $(V,\mathscr{X})$ to
+    where $F=F_{\mathscr{X}}$ is a non-zero operator implementing a morphism from $(V,\mathscr{X})$ to
     $(V, \dualco{\dualco{\mathscr{X}}})$, scaled such that
     \begin{align*}
-      d_{\mathscr{X}}:= \sum_{r} \Tr(\Gru{(F_{\mathscr{X}}^{-1})}{r}{l}) = \sum_{s}
-      \Tr(\Gru{(F_{\mathscr{X}})}{m}{s})
+      d_{\mathscr{X}}:= \sum_{r} \Tr(\Gru{(F^{-1})}{r}{l}) = \sum_{s}
+      \Tr(\Gru{F}{m}{s})
     \end{align*}
     for all $l$ in the right and all $m$ in the left hyperobject support of $\mathscr{X}$. By
     construction, (1) and (2) hold. We show that the $(f_{z})_{z}$ satisfy the
     assertions (3)--(7). 
 
-        Throughout the following arguments, let 
-    $(V,\mathscr{X})$ be an  irreducible corepresentation
-    $(V,\mathscr{X})$ and let $F=F_{\mathscr{X}}$ be as above.
+    Throughout the following arguments, let $(V,\mathscr{X})$ and $F$ be as
+    above.
 
     We first prove property (3). This follows from the relations
     \begin{align*}
@@ -2325,7 +2362,7 @@ To prove (4), write $ \Delta^{(2)} = (
       \Gru{F}{k}{l}) (\id \otimes \Gru{(F^{-1})}{k}{l})
       \Sigma_{k,l,m,n} (\id \otimes
       \Gru{F}{m}{n}) \\
-      &&=d_{\mathscr{X}}^{-1}(\Gru{F}{m}{n} \otimes \id) \Sigma_{k,l,m,n} \\
+      &&=d_{\mathscr{X}}^{-1}(\Gru{F}{m}{n} \otimes \id) \Sigma_{klmn} \\
       &&= (\phi \otimes \id \otimes
       \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{(X^{-1})}{l}{k}{n}{m})_{12}).
     \end{eqnarray*}
@@ -2335,8 +2372,8 @@ To prove (4), write $ \Delta^{(2)} = (
 We have then already argued that the property (5) automatically holds. To show the property (6), note that by Proposition \ref{prop:rep-unitary-bidual} and the calculation above,
     \begin{align*}
       (S^{2} \otimes \id)(\Gr{X}{k}{l}{m}{n}) &= (1
-      \otimes\Gru{F_{\mathscr{X}}}{k}{l})
-      \Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{F_{\mathscr{X}}}{m}{n})^{-1} 
+      \otimes\Gru{F}{k}{l})
+      \Gr{X}{k}{l}{m}{n}(1 \otimes \Gru{F}{m}{n})^{-1} 
       =(\theta_{-1,1}  \otimes \id)(\Gr{X}{k}{l}{m}{n}).
     \end{align*}
      Assertion (6) follows again by applying slice maps.
@@ -2352,12 +2389,11 @@ We have then already argued that the property (5) automatically holds. To show t
      Finally, we assume that $\mathscr{A}$ is a partial Hopf
      $^*$-algebra with positive invariant integral $\phi$ and prove
      (8).  By Proposition \ref{prop:rep-unitary-bidual}, we can assume
-     $\Gr{F}{k}{l}{}{\mathscr{X}}$ to be positive.  Write
+     $\Gru{F}{k}{l}$ to be positive.  Write
      $\bar{f}_z(a) = \overline{f_z(a^*)}$. Using the relations $
      (\Gr{X}{k}{l}{k}{l})^{*}=(S \otimes \id)(\Gr{X}{k}{l}{k}{l})$,
      $f_{z} \circ S=f_{-z}$  and
-     positivity of $\Gr{F}{k}{l}{}{\mathscr{X}}$ (Proposition
-     \ref{prop:rep-unitary-bidual}), we conclude
+     positivity of $\Gru{F}{k}{l}$, we conclude
      \begin{align*}
        (\bar{f}_z \otimes
        \id)(\Gr{X}{k}{l}{k}{l})
@@ -2365,8 +2401,8 @@ We have then already argued that the property (5) automatically holds. To show t
        \id)((\Gr{X}{k}{l}{k}{l})^{*})\right)^{*} \\
 & = \left((f_{-z} \otimes \id)(\Gr{X}{k}{l}{k}{l})\right)^{*} 
  =
-((\Gr{F}{k}{l}{}{\mathscr{X}})^{-z})^{*} 
-=       (\Gr{F}{k}{l}{}{\mathscr{X}})^{-\overline{z}} = (f_{-\overline{z}}
+((\Gru{F}{k}{l})^{-z})^{*} 
+=       (\Gru{F}{k}{l})^{-\overline{z}} = (f_{-\overline{z}}
 \otimes \id)(\Gr{X}{k}{l}{k}{l}),
      \end{align*}
 whence $\bar{f}_z(a) = f_{-\overline{z}}(a)$ for all $a\in
@@ -2376,24 +2412,26 @@ $f_{-\overline{z}}$ vanish on $\Gr{A}{k}{l}{m}{n}$ if $(k,l)\neq
 corepresentations span $A$, we can conclude $\bar{f}_{z}=f_{-\overline{z}}$.
 \end{proof}
 
+Note that our formula for the Woronowicz characters is slightly different from the one in \cite{Hay1}, as we are using a different normalisation of the Haar functional.
 
 
 
-% Correct writing Krein
+% Correct writing Kre$\breve{\textrm{\i}}$n
 
-\section{Tannaka-Krein-Woronowicz duality for partial compact quantum groups}
+\section{Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz duality for partial compact quantum groups}
 
 % See `Galois reconstruction of finite quantum groups' of Bichon for additional refs
 
-In the previous section, we showed how any partial compact quantum group gave rise to a partial fusion C$^*$-category with a unital morphism into a partial tensor C$^*$-category of finite-dimensional Hilbert spaces. In this section we reverse this construction, and show that the two structures are in duality with each other. The proof does not differ much from the usual Tannaka-Krein reconstruction process, but one has to pay some extra care to the well-definedness of certain constructions. Implicitly, we build our reconstruction process by passing first through the construction of the discrete dual of a partial compact quantum group, which we however refrain from formally introducing.
+In the previous section, we showed how any partial compact quantum group gave rise to a partial fusion C$^*$-category with a unital morphism into a partial tensor C$^*$-category of finite-dimensional Hilbert spaces. In this section we reverse this construction, and show that the two structures are in duality with each other. The proof does not differ much from the usual Tannaka-Kre$\breve{\textrm{\i}}$n reconstruction process, but one has to pay some extra care to the well-definedness of certain constructions. Implicitly, we build our reconstruction process by passing first through the construction of the discrete dual of a partial compact quantum group, which we however refrain from formally introducing.
 
-Let us at first fix an indecomposable semi-simple partial tensor category $\CatCC$ over a base set $\mathscr{I}$. We will again view the tensor product of $\CatC$ as being strict, for notational convenience. 
+Let us at first fix a semi-simple partial tensor category $\CatCC$
+with indecomposable units over a base set $\mathscr{I}$. We will again view the tensor product of $\CatC$ as being strict, for notational convenience. 
 
-Assume that we also have another set $I$ and a partition $I = \{I_\alpha\mid \alpha\in \mathscr{I}\}$ with associated \emph{surjective} function \[\varphi:I\rightarrow \mathscr{I}, \quad k\mapsto k'.\] Let $F: \CatCC\rightarrow \{\Vect_{\fin}\}_{I\times I}$ be a morphism based on $\varphi$, cf.~ Example \ref{ExaVectBiGr}.  We will again denote by $F_{kl}:\CatCC_{k'l'}\rightarrow \Vect_{\fin}$ the components of $F$ at index $(k,l)$, and by $\iota$ and $\mu$ resp.~ the product and unit constraints.  For $X\in \CatC_{k'\beta}$ and $Y\in \CatC_{\beta m'}$, we write the projection maps associated to the identification $F_{km}(X\otimes Y)\cong \oplus_{l\in I_\beta} \left(F_{kl}(X)\otimes F_{lm}(Y)\right)$ as \[\pi^{(klm)}_{X,Y}:F_{km}(X\otimes Y) \rightarrow F_{kl}(X)\otimes F_{lm}(Y).\]
+Assume that we also have another set $I$ and a partition $I = \{I_\alpha\mid \alpha\in \mathscr{I}\}$ with associated \emph{surjective} function \[\varphi:I\rightarrow \mathscr{I}, \quad k\mapsto k'.\] Let $F: \CatCC\rightarrow \{\Vect_{\fd}\}_{I\times I}$ be a morphism based on $\varphi$, cf.~ Example \ref{ExaVectBiGr}.  We will again denote by $F_{kl}:\CatCC_{k'l'}\rightarrow \Vect_{\fd}$ the components of $F$ at index $(k,l)$, and by $\iota$ and $\mu$ resp.~ the product and unit constraints.  For $X\in \CatC_{k'\beta}$ and $Y\in \CatC_{\beta m'}$, we write the projection maps associated to the identification $F_{km}(X\otimes Y)\cong \oplus_{l\in I_\beta} \left(F_{kl}(X)\otimes F_{lm}(Y)\right)$ as \[\pi^{(klm)}_{X,Y}=(\iota^{(klm)}_{X,Y})^{*}:F_{km}(X\otimes Y) \rightarrow F_{kl}(X)\otimes F_{lm}(Y).\]
 
 We choose a maximal family of mutually inequivalent irreducible objects $\{u_a\}_{a\in \mathcal{I}}$ in $\CatC$. We assume that the $u_a$ include the unit objects $\Unitb_{\alpha}$ for $\alpha\in \mathscr{I}$, and we may hence identify $\mathscr{I}\subseteq \mathcal{I}$. For $a\in \mathcal{I}$, we will write $u_a \in \CatC_{\lambda_a,\rho_a}$ with $\lambda_a,\rho_a\in \mathscr{I}$. For $\alpha,\beta\in \mathscr{I}$ fixed, we write $\mathcal{I}_{\alpha\beta}$ for the set of all $a\in \mathcal{I}$ with $\lambda_a=\alpha$ and $\rho_a=\beta$. When $a,b,c\in \mathcal{I}$ with $a\in \mathcal{I}_{\alpha\beta},b\in \mathcal{I}_{\beta\gamma}$ and $c\in \mathcal{I}_{\gamma\delta}$, we write $c\leq a\cdot b$ if $\Mor(u_c,u_a\otimes u_b)\neq \{0\}$. Note that with $a,b$ fixed, there is only a finite set of $c$ with $c\leq a\cdot b$. We also use this notation for multiple products.
 
-\begin{Def} For $a\in \mathcal{I}$ and $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) =  \delta_{k,m,\lambda_a}\delta_{l,n,\rho_a} \Hom_{\C}(F(u_a)_{mn},F(u_a)_{kl})^*.\] Write \[\Gr{A}{k}{l}{m}{n} =\underset{a\in \mathcal{I}}{\oplus}\, \Gr{A}{k}{l}{m}{n}(a),\quad A(a) = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}(a),\quad A = \underset{k,l,m,n}{\oplus} \Gr{A}{k}{l}{m}{n}.\] 
+\begin{Def} For $a\in \mathcal{I}$ and $k,l,m,n\in I$, define vector spaces \[\Gr{A}{k}{l}{m}{n}(a) =  \delta_{k',m',\lambda_a}\delta_{l',n',\rho_a} \Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a))^*.\] Write \[\Gr{A}{k}{l}{m}{n} =\underset{a\in \mathcal{I}}{\bigoplus}\, \Gr{A}{k}{l}{m}{n}(a),\quad A(a) = \underset{k,l,m,n}{\bigoplus} \Gr{A}{k}{l}{m}{n}(a),\quad A = \underset{k,l,m,n}{\bigoplus} \Gr{A}{k}{l}{m}{n}.\] 
 \end{Def} 
 
 We first turn the $\Gr{A}{k}{l}{m}{n}$ into a partial coalgebra $\mathscr{A}$ over $I^2$.
@@ -2401,14 +2439,23 @@ We first turn the $\Gr{A}{k}{l}{m}{n}$ into a partial coalgebra $\mathscr{A}$ ov
 \begin{Def} For $r,s\in I$, we define \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{k}{l}{r}{s}\otimes \Gr{A}{r}{s}{m}{n}\] as the direct sums of the duals of the composition maps \[\Hom_{\C}(F_{rs}(u_a),F_{kl}(u_a)) \otimes \Hom_{\C}(F_{mn}(u_a),F_{rs}(u_a))\rightarrow \Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a)),\]\[x\otimes y \mapsto x\circ y.\]
 \end{Def} 
 
-\begin{Lem} The couple $(\mathscr{A},\Delta)$ is a partial coalgebra with counit map \[\epsilon:\Gr{A(a)}{k}{l}{k}{l}\rightarrow \C,\quad f\mapsto f(\id_{F_{kl}(u_a)}).\] Moreover, for each fixed $f\in \Gr{A(a)}{k}{l}{m}{n}$, the matrix $\left(\Delta_{rs}(f)\right)_{rs}$ is rcf.
+\begin{Lem} The couple $(\mathscr{A},\Delta)$ is a partial coalgebra with counit map \[\epsilon:\Gr{A}{k}{l}{k}{l}(a)\rightarrow \C,\quad f\mapsto f(\id_{F_{kl}(u_a)}).\] Moreover, for each fixed $f\in \Gr{A}{k}{l}{m}{n}(a)$, the matrix $\left(\Delta_{rs}(f)\right)_{rs}$ is rcf.
 \end{Lem} 
-\begin{proof} Coassociativity and counitality are immediate by duality, as for each $a$ fixed the $\Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a))$ form a partial algebra with units $\id_{F_{kl}(u_a)}$. The rcf condition follows immediately from the rcf condition for the morphism $F$.
+\begin{proof} Coassociativity and counitality are immediate by
+  duality, as for each $a$ fixed the spaces $\Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a))$ form a partial algebra with units $\id_{F_{kl}(u_a)}$. The rcf condition follows immediately from the rcf condition for the morphism $F$.
 \end{proof}
 
-In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{A}{k}{l}{m}{n}\mid k,l,m,n\}$. First note that we can identify \[\Nat(F_{mn},F_{kl}) \cong \underset{\rho_a=l'=n'}{\underset{\lambda_a=k'=m'}{\prod_a}} \Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a)),\] where $\Nat(F_{mn},F_{kl})$ denotes the space of natural transformations from $F_{mn}$ to $F_{kl}$ when $k'=m'$ and $l'=n'$. Similarly, we can identify \[\Nat(F_{mn}\otimes F_{pq},F_{kl}\otimes F_{rs}) \cong  \prod_{b,c} \Hom_{\C}(F_{mn}(u_b)\otimes F_{pq}(u_c) ,F_{kl}(u_b)\otimes F_{rs}(u_c)),\] with the product over the appropriate index set and where \[F_{kl}\otimes F_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fin},\quad (X,Y) \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural pairing of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
+In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{A}{k}{l}{m}{n}\mid k,l,m,n\}$. First note that we can identify \[\Nat(F_{mn},F_{kl}) \cong \underset{\rho_a=l'=n'}{\underset{\lambda_a=k'=m'}{\prod_a}} \Hom_{\C}(F_{mn}(u_a),F_{kl}(u_a)),\] where $\Nat(F_{mn},F_{kl})$ denotes the space of natural transformations from $F_{mn}$ to $F_{kl}$ when $k'=m'$ and $l'=n'$. Similarly, we can identify \[\Nat(F_{mn}\otimes F_{pq},F_{kl}\otimes F_{rs}) \cong  \prod_{b,c} \Hom_{\C}(F_{mn}(u_b)\otimes F_{pq}(u_c) ,F_{kl}(u_b)\otimes F_{rs}(u_c)),\] with the product over the appropriate index set and where \[F_{kl}\otimes F_{rs}:\CatC_{k'l'}\times \CatC_{r's'}\rightarrow \Vect_{\fd},\quad (X,Y) \mapsto F_{kl}(X)\otimes F_{rs}(Y).\] As such, there is a natural pairing of these spaces with resp.~ $\Gr{A}{k}{l}{m}{n}$ and $\Gr{A}{k}{l}{m}{n}\otimes \Gr{A}{r}{s}{p}{q}$. 
 
-\begin{Def} For $k'=r', l'=s'$ and $m'=t'$, we define a product map \[M:\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow  \Gr{A}{k}{m}{r}{t},\quad f\otimes g \mapsto f\cdot g\] by the formula \[(f\cdot g)(x) = (f\otimes g)( \hat{\Delta}^{l}_{s}(x)), \qquad  x \in \Nat(F_{rt},F_{km}),\] where $\hat{\Delta}^l_s(n)$ is the natural transformation\[\hat{\Delta}^l_s(x):  F_{rs}\otimes F_{st}\rightarrow F_{kl}\otimes F_{lm},\quad \hat{\Delta}^l_s(x)_{X,Y} = \pi^{(klm)}_{X,Y}x_{X\otimes Y} \iota^{(rst)}_{X,Y},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
+\begin{Def} For $k'=r', l'=s'$ and $m'=t'$, we define a product
+  map \[M:\Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{l}{m}{s}{t}\rightarrow
+  \Gr{A}{k}{m}{r}{t},\quad f\otimes g \mapsto f\cdot g\] by the
+  formula \[(f\cdot g)(x) = (f\otimes g)( \hat{\Delta}^{l}_{s}(x)),
+  \qquad  x \in \Nat(F_{rt},F_{km}),\] where $\hat{\Delta}^l_s(x)$ is
+  the natural transformation\[\hat{\Delta}^l_s(x):  F_{rs}\otimes
+  F_{st}\rightarrow F_{kl}\otimes F_{lm},\quad
+  \hat{\Delta}^l_s(x)_{X,Y} = \pi^{(klm)}_{X,Y} \circ x_{X\otimes Y}
+  \circ \iota^{(rst)}_{X,Y},\quad X\in \CatC_{k'l'},Y\in \CatC_{l'm'}.\]
 \end{Def}
 
 \begin{Rem} It has to be argued that $f\cdot g$ has finite support (over $\mathcal{I})$ as a functional on $\Nat(F_{rt},F_{km})$. In fact, if $f$ is supported at $b\in \mathcal{I}_{r's'}$ and $g$ at $c\in \mathcal{I}_{s't'}$, then $f\cdot g$ has support in the finite set of $a\in \mathcal{I}_{r't'}$ with $a\leq b\cdot c$, since if $x$ is a natural transformation with support outside this set, one has $x_{u_b\otimes u_c}=0$, and hence any of the $\left(\hat{\Delta}^l_s(x)\right)_{u_b,u_c} =0$.
@@ -2416,10 +2463,26 @@ In the next step, we define a partial algebra structure on $\mathscr{A} = \{\Gr{
 
 \begin{Lem} The above product maps turn $(\mathscr{A},M)$ into an $I^2$-partial algebra.
 \end{Lem}
-\begin{proof} We can extend the map $(\hat{\Delta}^l_s\otimes \id)$ on $\Nat(F_{rt},F_{km})\otimes \Nat(F_{tu},F_{mn})$ to a map \[(\hat{\Delta}^l_s\otimes \id): \Nat(F_{rt}\otimes F_{tu},F_{km}\otimes F_{mn}) \rightarrow  \Nat(F_{rs}\otimes F_{st}\otimes F_{tu},F_{kl}\otimes F_{lm}\otimes F_{mn}),\] \[(\hat{\Delta}^l_s\otimes \id)(x)_{X,Y,Z} = \left(\pi^{(klm)}_{X,Y}\otimes \id_{F_{mn}(Z)}\right) x_{X\otimes Y, Z} \left(\iota^{(rst)}_{X,Y} \otimes \id_{F_{tu}(Z)}\right).\]
-By finite support, we then have that \[((f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\hat{\Delta}^l_s\otimes \id)\hat{\Delta}^m_t(x))\] for all $f\in \Gr{A}{k}{l}{r}{s},g\in \Gr{A}{l}{m}{s}{t},h\in \Gr{A}{m}{n}{t}{u}$ and $x\in  \Nat(F_{ru},F_{kn})$. Similarly, \[(f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\id\otimes \hat{\Delta}^m_t)\hat{\Delta}^l_s(x)).\] The associativity then follows from the 2-cocycle condition for the $\iota$- and $\pi$-maps. 
+\begin{proof} We can extend the map $(\hat{\Delta}^l_s\otimes \id)$ on
+  $\Nat(F_{rt},F_{km})\otimes \Nat(F_{tu},F_{mn})$ to a
+  map \[(\hat{\Delta}^l_s\otimes \id): \Nat(F_{rt}\otimes
+  F_{tu},F_{km}\otimes F_{mn}) \rightarrow  \Nat(F_{rs}\otimes
+  F_{st}\otimes F_{tu},F_{kl}\otimes F_{lm}\otimes
+  F_{mn}),\] \[(\hat{\Delta}^l_s\otimes \id)(x)_{X,Y,Z} =
+  \left(\pi^{(klm)}_{X,Y}\otimes \id_{F_{mn}(Z)}\right) \circ
+  x_{X\otimes Y, Z} \circ \left(\iota^{(rst)}_{X,Y} \otimes \id_{F_{tu}(Z)}\right).\]
+By finite support, we then have that \[((f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\hat{\Delta}^l_s\otimes \id)\hat{\Delta}^m_t(x))\] for all $f\in \Gr{A}{k}{l}{r}{s},g\in \Gr{A}{l}{m}{s}{t},h\in \Gr{A}{m}{n}{t}{u}$ and $x\in  \Nat(F_{ru},F_{kn})$. Similarly, \[((f\cdot g)\cdot h)(x) = (f\otimes g\otimes h)((\id\otimes \hat{\Delta}^m_t)\hat{\Delta}^l_s(x)).\] The associativity then follows from the 2-cocycle condition for the $\iota$- and $\pi$-maps. 
 
-By a similar argument, one sees that the (non-zero) units are given by $\UnitC{k}{l}\in \Gr{A}{k}{k}{l}{l}(\Unitb_{\alpha})$  (for $\alpha=k'=l'$) corresponding to $1$ in the canonical identifications  \[\Gr{A}{k}{k}{l}{l}(\alpha) \cong \Hom_{\C}(F_{ll}(\Unitb_{\alpha}),F_{kk}(\Unitb_{\alpha}))^*\cong \Hom_{\C}(\C,\C)^*  \cong \C^* \cong \C.\] Indeed, to prove for example the right unit property, we use that (essentially) $\pi_{u_a,\Unitb_{\alpha}}^{(kll)} =(\id\otimes \mu_l)$ and $\iota_{u_a,\Unitb_{\alpha}}^{(kll)} = (\id\otimes \mu_l^{-1})$, while \[\UnitC{k}{l}(\mu_kx_{\Unitb_{\alpha}}\mu_l^{-1}) = x_{\Unitb_{\alpha}} \in \C,\quad x\in \Nat(F_{ll},F_{kk}).\] % to complete
+By a similar argument, one sees that the (non-zero) units are given by
+$\UnitC{k}{l}\in \Gr{A}{k}{k}{l}{l}(\Unitb_{\alpha})$  (for
+$\alpha=k'=l'$) corresponding to $1$ in the canonical
+identifications  \[\Gr{A}{k}{k}{l}{l}(\alpha) =
+\Hom_{\C}(F_{ll}(\Unitb_{\alpha}),F_{kk}(\Unitb_{\alpha}))^*\cong
+\Hom_{\C}(\C,\C)^*  \cong \C^* \cong \C.\] Indeed, to prove for
+example the right unit property, we use that (essentially)
+$\pi_{u_a,\Unitb_{\alpha}}^{(kll)} =(\id\otimes \mu_l)$ and
+$\iota_{u_a,\Unitb_{\alpha}}^{(kll)} = (\id\otimes \mu_l^{-1})$,
+while \[\UnitC{k}{l}(\mu_k \circ x_{\Unitb_{\alpha}} \circ\mu_l^{-1}) = x_{\Unitb_{\alpha}} \in \C,\quad x\in \Nat(F_{ll},F_{kk}).\qedhere\] % to complete
 \end{proof} 
 
 \begin{Prop} The partial algebra and coalgebra structures on $\mathscr{A}$ define a partial bialgebra structure on $\mathscr{A}$. 
@@ -2438,7 +2501,7 @@ Let us show now that the resulting partial bialgebra $\mathscr{A}$ has an invari
 
 \begin{proof} The normalisation condition $\phi(\UnitC{k}{k})=1$ is immediate by construction. Let us check left invariance, as right invariance will follow similarly.
 
-Let $\hat{\phi}^k_l$ be the natural transformation from $F_{ll}$ to $F_{kk}$ which has support on multiples of $\Unitb_{k'}$, and with $(\hat{\phi}^k_l)_{\Unitb_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $x\in \Nat(F_{ll},F_{kn})$, \[x\circ \hat{\phi}^l_m =\delta_{k,n} \UnitC{k}{l}(x)\hat{\phi}^k_m.\] 
+Let $\hat{\phi}^k_l$ be the natural transformation from $F_{ll}$ to $F_{kk}$ which has support on multiples of $\Unitb_{k'}$, and with $(\hat{\phi}^k_l)_{\Unitb_{k'}} = 1$.  Then for $f\in \Gr{A}{k}{k}{l}{l}$, we have $\phi(f) = f(\hat{\phi}^k_l)$. The left invariance of $\phi$ then follows from the easy verification that for $x\in \Nat(F_{ll},F_{kn})$, \[x\circ \hat{\phi}^l_m =\delta_{k,n} \UnitC{k}{l}(x)\hat{\phi}^k_m.\qedhere\] 
 \end{proof}
 
 So far, we have constructed from $\CatCC$ and $F$ a partial bialgebra
@@ -2468,14 +2531,18 @@ use the following straightforward observation.
   %   X,X}\big) \circ \big(\id \otimes x_{\hat X} \otimes \id\big) \circ
   % \big(\pi^{(nmn)}_{X,\hat X} F_{nn}(\coev_{X}) \otimes \id\big) \\
  % &= 
-(\id \otimes \coev^{lk}_{X}) \circ (\id \otimes x_{\hat X}
+(\id \otimes \ev^{lk}_{X}) \circ (\id \otimes x_{\hat X}
   \otimes \id) \circ (\coev^{nm}_{X} \otimes \id).
 \end{align*}
 Then the assigment $\hat{S}$ dualizes to maps $S:\Gr{A}{k}{l}{m}{n} \rightarrow \Gr{A}{n}{m}{l}{k}$ by $S(f)(x) = f(\hat{S}(x))$. We claim that $S$ is an antipode for $\mathscr{A}$. 
 
 Let us check for example the formula \[\sum_r f_{(1){\tiny \begin{pmatrix}k&l\\n & r\end{pmatrix}}} S(f_{(2){\tiny \begin{pmatrix} n & r \\ m & l\end{pmatrix}}}) = \delta_{k,m}\epsilon(f)\UnitC{k}{n}\] for $f\in \Gr{A}{k}{l}{m}{l}$. The other antipode identity follows similarly.
 
-By duality, this is equivalent to the pointwise identity of natural transformations \[\sum_r\hat{M}^n_r(\id\otimes \hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x) \id_{F_{kl}},\quad x\in \Nat(F_{nn},F_{km})\] where $\hat{M}^n_r$ and $(\id\otimes \hat{S})$ are dual to respectively $\Delta_{nr}$ and $\id\otimes S$. 
+By duality, this is equivalent to the pointwise identity of natural
+transformations \[\sum_r\hat{M}^n_r(\id\otimes
+\hat{S})\hat{\Delta}^l_r(x) = \delta_{k,m}\UnitC{k}{n}(x)
+\id_{F_{kl}},\quad x\in \Nat(F_{nn},F_{km})\] where $\hat{M}^n_r$ and
+$(\id\otimes \hat{S})$ are dual to $\Delta_{nr}$ and $\id\otimes S$,  respectively. 
 
 Let us fix $X\in \mathcal{C}_{k'l'}$. Then for any $x\in
 \Nat(F_{nr},F_{kl})$, $y\in \Nat(F_{rn},F_{lm})$, we have
@@ -2510,9 +2577,7 @@ We sum over $r$, use naturality of $x$, and obtain
 Similarly, one shows that $\mathscr{A}$ with the opposite multiplication has an antipode, using right duality. It follows that $\mathscr{A}$ is a regular partial Hopf algebra.  
 \end{proof} 
 
-Now let us upgrade $\CatCC$ to a partial fusion C$^*$-category, and $F$ to a morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{I\times I}$. Then we can of course still form the partial Hopf algebra $\mathscr{A}$ as above. Let us show that it becomes a partial Hopf $^*$-algebra with positive invariant integral.
-
-We first introduce a $^*$-structure on $\mathscr{A}$. 
+Assume now that $\CatCC$ is a partial fusion C$^*$-category, and $F$ a $\phi$-morphism from $\CatCC$ to $\{\Hilb_{\fd}\}_{I\times I}$. Let us show that $\mathscr{A}$, as constructed above, becomes a partial Hopf $^*$-algebra with positive invariant integral.
 
 \begin{Def} We define $^*: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{l}{k}{n}{m}$ by the formula \[f^*(x) = \overline{f(\hat{S}(x)^*)},\qquad x\in \Nat(F_{nm},F_{lk}).\]
 \end{Def}
@@ -2520,7 +2585,7 @@ We first introduce a $^*$-structure on $\mathscr{A}$.
 \begin{Lem} The operation $^*$ is an anti-linear, anti-multiplicative, comultiplicative involution.
 \end{Lem}
 
-\begin{proof} Anti-linearity is clear. Comultiplicativity follows from the fact that $(xy)^* = y^*x^*$ and $\hat{S}(xy) = \hat{S}(y)\hat{S}(x)$ for natural transformations. To see anti-multiplicativity of $^*$, note first that, since $S$ is anti-multiplicative for $\mathscr{A}$, $\hat{S}$ is anti-comultiplicative on natural transformations. Now as $(\iota_{X,Y}^{(klm)})^* = \pi_{X,Y}^{(klm)}$ by assumption, we also have $\hat{\Delta}^l_s(x)^* = \hat{\Delta}^s_l(x^*)$, which proves anti-multiplicativity of $^*$ on $\mathscr{A}$.  Finally, involutivity follows from the involutivity of $x\mapsto \hat{S}(x)^*$, which is a consequence of the identity $d_{\hat{X}} = d_X^{\tr}$. 
+\begin{proof} Anti-linearity is clear. Comultiplicativity follows from the fact that $(xy)^* = y^*x^*$ and $\hat{S}(xy) = \hat{S}(y)\hat{S}(x)$ for natural transformations. To see anti-multiplicativity of $^*$, note first that, since $S$ is anti-multiplicative for $\mathscr{A}$, we have $\hat{S}$ anti-comultiplicative on natural transformations. Now as $(\iota_{X,Y}^{(klm)})^* = \pi_{X,Y}^{(klm)}$ by assumption, we also have $\hat{\Delta}^l_s(x)^* = \hat{\Delta}^s_l(x^*)$, which proves anti-multiplicativity of $^*$ on $\mathscr{A}$.  Finally, involutivity follows from the involutivity of $x\mapsto \hat{S}(x)^*$, which is a consequence of the fact that one can choose $\ev_{\bar{X}}^{kl} = (\coev_{X}^{lk})^*$ and $\coev_{\bar{X}}^{kl} = (\ev_X^{lk})^*$.
 \end{proof}
 
 \begin{Prop} The couple $(\mathscr{A},\Delta)$ with the above $^*$-structure defines a partial compact quantum group.
@@ -2570,47 +2635,68 @@ Assume  that $f(x) = \langle v'| x_a v\rangle$ and
   \end{align*}
 where $\ev_{a}^{kl}|z\rangle_{2}$ denotes the map $y \mapsto
 \ev_{a}^{kl}(y\otimes z)$.
-If $v=w$ and $v'=w'$, the expression above clearly becomes positives.
+If $v=w$ and $v'=w'$, the expression above clearly becomes positive.
 \end{proof} 
+Let us say that an $I$-partial compact quantum group with hyperobject set
+$\mathscr{I}$ and corresponding partition function $\phi \colon \mathscr{I} \to
+\mathscr{P}(I)$  is \emph{based over $\phi$}.
 
 \begin{Theorem} \label{TheoTKPCQG}
 
-The assigment $\mathscr{A}\rightarrow (\Corep_u(\mathscr{A}),F)$ is (up to isomorphism/equivalence) a one-to-one correspondence between partial compact quantum groups based over $\varphi:I\twoheadrightarrow \mathscr{I}$ and $\mathscr{I}$-partial fusion C$^*$-categories $\CatCC$ with unital morphism $F$ to $(\Hilb_f)_{I\times I}$ based over $\varphi$. 
+The assigment $\mathscr{A}\rightarrow (\Corep_u(\mathscr{A}),F)$ is (up to isomorphism/equivalence) a one-to-one correspondence between partial compact quantum groups based over $\varphi:I\twoheadrightarrow \mathscr{I}$ and $\mathscr{I}$-partial fusion C$^*$-categories $\CatCC$ with unital morphism $F$ to $\{\Hilb_{\fd}\}_{I\times I}$ based over $\varphi$. 
 \end{Theorem} 
 
-\begin{proof} Fix first $\mathscr{A}$, and let $\mathscr{B}$ be the partial Hopf $^*$-algebra constructed from $\Corep_u(\mathscr{A})$ with its natural forgetful functor. Then we have a map $\mathscr{B} \rightarrow \mathscr{A}$ by \[ \Gr{B}{k}{l}{m}{n}(a) = \Hom(\Gr{V}{}{(a)}{m}{n},\Gr{V}{}{(a)}{k}{l})^* \rightarrow \Gr{A}{k}{l}{m}{n}(a):  f \mapsto (\id\otimes f)X_a,\] where the $(V^{(a)},X_a)$ run over all irreducible unitary corepresentations of $\mathscr{A}$. It is easy to check from the definition of $\mathscr{B}$ that this map is an morphism of partial Hopf $^*$-algebras. As the matrix coefficients of irreducible unitary corepresentations span $\mathscr{A}$, the map is surjective. By the Schur orthogonality relations, it is bijective.
+\begin{proof} Fix first $\mathscr{A}$, and let $\mathscr{B}$ be the
+  partial Hopf $^*$-algebra constructed from $\Corep_u(\mathscr{A})$
+  with its natural forgetful functor. Then we have a map $\mathscr{B}
+  \rightarrow \mathscr{A}$ by \[ \Gr{B}{k}{l}{m}{n}(a) =
+  \Hom(\Gr{V}{}{(a)}{m}{n},\Gr{V}{}{(a)}{k}{l})^* \rightarrow
+  \Gr{A}{k}{l}{m}{n}(a): f \mapsto (\id\otimes f)(X_a),\] where the
+  $(V^{(a)},\mathscr{X}_a)$ run over all irreducible unitary corepresentations
+  of $\mathscr{A}$. By Corollary \ref{cor:rep-pw}, this map is
+  bijective. From the definition of $\mathscr{B}$, it is easy to check
+  that this map is a morphism of partial Hopf $^*$-algebras.
 
-Conversely, let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category with unital morphism $F$ to $(\Hilb_f)_{I\times I}$ based over $\varphi$. Let $\mathscr{A}$ be the associated partial Hopf $^*$-algebra. For each irreducible $u_a \in \CatCC$, let $V^{(a)} = F(u_a)$, and \[\Gr{(X_a)}{k}{l}{m}{n} = \sum_i e_i^*\otimes e_i,\] where $e_i$ is a basis of $\Nat(F_{mn},F_{kl})$ and $e_i^*$ a dual basis. Then from the definition of $\mathscr{A}$ it easily follows that $X_a$ is a unitary corepresentation for $\mathscr{A}$. Since $\Nat(F_{mn},F_{kl})$ spans the total space of operators at any irreducible object, it follows that $X_a$ is irreducible. As the matrix coefficients of the $X_a$ span $\mathscr{A}$, it follows that the $X_a$ form a maximal class of non-isomorphic unitary corepresentations of $\mathscr{A}$. Hence we can make a unique equivalence \[\CatCC\rightarrow \Corep_u(\mathscr{A}), \quad u \mapsto (F(u),X_u)\] such that $u_a\rightarrow X_a$. From the definitions of the coproduct and product in $\mathscr{A}$, it is readily verified that the natural morphisms $\iota^{(klm)}_{u,v}:F_{kl}(u)\otimes F_{lm}(v)\rightarrow F_{km}(u\otimes v)$ turn it into a monoidal equivalence. 
+  Conversely, let $\CatCC$ be an $\mathscr{I}$-partial fusion
+  C$^*$-category with unital morphism $F$ to
+  $\{\Hilb_{\fd}\}_{I\times I}$ based over $\varphi$. Let
+  $\mathscr{A}$ be the associated partial Hopf $^*$-algebra. For each
+  irreducible $u_a \in \CatCC$, let $V^{(a)} = F(u_a)$,
+  and \[\Gr{(X_a)}{k}{l}{m}{n} = \sum_i e_i^*\otimes e_i,\] where
+  $e_i$ is a basis of $\Hom_{\C}(F_{mn}(u_{a}), F_{kl}(u_{a}))$ and
+  $e_i^*$ a dual basis. Then from the definition of $\mathscr{A}$ it
+  easily follows that $X_a$ is a unitary corepresentation for
+  $\mathscr{A}$. Clearly, $\mathscr{X}_a$ is
+  irreducible. As the matrix coefficients of the $\mathscr{X}_a$ span
+  $\mathscr{A}$, it follows that the $\mathscr{X}_a$ form a maximal class of
+  non-isomorphic unitary corepresentations of $\mathscr{A}$. Hence we
+  can make a unique equivalence \[\CatCC\rightarrow
+  \Corep_u(\mathscr{A}), \quad u \mapsto (F(u),\mathscr{X}_u)\] such that
+  $u_a\rightarrow \mathscr{X}_a$. From the definitions of the coproduct and
+  product in $\mathscr{A}$, it is readily verified that the natural
+  morphisms $\iota^{(klm)}_{u,v}:F_{kl}(u)\otimes F_{lm}(v)\rightarrow
+  F_{km}(u\otimes v)$ turn it into a monoidal equivalence.
 \end{proof}
 
 
 \section{Examples}
 
-\subsection{Classical examples}
-
-\begin{Exa} Let $G$ be a discrete groupoid with object set $I = G^{(0)}$. Consider for $r,s\in I$ the vector space $\Gru{A}{r}{s}= \mathbb{C}\lbrack \Gru{G}{r}{s}\rbrack$ which has a basis $\{\lambda_g\}$ spanned by the morphisms $g$ from $r$ to $s$. Linearly extending the product of $G$ to the $\Gru{A}{r}{s}$ turns $\mathscr{A}$ into a partial algebra. It becomes a partial $^*$-algebra by putting $\lambda_g^* = \lambda_{g^{-1}}$. 
-
-Extend the $I^2$-bigrading to an $I^4$-bigrading by putting $\Gr{A}{k}{l}{m}{n} = \delta_{kl}\delta_{mn}\Gru{A}{k}{l}$. Then together with the coproducts \[ \Delta: \Gru{A}{r}{s}\rightarrow \Gru{A}{r}{s}\otimes \Gru{A}{r}{s},\quad \lambda_g\mapsto \lambda_g\otimes \lambda_g,\] $(\mathscr{A},\Delta)$ defines a partial compact quantum group, the invariant functional $\phi$ being given by \[\phi(\lambda_g) = \delta_{rs}\delta_{g,\id_r},\quad r,s\in I,g\in \Mor(r,s).\]
-\end{Exa}
-
-\begin{Exa} Let $G$ be a proper locally compact groupoid with discrete object space $I=G^{(0)}$. Then each $\Gru{G}{r}{s} = \Mor(r,s)$ is a compact space. The $\Gru{G}{r}{r}$ are compact groups, hence come with probability Haar measures $\mu_{rr}$. The $\Gru{G}{r}{s}$ are $\Gru{G}{r}{r}$-$\Gru{G}{s}{s}$-bitorsors, and as such admit a bi-invariant probability measure $\mu_{rs}$. Let $A^r_s \subseteq C(\Gru{G}{r}{s})$ be the spaces of functions which transform as finite-dimensional representations of $\Gru{G}{r}{r}\times \Gru{G}{s}{s}$ under the natural actions. Then the $A^r_s$ form a partial coalgebra over $I$ by putting \[\Delta_{s}: A^r_t \rightarrow A^r_s\otimes A^s_t,\quad f\mapsto \left(\Delta_s(f):\Gru{G}{r}{s}\times \Gru{G}{s}{t}\mapsto \Gru{G}{r}{t},\quad (g,h)\mapsto f(gh)\right).\] We can extend the $I^2$-grading to an $I^4$-grading by putting \[\Gr{A}{k}{l}{m}{n} = \delta_{kl}\delta_{mn} A^l_n,\] and the resulting $\mathscr{A}$ becomes a partial $^*$-algebra by endowing each $A^r_s$ with the pointwise product and $^*$-algebra structure. The couple $(\mathscr{A},\Delta)$ then defines a partial compact quantum group with invariant integral \[\phi: A^r_s \mapsto \C,\quad f\mapsto \int_{\Gru{G}{r}{s}} f(g) \rd \Gru{\mu}{r}{s}(g).\]
-
-\end{Exa}
-
-\begin{Exa} Let $\mathscr{A}$ and $\mathscr{B}$ define two partial compact quantum groups $\mathscr{G}$ and $\mathscr{H}$ over respective sets $I$ and $J$. Then we can make a tensor product partial Hopf $^*$-algebra $\mathscr{A}\otimes \mathscr{B}$ over the index set $I\times J$ by putting \[\Gr{(A\otimes B)}{(k,k')}{(l,l')}{(m,m')}{(n,n')} = \Gr{A}{k}{l}{m}{n}\otimes \Gr{B}{k'}{l'}{m'}{n'}\] with the factorwise product and with coproducts \[\Delta_{(r,r'),(s,s')} = \sigma_{23}(\Delta_{rs}\otimes \Delta_{r',s'}),\] $\sigma$ being the switch map. It is easily seen that the tensor products of the positive invariant integrals for $\mathscr{A}$ and $\mathscr{B}$ produce a positive invariant integral on $\mathscr{A}\otimes \mathscr{B}$. Hence $\mathscr{A}\otimes \mathscr{B}$ defines a partial compact quantum group, which we will denote $\mathscr{G}\times \mathscr{H}$.
-\end{Exa}
-
-\subsection{Canonical partial compact quantum groups} \label{SubSecCan}
+\subsection{Hayashi's canonical partial compact quantum groups} \label{SubSecCan}
 
 The following generalizes Hayashi's original construction.
 
 \begin{Exa} 
-Let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category. Let $\mathcal{I}$ label a distinguished maximal set $\{u_k\}$ of mutually non-isomorphic irreducible objects of $\CatC$, with associated bigrading $\Gru{\mathcal{I}}{\alpha}{\beta}$ over $\mathscr{I}$. Define \[F_{kl}(X)  = \Hom(u_k,  X\otimes u_l),\qquad X\in \Gru{\CatC}{\alpha}{\beta}, k\in \Gru{\mathcal{I}}{\alpha}{\gamma},l\in \Gru{\mathcal{I}}{\beta}{\gamma}.\] Then each $F_{kl}(X)$ is a Hilbert space by the inner product $\langle f,g\rangle = f^*g$. Put $F_{kl}(X) = 0$ for $k,l$ outside their proper domains. Then clearly the application $(k,l)\mapsto F_{kl}(X)$ is rcf. Moreover, we have isometric compatibility morphisms \[F_{kl}(X)\otimes F_{lm}(Y)\rightarrow F_{km}(X\otimes Y),\quad f\otimes g \mapsto (\id\otimes g)f,\] while $F_{kl}(\Unitb_{\alpha}) \cong \delta_{kl} \C$ for $k,l\in \Gru{\mathcal{I}}{\alpha}{\alpha}$. 
+Let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category. Let
+$\mathcal{I}$ label a distinguished maximal set $\{u_k\}$ of mutually
+non-isomorphic irreducible objects of $\CatC$, with associated
+bigrading $\Gru{\mathcal{I}}{\alpha}{\beta}$ over
+$\mathscr{I}$. Define \[F_{kl}(X)  = \Hom(u_k,  X\otimes u_l),\qquad
+X\in \CatC_{\alpha\beta}, k\in \Gru{\mathcal{I}}{\alpha}{\gamma},l\in \Gru{\mathcal{I}}{\beta}{\gamma}.\] Then each $F_{kl}(X)$ is a Hilbert space by the inner product $\langle f,g\rangle = f^*g$. Put $F_{kl}(X) = 0$ for $k,l$ outside their proper domains. Then clearly the application $(k,l)\mapsto F_{kl}(X)$ is rcf. Moreover, we have isometric compatibility morphisms \[F_{kl}(X)\otimes F_{lm}(Y)\rightarrow F_{km}(X\otimes Y),\quad f\otimes g \mapsto (\id\otimes g)f,\] while $F_{kl}(\Unitb_{\alpha}) \cong \delta_{kl} \C$ for $k,l\in \Gru{\mathcal{I}}{\alpha}{\alpha}$. 
 
-It is readily verified that $F$ defines a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$ based over the partition \[\mathcal{I}_{\alpha} = \bigcup_{\beta} \Gru{\mathcal{I}}{\alpha}{\beta},\quad\alpha\in \mathscr{I}.\] From the Tannaka-Krein-Woronowicz reconstruction result, we obtain a partial compact quantum group $\mathscr{A}_{\CatCC}$ with object set $\mathcal{I}$, which we call the \emph{canonical partial compact quantum group} associated with $\CatCC$. 
+It is readily verified that $F$ defines a unital morphism from $\CatCC$ to $\{\Hilb_{\fd}\}_{\mathcal{I}\times \mathcal{I}}$ based over the partition \[\mathcal{I}_{\alpha} = \bigcup_{\beta} \Gru{\mathcal{I}}{\alpha}{\beta},\quad\alpha\in \mathscr{I}.\] From the Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz reconstruction result, we obtain a partial compact quantum group $\mathscr{A}_{\CatCC}$ with object set $\mathcal{I}$, which we call the \emph{canonical partial compact quantum group} associated with $\CatCC$. 
 \end{Exa} 
 
-\begin{Exa} More generally, let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category, and let $\CatDD$ be a \emph{semi-simple partial $\CatCC$-module C$^*$-category} based over a set $\mathscr{J}$ and function $\phi:\mathscr{J}\rightarrow \mathscr{I},k\mapsto k'$. That is, $\CatDD$ consists of a collection of semi-simple C$^*$-categories $\CatD_{k}$ with $k\in \mathscr{J}$, together with tensor products $\otimes: \CatC_{k'l'}\times \CatD_{l}\rightarrow \CatC_{k}$ satisfying the appropriate associativity and unit constraints. Then if $\mathcal{I}$ labels a distinguished maximal set $\{u_a\}$ of mutually non-isomorphic irreducible objects of $\CatD$, with associated grading $\mathcal{I}_{k}$ over $\mathscr{J}$, we can again define \[F_{ab}(X)  = \Hom(u_a,  X\otimes u_b),\qquad X\in \Gru{\CatC}{k'}{l'}, a\in \mathcal{I}_{k},b\in\mathcal{I}_{l},\] and we obtain a unital morphism from $\CatCC$ to $\{\Hilb_{\fin}\}_{\mathcal{I}\times \mathcal{I}}$. The associated partial compact quantum group $\mathscr{A}_{\CatCC}$ will be called the \emph{canonical partial compact quantum group} associated with $(\CatCC,\CatDD)$. The previous construction coincides with the special case $\CatCC= \CatDD$ with $\mathscr{J} = \mathscr{I}\times \mathscr{I}$ and $\phi$ projection to the first factor.
+\begin{Exa} More generally, let $\CatCC$ be an $\mathscr{I}$-partial fusion C$^*$-category, and let $\CatDD$ be a \emph{semi-simple partial $\CatCC$-module C$^*$-category} based over a set $\mathscr{J}$ and function $\phi:\mathscr{J}\rightarrow \mathscr{I},k\mapsto k'$. That is, $\CatDD$ consists of a collection of semi-simple C$^*$-categories $\CatD_{k}$ with $k\in \mathscr{J}$, together with tensor products $\otimes: \CatC_{k'l'}\times \CatD_{l}\rightarrow \CatD_{k}$ satisfying the appropriate associativity and unit constraints. Then if $\mathcal{I}$ labels a distinguished maximal set $\{u_a\}$ of mutually non-isomorphic irreducible objects of $\CatD$, with associated grading $\mathcal{I}_{k}$ over $\mathscr{J}$, we can again define \[F_{ab}(X)  = \Hom(u_a,  X\otimes u_b),\qquad X\in \CatC_{k'l'}, a\in \mathcal{I}_{k},b\in\mathcal{I}_{l},\] and we obtain a unital morphism from $\CatCC$ to $\{\Hilb_{\fd}\}_{\mathcal{I}\times \mathcal{I}}$. The associated partial compact quantum group $\mathscr{A}_{\CatCC}$ will be called the \emph{canonical partial compact quantum group} associated with $(\CatCC,\CatDD)$. The previous construction coincides with the special case $\CatCC= \CatDD$ with $\mathscr{J} = \mathscr{I}\times \mathscr{I}$ and $\phi$ projection to the first factor.
 \end{Exa}
 
 \begin{Exa}\label{ExaErgo} As a particular instance, let $\G$ be a compact quantum group, and consider an ergodic action of $\G$ on a unital C$^*$-algebra $C(\mathbb{X})$. Then the collection of finitely generated $\G$-equivariant $C(\mathbb{X})$-Hilbert modules forms a module C$^*$-category over $\Rep_u(\G)$, cf.~ \cite{DCY1}. 
@@ -2635,31 +2721,33 @@ If $\mathscr{A}$ defines a linking partial compact quantum group, we can split $
 \begin{Prop} Two partial compact quantum groups are Morita equivalent iff they arise as the corners of a linking partial compact quantum group.
 \end{Prop}
 
-\begin{proof} Suppose first that $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent partial compact quantum groups with associated partial Hopf $^*$-algebras $\mathscr{A}_1$ and $\mathscr{A}_2$ over respective sets $I_1$ and $I_2$. Then we may identify their corepresentation categories with the same abstract partial tensor C$^*$-category $\CatCC$ based over their common hyperobject set $\mathscr{I}$. Then $\CatCC$ comes endowed with two forgetful functors $F_i$ to $\{\Hilb_{\fin}\}_{I_i\times I_i}$ corresponding to the respective $\mathscr{A}_i$.
+\begin{proof} Suppose first that $\mathscr{G}_1$ and $\mathscr{G}_2$ are Morita equivalent partial compact quantum groups with associated partial Hopf $^*$-algebras $\mathscr{A}_1$ and $\mathscr{A}_2$ over respective sets $I_1$ and $I_2$. Then we may identify their corepresentation categories with the same abstract partial tensor C$^*$-category $\CatCC$ based over their common hyperobject set $\mathscr{I}$. Then $\CatCC$ comes endowed with two forgetful functors $F^{(i)}$ to $\{\Hilb_{\fd}\}_{I_i\times I_i}$ corresponding to the respective $\mathscr{A}_i$.
 
-With $I = I_1\sqcup I_2$, we may then as well combine the $F_i$ into a global unital morphism $F:\CatCC \rightarrow \{\Hilb_{\fin}\}_{I\times I}$, with $F_{kl}(X)=F_i(X)$ if $k,l\in I_i$ and $F_{kl}(X)=0$ otherwise. Let $\mathscr{A}$ be the associated partial Hopf $^*$-algebra constructed from the Tannaka-Krein-Woronowicz reconstruction procedure. 
+With $I = I_1\sqcup I_2$, we may then as well combine the $F^{(i)}$ into a global unital morphism $F:\CatCC \rightarrow \{\Hilb_{\fd}\}_{I\times I}$, with $F_{kl}(X)=F_{kl}^{(i)}(X)$ if $k,l\in I_i$ and $F_{kl}(X)=0$ otherwise. Let $\mathscr{A}$ be the associated partial Hopf $^*$-algebra constructed from the Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz reconstruction procedure. 
 
 From the precise form of this reconstruction, it follows immediately that $\Gr{A}{k}{l}{m}{n} =0$ if either $k,l$ or $m,n$ do not lie in the same $I_i$. Hence the $\UnitC{i}{j} = \sum_{k\in I_i,l\in I_j} \UnitC{k}{l}$ are central. 
 
 Moreover, fix $k\in I_i$ and any $l\in I_{i+1}$ with $k'=l'$. Then $\Nat(F_{ll},F_{kk})\neq \{0\}$. It follows that $\UnitC{k}{l}\neq 0$. Hence $\mathscr{A}$ is a linking compact quantum group. It is clear that $\mathscr{A}_1$ and $\mathscr{A}_2$ are the corners of $\mathscr{A}$. 
 
-Conversely, suppose that $\mathscr{A}_1$ and $\mathscr{A}_2$ arise from the corners of a linking partial compact quantum groupoid defined by $\mathscr{A}$ with invariant integral $\phi$. We will show that in fact the associated partial compact quantum groups $\mathscr{G}$ and $\mathscr{G}_1$ are Morita equivalent. Then by symmetry $\mathscr{G}$ and $\mathscr{G}_2$ are Morita equivalent, and hence also $\mathscr{G}_1$ and $\mathscr{G}_2$.
+Conversely, suppose that $\mathscr{A}_1$ and $\mathscr{A}_2$ arise from the corners of a linking partial compact quantum group defined by $\mathscr{A}$ with invariant integral $\phi$. We will show that the associated partial compact quantum groups $\mathscr{G}$ and $\mathscr{G}_1$ are Morita equivalent. Then by symmetry $\mathscr{G}$ and $\mathscr{G}_2$ are Morita equivalent, and hence also $\mathscr{G}_1$ and $\mathscr{G}_2$.
 
 
-For $(V,\mathscr{X}) \in \Corep_u(\mathscr{A})$, let $F(V,\mathscr{X}) = (W,\mathscr{Y})$ be the pair obtained from $(V,\mathscr{X})$ by restricting all indices to those appearing to $I_1$. It is immediate that $(W,\mathscr{Y})$ is a unitary rcfd corepresentation of $\mathscr{A}_1$, and that the functor $F$ hence becomes a unital morphism in a trivial way. What remains to show is that $F$ is an equivalence of categories, i.e.~ that $F$ is faithful and essentially surjective. 
+For $(V,\mathscr{X}) \in \Corep_u(\mathscr{A})$, let $F(V,\mathscr{X})
+= (W,\mathscr{Y})$ be the pair obtained from $(V,\mathscr{X})$ by
+restricting all indices to those contained in $I_1$. It is immediate that $(W,\mathscr{Y})$ is a unitary corepresentation of $\mathscr{A}_1$, and that the functor $F$  becomes a unital morphism in a trivial way. What remains to show is that $F$ is an equivalence of categories, i.e.~ that $F$ is faithful and essentially surjective. 
 
 Let us first show that $F$ is faithful.  Lemma
 \ref{lemma:rep-invertible} implies that for every $(V,\mathscr{X}) \in
 \Corep_u(\mathscr{A})$, we have $\Gru{V}{k}{l}=0$ whenever $k\in
 I_{i}$ and $l\in I_{i+1}$.  If $T$ is a morphism in
-$\Corep_u(\mathscr{A}_{\alpha\beta}$ and $\Grd{T}{k}{l}=0$ for all
-$k,l \in I_{1}$, we therefore get $\Grd{T}{k}{l}=0$ for all $k\in I$
+$\Corep_u(\mathscr{A})_{\alpha\beta}$ and $\Gru{T}{k}{l}=0$ for all
+$k,l \in I_{1}$, we therefore get $\Gru{T}{k}{l}=0$ for all $k\in I$
 and $l\in I_{1}$. Since $I_{\beta}\cap I_{1}$ is non-empty by
 assumption, we can apply Lemma \ref{LemInjMor} and conclude that
 $T=0$.
 
 To complete the proof, we only need to show that $F$ induces a
-bijection between isomorphism classes of irreducible unitary rcfd
+bijection between isomorphism classes of irreducible unitary 
 corepresentations of $\mathcal{A}$ and of $\mathcal{A}_{1}$. Note that
 by Proposition \ref{prop:rep-cosemisimple} and Lemma
 \ref{lemma:rep-regular-embedding}, each such class can be represented
@@ -2673,7 +2761,7 @@ corepresentation of $\mathcal{A}_{1}$. Pick a non-zero $a \in
 \Gr{A}{k}{l}{p}{q}$ as in \eqref{eq:element-reg-corep} and form the
 regular corepresentation $(V,\mathscr{X})$ of $\mathscr{A}$. Then
 $\Gru{V}{p}{q} = \Gru{W}{p}{q}$ for all $p,q\in I_{1}$ by Lemma
-\ref{lemma:regular-corep} 2.\ and hence $F(V,\mathscr{X}) =
+\ref{lemma:regular-corep} (2) and hence $F(V,\mathscr{X}) =
 (W,\mathscr{Y})$.  Since $F$ is faithful, $(V,\mathscr{X})$ must be
 irreducible.
 
@@ -2714,12 +2802,12 @@ The following notion is essentially the same as the one by M. M\"{u}ger \cite{Mu
 
 \begin{Def} Two partial semi-simple tensor C$^*$-categories $\CatCC_1$ and $\CatCC_2$ with duality over respective sets $\mathscr{I}_1$ and $\mathscr{I}_2$ are called \emph{Morita equivalent} if there exists a linking partial fusion C$^*$-category $\CatCC$ over the set $\mathscr{I}=\mathscr{I}_1\sqcup \mathscr{I}_2$ whose corners are isomorphic to $\CatCC_1$ and $\CatCC_2$.
 
-We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are \emph{weakly Morita equivalent} if their corepresentation categories $\Corep_u(\mathscr{G}_i)$ are Morita equivalent. 
+We say two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are \emph{weakly Morita equivalent} if their representation categories $\Rep_u(\mathscr{G}_i)$ are Morita equivalent. 
 \end{Def} 
 
 One can prove that this is indeed an equivalence relation. %ref to add! 
 
-\begin{Def}\label{DefCoLink} A \emph{co-linking partial compact quantum group} consists of a partial compact quantum group $\mathscr{G}$ defined by a Hopf $^*$-algebra $\mathscr{A}$ over an index set $I$, together with a distinguished partition $I = I_1\cup I_2$ such that each $\UnitC{k}{l}=0$ for $k\in I_i$ and $l\in I_{i+1}$, and such that for each $k\in I_i$, there exists $l\in I_{i+1}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$.  
+\begin{Def}\label{DefCoLink} A \emph{co-linking partial compact quantum group} consists of a partial compact quantum group $\mathscr{G}$ defined by a Hopf $^*$-algebra $\mathscr{A}$ over an index set $I$, together with a distinguished partition $I = I_1\cup I_2$ such that  $\UnitC{k}{l}=0$ whenever $k\in I_i$ and $l\in I_{i+1}$, and such that for each $k\in I_i$, there exists $l\in I_{i+1}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$.  
 \end{Def} 
 
 It is again easy to see that if we restrict all indices of a co-linking partial compact quantum group to one of the distinguished sets, we obtain a partial compact quantum group which we will call a corner. In fact, write $e_i = \sum_{k,l\in I_i} \UnitC{k}{l}$. Then we can decompose the total algebra $A$ into components $A_{ij} = e_{i}Ae_{j}$, and correspondingly write $A$ in matrix notation \[ A = \begin{pmatrix} A_{11} & A_{12}  \\ A_{21} & A_{22}\end{pmatrix},\] where multiplication is matrixwise and where comultiplication is entrywise. Note that we have $A_{12}A_{21} = A_{11}$, and similarly $A_{21}A_{12} = A_{22}$. Indeed, take $k\in I_1$, and pick $l\in I_2$ with $\Gr{A}{k}{l}{k}{l}\neq \{0\}$. Then in particular, we can find an $a\in \Gr{A}{k}{l}{k}{l}$ with $\epsilon(a)\neq 0$. Hence for any $m\in I_1$, we have $\UnitC{k}{m} = \UnitC{k}{m} a_{(1)}S(a_{(2)}) \in A_{12}A_{21}$. As this latter space contains all local units of $A_{11}$ and is a right $A_{11}$-module, it follows that it is in fact equal to $A_{11}$. We hence deduce that in fact $A_{11}$ and $A_{22}$ are Morita equivalent algebras, with the Morita equivalence implemented by $A$. % Cf. Abrams? 
@@ -2734,7 +2822,11 @@ It is again easy to see that if we restrict all indices of a co-linking partial 
 \begin{Lem} Co-Morita equivalence is an equivalence relation. 
 \end{Lem} 
 
-\begin{proof} Symmetry is clear. Co-Morita equivalence of $\mathscr{A}$ with itself follows by considering as co-linking quantum groupoid the product of $\mathscr{A}$ with the partial compact quantum groupoid $M_2(\C)$, where $\Delta(e_{ij}) = e_{ij}\otimes e_{ij}$. 
+\begin{proof} Symmetry is clear. Co-Morita equivalence of
+  $\mathscr{A}$ with itself follows by considering as co-linking
+  quantum groupoid the product of $\mathscr{A}$ with the partial
+  compact quantum group $M_2(\C)$, where $\Delta(e_{ij}) =
+  e_{ij}\otimes e_{ij}$, arising from a groupoid as in  Example \ref{ExaGrpd}.
 
 Let us show the main elements to prove transitivity. Let us assume $\mathscr{G}_1$ and $\mathscr{G}_2$ as well as $\mathscr{G}_2$ and $\mathscr{G}_3$ are co-Morita equivalent. Let us write the global $^*$-algebras of the associated co-linking quantum groupoids as \[A_{\{1,2\}} = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix}, \quad A_{\{2,3\}} = \begin{pmatrix} A_{22} & A_{23} \\ A_{32} & A_{33}\end{pmatrix}.\] Then we can define a new $^*$-algebra $A_{\{1,2,3\}}$ as \[ A_{\{1,2,3\}} = \begin{pmatrix} A_{11} & A_{12} &   A_{13} \\ A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33} \end{pmatrix},\] where $A_{13} = A_{12}\underset{A_{22}}{\otimes } A_{23}$ and $A_{31} = A_{32}\underset{A_{22}}{\otimes} A_{21}$, and with multiplication and $^*$-structure defined in the obvous way. 
 
@@ -2742,7 +2834,7 @@ It is straightforward to verify that there exists a unique $^*$-homomorphism $\D
 
 Let now $\phi$ be the functional which is zero on the off-diagonal entries $A_{ij}$ and coincides with the invariant positive integrals on the $A_{ii}$. Then it is also easily checked that $\phi$ is invariant. To show that $\phi$ is positive, we invoke Remark \ref{RemPos}. Indeed, any irreducible corepresentation of $A_{\{1,2,3\}}$ has coefficients in a single $A_{ij}$. For those $i,j$ with $|i-j|\leq 1$, we know that the corepresentation is unitarizable by restricting to a corner $2\times 2$-block. If however the corepresentation $\mathscr{X}$ has coefficients living in (say) $A_{13}$, it follows from the identity $A_{12}A_{23}=A_{13}$ that the corepresentation is a direct summand of a product $\mathscr{Y}\Circt \mathscr{Z}$ of corepresentations with coefficients in respectively $A_{12}$ and $A_{23}$. This proves unitarizability of $\mathscr{X}$. It follows from Remark \ref{RemPos} that $\phi$ is positive, and hence $\mathscr{A}_{\{1,2,3\}}$ defines a partial compact quantum group.  
 
-We claim that the subspace $\mathscr{A}_{\{1,3\}}$ (in the obvious notation) defines a co-linking compact quantum group between $\mathscr{G}_1$ and $\mathscr{G}_2$. In fact, it is clear that the $\mathscr{A}_{11}$ and $\mathscr{A}_{33}$ are corners of $\mathscr{A}_{\{1,3\}}$, and that $\UnitC{k}{l}=0$ for $k,l$ not both in $I_1$ and $I_{3}$. To finish the proof, it is sufficient to show now that for each $k\in I_1$, there exists $l\in I_{3}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$, as the other case follows by symmetry using the antipode. But there exists $m\in I_2$ with $\Gr{A}{k}{m}{k}{m} \neq \{0\}$, and $l\in I_3$ with $\Gr{A}{m}{l}{m}{l}\neq\{0\}$. As in the discussion following Definition \ref{DefCoLink}, this implies that there exists $a\in \Gr{A}{k}{m}{k}{m}$ and $b\in \Gr{A}{m}{l}{m}{l}$ with $\epsilon(a)=\epsilon(b)=1$. Hence $\epsilon(ab)=1$, showing $\Gr{A}{k}{l}{k}{l}\neq \{0\}$.
+We claim that the subspace $\mathscr{A}_{\{1,3\}}$ (in the obvious notation) defines a co-linking compact quantum group between $\mathscr{G}_1$ and $\mathscr{G}_3$. In fact, it is clear that the $\mathscr{A}_{11}$ and $\mathscr{A}_{33}$ are corners of $\mathscr{A}_{\{1,3\}}$, and that $\UnitC{k}{l}=0$ for $k,l$ not both in $I_1$ and $I_{3}$. To finish the proof, it is sufficient to show now that for each $k\in I_1$, there exists $l\in I_{3}$ with $\Gr{A}{k}{l}{k}{l}\neq 0$, as the other case follows by symmetry using the antipode. But there exists $m\in I_2$ with $\Gr{A}{k}{m}{k}{m} \neq \{0\}$, and $l\in I_3$ with $\Gr{A}{m}{l}{m}{l}\neq\{0\}$. As in the discussion following Definition \ref{DefCoLink}, this implies that there exists $a\in \Gr{A}{k}{m}{k}{m}$ and $b\in \Gr{A}{m}{l}{m}{l}$ with $\epsilon(a)=\epsilon(b)=1$. Hence $\epsilon(ab)=1$, showing $\Gr{A}{k}{l}{k}{l}\neq \{0\}$.
 \end{proof} 
 
 \begin{Prop}\label{PropCoWeak} Assume that two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are co-Morita equivalent. Then they are weakly Morita equivalent.
@@ -2750,7 +2842,7 @@ We claim that the subspace $\mathscr{A}_{\{1,3\}}$ (in the obvious notation) def
 \begin{proof} 
 Consider the corepresentation category $\CatCC$ of a co-linking partial compact quantum group $\mathscr{A}$ over $I = I_1\cup I_2$. Let $\varphi:I\rightarrow \mathscr{I}$ define the corresponding partition along the hyperobject set. Then by the defining property of a co-linking partial compact quantum group, also $\mathscr{I} = \mathscr{I}_1\cup \mathscr{I}_2$ with $\mathscr{I}_i=\varphi(I_i)$ is a partition. Hence $\CatCC$ decomposes into parts $\CatCC_{ij}$ with $i,j\in \{1,2\}$ and $\CatC_{ii}\cong \Rep_u(\mathscr{G}_i)$. 
 
-To show that $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent, it thus suffices to show that $\{\CatCC_{ij}\}$ forms a linking partial fusion C$^*$-category. But fix $\alpha\in I_1$ and $k\in I_{\alpha}$. Then as $\mathscr{A}$ is co-linking, there exists $l \in I_2$ with $\Gr{A}{k}{l}{k}{l}\neq \{0\}$. Hence there exists a non-zero regular rcfd unitary corepresentation inside $\oplus_{m,n}\Gr{A}{k}{l}{m}{n}$. If then $l\in I_{\beta}$ with $\beta\in \mathscr{I}_2$, it follows that $\CatC_{\alpha\beta}\neq 0$. By symmetry, we also have that for each $\alpha \in \mathscr{I}_2$ there exists $\beta \in \mathscr{I}_1$ with $\CatC_{\alpha\beta}\neq \{0\}$. This proves that the $\{\CatCC_{ij}\}$ forms a linking partial fusion C$^*$-category.
+To show that $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent, it thus suffices to show that $\{\CatCC_{ij}\}$ forms a linking partial fusion C$^*$-category. But fix $\alpha\in I_1$ and $k\in I_{\alpha}$. Then as $\mathscr{A}$ is co-linking, there exists $l \in I_2$ with $\Gr{A}{k}{l}{k}{l}\neq \{0\}$. Hence there exists a non-zero regular unitary corepresentation inside $\oplus_{m,n}\Gr{A}{k}{l}{m}{n}$. If then $l\in I_{\beta}$ with $\beta\in \mathscr{I}_2$, it follows that $\CatC_{\alpha\beta}\neq 0$. By symmetry, we also have that for each $\alpha \in \mathscr{I}_2$ there exists $\beta \in \mathscr{I}_1$ with $\CatC_{\alpha\beta}\neq \{0\}$. This proves that the $\{\CatCC_{ij}\}$ forms a linking partial fusion C$^*$-category.
 \end{proof}
 
 \begin{Prop}\label{PropCoLink} Let $\CatCC$ be a linking $\mathscr{I}$-partial fusion C$^*$-category. Then the associated canonical partial compact quantum group is a co-linking partial compact quantum group. 
@@ -2767,7 +2859,9 @@ Fix now $k\in I_{\alpha}$ for some $\alpha \in I_i$. Pick $\beta\in I_{i+1}$ wit
 \begin{Theorem} Two partial compact quantum groups $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent if and only if they are connected by a string of Morita and co-Morita equivalences. 
 \end{Theorem}
 
-\begin{proof} Clearly if two partial compact quantum groups are Morita equivalent, they are weakly Morita equivalent. By Proposition \ref{PropCoWeak}, the same goes for co-Morita equivalence. This proves one direction of the theorem. 
+\begin{proof} Clearly if two partial compact quantum groups are Morita
+  equivalent, they are weakly Morita equivalent. By Proposition
+  \ref{PropCoWeak}, the same is true for co-Morita equivalence. This proves one direction of the theorem. 
 
 Conversely, assume $\mathscr{G}_1$ and $\mathscr{G}_2$ are weakly Morita equivalent. Let $\CatCC$ be a linking fusion C$^*$-category between $\Rep_u(\mathscr{G}_1)$ and $\Rep_u(\mathscr{G}_2)$. Then $\mathscr{G}_i$ are Morita equivalent with the corners of the canonical partial compact quantum group associated to $\CatCC$. But Proposition \ref{PropCoLink} shows that these corners are co-Morita equivalent. 
 \end{proof} 
@@ -2835,7 +2929,7 @@ Hence, by the universal property of $\Rep(SU_q(2))$ (\cite[Theorem 1.4]{DCY1}, b
 % Concrete reference to be added.
 
 It follows from the previous subsection and the
-Tannaka-Krein-Woronowicz in Theorem \ref{TheoTKPCQG} that for each reciprocal random walk on a graph $\Gamma$, one obtains a $\Gamma^{(0)}$-partial compact quantum group $\mathscr{G}$, and conversely every partial compact quantum group $\mathscr{G}$ with the fusion rules of $SU(2)$ arises in this way. Our first aim is to give a direct representation of the associated algebras $A(\Gamma) = P(\mathscr{G})$ by generators and relations. We will write $\Gamma_{vw}\subseteq \Gamma^{(1)}$ for the set of edges with source $v$ and target $w$.
+Tannaka-Kre$\breve{\textrm{\i}}$n-Woronowicz in Theorem \ref{TheoTKPCQG} that for each reciprocal random walk on a graph $\Gamma$, one obtains a $\Gamma^{(0)}$-partial compact quantum group $\mathscr{G}$, and conversely every partial compact quantum group $\mathscr{G}$ with the fusion rules of $SU(2)$ arises in this way. Our first aim is to give a direct representation of the associated algebras $A(\Gamma) = P(\mathscr{G})$ by generators and relations. We will write $\Gamma_{vw}\subseteq \Gamma^{(1)}$ for the set of edges with source $v$ and target $w$.
 
 
 \begin{Theorem}\label{TheoGenRel} Let $0<|q|\leq 1$, and let $\Gamma = (\Gamma,w,\sgn,i)$ be a $-2_q$-reciprocal random walk. Let $A(\Gamma)$ be the total $^*$-algebra associated to the $\Gamma^{(0)}$-partial compact quantum group constructed from the fiber functor $F_{\Gamma}$ as in \eqref{EqForget}. Then $A(\Gamma)$ is the universal $^*$-algebra generated by a copy of the $^*$-algebra of finitely supported functions on $\Gamma^{(0)}\times \Gamma^{(0)}$ (with the Dirac functions written as $\UnitC{v}{w}$) and elements $(u_{e,f})_{e,f\in \Gamma^{(1)}}$ where $u_{e,f}\in \Gr{A(\Gamma)}{s(e)}{t(e)}{s(f)}{t(f)}$ and 
@@ -2858,7 +2952,7 @@ Note that the sums in \eqref{EqUni1} and \eqref{EqUni2} are in fact finite, as $
 Let us now a priori denote by $B(\Gamma)$ the $^*$-algebra determined by the relations \eqref{EqUni1},\eqref{EqUni2} and \eqref{EqInt} above, and write $\mathscr{B}(\Gamma)$ for the associated $\Gamma^{(0)}\times \Gamma^{(0)}$-partial $^*$-algebra induced by the local units $\UnitC{v}{w}$. Write $\Delta(\UnitC{v}{w}) = \sum_{z\in \Gamma^{(0)}} \UnitC{v}{z}\otimes \UnitC{z}{w}$ and \[\Delta(u_{e,f}) = \sum_{g\in \Gamma^{(1)}} u_{e,g}\otimes u_{g,f},\] which makes sense in $M(B(\Gamma)\otimes B(\Gamma))$ as the degree of $\Gamma$ is finite. Then we compute for $w\in \Gamma^{(0)}$ and $e,f\in \Gamma^{(1)}$ that \begin{eqnarray*} \sum_{v\in \Gamma^{(0)}}\sum_{g\in \Gamma_{vw}}\Delta(u_{g,e})^*\Delta(u_{g,f}) &=& \sum_{v\in \Gamma^{(0)}}\sum_{g\in \Gamma_{vw}} \sum_{h,k\in \Gamma^{(1)}} u_{g,h}^*u_{g,k}\otimes u_{h,e}^*u_{k,f}\\ &=& \sum_{h,k\in \Gamma^{(1)}} \delta_{h,k} \UnitC{w}{t(h)}\otimes u_{h,e}^*u_{k,f}\\ &=&  \sum_{z\in \Gamma^{(0)}}\underset{t(h)=z}{\sum_{h\in \Gamma^{(1)}}} \UnitC{w}{z}\otimes u_{h,e}^*u_{h,f} \\ &=& \delta_{e,f} \sum_{z\in \Gamma^{(0)}} \UnitC{w}{z}\otimes \UnitC{z}{t(e)}\\ &=& \delta_{e,f} \Delta(\UnitC{w}{t(e)}).\end{eqnarray*}  Similarly, the analogue of \eqref{EqUni2} holds for $\Delta(u_{e,f})$. As also \eqref{EqInt} holds trivially for $\Delta(u_{e,f})$, it follows that we can define a $^*$-algebra homomorphism \[\Delta:B(\Gamma)\rightarrow M(B(\Gamma)\otimes B(\Gamma))\] sending $u_{e,f}$ to $\Delta(u_{e,f})$ and $\UnitC{v}{w}$ to $\Delta(\UnitC{v}{w})$. Cutting down, we obtain maps \[\Delta_{vw}:\Gr{B(\Gamma)}{r}{s}{t}{z}\rightarrow \Gr{B(\Gamma)}{r}{s}{v}{w}\otimes \Gr{B(\Gamma)}{v}{w}{t}{z}\] which then satisfy the properties \ref{Propa}, \ref{Propd} and \ref{Prope} of Definition \ref{DefPartBiAlg}. Moreover, the $\Delta_{vw}$ are coassociative as they are coassociative on generators.
 
 % Remark this in beginning that one can construct hom from counit
-Let now $e_{v,w}$ be the matrix units for $l^2(\Gamma^{(0)})$. Then one verifies again directly from the defining relations of $B(\Gamma)$ that one can define a $^*$-homorphism \[\widetilde{\varepsilon}: B(\Gamma)\rightarrow B(l^2(\Gamma^{(0)})),\quad \left\{\begin{array}{lll} \UnitC{v}{w}&\mapsto &\delta_{v,w}\, e_{v,v}\\ u_{e,f}&\mapsto& \delta_{e,f}\, e_{s(e),t(e)}\end{array}\right.\] We can hence define a map $\varepsilon: B(\Gamma)\rightarrow \C$ such that \[\widetilde{\varepsilon}(x) = \varepsilon(x) e_{v,w},\qquad  \forall x\in \Gr{B(\Gamma)}{v}{w}{v}{w},\] and which is zero elsewhere. Clearly it satisfies the conditions \ref{Propb} and \ref{Propc} of Definition \ref{DefPartBiAlg}. As $\varepsilon$ satisfies the counit condition on generators, it follows by partial multiplicativity that it satisfies the counit condition on the whole of $B(\Gamma)$, i.e.~ $B(\Gamma)$ is a partial $^*$-bialgebra. 
+Let now $e_{v,w}$ be the matrix units for $l^2(\Gamma^{(0)})$. Then one verifies again directly from the defining relations of $B(\Gamma)$ that one can define a $^*$-homomorphism \[\widetilde{\varepsilon}: B(\Gamma)\rightarrow B(l^2(\Gamma^{(0)})),\quad \left\{\begin{array}{lll} \UnitC{v}{w}&\mapsto &\delta_{v,w}\, e_{v,v}\\ u_{e,f}&\mapsto& \delta_{e,f}\, e_{s(e),t(e)}\end{array}\right.\] We can hence define a map $\varepsilon: B(\Gamma)\rightarrow \C$ such that \[\widetilde{\varepsilon}(x) = \varepsilon(x) e_{v,w},\qquad  \forall x\in \Gr{B(\Gamma)}{v}{w}{v}{w},\] and which is zero elsewhere. Clearly it satisfies the conditions \ref{Propb} and \ref{Propc} of Definition \ref{DefPartBiAlg}. As $\varepsilon$ satisfies the counit condition on generators, it follows by partial multiplicativity that it satisfies the counit condition on the whole of $B(\Gamma)$, i.e.~ $B(\Gamma)$ is a partial $^*$-bialgebra. 
 
 It is clear now that the $u_{e,f}$ define a unitary corepresentation $U$ of $B(\Gamma)$ on $\Hsp^{\Gamma}$. Moreover, from \eqref{EqUni1} and \eqref{EqInt} we can deduce that $R_{\Gamma}: \C_{\Gamma^{(0)}}\rightarrow \Hsp^{\Gamma}\underset{\Gamma^{(0)}}{\otimes}\Hsp^{\Gamma}$ is a morphism from $\C^{(\Gamma^{(0)})}$ to $U\Circtv{\Gamma^{(0)}} U$ in $\Corep_{\rcf,u}(\mathscr{B}(\Gamma))$, cf.~ \eqref{EqMorR}. From the universal property of $\Rep(SU_q(2))$, it then follows that we have a (unique and faithful) strongly monoidal $^*$-functor \[G^{\Gamma}: \Rep(SU_q(2)) \rightarrow \Corep_{\rcf,u}(\mathscr{B}(\Gamma))\] such that $G^{\Gamma}(\pi_{1/2}) = U$. On the other hand, as we have a $\Delta$-preserving $^*$-homomorphism $B(\Gamma)\rightarrow A(\Gamma)$ by the universal property of $\mathscr{B}(\Gamma)$, we have a strongly monoidal $^*$-functor $H^{\Gamma}:  \Corep_{\rcf,u}(\mathscr{B}(\Gamma))\rightarrow \Corep_u(\mathscr{A}(\Gamma)) = \Rep(SU_q(2))$ which is inverse to $G^{\Gamma}$. Then since the commutation relations of $\mathscr{A}(\Gamma)$ are completely determined by the morphism spaces of $\Rep(SU_q(2))$, it follows that we have a $^*$-homomorphism $\mathscr{A}(\Gamma)\rightarrow \mathscr{B}(\Gamma)$ sending $v_{e,f}$ to $u_{e,f}$. This proves the theorem. 
 \end{proof}
@@ -2867,24 +2961,423 @@ It is clear now that the $u_{e,f}$ define a unitary corepresentation $U$ of $B(\
 
 %Let us now consider the particular case where $\Gamma$ is a graph with uniform degree $m$. 
 
-Let us now fix a $-2_q$-reciprocal random walk, and assume further that there exists a finite set $T$ partitioning $\Gamma^{(1)} = \cup_a \Gamma^{(1)}_a$ such that for each $a\in T$ and $v\in \Gamma^{(0)}$, there exists a unique $e_a(v)\in \Gamma^{(1)}_a$ in $\Gamma^{(1)}_a$) with source $v$. Write $av$ for the range of $e_a(v)$. Assume moreover that $T$ has an involution $a\mapsto \bar{a}$ such that $\overline{e_a(v)} = e_{\bar{a}v}$. Then for each $a$, the map $v\mapsto av$ is a bijection on $\Gamma^{(0)}$ with inverse $v\mapsto \bar{a}v$. In particular, also for each $w\in \Gamma^{(0)}$ there exists a unique $f_v(a) \in \Gamma^{(1)}_a$ with target $w$.
+Let us now fix a $-2_q$-reciprocal random walk, and assume further
+that there exists a finite set $T$ partitioning $\Gamma^{(1)} = \cup_a
+\Gamma^{(1)}_a$ such that for each $a\in T$ and $v\in \Gamma^{(0)}$,
+there exists a unique $e_a(v)\in \Gamma^{(1)}_a$ with source $v$. Write $av$ for the range of $e_a(v)$. Assume moreover that $T$ has an involution $a\mapsto \bar{a}$ such that $\overline{e_a(v)} = e_{\bar{a}}(av)$. Then for each $a$, the map $v\mapsto av$ is a bijection on $\Gamma^{(0)}$ with inverse $v\mapsto \bar{a}v$. In particular, also for each $w\in \Gamma^{(0)}$ there exists a unique $f_w(a) \in \Gamma^{(1)}_a$ with target $w$.
 
-Let us further denote $w_a(v) = w(e_a(v))$ and $\sgn_a(v) = \sgn(e_a(v))$. Let $A(\Gamma)$ be the total $^*$-algebra of the associated partial compact quantum group. Using Theorem \ref{TheoGenRel}, we have the following presentation of $A(\Gamma)$. Let $B$ be the $^*$-algebra of finitely supported functions on $\Gamma^{(0)}\times \Gamma^{(0)}$, whose Dirac functions we write as $\UnitC{v}{w}$. Then $A(\Gamma)$ is generated by a copy of $B$ and elements \[(u_{a,b})_{v,w} := u_{e_a(v),e_b(v)}\] for $a,b\in T$ and $v,w\in \Gamma^{(0)}$ with defining relations \begin{eqnarray*} \sum_{a\in T} (u_{a,b})_{\bar{a}v,w}^* (u_{a,c})_{\bar{a}v,z}&=& \delta_{w,z} \delta_{b,c} \UnitC{v}{bw},\\ \sum_{a\in T} (u_{b,a})_{w,v} (u_{c,a})_{z,v}^* &=& \delta_{b,c}\delta_{w,z} \UnitC{w}{v}\\ (u_{a,b})_{v,w}^* &=& \frac{\sgn_b(w)\sqrt{w_b(w)}}{\sgn_a(v)\sqrt{w_a(v)}}(u_{\bar{a},\bar{b}})_{av,bw}.\end{eqnarray*} The element $(u_{a,b})_{v,w}$ lives inside the component $\Gr{A(\Gamma)}{v}{av}{w}{bw}$.
+Let us further write $w_a(v) = w(e_a(v))$ and $\sgn_a(v) =
+\sgn(e_a(v))$. Let $A(\Gamma)$ be the total $^*$-algebra of the
+associated partial compact quantum group. Using Theorem
+\ref{TheoGenRel}, we have the following presentation of
+$A(\Gamma)$. Let $B$ be the $^*$-algebra of finitely supported
+functions on $\Gamma^{(0)}\times \Gamma^{(0)}$, whose Dirac functions
+we write as $\UnitC{v}{w}$. Then $A(\Gamma)$ is generated by a copy of
+$B$ and elements \[(u_{a,b})_{v,w} := u_{e_a(v),e_b(v)} \in
+\Gr{A(\Gamma)}{v}{av}{w}{bw}\] for $a,b\in T$ and $v,w\in
+\Gamma^{(0)}$ with defining relations \begin{eqnarray*} \sum_{a\in T}
+  (u_{a,b})_{\bar{a}v,w}^* (u_{a,c})_{\bar{a}v,z}&=& \delta_{w,z}
+  \delta_{b,c} \UnitC{v}{bw},\\ \sum_{a\in T} (u_{b,a})_{w,v}
+  (u_{c,a})_{z,v}^* &=& \delta_{b,c}\delta_{w,z} \UnitC{w}{v}\\
+  (u_{a,b})_{v,w}^* &=&
+  \frac{\sgn_b(w)\sqrt{w_b(w)}}{\sgn_a(v)\sqrt{w_a(v)}}(u_{\bar{a},\bar{b}})_{av,bw}.\end{eqnarray*}
 
 Let us now consider $M(A(\Gamma))$, the multiplier algebra of $A(\Gamma)$. For a function $f$ on $\Gamma^{(0)}\times \Gamma^{(0)}$, write $f(\lambda,\rho) = \sum_{v,w} f(v,w)\UnitC{v}{w} \in M(A(\Gamma))$. Similarly, for a function $f$ on $\Gamma^{(0)}$ we write $f(\lambda) = \sum_{v,w} f(v)\UnitC{v}{w}$ and $f(\rho) = \sum_{v,w}f(w)\UnitC{v}{w}$. We then write for example $f(a\lambda,\rho)$ for the element corresponding to the function $(v,w)\mapsto f(av,w)$.
 
-We can further form in $M(A(\Gamma))$ the elements $u_{a,b} = \sum_{v,w} (u_{a,b})_{v,w}$. Then $u=(u_{a,b})$ is a unitary m$\times$m matrix for $m=\#T$. Moreover, \begin{equation}\label{EqAdju}u_{a,b}^* =  u_{\bar{a},\bar{b}}\frac{\gamma_b(\rho)}{\gamma_a(\lambda)},\end{equation} where $\gamma_a(v) = \sgn_a(v)\sqrt{w_a(v)}$.   We then have the following commutation relations between functions on $\Gamma^{(0)}\times \Gamma^{(0)}$ and the entries of $u$: \begin{equation}\label{EqGradu} f(\lambda,\rho)u_{a,b} = u_{a,b}f(\bar{a}v,\bar{b}w).\end{equation} The coproduct is given by $\Delta(u_{a,b}) = \Delta(1) \sum_c(u_{a,c}\otimes u_{c,b})$. Note that the $^*$-algebra generated by the $u_{a,b}$ is no longer a weak Hopf $^*$-algebra when $\Gamma^{(0)}$ is infinite, but rather one can turn it into a Hopf algebroid. %ref.
+We can further form in $M(A(\Gamma))$ the elements $u_{a,b} =
+\sum_{v,w} (u_{a,b})_{v,w}$. Then $u=(u_{a,b})$ is a unitary
+m$\times$m matrix for
+$m=\#T$. Moreover, \begin{equation}\label{EqAdju}u_{a,b}^* =
+  u_{\bar{a},\bar{b}}\frac{\gamma_b(\rho)}{\gamma_a(\lambda)},\end{equation}
+where $\gamma_a(v) = \sgn_a(v)\sqrt{w_a(v)}$.   We then have the
+following commutation relations between functions on
+$\Gamma^{(0)}\times \Gamma^{(0)}$ and the entries of
+$u$: \begin{equation}\label{EqGradu} f(\lambda,\rho)u_{a,b} =
+  u_{a,b}f(\bar{a}\lambda,\bar{b}\rho),\end{equation} where
+$f(\bar{a}\lambda,\bar{b}\rho)$ is given by $(v,w) \mapsto f(\bar{a}v,\bar{b}w)$.
+ The coproduct is given by
+$\Delta(u_{a,b}) = \Delta(1) \sum_c(u_{a,c}\otimes u_{c,b})$. Note
+that the $^*$-algebra generated by the $u_{a,b}$ is no longer a weak
+Hopf $^*$-algebra when $\Gamma^{(0)}$ is infinite, but rather one can
+turn it into a Hopf algebroid. %ref. 
 
-As a particular example, consider the Podle\'{s} graph of Example \ref{ExaGraphPod} at parameter $x\in \lbrack 0,\frac{1}{2}\rbrack$. Then one can take $T = \{+,-\}$ with the non-trivial involution, and label the edges $(k,k+1)$ with $+$ and the edges $(k+1,k)$ with $-$. Let us write \[F(k) = |q|^{-1}w_+(k) =  |q|^{-1}\frac{|q|^{x+k+1}+|q|^{-x-k-1}}{|q|^{x+k}+|q|^{-x-k}},\] and further put\[\alpha = \frac{F^{1/2}(\rho-1)}{F^{1/2}(\lambda-1)}u_{--},\qquad \beta = \frac{1}{F^{1/2}(\lambda-1)}u_{-+}.\] Then the unitarity of $(u_{\epsilon,\nu})_{\epsilon,\nu}$ together with \eqref{EqAdju} and \eqref{EqGradu} are equivalent to the commutation relations \begin{equation}\label{EqqCom} \alpha \beta = qF(\rho-1)\beta\alpha \qquad \alpha\beta^* = qF(\lambda)\beta^*\alpha\end{equation} \begin{equation}\label{EqDet} \alpha\alpha^* +F(\lambda)\beta^*\beta = 1,\qquad \alpha^*\alpha+q^{-2}F(\rho-1)^{-1}\beta^*\beta = 1,\end{equation}\begin{equation*} F(\rho-1)^{-1}\alpha\alpha^* +\beta\beta^* = F(\lambda-1)^{-1},\qquad  F(\lambda)\alpha^*\alpha +q^{-2}\beta\beta^* = F(\rho),\end{equation*} \begin{equation}\label{EqGrad} f(\lambda)g(\rho)\alpha =
-\alpha f(\lambda+1)g(\rho+1),\qquad f(\lambda)g(\rho)\beta = \beta f(\lambda+1)g(\rho-1).\end{equation}%layout might be nicer
+\begin{Rem}
+  The weak multiplier Hopf algebra $A(\Gamma)$ is related to the free
+  orthogonal dynamical quantum groups introduced in
+  \cite{timmermann:free} as follows.  Denote by $G$ the free group
+  generated by the elements of $T$ subject to the relation
+  $\bar{a}=a^{-1}$ for all $a\in T$. By assumption on $\Gamma$, the
+  formula $(af)(v):=f(\bar{a}v)$ defines a left action of $G$ on
+  $\Fun(\Gamma^{(0)})$. Denote by $C\subseteq \Fun(\Gamma^{(0)})$ the
+  unital subalgebra generated by all $\gamma_{a}$ and their inverses
+  and translates under $G$,  write the
+  elements of $T \subseteq G$ as a tuple in the form
+  $\nabla=(a_{1},\bar{a_{1}},\ldots,a_{n},\bar{a_{n}})$, and define a
+  $\nabla\times\nabla$ matrix $F$ with values in $C$ by $F_{a,b} :=
+  \delta_{b,\bar{a}} \gamma_{a}$.  Then the free orthogonal dynamical
+  quantum group $A_{\mathrm{o}}^{C}(\nabla,F,F)$ introduced in
+  \cite{timmermann:free} is the universal unital $*$-algebra generated
+  by a copy of $C\otimes C$ and the entries of a unitary $\nabla\times\nabla$-matrix
+  $v=(v_{a,b})$ satisfying
+  \begin{align*}
+    v_{a,b}(f \otimes g) &= (af\otimes bg) v_{a,b}, &
+    (aF_{a,\bar{a}}\otimes 1)v_{\bar{a},\bar{b}}^{*} &=
+    v_{a,b}(1\otimes F_{b,\bar{b}})
+  \end{align*}
+  for all $f,g\in C$ and $a,b\in \nabla$. The second equation
+  can be rewritten in the form
+  $v_{\bar{a},\bar{b}}^{*}=v_{a,b}(\gamma_{a}^{-1} \otimes
+  \gamma_{b})$.   Comparing with
+  \eqref{EqAdju} and \eqref{EqGradu}, we see that there exists a
+  $*$-homomorphism
+  \begin{align*}
+  A^{C}_{\mathrm{o}}(\nabla,F,F)  \to
+  M(A(\Gamma)), \quad
+  \begin{cases}
+    f\otimes g&
+\mapsto f(\lambda)g(\rho), \\
+    v_{a,b} &\mapsto u_{\bar{a},\bar{b}}.
+  \end{cases}
+\end{align*}
+ The two quantum groupoids are related by an
+analogue of the unital base changes considered for dynamical quantum
+groups in \cite[Proposition 2.1.12]{timmermann:free}. Indeed, Theorem
+\ref{TheoGenRel} shows that $A(\Gamma)$ is the image of
+$A^{C}_{\mathrm{o}}(\nabla,F,F)$ under a non-unital base change from
+$C$ to $\Fun_{f}(\Gamma^{(0)})$ along the natural map $C \to
+M(\Fun_{f}(\Gamma^{(0)}))$.
 
-These are precisely the commutation relations for the dynamical quantum $SU(2)$-group as in \cite[Definition 2.6]{KoR1}, except that the precise value of $F$ has been changed by a shift in the parameter domain by a complex constant. The (total) coproduct on $A_x$ also agrees with the one on the dynamical quantum $SU(2)$-group, namely \begin{eqnarray*} \Delta(\alpha) &=& \Delta(1) (\alpha\otimes \alpha - q^{-1}\beta\otimes \beta^*),\\ \Delta(\beta) &=& \Delta(1)(\beta\otimes \alpha^* +\alpha\otimes \beta)\end{eqnarray*} where $\Delta(1) = \sum_{k\in \Z} \rho_k\otimes \lambda_k$.
+\end{Rem}
+\begin{Exa}
+  As a particular example, consider the Podle\'{s} graph of Example
+  \ref{ExaGraphPod} at parameter $x\in \lbrack
+  0,\frac{1}{2}\rbrack$. Then one can take $T = \{+,-\}$ with the
+  non-trivial involution, and label the edges $(k,k+1)$ with $+$ and
+  the edges $(k+1,k)$ with $-$. Let us write \[F(k) = |q|^{-1}w_+(k) =
+  |q|^{-1}\frac{|q|^{x+k+1}+|q|^{-x-k-1}}{|q|^{x+k}+|q|^{-x-k}},\] and
+  further put\[\alpha =
+  \frac{F^{1/2}(\rho-1)}{F^{1/2}(\lambda-1)}u_{--},\qquad \beta =
+  \frac{1}{F^{1/2}(\lambda-1)}u_{-+}.\] Then the unitarity of
+  $(u_{\epsilon,\nu})_{\epsilon,\nu}$ together with \eqref{EqAdju} and
+  \eqref{EqGradu} are equivalent to the commutation
+  relations \begin{equation}\label{EqqCom} \alpha \beta =
+    qF(\rho-1)\beta\alpha \qquad \alpha\beta^* =
+    qF(\lambda)\beta^*\alpha\end{equation} \begin{equation}\label{EqDet}
+    \alpha\alpha^* +F(\lambda)\beta^*\beta = 1,\qquad
+    \alpha^*\alpha+q^{-2}F(\rho-1)^{-1}\beta^*\beta =
+    1,\end{equation}\begin{equation*} F(\rho-1)^{-1}\alpha\alpha^*
+    +\beta\beta^* = F(\lambda-1)^{-1},\qquad F(\lambda)\alpha^*\alpha
+    +q^{-2}\beta\beta^* =
+    F(\rho),\end{equation*} \begin{equation}\label{EqGrad}
+    f(\lambda)g(\rho)\alpha = \alpha f(\lambda+1)g(\rho+1),\qquad
+    f(\lambda)g(\rho)\beta = \beta
+    f(\lambda+1)g(\rho-1).\end{equation}%layout might be nicer
+
+  These are precisely the commutation relations for the dynamical
+  quantum $SU(2)$-group as in \cite[Definition 2.6]{KoR1}, except that
+  the precise value of $F$ has been changed by a shift in the
+  parameter domain by a complex constant. The (total) coproduct on
+  $A_x$ also agrees with the one on the dynamical quantum
+  $SU(2)$-group, namely \begin{eqnarray*} \Delta(\alpha) &=& \Delta(1)
+    (\alpha\otimes \alpha - q^{-1}\beta\otimes \beta^*),\\
+    \Delta(\beta) &=& \Delta(1)(\beta\otimes \alpha^* +\alpha\otimes
+    \beta)\end{eqnarray*} where $\Delta(1) = \sum_{k\in \Z}
+  \rho_k\otimes \lambda_k$.
+\end{Exa}
 
 
 
 \bibliographystyle{habbrv}
 %\bibliographystyle{hplain}
 %\bibliographystyle{kp}
-\bibliography{references}
+\begin{thebibliography}{10}
+
+\bibitem{AN1}
+N.~Andruskiewitsch and S.~Natale.
+\newblock Double categories and quantum groupoids.
+\newblock {\em Publ. Mat. Urug.}, 10:11--51, 2005.
+
+\bibitem{Bic1}
+J.~Bichon.
+\newblock Hopf-galois objects and cogroupoids.
+\newblock {\em Rev. Un. Mat. Argentina}, In press.
+
+\bibitem{BDV1}
+J.~Bichon, A.~De~Rijdt, and S.~Vaes.
+\newblock Ergodic coactions with large multiplicity and monoidal equivalence of
+  quantum groups.
+\newblock {\em Comm. Math. Phys.}, 262(3):703--728, 2006.
+
+\bibitem{Boh2}
+G.~B{\"o}hm.
+\newblock Comodules over weak multiplier bialgebras.
+\newblock {\em Internat. J. Math.}, 25(5):1450037 (57 pages), 2014.
+
+\bibitem{BCJ}
+G.~B{\"o}hm, S.~Caenepeel, and K.~Janssen.
+\newblock Weak bialgebras and monoidal categories.
+\newblock {\em Comm. Algebra}, 39(12):4584--4607, 2011.
+
+\bibitem{Boh1}
+G.~B{\"o}hm, J.~G\'{o}mez-Torrecillas, and E.~L\'{o}pez-Centella.
+\newblock Weak multiplier bialgebras.
+\newblock {\em Trans. Amer. Math. Soc.}, In press.
+
+\bibitem{Boh3}
+G.~B{\"o}hm, F.~Nill, and K.~Szlach{\'a}nyi.
+\newblock Weak {H}opf algebras. {I}. {I}ntegral theory and {$C^*$}-structure.
+\newblock {\em J. Algebra}, 221(2):385--438, 1999.
+
+\bibitem{Dau1}
+J.~Dauns.
+\newblock Multiplier rings and primitive ideals.
+\newblock {\em Trans. Amer. Math. Soc.}, 145:125--158, 1969.
+
+\bibitem{DCT2}
+K.~De~Commer and T.~Timmermann.
+\newblock Dynamical quantum $su(2)$ groups on the operator algebra level.
+\newblock In preparation.
+
+\bibitem{DCY2}
+K.~{De Commer} and M.~{Yamashita}.
+\newblock {Tannaka-Kre$\breve{\textrm{\i}}$n duality for compact quantum
+  homogeneous spaces. II. Classification of quantum homogeneous spaces for
+  quantum SU(2)}.
+\newblock {\em ArXiv e-prints}, Dec. 2012, 1212.3413.
+
+\bibitem{DCY1}
+K.~De~Commer and M.~Yamashita.
+\newblock Tannaka-{K}re\u\i n duality for compact quantum homogeneous spaces.
+  {I}. {G}eneral theory.
+\newblock {\em Theory Appl. Categ.}, 28:No. 31, 1099--1138, 2013.
+
+\bibitem{ENO1}
+P.~Etingof, D.~Nikshych, and V.~Ostrik.
+\newblock On fusion categories.
+\newblock {\em Ann. of Math. (2)}, 162(2):581--642, 2005.
+
+\bibitem{EtO1}
+P.~Etingof and V.~Ostrik.
+\newblock Module categories over representations of {${\rm SL}_q(2)$} and
+  graphs.
+\newblock {\em Math. Res. Lett.}, 11(1):103--114, 2004.
+
+\bibitem{EtV1}
+P.~Etingof and A.~Varchenko.
+\newblock Solutions of the quantum dynamical {Y}ang-{B}axter equation and
+  dynamical quantum groups.
+\newblock {\em Comm. Math. Phys.}, 196(3):591--640, 1998.
+
+\bibitem{Hai1}
+P.~H. Hai.
+\newblock Tannaka-{K}rein duality for {H}opf algebroids.
+\newblock {\em Israel J. Math.}, 167:193--225, 2008.
+
+\bibitem{Hay2}
+T.~Hayashi.
+\newblock Quantum group symmetry of partition functions of {IRF} models and its
+  application to {J}ones' index theory.
+\newblock {\em Comm. Math. Phys.}, 157(2):331--345, 1993.
+
+\bibitem{Hay1}
+T.~Hayashi.
+\newblock Compact quantum groups of face type.
+\newblock {\em Publ. Res. Inst. Math. Sci.}, 32(2):351--369, 1996.
+
+\bibitem{Hay3}
+T.~Hayashi.
+\newblock Face algebras. {I}. {A} generalization of quantum group theory.
+\newblock {\em J. Math. Soc. Japan}, 50(2):293--315, 1998.
+
+\bibitem{Hay8}
+T.~{Hayashi}.
+\newblock {A canonical Tannaka duality for finite seimisimple tensor
+  categories}.
+\newblock {\em ArXiv Mathematics e-prints}, Apr. 1999, math/9904073.
+
+\bibitem{Hay6}
+T.~Hayashi.
+\newblock Face algebras and tensor categories.
+\newblock {\em S\=urikaisekikenky\=usho K\=oky\=uroku}, (1082):34--47, 1999.
+\newblock Representation theory and noncommutative harmonic analysis (Japanese)
+  (Kyoto, 1998).
+
+\bibitem{Hay4}
+T.~Hayashi.
+\newblock Face algebras and unitarity of {${\rm SU}(N)_L$}-{TQFT}.
+\newblock {\em Comm. Math. Phys.}, 203(1):211--247, 1999.
+
+\bibitem{Hay5}
+T.~Hayashi.
+\newblock Galois quantum groups of {${\rm II}_1$}-subfactors.
+\newblock {\em Tohoku Math. J. (2)}, 51(3):365--389, 1999.
+
+\bibitem{Hay7}
+T.~Hayashi.
+\newblock A brief introduction to face algebras.
+\newblock In {\em New trends in {H}opf algebra theory ({L}a {F}alda, 1999)},
+  volume 267 of {\em Contemp. Math.}, pages 161--176. Amer. Math. Soc.,
+  Providence, RI, 2000.
+
+\bibitem{JoS1}
+A.~Joyal and R.~Street.
+\newblock An introduction to {T}annaka duality and quantum groups.
+\newblock In {\em Category theory ({C}omo, 1990)}, volume 1488 of {\em Lecture
+  Notes in Math.}, pages 413--492. Springer, Berlin, 1991.
+
+\bibitem{KoR1}
+E.~Koelink and H.~Rosengren.
+\newblock Harmonic analysis on the {${\rm SU}(2)$} dynamical quantum group.
+\newblock {\em Acta Appl. Math.}, 69(2):163--220, 2001.
+
+\bibitem{Mug1}
+M.~M\"{u}ger.
+\newblock From subfactors to categories and topology i. frobenius algebras in
+  and morita equivalence of tensor categories.
+\newblock {\em J. Pure Appl. Alg.}, 180:81--157, 2003.
+
+\bibitem{Nes1}
+S.~{Neshveyev}.
+\newblock {Duality theory for nonergodic actions}.
+\newblock {\em ArXiv e-prints}, Mar. 2013, 1303.6207.
+
+\bibitem{NeT1}
+S.~Neshveyev and L.~Tuset.
+\newblock {\em Compact quantum groups and their representation categories},
+  volume~20 of {\em Cours Sp\'ecialis\'es [Specialized Courses]}.
+\newblock Soci\'et\'e Math\'ematique de France, Paris, 2013.
+
+\bibitem{Nik1}
+D.~Nikshych and L.~Vainerman.
+\newblock Finite quantum groupoids and their applications.
+\newblock In {\em New directions in {H}opf algebras}, volume~43 of {\em Math.
+  Sci. Res. Inst. Publ.}, pages 211--262. Cambridge Univ. Press, Cambridge,
+  2002.
+
+\bibitem{Nil1}
+F.~{Nill}.
+\newblock {Axioms for Weak Bialgebras}.
+\newblock {\em ArXiv Mathematics e-prints}, May 1998, math/9805104.
+
+\bibitem{Ost1}
+V.~Ostrik.
+\newblock Module categories, weak {H}opf algebras and modular invariants.
+\newblock {\em Transform. Groups}, 8(2):177--206, 2003.
+
+\bibitem{Pfe1}
+H.~Pfeiffer.
+\newblock Tannaka-{K}re\u\i n reconstruction and a characterization of modular
+  tensor categories.
+\newblock {\em J. Algebra}, 321(12):3714--3763, 2009.
+
+\bibitem{Pin2}
+C.~Pinzari.
+\newblock The representation category of the {W}oronowicz quantum group {${\rm
+  S}\sb \mu {\rm U}(d)$} as a braided tensor {$C\sp *$}-category.
+\newblock {\em Internat. J. Math.}, 18(2):113--136, 2007.
+
+\bibitem{Pin3}
+C.~{Pinzari} and J.~E. {Roberts}.
+\newblock {Ergodic actions of compact quantum groups from solutions of the
+  conjugate equations}.
+\newblock {\em ArXiv e-prints}, Aug. 2008, 0808.3326.
+
+\bibitem{Sch3}
+P.~Schauenburg.
+\newblock {\em Tannaka duality for arbitrary {H}opf algebras}, volume~66 of
+  {\em Algebra Berichte [Algebra Reports]}.
+\newblock Verlag Reinhard Fischer, Munich, 1992.
+
+\bibitem{Sch1}
+P.~Schauenburg.
+\newblock Face algebras are {$\times_R$}-bialgebras.
+\newblock In {\em Rings, {H}opf algebras, and {B}rauer groups
+  ({A}ntwerp/{B}russels, 1996)}, volume 197 of {\em Lecture Notes in Pure and
+  Appl. Math.}, pages 275--285. Dekker, New York, 1998.
+
+\bibitem{Sch2}
+P.~Schauenburg.
+\newblock Weak {H}opf algebras and quantum groupoids.
+\newblock In {\em Noncommutative geometry and quantum groups ({W}arsaw, 2001)},
+  volume~61 of {\em Banach Center Publ.}, pages 171--188. Polish Acad. Sci.,
+  Warsaw, 2003.
+
+\bibitem{Sto1}
+J.~V. Stokman.
+\newblock Vertex-{IRF} transformations, dynamical quantum groups and harmonic
+  analysis.
+\newblock {\em Indag. Math. (N.S.)}, 14(3-4):545--570, 2003.
+
+\bibitem{Szl1}
+K.~{Szlachanyi}.
+\newblock {Fiber functors, monoidal sites and Tannaka duality for
+  bialgebroids}.
+\newblock {\em ArXiv e-prints}, July 2009, 0907.1578.
+
+\bibitem{Tak2}
+M.~Takeuchi.
+\newblock Groups of algebras over {$A\otimes \overline A$}.
+\newblock {\em J. Math. Soc. Japan}, 29(3):459--492, 1977.
+
+\bibitem{timmermann:free}
+T.~Timmermann.
+\newblock Free dynamical quantum groups and the dynamical quantum group
+  {$\mathrm{SU}^\mathrm{d}_q(2)$}.
+\newblock In P.~M. Soltan and W.~Pusz, editors, {\em Operator Algebras and
+  Quantum Groups}, volume~98 of {\em Banach Center Publ.}, pages 311--341.
+  Polish Academy of Sciences, Polish Academy of Sciences, Institute of
+  Mathematics, Warsaw, 2012.
+
+\bibitem{Tur1}
+V.~G. Turaev.
+\newblock {\em Quantum invariants of knots and 3-manifolds}, volume~18 of {\em
+  de Gruyter Studies in Mathematics}.
+\newblock Walter de Gruyter \& Co., Berlin, revised edition, 2010.
+
+\bibitem{VDae1}
+A.~Van~Daele.
+\newblock Multiplier {H}opf algebras.
+\newblock {\em Trans. Amer. Math. Soc.}, 342(2):917--932, 1994.
+
+\bibitem{VDae2}
+A.~Van~Daele.
+\newblock An algebraic framework for group duality.
+\newblock {\em Adv. Math.}, 140(2):323--366, 1998.
+
+\bibitem{VDW2}
+A.~Van~Daele and S.~Wang.
+\newblock Weak multiplier {H}opf algebras. {P}reliminaries, motivation and
+  basic examples.
+\newblock In P.~M. Soltan and W.~Pusz, editors, {\em Operator Algebras and
+  Quantum Groups}, volume~98 of {\em Banach Center Publ.}, pages 367--415.
+  Polish Academy of Sciences, Polish Academy of Sciences, Institute of
+  Mathematics, Warsaw, 2012.
+
+\bibitem{VDW1}
+A.~{Van Daele} and S.~{Wang}.
+\newblock {Weak Multiplier Hopf Algebras. The main theory}.
+\newblock {\em ArXiv e-prints}, Oct. 2012, 1210.4395.
+\newblock to appear in \emph{Crelles Journal}.
+
+\bibitem{Wor1}
+S.~L. Woronowicz.
+\newblock Twisted {${\rm SU}(2)$} group. {A}n example of a noncommutative
+  differential calculus.
+\newblock {\em Publ. Res. Inst. Math. Sci.}, 23(1):117--181, 1987.
+
+\bibitem{Wor2}
+S.~L. Woronowicz.
+\newblock Tannaka-{K}re\u\i n duality for compact matrix pseudogroups.
+  {T}wisted {${\rm SU}(N)$} groups.
+\newblock {\em Invent. Math.}, 93(1):35--76, 1988.
+
+\bibitem{Yam1}
+S.~{Yamagami}.
+\newblock {A categorical and diagrammatical approach to Temperley-Lieb
+  algebras}.
+\newblock {\em ArXiv Mathematics e-prints}, May 2004, math/0405267.
+
+\end{thebibliography}
+
 
 \end{document}
