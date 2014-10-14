@@ -5,9 +5,10 @@ We will use throughout that if $\pi: P(\mathscr{G}) \rightarrow \End(V)$ is any 
 \begin{Def} A partial compact quantum group $\mathscr{G}$ will be called \emph{coamenable} if the natural projection map $\pi_r:\CuG\rightarrow \CrG$ is an isomorphism.
 \end{Def}
 
-Our aim is to give a characterisation of coamenability in terms of the representation theory of the fusion algebra, cf.~ \cite{Kye1} and references therein.
+%Our aim is to give a characterisation of coamenability in terms of the representation theory of the fusion algebra, cf.~ \cite{Kye1} and references therein.
 
-We start of with the following analogue of the Fell absorption principle. For $(\Hsp,\pi)$ a $^*$-representation of $\CuG$, we write $p_{\pi}\in B(\Hsp)$ for the projection onto the closure of $\pi(\CuG)\Hsp$. We write $\GrLA{\Hsp}{k}{l} = \pi(\UnitC{k}{l})\Hsp$, which gives a direct sum decomposition of $p_{\pi}\Hsp$. We further write $H=H_{\pi}$ for the linear span of all $\GrLA{\Hsp}{k}{l}$. When $(\mathcal{K},\pi')$ is another $^*$-representation, we will write $\pi \boxtimes \pi'$ for the representation of $\CuG$ on $\mathcal{H}\otimes \mathcal{K}$ obtained as \[(\pi \boxtimes \pi')(a)(\xi\otimes \eta) = (\pi\otimes \pi')\bar{\Delta}(a)(p_{\pi}\xi\otimes p_{\pi'}\eta).\] If $\pi$ and $\pi'$ are non-degenerate, the restriction of $\pi\boxtimes \pi'$ to \[p_{\pi \boxtimes \pi'}(\Hsp\otimes \mathcal{K}) = (\pi \boxtimes \pi')\vnDelta(1)(\Hsp\otimes \mathcal{K})= \oplus_l ({}_l\Hsp\otimes {}^l\mathcal{K})\] will be written as $\pi\iboxtimes \pi'$. 
+The following version of Fell's absorption principle will show that the usual characterisation of coamenability in terms of the counit representation of $\CuG$ holds. We first introduce some notation. % Notation should be moved to earlier section.
+For $(\Hsp,\pi)$ a $^*$-representation of $\CuG$, we write $p_{\pi}\in B(\Hsp)$ for the projection onto the closure of $\pi(\CuG)\Hsp$. We write $\GrLA{\Hsp}{k}{l} = \pi(\UnitC{k}{l})\Hsp$, which gives a direct sum decomposition of $p_{\pi}\Hsp$. We further write $H=H_{\pi}$ for the linear span of all $\GrLA{\Hsp}{k}{l}$. When $(\mathcal{K},\pi')$ is another $^*$-representation, we will write $\pi \boxtimes \pi'$ for the representation of $\CuG$ on $\mathcal{H}\otimes \mathcal{K}$ obtained as \[(\pi \boxtimes \pi')(a)(\xi\otimes \eta) = (\pi\otimes \pi')\bar{\Delta}(a)(p_{\pi}\xi\otimes p_{\pi'}\eta).\] If $\pi$ and $\pi'$ are non-degenerate, the restriction of $\pi\boxtimes \pi'$ to \[p_{\pi \boxtimes \pi'}(\Hsp\otimes \mathcal{K}) = (\pi \boxtimes \pi')\vnDelta(1)(\Hsp\otimes \mathcal{K})= \oplus_l ({}_l\Hsp\otimes {}^l\mathcal{K})\] will be written as $\pi\iboxtimes \pi'$. 
 
 \begin{Lem} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\pi_r\iboxtimes \pi$ factorizes over $\CrG$.
 \end{Lem}
@@ -22,12 +23,12 @@ Recall now (from previous paper) the $^*$-representation \[\weps: P(\mathscr{G})
 \begin{proof} The map \[U: \Hsp \rightarrow \oplus_k \left({}_kl^2(I)\otimes {}^k\Hsp\right),\quad \xi \mapsto \sum_k e_k\otimes \pi(\lambda_k)\xi\] is a unitary intertwiner.
 \end{proof} 
 
-\begin{Cor} The partial compact quantum group $\mathscr{G}$ is coamenable if and only if $\weps$ descends to a $^*$-representation of $\CrG$.
-\end{Cor} 
+\begin{Prop} The partial compact quantum group $\mathscr{G}$ is coamenable if and only if $\weps$ descends to a $^*$-representation of $\CrG$.
+\end{Prop} 
 \begin{proof} $\Rightarrow$ is clear. For $\Leftarrow$, note that $\vnDelta$ descends to a (non-unital) $^*$-homomorphism $\CrG\rightarrow M(\CrG\otimes \CuG)$ by Fell's absorption principle. Composing with $\weps\otimes \id$ and using Lemma \ref{LemUnit} with respect to a faithful representation of $\CuG$, we see that there exists a splitting $\CrG\rightarrow \CuG$ of $\pi_r$, hence $\pi_r$ is an isomorphism.
 \end{proof}
  
- We now pass to the character algebra of $\mathscr{G}$.
+We now pass to the character algebra of $\mathscr{G}$.
  
  \begin{Def} Let $\mathscr{X}$ be a unitary rcfd representation of $\mathscr{G}$ on an (rcfd) $I$-bigraded Hilbert space $\Hsp$. The \emph{partial characters} of $\mathscr{X}$ are defined as \[\Gr{\chi}{}{X}{k}{l} = (\id\otimes \Tr)(\Gr{X}{k}{l}{k}{l}) = \sum_i(\Gr{X}{k}{l}{k}{l})_{ii} \in \Gr{A}{k}{l}{k}{l},\] where $\Tr$ is the non-normalized trace on $B(\GrDA{\Hsp}{k}{l})$. The \emph{total character} of $\mathscr{X}$ is the multiplier $\chi^X  =\underset{k,l}{\sum} \Gr{\chi}{}{X}{k}{l}\in M(P(\mathscr{G}))$.
  \end{Def}
@@ -54,7 +55,7 @@ Recall now (from previous paper) the $^*$-representation \[\weps: P(\mathscr{G})
 \begin{proof} It is sufficient to prove that the matrix of operators $\left(\pi\left(\Gr{\chi}{}{X}{k}{l}\right)\right)_{k,l}$ defines a bounded matrix of operators in some faithful $^*$-representation $\pi$ of $C_u(\mathscr{G})$. But as we have that each $\|\pi\left(\left(\Gr{X}{k}{l}{k}{l}\right)_{ij}\right)\|\leq 1$ by unitarity of $\mathscr{X}$, we have $\| \pi\left(\Gr{\chi}{}{X}{k}{l}\right)\| \leq d^X_{kl}$.  Hence boundedness follows from Lemma \ref{LemBoundDim}.
 \end{proof} 
  
-Denote now $\mathcal{C}$ for the C$^*$-algebra generated by all $\chi^X$ inside $M(\CrG)$, where $\mathscr{X}$ runs over all irreducible unitary representations. For $\alpha$ a hyperobject and $l\in \alpha$, write  $L^2(\mathcal{C})_l$ for the Hilbert space spanned by all $\Lambda(\chi^X_l)$, where $\chi^X_l = \sum_{k} \Gr{\chi}{}{X}{k}{l}$ and where the $X$ run over all irreducibles with right hyperobject support equal to $\alpha$. By the orthogonality relations, the $\Lambda(\chi^X_l)$ form an orthonormal basis for $L^2(\mathcal{C})_l$, and $\mathcal{C}$ preserves each $L^2(\mathcal{C})_l$, hence defines a $^*$-representation oof $\mathcal{C}$ which we will denote by $\pi_l$. 
+Denote now $\mathcal{C}$ for the C$^*$-algebra generated by all $\chi^X$ inside $M(\CrG)$, where $\mathscr{X}$ runs over all irreducible unitary representations. For $\alpha$ a hyperobject and $l\in \alpha$, write  $L^2(\mathcal{C})_l$ for the Hilbert space spanned by all $\Lambda(\chi^X_l)$, where $\chi^X_l = \sum_{k} \Gr{\chi}{}{X}{k}{l}$ and where the $X$ run over all irreducibles with right hyperobject support equal to $\alpha$. By the orthogonality relations, the $\Lambda(\chi^X_l)$ form an orthonormal basis for $L^2(\mathcal{C})_l$, and $\mathcal{C}$ preserves each $L^2(\mathcal{C})_l$, hence defines a $^*$-representation of $\mathcal{C}$ which we will denote by $\pi_l$. 
 
 \begin{Lem}\label{LemEq} Assume $l$ and $l'$ are in the same hyperobject class. Then the representations of $\mathcal{C}$ on $L^2(\mathcal{C})_l$ and $L^2(\mathcal{C})_{l'}$ are equivalent.
 \end{Lem} 
@@ -73,35 +74,22 @@ Let now $\mathscr{C}$ be the partial fusion $^*$-algebra of $\Rep(\mathscr{G})$,
 
 %. In fact, since the representation on $L^2(\mathcal{C})_l$ is equivalent to the one on $L^2(\mathcal{C}_{l'})$ when $l$ and $l'$ belong to the same hyperobject, we see that $\mathcal{C}$ is determined completely by  itself.  
 
-To characterize coamenability in terms of the partial fusion $^*$-algebra, we need a preparatory lemma.
+\begin{Def} We say $\mathscr{G}$ is \emph{dimension} coamenable %Fusion coamenable?
+if the representation \[\tilde{\epsilon}: \mathscr{C} \rightarrow B(l^2(I)), \quad \chi^X \mapsto D^X\] extends to a representation of $\mathcal{C}$.
+\end{Def}
 
-\begin{Lem} The representation $\tilde{\epsilon}$ is well-defined on $\CrG$ if and only if each $\epsilon_k$ is well-defined on $\CrG$, where $\epsilon_k(a) = \langle e_k,\tilde{\epsilon}(a)e_k\rangle$ for $a\in P(\mathscr{G})$.
-\end{Lem}
-
-\begin{proof} The direction $\Rightarrow$ is trivial. Conversely, assume that the $\epsilon_k$ are well-defined on $\CrG$. Assume $x\in \CuG$ with $\pi_r(x) = 0$. Then $\epsilon_k(x^*x)=0$, hence $\tilde{\epsilon}(x)e_k=0$. As this holds for all $k$, we have $\tilde{\epsilon}(x)=0$, hence $\tilde{\epsilon}$ descends to $\CrG$.
-\end{proof} 
-
-\begin{Theorem} A partial compact quantum group $\mathscr{G}$ is coamenable if and only if the representation \[\tilde{\epsilon}: \mathscr{C} \rightarrow B(l^2(I)), \quad \chi^X \mapsto D^X\] extends to a representation of $\mathcal{C}$.
-\end{Theorem}
-
-\begin{proof} If $\mathscr{G}$ is coamenable, then the existence of such an extension follows from the previous lemmas. 
-
-Conversely, assume $\tilde{\epsilon}:\mathcal{C}\rightarrow B(l^2(I))$. We follow the strategy of \cite[Theorem 2.7.10]{NeT1}. By the previous lemma, it is sufficient to show that for each $k$, the functional $\epsilon_k(a) = \langle e_k,\weps(a)e_k\rangle$ on $\CuG$ descends to a state on $\CrG$.
-
-Let us write $\mathcal{C}_u$ for the completion of $\mathscr{C}$ in $M(\CuG)$. By assumption, the restriction of $\epsilon_k$ to $\mathcal{C}_u$ descends to $\mathcal{C}\subseteq M(\CrG)$, and sends $\chi^X$ to $d_{kk}^X$. Since $\epsilon_k = \epsilon_k(\UnitC{k}{k}\cdot \UnitC{k}{k})$, it follows that we can approximate $\epsilon_k$ pointwise with a net of normal states $\omega_{\alpha}$ on $B(L^2(\mathcal{C}))$ with $\omega_{\alpha} = \omega_{\alpha}(\UnitC{k}{k}\cdot \UnitC{k}{k})$. We can then extend $\omega_{\alpha}$ to $B(L^2(\mathscr{G}))$ by putting $\omega_{\alpha}(x) = \omega_{\alpha}(pxp)$, where $p$ is the projection onto $L^2(\mathcal{C})$. For this extension, we still have that $\omega_{\alpha}(\UnitC{k}{k}\cdot \UnitC{k}{k})$, as $p$ and $\UnitC{k}{k}$ commutes. Finally, consider the restriction of $\omega_{\alpha}$ to $\CrG$, and let $\omega_k$ be a weak$^*$ limit point. Then $\omega_k = \omega_k(\UnitC{k}{k}\cdot \UnitC{k}{k})$, and $\omega_k(\chi) = \epsilon_k(\chi)$ for $\chi \in \mathcal{C}$. 
-
-Take now $X$ an irreducible representation of $\mathscr{G}$. Then \begin{align*}\|(\omega_k\otimes \id)(\Gr{X}{r}{s}{p}{q})\| = \delta_{k,r,s,p,q} \|(\omega_k\otimes \id)(\Gr{X}{k}{k}{k}{k})\| \leq \delta_{k,r,s,p,q},\end{align*} and furthermore \begin{align*}\Tr( (\omega_k\otimes \id)(\Gr{X}{k}{k}{k}{k})) = \omega_k(\Gr{\chi}{}{X}{k}{k}) = \epsilon_k(\chi^X) =d^X_{kk} = \dim \Gr{\Hsp}{}{X}{k}{k}.\end{align*} Hence $ (\omega_k\otimes \id)(\Gr{X}{r}{s}{p}{q}) = \delta_{k,r,s,p,q} \id_{\GrDA{\Hsp}{k}{k}}$, and it follows that $\omega_k$ is an extension of $\epsilon_k$. 
-\end{proof}  
+It is immediately clear that a coamenable partial compact quantum group is dimension coamenable. However, as we will see later, the converse is not true. This is in marked contrast with the case of quantum groups, where amenability of the fusion algebra (with respect to its \emph{scalar} dimension function) \emph{does} determine coamenability of the associated compact quantum group, cf. \cite[Theorem 4.5]{Kye1}.
  
- % Corollary: canonical partial quantum group constructed from a tensor C*-cat is always coamenable, cf. Neshveyev-Tuset section 2.7
- \begin{Cor} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to a partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is coamenable.  
- \end{Cor}
- \begin{proof} The representation $D$ is now just the canonical regular representation of the fusion algebra of $\CatCC$ on the $L^2$-space $L^2(\mathcal{C})$. 
+ % Corollary: canonical partial quantum group constructed from a tensor C*-cat is always dimension coamenable, cf. Neshveyev-Tuset section 2.7
+\begin{Prop} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to a partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is dimension coamenable.  
+\end{Prop}% Ref to add to canonical partial compact quantum group
+\begin{proof} The representation $D$ is now just the canonical regular representation of the fusion algebra of $\CatCC$ on the $L^2$-space $L^2(\mathcal{C})$. 
  \end{proof}
  
- \begin{Cor} Consider the partial compact quantum group $\mathscr{G}(\Gamma)$ associated to a weighted reciprocal random walk $\Gamma = (\Gamma,i,w,\sgn)$. Then $\mathscr{G}(\Gamma)$ is coamenable if and only if $\|\Gamma\| \leq 2$. 
- \end{Cor}
+ \begin{Prop} Consider the partial compact quantum group $\mathscr{G}(\Gamma)$ associated to a weighted reciprocal random walk $\Gamma = (\Gamma,i,w,\sgn)$. Then $\mathscr{G}(\Gamma)$ is dimension coamenable if and only if $\|\Gamma\| \leq 2$. 
+ \end{Prop}% Ref to add to first article
  \begin{proof}
- The character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator, $\C\lbrack \chi_{1/2}\rbrack$, which has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. Hence we obtain a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{\pi_{1/2}}$ if and only if $\|D^{\pi_{1/2}}\| \leq  2$.  
-    But the latter norm is by definition $\|\Gamma\|$.   
+ The character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, which has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. Hence we obtain a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{\pi_{1/2}}$ if and only if $\|D^{\pi_{1/2}}\| \leq  2$. But the latter norm is by definition $\|\Gamma\|$.   
  \end{proof} 
+ 
+ In particular, the partial compact quantum groups coming from dynamical quantum $SU(2)$ are dimension coamenable. However, as we will see in the next section, they are not coamenable.

@@ -20,7 +20,7 @@
 %\end{Lem}
 
 
-
+% Give motivation for result coamenability: continuous spectrum can only be in [-2,2], and easy to see universal one has bigger cont. spectrum
 \section{The universal C$^*$-algebra of the dynamical quantum $SU(2)$}\label{SecUni}
 
 \subsection{Definition}
@@ -253,8 +253,8 @@ Let us first turn to $\mathscr{A}_{x,0}$. Note that the element $\Omega$ in $\ma
 
 \begin{Lem} All irreducible $^*$-representations of $\wA_{x,0}$ are equivalent to one of the following mutually inequivalent $^*$-representations.
 \begin{itemize} 
-\item $\pi_{>0}$ on $l^2(X_>)$ with $X_> = \{(y,z)\mid y\in \Lambda_x,z\in q^{2\N+1}y\}$ and  \begin{align*} \alpha e_{y,z} =  \left(\frac{y^{-1}+qz}{\ctau(y)}\right)^{1/2}e_{qy,qz}, && \beta e_{y,z} = \sigma_y \left(\frac{qy-z}{q\ctau(y)}\right)^{1/2}e_{y,z},&& \lambda e_{y,z} = ye_{y,z}.\end{align*}
-\item $\pi_{<0}$ on $l^2(X_<)$ with $X_< = \{(y,z)\mid y\in \Lambda_x,z \in -q^{2\N+1}y^{-1}\}$ and action as above.
+\item $\pi_{>0}$ on $l^2(Y_>)$ with $Y_> = \{(y,z)\mid y\in \Lambda_x,z\in q^{2\N+1}y\}$ and  \begin{align*} \alpha e_{y,z} =  \left(\frac{y^{-1}+qz}{\ctau(y)}\right)^{1/2}e_{qy,qz}, && \beta e_{y,z} = \sigma_y \left(\frac{qy-z}{q\ctau(y)}\right)^{1/2}e_{qy,q^{-1}z},&& \lambda e_{y,z} = ye_{y,z}.\end{align*}
+\item $\pi_{<0}$ on $l^2(Y_<)$ with $Y_< = \{(y,z)\mid y\in \Lambda_x,z \in -q^{2\N+1}y^{-1}\}$ and action as above.
 \item $\pi_{0,w}$ for $|w| = 1$ on $l^2(\Lambda_x)$ and \begin{align*} \alpha e_y = \frac{y^{-1/2}}{\tau(y)^{1/2}}e_{qy},&& \beta e_y = \sigma_y w\frac{y^{1/2}}{\tau(y)^{1/2}}e_{qy},&& \lambda e_{y} = ye_y.\end{align*}
 \end{itemize}
 
@@ -266,77 +266,40 @@ Let us fix such an irreducible representation $\pi$, and let $e_{y_0,z_0}$ be a 
 
 Let us assume first that $z_0>0$, and let $(y,z)$ be joint eigenvalues. Then $\beta e_{y,z}$ is a multiple of $e_{qy,q^{-1}z}$, and \[\|\beta e_{y,z}\| = \langle e_{y,z},\beta^* \beta e_{y,z}\rangle = \frac{qy-z}{q\ctau(y)} \geq 0.\]  If this is a strict equality, we can replace $y$ and $z$ by $qy$ and $q^{-1}z$, and so on. It follows that at some point one arrives at $z=qy$, i.e.~ $e_{y,z}\neq 0$ but $\beta e_{y,z}=0$. Choosing these values as the initial $y_0$ and $z_0$, and noting that the actions of $\beta^*$, $\alpha$ or $\alpha^*$ can't act as zero operators on the non-zero $e_{y,z}$, it follows easily that the representation space of $\pi$ has as a basis all vectors of the form $e_{y,z}$ with $y\in \Lambda_x$ and $z\in q^{2\N+1}y$. By gauging the basis vectors by complex numbers of modulus 1, we can always arrange to have \[\alpha e_{y,z} =  \left(\frac{y^{-1}+qz}{\ctau(y)}\right)^{1/2}e_{qy,qz}, \quad \beta e_{y,z} = \sigma_y \left(\frac{qy-z}{q\ctau(y)}\right)^{1/2}e_{y,z}.\] In particular, the representation is unique up to unitary equivalence.
 
-Similarly, if $z_0<0$, we find a unique representation up to equivalence, with joint eigenvectors given by $e_{y,z}$ with $yz \in -q{2\N+1}$, and action given by the same formula as above.
+Similarly, if $z_0<0$, we find a unique representation up to equivalence, with joint eigenvectors given by $e_{y,z}$ with $yz \in -q^{2\N+1}$, and action given by the same formula as above.
 
 Finally, if $z_0=0$, we may first quotient out $\wA_{x,0}$ by the relation $\Omega_{\rho}=0$. In the quotient algebra, one then easily verifies that $\sigma_{\lambda}\beta^*\alpha\tau(\lambda)$ is a central element. It follows that $\pi(\sigma_{\lambda}\beta^*\alpha\tau(\lambda)) = w$ for some $w \in \C$ with $|w|=1$, and all eigenspaces for $\lambda$ are one-dimensional. We easily deduce that then $\pi$ is equivalent to a representation on $l^2(\Lambda_x)$ with $\lambda e_y = ye_y$ and  
 \[\alpha e_y = \frac{y^{-1/2}}{\tau(y)^{1/2}}e_{qy},\quad \beta e_y = \sigma_y w \frac{y^{1/2}}{\tau(y)^{1/2}}e_{qy},\] and clearly these representations are all mutually inequivalent. 
 \end{proof} 
 
-A similar story holds for $\wA_{0,x}$, where now we consider instead the limit of the element $\lambda \Omega$, i.e.~ the element $\Omega_{\lambda} = q^{-1}\rho - \ctau(\rho/q)\beta^*\beta$. In fact, we have a $^*$-isomorphism $\theta: \wA_{0,x}\rightarrow \wA_{x,0}$ determined by  \begin{align*} \alpha \mapsto q^{1/2}w_{-}^{1/2}(\lambda) \alpha,&& \beta \mapsto -\sigma\beta^*,&& \rho \mapsto \lambda,\end{align*} under which $\Omega_{\lambda}$ is sent to $\Omega_{\rho}$. We deduce the following corollary. 
+A similar story holds for $\wA_{0,x}$, where now we consider instead the limit of the element $\lambda \Omega$, i.e.~ the element $\Omega_{\lambda} = q^{-1}\rho - \ctau(\rho/q)\beta^*\beta$. In fact, we have a $^*$-isomorphism \[\mathscr{A}_x\rightarrow \mathscr{A}_x, \quad u_{\epsilon,\nu}\mapsto \frac{w_{\nu}^{1/2}(\lambda)}{w_{\epsilon}^{1/2}(\rho)}u_{\nu,\epsilon},\] whose limit for $\lambda\rightarrow 0$ in the domain and $\rho\rightarrow 0$ in the codomain leads to a $^*$-isomorphism $\theta: \wA_{0,x}\rightarrow \wA_{x,0}$ determined by  \begin{align*} \alpha \mapsto q^{-1/2}w_{-}^{1/2}(\lambda) \alpha,&& \beta \mapsto -\sigma\beta^*,&& \rho \mapsto \lambda,\end{align*} under which $\Omega_{\lambda}$ is sent to $\Omega_{\rho}$. We deduce the following corollary. 
 
 \begin{Cor} All irreducible $^*$-representations of $\wA_{0,x}$ are equivalent to one of the following mutually inequivalent $^*$-representations.
 \begin{itemize} 
-\item $\pi_{>0}$ on $l^2(X_>)$ with $X_> = \{(y,z)\mid z\in \Lambda_x,y\in q^{2\N+1}z\}$ and  \begin{align*} \alpha e_{y,z} =  \left(\frac{q^2y+qz^{-1}}{\ctau(qz)}\right)^{1/2}e_{qy,qz}, && \beta e_{y,z} = - \sigma_{z} \left(\frac{-y+q^{-1}z}{\ctau(q^{-1}z)}\right)^{1/2}e_{qy,q^{-1}y},&& \rho e_{y,z} = ze_{y,z}.\end{align*}
-\item $\pi_{<0}$ on $l^2(X_<)$ with $X_< = \{(y,z)\mid z\in \Lambda_x,y \in -q^{2\N+1}z^{-1}\}$ and action as above.
+\item $\pi_{>0}$ on $l^2(Z_>)$ with $Z_> = \{(y,z)\mid z\in \Lambda_x,y\in q^{2\N+1}z\}$ and  \begin{align*} \alpha e_{y,z} =  \left(\frac{qy+z^{-1}}{q\ctau(qz)}\right)^{1/2}e_{qy,qz}, && \beta e_{y,z} = - \sigma_{z} \left(\frac{-y+q^{-1}z}{\ctau(q^{-1}z)}\right)^{1/2}e_{qy,q^{-1}z},&& \rho e_{y,z} = ze_{y,z}.\end{align*}
+\item $\pi_{<0}$ on $l^2(Z_<)$ with $Z_< = \{(y,z)\mid z\in \Lambda_x,y \in -q^{2\N+1}z^{-1}\}$ and action as above.
 \item $\pi_{0,w}$ for $|w| = 1$ on $l^2(\Lambda_x)$ and \begin{align*} \alpha e_z =\frac{q^{1/2}z^{-1/2}}{\tau(qz)^{1/2}} e_{qz},&& \beta e_z =  -\sigma_z w\frac{q^{-1/2}z^{1/2}}{\tau(q^{-1}z)^{1/2}}e_{q^{-1}z},&& \lambda e_{z} = ze_z.\end{align*}
 \end{itemize}
 \end{Cor} 
 
-Recall now that $\wA_x$, being obtained from Tannaka reconstruction, possesses an invariant positive functional $\phi$, normalized so that $\phi(\UnitC{y}{z})=1$, and with support on all $\Gr{A}{y}{y}{z}{z}$. Now $\Delta_{\Lambda_x,0}^{0}$ determines a right coaction of $\Pol(SU_q(2))$ on  
+Recall now that $\wA_x$, being obtained from Tannaka reconstruction, possesses an invariant positive functional $\phi$, normalized so that $\phi(\UnitC{y}{z})=1$, and with support on all $\Gr{A}{y}{y}{z}{z}$. It satisfies $(\phi\otimes \iota)\Delta_{yy}(a) = \phi(a) \UnitC{y}{z}$ for all $a\in \Gr{A}{w}{w}{z}{z}$. In particuler, $\phi$ restricted to $\wA_x^{0,0}\cong \Pol(SU_q(2))$ is just the Haar state. On the other hand, on each $\Gr{A}{w}{w}{0}{0}$ we have that $\Delta_{00}$ gives a right coaction of $\Pol(SU_q(2))$, and then $\phi$ restricts to an invariant state on $\Gr{A}{w}{w}{0}{0}$. We can identify $\Gr{A}{w}{w}{0}{0}$ equivariantly with a Podle\'{s} sphere. ...
+
+We deduce from this that the universal envelope of $\wA_{x,0}$ equals its reduced envelope $\mathcal{A}_{x,0}$, and similarly for $\wA_{0,x}$. But since the invariant functional on $\mathscr{A}_x$ can be implemented on $\Delta_{x,x}^0(\mathscr{A}_x)$, it follows that $\mathcal{A}_x$ is the closure of $\mathscr{A}_x$ in $\mathcal{A}_{x,0}\otimes \mathcal{A}_{0,x}$ (minimal tensor product) by means of $\Delta_{x,x}^0$ (note that the image of this map is in the ordinary tensor product, without needing to take multiplier envelopes).
+
+Let us then consider the resulting $^*$-representation of $A_{x}$ on $l^2(Y)\otimes l^2(Z)$, where $Y = Y_<\sqcup Y_>$ and $Z = Z_< \sqcup Z_>$. Then \begin{align*} \alpha e_{y,z,y',z'} = &\left(\frac{(1+qyz)(1+qy'z')}{qyz'\tau(y)\tau(qz')}\right)^{1/2} e_{qy,qz,qy',qz'} \\& \qquad + \sigma_y\sigma_{z'} \left(\frac{qyz'(1-z/qy)(1-y'/qz')}{\tau(y)\tau(qz')}\right)^{1/2}e_{qy,z/q,y'/q,qz'}\\
+\beta e_{y,z,y',z'} =&  -\sigma_{z'} \left( \frac{z' (1+qyz)(1- qy'/z')}{qy\tau(y)\tau(z'/q)}\right)^{1/2}e_{qy,qz,qy',z'/q} \\ & \qquad +\sigma_y \left( \frac{qy(1-z/qy)(1+y'z'/q)}{z'\tau(y)\tau(z'/q)}\right)^{1/2} e_{qy,z/q,y'/q,z'/q}\\
+\alpha^* e_{y,z,y',z'} = &\left(\frac{q(1+yz/q)(1+y'z'/q)}{yz'\tau(y/q)\tau(z')}\right)^{1/2} e_{y/q,z/q,y'/q,z'/q} \\& \qquad + \sigma_{y}\sigma_{z'} \left(\frac{yz'(1-qz/y)(1-qy'/z')}{q\tau(y/q)\tau(z')}\right)^{1/2}e_{y/q,qz,qy',z'/q}\\
+\beta^* e_{y,z,y',z'} =&  -\sigma_{qz'} \left( \frac{qz' (1+yz/q)(1- y'/qz')}{y\tau(y/q)\tau(z')}\right)^{1/2}e_{y/q,z/q,y'/q,qz'} \\ & \qquad +\sigma_{qy} \left( \frac{y(1-qz/y)(1+qy'z')}{qz'\tau(y/q)\tau(z')}\right)^{1/2} e_{y/q,qz,qy',qz'}.
+\end{align*}
 
 
+Using the expressions for $\Omega$ in terms of $\beta^*\beta$ and $\alpha^*\alpha$, we see \begin{align*} \Omega e_{y,z,y',z'} =& \sigma_y\sigma_{z'} [(1+qyz)(1- qy'/z')(1-qz/y)(1+qy'z')]^{1/2} e_{y,q^2z,q^2y',z'} \\ & + \left[\tau(qy/z')-\frac{z'}{qy} (1+qyz)(1- qy'/z')-\frac{qy}{z'}(1-z/qy)(1+y'z'/q)\right] e_{y,z,y',z'}  
+    \\ &  +\sigma_y\sigma_{z'}  [(1-z/qy)(1+y'z'/q)(1+yz/q)(1- y'/qz')]^{1/2} e_{y,z/q^2,y'/q^2,z} \\
+    =& \sigma_y\sigma_{z'} [(1+qyz)(1+qy'z')(1-qz/y)(1-qy'/z')]^{1/2} e_{y,q^2z,q^2y',z'} \\ &-\left[\tau(qyz')- \frac{1}{qyz'}(1+qyz)(1+qy'z') -qyz' (1-z/qy)(1-y'/qz')\right]e_{y,z,y',z'}\\ &+ \sigma_y\sigma_{z'} [(1-z/qy)(1-y'/qz')(1+yz/q)(1+y'z'/q)]^{1/2}e_{y,z/q^2,y'/q^2,z'}. \end{align*}
+
+From the second expression, we immediately see that $\Omega$ commutes with the involution $e_{y,z,y',z'}\rightarrow e_{z',y',z,y}$. For studying the spectral problem, we may therefore restrict to the vectors with $\frac{|y'| y^{\sgn(z)}}{|z|z'^{\sgn(y')}} \in q^{2\N}$. 
 
 
-
-
-
-
-It will be convenient here to use the linking partial compact quantum group between $\mathscr{A}(\Gamma_x)$ and $\Pol(SU_q(2))$.  Let us denote $\widetilde{\Gamma}_x = \Gamma_x\cup \{\bullet\}$, the disconnected sum of $\Gamma_x$ with the graph $\bullet$ consisting of a single vertex and two loops denoted $+$ and $-$ with respective weights $q$ and $q^{-1}$ and respective signs $+$ and $-\sigma$. Then the partial Hopf $^*$-algebra associated to the above-mentioned linking partial compact quantum group is $\mathscr{A}(\widetilde{\Gamma}_x)$. It splits into four components $\mathscr{A}(\Lambda,\Lambda')$, where $\Lambda,\Lambda' \in \{\Gamma_x,\Gamma\}$, and with the total algebras of these components generated by the $u_{e,f}$ with $e \in \Lambda,f\in \Lambda'$. We have $\mathscr{A}(\Gamma_x,\Gamma_x) = \mathscr{A}_x$ and $\mathscr{A}(\bullet,\bullet) = \Pol(SU_q(2))$. Let us investigate the remaining components.
-
-In fact, the total algebra $A_{x,\bullet} = A(\Gamma_x,\bullet)$ was studied in \cite{DCY1}. Following the discussion in Section \cite{SecUni}, its generators can be written as \[(u_{\epsilon,\nu})_{q^{x+k}} =  u_{(k,k-\epsilon),\nu}, \qquad k\in \Z,\epsilon,\nu \in \{+,-\}\] the base algebra being reduced to a single copy of $\Fun_{\fin}(\Lambda_x)$ whose elements we write in the form $f(\lambda)$. The remaining disussion in Section \cite{SecUni} is then just as before, except that one now puts $w_+(\rho) = q, w_-(\rho) = q^{-1}$, i.e.~ the limit $\rho\rightarrow +\infty$ is taken. A similar discussion holds for $A_{\bullet,x} = A(\bullet,\Gamma_x)$, with the roles of $\rho$ and $\lambda$ interchanged. 
-
-Now the total comultiplication of $A(\widetilde{\Gamma}_x)$ splits into parts \[\Delta_{\Lambda,\Lambda''}^{\Lambda'}: A(\Lambda,\Lambda'')\rightarrow M(A(\Lambda,\Lambda')\otimes A(\Lambda',\Lambda'')),\quad \Lambda,\Lambda',\Lambda'' \in \{\Gamma_x,\bullet\}.\] Consider the invariant positive integral $\phi$ on $A(\widetilde{\Gamma}_x)$. Then by invariance, we have \[\phi(a) = (\phi\otimes \phi)(\Delta_{\Gamma_x,\Gamma_x}^{\bullet}(a)),\qquad a \in A(\Gamma_x).\] It follows that the reduced C$^*$-algebra of $\mathcal{A}(\Gamma_x)$ can be understood as the completion of $\Delta_{\Gamma_x,\Gamma_x}^{\bullet}(A(\Gamma_x))$ in $\mathcal{A}_{x,\bullet}\otimes \mathcal{A}_{\bullet,x}$. 
-
-Let us thus first study the reduced C$^*$-algebraic completion $\mathcal{A}_{x,\bullet}$. Note that $\phi$ is supported on $\sum_y \lambda_y A_{x,\bullet}\lambda_y$. Now any element of $A_{x,\bullet}$ can be written as linear combination of a polynomial in the $\alpha,\beta,\gamma,\delta$ times a finite support function on $\Lambda_x$. It easily follows then that $\lambda_y A_{x,\bullet}\lambda_y$ is generated by $\beta^*\beta\lambda_y,\alpha\beta^*\lambda_y$ and $\beta\alpha^*\lambda_y$. Let us fix $y$, and write \begin{eqnarray*} X_y &=& \ctau(y/q)\alpha \beta^*\lambda_y,\\ qZ_y &=& (y^{-1}-\ctau(y)\beta^*\beta)\lambda_y\\ Y_y &=& \ctau(y/q)\beta \alpha^*\lambda_y.\end{eqnarray*}  Then using that formally $Z_y = \lim_{\rho\rightarrow +\infty} \rho^{-1}\Omega \lambda_y$, we find that $X_yZ_y = q^2Z_yX_y$, $Y_yZ_y= q^{-2}Z_yY_y$, $Z_y^*=Z_y$ and \begin{eqnarray*} X_yY_y &=& 1+ q (y^{-1}-y)Z_y -  q^2 Z_y^2 \\ Y_yX_y &=& 1+ q^{-1}(y^{-1}-y)Z_y-q^{-2}Z_y^2,
-\end{eqnarray*}
-where we have treated $\lambda_y$ as the unit of $\lambda_y A_{x,\bullet}\lambda_y$.
-
-We see that we obtain a copy of a (non-standard) Podle\'{s} sphere $\mathbb{S}_{q,y}^2$. Moreover, $\Delta_{x,\bullet}^{\bullet}$ restricts to the ordinary action $SU_q(2)$ on this Podle\'{s} sphere. The associated C$^*$-algebra $C(\mathbb{S}_{q,y}^2)$ is then faithfully represented on $l^2(J_{y})$, where $J_y = q^{1+2\mathbb{N}}/y\cup -q^{2\mathbb{N}+1}y$, by $Z_ye_z = z e_{z}$ and \begin{eqnarray*} X_ye_{z} &=& \sigma_{qy} \lbrack (1-yz/q)(1+z/qy)\rbrack^{1/2}e_{q^{-2}z}\\ Y_ye_{z} &=& \sigma_{qy} \lbrack (1-qyz)(1+qz/y)\rbrack^{1/2}e_{q^2z}.\end{eqnarray*} The invariant state on the Podle\'{s} sphere is implemented by the (normalized) trace class operator associated to $|Z|$. 
-
-Let us extend the above Podle\'{s} sphere representation to $A_{x,\bullet}$.  Let $J =\{(z,y)\mid y \in \Lambda_x, z \in J_{y}\}$. Then we define the following representation of $A_{x,\bullet}$ on $l^2(J)$: \begin{eqnarray*} \alpha e_{y,z} &=&  \left(\frac{y+z/q}{\ctau(y)}\right)^{1/2}e_{qy,z/q}\\ \beta e_{y,z} &=&  \sigma_y \left( \frac{1/y-qz}{\ctau(y)}\right)^{1/2}e_{qy,qz},  \\  \alpha^* e_{y,z} &=&  \left(\frac{y/q+z}{\ctau(y/q)}\right)^{1/2}e_{y/q,qz} \\ \beta^* e_{y,z} &=& \sigma_{qy}\left( \frac{q/y-z}{\ctau(y/q)}\right)^{1/2}e_{y/q,z/q}
- \\ \lambda_{y'} e_{y,z} &=& \delta_{y,y'}e_{y,z}. \end{eqnarray*} It is easily seen that this is well-defined, that we get our standard representation on the $e_{z} = e_{y,z}$ for the Podle\'{s} sphere $\lambda_y A_{x,\bullet}\lambda_y$, and that this defines a $^*$-representation of $A_{x,\bullet}$. It is also easy to see this representation as a limit of the representations obtained in ...
-
-% Reference to Zinn-Justin Banica paper
-
-It is now easy to find also a $^*$-representation of $A_{\bullet,x}$. Here the relations between the generators are obtained from $A_{x}$ by letting $\lambda\rightarrow +\infty$. In fact we have \[S^2(u_{\epsilon,\nu}) = \frac{w_{\epsilon}(\lambda)}{w_{\nu}(\rho)} u_{\epsilon,\nu},\] hence the unitary antipode $R$ satisfies \[ R(u_{\epsilon,\nu}) = u_{\nu,\epsilon}^* \frac{w_{\nu}^{1/2}(\lambda)}{w_{\epsilon}^{1/2}(\rho)}\] By composing with $*$ and the obvious conjugacy operator, it follows that we have a $^*$-algebra isomorphism \[u_{\epsilon,\nu} \mapsto  \frac{w_{\nu}^{1/2}(\lambda)}{w_{\epsilon}^{1/2}(\rho)}u_{\nu,\epsilon},\] which as well gives an identification $A_{\bullet,x}\rightarrow A_{x,\bullet}$. Concretely, this gives \[\alpha \mapsto q^{1/2}w_{-}^{1/2}(\lambda) \alpha,\qquad \beta \mapsto -\sigma\beta^*.\] Hence, for $A_{\bullet,x}$ we obtain the $^*$-representation on $l^2(J_{y})$ by \begin{eqnarray*} \alpha e_{y,z} &=&  \left(\frac{qy+z}{\ctau(qy)}\right)^{1/2}e_{qy,z/q}\\ \beta e_{y,z} &=&  - \sigma_{y} \left( \frac{q/y-z}{\ctau(y/q)}\right)^{1/2}e_{y/q,z/q}\\ \alpha^* e_{y,z} &=&  \left(\frac{y+qz}{\ctau(y)}\right)^{1/2}e_{y/q,qz}\\ \beta^* e_{y,z} &=&  - \sigma_{qy} \left( \frac{1/y-qz}{\ctau(y)}\right)^{1/2}e_{qy,qz}\\\rho_{y'}e_{y,z} &=& \delta_{y',y}e_{y,z}.\end{eqnarray*}
-
-Finally, let us consider then the $^*$-representation of $A_{x}$ on $l^2(J)\boxtimes l^2(J)$, which is just $l^2(J)\otimes l^2(J)$. Let us identify the basis of the latter by $e_{y,z,y',z'} = e_{y,z}\otimes e_{y',z'}$. Then \begin{eqnarray*} \alpha e_{y,z,y',z'} &=& \left(\frac{(y+z/q)(qy'+z')}{\tau(y)\tau(qy')}\right)^{1/2}e_{qy,z/q,qy',z'/q}  \\ && \qquad + \sigma_{y}\sigma_{y'}\left(\frac{(1/y-qz)(1/qy' -z')}{\tau(y)\tau(qy')}\right)^{1/2}e_{qy,qz,qy',qz'}, \\
-\beta e_{y,z,y',z'} &=&  \sigma_y \left(\frac{(1/qy-z)(y'+qz')}{\tau(y)\tau(y'/q)}\right)^{1/2}e_{qy,qz,y'/q,qz'}  \\ &&\qquad -\sigma_{y'}\left(\frac{(y+z/q)(q/y'-z')}{\tau(y)\tau(y'/q)}\right)^{1/2} e_{qy,z/q,y'/q,z'/q} \\\alpha^* e_{y,z,y',z'} &=& \left(\frac{(y/q+z)(y'+qz')}{\tau(y/q)\tau(y')}\right)^{1/2}e_{y/q,qz,y'/q,qz'}  \\ && \qquad + \sigma_{y}\sigma_{y'} \left(\frac{(q/y-z)(1/y' -z'/q)}{\tau(y/q)\tau(y')}\right)^{1/2}e_{y/q,z/q,y'/q,z'/q}, \\
-\beta^* e_{y,z,y',z'} &=&  \sigma_{qy} \left(\frac{(1/y-z/q)(qy'+z')}{\tau(y/q)\tau(y')}\right)^{1/2}e_{y/q,z/q,qy',z'/q}  \\ &&\qquad -\sigma_{qy'}\left(\frac{(y/q+z)(1/y'-qz')}{\tau(y/q)\tau(y')}\right)^{1/2} e_{y/q,qz,qy',qz'}\\
-\UnitC{w}{w'} e_{y,z,y',z'} &=& \delta_{w,y}\delta_{w',y'} e_{y,z,y',z'}.
-\end{eqnarray*}
-
-We see that there is an obvious observable in the commutant, namely the quantity $z/z'$. 
-
-Fix now $y,y'$, and write $e_{z,z'} = e_{y,z,y',z'}$. Then we have (using resp.~ the expression for $\Omega$ in terms of $\beta^*\beta$ and $\alpha^*\alpha$) \begin{eqnarray*} \Omega  e_{z,z'} &=& \sigma_{y}\sigma_{y'} \lbrack (1-qyz)(1+qz/y)(1-qy'z')(1+qz'/y')\rbrack^{1/2} e_{q^2z,q^2z'} \\ && + \left( \tau(qy/y')- \frac{y'}{qy}(1-qyz)(1+qz'/y') -\frac{qy}{y'}(1+z/qy)(1-y'z'/q)\right) e_{z,z'} \\ && +\sigma_{y}\sigma_{y'}\lbrack (1-yz/q)(1+z/qy)(1-y'z'/q)(1+z'/qy')\rbrack^{1/2} e_{z/q^2,z'/q^2},\\
- &=& \sigma_y\sigma_{y'}\lbrack (1-qyz)(1+qz/y)(1 -qy'z')(1+qz'/y')\rbrack^{1/2} e_{q^2z,q^2z'} \\  &&-\left(\tau(qyy') - qyy'(1+z/qy)(1+z'/qy') -  \frac{1}{qyy'}(1-qyz)(1 -qy'z')\right) e_{z,z'} \\ &&+ \sigma_y\sigma_{y'}\lbrack (1-yz/q)(1+z/qy)(1 -y'z'/q)(1+z'/qy')\rbrack^{1/2}e_{z/q^2,z'/q^2}
-\end{eqnarray*}
-From the second identity we see that $\Omega$ commutes with the transformation $(y,z,y',z')\leftrightarrow (y',z',y,z)$, and from both identities we deduce the commutation of $\Omega$ with the transformation $(y,z,y',z')\leftrightarrow (y,z,-1/y',z')$. Hence $\Omega$ also commutes with the transformation $(y,z,y',z')\leftrightarrow (-1/y,z,y',z')$. 
-% Should allow $y$ to be negative in definition $J$.
-
-
-Let us now look at the spectral analysis of this operator. By the above symmetries, it is sufficient to consider the case where $z = -q^{2k+1}y$ for some $k\in \N$ and $q^{-2k}z' = -qy'' \in J_{y'}$. Write then $e_k = e_{y,-q^{2k+1}y,y',q^{2k}w}$. Then we obtain   \begin{eqnarray*} \Omega  e_{k} &=& \sigma_{y}\sigma_{y'} \lbrack (1+y^2q^{2k+2})(1-q^{2k+2})(1+y'y'' q^{2k+2})(1-q^{2k+2}y''/y')\rbrack^{1/2} e_{k+1} \\ && + \left( \tau(qy/y')- \frac{y'}{qy}(1+y^2q^{2k+2})(1-q^{2k+2}y''/y') -\frac{qy}{y'}(1-q^{2k})(1+y'y''q^{2k})\right) e_{k} \\ && +\sigma_{y}\sigma_{y'}\lbrack (1+y^2q^{2k})(1-q^{2k})(1+y'y''q^{2k})(1-q^{2k}y''/y')\rbrack^{1/2} e_{k-1}\end{eqnarray*} Hence the formal eigenvectors are given in terms of continuous dual $q^2$-Hahn polynomials. More precisely, let \[ p_n(\frac{\tau(t)}{2};a,b,c\mid q^2) = a^{-n}(ab,ac;q^2)_n \qortb{q^{-2n}}{at}{a/t}{ab}{ac}{q^2}{q^2}.\] Then \begin{eqnarray*} \xi_{\tau(t)} &=& \sum_k  (\sigma_y\sigma_{y'})^k (q^2,-q^2y^2,-q^2y'y'',q^2y''/y';q^2)_k^{1/2} p_k(\frac{\tau(t)}{2};qy/y',-qyy',qy''/y\mid q^2)   e_k \\
-&=& \sum_k q^{-k}  (\frac{\sigma_{y'}y'}{\sigma_y y})^k  \left(\frac{(-q^2y^2,q^2y''/y';q^2)_k}{(q^2,-q^2y'y'';q^2)_k}\right)^{1/2}
-   \qortb{q^{-2k}}{qty/y'}{qy/ty''}{-q^2y^2}{q^2y''/y'}{q^2}{q^2} e_k
-\end{eqnarray*} are formal eigenvectors of $\Omega$ at eigenvalue $\tau(t)$. 
-
-
-
-
-% Hence also 
-
-%\begin{eqnarray*} \Omega  e_{z,z'} &=& \sigma_y\sigma_{y'}\lbrack (1-qyz)(1+qz/y)(1 -qy'z')(1+qz'/y')\rbrack^{1/2} e_{q^2z,q^2z'} \\  &&+\left(\tau(qy'/y) - \frac{qy'}{y}(1-yz/q)(1+z'/qy') -  \frac{y}{qy'}(1+qz/y)(1 -qy'z')\right) e_{z,z'} \\ &&+ \sigma_y\sigma_{y'}\lbrack (1-yz/q)(1+z/qy)(1 -y'z'/q)(1+z'/qy')\rbrack^{1/2}e_{z/q^2,z'/q^2}
-%\end{eqnarray*}
 
 %%% Local Variables: 
 %%% mode: latex
