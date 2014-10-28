@@ -1,9 +1,11 @@
 \section{Coamenability of partial compact quantum groups}
 
-We will use throughout that if $\pi: P(\mathscr{G}) \rightarrow \End(V)$ is any $^*$-representation on a pre-Hilbert space (meaning $\langle v,\pi(a)w\rangle = \langle \pi(a^*)v,w\rangle$ for all $v,w\in V$), then $\pi$ extends to a $^*$-representation of $\CuG$ on the completion of $V$.
+Let $\mathscr{G}$ be a partial compact quantum group. We will use throughout that if $\pi: P(\mathscr{G}) \rightarrow \End(V)$ is any $^*$-representation on a pre-Hilbert space (meaning $\langle v,\pi(a)w\rangle = \langle \pi(a^*)v,w\rangle$ for all $v,w\in V$), then $\pi$ extends to a $^*$-representation of $\CuG$ on the completion of $V$.
 
 \begin{Def} A partial compact quantum group $\mathscr{G}$ will be called \emph{coamenable} if the natural projection map $\pi_r:\CuG\rightarrow \CrG$ is an isomorphism.
 \end{Def}
+
+% Coamenability in terms of invariant measure not considered yet.
 
 %Our aim is to give a characterisation of coamenability in terms of the representation theory of the fusion algebra, cf.~ \cite{Kye1} and references therein.
 
@@ -89,7 +91,7 @@ It is immediately clear that a coamenable partial compact quantum group is dimen
  \begin{Prop} Consider the partial compact quantum group $\mathscr{G}(\Gamma)$ associated to a weighted reciprocal random walk $\Gamma = (\Gamma,i,w,\sgn)$. Then $\mathscr{G}(\Gamma)$ is dimension coamenable if and only if $\|\Gamma\| \leq 2$. 
  \end{Prop}% Ref to add to first article
  \begin{proof}
- The character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, which has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. Hence we obtain a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{\pi_{1/2}}$ if and only if $\|D^{\pi_{1/2}}\| \leq  2$. But the latter norm is by definition $\|\Gamma\|$.   
+ The character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, with $\chi_{1/2}$ the character of the spin 1/2-corepresentation $u_{1/2}$. It has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. Hence we obtain a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{u_{1/2}}$ if and only if $\|D^{u_{1/2}}\| \leq  2$. But the latter norm is by definition $\|\Gamma\|$.   
  \end{proof} 
  
  In particular, the partial compact quantum groups coming from dynamical quantum $SU(2)$ are dimension coamenable. However, as we will see in the next section, they are not coamenable.
