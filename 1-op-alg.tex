@@ -4,69 +4,73 @@
 Let $\mathscr{G}$ be a partial compact quantum group. We construct
 completions of the underlying $*$-algebra $P(\mathscr{G})$ in the form
 of a universal $C^{*}$-algebra $\CuG$, a reduced $C^{*}$-algebra
-$\CrG$ and a von Neumann algebra $\LGinf$. The existence of the first
-one follows from the analogue of the Peter-Weyl theorem, Proposition \ref{prop:rep-weak-pw}, and the second and
-third one arise from a GNS-representation of $P(\mathscr{G})$ on the
+$\CrG$ and a von Neumann algebra $\LGinf$, the last two acting on a
 Hilbert space $\LGtwo$ associated to the invariant integral of
-$\mathscr{G}$.  We then lift the comultiplication, the invariant
-functional, the unitary antipode and the scaling group to level of
+$\mathscr{G}$.  We then lift the comultiplication, invariant
+functional, unitary antipode and the scaling group to level of
 operator algebras and show that $\LGinf$ becomes a measured quantum
 groupoid in the sense of Lesieur \cite{Les1} and Enock \cite{Eno2}.
 
-Let us start with the construction of $\CuG$. Denote by $A$ the
-underlying total $*$-algebra of the partial $*$-algebra
-$P(\mathscr{G})$ and define a map $|\cdot |_{u} \colon A \to [0,\infty]$ by
-\begin{align*} 
-  |a|_{u}&:= \sup \{ \|\pi(a)\| : \pi \text{ is a $*$-homomorphism from } A
-  \text{ into some $C^{*}$-algebra } B\}.
-\end{align*}
-\begin{Lem}
-  $|a|_{u}<\infty$ for each $a \in A$. 
-\end{Lem}
+The $*$-algebra $P(\mathscr{G})$ has an enveloping $C^{*}$-algebra $\CuG$:
+\begin{Prop}
+Let $\mathscr{G}$ be a partial compact quantum group with underlying
+$*$-algebra $P(\mathscr{G})$. Then
+  there exist a $C^{*}$-algebra $C^{u}_{0}(\mathscr{G})$ and a
+  $*$-homomorphism $\pi_{u} \colon P(\mathscr{G}) \to
+  C^{u}_{0}(\mathscr{G})$ such that every $*$-homomorphism of
+  $P(\mathscr{G})$ into some $C^{*}$-algebra factorizes through
+  $\pi_{u}$.
+\end{Prop}
 \begin{proof}
-  By Corollary \ref{cor:rep-pw}, we can write each $a\in A$ in the form
-  $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
-  sfd corepresentation of $P(\mathscr{G})$ on some sfd $I^{2}$-graded
-  Hilbert space $\mathcal{H}$ and
-  $\xi\in \Gru{\mathcal{H}}{k}{l}$, $\eta\in \Gru{\mathcal{H}}{m}{n}$.
-  Since $X$ is unitary,
+It suffices to show that for each $a \in A$,
+\begin{align*} 
+  |a|_{u}&:= \sup \{ \|\pi(a)\| : \pi \text{ is a $*$-homomorphism from } P(\mathscr{G})
+  \text{ into some $C^{*}$-algebra } B\}
+\end{align*}
+is finite because then $|\cdot |_{u}$ defines $C^{*}$-seminorm on
+$P(\mathscr{G})$ and we can take $C^{u}_{0}(G)$ to be the associated
+separated completion.
+
+
+By Corollary \cite[Proposition 3.31]{DCT1}, we can write each $a\in A$
+in the form \[a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),\]
+where $\mathscr{X}$ is a unitary representation of
+$\mathscr{G}$ on some sfd $I^{2}$-graded Hilbert space
+$\mathcal{H}$ and $\xi\in \Gru{H}{k}{l}$, $\eta\in
+\Gru{H}{m}{n}$.  By \cite[Lemma 3.12]{DCT1},
   \begin{align*}
     \sum_{p}(\Gr{X}{p}{l}{m}{n})^{*} \Gr{X}{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
-    \otimes \id_{\Gru{\mathcal{H}}{m}{n}}
+    \otimes \id_{\Gru{H}{m}{n}},
   \end{align*}
-  by \ref{}, where the sum is finite because $X$ is sfd. As
+where  the sum is  finite because $X$ is sfd. As
   $\pi(\lambda_{k}\rho_{m})\in \C$ is a projection, we can conclude
   \begin{align} \label{eq:corep-estimate}
     \sum_{p} \| (\pi \otimes \id)(\Gr{X}{p}{l}{m}{n})\|^{2} \leq 1
   \end{align}
-  and deduce $\|\pi(a)\| \leq \| \xi| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
+  and deduce $\|\pi(a)\| \leq \| \xi\| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
     \|\xi\|\|\eta\| $. 
 \end{proof}
-Clearly, $|\cdot|_{u}$ defines a $C^{*}$-semi-norm on
-$P(\mathscr{G})$, and the separated completion of $P(\mathscr{G})$
-with respect to this norm is a $C^{*}$-algebra. We denote this
-$C^{*}$-algebra by $\CuG$. By construction, every $*$-homorphism $\pi$
-of $A$ into some $C^{*}$-algebra $C$ factorises through $\CuG$. 
+The construction of the reduced $C^{*}$-algebra
+$C^{r}_{0}(\mathscr{G})$ will show that the $*$-homomorphism $\pi_{u}
+\colon P(\mathscr{G}) \to \CuG$ is injective.
 
-Later we shall see that the canonical $*$-homomorphism $\pi_{u} \colon A \to
-\CuG$ is injective.
+To lift the comultiplication from $P(\mathscr{G})$ to
+$C^{u}_{0}(\mathscr{G})$, we will use parts of the following result.
 
 
-The universal property of $\CuG$ implies, for example, that the modular automorphism
-group $\sigma$ and the scaling group $\tau$ for real parameters and
-the unitary antipode $R$ of $\mathscr{G}$ introduced after Corollary
-\ref{cor:rep-characters} lift to one-parameter groups
-$\tau^{u},\sigma^{u}$ and a $*$-anti-automorphism $R_{u}$ of $\CuG$,
-that is, $\tau^{u}_{t} \circ \pi_{u}= \pi_{u} \circ \tau_{t}$,
-$\sigma^{u}_{t} \circ \pi_{u} = \pi_{u} \circ \sigma_{t}$, $R_{u}
-\circ \pi_{u} = \pi_{u} \circ R$. Corollary \ref{cor:rep-characters}
-5.\ and A.1 in \cite{} [Takesaki:2] imply that elements in
-$\pi_{u}(A)$ are analytic for $\tau^{u}$ and $\sigma^{u}$; in
-particular, $\tau^{u}$ and $\sigma^{u}$ are strongly continuous.
-
-The comultiplication lifts as well.  The proof involves an argument
-that will be used later again.
- \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be a unitary rcfd representation of $\mathscr{G}$ on $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{\Hsp}{k}{l})$. Then the matrix $D^X = (d^X_{kl})$ defines a bounded operator on $l^2(I)$. 
+% The universal property of $\CuG$ implies that the modular automorphism
+% group $\sigma$ and the scaling group $\tau$ for real parameters and
+% the unitary antipode $R$ of $\mathscr{G}$ introduced after Corollary
+% \ref{cor:rep-characters} lift to one-parameter groups
+% $\tau^{u},\sigma^{u}$ and a $*$-anti-automorphism $R_{u}$ of $\CuG$,
+% that is, $\tau^{u}_{t} \circ \pi_{u}= \pi_{u} \circ \tau_{t}$,
+% $\sigma^{u}_{t} \circ \pi_{u} = \pi_{u} \circ \sigma_{t}$, $R_{u}
+% \circ \pi_{u} = \pi_{u} \circ R$. Corollary \ref{cor:rep-characters}
+% 5.\ and A.1 in \cite{} [Takesaki:2] imply that elements in
+% $\pi_{u}(A)$ are analytic for $\tau^{u}$ and $\sigma^{u}$; in
+% particular, $\tau^{u}$ and $\sigma^{u}$ are strongly continuous.
+ \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be a unitary
+   representation of $\mathscr{G}$ on an sfd $I$-graded Hilbert space $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
   \end{Lem}
   \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
     with left hyperobject support $\alpha$ and right hyperobject support
@@ -90,82 +94,81 @@ that will be used later again.
 \end{proof} 
 
 
-\begin{Lem}
-  There exists a unique $*$-homomorphism $\Delta^{u}\colon C^{u}_{0}(\mathscr{G})
-  \to M(C^{u}_{0}(\mathscr{G}) \otimes C^{u}_{0}(\mathscr{G}))$ such that   for all $a \in P(\mathscr{G})$,
+\begin{Prop}
+Let $\mathscr{G}$ be a partial compact quantum group with underlying
+$*$-algebra $P(\mathscr{G})$. Then  there exists a unique $*$-homomorphism $\Delta^{u}\colon
+  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \otimes
+  C^{u}_{0}(\mathscr{G}))$ such that 
   \begin{align*}
-    (\rho_{p} \otimes \lambda_{p})\Delta^{u}(a)(\rho_{q}\otimes \lambda_{q}) = \Delta_{pq}(a)
+    (\rho_{p} \otimes
+    \lambda_{p})\Delta^{u}(\pi_{u}(a))(\rho_{q}\otimes \lambda_{q}) =
+    (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))
   \end{align*}
-\end{Lem}
+  for all $a \in P(\mathscr{G})$ and $p,q\in I$.
+\end{Prop}
 \begin{proof}
   We need to show that for every $a \in P(\mathscr{G})$, the sum
-  $\sum_{p,q} \Delta_{pq}(a)$ converges in $M(C^{u}_{0}(\mathscr{G})
+  $\sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))$ converges in $M(C^{u}_{0}(\mathscr{G})
   \otimes C^{u}_{0}(\mathscr{G}))$ strictly.  It suffices to prove
   that the matrix of operators 
-\[\left((\pi \otimes
-    \pi)(\Delta_{pq}(a))\right)_{k,l}\] is bounded
- for some faithful $^*$-representation $\pi$ of
-  $C^{u}_{0}(\mathscr{G})$, and using the Schur test as above, it
+\[\left((\pi_{u} \otimes
+    \pi_{u})(\Delta_{pq}(a))\right)_{k,l}\] is bounded, and using the Schur test as above, it
   suffices to show that
   \begin{align} \label{eq:delta-estimate}
-    \sup_{p} \sum_{q} (\|(\pi \otimes \pi)(\Delta_{pq}(a))\| + \|(\pi \otimes \pi)(\Delta_{qp}(a))\|) < \infty.
+    \sup_{p} \sum_{q} (\|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| + \|(\pi_{u} \otimes \pi_{u})(\Delta_{qp}(a))\|) < \infty.
   \end{align}
   As in the proof above, we write
   $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
-  sfd corepresentation of $P(\mathscr{G})$ on some sfd $I^{2}$-graded
-  Hilbert space $\mathcal{H}$ and
-  $\xi\in \Gru{\mathcal{H}}{k}{l}$, $\eta\in \Gru{\mathcal{H}}{m}{n}$. Then
+ representation of $\mathscr{G}$  on some sfd $I^{2}$-graded
+  Hilbert space $\mathcal{H}$ with finite hyperobject support, and
+  $\xi\in \Gru{H}{k}{l}$, $\eta\in \Gru{H}{m}{n}$. Then
   \begin{align*}
     \Delta_{pq}(a) &= (\id \otimes \id \otimes \omega_{\xi,\eta})((\Delta_{pq} \otimes
     \id)(\Gr{X}{k}{l}{m}{n})) =
-    (\id \otimes \id \otimes \omega_{\xi,\eta})((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23})
+    (\id \otimes \id \otimes \omega_{\xi,\eta})((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23}),
   \end{align*}
-and hence, using \eqref{eq:corep-estimate}
+and by \eqref{eq:corep-estimate},
 \begin{align*}
-  \|(\pi \otimes \pi)(\Delta_{pq}(a))\| \leq \|\xi\|\|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{p}{q})\|
-  \|(\pi \otimes \id)(\Gr{X}{p}{q}{m}{n})\|  \leq \|\xi\|\|\eta\|.
+  \|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| \leq \|\xi\|\|\eta\| \|(\pi_{u} \otimes \id)(\Gr{X}{k}{l}{p}{q})\|
+  \|(\pi_{u} \otimes \id)(\Gr{X}{p}{q}{m}{n})\|  \leq \|\xi\|\|\eta\|.
 \end{align*}
 Now \eqref{eq:delta-estimate} follows from \eqref{eq:dim-estimate}.
 \end{proof}
 
 
 
-We now turn to the construction of the reduced $C^{*}$-algebra $\CrG$
-and the von Neumann algebra $\LGinf$. 
-Denote by $\LGtwo$ the completion of $A$ with respect to the norm
-associated to the inner product given by
+The reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra
+$\LGinf$ will be obtained from a GNS-construction for the invariant
+integral $\phi$ of $\mathscr{G}$. Recall that $\phi$ is positive by
+assumption and faithful by \cite[Lemma
+1.39]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
 \begin{align*}
-  \langle a|b\rangle :=\phi(a^{*}b) \quad \text{for all } a,b\in A,
+  \langle a|b\rangle :=\phi(a^{*}b),
 \end{align*}
-and by $\Lambda \colon A \to \LGtwo$ the natural embedding.  This
-product is definite because $\phi$ is faithful by \ref{LemFaith}, and
-it extends to the space $\LGtwo$ which thus becomes a Hilbert space.
-As such, $\LGtwo$ is the
-orthogonal direct sum of the subspaces
-$\Lambda(A(K)) \subseteq \LGtwo$, where $K\in M_{2}(I)$, because
-$\phi(A(K)^{*}A(L)) = 0$ if $K\neq L$ by \ref{}.  In particular, there
-exist  operators
-$\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in {\cal
-  B}(\LGtwo)$ for each $k\in I$ such that
+denote by $L^{2}(\mathscr{G})$ the associated completion and by
+$\Lambda \colon P(\mathscr{G}) \to \LGtwo$ the natural embedding.
+Then the Hilbert space $\LGtwo$ is the orthogonal direct sum of the
+subspaces $\Lambda(\Gr{P(\mathscr{G})}{k}{l}{m}{n})$. Hence, there exist
+operators $\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in
+{\cal B}(\LGtwo)$ such that
 \begin{align*}
   \lambda_{k}\Lambda(a)&= \Lambda(\lambda_{k} a), &
   \lambda^{\op}_{k}\Lambda(a) &= \Lambda(a\lambda_{k}), &
   \rho_{k}\Lambda(a) &= \Lambda(\rho_{k}a), &
   \rho_{k}^{\op}\Lambda(a) &= \Lambda(a\rho_{k})
 \end{align*}
-for all $a\in A$, and faithful, normal $*$-homomorphisms
+for all $k\in I$ and $a\in P(\mathscr{G})$, and faithful, normal $*$-homomorphisms
 \begin{align} \label{eq:vn-lambda-rho}
   \lambda,\rho \colon l^{\infty}(I) \to
   {\cal B}(\LGtwo)
 \end{align}
-that send the delta function at
-$k\in I$ to the operators $\lambda_{k}$ or $\rho_{k}$, respectively. 
-
- Define $\vnE,\overline{G} \in {\cal B}(\LGtwo \otimes
-\LGtwo)$ by
+that send the delta function at $k\in I$ to the operators
+$\lambda_{k}$ or $\rho_{k}$, respectively. Let
 \begin{align*}
-  \vnE &:=\sum_{k} \rho_{k} \otimes \lambda_{k}, & 
-  \overline{G} &:= \sum_{k} \rho_{k}^{\op} \otimes \rho_{k},
+  \vnE &:=\sum_{k} \rho_{k} \otimes \lambda_{k} \in \mathcal{B}(\LGtwo
+  \otimes \LGtwo), & \overline{G} &:=
+  \sum_{k} \rho_{k}^{\op} \otimes \rho_{k} \in \mathcal{B}(\LGtwo
+  \otimes \LGtwo),
 \end{align*}
 where the sums converge with respect to the strong operator
 topology.
@@ -191,18 +194,18 @@ invariant,
     & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \Lambda(\rho_{p}b) |
     \Lambda(a'\rho_{p}) \otimes \Lambda(b'\rho_{p})\rangle.
   \end{align*}
-  Now, the assertion follows from Proposition \ref{prop:riti}.
+  Now, the assertion follows from \cite[Proposition 1.30]{DCT1}.
 \end{proof}
 
 \begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact
-  quantum group with underlying total $*$-algebra $A$ and associated
-  Hilbert space $\LGtwo$. Then there exists a unique $*$-homomorphism
-  $\pi_{r}\colon A \to {\cal B}(\LGtwo)$ such that
-  $\pi_{r}(a)\Lambda(b)=\Lambda(ab)$ for all $a,b\in A$, and this
-  $\pi_{r}$ is faithful.
+  quantum group with underlying total $*$-algebra $P(\mathscr{G})$ and
+  associated Hilbert space $\LGtwo$. Then there exists a unique
+  $*$-homomorphism $\pi_{r}\colon P(\mathscr{G}) \to {\cal B}(\LGtwo)$
+  such that $\pi_{r}(a)\Lambda(b)=\Lambda(ab)$ for all $a,b\in
+  P(\mathscr{G})$, and $\pi_{r}$ is faithful.
 \end{Prop}
 \begin{proof} 
-  Let $a,c \in A$. Then the formula $x \mapsto \langle
+  Let $a,c \in P(\mathscr{G})$. Then the formula $x \mapsto \langle
 \Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
   $\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LGtwo)$ and a
   straightforward computation shows that
@@ -210,47 +213,41 @@ invariant,
     (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
     \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
   \end{align}
-  for all $b\in A$. Therefore, left multiplication by
-  $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on $\LGtwo$.
- Since $(A\otimes 1)\Delta(A) = (A\otimes
-  A)\Delta(1)$ by Proposition \ref{prop:riti} and $\phi$ is
+  for all $b\in P(\mathscr{G})$. Therefore, left multiplication by
+  $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on
+  $\LGtwo$. 
+ Since $(P(\mathscr{G})\otimes 1)\Delta(P(\mathscr{G})) = (P(\mathscr{G})\otimes
+  P(\mathscr{G}))\Delta(1)$ by  \cite[Proposition 1.30]{DCT1} and $\phi$ is
   normalized,  elements of the form $\phi(c^{*}a_{(1)})a_{(2)}$ span
-  $A$. 
+  $P(\mathscr{G})$. 
 \end{proof}
+Since $\pi_{r}$ factorizes through $\pi_{u}$, we can conclude:
 \begin{Cor}
   Let $\mathscr{G}$ be a partial compact quantum group with underlying
-  total algebra $A$. Then the
+  total algebra $P(\mathscr{G})$. Then the
   canonical $*$-homomorphism $\pi_{u} \colon A \to\CuG$ is injective.
 \end{Cor}
-\begin{proof}
-  The injective $*$-homomorphism $\pi_{r}$ factorises through
-  $\pi_{u}$.
-\end{proof}
-Given a partial compact quantum group $\mathscr{G}$, we call
-$(\LGtwo,\Lambda,\pi)$ the \emph{associated GNS-construction} and denote by
+
+We call $(\LGtwo,\Lambda,\pi)$ the \emph{GNS-construction associated
+  to $\mathscr{G}$}, denote by
 \begin{align}
   \CrG &\subseteq {\cal B}(\LGtwo) &&\text{and} & \LGinf &\subseteq {\cal B}(\LGtwo)
 \end{align}
-the $C^{*}$-algebra and the von Neumann algebra generated by $\pi_{r}(A)
-\subseteq \LGtwo$, respectively, and identify $M(\CrG)$ with a
-$C^{*}$-subalgebra of $\LGtwo$.  Since $\pi_{r}$ extends to a
-$*$-homomorphism on $\CuG$, we get a sequence of $*$-homomorphisms
+the $C^{*}$-algebra and the von Neumann algebra generated by the image
+of $\pi_{r}$, respectively, and identify $M(\CrG)$ with a
+$C^{*}$-subalgebra of $\LGtwo$.  We thus obtain a sequence
 \begin{align*}
-A \hookrightarrow \CuG \to 
-  \CrG \hookrightarrow M(\CrG) \hookrightarrow
-\LGinf \hookrightarrow {\cal B}(\LGtwo).
+P(\mathscr{G}) \hookrightarrow \CuG \to
+  \CrG\hookrightarrow
+\LGinf \hookrightarrow {\cal B}(\LGtwo)
 \end{align*}
+of $*$-algebras.
 Note that
  the $*$-homomorphisms $\lambda,\rho$ in
 \eqref{eq:vn-lambda-rho} send $l^{\infty}(I)$ to $M(\CrG)$, and that
 \begin{align*}
-  \vnE \in M(\CrG \otimes \CrG) \subseteq \LGinf \otimes \LGinf
-  \subseteq {\cal B}(\LGtwo \otimes \LGtwo),
+  \vnE \in M(\CrG \otimes \CrG) \subseteq \LGinf \otimes \LGinf.
 \end{align*}
-where $\otimes$ denotes the minimal tensor product
-of $C^{*}$-algebras, the tensor product of von Neumann algebras, and
-the tensor product of Hilbert spaces, respectively.
-
 Consider the map 
 \begin{align*}
   \vnDelta \colon \LGinf \to {\cal B}(\LGtwo \otimes \LGtwo), \ x
@@ -278,29 +275,30 @@ Consider the map
 \end{proof}
 
 
-Next, we lift the invariant functional $\phi$ of $\mathscr{G}$ to
-$\LGinf$ and define associated operator-valued weight
-$T_{\lambda},T_{\rho}$ from $\LGinf$ to $l^{\infty}(I)$. Since $\phi$ is normalized, each
-$\Lambda(\lambda_{k},\rho_{m})$ is a unit vector and the associated
-vector functional
+ We next lift the invariant functional $\phi$ of $\mathscr{G}$ to
+$\LGinf$ and define auxiliary operator-valued weights
+$T_{\lambda},T_{\rho}$.
+Since $\phi$
+is normalized,   each
+$\zeta_{k,m}:=\Lambda(\lambda_{k}\rho_{m})$ is a unit vector and
+defines a state
 \begin{align*}
-  \vnphic{k}{m}\colon \LGinf \to  \C, \quad x \mapsto \langle\Lambda(\lambda_{k}\rho_{m})|x\Lambda(\lambda_{k}\rho_{m})\rangle
+  \vnphic{k}{m} := \omega_{\zeta_{k,m},\zeta_{k,m}} \colon x \mapsto \langle \zeta_{k,m}|x\zeta_{k,m}\rangle.
 \end{align*}
-is a state.  Then the formulas
+ The formulas
 \begin{align} \label{eq:vn-weights}
   \vnphi(x) &:= \sum_{k,m} \vnphic{k}{m}(x), &
     T_{\lambda}(x)&:= \sum_{k,m}
 \vnphic{k}{m}(x)\lambda_{k}, & 
 T_{\rho}(x)&:=
-    \sum_{k,m} \vnphic{k}{m}(x)\rho_{m},
+    \sum_{k,m} \vnphic{k}{m}(x)\rho_{m}
 \end{align}
-where $x\in \LGinf_{+}$, define a a normal semi-finite weight $\vnphi$
+define  a normal semi-finite weight $\vnphi$
 on $\LGinf$ and normal semi-finite conditional expectations $T_{\lambda}$ and
 $T_{\rho}$ from $\LGinf$ to $\lambda(l^{\infty}(I))$ and
-$\rho(l^{\infty}(I))$, respectively. These maps are determined by
-their restrictions to $\pi_{r}(A)$:
+$\rho(l^{\infty}(I))$, respectively. 
 \begin{Lem} \label{lemma:vn-weights-unique} The normal weight $\vnphi$ and
-  the normal conditional expectations $T_{\lambda},T_{\rho}$ satisfy $\pi_{r}(A) \subseteq
+  the normal conditional expectations $T_{\lambda},T_{\rho}$ satisfy $\pi_{r}(P(\mathscr{G})) \subseteq
   \mathfrak{M}_{\vnphi} \cap \mathfrak{M}_{T} \cap \mathfrak{M}_{T'}$
   and
   \begin{align*}
@@ -308,41 +306,40 @@ their restrictions to $\pi_{r}(A)$:
     \sum_{k}\Lambda(\phi(\lambda_{k}a)\lambda_{k}b), &
     T_{\rho}(\pi_{r}(b))\Lambda(b) &= \sum_{m}\Lambda(\phi(\rho_{m}a)\rho_{m}b)
   \end{align*}
-  for all $a,b\in A$, and are uniquely determined by these equations. 
+  for all $a,b\in P(\mathscr{G})$, and are uniquely determined by these equations. 
 \end{Lem}
 \begin{proof}
-  The equations follow immediately from the definition and the
-  relation $\phi(a)=\sum_{k,m}
-  \phi(\lambda_{k}\rho_{m}a\lambda_{k}\rho_{m})$, see \ref{}. To prove
+  The equations follow immediately from the definition. To prove
   uniqueness, observe that the $p_{k,m}:=\pi_{r}(\lambda_{k}\rho_{m})$ are
   pairwise orthogonal projections in $\mathfrak{M}_{\vnphi}
   \cap \mathfrak{M}_{T_{\lambda}} \cap \mathfrak{M}_{T_{\rho}}$
-  summing up to $1$, whence $\vnphi$, $T_{\lambda}$ and $T_{\rho}$ are
+  summing up to $1$. Therefore, $\vnphi$, $T_{\lambda}$ and $T_{\rho}$ are
   the sums of the bounded linear maps that send an $x\in \LGinf_{+}$
   to $\vnphi(p_{k,m}xp_{l,n})$, $T_{\lambda}(p_{k,m}xp_{l,n})$, or
-  $T_{\rho}(p_{k,m}xp_{l,n})$, respectively, which are determined by
-  their restriction to $\pi_{r}(A)$.
+  $T_{\rho}(p_{k,m}xp_{l,n})$, respectively, and the latter are determined by
+  their restrictions to $\pi_{r}(P(\mathscr{G}))$.
 \end{proof}
 
-Invariance of $\phi$ implies invariance of $\vnphi$ as follows.
+Invariance of $\phi$ translates into the following relations:
+\fixme{Fixed section 1 till here}
 \begin{Prop} \label{prop:vn-invariance}
   Let $\mathscr{G}$ be a partial compact quantum group. Then for all
   $x\in \LGinf_{+}$, the
-  normal, semi-finite weight $\vnphi$ on $\LGinf$ satisfies
+  normal, semi-finite weight $\vnphi$ satisfies
   \begin{align*}
     (\id \otimes \vnphi)(\vnDelta(x)) &=  T_{\lambda}(x), &
     (\vnphi \otimes \id)(\vnDelta(x)) &= T_{\rho}(x).
   \end{align*}
 \end{Prop}
 \begin{proof}
-  Let  $a \in A$. Then 
+  Let  $a \in P(\mathscr{G})$. Then 
  \eqref{eq:integral} and the relation
   $\vnphic{k}{m}\circ \pi = \phic{k}{m}$ imply
   \begin{align*}
     (\id \otimes \vnphic{l}{m})(\vnDelta(\pi_{r}(a))) &= \sum_{k}
     \vnphic{k}{m}(\pi_{r}(a)) \lambda_{k}\rho_{l}.
   \end{align*}
-  Since each $\vnphic{k}{m}$ is a vector state and $\pi_{r}(A)$ is
+  Since each $\vnphic{k}{m}$ is a vector state and $\pi_{r}(P(\mathscr{G}))$ is
   weakly dense in $\LGinf$,  this equations
   remains true if we replace $\pi_{r}(a)$ by arbitrary $x\in
   \LGinf$. Summing over $l$ and $m$, we  obtain the first equation
@@ -351,51 +348,51 @@ Invariance of $\phi$ implies invariance of $\vnphi$ as follows.
 The next result gives a fairly complete description of the objects of
 Tomita-Takesaki theory associated to $\vnphi$.
 \begin{Lem} \label{lemma:vn-hilbert} The subspace
-  $\Lambda(A) \subseteq \LGtwo$ is a Hilbert algebra with respect to
+  $\Lambda(P(\mathscr{G})) \subseteq \LGtwo$ is a Hilbert algebra with respect to
   the operations $\Lambda(a)\Lambda(b)=\Lambda(ab)$ and
-  $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in A$, and a Tomita
+  $\Lambda(a)^{*}= \Lambda(a^{*})$ for all $a,b\in P(\mathscr{G})$, and a Tomita
   algebra with respect to the family of operators $\nabla_{z}$ given
-  by $\nabla_{z}\Lambda(a)=\Lambda(\sigma_{z}(a))$ for all $a\in A$,
+  by $\nabla_{z}\Lambda(a)=\Lambda(\sigma_{z}(a))$ for all $a\in P(\mathscr{G})$,
   $z\in \C$.  The associated left von Neumann
   algebra is $\LGinf$, the associated normal, semifinite, faithful
   weight is $\vnphi$, the modular operator  $\Delta_{\vnphi}$ is the
   closure of $\nabla_{-i}$,  the modular conjugation $J_{\vnphi}$ is
   given by $J_{\vnphi}\Lambda(a)=\Lambda(\sigma_{i/2}(a)^{*})$ for all
-  $a\in A$, and the modular automorphism group $\sigma^{\vnphi}$
+  $a\in P(\mathscr{G})$, and the modular automorphism group $\sigma^{\vnphi}$
   satisfies $\sigma^{\vnphi}_{t} \circ \pi_{r} = \pi_{r} \circ
   \sigma_{t}$ for all $t\in \R$.
 \end{Lem}
 \begin{proof}
-  We first show that $\Lambda(A)$ is a Hilbert algebra. Indeed, the
+  We first show that $\Lambda(P(\mathscr{G}))$ is a Hilbert algebra. Indeed, the
   map $\pi_{r}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
-  each $a \in A$ by Proposition \ref{prop:gns}, and the involution is
-  pre-closed because  for all $a,b \in A$,
+  each $a \in P(\mathscr{G})$ by Proposition \ref{prop:gns}, and the involution is
+  pre-closed because  for all $a,b \in P(\mathscr{G})$,
   \begin{align*}
     \langle \Lambda(a)|\Lambda(b^{*})\rangle = \phi(a^{*}b^{*}) =
     \phi(b^{*}\sigma(a^{*})) = \langle
     \Lambda(b)|\Lambda(\sigma(a^{*}))\rangle
   \end{align*}
 
-To see that $\Lambda(A)$ and $(\nabla_{z})_{z}$ form a Tomita
+To see that $\Lambda(P(\mathscr{G}))$ and $(\nabla_{z})_{z}$ form a Tomita
   algebra, we have to verify that the map
   $z\mapsto
   \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle =
-  \phi(a^{*}\sigma_{z}(b))$ is entire for all $a,b\in A$ and that
+  \phi(a^{*}\sigma_{z}(b))$ is entire for all $a,b\in P(\mathscr{G})$ and that
   \begin{align*}
     \nabla_{z}\Lambda(a)^{*} &= \nabla_{\overline{z}}\Lambda(a)^{*}, &
     \langle \Lambda(a)|\Lambda(b)\rangle &= \langle
     \nabla_{-\overline{z}}\Lambda(a) |\Lambda(b)\rangle, & \langle
     \Lambda(a)^{*}|\Lambda(b)^{*}\rangle = \langle \Lambda(b)|\nabla_{-i}\Lambda(a)\rangle
   \end{align*}
-  for all $a,b\in A$, $z\in \C$. But all of this follows immediately
+  for all $a,b\in P(\mathscr{G})$, $z\in \C$. But all of this follows immediately
   from Corollary \ref{cor:rep-characters}.
 
 
-  The left von Neumann algebra of $\Lambda(A)$ is
-  $\pi_{r}(A)''=\LGinf$ and the associated weight $\tilde\phi$
+  The left von Neumann algebra of $\Lambda(P(\mathscr{G}))$ is
+  $\pi_{r}(P(\mathscr{G}))''=\LGinf$ and the associated weight $\tilde\phi$
   satisfies $\tilde
   \phi(\pi_{r}(a^{*}a))=\langle\Lambda(a)|\Lambda(a)\rangle =
-  \phi(a^{*}a)$ for all $a\in A$. By Lemma
+  \phi(a^{*}a)$ for all $a\in P(\mathscr{G})$. By Lemma
   \ref{lemma:vn-weights-unique}, it coincides with $\vnphi$.  By
   \cite{} [Takesaki:2, Thm. VI.2.2 and its proof], the modular
   operator $\Delta_{\vnphi}$ is the closure of $\nabla_{-i}$ and the
@@ -409,10 +406,10 @@ To see that $\Lambda(A)$ and $(\nabla_{z})_{z}$ form a Tomita
 \begin{Rem}
   Without using the theory of Hilbert algebras, one could also check
   directly that the formula for $J_{\vnphi}$ defines an anti-linear
-  isometry, that $J_{\vnphi}\pi_{r}(A)J_{\vnphi}$ commutes with $\pi_{r}(A)$ and hence
+  isometry, that $J_{\vnphi}\pi_{r}(P(\mathscr{G}))J_{\vnphi}$ commutes with $\pi_{r}(P(\mathscr{G}))$ and hence
   with $\LGinf$, and that the family
   $(\Lambda(\lambda_{k}\rho_{m}))_{k,m}$ is cyclic for
-  $J\pi_{r}(A)J$. Then this family is separating for $\LGinf$ and
+  $J\pi_{r}(P(\mathscr{G}))J$. Then this family is separating for $\LGinf$ and
   $\vnphi$ is faithful.
 \end{Rem}
 
