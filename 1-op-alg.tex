@@ -16,53 +16,118 @@ groupoid in the sense of Lesieur \cite{Les1} and Enock \cite{Eno2}.
 Let us start with the construction of $\CuG$. Denote by $A$ the
 underlying total $*$-algebra of the partial $*$-algebra
 $P(\mathscr{G})$ and define a map $|\cdot |_{u} \colon A \to [0,\infty]$ by
-\begin{align*}
-  |a|_{u}&:= \sup \{ \|\pi(a)\| : \pi \text{ is a $*$-homomorphism
-    from } A \text{ into some $C^{*}$-algebra } B\}.
+\begin{align*} 
+  |a|_{u}&:= \sup \{ \|\pi(a)\| : \pi \text{ is a $*$-homomorphism from } A
+  \text{ into some $C^{*}$-algebra } B\}.
 \end{align*}
 \begin{Lem}
   $|a|_{u}<\infty$ for each $a \in A$. 
 \end{Lem}
 \begin{proof}
-  By Corollary \ref{cor:rep-pw}, we can write each $a\in A$ in the
-  form $a=(\id \otimes \omega_{\xi,\eta})(X(K))$, where $X$ is a
-  unitary sfd corepresentation of $P(\mathscr{G})$ on some sfd
-  $I^{2}$-graded Hilbert space $\mathcal{H}$ and
-  $K=\pmat{k}{l}{m}{n}\in M_{2}(I)$, $\xi\in \Gru{\mathcal{H}}{m}{n}$,
-  $\eta\in \Gru{\mathcal{H}}{k}{l}$.  Since $X$ is unitary,
+  By Corollary \ref{cor:rep-pw}, we can write each $a\in A$ in the form
+  $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
+  sfd corepresentation of $P(\mathscr{G})$ on some sfd $I^{2}$-graded
+  Hilbert space $\mathcal{H}$ and
+  $\xi\in \Gru{\mathcal{H}}{k}{l}$, $\eta\in \Gru{\mathcal{H}}{m}{n}$.
+  Since $X$ is unitary,
   \begin{align*}
-    \sum_{p}X\pmat{p}{l}{m}{n}^{*} X\pmat{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
+    \sum_{p}(\Gr{X}{p}{l}{m}{n})^{*} \Gr{X}{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
     \otimes \id_{\Gru{\mathcal{H}}{m}{n}}
   \end{align*}
   by \ref{}, where the sum is finite because $X$ is sfd. As
   $\pi(\lambda_{k}\rho_{m})\in \C$ is a projection, we can conclude
-  \begin{align*}
-    \|\pi(a)\| &\leq \| \xi| \|\eta\| \|(\pi \otimes \id)(X(K))\| \\
-    &=\|\xi\|\|\eta\| \|(\pi \otimes \id)(X(K)^{*}X(K))\| \leq
-    \|\xi\|\|\eta\| \|\pi(\lambda_{l}\rho_{n}) \otimes
-    \id_{\Gru{\mathcal{H}}{m} {n}}\| = \|\xi\|\|\eta\|.  
-  \end{align*}
+  \begin{align} \label{eq:corep-estimate}
+    \sum_{p} \| (\pi \otimes \id)(\Gr{X}{p}{l}{m}{n})\|^{2} \leq 1
+  \end{align}
+  and deduce $\|\pi(a)\| \leq \| \xi| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
+    \|\xi\|\|\eta\| $. 
 \end{proof}
 Clearly, $|\cdot|_{u}$ defines a $C^{*}$-semi-norm on
 $P(\mathscr{G})$, and the separated completion of $P(\mathscr{G})$
 with respect to this norm is a $C^{*}$-algebra. We denote this
 $C^{*}$-algebra by $\CuG$. By construction, every $*$-homorphism $\pi$
 of $A$ into some $C^{*}$-algebra $C$ factorises through $\CuG$. 
-We shall see that the canonical $*$-homomorphism $\pi_{u} \colon A \to
+
+Later we shall see that the canonical $*$-homomorphism $\pi_{u} \colon A \to
 \CuG$ is injective.
-\begin{Rem}
-  The universal property of $\CuG$ implies that the modular
-  automorphism group $\sigma$ and the scaling group $\tau$ for real
-  parameters and the unitary antipode $R$ of $\mathscr{G}$ introduced
-  after Corollary \ref{cor:rep-characters} lift to one-parameter
-  groups $\tau^{u},\sigma^{u}$ and a $*$-anti-automorphism $R_{u}$ of
-  $\CuG$, that is, $\tau^{u}_{t} \circ \pi_{u}= \pi_{u} \circ \tau_{t}$,
-  $\sigma^{u}_{t} \circ \pi_{u} = \pi_{u} \circ \sigma_{t}$, $R_{u}
-  \circ \pi_{u} = \pi_{u} \circ R$. Corollary \ref{cor:rep-characters}
-  5.\ and A.1 in \cite{} [Takesaki:2]  imply that elements in
-  $\pi_{u}(A)$ are analytic for $\tau^{u}$ and $\sigma^{u}$; in
-  particular, $\tau^{u}$ and $\sigma^{u}$ are strongly continuous.  
-\end{Rem}
+
+
+The universal property of $\CuG$ implies, for example, that the modular automorphism
+group $\sigma$ and the scaling group $\tau$ for real parameters and
+the unitary antipode $R$ of $\mathscr{G}$ introduced after Corollary
+\ref{cor:rep-characters} lift to one-parameter groups
+$\tau^{u},\sigma^{u}$ and a $*$-anti-automorphism $R_{u}$ of $\CuG$,
+that is, $\tau^{u}_{t} \circ \pi_{u}= \pi_{u} \circ \tau_{t}$,
+$\sigma^{u}_{t} \circ \pi_{u} = \pi_{u} \circ \sigma_{t}$, $R_{u}
+\circ \pi_{u} = \pi_{u} \circ R$. Corollary \ref{cor:rep-characters}
+5.\ and A.1 in \cite{} [Takesaki:2] imply that elements in
+$\pi_{u}(A)$ are analytic for $\tau^{u}$ and $\sigma^{u}$; in
+particular, $\tau^{u}$ and $\sigma^{u}$ are strongly continuous.
+
+The comultiplication lifts as well.  The proof involves an argument
+that will be used later again.
+ \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be a unitary rcfd representation of $\mathscr{G}$ on $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{\Hsp}{k}{l})$. Then the matrix $D^X = (d^X_{kl})$ defines a bounded operator on $l^2(I)$. 
+  \end{Lem}
+  \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
+    with left hyperobject support $\alpha$ and right hyperobject support
+    $\beta$. Then we can find (a priori not necessarily bounded)
+    morphisms \[R: \C^{(I)}\rightarrow \underset{k,l,m}{\oplus} \GrDA{H}{k}{m}\otimes
+    \GrDA{H}{m}{l},\qquad \bar{R}: \C^{(I)} \rightarrow \underset{k,l,m}{\oplus}
+    \GrDA{\bar{H}}{k}{m}\otimes \GrDA{\bar{H}}{m}{l},\] establishing a
+    duality between $\underset{k,l}{\oplus} \GrDA{H}{k}{l}$ and
+    $\underset{k,l}{\oplus}\GrDA{\bar{H}}{k}{l}$ inside the category of
+    rcfd pre-Hilbert spaces. However, as $R^*R$ is a scalar multiple
+    of the projection onto $\C^{(I_{\alpha})}$ by irreducibility, and
+    similarly for $\bar{R}$, it follows that $R$ and $\bar{R}$ can be
+    completed to bounded operators between the respective Hilbert
+    space completions. It then follows from \cite[Lemma A.3.2]{DCY1}
+    that 
+    \begin{align} \label{eq:dim-estimate}
+  \sup_r (\sum_s (d_{rs}^X+d_{sr}^X)) < \infty.    
+    \end{align}
+ By the Schur test,
+    this implies that $D^X$ is bounded.
+\end{proof} 
+
+
+\begin{Lem}
+  There exists a unique $*$-homomorphism $\Delta^{u}\colon C^{u}_{0}(\mathscr{G})
+  \to M(C^{u}_{0}(\mathscr{G}) \otimes C^{u}_{0}(\mathscr{G}))$ such that   for all $a \in P(\mathscr{G})$,
+  \begin{align*}
+    (\rho_{p} \otimes \lambda_{p})\Delta^{u}(a)(\rho_{q}\otimes \lambda_{q}) = \Delta_{pq}(a)
+  \end{align*}
+\end{Lem}
+\begin{proof}
+  We need to show that for every $a \in P(\mathscr{G})$, the sum
+  $\sum_{p,q} \Delta_{pq}(a)$ converges in $M(C^{u}_{0}(\mathscr{G})
+  \otimes C^{u}_{0}(\mathscr{G}))$ strictly.  It suffices to prove
+  that the matrix of operators 
+\[\left((\pi \otimes
+    \pi)(\Delta_{pq}(a))\right)_{k,l}\] is bounded
+ for some faithful $^*$-representation $\pi$ of
+  $C^{u}_{0}(\mathscr{G})$, and using the Schur test as above, it
+  suffices to show that
+  \begin{align} \label{eq:delta-estimate}
+    \sup_{p} \sum_{q} (\|(\pi \otimes \pi)(\Delta_{pq}(a))\| + \|(\pi \otimes \pi)(\Delta_{qp}(a))\|) < \infty.
+  \end{align}
+  As in the proof above, we write
+  $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
+  sfd corepresentation of $P(\mathscr{G})$ on some sfd $I^{2}$-graded
+  Hilbert space $\mathcal{H}$ and
+  $\xi\in \Gru{\mathcal{H}}{k}{l}$, $\eta\in \Gru{\mathcal{H}}{m}{n}$. Then
+  \begin{align*}
+    \Delta_{pq}(a) &= (\id \otimes \id \otimes \omega_{\xi,\eta})((\Delta_{pq} \otimes
+    \id)(\Gr{X}{k}{l}{m}{n})) =
+    (\id \otimes \id \otimes \omega_{\xi,\eta})((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23})
+  \end{align*}
+and hence, using \eqref{eq:corep-estimate}
+\begin{align*}
+  \|(\pi \otimes \pi)(\Delta_{pq}(a))\| \leq \|\xi\|\|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{p}{q})\|
+  \|(\pi \otimes \id)(\Gr{X}{p}{q}{m}{n})\|  \leq \|\xi\|\|\eta\|.
+\end{align*}
+Now \eqref{eq:delta-estimate} follows from \eqref{eq:dim-estimate}.
+\end{proof}
+
 
 
 We now turn to the construction of the reduced $C^{*}$-algebra $\CrG$
@@ -543,5 +608,5 @@ from \cite{} and Lemma \ref{lemma:vn-r-characterisation}.
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "dyn-suq-main"
+%%% TeX-master: "dynamical-SUq-file"
 %%% End: 
