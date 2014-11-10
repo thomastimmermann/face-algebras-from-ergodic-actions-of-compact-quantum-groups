@@ -278,22 +278,22 @@ Note that
 Denote by $\nu$ the weight on $l^{\infty}(I)$ given by
 integration with respect to the counting measure on $I$. This weight is
 normal, faithful, and semi-finite,  briefly written n.s.f.\
-\begin{Prop} \label{prop:vn-phi}
-  Let $\mathscr{G}$ be a partial compact quantum group with underlying
- $*$-algebra $P(\mathscr{G})$, invariant integral $\phi$ and
- GNS-construction $(\LGtwo,\Lambda,\pi_{r})$. Then
- there exist    
- \begin{itemize}
- \item a unique n.s.f.\ weight $\vnphi$ on
-  $\LGinf$ such that $\pi_{r}(P(\mathscr{G})) \subseteq
-  \mathfrak{M}_{\vnphi}$ and $\vnphi \circ \pi_{r} = \phi$,
-\item unique n.s.f.\ conditional expectations
-  $T_{\lambda}$ and $T_{\rho}$ from $\LGinf$ to $\lambda(l^{\infty}(I))$ and
-  $\rho(l^{\infty}(I))$, respectively, such that $\nu \circ
-  \lambda^{-1} \circ T_{\lambda}$ and $ \nu \circ \rho^{-1} \circ
-  T_{\rho}$ equal $\vnphi$.
- \end{itemize}
-We have  $(\id \otimes \vnphi)(\vnDelta(x)) =  T_{\lambda}(x)$ and $
+\begin{Prop} \label{prop:vn-phi} Let $\mathscr{G}$ be a partial
+  compact quantum group with underlying $*$-algebra $P(\mathscr{G})$,
+  invariant integral $\phi$ and GNS-construction
+  $(\LGtwo,\Lambda,\pi_{r})$. Then there exist a unique normal,
+  semi-finite weight $\vnphi$ on $\LGinf$ and unique normal, semi-finite
+  conditional expectations $T_{\lambda}$ and $T_{\rho}$ such that
+  $\pi_{r}(P(\mathscr{G})) \subseteq
+  \mathfrak{M}_{\vnphi} \cap   \mathfrak{M}_{T_{\lambda}} \cap
+  \mathfrak{M}_{T_{\rho}}$ and 
+  \begin{align*}
+\vnphi \circ \pi_{r} &= \phi,&
+\nu \circ
+  \lambda^{-1} \circ T_{\lambda} \circ \pi_{r}   &= \phi, &  \nu \circ \rho^{-1} \circ
+  T_{\rho} \circ\pi_{r} &= \phi.
+  \end{align*}
+Furthermore,  $(\id \otimes \vnphi)(\vnDelta(x)) =  T_{\lambda}(x)$ and $
     (\vnphi \otimes \id)(\vnDelta(x)) = T_{\rho}(x)$ 
  for all
   $x\in \LGinf_{+}$.
@@ -326,32 +326,6 @@ for all $x\in \LGinf_{+}$  are normal, semi-finite and satisfy $\nu
 \circ \lambda^{-1} \circ T_{\lambda} = \vnphi = \nu \circ \rho^{-1}
 \circ T_{\rho}$.
 
-To  show that $\vnphi$ is faithful, we
-use the family of functionals $(f_{z})_{z \in \C}$ on $P(\mathscr{G})$
-introduced in \cite[Theorem 3.49]{DCT1}, and define 
-$\sigma_{z} \colon P(\mathscr{G}) \to P(\mathscr{G})$
-by
-\begin{align*}
-\sigma_{z}(a) &= (f_{iz} \otimes \id \otimes f_{iz})((\Delta_{kl}
-\otimes \id)\Delta_{mn}(a)) \quad \text{for } a\in \Gr{A}{k}{l}{m}{n}.
-\end{align*}
-Then \cite[Theorem 3.49]{DCT1} implies that
-\begin{align} \label{eq:alg-mod-aut}
- \sigma_{z}(\sigma_{z'}(a)) &= \sigma_{z+z'}(a), &
- \sigma_{z}(a^{*}) &= \sigma_{\overline{z}}(a)^{*}, &
-\phi(\sigma_{z}(a)) &= \phi(a), & \phi(ab) &= \phi(b\sigma_{-i}(b))
-\end{align}
-for all $a,b\in P(\mathscr{G})$ and $z,z'\in \C$. Consequently, the conjugate-linear
-  map $J$ on $\Lambda(P(\mathscr{G}))$ given by $\Lambda(a) \mapsto
-  \Lambda(\sigma_{i/2}(a)^{*})$ extends to an anti-isometry on
-  $\LGtwo$.  One easily verifies that $J\pi_{r}(a)J$ commutes with
-  $\pi_{r}(b)$ for all $a,b\in P(\mathscr{G})$  and that the vectors
-  $J\pi_{r}(a)J \Lambda(\UnitC{k}{l})$, where $a\in P(\mathscr{G})$
-  and $k,l\in I$, span $\Lambda(P(\mathscr{G}))$. Therefore, the
-  family $(\Lambda(\UnitC{k}{l}))_{k,l}$ is cyclic for $\LGinf'$ and
- separating for $\LGinf$. 
-
-
 We finally check the invariance equations.  Let $a \in
 P(\mathscr{G})$.  Then the relation $\vnphic{k}{m}\circ \pi_{r} = \phic{k}{m}$
 and left invariance of $\phi$ imply
@@ -367,47 +341,78 @@ and left invariance of $\phi$ imply
   $(\vnphi \otimes \id) \circ \vnDelta=T_{\rho}$.
 \end{proof}
 
-\begin{Rem}
-  \label{remark:vn-hilbert} The subspace $\Lambda(P(\mathscr{G}))
-  \subseteq \LGtwo$ is a Hilbert algebra with respect to the
-  operations $\Lambda(a)\Lambda(b)=\Lambda(ab)$ and $\Lambda(a)^{*}=
-  \Lambda(a^{*})$ for all $a,b\in P(\mathscr{G})$, and a Tomita
-  algebra with respect to the family of operators $\nabla_{z}$ given
-  by $\nabla_{z}\Lambda(a)=\Lambda(\sigma_{z}(a))$ for all $a\in
-  P(\mathscr{G})$, $z\in \C$. Indeed, the map $\pi_{r}(a)\colon
-  \Lambda(b) \to \Lambda(ab)$ is bounded for each $a \in
-  P(\mathscr{G})$ by Proposition \ref{prop:gns}, the involution is
-  pre-closed because for all $a,b \in P(\mathscr{G})$,
+We next use the family of functionals $(f_{z})_{z \in \C}$ on
+$P(\mathscr{G})$ introduced in \cite[Theorem 3.49]{DCT1} to show that
+$\vnphi$ is faithful and to describe the associated objects of
+Tomita-Takesaki theory. This way, we  also obtain a second construction of
+$\vnphi$. 
+
+Define $\sigma_{z} \colon P(\mathscr{G}) \to P(\mathscr{G})$
+by
+\begin{align*}
+\sigma_{z}(a) &= (f_{iz} \otimes \id \otimes f_{iz})((\Delta_{kl}
+\otimes \id)\Delta_{mn}(a)) \quad \text{for } a\in \Gr{A}{k}{l}{m}{n}.
+\end{align*}
+Then \cite[Theorem 3.49]{DCT1} implies that
+\begin{align} \label{eq:alg-mod-aut}
+ \sigma_{z}(\sigma_{z'}(a)) &= \sigma_{z+z'}(a), &
+ \sigma_{z}(a^{*}) &= \sigma_{\overline{z}}(a)^{*}, &
+\phi(\sigma_{z}(a)) &= \phi(a), & \phi(ab) &= \phi(b\sigma_{-i}(b))
+\end{align}
+for all $a,b\in P(\mathscr{G})$ and $z,z'\in \C$. 
+\begin{Prop} \label{prop:tomita}
+  Let $\mathscr{G}$ be a partial compact quantum group with underlying
+  $*$-algebra $P(\mathscr{G})$ and associated GNS-construction
+  $(\LGtwo,\Lambda,\pi_{r})$. Then 
+  $\Lambda(P(\mathscr{G}))$ is a Tomita algebra with
+  respect to the operations and the family of operators given by
+  \begin{align*}
+    \Lambda(a)\Lambda(b)&=\Lambda(ab), & \Lambda(a)^{*}&=
+  \Lambda(a^{*}), &
+\nabla_{z}\Lambda(a)&=\Lambda(\sigma_{z}(a))
+  \end{align*}
+  for all $a,b\in P(\mathscr{G})$ and $z\in \C$.  The associated left
+  von Neumann algebra and its n.s.f.\ weight are $\LGinf$ and
+  $\vnphi$, respectively, the modular operator $\Delta_{\vnphi}$ is
+  the closure of $\nabla_{-i}$, and the   modular automorphism group $\sigma^{\vnphi}$
+  and modular conjugation $J_{\vnphi}$ are given by
+  \begin{align*}
+    \sigma^{\vnphi}_{t} \circ \pi_{r} &= \pi_{r} \circ \sigma_{t}
+    \text{ for all } t\in \R, & J_{\vnphi}
+    \Lambda(a)&=\Lambda(\sigma_{i/2}(a)^{*}) \text{ for all } a\in
+    P(\mathscr{G}).
+  \end{align*}
+\end{Prop}
+\begin{proof}
+The map $\pi_{r}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
+  each $a \in P(\mathscr{G})$ by Proposition \ref{prop:gns}, and the
+  involution is pre-closed because for all $a,b \in P(\mathscr{G})$,
   \begin{align*}
     \langle \Lambda(a)|\Lambda(b^{*})\rangle = \phi(a^{*}b^{*}) =
     \phi(b^{*}\sigma_{-i}(a^{*})) = \langle
-    \Lambda(b)|\Lambda(\sigma_{-i}(a^{*}))\rangle
+    \Lambda(b)|\Lambda(\sigma_{-i}(a^{*}))\rangle.
   \end{align*}
-  the map $z\mapsto \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle =
-  \phi(a^{*}\sigma_{z}(b))$ is entire for all $a,b\in P(\mathscr{G})$
-  and 
-  \begin{align*}
-    \nabla_{z}\Lambda(a)^{*} &= \nabla_{\overline{z}}\Lambda(a)^{*}, &
-    \langle \Lambda(a)|\Lambda(b)\rangle &= \langle
-    \nabla_{-\overline{z}}\Lambda(a) |\Lambda(b)\rangle, & \langle
+  Therefore, $\Lambda(P(\mathscr{G}))$ is a left Hilbert algebra. It
+  is a Tomita algebra because the
+  map $z\mapsto \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle =
+  \phi(a^{*}\sigma_{z}(b))$ is entire for all $a,b\in P(\mathscr{G})$  by
+ \cite[Theorem 3.49]{DCT1}
+  and
+  \begin{gather*}
+    \nabla_{z}\Lambda(a)^{*} = \nabla_{\overline{z}}\Lambda(a)^{*}, \qquad
+    \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle = \langle
+    \nabla_{-\overline{z}}\Lambda(a) |\Lambda(b)\rangle, \\ \langle
     \Lambda(a)^{*}|\Lambda(b)^{*}\rangle = \langle \Lambda(b)|\nabla_{-i}\Lambda(a)\rangle
-  \end{align*}
-  for all $a,b\in P(\mathscr{G})$, $z\in \C$ by \eqref{eq:alg-mod-aut} and 
- \cite[Theorem 3.49]{DCT1}.
+  \end{gather*}
+  for all $a,b\in P(\mathscr{G})$ and $z\in \C$ and  \eqref{eq:alg-mod-aut} . 
 
- The left von Neumann algebra of the Tomita algebra
- $\Lambda(P(\mathscr{G}))$ is $\pi_{r}(P(\mathscr{G}))''=\LGinf$, the
+ The associated left von Neumann algebra is $\pi_{r}(P(\mathscr{G}))''=\LGinf$, the
  associated n.s.f.\ weight $\tilde\phi$ coincides with $\vnphi$ because
  $\tilde \phi(\pi_{r}(a^{*}a))=\langle\Lambda(a)|\Lambda(a)\rangle =
- \phi(a^{*}a)$ for all $a\in P(\mathscr{G})$,  the modular
- operator $\Delta_{\vnphi}$ is the closure of $\nabla_{-i}$, the
- modular conjugation $J_{\vnphi}$ is given by
- $J_{\vnphi}\Lambda(a)=\Lambda(\sigma_{i/2}(a)^{*})$ for all $a\in
- P(\mathscr{G})$, and the modular automorphism group $\sigma^{\vnphi}$
- satisfies $\sigma^{\vnphi}_{t} \circ \pi_{r} = \pi_{r} \circ
- \sigma_{t}$ for all $t\in \R$; see
+ \phi(a^{*}a)$ for all $a\in P(\mathscr{G})$,  and the remaining
+ assertions follow  from
   \cite[Theorem VI.2.2 and its proof]{Taksak2}.
-\end{Rem}
+\end{proof}
 
 
 The operator-algebraic structures constructed so far fit into the
@@ -447,25 +452,22 @@ normal, faithful $*$-homomorphism
 \begin{Theorem}
   Let $\mathscr{G}$ be an $I$-partial compact quantum group with
   associated von Neumann algebra $\LGinf$.  Then
-  $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta)$ is a Hopf-von
-  Neumann bimodule in the sense of  \cite{Val1}, and
   $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta,
   T_{\lambda},T_{\rho},\nu)$ is a measured quantum groupoid in the
   sense of \cite{Eno2}.
 \end{Theorem}
 \begin{proof}
-  To prove the first assertion, we need to show that
+We first show that  $(l^{\infty}(I),\LGinf,
+\lambda,\rho,\tilde\Delta)$ is  a Hopf-von
+  Neumann bimodule in the sense of  \cite{Val1}, that is, 
   \begin{align*}
-  \tilde\Delta(\lambda(x)) &= \lambda(x) \otimesrl 1 &&\text{and} &
-  \tilde\Delta(\rho(x)) &= 1 \otimesrl \rho(x)
+  \tilde\Delta(\lambda(x)) &= \lambda(x) \otimesrl 1, &
+  \tilde\Delta(\rho(x)) &= 1 \otimesrl \rho(x), &
+  (\tilde\Delta \astrl \id)\circ \tilde\Delta &= (\id \astrl
+    \tilde\Delta) \circ \tilde\Delta,
 \end{align*}
- for all $x\in l^{\infty}(I)$,
-and that
-\begin{align*}
-  (\tilde\Delta \astrl \id)\circ \tilde\Delta = (\id \astrl
-    \tilde\Delta) \circ \tilde\Delta.
-\end{align*}
-The first equations follow immediately from the relation
+where $x\in l^{\infty}(I)$.
+The first two equations follow immediately from the relation
 $\Delta(\lambda_{k}\rho_{m})=\lambda_{k} \otimes \rho_{m}$. To verify
 the third equation, we identify
 \begin{align*}
@@ -478,18 +480,18 @@ compositions  become corestrictions of the maps $(\vnDelta \otimes
 respectively, which coincide on $\pi_{r}(P(\mathscr{G}))$ by
 co-associativity of $\Delta$. 
 
-To prove that we obtain a measured quantum groupoid, we first need to
+Next, we need to
 show that the modular automorphism groups of the weights $\nu \circ
 \lambda^{-1} \circ T_{\lambda}$ and $\nu \circ \rho^{-1} \circ
 T_{\rho}$ commute, which is trivially true because the two
-compositions coincide with $\vnphi$. Next, we need to show that
+compositions coincide with $\vnphi$. Finally,
 $T_{\lambda}$ is left-invariant in the sense that
   \begin{align*}
    (\id \underset{\nu}{_{\rho}\ast_{\lambda}} \vnphi)(\tilde\Delta(x)) = T_{\lambda}(x) 
   \end{align*}
-  for all $x\in \LGinf_{+}$. But it is easy to see that the left hand
-  side coincides with $(\id \ast \vnphi)(\vnDelta(x))$ so that the
-  equation above follows from Proposition
+  for all $x\in \LGinf_{+}$, because the left hand
+  side coincides with $(\id \ast \vnphi)(\vnDelta(x))$, whence the
+  equation follows from Proposition
   \ref{prop:vn-phi}. Likewise $T_{\rho}$ is right-invariant in
   the appropriate sense. 
 \end{proof}
@@ -505,12 +507,16 @@ P(\mathscr{G})$ by
 \end{align*}
 Then \cite[Theorem 3.49]{DCT1} implies that $\tau_{z}$ is an algebra
 homomorphism and
-\begin{align} \label{eq:alg-scale}
-  \tau_{z} \circ \tau_{z'} &= \tau_{z+z'}, &
-  \tau_{z}\circ \ast &=  \ast\circ \tau_{\overline{z}}, &
-  S^{2} &= \tau_{i}, & S \circ \tau_{z} &= \tau_{z} \circ S
-\end{align}
-for all $z,z'\in \C$. Moreover, $R:=S\circ
+\begin{gather} \label{eq:alg-scale}
+  \begin{aligned}
+    \tau_{z} \circ \tau_{z'} &= \tau_{z+z'}, & \tau_{z}\circ \ast &=
+    \ast\circ \tau_{\overline{z}}, & S^{2} &= \tau_{i}, & S \circ
+    \tau_{z} &= \tau_{z} \circ S,
+  \end{aligned}
+ \\  \label{eq:alg-mod-aut-delta} (\tau_{z} \otimes \sigma_{z})
+    \circ \Delta_{pq} = \Delta_{pq} \circ \sigma_{z}
+  \end{gather}
+for all $z\in \C$. Moreover, $R:=S\circ
 \tau_{i/2}$ is a $*$-anti-automorphism of $P(\mathscr{G})$.  The
 one-parameter group $\tau=(\tau_{t})_{t\in \R}$ and $R$ lift to
 $C^{u}_{0}(\mathscr{G})$ by the universal property of
@@ -518,17 +524,14 @@ $C^{u}_{0}(\mathscr{G})$, and to the reduced level as well:
 \begin{Prop}
   Let $\mathscr{G}$ be an $I$-partial compact quantum group with
   associated von Neumann algebra $\LGinf$. Then there exist
-  \begin{itemize}
-  \item a unique strongly continuous one-parameter group $\vntau$ on
-    $\LGinf$ such that $\vntau_{t} \circ \pi_{r} = \pi_{r} \circ
-    \theta_{-it,it}$ for all $t\in \R$, and
-  \item a unique $*$-anti-automorphism $\vnR$ of $\LGinf$ such that
-    $\vnR \circ \pi_{r} = \pi_{r} \circ R$.
-  \end{itemize}
-These
-  are the scaling group and the unitary antipode of the measured
-  quantum groupoid    $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta,
-  T_{\lambda},T_{\rho},\nu)$, respectively.
+a unique strongly continuous one-parameter group $\vntau$ and
+ a unique $*$-anti-automorphism $\vnR$ of $\LGinf$ such that
+ $\vntau_{t} \circ \pi_{r} = \pi_{r} \circ
+\tau_{t}$ for  all $t\in \R$ and
+$\vnR \circ \pi_{r} = \pi_{r} \circ R$.
+ These are the scaling group and the unitary antipode of the measured
+ quantum groupoid $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta,
+ T_{\lambda},T_{\rho},\nu)$, respectively.
 \end{Prop}
 \begin{proof}
   Uniqueness is clear.  Let us prove existence of $\vntau$.
@@ -548,49 +551,57 @@ These
   for all $a,b\in P(\mathscr{G})$ and $\phi \circ R=\phi \circ S \circ
   \tau_{i/2} = \phi \circ \tau_{i/2}=\phi$, where we used \cite[Lemma
   1.30]{DCT1}. Next, $I^{2} = \id$ because $*\circ R \circ * \circ R=
-  R^{2}=\id$ by \eqref{eq:alg-scale}. Now,  short calculations show
+  R^{2}=\id$ by \eqref{eq:alg-scale} and \cite[Corollary 1.42]{DCT1}. Now,  short calculations show
   that the map $\vnR \colon x \mapsto Ix^{*}I$ has the desired
   properties.
 
-\fixme{Finish this up}
-
-  Denote by $\tilde R$ the unitary antipode and by $\tilde\tau$ the
-  scaling group of the measured quantum groupoid.  Let us first prove
-  that $\tilde \tau_{t}=\vntau$ for all $t\in \R$.
-
-By
-  \cite{} and \eqref{eq:scaling-modular-delta},
-  \begin{align*}
-    (\tilde \tau_{t} \astrl \sigma^{\vntau}_{t}) \circ \tilde \Delta
-    &=\tilde \Delta \circ \sigma^{\vntau}_{t}, & (\vntau_{t} \otimes
-    \sigma^{\vntau}_{t}) \circ \vnDelta &= \vnDelta \circ \vntau_{t}.
-  \end{align*}
-  The second equation implies that the first one remains true if we
-  replace $\tilde\tau_{t}$ by $\vntau_{t}$.  Using Theorem A.7 in
-  \cite{} [enock:action], we can conclude that $\tilde
-  \tau_{t}=\vntau_{t}$.
-
- To prove that $\tilde R=\vnR$, we use the relations
+Let us show   that the unitary antipode  $\tilde R$ and the
+  scaling group   $\tilde\tau$ of the measured quantum groupoid
+  coincide with $\vnR$ and $\vntau$, respectively.
+  By \cite[Theorem A.6]{Eno2},
   \begin{align*}
     \tilde R(\id \underset{\nu}{_{\rho} \ast_{\lambda}}
-    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi(a^{*}a))) &= (\id
+    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{r}(a^{*}a))) &= (\id
     \underset{\nu}{_{\rho} \ast_{\lambda}}
-    \omega_{J\Lambda(a),J\Lambda(a)})(\vnDelta(\pi(b^{*}b)))
+    \omega_{J\Lambda(a),J\Lambda(a)})(\vnDelta(\pi_{r}(b^{*}b))),
   \end{align*}
-from \cite{}.  
-Let $c=a^{*}a$ and $d=b^{*}b$. 
-A short calculation using \eqref{eq:modular} shows that  the right hand side is equal to
+  for all $a,b\in P(\mathscr{G})$.  Let $c=a^{*}a$ and $d=b^{*}b$.  A
+  short calculation using \eqref{eq:alg-mod-aut} shows that the right hand
+  side is equal to
+\begin{align*}
+  \pi_{r} ( d_{(1)}\phi(\sigma_{i/2}(a)d_{(2)}\sigma_{i/2}(a)^{*})) =
+  \pi_{r}(d_{(1)}\phi(\sigma_{i/2}(c)d_{(2)})).
+  \end{align*}
+By \cite[Lemma 1.37]{DCT1},  \eqref{eq:alg-mod-aut-delta} and
+  \eqref{eq:alg-mod-aut},  this is equal to
   \begin{align*}
-    d_{(1)}\phi(\sigma_{i/2}(a)d_{(2)}\sigma_{i/2}(a)^{*})
-    = d_{(1)}\phi(\sigma_{i/2}(c)d_{(2)}).
+   \pi_{r}(S(\sigma_{i/2}(c)_{(1)}\phi(\sigma_{i/2}(c)_{(2)}d))) &=
+   \pi_{r}(S(\tau_{i/2}(c_{(1)})\phi(\sigma_{i/2}(c_{(2)})d))) \\
+   &= \pi_{r}(R(c_{(1)}\phi(\sigma_{i/2}(d)c_{(2)}))) \\
+   &=\vnR((\id \underset{\nu}{_{\rho} \ast_{\lambda}}
+    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{r}(a^{*}a)))).
   \end{align*}
-By Lemma \ref{lemma:strong-invariance} and
-  \eqref{eq:scaling-modular-delta}, \eqref{eq:modular},  this equals 
-  $S(\tau_{i/2}(c_{(1)}))
-    \phi(\sigma_{i/2}(c_{(2)})d)$
-which is equal to
-$\vnR(\id \otimes
-  \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi(a^{*}a)))$.
+  Since elements of the form $\pi_{r}(a^{*}a)$ are dense in
+  $\LGinf_{+}$ and $\Lambda(P(\mathscr{G}))$ is dense in $\LGtwo$, we
+  can conclude from \cite[Theorem A.7]{Eno2} that elements of the form
+  \begin{align*}
+  (\id \underset{\nu}{_{\rho}
+    \ast_{\lambda}}
+  \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{r}(a^{*}a)))  
+  \end{align*}
+ are
+  dense in $\LGinf_{+}$. Consequently, $\tilde R=\vnR$. 
+
+Next,  \eqref{eq:alg-mod-aut-delta} implies $(\vntau_{t} \otimes
+  \sigma^{\vnphi}_{t}) \circ \vnDelta = \vnDelta \circ
+  \sigma^{\vnphi}_{t}$ for all $t\in \R$.  But by \cite[Theorem
+  A.5]{Eno2},
+  \begin{align*}
+    (\tilde \tau_{t} \astrl \sigma^{\vnphi}_{t}) \circ \tilde \Delta
+    &=\tilde \Delta \circ \sigma^{\vnphi}_{t}.
+  \end{align*}
+Now,  a similar density  argument as above shows that
+  $\tilde \tau_{t}=\vntau_{t}$.
 \end{proof}
 
 %%% Local Variables: 
