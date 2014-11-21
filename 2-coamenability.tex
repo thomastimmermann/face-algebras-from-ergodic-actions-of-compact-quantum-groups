@@ -46,6 +46,32 @@ We now pass to the character algebra of $\mathscr{G}$.
  This follows from the fact that $\Gr{(X\Circt Y)}{k}{l}{m}{n} = \sum_{r,s} \left(\Gr{X}{k}{r}{m}{s}\right)_{12} \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}$.
  \end{proof}
  
+
+ \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be a unitary
+   representation of $\mathscr{G}$ on an sfd $I$-graded Hilbert space $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
+  \end{Lem}
+  \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
+    with left hyperobject support $\alpha$ and right hyperobject support
+    $\beta$. Then we can find (a priori not necessarily bounded)
+    morphisms \[R: \C^{(I)}\rightarrow \underset{k,l,m}{\oplus} \GrDA{H}{k}{m}\otimes
+    \GrDA{H}{m}{l},\qquad \bar{R}: \C^{(I)} \rightarrow \underset{k,l,m}{\oplus}
+    \GrDA{\bar{H}}{k}{m}\otimes \GrDA{\bar{H}}{m}{l},\] establishing a
+    duality between $\underset{k,l}{\oplus} \GrDA{H}{k}{l}$ and
+    $\underset{k,l}{\oplus}\GrDA{\bar{H}}{k}{l}$ inside the category of
+    rcfd pre-Hilbert spaces. However, as $R^*R$ is a scalar multiple
+    of the projection onto $\C^{(I_{\alpha})}$ by irreducibility, and
+    similarly for $\bar{R}$, it follows that $R$ and $\bar{R}$ can be
+    completed to bounded operators between the respective Hilbert
+    space completions. It then follows from \cite[Lemma A.3.2]{DCY1}
+    that 
+    \begin{align} \label{eq:dim-estimate}
+  \sup_r (\sum_s (d_{rs}^X+d_{sr}^X)) < \infty.    
+    \end{align}
+ By the Schur test,
+    this implies that $D^X$ is bounded.
+\end{proof} 
+
+
    
 \begin{Lem} The sum $\chi^X  =\sum \Gr{\chi}{}{X}{k}{l}$ converges strictly to an element in $M(C_u(\mathscr{G}))$. 
 \end{Lem} 

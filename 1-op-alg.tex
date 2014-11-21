@@ -32,12 +32,12 @@ $P(\mathscr{G})$ and we can take $C^{u}_{0}(G)$ to be the associated
 separated completion.
 
 
-By Corollary \cite[Proposition 3.31]{DCT1}, we can write each $a\in A$
+By   \cite[Propositions 2.11 and 2.20]{DCT1}, we can write each $a\in A$
 in the form \[a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),\]
 where $\mathscr{X}$ is a unitary representation of
 $\mathscr{G}$ on some sfd $I^{2}$-graded Hilbert space
 $\mathcal{H}$ and $\xi\in \Gru{H}{k}{l}$, $\eta\in
-\Gru{H}{m}{n}$.  By \cite[Lemma 3.12]{DCT1},
+\Gru{H}{m}{n}$.  From  \cite[Lemma 2.2]{DCT1}, we deduce
   \begin{align*}
     \sum_{p}(\Gr{X}{p}{l}{m}{n})^{*} \Gr{X}{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
     \otimes \id_{\Gru{H}{m}{n}},
@@ -54,8 +54,10 @@ The construction of the reduced $C^{*}$-algebra
 $C^{r}_{0}(\mathscr{G})$ will show that the $*$-homomorphism $\pi_{u}
 \colon P(\mathscr{G}) \to \CuG$ is injective.
 
-To lift the comultiplication from $P(\mathscr{G})$ to
-$C^{u}_{0}(\mathscr{G})$, we will use parts of the following result.
+The comultiplication  lifts to a $*$-homomorphism  of
+$C^{u}_{0}(\mathscr{G})$ into the maximal tensor product
+$C^{u}_{0}(\mathscr{G}) \stackrel{\text{\tiny max}}{\otimes}
+C^{u}_{0}(\mathscr{G})$ as follows.
 
 
 % The universal property of $\CuG$ implies that the modular automorphism
@@ -69,70 +71,75 @@ $C^{u}_{0}(\mathscr{G})$, we will use parts of the following result.
 % 5.\ and A.1 in \cite{} [Takesaki:2] imply that elements in
 % $\pi_{u}(A)$ are analytic for $\tau^{u}$ and $\sigma^{u}$; in
 % particular, $\tau^{u}$ and $\sigma^{u}$ are strongly continuous.
- \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be a unitary
-   representation of $\mathscr{G}$ on an sfd $I$-graded Hilbert space $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
-  \end{Lem}
-  \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
-    with left hyperobject support $\alpha$ and right hyperobject support
-    $\beta$. Then we can find (a priori not necessarily bounded)
-    morphisms \[R: \C^{(I)}\rightarrow \underset{k,l,m}{\oplus} \GrDA{H}{k}{m}\otimes
-    \GrDA{H}{m}{l},\qquad \bar{R}: \C^{(I)} \rightarrow \underset{k,l,m}{\oplus}
-    \GrDA{\bar{H}}{k}{m}\otimes \GrDA{\bar{H}}{m}{l},\] establishing a
-    duality between $\underset{k,l}{\oplus} \GrDA{H}{k}{l}$ and
-    $\underset{k,l}{\oplus}\GrDA{\bar{H}}{k}{l}$ inside the category of
-    rcfd pre-Hilbert spaces. However, as $R^*R$ is a scalar multiple
-    of the projection onto $\C^{(I_{\alpha})}$ by irreducibility, and
-    similarly for $\bar{R}$, it follows that $R$ and $\bar{R}$ can be
-    completed to bounded operators between the respective Hilbert
-    space completions. It then follows from \cite[Lemma A.3.2]{DCY1}
-    that 
-    \begin{align} \label{eq:dim-estimate}
-  \sup_r (\sum_s (d_{rs}^X+d_{sr}^X)) < \infty.    
-    \end{align}
- By the Schur test,
-    this implies that $D^X$ is bounded.
-\end{proof} 
-
-
 \begin{Prop}
 Let $\mathscr{G}$ be a partial compact quantum group with underlying
 $*$-algebra $P(\mathscr{G})$. Then  there exists a unique $*$-homomorphism $\Delta^{u}\colon
-  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \otimes
+  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \stackrel{\text{\tiny max}}{\otimes}
   C^{u}_{0}(\mathscr{G}))$ such that 
   \begin{align*}
     (\rho_{p} \otimes
     \lambda_{p})\Delta^{u}(\pi_{u}(a))(\rho_{q}\otimes \lambda_{q}) =
-    (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))
+    (\pi_{u}  \otimes \pi_{u})(\Delta_{pq}(a))
   \end{align*}
   for all $a \in P(\mathscr{G})$ and $p,q\in I$.
 \end{Prop}
 \begin{proof}
-  We need to show that for every $a \in P(\mathscr{G})$, the sum
-  $\sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))$ converges in $M(C^{u}_{0}(\mathscr{G})
-  \otimes C^{u}_{0}(\mathscr{G}))$ strictly.  It suffices to prove
-  that the matrix of operators 
-\[\left((\pi_{u} \otimes
-    \pi_{u})(\Delta_{pq}(a))\right)_{k,l}\] is bounded, and using the Schur test as above, it
-  suffices to show that
-  \begin{align} \label{eq:delta-estimate}
-    \sup_{p} \sum_{q} (\|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| + \|(\pi_{u} \otimes \pi_{u})(\Delta_{qp}(a))\|) < \infty.
-  \end{align}
-  As in the proof above, we write
-  $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
- representation of $\mathscr{G}$  on some sfd $I^{2}$-graded
-  Hilbert space $\mathcal{H}$ with finite hyperobject support, and
-  $\xi\in \Gru{H}{k}{l}$, $\eta\in \Gru{H}{m}{n}$. Then
+  We  show that for every $a \in P(\mathscr{G})$, the sum
+  $\sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))$ converges in
+  $M(C^{u}_{0}(\mathscr{G})  \stackrel{\text{\tiny max}}{\otimes} C^{u}_{0}(\mathscr{G}))$
+  strictly, and then the existence of $\Delta^{u}$ follows from the
+  universal property of $C^{u}_{0}(\mathscr{G})$. We identify
+  $C^{u}_{0}(\mathscr{G})  \stackrel{\text{\tiny max}}{\otimes} C^{u}_{0}(\mathscr{G})$ with its
+  image under a faithful representation on a Hilbert
+  space $K$ and consider the algebraic sum
   \begin{align*}
-    \Delta_{pq}(a) &= (\id \otimes \id \otimes \omega_{\xi,\eta})((\Delta_{pq} \otimes
-    \id)(\Gr{X}{k}{l}{m}{n})) =
-    (\id \otimes \id \otimes \omega_{\xi,\eta})((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23}),
+    K_{0}&:= \sum_{k,p,m} (\pi_{u}(\UnitC{k}{p}) \otimes \pi_{u}(\UnitC{p}{m}))K
+    \subseteq K.
   \end{align*}
-and by \eqref{eq:corep-estimate},
+  Then each $a\in P(\mathscr{G})$ defines an adjointable operator
 \begin{align*}
-  \|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| \leq \|\xi\|\|\eta\| \|(\pi_{u} \otimes \id)(\Gr{X}{k}{l}{p}{q})\|
-  \|(\pi_{u} \otimes \id)(\Gr{X}{p}{q}{m}{n})\|  \leq \|\xi\|\|\eta\|.
+  \Psi(a) \colon K_{0} \to K_{0}, \quad \zeta \mapsto
+  \sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\zeta,
 \end{align*}
-Now \eqref{eq:delta-estimate} follows from \eqref{eq:dim-estimate}.
+where the sum on the right hand side is finite by definition of
+$K_{0}$ and assumption on $\Delta$. The assignment $a\mapsto
+\Psi(a)$ is a $*$-homomorphism, and as in the proof above, one
+finds
+\begin{align*}
+  \| \Psi(a)\|<\|\xi\|\|\eta\|
+\end{align*}
+whenever $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$ for
+some unitary representation $\mathscr{X}$ of $\mathscr{G}$ on a sfd
+$I^{2}$-graded Hilbert space $\mathcal{H}$ with finite hyperobject
+support and $\xi\in \Gru{H}{k}{l}$, $\eta\in
+\Gru{H}{m}{n}$. Therefore, each operator $\Psi(a)$ extends
+to a bounded linear operator on $K$, and one easily verifies that
+this extension is the desired multiplier
+  $\sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))$. 
+%  It suffices to prove
+%   that the matrix of operators 
+% \[\left((\pi_{u} \otimes
+%     \pi_{u})(\Delta_{pq}(a))\right)_{p,q}\] is bounded, and using the Schur test as above, it
+%   suffices to show that
+%   \begin{align} \label{eq:delta-estimate}
+%     \sup_{p} \sum_{q} (\|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| + \|(\pi_{u} \otimes \pi_{u})(\Delta_{qp}(a))\|) < \infty.
+%   \end{align}
+%   As in the proof above, we write
+%   $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
+%  representation of $\mathscr{G}$  on some sfd $I^{2}$-graded
+%   Hilbert space $\mathcal{H}$ with finite hyperobject support, and
+%   $\xi\in \Gru{H}{k}{l}$, $\eta\in \Gru{H}{m}{n}$. Then
+%   \begin{align*}
+%     \Delta_{pq}(a) &= (\id \otimes \id \otimes \omega_{\xi,\eta})((\Delta_{pq} \otimes
+%     \id)(\Gr{X}{k}{l}{m}{n})) =
+%     (\id \otimes \id \otimes \omega_{\xi,\eta})((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23}),
+%   \end{align*}
+% and by \eqref{eq:corep-estimate},
+% \begin{align*}
+%   \|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| \leq \|\xi\|\|\eta\| \|(\pi_{u} \otimes \id)(\Gr{X}{k}{l}{p}{q})\|
+%   \|(\pi_{u} \otimes \id)(\Gr{X}{p}{q}{m}{n})\|  \leq \|\xi\|\|\eta\|.
+% \end{align*}
+% Now \eqref{eq:delta-estimate} follows from \eqref{eq:dim-estimate}.
 \end{proof}
 
 
@@ -140,8 +147,7 @@ Now \eqref{eq:delta-estimate} follows from \eqref{eq:dim-estimate}.
 The reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra
 $\LGinf$ will be obtained from a GNS-construction for the invariant
 integral $\phi$ of $\mathscr{G}$. Recall that $\phi$ is positive by
-assumption and faithful by \cite[Lemma
-1.39]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
+assumption and faithful by the remarks following \cite[Corollary 2.16]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
 \begin{align*}
   \langle a|b\rangle :=\phi(a^{*}b),
 \end{align*}
@@ -194,7 +200,18 @@ invariant,
     & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \Lambda(\rho_{p}b) |
     \Lambda(a'\rho_{p}) \otimes \Lambda(b'\rho_{p})\rangle.
   \end{align*}
-  Now, the assertion follows from \cite[Proposition 1.30]{DCT1}.
+ The map $\Lambda(a) \otimes \Lambda(b)  \mapsto \Lambda(a_{(1)})
+ \otimes \Lambda(a_{(2)}b)$ therefore extends to a partial isometry
+ $V$ such that $V^{*}V=\overline{G}$. Clearly, its image is
+ contained in the image of $\overline{E}$. But the defining properties of the
+ antipode $S$ imply that
+ \begin{align*}
+ V(\Lambda(a_{(1)}) \otimes \Lambda(S(a_{(2)})b))   &=
+ \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}S(a_{(3)})b) \\
+ &= \sum_{q}\Lambda(\rho_{q}a_{(1)}\epsilon(a_{(2)})) \otimes \Lambda(\lambda_{q}b) 
+ =\overline{E}(\Lambda(a) \otimes \Lambda(b)).
+ \end{align*}
+so that the image of $V$ equals the image of $\overline{E}$.
 \end{proof}
 
 \begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact
@@ -213,13 +230,13 @@ invariant,
     (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
     \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
   \end{align}
-  for all $b\in P(\mathscr{G})$. Therefore, left multiplication by
+  for all $b\in P(\mathscr{G})$. Hence, left multiplication by
   $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on
-  $\LGtwo$. 
- Since $(P(\mathscr{G})\otimes 1)\Delta(P(\mathscr{G})) = (P(\mathscr{G})\otimes
-  P(\mathscr{G}))\Delta(1)$ by  \cite[Proposition 1.30]{DCT1} and $\phi$ is
-  normalized,  elements of the form $\phi(c^{*}a_{(1)})a_{(2)}$ span
-  $P(\mathscr{G})$. 
+  $\LGtwo$.  But elements of this form span $P(\mathscr{G})$ because
+  $\phi$ is normalized and $(P(\mathscr{G})\otimes
+  1)\Delta(P(\mathscr{G})) = (P(\mathscr{G})\otimes
+  P(\mathscr{G}))\Delta(1)$ by \cite[Proposition 1.9]{DCT1} and
+  \cite[Theorem 6.8]{Boh1}.
 \end{proof}
 Since $\pi_{r}$ factorizes through $\pi_{u}$, we can conclude:
 \begin{Cor}
@@ -342,7 +359,7 @@ and left invariance of $\phi$ imply
 \end{proof}
 
 We next use the family of functionals $(f_{z})_{z \in \C}$ on
-$P(\mathscr{G})$ introduced in \cite[Theorem 3.49]{DCT1} to show that
+$P(\mathscr{G})$ introduced in \cite[Theorem 2.25]{DCT1} to show that
 $\vnphi$ is faithful and to describe the associated objects of
 Tomita-Takesaki theory. This way, we  also obtain a second construction of
 $\vnphi$. 
@@ -353,7 +370,7 @@ by
 \sigma_{z}(a) &= (f_{iz} \otimes \id \otimes f_{iz})((\Delta_{kl}
 \otimes \id)\Delta_{mn}(a)) \quad \text{for } a\in \Gr{A}{k}{l}{m}{n}.
 \end{align*}
-Then \cite[Theorem 3.49]{DCT1} implies that
+Then \cite[Theorem 2.25]{DCT1} implies that
 \begin{align} \label{eq:alg-mod-aut}
  \sigma_{z}(\sigma_{z'}(a)) &= \sigma_{z+z'}(a), &
  \sigma_{z}(a^{*}) &= \sigma_{\overline{z}}(a)^{*}, &
@@ -396,7 +413,7 @@ The map $\pi_{r}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
   is a Tomita algebra because the
   map $z\mapsto \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle =
   \phi(a^{*}\sigma_{z}(b))$ is entire for all $a,b\in P(\mathscr{G})$  by
- \cite[Theorem 3.49]{DCT1}
+ \cite[Theorem 2.25]{DCT1}
   and
   \begin{gather*}
     \nabla_{z}\Lambda(a)^{*} = \nabla_{\overline{z}}\Lambda(a)^{*}, \qquad
@@ -499,13 +516,13 @@ $T_{\lambda}$ is left-invariant in the sense that
 The scaling group and unitary antipode of the measured quantum
 groupoid above can be described in terms of the functionals
 $(f_{z})_{z\in \C}$ on $P(\mathscr{G})$ introduced in \cite[Theorem
-3.49]{DCT1} as follows.  Define $\tau_{z} \colon P(\mathscr{G}) \to
+2.25]{DCT1} as follows.  Define $\tau_{z} \colon P(\mathscr{G}) \to
 P(\mathscr{G})$ by
 \begin{align*}
 \tau_{z}(a) &= (f_{-iz} \otimes \id \otimes f_{iz})((\Delta_{kl}
 \otimes \id)\Delta_{mn}(a)) \quad \text{for } a\in \Gr{A}{k}{l}{m}{n}.
 \end{align*}
-Then \cite[Theorem 3.49]{DCT1} implies that $\tau_{z}$ is an algebra
+Then \cite[Theorem 2.25]{DCT1} implies that $\tau_{z}$ is an algebra
 homomorphism and
 \begin{gather} \label{eq:alg-scale}
   \begin{aligned}
@@ -535,11 +552,11 @@ $\vnR \circ \pi_{r} = \pi_{r} \circ R$.
 \end{Prop}
 \begin{proof}
   Uniqueness is clear.  Let us prove existence of $\vntau$.
-  Invariance of $\phi$ and \cite[Theorem 3.49]{DCT1} imply $\phi \circ
+  Invariance of $\phi$ and \cite[Theorem 2.25]{DCT1} imply $\phi \circ
   \tau_{z} = \phi$ for all $z\in \C$. Therefore, the formula
   $P_{t}\Lambda(a) = \Lambda(\tau_{t}(a))$ defines a one-parameter
   group of unitaries $(P_{t})_{t\in \R}$ on $\LGtwo$. By \cite[Theorem
-  3.49]{DCT1}, elements of $\Lambda(P(\mathscr{G}))$ are analytic with
+  2.25]{DCT1}, elements of $\Lambda(P(\mathscr{G}))$ are analytic with
   respect to $P$, and by A.1 in \cite{Taksak2}, $P$ is strongly
   continuous.  Therefore, we can define $\vntau$ by  $\vntau_{t}(x)=
   P_{t}xP_{t}^{*}$ for all $x\in \LGinf$ and $t\in \R$.
@@ -549,11 +566,10 @@ $\vnR \circ \pi_{r} = \pi_{r} \circ R$.
   I\Lambda(a) = \Lambda(R(a)^{*})$ defines an conjugate-linear
   isometry $I$. Indeed, $\phi(R(a)R(b)^{*})= (\phi\circ R)(b^{*}a)$
   for all $a,b\in P(\mathscr{G})$ and $\phi \circ R=\phi \circ S \circ
-  \tau_{i/2} = \phi \circ \tau_{i/2}=\phi$, where we used \cite[Lemma
-  1.30]{DCT1}. Next, $I^{2} = \id$ because $*\circ R \circ * \circ R=
-  R^{2}=\id$ by \eqref{eq:alg-scale} and \cite[Corollary 1.42]{DCT1}. Now,  short calculations show
-  that the map $\vnR \colon x \mapsto Ix^{*}I$ has the desired
-  properties.
+  \tau_{i/2} = \phi \circ \tau_{i/2}=\phi$, where we used \cite[
+  Corollary 2.13]{DCT1}. Next, $I^{2} = \id$ because $*\circ R \circ *
+  \circ R= R^{2}=\id$ by \eqref{eq:alg-scale} and \cite[Proposition 1.16]{DCT1}. Now, short calculations show that the map $\vnR \colon
+  x \mapsto Ix^{*}I$ has the desired properties.
 
 Let us show   that the unitary antipode  $\tilde R$ and the
   scaling group   $\tilde\tau$ of the measured quantum groupoid
@@ -572,7 +588,7 @@ Let us show   that the unitary antipode  $\tilde R$ and the
   \pi_{r} ( d_{(1)}\phi(\sigma_{i/2}(a)d_{(2)}\sigma_{i/2}(a)^{*})) =
   \pi_{r}(d_{(1)}\phi(\sigma_{i/2}(c)d_{(2)})).
   \end{align*}
-By \cite[Lemma 1.37]{DCT1},  \eqref{eq:alg-mod-aut-delta} and
+By \cite[Lemma 1.13]{DCT1},  \eqref{eq:alg-mod-aut-delta} and
   \eqref{eq:alg-mod-aut},  this is equal to
   \begin{align*}
    \pi_{r}(S(\sigma_{i/2}(c)_{(1)}\phi(\sigma_{i/2}(c)_{(2)}d))) &=
