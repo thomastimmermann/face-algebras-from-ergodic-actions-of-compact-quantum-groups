@@ -76,9 +76,11 @@
 \DeclareMathOperator{\adj}{\mathrm{adj}}
 \DeclareMathOperator{\rcfd}{\mathrm{rcfd}}
 \DeclareMathOperator{\rcf}{\mathrm{rcfd}}
+\DeclareMathOperator{\red}{\mathrm{red}}
 \DeclareMathOperator{\stau}{\tau_{\mathrm{s}}}
 \DeclareMathOperator{\tA}{\tilde{A}}
 \DeclareMathOperator{\weps}{\tilde{\epsilon}}
+\DeclareMathOperator{\spann}{\mathrm{span}}
 
 \newcommand{\Circt}{{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\Circtv}[1]{\underset{#1}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
@@ -229,8 +231,11 @@
 \newcommand{\dT}{\dot T}
 
 \newcommand{\iboxtimes}{\underset{I}{\boxtimes}}
+\newcommand{\maxtimes}{\underset{{\scriptscriptstyle \mathrm{ max}}}{\otimes}}
+\newcommand{\vntimes}{\bar{\otimes}}
 
 \newtheorem{Theorem}{Theorem}[section]
+\newtheorem*{Theo*}{Theorem}
 \newtheorem{Lem}[Theorem]{Lemma}
 \newtheorem{Prop}[Theorem]{Proposition}
 \newtheorem{Cor}[Theorem]{Corollary}
@@ -255,7 +260,7 @@
 \newcommand{\CuG}{C^{u}_{0}(\mathscr{G})}
 \newcommand{\vnDelta}{\overline{\Delta}}
 \newcommand{\vnE}{\overline{E}}
-\newcommand{\astrl}{\underset{l^{\infty}(I)}{_{\rho}\ast_{\lambda}}}
+\newcommand{\astrl}{\,{}_{\rho}\!\underset{I}{\ast}\,\!\!_{\lambda}\,}
 \newcommand{\otimesrl}{\underset{\nu{}}{_{\rho}\otimes_{\lambda}}}
 \newcommand{\vnphi}{\overline{\phi}}
 \newcommand{\vnphic}[2]{\Grt{\vnphi}{#1}{#2}}
@@ -278,7 +283,7 @@
 \numberwithin{equation}{section}
 
 \begin{document}
-\title{Dynamical quantum $SU(2)$ groups on the operator algebra level}
+\title{An operator algebraic implementation of the dynamical quantum $SU(2)$ group}
 
 \author{Kenny De Commer\thanks{Department of Mathematics, Vrije Universiteit Brussel, VUB, B-1050 Brussels, Belgium, email: {\tt kenny.de.commer@vub.ac.be}}
 \and Thomas Timmermann\thanks{University of M\"{u}nster}}
@@ -286,9 +291,7 @@
 \maketitle
 
 \begin{abstract}
-\noindent In a previous paper, we generalized Hayashi's theory of compact face algebras to allow for an infinite object set. The resulting structure was called partial compact quantum group. 
-In this paper, we investigate the operator algebraic theory of this structure, and introduce in particular two distinct notions of co-amenability. As particular examples, we revisit dynamical quantum $SU(2)$, as studied by Etingof-Varchenko and Koelink-Rosengren, as well as the canonical partial compact quantum group associated to the Temperley-Lieb category. 
-%We then show how any quantum homogeneous space of an ordinary compact quantum group leads to a partial compact quantum group. In particular, when this construction is applied to the non-standard Podle\'{s} spheres, we obtain partial compact quantum groups which are operator algebraic versions of % References ok?
+\noindent We investigate the operator algebraic structure of partial compact quantum groups. These objects are generalisations of Hayashi's compact face algebras to the case where the object set can be infinite. We then show how the dynamical quantum $SU(2)$ group, as studied by Etingof-Varchenko and Koelink-Rosengren, fits into this framework. Using the work of Koelink-Rosengren, we show that the dynamical quantum $SU(2)$ group is not coamenable. We also investigate the canonical partial compact quantum group associated to the Temperley-Lieb category. % But they are not property (T) either - rather, they display SL(2,C)-behavior?
 \end{abstract}
 
 
@@ -306,7 +309,29 @@ In this paper, we investigate the operator algebraic theory of this structure, a
 %16T15: Coalgebras and comodules; corings
 %46L08  $C^*$-modules
 
-\emph{Acknowledgements}: We would like to thank E. Koelink and L. Vainerman for discussions.
+\section*{Introduction}
+
+The concept of a \emph{compact quantum group of face type} was introduced by T. Hayashi \cite{Hay2}. These objects can be interpreted as (function algebras on) compact quantum groupoids with a classical, finite object set, but with the source and target maps of the quantum arrow space in a sense `delocalized'. In \cite{DCT1}, this theory was extended to allow for an infinite object set. The resulting structures were called \emph{partial compact quantum groups}. Inspired by \cite{Hay8}, there was also developed a Tannakian duality theory, allowing in particular to construct a partial compact quantum group from any abstract rigid tensor C$^*$-category with irreducible unit. 
+
+In this paper, we show that partial compact quantum groups admit C$^*$-algebraic and von Neumann algebraic completions. In particular, we show that the von Neumann algebraic completions give examples of measured quantum groupoids in the sense of Lesieur and Enock \cite{Les1,Eno2}. It also allows us to formulate in a straightforward way the notion of coamenability for partial compact quantum groups.
+
+\emph{Dynamical quantum groups} were introduced in \cite{EtV1}. They may also be interpreted as function algebras of quantum groupoids with a classical object set, but here the function algebra on the object set is taken to be the algebra of meromorphic functions on some finite-dimensional complex vector space. The particular case of the dynamical quantum $SU(2)$ group was studied in detail in \cite{KoR1}. Upon changing the object algebra by specialisation to an algebra of functions on a discrete set, depending on a parameter $x>0$, it was shown in \cite{DCT1} that the resulting dynamical quantum $SU(2)$ groups $SU_{q,x}^{\dyn}(2)$ are partial compact quantum groups that can be obtained explicitly from Tannakian reconstruction. Combined with the results of this paper, this gives for free an operator algebraic structure on these dynamical quantum $SU(2)$ groups. Note that in \cite{Tim1}, this result had been obtained in a slightly different context.
+
+It turns out that the representation theory of the function algebra on the dynamical quantum $SU(2)$ groups $SU_{q,x}^{\dyn}(2)$ can be completely determined, and in particular one can show that its universal C$^*$-algebra is type $I$. Combined with the results of \cite{KoR1}, this leads to the following theorem.
+
+\begin{Theo*} The partial compact quantum groups $SU_{q,x}^{\dyn}(2)$ are not coamenable.
+\end{Theo*}
+
+In a very loose sense, this shows that the dual of $SU_{q,x}^{\dyn}(2)$ displays $SL(2,\C)$-like behaviour. 
+
+Let us come to the precise contents of this paper. In the \emph{first section}, we show that operator algebraic implementations of partial compact quantum groups exist, and we make the connection with the theory of measured quantum groupoids. In the \emph{second section}, we take a look at coamenability of partial compact quantum groups, and contrast it with the situation for compact quantum groups. In the \emph{third section}, we classify the representations of the function algebra of the dynamical quantum $SU(2)$ group $SU_{q,x}^{\dyn}(2)$, and prove that $SU_{q,x}^{\dyn}(2)$ is not coamenable. Finally, in the \emph{fourth section}, we look at the closely related partial compact quantum group $SU_q^{\can}(2)$ which is obtained by applying the canonical Tannaka construction to $\Rep(SU_q(2))$. We again classify the representations of its function algebra, and show by means of a linking quantum groupoid argument that this partial compact quantum group \emph{is} coamenable. 
+
+
+
+
+
+
+\emph{Acknowledgements}: We would like to thank E. Koelink and L. Va$\breve{\textrm{\i}}$nerman for valuable discussions.
 
 %\tableofcontents
 

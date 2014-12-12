@@ -1,7 +1,8 @@
 \section{Partial compact quantum groups on the level of operator algebras}
 
+Let $I$ be a set. In \cite[Definition 1.17]{DCT1} was introduced the notion of an \emph{$I$-partial compact quantum group} $\mathscr{G}$. We will write the associated (function) $^*$-algebra by $P(\mathscr{G})$, and its $I^4$-grading as $\Gr{P(\mathscr{G})}{k}{l}{m}{n}$. The units are written $\UnitC{k}{l}$, and we also use the notation $\lambda_k = \sum_l \UnitC{k}{l}$ and $\rho_l = \sum_{k}\UnitC{k}{l}$, which define projections in $M(P(\mathscr{G}))$. The total coproduct on $P(\mathscr{G})$ will be written as $\Delta$, where we will use the Sweedler notation $\Delta(a) = a_{(1)}\otimes a_{(2)}$. The partial comultiplications $\Gr{P(\mathscr{G})}{k}{l}{m}{n}\rightarrow \Gr{P(\mathscr{G})}{k}{l}{r}{s}\otimes \Gr{P(\mathscr{G})}{r}{s}{m}{n}$ will be written $\Delta_{rs}$. Counit and antipode will be written respectively as $\epsilon$ and $S$. Finally, by $\phi$ will be denoted the (unique) normalized invariant positive functional, called also the \emph{invariant integral}. 
 
-Let $\mathscr{G}$ be a partial compact quantum group. We construct
+For the rest of this section, let $\mathscr{G}$ be a fixed $I$-partial compact quantum group. We construct
 completions of the underlying $*$-algebra $P(\mathscr{G})$ in the form
 of a universal $C^{*}$-algebra $\CuG$, a reduced $C^{*}$-algebra
 $\CrG$ and a von Neumann algebra $\LGinf$, the last two acting on a
@@ -11,9 +12,33 @@ integral to the level of
 operator algebras and show that $\LGinf$ becomes a measured quantum
 groupoid in the sense of Lesieur \cite{Les1} and Enock \cite{Eno2}.
 
-The $*$-algebra $P(\mathscr{G})$ has an enveloping $C^{*}$-algebra $\CuG$:
+We first show that the $*$-algebra $P(\mathscr{G})$ has an enveloping $C^{*}$-algebra $\CuG$. Recall first the notion of an rcfd (= row and column finite-dimensional) Hilbert space $\Hsp$ over $I$, meaning an $I^2$-graded Hilbert space $\Hsp = \underset{k,l}{\oplus} \,\GrDA{\Hsp}{k}{l}$ with each $\underset{k}{\oplus}\, \GrDA{\Hsp}{k}{l}$ and $\underset{l}{\oplus}\, \GrDA{\Hsp}{k}{l}$ finite-dimensional. Then a \emph{unitary representation $\mathscr{X}$ of $\mathscr{G}$ on $\Hsp$} consists of a family of elements \[\Gr{X}{k}{l}{m}{n} \in \Gr{P(\mathscr{G})}{k}{l}{m}{n}\otimes B(\GrDA{\Hsp}{m}{n},\GrDA{\Hsp}{k}{l})\] satisfying natural corepresentation and unitarity identities, see \cite[Section 2.1 and Section 2.4]{DCT1}.
+
+\begin{Lem}\label{LemUniBound}
+ Let $H$ be a pre-Hilbert space with completion $\Hsp$. Let $\pi: P(\mathscr{G})\rightarrow \End(H)$ be a $*$-homomorphism into the $*$-algebra of adjointable endomorphisms of $H$. Then $\pi$ extends uniquely to a $*$-homomorphism $\pi: P(\mathscr{G})\rightarrow B(\Hsp)$, and for each $a\in P(\mathscr{G})$ there exists $M_a>0$, independent of $\pi$, such that $\|\pi(a)\|\leq M_a$.
+\end{Lem} 
+
+\begin{proof}
+By \cite[Corollary 2.16 and Proposition 2.20]{DCT1}, it suffices to prove that $\pi(a)$ is $\pi$-uniformly bounded for $a\in P(\mathscr{G})$ of the form \[a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),\]
+where $\mathscr{X}$ is a unitary representation of
+$\mathscr{G}$ on some rcfd $I^{2}$-graded Hilbert space
+$\mathcal{K}$ and $\xi\in \Gru{\mathcal{K}}{k}{l}$, $\eta\in
+\Gru{\mathcal{K}}{m}{n}$.  From  \cite[Lemma 2.2]{DCT1}, we deduce
+  \begin{equation}\label{EqUnitary}
+    \sum_{p}(\Gr{X}{p}{l}{m}{n})^{*} \Gr{X}{p}{l}{m}{n}  = \UnitC{l}{n}
+    \otimes \id_{\Gru{\mathcal{K}}{m}{n}},
+  \end{equation}
+where  the sum is  finite because $\mathcal{K}$ is rcfd. 
+
+As $\pi(\UnitC{l}{n})$ is a self-adjoint projection, it extends uniquely to an element in $B(\Hsp)$. From  $\eqref{EqUnitary}$, it then follows that each $(\pi\otimes \id)(\Gr{X}{p}{l}{m}{n})$ extends to a contraction in $B(\Hsp\otimes \GrDA{\mathcal{K}}{m}{n},\Hsp\otimes \GrDA{\mathcal{K}}{p}{l})$. We hence conclude that
+ \[\|\pi(a)\| \leq \| \xi\| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
+    \|\xi\|\|\eta\| .\] 
+
+\end{proof} 
+
+
 \begin{Prop}
-Let $\mathscr{G}$ be a partial compact quantum group with underlying
+Let $\mathscr{G}$ be an $I$-partial compact quantum group with underlying
 $*$-algebra $P(\mathscr{G})$. Then
   there exist a $C^{*}$-algebra $C^{u}_{0}(\mathscr{G})$ and a
   $*$-homomorphism $\pi_{u} \colon P(\mathscr{G}) \to
@@ -22,42 +47,25 @@ $*$-algebra $P(\mathscr{G})$. Then
   $\pi_{u}$.
 \end{Prop}
 \begin{proof}
-It suffices to show that for each $a \in A$,
+It suffices to show that for each $a \in P(\mathscr{G})$,
 \begin{align*} 
   |a|_{u}&:= \sup \{ \|\pi(a)\| : \pi \text{ is a $*$-homomorphism from } P(\mathscr{G})
   \text{ into some $C^{*}$-algebra } B\}
 \end{align*}
-is finite because then $|\cdot |_{u}$ defines $C^{*}$-seminorm on
+is finite, as then $|\cdot |_{u}$ defines a $C^{*}$-seminorm on
 $P(\mathscr{G})$ and we can take $C^{u}_{0}(G)$ to be the associated
-separated completion.
-
-
-By   \cite[Propositions 2.11 and 2.20]{DCT1}, we can write each $a\in A$
-in the form \[a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),\]
-where $\mathscr{X}$ is a unitary representation of
-$\mathscr{G}$ on some sfd $I^{2}$-graded Hilbert space
-$\mathcal{H}$ and $\xi\in \Gru{H}{k}{l}$, $\eta\in
-\Gru{H}{m}{n}$.  From  \cite[Lemma 2.2]{DCT1}, we deduce
-  \begin{align*}
-    \sum_{p}(\Gr{X}{p}{l}{m}{n})^{*} \Gr{X}{p}{l}{m}{n}  = \lambda_{l}\rho_{n}
-    \otimes \id_{\Gru{H}{m}{n}},
-  \end{align*}
-where  the sum is  finite because $X$ is sfd. As
-  $\pi(\lambda_{k}\rho_{m})\in \C$ is a projection, we can conclude
-  \begin{align} \label{eq:corep-estimate}
-    \sum_{p} \| (\pi \otimes \id)(\Gr{X}{p}{l}{m}{n})\|^{2} \leq 1
-  \end{align}
-  and deduce $\|\pi(a)\| \leq \| \xi\| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
-    \|\xi\|\|\eta\| $. 
+separated completion. This follows immediately from Lemma \ref{LemUniBound}.
 \end{proof}
-The construction of the reduced $C^{*}$-algebra
-$C^{r}_{0}(\mathscr{G})$ will show that the $*$-homomorphism $\pi_{u}
-\colon P(\mathscr{G}) \to \CuG$ is injective.
 
-The comultiplication  lifts to a $*$-homomorphism  of
-$C^{u}_{0}(\mathscr{G})$ into the maximal tensor product
-$C^{u}_{0}(\mathscr{G}) \stackrel{\text{\tiny max}}{\otimes}
-C^{u}_{0}(\mathscr{G})$ as follows.
+%The construction of the reduced $C^{*}$-algebra $C^{r}_{0}(\mathscr{G})$ 
+
+We will show later that the $*$-homomorphism $\pi_{u}
+\colon P(\mathscr{G}) \to \CuG$ is in fact injective. For now, we show that the comultiplication of $P(\mathscr{G})$ lifts to a $*$-homomorphism  of
+$C^{u}_{0}(\mathscr{G})$ into the multiplier C$^*$-algebra of the maximal tensor product
+$C^{u}_{0}(\mathscr{G}) \maxtimes
+C^{u}_{0}(\mathscr{G})$.
+
+% First note that for any $k\in I$, the sums $\sum_l \pi_u(\UnitC{k}{l}$ and $\sum_l \pi_u(\UnitC{l}{k})$ converge strictly inside $C^u_0(\mathscr{G})$, as they are sums of mutually orthogonal projections in $C^{u}_{0}(\mathscr{G})$ that converge strictly on a dense subalgebra. We will denote the resulting elements by $\pi_u(\lambda_k)$ and $\pi_u(\rho_k$ 
 
 
 % The universal property of $\CuG$ implies that the modular automorphism
@@ -74,88 +82,83 @@ C^{u}_{0}(\mathscr{G})$ as follows.
 \begin{Prop}
 Let $\mathscr{G}$ be a partial compact quantum group with underlying
 $*$-algebra $P(\mathscr{G})$. Then  there exists a unique $*$-homomorphism $\Delta^{u}\colon
-  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \stackrel{\text{\tiny max}}{\otimes}
+  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \maxtimes
   C^{u}_{0}(\mathscr{G}))$ such that 
-  \begin{align*}
-    (\rho_{p} \otimes
-    \lambda_{p})\Delta^{u}(\pi_{u}(a))(\rho_{q}\otimes \lambda_{q}) =
+  \begin{equation}\label{EqParts}
+    (\pi_u(\UnitC{k}{p}) \otimes
+    \pi_u(\UnitC{p}{m}))\Delta^{u}(\pi_{u}(a))(\pi_u(\UnitC{l}{q})\otimes \pi_u(\UnitC{q}{n})) =
     (\pi_{u}  \otimes \pi_{u})(\Delta_{pq}(a))
-  \end{align*}
-  for all $a \in P(\mathscr{G})$ and $p,q\in I$.
+  \end{equation}
+  for all $a \in \Gr{P(\mathscr{G})}{k}{l}{m}{n}$ and $p,q\in I$.
 \end{Prop}
 \begin{proof}
-  We  show that for every $a \in P(\mathscr{G})$, the sum
-  $\sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))$ converges in
-  $M(C^{u}_{0}(\mathscr{G})  \stackrel{\text{\tiny max}}{\otimes} C^{u}_{0}(\mathscr{G}))$
-  strictly, and then the existence of $\Delta^{u}$ follows from the
-  universal property of $C^{u}_{0}(\mathscr{G})$. We identify
-  $C^{u}_{0}(\mathscr{G})  \stackrel{\text{\tiny max}}{\otimes} C^{u}_{0}(\mathscr{G})$ with its
-  image under a faithful representation on a Hilbert
-  space $K$ and consider the algebraic sum
-  \begin{align*}
-    K_{0}&:= \sum_{k,p,m} (\pi_{u}(\UnitC{k}{p}) \otimes \pi_{u}(\UnitC{p}{m}))K
-    \subseteq K.
-  \end{align*}
-  Then each $a\in P(\mathscr{G})$ defines an adjointable operator
-\begin{align*}
-  \Psi(a) \colon K_{0} \to K_{0}, \quad \zeta \mapsto
-  \sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\zeta,
-\end{align*}
-where the sum on the right hand side is finite by definition of
-$K_{0}$ and assumption on $\Delta$. The assignment $a\mapsto
-\Psi(a)$ is a $*$-homomorphism, and as in the proof above, one
-finds
-\begin{align*}
-  \| \Psi(a)\|<\|\xi\|\|\eta\|
-\end{align*}
-whenever $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$ for
-some unitary representation $\mathscr{X}$ of $\mathscr{G}$ on a sfd
-$I^{2}$-graded Hilbert space $\mathcal{H}$ with finite hyperobject
-support and $\xi\in \Gru{H}{k}{l}$, $\eta\in
-\Gru{H}{m}{n}$. Therefore, each operator $\Psi(a)$ extends
-to a bounded linear operator on $K$, and one easily verifies that
-this extension is the desired multiplier
-  $\sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))$. 
-%  It suffices to prove
-%   that the matrix of operators 
-% \[\left((\pi_{u} \otimes
-%     \pi_{u})(\Delta_{pq}(a))\right)_{p,q}\] is bounded, and using the Schur test as above, it
-%   suffices to show that
-%   \begin{align} \label{eq:delta-estimate}
-%     \sup_{p} \sum_{q} (\|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| + \|(\pi_{u} \otimes \pi_{u})(\Delta_{qp}(a))\|) < \infty.
-%   \end{align}
-%   As in the proof above, we write
-%   $a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n})$, where $\mathscr{X}$ is a unitary
-%  representation of $\mathscr{G}$  on some sfd $I^{2}$-graded
-%   Hilbert space $\mathcal{H}$ with finite hyperobject support, and
-%   $\xi\in \Gru{H}{k}{l}$, $\eta\in \Gru{H}{m}{n}$. Then
-%   \begin{align*}
-%     \Delta_{pq}(a) &= (\id \otimes \id \otimes \omega_{\xi,\eta})((\Delta_{pq} \otimes
-%     \id)(\Gr{X}{k}{l}{m}{n})) =
-%     (\id \otimes \id \otimes \omega_{\xi,\eta})((\Gr{X}{k}{l}{p}{q})_{13}(\Gr{X}{p}{q}{m}{n})_{23}),
-%   \end{align*}
-% and by \eqref{eq:corep-estimate},
-% \begin{align*}
-%   \|(\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a))\| \leq \|\xi\|\|\eta\| \|(\pi_{u} \otimes \id)(\Gr{X}{k}{l}{p}{q})\|
-%   \|(\pi_{u} \otimes \id)(\Gr{X}{p}{q}{m}{n})\|  \leq \|\xi\|\|\eta\|.
-% \end{align*}
-% Now \eqref{eq:delta-estimate} follows from \eqref{eq:dim-estimate}.
+
+Let $\Hsp_u^{(2)}$ carry a (non-degenerate) universal $^*$-representation of $C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G})$, and define $H_u^{(2)}$ as the algebraic sum of all $(\pi_u(\UnitC{k}{m}) \otimes \pi_u(\UnitC{l}{n}))\Hsp_u^{(2)}$. Then $H_u^{(2)}$ is a pre-Hilbert space with $\Hsp_u^{(2)}$ as its closure, and as $P(\mathscr{G})\otimes P(\mathscr{G})$ has local units, it is clear that the representation $\pi_u\otimes \pi_u$ of $P(\mathscr{G})\otimes P(\mathscr{G})$ extends to a $ *$-representation of $M(P(\mathscr{G})\otimes P(\mathscr{G}))$ on $H_u^{(2)}$ by adjointable endomorphisms, which we will denote by the same symbol.
+
+By Lemma \ref{LemUniBound}, we can extend $(\pi_u\otimes \pi_u)\Delta$ to a bounded $^*$-representation on $\Hsp_u^{(2)}$. It clearly satisfies $\eqref{EqParts}$. Moreover, as $(\pi_u\otimes \pi_u)\Delta(a)$ for $a\in P(\mathscr{G})$ defines a multiplier of $(\pi_u\otimes \pi_u)(P(\mathscr{G})\otimes P(\mathscr{G}))$, we conclude that the range of $\Delta_u$ is in $M(C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G}))$.
 \end{proof}
 
+Since $\underset{k,l,m,n}{\sum} \pi_u(\UnitC{k}{m})\otimes \pi_u(\UnitC{l}{n})$ converges strictly to the unit in $M(C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G}))$, we have in fact for $a\in P(\mathscr{G})$ that, with respect to the strict topology, \[\Delta^u(a) = \sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a)).\]
 
 
-The reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra
-$\LGinf$ will be obtained from a GNS-construction for the invariant
-integral $\phi$ of $\mathscr{G}$. Recall that $\phi$ is positive by
-assumption and faithful by the remarks following \cite[Corollary 2.16]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
+We now turn towards the reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra
+$\LGinf$. As usual, these will be obtained from a GNS-construction with respect to the invariant
+integral $\phi$ of $\mathscr{G}$. Recall that $\phi$ is faithful by the remark following \cite[Corollary 2.16]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
 \begin{align*}
-  \langle a|b\rangle :=\phi(a^{*}b),
+  \langle a|b\rangle :=\phi(a^{*}b).
 \end{align*}
-denote by $L^{2}(\mathscr{G})$ the associated completion and by
+We denote by $L^{2}(\mathscr{G})$ the associated completion, and by
 $\Lambda \colon P(\mathscr{G}) \to \LGtwo$ the natural embedding.
-Then the Hilbert space $\LGtwo$ is the orthogonal direct sum of the
-subspaces $\Lambda(\Gr{P(\mathscr{G})}{k}{l}{m}{n})$. Hence, there exist
-operators $\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in
+
+\begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact
+  quantum group with underlying total $*$-algebra $P(\mathscr{G})$ and
+  associated Hilbert space $\LGtwo$. Then there exists a unique
+  $*$-homomorphism $\pi_{\red}\colon P(\mathscr{G}) \to {\cal B}(\LGtwo)$
+  such that $\pi_{\red}(a)\Lambda(b)=\Lambda(ab)$ for all $a,b\in
+  P(\mathscr{G})$, and $\pi_{\red}$ is faithful.
+\end{Prop}
+\begin{proof} The existence of $\phi$ follows immediately from Lemma \ref{LemUniBound}, and the faithfulness of $\pi_{\red}$ follows from the faithfulness of $\phi$. 
+  %Let $a,c \in P(\mathscr{G})$. Then the formula $x \mapsto \langle
+%\Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
+  %$\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LGtwo)$ and a
+  %straightforward computation shows that
+  %\begin{align} \label{eq:vn-slice}
+  %  (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
+%    \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
+  %\end{align}
+ % for all $b\in P(\mathscr{G})$. Hence, left multiplication by
+ %$\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on
+ % $\LGtwo$.  But elements of this form span $P(\mathscr{G})$ because
+ % $\phi$ is normalized and $(P(\mathscr{G})\otimes
+ % 1)\Delta(P(\mathscr{G})) = (P(\mathscr{G})\otimes
+ % P(\mathscr{G}))\Delta(1)$ by \cite[Proposition 1.9]{DCT1} and
+ % \cite[Theorem 6.8]{Boh1}.
+\end{proof}
+Since $\pi_{\red}$ factorizes through $\pi_{u}$, we can conclude:
+\begin{Cor}
+  Let $\mathscr{G}$ be a partial compact quantum group with underlying
+  total algebra $P(\mathscr{G})$. Then the
+universal $*$-homomorphism $\pi_{u} \colon P(\mathscr{G}) \to\CuG$ is injective.
+\end{Cor}
+
+We call $(\LGtwo,\Lambda,\pi_{\red})$ the \emph{GNS-construction associated
+  to $\mathscr{G}$}. Whenever convenient, we drop the symbol $\pi_{\red}$. Denote by
+\begin{align}
+  \CrG &\subseteq {\cal B}(\LGtwo) &&\text{and} & \LGinf &\subseteq {\cal B}(\LGtwo)
+\end{align}
+respectively the $C^{*}$-algebra and the von Neumann algebra generated by the image
+of $\pi_{\red}$. We thus obtain a sequence
+\begin{align*}
+P(\mathscr{G}) \hookrightarrow \CuG \twoheadrightarrow
+  \CrG\hookrightarrow
+\LGinf \hookrightarrow {\cal B}(\LGtwo)
+\end{align*}
+of $*$-algebras.
+
+
+The Hilbert space $\LGtwo$ is the orthogonal direct sum of the
+subspaces $\Lambda(\Gr{P(\mathscr{G})}{k}{l}{m}{n})$. In particular, there exist
+selfadjoint projections $\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in
 {\cal B}(\LGtwo)$ such that
 \begin{align*}
   \lambda_{k}\Lambda(a)&= \Lambda(\lambda_{k} a), &
@@ -169,7 +172,11 @@ for all $k\in I$ and $a\in P(\mathscr{G})$, and faithful, normal $*$-homomorphis
   {\cal B}(\LGtwo)
 \end{align}
 that send the delta function at $k\in I$ to the operators
-$\lambda_{k}$ or $\rho_{k}$, respectively. Let
+$\lambda_{k}$ or $\rho_{k}$, respectively. Note that
+ the $*$-homomorphisms $\lambda,\rho$ in
+\eqref{eq:vn-lambda-rho} send $l^{\infty}(I)$ to $M(\CrG)$.
+
+Let
 \begin{align*}
   \vnE &:=\sum_{k} \rho_{k} \otimes \lambda_{k} \in \mathcal{B}(\LGtwo
   \otimes \LGtwo), & \overline{G} &:=
@@ -177,14 +184,19 @@ $\lambda_{k}$ or $\rho_{k}$, respectively. Let
   \otimes \LGtwo),
 \end{align*}
 where the sums converge with respect to the strong operator
-topology.
+topology. In fact, we have
+\begin{align*}
+  \vnE \in M(\CrG \otimes \CrG) \subseteq \LGinf \otimes \LGinf.
+\end{align*}
+as a strictly, resp. strongly converging sum.
+
 \begin{Lem} \label{lemma:partial-isometry}
-There exists a unique partial isometry $V$ on $\LGtwo \otimes \LGtwo$
+There exists a unique partial isometry $V$ on $\LGtwo \otimes \LGtwo$, called the \emph{right regular multiplicative partial isometry},
 such that
 \begin{align*}
   V(\Lambda(a) \otimes \Lambda(b)) = \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}b)
 \end{align*}
-for all $a,b\in A$. Its range and domain projections are given by $VV^{*} = \vnE$
+for all $a,b\in P(\mathscr{G})$. Its range and domain projections are given by $VV^{*} = \vnE$
 and $V^{*}V = \overline{G}$.
 \end{Lem}
 \begin{proof}
@@ -198,7 +210,7 @@ invariant,
     &= \sum_{p}
     \phi(b^{*}\rho_{p}\phi(\rho_{p}a^{*}a'\rho_{p})\rho_{p}b') \\
     & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \Lambda(\rho_{p}b) |
-    \Lambda(a'\rho_{p}) \otimes \Lambda(b'\rho_{p})\rangle.
+    \Lambda(a'\rho_{p}) \otimes \Lambda(\rho_{p}b')\rangle.
   \end{align*}
  The map $\Lambda(a) \otimes \Lambda(b)  \mapsto \Lambda(a_{(1)})
  \otimes \Lambda(a_{(2)}b)$ therefore extends to a partial isometry
@@ -207,72 +219,24 @@ invariant,
  antipode $S$ imply that
  \begin{align*}
  V(\Lambda(a_{(1)}) \otimes \Lambda(S(a_{(2)})b))   &=
- \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}S(a_{(3)})b) \\
- &= \sum_{q}\Lambda(\rho_{q}a_{(1)}\epsilon(a_{(2)})) \otimes \Lambda(\lambda_{q}b) 
- =\overline{E}(\Lambda(a) \otimes \Lambda(b)).
+ \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}S(a_{(3)})b) =  \sum_{p}\Lambda(a_{(1)}\epsilon(\lambda_p a_{(2)})) \otimes \Lambda(\lambda_{p}b)   \\
+ &= \sum_{p}\Lambda(\rho_{p}a_{(1)}\epsilon(a_{(2)})) \otimes \Lambda(\lambda_{p}b) 
+ =\overline{E}(\Lambda(a) \otimes \Lambda(b)),
  \end{align*}
 so that the image of $V$ equals the image of $\overline{E}$.
 \end{proof}
 
-\begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact
-  quantum group with underlying total $*$-algebra $P(\mathscr{G})$ and
-  associated Hilbert space $\LGtwo$. Then there exists a unique
-  $*$-homomorphism $\pi_{r}\colon P(\mathscr{G}) \to {\cal B}(\LGtwo)$
-  such that $\pi_{r}(a)\Lambda(b)=\Lambda(ab)$ for all $a,b\in
-  P(\mathscr{G})$, and $\pi_{r}$ is faithful.
-\end{Prop}
-\begin{proof} 
-  Let $a,c \in P(\mathscr{G})$. Then the formula $x \mapsto \langle
-\Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
-  $\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LGtwo)$ and a
-  straightforward computation shows that
-  \begin{align} \label{eq:vn-slice}
-    (\omega_{\Lambda(c),\Lambda(a)}\otimes \id)(V)\Lambda(b) =
-    \Lambda(\varphi(c^*a_{(1)})a_{(2)}b)
-  \end{align}
-  for all $b\in P(\mathscr{G})$. Hence, left multiplication by
-  $\varphi(c^*a_{(1)})a_{(2)}$ extends to a bounded linear operator on
-  $\LGtwo$.  But elements of this form span $P(\mathscr{G})$ because
-  $\phi$ is normalized and $(P(\mathscr{G})\otimes
-  1)\Delta(P(\mathscr{G})) = (P(\mathscr{G})\otimes
-  P(\mathscr{G}))\Delta(1)$ by \cite[Proposition 1.9]{DCT1} and
-  \cite[Theorem 6.8]{Boh1}.
-\end{proof}
-Since $\pi_{r}$ factorizes through $\pi_{u}$, we can conclude:
-\begin{Cor}
-  Let $\mathscr{G}$ be a partial compact quantum group with underlying
-  total algebra $P(\mathscr{G})$. Then the
-universal $*$-homomorphism $\pi_{u} \colon P(\mathscr{G}) \to\CuG$ is injective.
-\end{Cor}
+\begin{Rem}\label{RemFormAdj} It follows immediately from the end of the proof that one has in fact  $V^*(\Lambda(a)\otimes \Lambda(b)) = \Lambda(a_{(1)}) \otimes \Lambda(S(a_{(2)})b)$.
+\end{Rem} 
 
-We call $(\LGtwo,\Lambda,\pi)$ the \emph{GNS-construction associated
-  to $\mathscr{G}$}, denote by
-\begin{align}
-  \CrG &\subseteq {\cal B}(\LGtwo) &&\text{and} & \LGinf &\subseteq {\cal B}(\LGtwo)
-\end{align}
-the $C^{*}$-algebra and the von Neumann algebra generated by the image
-of $\pi_{r}$, respectively, and identify $M(\CrG)$ with a
-$C^{*}$-subalgebra of $\LGtwo$.  We thus obtain a sequence
-\begin{align*}
-P(\mathscr{G}) \hookrightarrow \CuG \to
-  \CrG\hookrightarrow
-\LGinf \hookrightarrow {\cal B}(\LGtwo)
-\end{align*}
-of $*$-algebras.
-Note that
- the $*$-homomorphisms $\lambda,\rho$ in
-\eqref{eq:vn-lambda-rho} send $l^{\infty}(I)$ to $M(\CrG)$, and that
-\begin{align*}
-  \vnE \in M(\CrG \otimes \CrG) \subseteq \LGinf \otimes \LGinf.
-\end{align*}
 \begin{Prop} \label{prop:vn-delta} Let $\mathscr{G}$ be a partial
   compact quantum group with underlying total $*$-algebra
   $P(\mathscr{G})$ and associated GNS-construction
-  $(\LGtwo,\Lambda,\pi_{r})$. Then there
+  $(\LGtwo,\Lambda,\pi_{\red})$. Then there
   exists a unique normal, faithful $*$-homomorphism $\vnDelta \colon
-  \LGinf \to \LGinf \otimes \LGinf$ such that
+  \LGinf \to \LGinf \vntimes \LGinf$ such that
   \begin{align*}
-    \vnDelta(\pi_{r}(a)) (\Lambda(b) \otimes \Lambda(c)) =
+    \vnDelta(\pi_{\red}(a)) (\Lambda(b) \otimes \Lambda(c)) =
     \Lambda(a_{(1)}b) \otimes \Lambda(a_{(2)}b) 
   \end{align*}
   for all $a,b,c \in P(\mathscr{G})$. Moreover, $\vnDelta(1)=\vnE$ and
@@ -294,43 +258,40 @@ Note that
 
 Denote by $\nu$ the weight on $l^{\infty}(I)$ given by
 integration with respect to the counting measure on $I$. This weight is
-normal, faithful, and semi-finite,  briefly written n.s.f.\
+normal, faithful, and semi-finite,  briefly written nsf. For general nsf weights $\psi$ on a von Neumann algebra $M$, we will use the standard notation $\mathfrak{N}_{\psi} = \{a\in M\mid \psi(a^*a)<\infty\}$, $\mathfrak{M}_{\psi}^+  = \{a\in M^+\mid\psi(a)<\infty\}$ and $\mathfrak{M}_{\psi} = \mathfrak{N}_{\psi}^*\mathfrak{N}_{\psi} = \spann \mathfrak{M}_{\psi}^+$. The same notation will be used for operator valued weights.
+
+%Seems necessary for uniqueness also to ask for centrality of the unit projections.
 \begin{Prop} \label{prop:vn-phi} Let $\mathscr{G}$ be a partial
   compact quantum group with underlying $*$-algebra $P(\mathscr{G})$,
   invariant integral $\phi$ and GNS-construction
-  $(\LGtwo,\Lambda,\pi_{r})$. Then there exist a unique normal,
-  semi-finite weight $\vnphi$ on $\LGinf$ and unique normal, semi-finite
-  conditional expectations $T_{\lambda}$ and $T_{\rho}$ such that
-  $\pi_{r}(P(\mathscr{G})) \subseteq
+  $(\LGtwo,\Lambda,\pi_{\red})$. Then there exist a unique normal semi-finite weight $\vnphi$ on $\LGinf$ and unique normal
+  conditional expectations $T_{\lambda}$ and $T_{\rho}$ onto respectively $\lambda(l^{\infty}(I))$ and $\rho(l^{\infty}(I))$ such that
+  \[\pi_{\red}(P(\mathscr{G})) \subseteq
   \mathfrak{M}_{\vnphi} \cap   \mathfrak{M}_{T_{\lambda}} \cap
-  \mathfrak{M}_{T_{\rho}}$ and 
+  \mathfrak{M}_{T_{\rho}},\] such that the $\UnitC{k}{m}$ lie in the centralizer of $\vnphi$, and  such that
   \begin{align*}
-\vnphi \circ \pi_{r} &= \phi,&
-\nu \circ
-  \lambda^{-1} \circ T_{\lambda} \circ \pi_{r}   &= \phi, &  \nu \circ \rho^{-1} \circ
-  T_{\rho} \circ\pi_{r} &= \phi.
+\vnphi \circ \pi_{\red} &= \phi,&
+\nu \circ \lambda^{-1}\circ T_{\lambda}   &= \vnphi, &  \nu \circ \rho^{-1} \circ
+  T_{\rho} &= \vnphi.
   \end{align*}
 Furthermore,  $(\id \otimes \vnphi)(\vnDelta(x)) =  T_{\lambda}(x)$ and $
     (\vnphi \otimes \id)(\vnDelta(x)) = T_{\rho}(x)$ 
  for all
-  $x\in \LGinf_{+}$.
+  $x\in \LGinf^{+}$.
 \end{Prop}
 \begin{proof}
   We first prove uniqueness of $\vnphi$.  The
-  $\Grt{p}{k}{m}:=\pi_{r}(\UnitC{k}{m})$ are pairwise orthogonal
-  projections in $\mathfrak{M}_{\vnphi}$ which sum up to $1$. Hence, the
-  weight $\vnphi$ is the sum of the bounded maps
+  $\Grt{p}{k}{m}:=\pi_{\red}(\UnitC{k}{m})$ are pairwise orthogonal
+  projections in $\mathfrak{N}_{\vnphi}\cap \mathfrak{N}_{\vnphi}^*$ which sum up to $1$. By the centralizing assumption, $\vnphi$ is the sum of the bounded maps
   $\Grt{\vnphi}{k}{m} \colon x \mapsto
   \vnphi(\Grt{p}{k}{m}x\Grt{p}{k}{m})$ which are determined
-  by their restrictions to $\pi_{r}(P(\mathscr{G}))$. Similar
-  arguments apply to $T_{\lambda}$ and $T_{\rho}$.
+  by their restrictions to $\pi_{\red}(P(\mathscr{G}))$. The centralizing condition also implies the existence of the maps $T_{\lambda}$ and $T_{\rho}$. 
 
-Let us next prove existence.  Since $\phi$ is normalized,   each
-$\Lambda(\UnitC{k}{m})$ is a unit vector and
+Let us next prove existence.  Since $\phi$ is normalized,   each nonzero
+$\Lambda(\UnitC{k}{m})$ is a unit vector and defines a state
 \begin{align*}
-  \vnphic{k}{m} \colon x \mapsto \langle \Lambda(\UnitC{k}{m})|x \Lambda(\UnitC{k}{m})\rangle
-\end{align*}
-defines a state. The weight $\vnphi$ and the maps $T_{\lambda}$ and $T_{\rho}$
+  \vnphic{k}{m} \colon x \mapsto \langle \Lambda(\UnitC{k}{m})|x \Lambda(\UnitC{k}{m})\rangle.
+\end{align*}The weight $\vnphi$ and the maps $T_{\lambda}$ and $T_{\rho}$
 defined by
 \begin{align} \label{eq:vn-weights}
   \vnphi(x) &:= \sum_{k,m} \vnphic{k}{m}(x), &
@@ -339,22 +300,16 @@ defined by
 T_{\rho}(x)&:=
     \sum_{k,m} \vnphic{k}{m}(x)\rho_{m}
 \end{align}
-for all $x\in \LGinf_{+}$  are normal, semi-finite and satisfy $\nu
+for all $x\in \LGinf^{+}$  are normal, (semi-)finite and satisfy $\nu
 \circ \lambda^{-1} \circ T_{\lambda} = \vnphi = \nu \circ \rho^{-1}
 \circ T_{\rho}$.
 
-We finally check the invariance equations.  Let $a \in
-P(\mathscr{G})$.  Then the relation $\vnphic{k}{m}\circ \pi_{r} = \phic{k}{m}$
-and left invariance of $\phi$ imply
+We finally check the invariance equations. For $x\in \LGinf$, we check immediately by definition of $\vnphic{k}{m}$, the formula for $\vnDelta$ and the formula for $V^*$ in Remark \ref{RemFormAdj} that
   \begin{align*}
-    (\id \otimes \vnphic{l}{m})(\vnDelta(\pi_{r}(a))) &= \sum_{k}
-    \vnphic{k}{m}(\pi_{r}(a)) \lambda_{k}\rho_{l}.
-  \end{align*}
-  Since each $\vnphic{k}{m}$ is a vector state and $\pi_{r}(P(\mathscr{G}))$ is
-  weakly dense in $\LGinf$,  this equations
-  remains true if we replace $\pi_{r}(a)$ by arbitrary $x\in
-  \LGinf$. Summing over $l$ and $m$, we  find $(\id \otimes \vnphi)
-  \circ \vnDelta = T_{\lambda}$. A similar argument shows that
+    (\vnphic{k}{m}\otimes \id)(\vnDelta(x)) &= \sum_{l}
+    \vnphic{k}{l}(x) \UnitC{m}{l}.
+  \end{align*} Summing over $k$ and $m$, we  find $(\vnphi\otimes \id)
+  \circ \vnDelta = T_{\lambda}$. A similar argument (using a left regular representation) shows that
   $(\vnphi \otimes \id) \circ \vnDelta=T_{\rho}$.
 \end{proof}
 
@@ -374,13 +329,13 @@ Then \cite[Theorem 2.25]{DCT1} implies that
 \begin{align} \label{eq:alg-mod-aut}
  \sigma_{z}(\sigma_{z'}(a)) &= \sigma_{z+z'}(a), &
  \sigma_{z}(a^{*}) &= \sigma_{\overline{z}}(a)^{*}, &
-\phi(\sigma_{z}(a)) &= \phi(a), & \phi(ab) &= \phi(b\sigma_{-i}(b))
+\phi(\sigma_{z}(a)) &= \phi(a), & \phi(ab) &= \phi(b\sigma_{-i}(a))
 \end{align}
 for all $a,b\in P(\mathscr{G})$ and $z,z'\in \C$. 
 \begin{Prop} \label{prop:tomita}
   Let $\mathscr{G}$ be a partial compact quantum group with underlying
   $*$-algebra $P(\mathscr{G})$ and associated GNS-construction
-  $(\LGtwo,\Lambda,\pi_{r})$. Then 
+  $(\LGtwo,\Lambda,\pi_{\red})$. Then 
   $\Lambda(P(\mathscr{G}))$ is a Tomita algebra with
   respect to the operations and the family of operators given by
   \begin{align*}
@@ -394,14 +349,14 @@ for all $a,b\in P(\mathscr{G})$ and $z,z'\in \C$.
   the closure of $\nabla_{-i}$, and the   modular automorphism group $\sigma^{\vnphi}$
   and modular conjugation $J_{\vnphi}$ are given by
   \begin{align*}
-    \sigma^{\vnphi}_{t} \circ \pi_{r} &= \pi_{r} \circ \sigma_{t}
+    \sigma^{\vnphi}_{t} \circ \pi_{\red} &= \pi_{\red} \circ \sigma_{t}
     \text{ for all } t\in \R, & J_{\vnphi}
     \Lambda(a)&=\Lambda(\sigma_{i/2}(a)^{*}) \text{ for all } a\in
     P(\mathscr{G}).
   \end{align*}
 \end{Prop}
 \begin{proof}
-The map $\pi_{r}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
+The map $\pi_{\red}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
   each $a \in P(\mathscr{G})$ by Proposition \ref{prop:gns}, and the
   involution is pre-closed because for all $a,b \in P(\mathscr{G})$,
   \begin{align*}
@@ -414,19 +369,19 @@ The map $\pi_{r}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
   map $z\mapsto \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle =
   \phi(a^{*}\sigma_{z}(b))$ is entire for all $a,b\in P(\mathscr{G})$  by
  \cite[Theorem 2.25]{DCT1}
-  and
+  and, by \eqref{eq:alg-mod-aut}, 
   \begin{gather*}
-    \nabla_{z}\Lambda(a)^{*} = \nabla_{\overline{z}}\Lambda(a)^{*}, \qquad
+    \nabla_{z}(\Lambda(a)^{*}) = (\nabla_{\overline{z}}\Lambda(a))^{*}, \qquad
     \langle \Lambda(a)|\nabla_{z}\Lambda(b)\rangle = \langle
     \nabla_{-\overline{z}}\Lambda(a) |\Lambda(b)\rangle, \\ \langle
     \Lambda(a)^{*}|\Lambda(b)^{*}\rangle = \langle \Lambda(b)|\nabla_{-i}\Lambda(a)\rangle
   \end{gather*}
-  for all $a,b\in P(\mathscr{G})$ and $z\in \C$ and  \eqref{eq:alg-mod-aut} . 
+  for all $a,b\in P(\mathscr{G})$ and $z\in \C$ and   
 
- The associated left von Neumann algebra is $\pi_{r}(P(\mathscr{G}))''=\LGinf$, the
+ The associated left von Neumann algebra is $\pi_{\red}(P(\mathscr{G}))''=\LGinf$. The
  associated n.s.f.\ weight $\tilde\phi$ coincides with $\vnphi$ because
- $\tilde \phi(\pi_{r}(a^{*}a))=\langle\Lambda(a)|\Lambda(a)\rangle =
- \phi(a^{*}a)$ for all $a\in P(\mathscr{G})$,  and the remaining
+ $\tilde \phi(\pi_{\red}(a^{*}a))=\langle\Lambda(a)|\Lambda(a)\rangle =
+ \phi(a^{*}a)$ for all $a\in P(\mathscr{G})$, so we can apply Proposition \ref{prop:vn-phi}. The remaining
  assertions follow  from
   \cite[Theorem VI.2.2 and its proof]{Taksak2}.
 \end{proof}
@@ -439,7 +394,7 @@ The relative tensor product of $\LGtwo$ with itself, relative to the
 representations $\rho,\lambda$ of $l^{\infty}(I)$ and the weight
 $\nu$, has the simple form
 \begin{align*}
-\LGinf \otimesrl \LGinf \cong
+\LGtwo \otimesrl \LGtwo \cong
   \bigoplus_{k} (\rho_{k}\LGtwo \otimes \lambda_{k}\LGtwo) =
   \vnE(\LGtwo \otimes \LGtwo),
 \end{align*}
@@ -458,9 +413,11 @@ and $\lambda$,  gets identified with
   \begin{aligned}
     \LGinf \astrl \LGinf &= (\LGinf' \otimesrl \LGinf')' \\ &\equiv
     (\vnE(\LGinf' \otimes \LGinf'))' = \vnE(\LGinf \otimes
-    \LGinf)\vnE.
+    \LGinf)\vnE,
   \end{aligned}
 \end{align} 
+where for notational reasons we indexed the fiber product $*$ with $I$ in stead of $l^{\infty}(I)$.
+
 Since $\vnDelta(1)=\vnE$, we can co-restrict $\vnDelta$ to  a
 normal, faithful $*$-homomorphism
 \begin{align*}
@@ -485,16 +442,16 @@ We first show that  $(l^{\infty}(I),\LGinf,
 \end{align*}
 where $x\in l^{\infty}(I)$.
 The first two equations follow immediately from the relation
-$\Delta(\lambda_{k}\rho_{m})=\lambda_{k} \otimes \rho_{m}$. To verify
+$\Delta(\UnitC{k}{m})=\lambda_{k} \otimes \rho_{m}$. To verify
 the third equation, we identify
 \begin{align*}
  \LGinf \astrl \LGinf \astrl \LGinf \cong \vnE^{(2)}(\LGinf
   \otimes \LGinf \otimes \LGinf)\vnE^{(2)},
 \end{align*}
-where $\vnE^{(2)}=(\vnE \otimes 1)(1 \otimes \vnE)$, and then the two
+where $\vnE^{(2)}=(\vnE \otimes 1)(1 \otimes \vnE)$. Then the two
 compositions  become corestrictions of the maps $(\vnDelta \otimes
 \id)\circ \vnDelta$ and $(\id \otimes \vnDelta)\circ \vnDelta$,
-respectively, which coincide on $\pi_{r}(P(\mathscr{G}))$ by
+respectively, which coincide on $\pi_{\red}(P(\mathscr{G}))$ by
 co-associativity of $\Delta$. 
 
 Next, we need to
@@ -519,7 +476,8 @@ $(f_{z})_{z\in \C}$ on $P(\mathscr{G})$ introduced in \cite[Theorem
 2.25]{DCT1} as follows.  Define $\tau_{z} \colon P(\mathscr{G}) \to
 P(\mathscr{G})$ by
 \begin{align*}
-\tau_{z}(a) &= (f_{-iz} \otimes \id \otimes f_{iz})((\Delta_{kl}
+% Changed the order!
+\tau_{z}(a) &= (f_{iz} \otimes \id \otimes f_{-iz})((\Delta_{kl}
 \otimes \id)\Delta_{mn}(a)) \quad \text{for } a\in \Gr{A}{k}{l}{m}{n}.
 \end{align*}
 Then \cite[Theorem 2.25]{DCT1} implies that $\tau_{z}$ is an algebra
@@ -527,7 +485,7 @@ homomorphism and
 \begin{gather} \label{eq:alg-scale}
   \begin{aligned}
     \tau_{z} \circ \tau_{z'} &= \tau_{z+z'}, & \tau_{z}\circ \ast &=
-    \ast\circ \tau_{\overline{z}}, & S^{2} &= \tau_{i}, & S \circ
+    \ast\circ \tau_{\overline{z}}, & S^{2} &= \tau_{-i}, & S \circ
     \tau_{z} &= \tau_{z} \circ S,
   \end{aligned}
  \\  \label{eq:alg-mod-aut-delta} (\tau_{z} \otimes \sigma_{z})
@@ -537,15 +495,15 @@ for all $z\in \C$. Moreover, $R:=S\circ
 \tau_{i/2}$ is a $*$-anti-automorphism of $P(\mathscr{G})$.  The
 one-parameter group $\tau=(\tau_{t})_{t\in \R}$ and $R$ lift to
 $C^{u}_{0}(\mathscr{G})$ by the universal property of
-$C^{u}_{0}(\mathscr{G})$, and to the reduced level as well:
+$C^{u}_{0}(\mathscr{G})$, and to the reduced level as well, as the next proposition shows.
 \begin{Prop}
   Let $\mathscr{G}$ be an $I$-partial compact quantum group with
   associated von Neumann algebra $\LGinf$. Then there exist
 a unique strongly continuous one-parameter group $\vntau$ and
  a unique $*$-anti-automorphism $\vnR$ of $\LGinf$ such that
- $\vntau_{t} \circ \pi_{r} = \pi_{r} \circ
+ $\vntau_{t} \circ \pi_{\red} = \pi_{\red} \circ
 \tau_{t}$ for  all $t\in \R$ and
-$\vnR \circ \pi_{r} = \pi_{r} \circ R$.
+$\vnR \circ \pi_{\red} = \pi_{\red} \circ R$.
  These are the scaling group and the unitary antipode of the measured
  quantum groupoid $(l^{\infty}(I),\LGinf, \lambda,\rho,\tilde\Delta,
  T_{\lambda},T_{\rho},\nu)$, respectively.
@@ -557,13 +515,13 @@ $\vnR \circ \pi_{r} = \pi_{r} \circ R$.
   $P_{t}\Lambda(a) = \Lambda(\tau_{t}(a))$ defines a one-parameter
   group of unitaries $(P_{t})_{t\in \R}$ on $\LGtwo$. By \cite[Theorem
   2.25]{DCT1}, elements of $\Lambda(P(\mathscr{G}))$ are analytic with
-  respect to $P$, and by A.1 in \cite{Taksak2}, $P$ is strongly
+  respect to $P$, and hence $P$ is strongly
   continuous.  Therefore, we can define $\vntau$ by  $\vntau_{t}(x)=
   P_{t}xP_{t}^{*}$ for all $x\in \LGinf$ and $t\in \R$.
   
 
   Next, we prove existence of $\vnR$. We claim that the formula $
-  I\Lambda(a) = \Lambda(R(a)^{*})$ defines an conjugate-linear
+  I\Lambda(a) = \Lambda(R(a)^{*})$ defines a conjugate-linear
   isometry $I$. Indeed, $\phi(R(a)R(b)^{*})= (\phi\circ R)(b^{*}a)$
   for all $a,b\in P(\mathscr{G})$ and $\phi \circ R=\phi \circ S \circ
   \tau_{i/2} = \phi \circ \tau_{i/2}=\phi$, where we used \cite[
@@ -577,33 +535,33 @@ Let us show   that the unitary antipode  $\tilde R$ and the
   By \cite[Theorem A.6]{Eno2},
   \begin{align*}
     \tilde R(\id \underset{\nu}{_{\rho} \ast_{\lambda}}
-    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{r}(a^{*}a))) &= (\id
+    \omega_{J\Lambda(b),J\Lambda(b)})(\tilde\Delta(\pi_{\red}(a^{*}a))) &= (\id
     \underset{\nu}{_{\rho} \ast_{\lambda}}
-    \omega_{J\Lambda(a),J\Lambda(a)})(\vnDelta(\pi_{r}(b^{*}b))),
+    \omega_{J\Lambda(a),J\Lambda(a)})(\tilde\Delta(\pi_{\red}(b^{*}b))),
   \end{align*}
   for all $a,b\in P(\mathscr{G})$.  Let $c=a^{*}a$ and $d=b^{*}b$.  A
   short calculation using \eqref{eq:alg-mod-aut} shows that the right hand
   side is equal to
 \begin{align*}
-  \pi_{r} ( d_{(1)}\phi(\sigma_{i/2}(a)d_{(2)}\sigma_{i/2}(a)^{*})) =
-  \pi_{r}(d_{(1)}\phi(\sigma_{i/2}(c)d_{(2)})).
+  \pi_{\red} ( d_{(1)}\phi(\sigma_{i/2}(a)d_{(2)}\sigma_{i/2}(a)^{*})) =
+  \pi_{\red}(d_{(1)}\phi(\sigma_{i/2}(c)d_{(2)})).
   \end{align*}
 By \cite[Lemma 1.13]{DCT1},  \eqref{eq:alg-mod-aut-delta} and
   \eqref{eq:alg-mod-aut},  this is equal to
   \begin{align*}
-   \pi_{r}(S(\sigma_{i/2}(c)_{(1)}\phi(\sigma_{i/2}(c)_{(2)}d))) &=
-   \pi_{r}(S(\tau_{i/2}(c_{(1)})\phi(\sigma_{i/2}(c_{(2)})d))) \\
-   &= \pi_{r}(R(c_{(1)}\phi(\sigma_{i/2}(d)c_{(2)}))) \\
+   \pi_{\red}(S(\sigma_{i/2}(c)_{(1)}\phi(\sigma_{i/2}(c)_{(2)}d))) &=
+   \pi_{\red}(S(\tau_{i/2}(c_{(1)})\phi(\sigma_{i/2}(c_{(2)})d))) \\
+   &= \pi_{\red}(R(c_{(1)}\phi(\sigma_{i/2}(d)c_{(2)}))) \\
    &=\vnR((\id \underset{\nu}{_{\rho} \ast_{\lambda}}
-    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{r}(a^{*}a)))).
+    \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{\red}(a^{*}a)))).
   \end{align*}
-  Since elements of the form $\pi_{r}(a^{*}a)$ are dense in
-  $\LGinf_{+}$ and $\Lambda(P(\mathscr{G}))$ is dense in $\LGtwo$, we
+  Since elements of the form $\pi_{\red}(a^{*}a)$ are dense in
+  $\LGinf^{+}$ and $\Lambda(P(\mathscr{G}))$ is dense in $\LGtwo$, we
   can conclude from \cite[Theorem A.7]{Eno2} that elements of the form
   \begin{align*}
   (\id \underset{\nu}{_{\rho}
     \ast_{\lambda}}
-  \omega_{J\Lambda(b),J\Lambda(b)})(\vnDelta(\pi_{r}(a^{*}a)))  
+  \omega_{J\Lambda(b),J\Lambda(b)})(\tilde\Delta(\pi_{r}(a^{*}a)))  
   \end{align*}
  are
   dense in $\LGinf_{+}$. Consequently, $\tilde R=\vnR$. 
