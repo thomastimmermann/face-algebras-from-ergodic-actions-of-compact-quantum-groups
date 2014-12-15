@@ -55,44 +55,7 @@ For completeness, let us also recall the correspondence with the formalism of Ko
 
 \subsection{Representation theory of $A_x$}
 
-We wish to classify the irreducible $^*$-representations of $A_x$. We will need an auxiliary notion.
-
-%The parametrisation will hinge on the classification of what we call irreducible $$-adapted sets, which we will now discuss.
-
-%\subsection{Irreducible $c$-sets}
-
-\begin{Def}\label{DefAdapt} Let $c\in\R$. For $\epsilon \in \{\pm\}$, a real number $y>0$ will be called \emph{$c_{\epsilon}$-adapted} if \begin{equation}\label{EqAd+} c \leq \ctau(q^{-\epsilon}y),\end{equation} and \emph{strictly} $c_{\epsilon}$-adapted if this holds strictly. It is called \emph{$c$-adapted} if it is both $c_+$- and $c_-$-adapted. 
-
-A subset $Z$ of $\R^+_0$ is called a \emph{$c$-set} if the following conditions hold: \begin{itemize} 
-\item[$\bullet$] $Z$ is not empty.
-\item[$\bullet$] $Z$ consists of $c$-adapted points.
-\item[$\bullet$] If $y\in Z$ is strictly $c_{\epsilon}$-adapted, then $q^{-2\epsilon}y$ is in $Z$.
-\end{itemize}
-%An $(x,c)$-set $Z$ is called \emph{even} (resp.~ \emph{odd}) if $Z\subseteq q^{2\Z}$ (resp.~ $Z\subseteq q^{2\Z+1}$).
-A $c$-set is called \emph{irreducible} if it can not be written as the union of two disjoint $c$-sets.
-\end{Def}
-
-We will classify irreducible $c$-sets. For $y>0$, we write $T_y = yq^{1+2\Z}$, $T_y^+ = yq^{1+2\N}$ and $T_y^{-} = yq^{-1-2\N}$. 
-
-%We use the convention $\N = \{0,1,2,\ldots\}$ and $\N_0=\{1,2,\ldots\}$.
-
-\begin{Prop}\label{PropClass1D}
-
-% Picture!
-\begin{itemize} The following list exhausts all irreducible $c$-sets.
-\item[$\bullet$] $c<2: T_y$ for $y>0$
-\item[$\bullet$] $c \geq 2$, $c=\ctau(z)$ with $0 < z\leq 1$:
-\begin{itemize}
-\item[$\bullet$] $T_y$ for $\frac{q}{z}<qy<\frac{z}{q}$.
-\item[$\bullet$] $T_{z}^+$ and $T_{1/z}^-$.
-\item[$\bullet$] $\{1\}$ if $z=q$.
-\end{itemize}
-\end{itemize}
-\end{Prop} 
-\begin{proof} Elementary.
-\end{proof} 
-
-Let us now turn to the representation theory of the $^*$-algebra $A_x$.
+We wish to classify the irreducible $^*$-representations of $A_x$.
 
 Let $\pi$ be any (necessarily bounded) non-degenerate $^*$-representation of $A_x$ on a Hilbert space $\Hsp_{\pi}$. Then \[\Hsp_{\pi} = \oplus_{y,z} \Hsp^{y}_{z},\qquad \Hsp^{y}_{z} = \pi(\UnitC{y}{z})\Hsp_{\pi}.\] Write \[H_{\pi} =  \textrm{the (non-closed) linear span of all }\Hsp^{y}_{z}.\] Then $\pi(A_x)H_{\pi} = H_{\pi}$. It follows that one can extend $\pi$ to a map \[\pi: M(A_x) \rightarrow \End_{\adj}(H_{\pi}),\] where $\End_{\adj}(H_{\pi})$ denotes the $^*$-algebra of adjointable operators on the pre-Hilbert space $H_{\pi}$. In particular, the generators $\alpha,\beta,\gamma,\delta$ give rise to (contractive) maps $H_{\pi}\rightarrow H_{\pi}$. 
 
@@ -139,14 +102,12 @@ Using Corollary \ref{CorCas}, these assertions follow immediately from the defin
 
 %We can hence identity $\Hsp$ as a quotient of $l^2(\Z\times \Z)$. Write the images of the standard basis vectors $e_{m,n}$ of $l^2(\Z\times \Z)$ as $f_{m,n}$. Let us write $F = \{(m,n)\mid f_{m,n}\neq 0\}$.
 
-With the above preliminaries, we can now classify the irreducible $^*$-representations of $A_x$. We first extend the terminology of Definition \ref{DefAdapt}.
-% Different order of introducing?
-
+With the above preliminaries, we can now classify the irreducible
+$^*$-representations of $A_x$ in terms of certain subsets of $\R^{2}$.
 
 \begin{Def} Fix $c\in \R$. For $\epsilon,\nu\in \{-,+\}$, a couple $(y,z)$ of strictly positive reals is called \emph{$c_{\epsilon,\nu}$-adapted} if the following inequality holds: \begin{equation}\label{EqAd} \ctau(q^{-\epsilon}yz^{\epsilon\nu})+\epsilon\nu c\geq 0.\end{equation} A couple $(y,z)$ is called \emph{strictly} $c_{\epsilon,\nu}$-adapted if this is a strict equality. We call $(y,z)$ \emph{$c$-adapted} if it is $c_{\epsilon,\nu}$-adapted for all $\epsilon,\nu\in \{+,-\}$. 
-\end{Def} 
 
-\begin{Def} Fix $c\in \R$. We call a subset $T\subseteq \R_{>0}^2$ a \emph{$c$-set} if the following conditions are satisfied: 
+ We call a subset $T\subseteq \R_{>0}^2$ a \emph{$c$-set} if the following conditions are satisfied: 
 \begin{itemize} 
 \item[$\bullet$] $T$ is not empty.
 \item[$\bullet$] $T$ consists of $c$-adapted points.
@@ -175,7 +136,20 @@ By direct computation, using the defining commutation relation, we see that $\pi
 Now the formulas for $\pi(\alpha)$ and $\pi(\beta)$ are uniquely determined up to a unimodular gauge factor. As any non-zero $\Hsp^{y}_z$ is cyclic for $\pi$, it follows that these gauge factors are determined by their value at one component. As the $\alpha$ and $\beta$ define different shifts in the grading, we then easily conclude that $\pi$ is in fact the unique $T$-compatible $^*$-representation, up to unitary equivalence.
 \end{proof}
 
-What remains is to classify irreducible $c$-sets for each $c\in \R$. 
+What remains is to classify irreducible $c$-sets of $\R^{2}$ for each
+$c\in \R$.  This can be done in terms of $c$-sets in $\R$.
+
+
+\begin{Def}\label{DefAdapt} Let $c\in\R$. For $\epsilon \in \{\pm\}$, a real number $y>0$ will be called \emph{$c_{\epsilon}$-adapted} if \begin{equation}\label{EqAd+} c \leq \ctau(q^{-\epsilon}y),\end{equation} and \emph{strictly} $c_{\epsilon}$-adapted if this holds strictly. It is called \emph{$c$-adapted} if it is both $c_+$- and $c_-$-adapted. 
+
+A subset $Z$ of $\R^+_0$ is called a \emph{$c$-set} if the following conditions hold: \begin{itemize} 
+\item[$\bullet$] $Z$ is not empty.
+\item[$\bullet$] $Z$ consists of $c$-adapted points.
+\item[$\bullet$] If $y\in Z$ is strictly $c_{\epsilon}$-adapted, then $q^{-2\epsilon}y$ is in $Z$.
+\end{itemize}
+%An $(x,c)$-set $Z$ is called \emph{even} (resp.~ \emph{odd}) if $Z\subseteq q^{2\Z}$ (resp.~ $Z\subseteq q^{2\Z+1}$).
+A $c$-set is called \emph{irreducible} if it can not be written as the union of two disjoint $c$-sets.
+\end{Def}
 
 \begin{Lem}\label{LemClass2D} A set $T\subseteq \R_{>0}^2$ is an irreducible $c$-set if and only if there exists an irreducible $-c$-set $Z_+\subseteq \R_{>0}$ and an irreducible $c$-set $Z_-\subseteq \R_{>0}$ such that $(y,z)\in T$ if and only if $yz\in Z_+$ and $y/z\in Z_-$.
 \end{Lem} 
@@ -183,6 +157,26 @@ What remains is to classify irreducible $c$-sets for each $c\in \R$.
 \begin{proof} It is immediate that $(y,z)\in \R_{>0}^2$ is (strictly) $c_{\epsilon,\nu}$-adapted if and only if $yz^{\epsilon\nu}$ is (strictly) $(-\epsilon\nu c)_{\epsilon}$-adapted. The conclusion of the lemma then follows immediately.
 \end{proof}
 
+Finally, the $c$-sets in $\R$ can be classified as follows.
+ For $y>0$, we write $T_y = yq^{1+2\Z}$, $T_y^+ = yq^{1+2\N}$ and $T_y^{-} = yq^{-1-2\N}$. 
+
+%We use the convention $\N = \{0,1,2,\ldots\}$ and $\N_0=\{1,2,\ldots\}$.
+
+\begin{Prop}\label{PropClass1D} The following list exhausts all
+  irreducible $c$-sets in $\R$.
+% Picture!
+\begin{itemize} 
+\item[$\bullet$] $c<2: T_y$ for $y>0$
+\item[$\bullet$] $c \geq 2$, $c=\ctau(z)$ with $0 < z\leq 1$:
+\begin{itemize}
+\item[$\bullet$] $T_y$ for $\frac{q}{z}<qy<\frac{z}{q}$.
+\item[$\bullet$] $T_{z}^+$ and $T_{1/z}^-$.
+\item[$\bullet$] $\{1\}$ if $z=q$.
+\end{itemize}
+\end{itemize}
+\end{Prop} 
+\begin{proof} Elementary.
+\end{proof} 
 Let now $\mathcal{A}_x$ be the universal C$^*$-envelope of $A_x$. As the $\Omega\UnitC{y}{z}$ define orthogonal bounded elements in $A_x\subseteq \mathcal{A}_x$, we can make sense of $\Omega$ as an element affiliated to $\mathcal{A}_x$, i.e. $\Omega\,\eta\,\mathcal{A}_x$ \cite{Wor2}. 
 
 
@@ -275,5 +269,5 @@ In particular, as this spectrum is strictly smaller than the spectrum of $\Omega
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "dyn-suq-main"
+%%% TeX-master: "dynamical-SUq-file"
 %%% End: 

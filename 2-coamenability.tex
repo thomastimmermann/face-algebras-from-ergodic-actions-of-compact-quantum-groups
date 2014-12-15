@@ -5,8 +5,6 @@ Let $\mathscr{G}$ be a partial compact quantum group. We will use throughout tha
 \begin{Def} A partial compact quantum group $\mathscr{G}$ will be called \emph{coamenable} if the natural projection map $\pi_r:\CuG\rightarrow \CrG$ is an isomorphism.
 \end{Def}
 
-% Coamenability in terms of invariant measure not considered yet.
-
 %Our aim is to give a characterisation of coamenability in terms of the representation theory of the fusion algebra, cf.~ \cite{Kye1} and references therein.
 
 The following version of Fell's absorption principle will show that the usual characterisation of coamenability in terms of the counit representation of $\CuG$ holds. We first introduce some notation. % Notation should be moved to earlier section.
@@ -39,7 +37,7 @@ We now pass to the character algebra of $\mathscr{G}$.
  
  We aim to show that $\chi$ is in fact a well-defined element in $M(\CuG)$. 
  
- \begin{Lem} We have $\Gr{\chi}{}{X\smCirct Y}{k}{m}= \sum_l \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}$.
+ \begin{Lem} \label{LemCharMult} We have $\Gr{\chi}{}{X\smCirct Y}{k}{m}= \sum_l \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}$.
  \end{Lem}
  
  \begin{proof} 
@@ -107,7 +105,24 @@ It is immediately clear that a coamenable partial compact quantum group is dimen
  % Corollary: canonical partial quantum group constructed from a tensor C*-cat is always dimension coamenable, cf. Neshveyev-Tuset section 2.7
 \begin{Prop} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to a partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is dimension coamenable.  
 \end{Prop}% Ref to add to canonical partial compact quantum group
-\begin{proof} The representation $D$ is now just the canonical regular representation of the fusion algebra of $\CatCC$ on the $L^2$-space $L^2(\mathcal{C})$. 
+\begin{proof} 
+  By construction, $\Rep(\mathscr{G}_{\CatCC})$ can canonically be
+  identified with $\CatCC$, and the set $I$ labels a maximal set
+  $\{u_{k}\}$ of mutually non-isomorphic irreducible objects of
+  $\CatCC$. Fix a section of the hyperobject set  and denote by $l' \in
+  I$ the chosen representative for the hyperobject  of $l\in I$. By the orthogonality
+  relations,  we can identify $l^{2}(I)$
+  with $L^{2}(\mathcal{C})$ via $l \mapsto \chi^{u_{l}}_{l'}$, and by
+  Lemma \ref{LemCharMult}, 
+  \begin{align*}
+ \chi^{X}\chi^{u_{l}}_{l'} = \chi^{X \Circt u_{l}}_{l'} = \sum_{k}
+ \dim(\Hom(u_{k},X\Circt u_{l})) \chi^{u_{k}}_{k'} = \sum_{k}
+ D^{X}_{kl} \chi^{u_{k}}_{k'}.
+  \end{align*}
+Thus, this identification intertwines the regular representation of the
+fusion algebra of $\CatCC$ on $L^2(\mathcal{C})$ with the
+representation $\tilde \epsilon$. Since the former extends to
+$\mathcal{C}$, so does the latter.
  \end{proof}
  
  \begin{Prop} Consider the partial compact quantum group $\mathscr{G}(\Gamma)$ associated to a weighted reciprocal random walk $\Gamma = (\Gamma,i,w,\sgn)$. Then $\mathscr{G}(\Gamma)$ is dimension coamenable if and only if $\|\Gamma\| \leq 2$. 
@@ -116,4 +131,13 @@ It is immediately clear that a coamenable partial compact quantum group is dimen
  The character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, with $\chi_{1/2}$ the character of the spin 1/2-corepresentation $u_{1/2}$. It has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. Hence we obtain a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{u_{1/2}}$ if and only if $\|D^{u_{1/2}}\| \leq  2$. But the latter norm is by definition $\|\Gamma\|$.   
  \end{proof} 
  
- In particular, the partial compact quantum groups coming from dynamical quantum $SU(2)$ are dimension coamenable. However, as we will see in the next section, they are not coamenable.
+ In particular, the partial compact quantum groups coming from
+ dynamical quantum $SU(2)$ are dimension coamenable. However, as we
+ will see in the next section, they are not coamenable.
+
+% Coamenability in terms of invariant measure not considered yet.
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dynamical-SUq-file"
+%%% End: 
+
