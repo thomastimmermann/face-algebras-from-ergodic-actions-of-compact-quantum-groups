@@ -30,7 +30,7 @@ $\mathcal{K}$ and $\xi\in \Gru{\mathcal{K}}{k}{l}$, $\eta\in
   \end{equation}
 where  the sum is  finite because $\mathcal{K}$ is rcfd. 
 
-As $\pi(\UnitC{l}{n})$ is a self-adjoint projection, it extends uniquely to an element in $B(\Hsp)$. From  $\eqref{EqUnitary}$, it then follows that each $(\pi\otimes \id)(\Gr{X}{p}{l}{m}{n})$ extends to a contraction in $B(\Hsp\otimes \GrDA{\mathcal{K}}{m}{n},\Hsp\otimes \GrDA{\mathcal{K}}{p}{l})$. We hence conclude that
+As $\pi(\UnitC{l}{n})$ is a self-adjoint projection, it extends uniquely to an element in $B(\Hsp)$. From  $\eqref{EqUnitary}$, it then follows that each $(\pi\otimes \id)(\Gr{X}{p}{l}{m}{n})$ can be extended to a contraction in $B(\Hsp\otimes \GrDA{\mathcal{K}}{m}{n},\Hsp\otimes \GrDA{\mathcal{K}}{p}{l})$. We hence conclude that
  \[\|\pi(a)\| \leq \| \xi\| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
     \|\xi\|\|\eta\| .\] 
 
@@ -99,6 +99,15 @@ By Lemma \ref{LemUniBound}, we can extend $(\pi_u\otimes \pi_u)\Delta$ to a boun
 \end{proof}
 
 Since $\underset{k,l,m,n}{\sum} \pi_u(\UnitC{k}{m})\otimes \pi_u(\UnitC{l}{n})$ converges strictly to the unit in $M(C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G}))$, we have in fact for $a\in P(\mathscr{G})$ that, with respect to the strict topology, \[\Delta^u(a) = \sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a)).\]
+
+The existence of the above coproduct can be used to construct tensor products of C$^*$-representations of $\CuG$. For $(\Hsp,\pi)$ a $^*$-representation of $\CuG$, we write $p_{\pi}\in B(\Hsp)$ for the projection onto the closure of $\pi(\CuG)\Hsp$. We write $\GrLA{\Hsp}{k}{l} = \pi(\UnitC{k}{l})\Hsp$, which gives a direct sum decomposition of $p_{\pi}\Hsp$.  When $(\mathcal{K},\pi')$ is another $^*$-representation, we will write $\pi \boxtimes \pi'$ for the representation of $\CuG$ on $\mathcal{H}\otimes \mathcal{K}$ obtained as \[(\pi \boxtimes \pi')(a)(\xi\otimes \eta) = (\pi\otimes \pi')(\Delta^u(a))(p_{\pi}\xi\otimes p_{\pi'}\eta).\] The restriction of $\pi\boxtimes \pi'$ to \[\Hsp\itimes \mathcal{K} := p_{\pi \boxtimes \pi'}(\Hsp\otimes \mathcal{K}) = (\pi \boxtimes \pi')(\Delta^u(1))(\Hsp\otimes \mathcal{K})= \oplus_l ({}_l\Hsp\otimes {}^l\mathcal{K})\] will be written as $\pi\iboxtimes \pi'$. 
+
+\begin{Def}\label{DefTenProd}  Let $\mathscr{G}$ be a partial compact quantum group, and let $(\Hsp,\pi)$ and $(\mathcal{K},\pi')$ be two $^*$-representations of $\CuG$. Then the $^*$-representation $(\Hsp\itimes \mathcal{K},\pi\iboxtimes \pi')$ will be called the \emph{tensor product representation} of $\pi$ and $\pi'$. 
+\end{Def} 
+
+Note that, by definition, $\pi\iboxtimes \pi'$ is a non-degenerate representation, i.e.~ $p_{\pi\iboxtimes \pi'} = 1$.
+
+%We further write $H=H_{\pi}$ for the linear span of all $\GrLA{\Hsp}{k}{l}$.
 
 
 We now turn towards the reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra

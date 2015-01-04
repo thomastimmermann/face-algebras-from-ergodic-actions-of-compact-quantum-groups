@@ -1,22 +1,26 @@
 \section{Coamenability of partial compact quantum groups}
 
-Let $\mathscr{G}$ be a partial compact quantum group. We will use throughout that if $\pi: P(\mathscr{G}) \rightarrow \End(V)$ is any $^*$-representation on a pre-Hilbert space (meaning $\langle v,\pi(a)w\rangle = \langle \pi(a^*)v,w\rangle$ for all $v,w\in V$), then $\pi$ extends to a $^*$-representation of $\CuG$ on the completion of $V$.
+Let $\mathscr{G}$ be a partial compact quantum group. 
 
-\begin{Def} A partial compact quantum group $\mathscr{G}$ will be called \emph{coamenable} if the natural projection map $\pi_r:\CuG\rightarrow \CrG$ is an isomorphism.
+%We will use throughout that if $\pi: P(\mathscr{G}) \rightarrow \End(V)$ is any $^*$-representation on a pre-Hilbert space (meaning $\langle v,\pi(a)w\rangle = \langle \pi(a^*)v,w\rangle$ for all $v,w\in V$), then $\pi$ extends to a $^*$-representation of $\CuG$ on the completion of $V$.
+
+\begin{Def} A partial compact quantum group $\mathscr{G}$ will be called \emph{coamenable} if the natural projection map $\pi_{\red}:\CuG\twoheadrightarrow\CrG$ is an isomorphism.
 \end{Def}
 
 %Our aim is to give a characterisation of coamenability in terms of the representation theory of the fusion algebra, cf.~ \cite{Kye1} and references therein.
 
-The following version of Fell's absorption principle will show that the usual characterisation of coamenability in terms of the counit representation of $\CuG$ holds. We first introduce some notation. % Notation should be moved to earlier section.
-For $(\Hsp,\pi)$ a $^*$-representation of $\CuG$, we write $p_{\pi}\in B(\Hsp)$ for the projection onto the closure of $\pi(\CuG)\Hsp$. We write $\GrLA{\Hsp}{k}{l} = \pi(\UnitC{k}{l})\Hsp$, which gives a direct sum decomposition of $p_{\pi}\Hsp$. We further write $H=H_{\pi}$ for the linear span of all $\GrLA{\Hsp}{k}{l}$. When $(\mathcal{K},\pi')$ is another $^*$-representation, we will write $\pi \boxtimes \pi'$ for the representation of $\CuG$ on $\mathcal{H}\otimes \mathcal{K}$ obtained as \[(\pi \boxtimes \pi')(a)(\xi\otimes \eta) = (\pi\otimes \pi')\bar{\Delta}(a)(p_{\pi}\xi\otimes p_{\pi'}\eta).\] If $\pi$ and $\pi'$ are non-degenerate, the restriction of $\pi\boxtimes \pi'$ to \[p_{\pi \boxtimes \pi'}(\Hsp\otimes \mathcal{K}) = (\pi \boxtimes \pi')\vnDelta(1)(\Hsp\otimes \mathcal{K})= \oplus_l ({}_l\Hsp\otimes {}^l\mathcal{K})\] will be written as $\pi\iboxtimes \pi'$. 
+We will show that the usual characterisation of coamenability in terms of the counit representation holds. For this we need the following version of Fell's absorption principle. We will continue to use the notation introduced in the previous section.
+% Definition \ref{DefTenProd} and the discussion preceding it.
 
-\begin{Lem} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\pi_r\iboxtimes \pi$ factorizes over $\CrG$.
+\begin{Lem}\label{LemFell} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\pi_{\red}\iboxtimes \pi$ factorizes over $\CrG$.
 \end{Lem}
 
-\begin{proof}  We have a unitary \[U: \oplus_q (L^2(\mathscr{G})_q\otimes {}_q\Hsp ) \rightarrow \oplus_l ({}_l L^2(\mathscr{G})\otimes {}^l\Hsp),\]\[\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(x_{(2)})\xi,\quad x\in P(\mathscr{G}),\xi\in H,\] with inverse $\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(S(x_{(2)}))\xi$. Denote $\pi_{r,q}$ for the restriction of $\pi_r$ to $L^2(\mathscr{G})_q$. Then it is clear that $U$ intertwines $\pi_r\boxtimes \pi$ with $\oplus_q (\pi_{r,q}\otimes 1)$. As each $\pi_{r,q}$ descends to $\CrG$, this proves the lemma.
+\begin{proof}  We have a unitary \[U: \oplus_q (L^2(\mathscr{G})_q\otimes {}_q\Hsp ) \rightarrow \oplus_l ({}_l L^2(\mathscr{G})\otimes {}^l\Hsp),\]\[\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(x_{(2)})\xi,\quad x\in P(\mathscr{G}),\xi\in H,\] with inverse $\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(S(x_{(2)}))\xi$. %more info needed?
+Denote $\pi_{\red,q}$ for the restriction of $\pi_{\red}$ to $L^2(\mathscr{G})_q$. Then it is clear that $U$ intertwines $\oplus_q (\pi_{\red,q}\otimes 1)$ with $\pi_{\red}\boxtimes \pi$. As each $\pi_{\red,q}$ descends to $\CrG$, this proves the lemma.
 \end{proof} 
 
-Recall now (from previous paper) the $^*$-representation \[\weps: P(\mathscr{G}) \rightarrow \End(\C^{(I)}), \quad x\in \Gr{A}{k}{l}{m}{n}\mapsto \epsilon(x) e_{kl}.\] We will denote its extension to a $^*$-representation $\CuG\rightarrow B(l^2(I))$ by the same symbol.
+Recall now from \cite{DCT1} the $^*$-representation \[\weps: P(\mathscr{G}) \rightarrow \End(\C^{(I)}), \quad x\in \Gr{A}{k}{l}{m}{n}\mapsto \epsilon(x) e_{kl},\]
+where $\epsilon$ denotes the counit of $P(\mathscr{G})$ and $\C^{(I)}$ the direct sum of $I$ copies of $\C$ with the natural pre-Hilbert space structure. We will denote its extension to a $^*$-representation $\CuG\rightarrow B(l^2(I))$ by the same symbol.
 
 \begin{Lem}\label{LemUnit} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\weps\iboxtimes \pi$ is unitarily equivalent to $\pi$.
 \end{Lem} 
@@ -25,7 +29,7 @@ Recall now (from previous paper) the $^*$-representation \[\weps: P(\mathscr{G})
 
 \begin{Prop} The partial compact quantum group $\mathscr{G}$ is coamenable if and only if $\weps$ descends to a $^*$-representation of $\CrG$.
 \end{Prop} 
-\begin{proof} $\Rightarrow$ is clear. For $\Leftarrow$, note that $\vnDelta$ descends to a (non-unital) $^*$-homomorphism $\CrG\rightarrow M(\CrG\otimes \CuG)$ by Fell's absorption principle. Composing with $\weps\otimes \id$ and using Lemma \ref{LemUnit} with respect to a faithful representation of $\CuG$, we see that there exists a splitting $\CrG\rightarrow \CuG$ of $\pi_r$, hence $\pi_r$ is an isomorphism.
+\begin{proof} $\Rightarrow$ is clear. For $\Leftarrow$, note that $\Delta^u$ descends to a (non-unital) $^*$-homomorphism $\CrG\rightarrow M(\CrG\otimes \CuG)$ by Fell's absorption principle. Composing with $\weps\otimes \id$ and using Lemma \ref{LemUnit} with respect to a faithful representation of $\CuG$, we see that there exists a splitting $\CrG\rightarrow \CuG$ of $\pi_{\red}$, hence $\pi_{\red}$ is an isomorphism.
 \end{proof}
  
 We now pass to the character algebra of $\mathscr{G}$.
