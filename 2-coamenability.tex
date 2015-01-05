@@ -34,23 +34,25 @@ where $\epsilon$ denotes the counit of $P(\mathscr{G})$ and $\C^{(I)}$ the direc
  
 We now pass to the character algebra of $\mathscr{G}$.
  
- \begin{Def} Let $\mathscr{X}$ be a unitary rcfd representation of $\mathscr{G}$ on an (rcfd) $I$-bigraded Hilbert space $\Hsp$. The \emph{partial characters} of $\mathscr{X}$ are defined as \[\Gr{\chi}{}{X}{k}{l} = (\id\otimes \Tr)(\Gr{X}{k}{l}{k}{l}) = \sum_i(\Gr{X}{k}{l}{k}{l})_{ii} \in \Gr{A}{k}{l}{k}{l},\] where $\Tr$ is the non-normalized trace on $B(\GrDA{\Hsp}{k}{l})$. The \emph{total character} of $\mathscr{X}$ is the multiplier $\chi^X  =\underset{k,l}{\sum} \Gr{\chi}{}{X}{k}{l}\in M(P(\mathscr{G}))$.
+ \begin{Def} Let $\mathscr{X}$ be a unitary rcfd representation of a partial compact quantum group $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$. The \emph{partial characters} of $\mathscr{X}$ are defined as \[\Gr{\chi}{}{X}{k}{l} = (\id\otimes \Tr)(\Gr{X}{k}{l}{k}{l}) = \sum_i(\Gr{X}{k}{l}{k}{l})_{ii} \in \Gr{P(\mathscr{G})}{k}{l}{k}{l},\] where $\Tr$ is the non-normalized trace on $B(\GrDA{\Hsp}{k}{l})$, and where $(\Gr{X}{k}{l}{k}{l})_{ij}$ denote matrix coefficients with respect to some fixed orthonormal basis. The \emph{total character} of $\mathscr{X}$ is the multiplier $\chi^X  =\underset{k,l}{\sum} \,\Gr{\chi}{}{X}{k}{l}\in M(P(\mathscr{G}))$.
  \end{Def}
  
- For example, if $U$ is the trivial corepresentation, then $\Gr{\chi}{}{U}{k}{l} = \delta_{k,l}\UnitC{k}{k}$, and $\chi^U = \sum_k \UnitC{k}{k}$.
+ For example, if $\mathscr{U}$ is the trivial representation of $\mathscr{G}$, then $\Gr{\chi}{}{U}{k}{l} = \delta_{k,l}\UnitC{k}{k}$, and $\chi^U = \sum_k \UnitC{k}{k}$.
  
- We aim to show that $\chi$ is in fact a well-defined element in $M(\CuG)$. 
+ We aim to show that each character $\chi^X$ is in fact a well-defined element in $M(\CuG)$. Recall from \cite{DCT1} that $\smCirct$ denotes the tensor product of two representations of $\mathscr{G}$. 
  
- \begin{Lem} \label{LemCharMult} We have $\Gr{\chi}{}{X\smCirct Y}{k}{m}= \sum_l \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}$.
+ \begin{Lem} \label{LemCharMult} We have $\Gr{\chi}{}{X\smCirct Y}{k}{m}= \underset{l}{\sum}\, \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}$.
  \end{Lem}
  
  \begin{proof} 
- This follows from the fact that $\Gr{(X\Circt Y)}{k}{l}{m}{n} = \sum_{r,s} \left(\Gr{X}{k}{r}{m}{s}\right)_{12} \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}$.
+ This follows from the definition of $\smCirct$, namely $\Gr{(X\Circt Y)}{k}{l}{m}{n} = \sum_{r,s} \left(\Gr{X}{k}{r}{m}{s}\right)_{12} \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}$.
  \end{proof}
- 
 
- \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be a unitary
-   representation of $\mathscr{G}$ on an sfd $I$-graded Hilbert space $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
+For the next lemma, recall from \cite{DCT1} that a unitary rcfd representation of $\mathscr{G}$ is said to have \emph{finite hypersupport} if it is a \emph{finite} direct sum of irreducible unitary rcfd representations.  The left hyperobject support of $\mathscr{X}$ is then the set of all $k$ such that $\GrDA{\Hsp}{k}{l}\neq \{0\}$ for some $l$. The right hyperobject support is defined similarly. Note that the left (resp. right) hyperobject support consists of  hyperobject classes, where $k$ and $l$ define the same hyperobject class if $\UnitC{k}{l}\neq0$. 
+
+
+ \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be an rcfd unitary
+   representation of $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
   \end{Lem}
   \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
     with left hyperobject support $\alpha$ and right hyperobject support
@@ -67,7 +69,7 @@ We now pass to the character algebra of $\mathscr{G}$.
     space completions. It then follows from \cite[Lemma A.3.2]{DCY1}
     that 
     \begin{align} \label{eq:dim-estimate}
-  \sup_r (\sum_s (d_{rs}^X+d_{sr}^X)) < \infty.    
+  \sup_k (\sum_l (d_{kl}^X+d_{lk}^X)) < \infty.    
     \end{align}
  By the Schur test,
     this implies that $D^X$ is bounded.
@@ -75,25 +77,25 @@ We now pass to the character algebra of $\mathscr{G}$.
 
 
    
-\begin{Lem} The sum $\chi^X  =\sum \Gr{\chi}{}{X}{k}{l}$ converges strictly to an element in $M(C_u(\mathscr{G}))$. 
+\begin{Lem} The sum $\chi^X  =\sum \Gr{\chi}{}{X}{k}{l}$ converges strictly to an element in $M(\CuG)$. 
 \end{Lem} 
  
 \begin{proof} It is sufficient to prove that the matrix of operators $\left(\pi\left(\Gr{\chi}{}{X}{k}{l}\right)\right)_{k,l}$ defines a bounded matrix of operators in some faithful $^*$-representation $\pi$ of $C^{u}_{0}(\mathscr{G})$. But as we have that each $\|\pi\left(\left(\Gr{X}{k}{l}{k}{l}\right)_{ij}\right)\|\leq 1$ by unitarity of $\mathscr{X}$, we have $\| \pi\left(\Gr{\chi}{}{X}{k}{l}\right)\| \leq d^X_{kl}$.  Hence boundedness follows from Lemma \ref{LemBoundDim}.
 \end{proof} 
  
-Denote now $\mathcal{C}$ for the C$^*$-algebra generated by all $\chi^X$ inside $M(\CrG)$, where $\mathscr{X}$ runs over all irreducible unitary representations. For $\alpha$ a hyperobject and $l\in \alpha$, write  $L^2(\mathcal{C})_l$ for the Hilbert space spanned by all $\Lambda(\chi^X_l)$, where $\chi^X_l = \sum_{k} \Gr{\chi}{}{X}{k}{l}$ and where the $X$ run over all irreducibles with right hyperobject support equal to $\alpha$. By the orthogonality relations, the $\Lambda(\chi^X_l)$ form an orthonormal basis for $L^2(\mathcal{C})_l$, and $\mathcal{C}$ preserves each $L^2(\mathcal{C})_l$, hence defines a $^*$-representation of $\mathcal{C}$ which we will denote by $\pi_l$. 
+Denote now $\mathcal{C}$ for the C$^*$-algebra generated by all $\chi^X$ inside $M(\CrG)$, where $\mathscr{X}$ runs over all irreducible unitary representations. For $\alpha$ a hyperobject and $l\in \alpha$, write  $L^2(\mathcal{C})_l$ for the Hilbert space spanned by all $\Lambda(\chi^X_l)$, where $\chi^X_l = \sum_{k} \Gr{\chi}{}{X}{k}{l}$ and where the $X$ run over all irreducibles with right hyperobject support equal to $\alpha$. By the orthogonality relations, \cite[Corollary 2.23]{DCT1}, the $\Lambda(\chi^X_l)$ form an orthonormal basis for $L^2(\mathcal{C})_l$. Moreover, $\mathcal{C}$ preserves each $L^2(\mathcal{C})_l$, hence defines a $^*$-representation of $\mathcal{C}$ which we will denote by $\pi_l$. 
 
 \begin{Lem}\label{LemEq} Assume $l$ and $l'$ are in the same hyperobject class. Then the representations of $\mathcal{C}$ on $L^2(\mathcal{C})_l$ and $L^2(\mathcal{C})_{l'}$ are equivalent.
 \end{Lem} 
 \begin{proof} The map $\Lambda(\chi^X_l)\rightarrow \Lambda(\chi^X_{l'})$ is a unitary intertwiner (since $\chi^X_l\neq 0$ if and only if $l$ in the right hyperobject support of $\mathscr{X}$ if and only if $l'$ in the right hyperobject support of $\mathscr{X}$).
 \end{proof} 
 
-Denote now $L^2(\mathcal{C})\subseteq L^2(\mathscr{G})$ for the direct sum of the $L^2(\mathcal{C})_l$ where the $l$ run over a fixed section of the hyperobject set, and write $\pi_{\mathcal{C}}= \oplus_l \pi_l$. 
+Denote now $L^2(\mathcal{C})\subseteq L^2(\mathscr{G})$ for the direct sum of the $L^2(\mathcal{C})_l$ where the $l$ run over a fixed section of the hyperobject set, and write $\pi_{\mathcal{C}}= \underset{l}{\oplus} \pi_l$. 
  
-\begin{Lem} The representation $\pi_{\mathcal{C}}$ of $\mathcal{C}$ on $L^2(\mathcal{C})$ is faithful.
-\end{Lem} 
+\begin{Prop} The representation $\pi_{\mathcal{C}}$ of $\mathcal{C}$ on $L^2(\mathcal{C})$ is faithful.
+\end{Prop} 
 
-\begin{proof} Let $p$ be the projection of $L^2(\mathscr{G})$ onto $L^2(\mathcal{C})$. Then for $\chi = \chi^X$, $a\in \Gr{A}{k}{l}{m}{n}$ and $b\in \Gr{A}{r}{s}{p}{q}$, we compute that \[\langle \Lambda(b),\chi \Lambda(a)\rangle =  \langle \Lambda( \UnitC{r}{r}),\chi p\Lambda(a\sigma_{-i}(b^*))\rangle.\] By continuity, this holds for all elements $\chi \in \mathcal{C}$. As $p\Lambda(a\sigma_{-i}(b^*)) \in L^2(\mathcal{C})_r$, and as $\UnitC{r}{r} = \chi^U_r$ for $U$ the trivial character, the lemma follows by Lemma \ref{LemEq}.
+\begin{proof} Let $p$ be the projection of $L^2(\mathscr{G})$ onto $L^2(\mathcal{C})$. Then for $\chi = \chi^X$, $a\in \Gr{P(\mathscr{G})}{k}{l}{m}{n}$ and $b\in \Gr{P(\mathscr{G})}{r}{s}{p}{q}$, we compute that \[\langle \Lambda(b),\chi \Lambda(a)\rangle =  \langle \Lambda( \UnitC{r}{r}),\chi p\Lambda(a\sigma_{-i}(b^*))\rangle.\] By continuity, this holds for all elements $\chi \in \mathcal{C}$. As $p\Lambda(a\sigma_{-i}(b^*)) \in L^2(\mathcal{C})_r$, and as $\UnitC{r}{r} = \chi^U_r$ for $\mathscr{U}$ the trivial character, the lemma follows by Lemma \ref{LemEq}.
 \end{proof}
 
 Let now $\mathscr{C}$ be the partial fusion $^*$-algebra of $\Rep(\mathscr{G})$, that is, the locally unital $^*$-algebra generated as a vector space over $\C$ by equivalence classes of irreducible unitary representations of $\mathscr{G}$, with multiplication determined by the fusion rules and the $^*$-structure obtained by taking the dual. It follows from the above that $\mathcal{C}$ is a C$^*$-completion of $\mathscr{C}$ which is completely determined by $\Rep(\mathscr{G})$.
@@ -107,32 +109,37 @@ if the representation \[\tilde{\epsilon}: \mathscr{C} \rightarrow B(l^2(I)), \qu
 It is immediately clear that a coamenable partial compact quantum group is dimension coamenable. However, as we will see later, the converse is not true. This is in marked contrast with the case of quantum groups, where amenability of the fusion algebra (with respect to its \emph{scalar} dimension function) \emph{does} determine coamenability of the associated compact quantum group, cf. \cite[Theorem 4.5]{Kye1}.
  
  % Corollary: canonical partial quantum group constructed from a tensor C*-cat is always dimension coamenable, cf. Neshveyev-Tuset section 2.7
-\begin{Prop} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to a partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is dimension coamenable.  
+
+Recall now from \cite[Definition 1.23 and Section 4.1]{DCT1} the notion of \emph{canonical partial compact quantum group} associated to a \emph{partial fusion tensor C$^*$-category $\CatCC$}.
+
+\begin{Prop} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to an $\mathcal{I}$-partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is dimension coamenable.  
 \end{Prop}% Ref to add to canonical partial compact quantum group
 \begin{proof} 
-  By construction, $\Rep(\mathscr{G}_{\CatCC})$ can canonically be
+  By construction, $\mathscr{G}_{\CatCC}$ is an $I$-partial compact quantum group, where $\Rep(\mathscr{G}_{\CatCC})$ can be canonically
   identified with $\CatCC$, and the set $I$ labels a maximal set
-  $\{u_{k}\}$ of mutually non-isomorphic irreducible objects of
-  $\CatCC$. Fix a section of the hyperobject set  and denote by $l' \in
-  I$ the chosen representative for the hyperobject  of $l\in I$. By the orthogonality
-  relations,  we can identify $l^{2}(I)$
-  with $L^{2}(\mathcal{C})$ via $l \mapsto \chi^{u_{l}}_{l'}$, and by
+  $\{U_{k}\}$ of mutually non-isomorphic irreducible objects of
+  $\CatCC$.  Under the Tannaka duality, an object $X$ of $\CatCC$ corresponds to a corepresentation $\mathscr{X}$ of $\mathscr{G}_{\CatCC}$ on an $I$-bigraded Hilbert space $\Hsp$ with $\GrDA{\Hsp}{k}{l} = \Hom(U_k,X\otimes U_l)$. Note then that the hyperobject class of $k\in I$ is nothing but the \emph{left} hyperobject support of $U_k$. % More info! Also, small mistake in first paper, order of indices in canonical TK should be reversed.
+  
+  Fix now $l\in I$. Then $L^2(\mathcal{C})_l$ has an orthonormal basis consisting of all $\Lambda(\chi_{l}^{U_k})$ where the right hyperobject support of $U_k$ is the left hyperobject support of $U_l$. Then, by
   Lemma \ref{LemCharMult}, 
   \begin{align*}
- \chi^{X}\chi^{u_{l}}_{l'} = \chi^{X \Circt u_{l}}_{l'} = \sum_{k}
- \dim(\Hom(u_{k},X\Circt u_{l})) \chi^{u_{k}}_{k'} = \sum_{k}
- D^{X}_{kl} \chi^{u_{k}}_{k'}.
+ \chi^{X}\Lambda(\chi^{U_{n}}_{l}) = \chi^{X \Circt U_{n}}_{l} = \sum_{m}
+ \dim(\Hom(U_{m},X\Circt U_{n})) \Lambda(\chi^{U_{m}}_{l}) = \sum_{m}
+ D^{X}_{mn} \Lambda(\chi^{U_{m}}_{l}).
   \end{align*}
-Thus, this identification intertwines the regular representation of the
-fusion algebra of $\CatCC$ on $L^2(\mathcal{C})$ with the
+  
+  Choose now a section $\mathcal{I} \rightarrow I, \alpha \mapsto l(\alpha)$. Then we can define a map $\theta:I\rightarrow I$ by sending $m$ to $l(\alpha)$ for $\alpha$ the right hyperobject support of $U_m$. Then \[l^2(I)\rightarrow L^2(\mathcal{C}),\quad \delta_m\mapsto \Lambda(\chi_{\theta(m)}^{U_m})\] is a unitary intertwining the regular representation of the fusion algebra of $\CatCC$ on $L^2(\mathcal{C})$ with the
 representation $\tilde \epsilon$. Since the former extends to
 $\mathcal{C}$, so does the latter.
  \end{proof}
  
+ In the next proposition, we consider the partial compact quantum groups associated to weighted reciprocal random walks, see \cite[Section 5]{DCT1}. 
+ 
  \begin{Prop} Consider the partial compact quantum group $\mathscr{G}(\Gamma)$ associated to a weighted reciprocal random walk $\Gamma = (\Gamma,i,w,\sgn)$. Then $\mathscr{G}(\Gamma)$ is dimension coamenable if and only if $\|\Gamma\| \leq 2$. 
  \end{Prop}% Ref to add to first article
- \begin{proof}
- The character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, with $\chi_{1/2}$ the character of the spin 1/2-corepresentation $u_{1/2}$. It has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. Hence we obtain a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{u_{1/2}}$ if and only if $\|D^{u_{1/2}}\| \leq  2$. But the latter norm is by definition $\|\Gamma\|$.   
+ \begin{proof} As $\Rep(\mathscr{G}(\Gamma))$ is by construction a Temperley-Lieb category,  the character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, with $\chi_{1/2}$ the character of the generating object $u_{1/2}$ of $\Rep(\mathscr{G}(\Gamma))$. It has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. 
+ 
+Let now $\Gamma^{(0)}$ be the vertex set of $\Gamma$. Then $\Gamma^{(0)}$ is identified with the index set $I$ of $\mathscr{G}(\Gamma)$, and $D^{u_{1/2}}_{kl}$ is the number of arrows from $k$ to $l$. Hence we obtain that there exists a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{u_{1/2}}$ if and only if $\|D^{u_{1/2}}\| \leq  2$ if and only if $\|\Gamma\|\leq 2$.   
  \end{proof} 
  
  In particular, the partial compact quantum groups coming from
