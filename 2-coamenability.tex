@@ -15,11 +15,15 @@ We will show that the usual characterisation of coamenability in terms of the co
 \begin{Lem}\label{LemFell} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\pi_{\red}\iboxtimes \pi$ factorizes over $\CrG$.
 \end{Lem}
 
-\begin{proof}  We have a unitary \[U: \oplus_q (L^2(\mathscr{G})_q\otimes {}_q\Hsp ) \rightarrow \oplus_l ({}_l L^2(\mathscr{G})\otimes {}^l\Hsp),\]\[\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(x_{(2)})\xi,\quad x\in P(\mathscr{G}),\xi\in H,\] with inverse $\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(S(x_{(2)}))\xi$. %more info needed?
+\begin{proof}  Similar calculations as in the proof of Lemma \ref{lemma:} We have a unitary \[U: \oplus_q (L^2(\mathscr{G})_q\otimes {}_q\Hsp ) \rightarrow \oplus_l ({}_l L^2(\mathscr{G})\otimes {}^l\Hsp),\]\[\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(x_{(2)})\xi,\quad x\in P(\mathscr{G}),\xi\in H,\] with inverse $\Lambda(x)\otimes \xi \mapsto \Lambda(x_{(1)})\otimes \pi(S(x_{(2)}))\xi$. %more info needed?
 Denote $\pi_{\red,q}$ for the restriction of $\pi_{\red}$ to $L^2(\mathscr{G})_q$. Then it is clear that $U$ intertwines $\oplus_q (\pi_{\red,q}\otimes 1)$ with $\pi_{\red}\boxtimes \pi$. As each $\pi_{\red,q}$ descends to $\CrG$, this proves the lemma.
 \end{proof} 
 
-Recall now from \cite{DCT1} the $^*$-representation \[\weps: P(\mathscr{G}) \rightarrow \End(\C^{(I)}), \quad x\in \Gr{A}{k}{l}{m}{n}\mapsto \epsilon(x) e_{kl},\]
+Recall now from \cite{DCT1} the $^*$-representation 
+\begin{align} \label{eq:weps}
+  \weps: P(\mathscr{G}) \rightarrow \End(\C^{(I)}), \quad x\in
+  \Gr{A}{k}{l}{m}{n}\mapsto \epsilon(x) e_{kl},
+\end{align}
 where $\epsilon$ denotes the counit of $P(\mathscr{G})$ and $\C^{(I)}$ the direct sum of $I$ copies of $\C$ with the natural pre-Hilbert space structure. We will denote its extension to a $^*$-representation $\CuG\rightarrow B(l^2(I))$ by the same symbol.
 
 \begin{Lem}\label{LemUnit} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\weps\iboxtimes \pi$ is unitarily equivalent to $\pi$.
@@ -100,7 +104,20 @@ Denote now $L^2(\mathcal{C})\subseteq L^2(\mathscr{G})$ for the direct sum of th
 
 Let now $\mathscr{C}$ be the partial fusion $^*$-algebra of $\Rep(\mathscr{G})$, that is, the locally unital $^*$-algebra generated as a vector space over $\C$ by equivalence classes of irreducible unitary representations of $\mathscr{G}$, with multiplication determined by the fusion rules and the $^*$-structure obtained by taking the dual. It follows from the above that $\mathcal{C}$ is a C$^*$-completion of $\mathscr{C}$ which is completely determined by $\Rep(\mathscr{G})$.
 
+On $\mathscr{C}$, the $*$-representation $\weps \colon P(\mathscr{G})
+\to l^{2}(\C^{(I)})$ defined in
+\eqref{eq:weps} is given by
+\begin{align*}
+  \weps(\chi^{X}) = \sum_{k,l} \epsilon(\Gr{\chi}{}{X}{k}{l})e_{kl} =
+  \sum_{k,l} (\epsilon \otimes \Tr)(\Gr{X}{k}{l}{k}{l}) e_{kl}
+   = \sum_{k,l} d^{X}_{kl} e_{kl} =D^{X}
+\end{align*}
+because $(\epsilon \otimes
+\id)(\Gr{X}{k}{l}{k}{l})=\id_{\Gru{H}{k}{l}}$  for   $\mathscr{X}$ and
+$\mathcal{H}$ as in Lemma \ref{LemBoundDim}.
+
 %. In fact, since the representation on $L^2(\mathcal{C})_l$ is equivalent to the one on $L^2(\mathcal{C}_{l'})$ when $l$ and $l'$ belong to the same hyperobject, we see that $\mathcal{C}$ is determined completely by  itself.  
+
 
 \begin{Def} We say $\mathscr{G}$ is \emph{dimension} coamenable %Fusion coamenable?
 if the representation \[\tilde{\epsilon}: \mathscr{C} \rightarrow B(l^2(I)), \quad \chi^X \mapsto D^X\] extends to a representation of $\mathcal{C}$.
