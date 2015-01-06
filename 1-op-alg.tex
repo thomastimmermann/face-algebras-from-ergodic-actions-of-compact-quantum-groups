@@ -164,80 +164,86 @@ P(\mathscr{G}) \hookrightarrow \CuG \twoheadrightarrow
 \end{align*}
 of $*$-algebras.
 
-
-The Hilbert space $\LGtwo$ is the orthogonal direct sum of the
-subspaces $\Lambda(\Gr{P(\mathscr{G})}{k}{l}{m}{n})$. In particular, there exist
-selfadjoint projections $\lambda_{k},\lambda_{k}^{\op},\rho_{k},\rho_{k}^{\op}\in
-{\cal B}(\LGtwo)$ such that
+Note that for every non-degenerate $*$-representation of $P(\mathscr{G})$ on a
+Hilbert space $\mathcal{H}$, the sums
+  \begin{align*}
+    \pi(\lambda_{k}) := \sum_{l'} \pi(\UnitC{k}{l'}) \quad \text{and} \quad
+\pi(\rho_{l}) := \sum_{k'} \pi(\UnitC{k'}{l})
+  \end{align*}
+  converge strictly in $\mathcal{B}(\mathcal{H})$. 
+  In the case where $\pi=\pi_{\red}$, we slightly abuse notation and
+  simply write $\lambda_{k}$ and $\rho_{l}$ for
+  $\pi_{\red}(\lambda_{k})$ and $\pi_{\red}(\rho_{l})$,
+  respectively. Since the  Hilbert space $\LGtwo$ is the orthogonal direct sum of the
+subspaces $\Lambda(\Gr{P(\mathscr{G})}{k}{l}{m}{n})$, 
+there also exist selfadjoint projections
+$\lambda_{k}^{\op},\rho_{k}^{\op}\in {\cal
+  B}(\LGtwo)$ such that  for all $k\in I$ and $a\in P(\mathscr{G})$,
 \begin{align*}
-  \lambda_{k}\Lambda(a)&= \Lambda(\lambda_{k} a), &
   \lambda^{\op}_{k}\Lambda(a) &= \Lambda(a\lambda_{k}), &
-  \rho_{k}\Lambda(a) &= \Lambda(\rho_{k}a), &
-  \rho_{k}^{\op}\Lambda(a) &= \Lambda(a\rho_{k})
+  \rho_{k}^{\op}\Lambda(a) &= \Lambda(a\rho_{k}).
 \end{align*}
-for all $k\in I$ and $a\in P(\mathscr{G})$, and faithful, normal $*$-homomorphisms
-\begin{align} \label{eq:vn-lambda-rho}
-  \lambda,\rho \colon l^{\infty}(I) \to
-  {\cal B}(\LGtwo)
-\end{align}
-that send the delta function at $k\in I$ to the operators
-$\lambda_{k}$ or $\rho_{k}$, respectively. Note that
- the $*$-homomorphisms $\lambda,\rho$ in
-\eqref{eq:vn-lambda-rho} send $l^{\infty}(I)$ to $M(\CrG)$.
 
-Let
-\begin{align*}
-  \vnE &:=\sum_{k} \rho_{k} \otimes \lambda_{k} \in \mathcal{B}(\LGtwo
-  \otimes \LGtwo), & \overline{G} &:=
-  \sum_{k} \rho_{k}^{\op} \otimes \rho_{k} \in \mathcal{B}(\LGtwo
-  \otimes \LGtwo),
-\end{align*}
-where the sums converge with respect to the strong operator
-topology. In fact, we have
-\begin{align*}
-  \vnE \in M(\CrG \otimes \CrG) \subseteq \LGinf \otimes \LGinf.
-\end{align*}
-as a strictly, resp. strongly converging sum.
+
 
 \begin{Lem} \label{lemma:partial-isometry}
-There exists a unique partial isometry $V$ on $\LGtwo \otimes \LGtwo$, called the \emph{right regular multiplicative partial isometry},
-such that
+  Let  $\pi$ be a non-degenerate $*$-representation of
+  $P(\mathscr{G})$ on a Hilbert space $\mathcal{H}$. Then there exists
+  a unique partial isometry $V_{\pi}$ on $\LGtwo \otimes \mathcal{H}$
+  such that
+  \begin{align*}
+    V_{\pi}(\Lambda(a) \otimes \pi(b)\xi) = \Lambda(a_{(1)}) \otimes
+    \pi(a_{(2)}b) \xi
+  \end{align*}
+  for all $a,b\in P(\mathscr{G})$ and $\xi \in \mathcal{H}$. Its
+ domain and range projection are given by
 \begin{align*}
-  V(\Lambda(a) \otimes \Lambda(b)) = \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}b)
+  V_{\pi}^{*}V_{\pi} &= \sum_{l} \rho_{l}^{\op} \otimes \pi(\rho_{l}), &
+  V_{\pi}V_{\pi}^{*} &= \sum_{l}  \rho_{l} \otimes \pi(\lambda_{l}),
 \end{align*}
-for all $a,b\in P(\mathscr{G})$. Its range and domain projections are given by $VV^{*} = \vnE$
-and $V^{*}V = \overline{G}$.
+where  the sums converging in the strong operator topology,
+and its adjoint is given by
+\begin{align*}
+V_{\pi}^{*}(\Lambda(a) \otimes \pi(b)\xi) &= \Lambda(a_{(1)}) \otimes
+\pi(S(a_{(2)})b)\xi.
+\end{align*}
 \end{Lem}
 \begin{proof}
   Let $a,b \in A$. Since $\Delta$ is a $*$-homomorphism and $\phi$ is
 invariant,
   \begin{align*}
     \langle \Lambda(a_{(1)}) \otimes
-    \Lambda(a_{(2)}b)|\Lambda(a'_{(1)}) \otimes
-    \Lambda(a'_{(2)}b')\rangle &=
-    \phi(a_{(1)}^{*}a'_{(1)})\phi(b^{*}a_{(2)}^{*}a'_{(2)}b') \\
+    \pi(a_{(2)}b)\xi|\Lambda(a'_{(1)}) \otimes
+    \pi(a'_{(2)}b')\xi'\rangle &=
+    \phi(a_{(1)}^{*}a'_{(1)})\langle \xi|\pi(b^{*}a_{(2)}^{*}a'_{(2)}b')\xi'\rangle \\
     &= \sum_{p}
-    \phi(b^{*}\rho_{p}\phi(\rho_{p}a^{*}a'\rho_{p})\rho_{p}b') \\
-    & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \Lambda(\rho_{p}b) |
-    \Lambda(a'\rho_{p}) \otimes \Lambda(\rho_{p}b')\rangle.
+    \langle \xi|\pi(b^{*}\rho_{p}\phi(\rho_{p}a^{*}a'\rho_{p})\rho_{p}b')\xi'\rangle \\
+    & =\sum_{p} \langle\Lambda(a\rho_{p}) \otimes \pi(\rho_{p}b)\xi |
+    \Lambda(a'\rho_{p}) \otimes \pi(\rho_{p}b')\xi'\rangle.
   \end{align*}
- The map $\Lambda(a) \otimes \Lambda(b)  \mapsto \Lambda(a_{(1)})
- \otimes \Lambda(a_{(2)}b)$ therefore extends to a partial isometry
- $V$ such that $V^{*}V=\overline{G}$. Clearly, its image is
- contained in the image of $\overline{E}$. But the defining properties of the
- antipode $S$ imply that
+  The map $\Lambda(a) \otimes \pi(b)\xi \mapsto \Lambda(a_{(1)})
+  \otimes \pi(a_{(2)}b)\xi$ therefore extends to a partial isometry
+  $V_{\pi}$ such that $V^{*}_{\pi}V_{\pi}$ has the claimed
+  form. Clearly, its image is contained in the image of $\sum_{l}
+  \rho_{l} \otimes \pi(\lambda_{l})$. Both images coincide
+  because the defining properties of the antipode $S$
+  imply 
  \begin{align*}
- V(\Lambda(a_{(1)}) \otimes \Lambda(S(a_{(2)})b))   &=
- \Lambda(a_{(1)}) \otimes \Lambda(a_{(2)}S(a_{(3)})b) =  \sum_{p}\Lambda(a_{(1)}\epsilon(\lambda_p a_{(2)})) \otimes \Lambda(\lambda_{p}b)   \\
- &= \sum_{p}\Lambda(\rho_{p}a_{(1)}\epsilon(a_{(2)})) \otimes \Lambda(\lambda_{p}b) 
- =\overline{E}(\Lambda(a) \otimes \Lambda(b)),
+ V_{\pi}(\Lambda(a_{(1)}) \otimes \pi(S(a_{(2)})b)\xi)   &=
+ \Lambda(a_{(1)}) \otimes \pi(a_{(2)}S(a_{(3)})b)\xi \\ &=  \sum_{p}\Lambda(a_{(1)}\epsilon(\lambda_p a_{(2)})) \otimes \pi(\lambda_{p}b)\xi   \\
+ &= \sum_{p}\Lambda(\rho_{p}a_{(1)}\epsilon(a_{(2)})) \otimes \pi(\lambda_{p}b) \xi
+ = \sum_{p} \Lambda(\rho_{p}a) \otimes \pi(\lambda_{p}b)\xi.
  \end{align*}
-so that the image of $V$ equals the image of $\overline{E}$.
+The formulas for $V_{\pi}V_{\pi}^{*}$ and $V_{\pi}^{*}$ follow.
 \end{proof}
-
-\begin{Rem}\label{RemFormAdj} It follows immediately from the end of the proof that one has in fact  $V^*(\Lambda(a)\otimes \Lambda(b)) = \Lambda(a_{(1)}) \otimes \Lambda(S(a_{(2)})b)$.
-\end{Rem} 
-
+In the case  $\pi=\pi_{\red}$, we obtain a partial isometry
+$V:=V_{\pi_{\red}}$ on $\LGtwo \otimes \LGtwo$ which we call the
+\emph{right regular multiplicative partial isometry} of
+$\mathscr{G}$. Write
+\begin{align*}
+  \overline{E} &:=VV^{*} = \sum_{k} \rho_{k} \otimes \lambda_{k} \in
+  \mathcal{B}(\LGtwo \otimes \LGtwo).
+\end{align*}
 \begin{Prop} \label{prop:vn-delta} Let $\mathscr{G}$ be a partial
   compact quantum group with underlying total $*$-algebra
   $P(\mathscr{G})$ and associated GNS-construction
@@ -269,6 +275,14 @@ Denote by $\nu$ the weight on $l^{\infty}(I)$ given by
 integration with respect to the counting measure on $I$. This weight is
 normal, faithful, and semi-finite,  briefly written nsf. For general nsf weights $\psi$ on a von Neumann algebra $M$, we will use the standard notation $\mathfrak{N}_{\psi} = \{a\in M\mid \psi(a^*a)<\infty\}$, $\mathfrak{M}_{\psi}^+  = \{a\in M^+\mid\psi(a)<\infty\}$ and $\mathfrak{M}_{\psi} = \mathfrak{N}_{\psi}^*\mathfrak{N}_{\psi} = \spann \mathfrak{M}_{\psi}^+$. The same notation will be used for operator valued weights.
 
+Furthermore, denote by
+\begin{align*}
+  \lambda,\rho \colon l^{\infty}(I) \to
+  M(\CrG)\subseteq  {\cal B}(\LGtwo)
+\end{align*}
+the faithful, normal $*$-homomorphisms that send the delta function at
+$k\in I$ to the operators $\lambda_{k}$ or $\rho_{k}$,
+respectively.
 %Seems necessary for uniqueness also to ask for centrality of the unit projections.
 \begin{Prop} \label{prop:vn-phi} Let $\mathscr{G}$ be a partial
   compact quantum group with underlying $*$-algebra $P(\mathscr{G})$,
@@ -290,7 +304,7 @@ Furthermore,  $(\id \otimes \vnphi)(\vnDelta(x)) =  T_{\lambda}(x)$ and $
 \end{Prop}
 \begin{proof}
   We first prove uniqueness of $\vnphi$.  The
-  $\Grt{p}{k}{m}:=\pi_{\red}(\UnitC{k}{m})$ are pairwise orthogonal
+  $\Grt{p}{k}{m}:=\pi_{\red}(\UnitC{k}{m})=\lambda_{k}\rho_{m}$ are pairwise orthogonal
   projections in $\mathfrak{N}_{\vnphi}\cap \mathfrak{N}_{\vnphi}^*$ which sum up to $1$. By the centralizing assumption, $\vnphi$ is the sum of the bounded maps
   $\Grt{\vnphi}{k}{m} \colon x \mapsto
   \vnphi(\Grt{p}{k}{m}x\Grt{p}{k}{m})$ which are determined
@@ -313,7 +327,7 @@ for all $x\in \LGinf^{+}$  are normal, (semi-)finite and satisfy $\nu
 \circ \lambda^{-1} \circ T_{\lambda} = \vnphi = \nu \circ \rho^{-1}
 \circ T_{\rho}$.
 
-We finally check the invariance equations. For $x\in \LGinf$, we check immediately by definition of $\vnphic{k}{m}$, the formula for $\vnDelta$ and the formula for $V^*$ in Remark \ref{RemFormAdj} that
+We finally check the invariance equations. For $x\in \LGinf$, we check immediately by definition of $\vnphic{k}{m}$, the formula for $\vnDelta$ and the formula for $V^*$ in Lemma \ref{lemma:partial-isometry} that
   \begin{align*}
     (\vnphic{k}{m}\otimes \id)(\vnDelta(x)) &= \sum_{l}
     \vnphic{k}{l}(x) \UnitC{m}{l}.
