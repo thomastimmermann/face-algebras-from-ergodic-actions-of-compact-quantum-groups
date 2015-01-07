@@ -52,23 +52,92 @@ We now pass to the character algebra of $\mathscr{G}$.
  
  \begin{Def} Let $\mathscr{X}$ be a unitary rcfd representation of a partial compact quantum group $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$. The \emph{partial characters} of $\mathscr{X}$ are defined as \[\Gr{\chi}{}{X}{k}{l} = (\id\otimes \Tr)(\Gr{X}{k}{l}{k}{l}) = \sum_i(\Gr{X}{k}{l}{k}{l})_{ii} \in \Gr{P(\mathscr{G})}{k}{l}{k}{l},\] where $\Tr$ is the non-normalized trace on $B(\GrDA{\Hsp}{k}{l})$, and where $(\Gr{X}{k}{l}{k}{l})_{ij}$ denote matrix coefficients with respect to some fixed orthonormal basis. The \emph{total character} of $\mathscr{X}$ is the multiplier $\chi^X  =\underset{k,l}{\sum} \,\Gr{\chi}{}{X}{k}{l}\in M(P(\mathscr{G}))$.
  \end{Def}
+
+%  For example, if $\mathscr{U}$ is the trivial representation of $\mathscr{G}$, then $\Gr{\chi}{}{U}{k}{l} = \delta_{k,l}\UnitC{k}{k}$, and $\chi^U = \sum_k \UnitC{k}{k}$.
  
- For example, if $\mathscr{U}$ is the trivial representation of $\mathscr{G}$, then $\Gr{\chi}{}{U}{k}{l} = \delta_{k,l}\UnitC{k}{k}$, and $\chi^U = \sum_k \UnitC{k}{k}$.
+%  Recall from \cite{DCT1} that $\smCirct$ denotes the tensor product of two representations of $\mathscr{G}$. 
  
- We aim to show that each character $\chi^X$ is in fact a well-defined element in $M(\CuG)$. Recall from \cite{DCT1} that $\smCirct$ denotes the tensor product of two representations of $\mathscr{G}$. 
- 
- \begin{Lem} \label{LemCharMult} We have $\Gr{\chi}{}{X\smCirct Y}{k}{m}= \underset{l}{\sum}\, \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}$.
+% Denote by $\mathscr{U}$ 
+
+%  \begin{proof} 
+%  This follows from the definition of $\smCirct$, namely $\Gr{(X\Circt Y)}{k}{l}{m}{n} = \sum_{r,s} \left(\Gr{X}{k}{r}{m}{s}\right)_{12} \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}$.
+%  \end{proof}
+
+
+
+ Denote by $\mathscr{U}$ the trivial representation of
+ $\mathscr{G}$. Given an rcfd unitary representation $\mathscr{X}$ of
+ $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$, write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. 
+ \begin{Lem} \label{LemCharProps} 
+   Let $\mathscr{X}$ and $\mathscr{Y}$ be unitary  rcfd representations of $\mathscr{G}$. Then
+   \begin{align*}
+     \Gr{\chi}{}{U}{k}{l} &= \delta_{k,l}\UnitC{k}{k}, &
+     \Gr{\chi}{}{X\oplus Y}{k}{l} &=
+     \Gr{\chi}{}{X}{k}{l} +      \Gr{\chi}{}{Y}{k}{l}, &
+\Gr{\chi}{}{X\smCirct Y}{k}{m}&=\sum_{l}
+     \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}, &
+\Gr{\chi}{}{\hat X}{k}{l} &= (\Gr{\chi}{}{X}{l}{k})^{*}.
+   \end{align*}
+In total form, $\chi^{U}= \sum_{k} \UnitC{k}{k}$, $\chi^{X\oplus
+  Y}=\chi^{X}+\chi^{Y}$,  $\chi^{X\Circt Y} =
+     \chi^{X} \chi^{Y}$ and      $\chi^{\hat X} =
+     (\chi^{X})^{*}$. Moreover, 
+$\epsilon(\Gr{\chi}{}{X}{k}{l}) =d^{X}_{kl}$.
  \end{Lem}
- 
  \begin{proof} 
- This follows from the definition of $\smCirct$, namely $\Gr{(X\Circt Y)}{k}{l}{m}{n} = \sum_{r,s} \left(\Gr{X}{k}{r}{m}{s}\right)_{12} \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}$.
- \end{proof}
+This follows easily from the definitions, for example, one uses
+\begin{align*}
+  \Gr{(X\Circt Y)}{k}{l}{m}{n} &= \sum_{r,s}
+   \left(\Gr{X}{k}{r}{m}{s}\right)_{12}
+   \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}, &
+   \Gr{\hat X}{k}{l}{m}{n} &= (\id \otimes
+   (-)^{tr})((\Gr{X}{l}{k}{n}{m})^{*})
+\end{align*}
+and $(\epsilon \otimes \id)(\Gr{X}{k}{l}{k}{l})=\id_{\Gru{H}{k}{l}}$,
+where $\mathcal{H}$ denotes the Hilbert space
+underlying $\mathscr{X}$.
+\end{proof}
 
-For the next lemma, recall from \cite{DCT1} that a unitary rcfd representation of $\mathscr{G}$ is said to have \emph{finite hypersupport} if it is a \emph{finite} direct sum of irreducible unitary rcfd representations.  The left hyperobject support of $\mathscr{X}$ is then the set of all $k$ such that $\GrDA{\Hsp}{k}{l}\neq \{0\}$ for some $l$. The right hyperobject support is defined similarly. Note that the left (resp. right) hyperobject support consists of  hyperobject classes, where $k$ and $l$ define the same hyperobject class if $\UnitC{k}{l}\neq0$. 
+These relations show that the subspace $C\subseteq M(P(\mathscr{G}))$
+spanned by the total characters of irreducible representations of
+$\mathscr{G}$ is a $*$-algebra. We call it the \emph{character
+  $*$-algebra} of $\mathscr{G}$.  
 
+
+
+ Recall from \cite{DCT1} that a unitary rcfd representation of
+ $\mathscr{G}$ is said to have \emph{finite hypersupport} if it is a
+ \emph{finite} direct sum of irreducible unitary rcfd representations.
+ The left hyperobject support of $\mathscr{X}$ is then the set of all
+ $k$ such that $\GrDA{\Hsp}{k}{l}\neq \{0\}$ for some $l$. The right
+ hyperobject support is defined similarly. Note that the left
+ (resp. right) hyperobject support consists of hyperobject classes,
+ where $k$ and $l$ define the same hyperobject class if
+ $\UnitC{k}{l}\neq0$.
+
+The unitary rcfd representations of $\mathscr{G}$ with finite
+hypersupport form a partial
+fusion  $C^{*}$-category $\Rep(\mathscr{G})$. We denote by
+$\mathscr{C}$ the associated partial fusion $C^{*}$-algebra, whose
+components $\Gru{C}{\alpha}{\beta}$ are the vector spaces generated by
+the equivalence classes $[X]$ of irreducible unitary rcfd
+representations of $\mathscr{G}$ with left and right hyperobject
+support $\alpha$ and $\beta$, respectively, with multiplication and
+involution given by 
+\begin{align*}
+  [X][Y] = \sum_{[Z]} \dim(\Hom(Z,X\Circt Y)) [Z] \quad \text{and} \quad [X]^{*} =[\hat{X}],
+\end{align*}
+respectively. Lemma \ref{LemCharProps} shows that the assignment $[X]
+\mapsto \chi^{X}$ induces an isomorphism between the total algebra of
+$\mathscr{C}$ and the character $*$-algebra $C$.
+
+
+ We aim to show that each character $\chi^X$ is in fact a well-defined
+ element in $M(\CuG)$ so that we can regard $C$ as a subalgebra of
+ $M(C^{u}_{0}(\mathscr{G}))$ and of  $M(C^{r}_{0}(\mathscr{G}))$, respectively.
 
  \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be an rcfd unitary
-   representation of $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$ with finite hyperobject support, and write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
+   representation of $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$ with finite hyperobject support. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
   \end{Lem}
   \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
     with left hyperobject support $\alpha$ and right hyperobject support
@@ -98,14 +167,14 @@ For the next lemma, recall from \cite{DCT1} that a unitary rcfd representation o
  
 \begin{proof} It is sufficient to prove that the matrix of operators $\left(\pi\left(\Gr{\chi}{}{X}{k}{l}\right)\right)_{k,l}$ defines a bounded matrix of operators in some faithful $^*$-representation $\pi$ of $C^{u}_{0}(\mathscr{G})$. But as we have that each $\|\pi\left(\left(\Gr{X}{k}{l}{k}{l}\right)_{ij}\right)\|\leq 1$ by unitarity of $\mathscr{X}$, we have $\| \pi\left(\Gr{\chi}{}{X}{k}{l}\right)\| \leq d^X_{kl}$.  Hence boundedness follows from Lemma \ref{LemBoundDim}.
 \end{proof} 
- 
+
 Denote by $\mathcal{C} \subseteq M(C_{0}^{r}(\mathscr{G}))$ the
-$C^{*}$-algebra generated by $\chi^{X}$ for all rcfd unitary
-representations $\mathscr{X}$ of $\mathscr{G}$ with finite hyperobject
-support. This is a completion of $C\subseteq M(P(\mathscr{G}))$ or,
-equivalently, of the total fusion algebra of $\Rep(\mathscr{G}) $. The
-next result shows that this completion depends only on
-$\Rep(\mathscr{G})$.
+$C^{*}$-algebra generated by the images of the $\chi^{X} \in
+M(C_{0}^{r}(\mathscr{G}))$ for all rcfd unitary representations
+$\mathscr{X}$ of $\mathscr{G}$ with finite hyperobject support. The
+next result shows that this is a completion of the character
+$*$-algebra $C$ or, equivalently, of the total fusion $*$-algebra of
+$\Rep(\mathscr{G})$, which depends only on $\Rep(\mathscr{G})$.
 \begin{Prop}
   There exists a unique faithful representation $\pi_{\mathcal{C}}$ of
   $\mathcal{C}$ on $l^{2}(\Irr(\mathscr{G}))$ such that for all
@@ -160,17 +229,13 @@ By continuity, this holds for all elements $\chi \in \mathcal{C}$ and hence $\pi
 \end{proof}
 
 
-On $C$, the $*$-representation $\weps \colon P(\mathscr{G})
+By Lemma \ref{LemCharProps}, the $*$-representation $\weps \colon P(\mathscr{G})
 \to l^{2}(\C^{(I)})$ defined in
-\eqref{eq:weps} is given by
+\eqref{eq:weps}  acts on the character $*$-algebra $C$ by
 \begin{align*}
   \weps(\chi^{X}) = \sum_{k,l} \epsilon(\Gr{\chi}{}{X}{k}{l})e_{kl} =
-  \sum_{k,l} (\epsilon \otimes \Tr)(\Gr{X}{k}{l}{k}{l}) e_{kl}
-   = \sum_{k,l} d^{X}_{kl} e_{kl} =D^{X}
+  \sum_{k,l} d^{X}_{kl} e_{kl} =D^{X}.
 \end{align*}
-because $(\epsilon \otimes
-\id)(\Gr{X}{k}{l}{k}{l})=\id_{\Gru{H}{k}{l}}$  for   $\mathscr{X}$ and
-$\mathcal{H}$ as in Lemma \ref{LemBoundDim}.
 
 %. In fact, since the representation on $L^2(\mathcal{C})_l$ is equivalent to the one on $L^2(\mathcal{C}_{l'})$ when $l$ and $l'$ belong to the same hyperobject, we see that $\mathcal{C}$ is determined completely by  itself.  
 
