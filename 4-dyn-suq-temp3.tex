@@ -132,7 +132,7 @@ For $c\in \R$, a subset $T\subseteq \Lambda_x\times \Lambda_x$ is called \emph{$
 \begin{proof} Assume first that $T$ is $(x,c)$-compatible, and let $\pi$ be a $T$-compatible irreducible $^*$-representation of $A_x$. If $(y,z)\in T$, then it follows from Lemma \ref{LemAmp} that $(y,z)$ is $c$-adapted. Moreover, if $(y,z)\in T$ is strictly $c_{\epsilon,\nu}$-adapted, then we have that $\|u_{\epsilon,\nu}\xi\|\neq 0$ for a non-zero $\xi\in \Hsp^y_z$, hence also $\Hsp^{q^{-\epsilon}y}_{q^{-\nu}z}\neq \{0\}$. It follows that $T$ is a $c$-set. Now if $T=T_1\cup T_2$ a disjoint union of $c$-sets, it would follow that $\pi$ restricts to the direct sum of all $\Hsp^y_z$ with $(y,z)\in T_1$, contradicting irreducibility. It follows that $T$ is an irreducible $c$-set.
 
 Conversely, let $T$ be an irreducible $c$-set inside $\Lambda_x\times \Lambda_x$. Put $\Hsp_{\pi} = l^2(T)$ with the grading determined by $\delta_{y,z}\in l^2(T)^y_z$. Define adjointable operators $\pi(\alpha),\pi(\beta)$ on $H_{\pi}$ by the formulas
- \begin{eqnarray*} \pi(\alpha)  \delta_{y,z} &=&  \left(\frac{\ctau(qyz)+c}{\ctau(y)\ctau(qz)}\right)^{1/2}\delta_{qy,qz},\\ \pi(\beta) \delta_{y,z} &=& \left(\frac{\ctau(qy/z)-c}{\ctau(y)\ctau(z/q)}\right)^{1/2} \delta_{qy,z/q},\end{eqnarray*} where the right hand side is considered as the zero vector when the scalar factor on the right is zero. Note that the roots on the right hand side are well-defined precisely because $T$ is a $c$-set. 
+ \begin{eqnarray}\label{EqFormRepa} \pi(\alpha)  \delta_{y,z} &=&  \left(\frac{\ctau(qyz)+c}{\ctau(y)\ctau(qz)}\right)^{1/2}\delta_{qy,qz},\\ \pi(\beta) \delta_{y,z} &=& \label{EqFormRepb} \left(\frac{\ctau(qy/z)-c}{\ctau(y)\ctau(z/q)}\right)^{1/2} \delta_{qy,z/q},\end{eqnarray} where the right hand side is considered as the zero vector when the scalar factor on the right is zero. Note that the roots on the right hand side are well-defined precisely because $T$ is a $c$-set. 
 
 By direct computation, using the defining commutation relation, we see by Lemma \ref{LemCharRep} that $\pi$ defines a $^*$-representation of $A_x$ with $\pi(\Omega) =c$. Moreover, $\pi$ is irreducible since otherwise, by Corollary \ref{CorOneDim}, $T$ would split as a disjoint union of $(x,c)$-compatible sets. Hence $T$ is an $(x,c)$-compatible set.
 
@@ -141,7 +141,6 @@ Now the formulas for $\pi(\alpha)$ and $\pi(\beta)$ are uniquely determined up t
 
 What remains is to classify irreducible $c$-sets of $\R^{2}$ for each
 $c\in \R$.  This can be done in terms of $c$-sets in $\R$.
-
 
 \begin{Def}\label{DefAdapt} Let $c\in\R$. For $\epsilon \in \{\pm\}$, a real number $y>0$ will be called \emph{$c_{\epsilon}$-adapted} if \begin{equation}\label{EqAd+} c \leq \ctau(q^{-\epsilon}y),\end{equation} and \emph{strictly} $c_{\epsilon}$-adapted if this holds strictly. It is called \emph{$c$-adapted} if it is both $c_+$- and $c_-$-adapted. 
 
@@ -154,10 +153,30 @@ A subset $Z$ of $\R_{>0}$ is called a \emph{$c$-set} if the following conditions
 A $c$-set is called \emph{irreducible} if it can not be written as the union of two disjoint $c$-sets.
 \end{Def}
 
-\begin{Lem}\label{LemClass2D} A set $T\subseteq \R_{>0}^2$ is an irreducible $c$-set if and only if there exists an irreducible $-c$-set $Z_+\subseteq \R_{>0}$ and an irreducible $c$-set $Z_-\subseteq \R_{>0}$ such that $(y,z)\in T$ if and only if $yz\in Z_+$ and $y/z\in Z_-$.
-\end{Lem} 
+We will need the following easy lemma. 
 
-\begin{proof} It is immediate that $(y,z)\in \R_{>0}^2$ is (strictly) $c_{\epsilon,\nu}$-adapted if and only if $yz^{\epsilon\nu}$ is (strictly) $(-\epsilon\nu c)_{\epsilon}$-adapted. The conclusion of the lemma follows from this.
+\begin{Lem}\label{LemInt} Let $Z$ be an irreducible $c$-set. Then $Z$ is a $q^2$-interval: for any $w,z\in Z$ with $w<z$, there exists $k\in \N_0$ such that $w=q^{2k}z$, and all $q^{2l}z$ with $0\leq l\leq k$ lie in $Z$. Moreover, all $q^{2l}z$ with $0<l<k$ are strictly $c_{\epsilon}$-adapted for $\epsilon \in \{\pm\}$.
+\end{Lem} 
+\begin{proof} Assume $w,z\in Z$ with $w<z$. Clearly $q^{2\Z}z\cap Z$ is a $c$-set, hence there exists $k\in \N_0$ such that $w=q^{2k}z$. Assume that there exists $0<l<k$ such that $q^{2l}z\notin Z$, and choose the smallest such $l$. Then clearly $Z\cap q^{2l+2\N_0}z$ is a $c$-set distinct from $Z$, contradicting the irreducibility of $Z$. The same argument shows that then all $q^{2l}z$ with $0<l<k$ are strictly $c_{\epsilon}$-adapted. This proves the lemma.
+\end{proof}
+
+\begin{Prop}\label{LemClass2D} A set $T\subseteq \R_{>0}^2$ is an irreducible $c$-set if and only if there exists an irreducible $-c$-set $Z_+\subseteq \R_{>0}$ and an irreducible $c$-set $Z_-\subseteq \R_{>0}$ such that $(y,z)\in T$ if and only if $yz\in Z_+$ and $y/z\in Z_-$.
+\end{Prop} 
+
+\begin{proof} It is immediate that $(y,z)\in \R_{>0}^2$ is (strictly) $c_{\epsilon,\nu}$-adapted if and only if $yz^{\epsilon\nu}$ is (strictly) $(-\epsilon\nu c)_{\epsilon}$-adapted. Hence, if $T$ is a $c$-set in $\R^2_{>0}$, we can define, for $\kappa\in \{\pm\}$, $-\kappa c$-sets \[Z_{\kappa}^T = \{yz^{\kappa}\mid (y,z)\in T\}.\] Conversely, if $Z_{\kappa}$ for $\kappa \in \{\pm\}$ are $-\kappa c$-sets in $\R_{>0}$, we can define a $c$-set $T^Z$ in $\R_{>0}^2$ by \[T^Z = \{(y,z)\mid yz^{\kappa}\in Z_{\kappa},\forall \kappa\in \{\pm\}\}.\]
+Clearly the map \begin{equation}\label{EqTransCoord} T^Z\rightarrow Z_+\times Z_-,\quad (y,z)\mapsto (yz,y/z)\end{equation} is bijective. On the other hand, the map $T\rightarrow Z_+^T\times Z_-^T$ defined by the same formula is a priori only injective. 
+
+Assume now that $Z_+$ and $Z_-$ are resp.~ an irreducible $-c$-set and an irreducible $c$-set in $\R_{>0}$. We will show that $T^Z$ is an irreducible $c$-set in $\R_{>0}^2$, which will prove one direction of the proposition. Using the change of coordinates \eqref{EqTransCoord}, we obtain by \eqref{EqFormRepa} and \eqref{EqFormRepb} a representation of $A_x$ on $l^2(Z_+)\otimes l^2(Z_-)$ by the formulas \begin{eqnarray*} \pi(\alpha)  \delta_{a,b} &=&  \left(\frac{\ctau(qa)+c}{\ctau(\sqrt{ab})\ctau(\sqrt{q^2a/b})}\right)^{1/2}\delta_{q^2a,b},\\ \pi(\beta) \delta_{a,b} &=& \left(\frac{\ctau(qb)-c}{\ctau(\sqrt{ab})\ctau(\sqrt{a/q^2b})}\right)^{1/2} \delta_{a,q^2b}.\end{eqnarray*}
+
+
+
+
+
+
+
+
+
+The conclusion of the lemma follows from this.
 \end{proof}
 
 Finally, the $c$-sets in $\R$ can be classified as follows.
