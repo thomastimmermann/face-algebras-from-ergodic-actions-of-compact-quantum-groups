@@ -146,10 +146,10 @@ The irreducible representations of $A_x$ can now be computed by first classifyin
 \begin{Cor}\label{CorOneDim} If $\pi$ is an irreducible $^*$-representation of $U_q^{\Gamma_y}(\su(1,1))$ on a Hilbert space $\Hsp_{\pi}$, then $\Hsp_r$ is at most one-dimensional for each $r\in \Gamma_y$. %Moreover, either all $\Hsp_r$ with $r\in q^{\Z}y$ are zero, or all $\Hsp_r$ with $r\in q^{\frac{1}{2}+\Z}y$ are zero. 
 \end{Cor} 
 \begin{proof} 
-We have that monomials of the form $E^kK^mF^l\Unit_r$ span $U_q^{\Gamma_y}(\su(1,1))$, and hence also the elements of the form $E^kK^mC^l\Unit_r$ combined with those of the form $F^kK^mC^l\Unit_r$. Using Corollary \ref{CorCas}, the corollary then follows immediately from the fact that any non-zero vector in $\Hsp_r$ is cyclic by the irreducibility condition.
+Monomials of the form $E^kK^mF^l\Unit_r$ span $U_q^{\Gamma_y}(\su(1,1))$, and hence also the elements of the form $E^kK^mC^l\Unit_r$ combined with those of the form $F^kK^mC^l\Unit_r$. Using Corollary \ref{CorCas}, the corollary then follows immediately from the fact that any non-zero vector in $\Hsp_r$ is cyclic by the irreducibility condition.
 \end{proof}
 
-We will classify irreducible $^*$-representations of $U_q^{\Gamma_y}(\su(1,1))$ in terms of what we call \emph{$c$-sets}.  
+We will classify irreducible $^*$-representations of $U_q^{\Gamma_y}(\su(1,1))$ in terms of what we call \emph{$c$-sets}.
 
 \begin{Def}\label{DefAdapt} Let $c\in\R$. For $\epsilon \in \{\pm\}$, a real number $z>0$ will be called \emph{$c_{\epsilon}$-adapted} if \begin{equation}\label{EqAd+}  0 \leq c+ \ctau(q^{-\epsilon}z),\end{equation} and \emph{strictly} $c_{\epsilon}$-adapted if this holds strictly. It is called \emph{$c$-adapted} if it is both $c_+$- and $c_-$-adapted. 
 
@@ -162,16 +162,16 @@ A subset $Z$ of $\R_{>0}$ is called a \emph{$c$-set} if the following conditions
 A $c$-set is called \emph{irreducible} if it can not be written as the union of two disjoint $c$-sets.
 \end{Def}
 
-The $c$-sets in $\R$ can be classified as follows. For $z>0$, we write $Z_z(c) = q^{2\Z}z$, $Z_z^+(c) = zq^{2\N}$, $Z_{z}^{-}(c) = zq^{-2\N}$ and $Z_z^{0}(c) = \{1\}$.
+The $c$-sets in $\R$ can be classified as follows. For $z>0$, we write $Z_z(c) = q^{2\Z}z$, $Z_z^+(c) = zq^{2\N}$, $Z_{z}^{-}(c) = zq^{-2\N}$ and $Z_z^{0}(c) = \{1\}$.  We can organize these in `series' in analogy with the representations of $U_q(\su(1,1))$.
 
 \begin{Prop}\label{PropClass1D} The following list exhausts all
   irreducible $c$-sets in $\R$.
 % Picture!
 \begin{enumerate}[a)] 
-\item $c>-2: Z_z^0(c)$ for $z>0$ (`strange' for $c>2$, `principal' for $|c|\leq 2$),
+\item $c>-2: Z_z(c)$ for $z>0$ (`strange' for $c>2$, `principal' for $|c|\leq 2$),
 \item $c \leq -2$, $-c=\ctau(w_c)$ with $0 < w_c\leq 1$:
 \begin{enumerate}[(i)]
-\item $Z_z^0(c)$ for $\frac{q}{w}<z<\frac{w}{q}$ (`complementary')
+\item $Z_z(c)$ for $\frac{q}{w_c}<z<\frac{w_c}{q}$ (`complementary')
 \item\label{Ita} $Z_{q/w_c}^+(c)$ and $Z_{w_c/q}^-(c)$ for $q<w_c$ (`small positive and negative discrete')
 \item\label{Itb} $Z_{qw_c}^+(c)$ and $Z_{1/qw_c}^-(c)$ (`large positive and negative discrete')
 \item $Z_1^0(q+q^{-1})=\{1\}$ for $w_c=q$ (`trivial')
@@ -180,22 +180,22 @@ The $c$-sets in $\R$ can be classified as follows. For $z>0$, we write $Z_z(c) =
 Moreover, all these sets are distinct, except that cases \eqref{Ita} and \eqref{Itb} coincide in the case $c=2$.
 \end{Prop} 
 
-\begin{proof} Assume first that $Z$ is an irreducible $c$-set with $c+\tau(qz)\neq 0$ for all $z\in Z$. It then follows that $Z$ is necessarily invariant under multiplication with $q^{2\Z}$, and from the irreducibility assumption we infer that $Z = zq^{2\Z}=T_z$ for some $z>0$, which we may choose to be the unique one such that $q\leq z<q^{-1}$. 
+\begin{proof} Assume first that $Z$ is an irreducible $c$-set with $c+\tau(qz)\neq 0$ for all $z\in Z$. It then follows that $Z$ is necessarily invariant under multiplication with $q^{2\Z}$, and from the irreducibility assumption we infer that $Z = zq^{2\Z}=Z_z(c)$ for some $z>0$, which we may choose to be the unique one such that $q\leq z<q^{-1}$. 
 
-If $c>-2$, it is clear that $T_z$ is a $c$-set for any such $z$. If $c\leq -2$, we may write $c=-w-w^{-1}$ for $0< w\leq 1$. We then have to find a necessary and sufficient condition on $z$ such that $\tau(w)\leq \tau(q^{2m+1}z)$ for all $m\in \Z$. Clearly, it is sufficient to have $\tau(w)\leq \tau(qz)$ and $\tau(w)\leq \tau(z/q)$. Since by assumption $qz\leq 1$ and $z/q\geq 1$, this is equivalent with $qz\leq w$ and $\frac{1}{w}\leq z/q$, so $\frac{q}{w}\leq z\leq \frac{w}{q}$. Since by assumption $\tau(w)\neq \tau(qz)$ and $\tau(w)\neq \tau(z/q)$, we may use strict inequalities.
+If $c>-2$, it is clear that $Z_z(c)$ is a $c$-set for any such $z$. If $c\leq -2$, we may write $c=-w_c-w_c^{-1}$ for a unique $0< w_c\leq 1$. We then have to find a necessary and sufficient condition on $z$ such that $\tau(w_c)\leq \tau(q^{2m+1}z)$ for all $m\in \Z$. Clearly, it is sufficient to have $\tau(w_c)\leq \tau(qz)$ and $\tau(w_c)\leq \tau(z/q)$. Since by assumption $qz\leq 1$ and $z/q\geq 1$, this is equivalent with $qz\leq w_c$ and $\frac{1}{w_c}\leq z/q$, so $\frac{q}{w_c}\leq z\leq \frac{w_c}{q}$. Since by assumption $\tau(w_c)\neq \tau(qz)$ and $\tau(w_c)\neq \tau(z/q)$, we may use strict inequalities.
 
-Assume now that  $Z$ is an irreducible $c$-set with $c+\tau(qz)=0$ for some $z\in Z$. Then necessarily we must have $c\leq -2$, and hence $c= -w-w^{-1}$ for some $0< w\leq 1$. 
+Assume now that $Z$ is an irreducible $c$-set with $c+\tau(qz)=0$ for some $z\in Z$. Then necessarily we must have $c\leq -2$, and hence $c= -w_c-w_c^{-1}$ for a unique $0< w_c\leq 1$. 
 
-If also $c+\tau(z/q)=0$, then necessarily $z=1$ and $c= -q-q^{-1}$, and we obtain that $Z=\{1\}$. If $c+\tau(z/q)\neq 0$, then we consider separately the two cases $c+\tau(z/q)>0$ and $c+\tau(z/q)<0$. 
+If also $c+\tau(z/q)=0$, then necessarily $z=1$ and $c= -q-q^{-1}$, and we obtain that $Z=\{1\}=Z_1^0(-q-q^{-1})$. If $c+\tau(z/q)\neq 0$, then we consider separately the two cases $c+\tau(z/q)>0$ and $c+\tau(z/q)<0$. 
 
-If $c+\tau(z/q)>0$, then we infer that $q^{-2}z\in Z$, and hence $q^{-2\N}z\subseteq Z$. By irreducibility, we infer $q^{-2\N}z = Z= T_z^-(c)$. We hence have to verify which conditions on $z$ ensure that $q^{-2\N}z$ is an irreducible $c$-set. However, we know already that $\tau(qz)=\tau(w)$, hence either $qz = w$ or $qz = \frac{1}{w}$. In the first case, we obtain on $w$ the condition $\tau(w)<\tau(w/q^2)$, and it is easily seen that this is equivalent with $q<w$. In the second case, the inequality $\tau(\frac{1}{w})<\tau(\frac{1}{q^2w})$ is automatic, for all $w\leq 1$.  
+If $c+\tau(z/q)>0$, then we infer that $q^{-2}z\in Z$, and hence $q^{-2\N}z\subseteq Z$. By irreducibility, we infer $q^{-2\N}z = Z= Z_z^-(c)$. We hence have to verify which conditions on $z$ ensure that $q^{-2\N}z$ is an irreducible $c$-set. However, we know already that $\tau(qz)=\tau(w_c)$, hence either $qz = w_c$ or $qz = \frac{1}{w_c}$. In the first case, we obtain on $w_c$ the condition $\tau(w_c)<\tau(w_c/q^2)$, and it is easily seen that this is equivalent with $q<w_c$. In the second case, the inequality $\tau(\frac{1}{w_c})<\tau(\frac{1}{q^2w_c})$ is automatic, for all $w_c\leq 1$.  
 
 The case $c+\tau(z/q)>0$ is similar. 
 
 The fact that all sets are distinct (except possibly when $c=2$) is immediately clear. 
-
-Picture (Spectrum)!
 \end{proof} 
+
+%The following gives a fundamental domain for the $c$-sets. \textcolor{red}{Picture of Spectrum!}
 
 
 \begin{Def} Fix $y>0$. For $\pi$ an irreducible representation of $U_q^{\Gamma_y}(\su(1,1))$, an element $r\in \Gamma_y$ is called $\pi$-compatible if $\Hsp_r\neq 0$. 
@@ -203,28 +203,31 @@ Picture (Spectrum)!
 For $c\in \R$, a subset $T\subseteq \Gamma_y$ is called \emph{$(y,c)$-compatible} if there exists an irreducible representation $\pi$ of $U_q^{\Gamma_y}(\su(1,1))$ with $\pi(C) = c$ and $T=\{r\in \Gamma_y\mid \Hsp_{r}\neq \{0\}\}$. In this case, we say that $\pi$ is \emph{$T$-compatible}.
 \end{Def}
 
-\begin{Prop}\label{PropClassRep} A set $T\subseteq \Gamma_y$ is a $(y,c)$-compatible set if and only if $Z_T = \{t^2\mid t\in T\}$ is an irreducible $c$-set. Moreover, for any $(y,c)$-compatible set $T$ there is exactly one irreducible $^*$-representation $\pi$ of $U_q^{\Gamma_y}(\su(1,1))$, up to unitary equivalence, which is $T$-compatible.
+\begin{Prop}\label{PropClassRep} A set $T\subseteq \Gamma_y$ is a $(y,c)$-compatible set if and only if $Z_T = \{t^2\mid t\in T\}$ is an irreducible $c$-set inside $\Lambda_{y^2}$. Moreover, for any $(y,c)$-compatible set $T$ there is exactly one irreducible $^*$-representation $\pi$ of $U_q^{\Gamma_y}(\su(1,1))$, up to unitary equivalence, which is $T$-compatible.
 \end{Prop}
 
 \begin{proof} In the proof, we will use the notation $X_+ = E$ and $X_- = F$.
 
 Assume first that $T$ is $(y,c)$-compatible, and let $\pi$ be a $T$-compatible irreducible $^*$-representation of $U_q^{\Gamma_y}(\su(1,1))$. If $r\in T$, then it follows from the definition of the Casimir element that $r^2$ is $c$-adapted. Moreover, if $r\in T$ is strictly $c_{\epsilon}$-adapted, then we have that $\|\pi(X_{\epsilon})\xi\|\neq 0$ for a non-zero $\xi\in \Hsp_r$, hence also $\Hsp_{q^{-\epsilon}r}\neq \{0\}$. It follows that $Z_T$ is a $c$-set. Now if $Z_T=Z_{T_1}\cup Z_{T_2}$ a disjoint union of $c$-sets, it would follow that $\pi$ restricts to the direct sum of all $\Hsp_r$ with $r\in T_1$, contradicting irreducibility. It follows that $Z_T$ is an irreducible $c$-set.
 
-Conversely, let $Z_T$ be an irreducible $c$-set with $T\subseteq \Gamma_y$. Put $\Hsp_{\pi} = l^2(T)$ with the grading determined by $\delta_{r}\in l^2(T)_r$. Define a pair of adjoint operators $\pi(E)$ and $\pi(F)$ on $H_{\pi}$ by the formulae \begin{eqnarray}\label{EqFormRepPlus} (q-q^{-1})\pi(E)  \delta_{r} &=&  (\ctau(qr^2)+c)^{1/2}\delta_{qr},\\ (q-q^{-1})\pi(F)  \delta_{r} &=&  (\ctau(r^2/q)+c)^{1/2}\delta_{r/q} \end{eqnarray} where a right hand side is considered as the zero vector when the accompanying scalar factor is zero. Note that the roots on the right hand side are well-defined precisely because $T^2$ is a $c$-set. 
+Conversely, let $Z_T$ be an irreducible $c$-set with $T\subseteq \Gamma_y$. Put $\Hsp_{\pi} = l^2(T)$ with the grading determined by $\delta_{r}\in l^2(T)_r$. Define a pair of adjoint operators $\pi(X_{\epsilon})$ on $H_{\pi}$ by the formulae \begin{eqnarray}\label{EqFormRepPlus} (q-q^{-1})\pi(X_{\epsilon})  \delta_{r} &=&  (\ctau(q^{\epsilon}r^2)+c)^{1/2}\delta_{q^{\epsilon}r},\end{eqnarray} where the right hand side is considered as the zero vector when the accompanying scalar factor is zero. Note that the roots on the right hand side are well-defined precisely because $Z_T$ is a $c$-set. 
 
 By direct computation, using the defining commutation relation, we see that $\pi$ defines a $^*$-representation of $U_q^{\Gamma_x}(\su(1,1))$ with $\pi(C) =c$, and clearly this representation is bounded. Moreover, $\pi$ is irreducible since otherwise, by Corollary \ref{CorOneDim}, $T$ would split as a disjoint union of $(y,c)$-compatible sets. Hence $T$ is an $(y,c)$-compatible set.
 
-Now the formula for $\pi(E)$ is uniquely determined up to a unimodular gauge factor. As any non-zero $\Hsp_r$ is cyclic for $\pi$, it follows that these gauge factors are determined by their value at one component. We then easily conclude that $\pi$ is in fact the unique $T$-compatible $^*$-representation, up to unitary equivalence.
+Now the formula for $\pi(X_+)$ is uniquely determined up to a unimodular gauge factor. As any non-zero $\Hsp_r$ is cyclic for $\pi$, it follows that these gauge factors are determined by their value at one component. We then easily conclude that $\pi$ is in fact the unique $T$-compatible $^*$-representation, up to unitary equivalence.
 \end{proof}
 
 If $Z_T$ is an irreducible $c$-set, we will write $\pi_T$ for the accompanying representation of $U_q^{\Gamma_y}(\su(1,1))$. 
 
-\begin{Theorem}\label{TheoIrrAx} The irreducible $^*$-representations of $A_x$ are of the form $(\pi_S\otimes \pi_T)\circ \Phi$, where $Z_S = Z_y^*(c) \subseteq \Lambda_{x^2}$ is a $c$-set, $Z_T = Z_z^*(-c)\subseteq \Lambda_1$ is a $-c$-set, and $yz \in x^2q^{2\Z}$. 
+\begin{Theorem}\label{TheoIrrAx} The irreducible $^*$-representations of $A_x$ are of the form $(\pi_S\otimes \pi_T)\circ \Phi$, where $Z_S \subseteq \Lambda_{x^2}$ is an irreducible $c$-set, $Z_T \subseteq \Lambda_1$ is an irreducible $-c$-set, and $yz \in x^2q^{2\Z}$. 
 \end{Theorem}
-\begin{proof} By Lemma \ref{LemKer}, all irreducible representations of $A_x$ are of the form $\pi \circ \Phi$, where $\pi$ is an irreducible $^*$-representation of $U_q^{\Gamma_x}(\su(1,1))\otimes U_q^{\Gamma_1}(\su(1,1))$. But as any non-zero $\pi(\Unit_r^{(1)}\Unit_s^{(2)})\Hsp$ is cyclic, it is easily seen that all irreducible $^*$-representations of $U_q^{\Gamma_x}(\su(1,1))\otimes U_q^{\Gamma_1}(\su(1,1))$ split as a tensor product $\pi_1\otimes \pi_2$ of irreducible $^*$-representations. As we want $\pi$ to factor over $\Phi$, we then again infer from $\ref{LemKer}$ that necessary and sufficient conditions on $\pi_1$ and $\pi_2$ for factorisation over $\Phi$ are that $\pi_1(C)$ and $-\pi_2(C)$ are the same scalar, and $\pi_1(\Unit_r)=0$ or $\pi_2(\Unit_s)=0$ if $rs\notin \Lambda_x$. This is easily seen to be equivalent with the statement of the theorem.
+
+%Here we mean of course $\{*,\dagger\}\subseteq \{\quad,+,-,0\}$.
+
+\begin{proof} By Lemma \ref{LemKer}, all irreducible representations of $A_x$ are a factorisation over $\Phi$ of some irreducible $^*$-representation $\pi$ of $U_q^{\Gamma_x}(\su(1,1))\otimes U_q^{\Gamma_1}(\su(1,1))$. But as any non-zero $\pi(\Unit_r^{(1)}\Unit_s^{(2)})\Hsp$ is cyclic, it is easily seen that all irreducible $^*$-representations of $U_q^{\Gamma_x}(\su(1,1))\otimes U_q^{\Gamma_1}(\su(1,1))$ split as a tensor product $\pi_1\otimes \pi_2$ of irreducible $^*$-representations. As we want $\pi$ to factor over $\Phi$, we then again infer from $\ref{LemKer}$ that necessary and sufficient conditions on $\pi_1$ and $\pi_2$ for factorisation over $\Phi$ are that $\pi_1(C)$ and $-\pi_2(C)$ are the same scalar, and $\pi_1(\Unit_r)=0$ or $\pi_2(\Unit_s)=0$ if $rs\notin \Lambda_x$. This is easily seen to be equivalent with the statement of the theorem.
 \end{proof}
 
-Let now $\Omega = \Phi(C^{(1)}) = -\Phi(C^{(2)}) \in M(A_x)$. Let $\mathcal{A}_x$ be the universal C$^*$-envelope of $A_x$. As the $\Omega\UnitC{y}{z}$ define orthogonal bounded elements in $A_x\subseteq \mathcal{A}_x$, we can make sense of $\Omega$ as an element affiliated to $\mathcal{A}_x$, i.e. $\Omega\,\eta\,\mathcal{A}_x$ \cite{Wor2}. 
+Let now $\Omega = \Phi(C^{(1)}) = -\Phi(C^{(2)}) \in M(A_x)$. Let $\mathcal{A}_x$ be the universal C$^*$-envelope of $A_x$. As the $\Omega\UnitC{y}{z}$ define orthogonal bounded elements in $A_x\subseteq \mathcal{A}_x$, we can make sense of $\Omega$ as an element affiliated with $\mathcal{A}_x$, i.e. $\Omega\,\eta\,\mathcal{A}_x$ \cite{Wor2}. 
 
 
 % Add $\tau$!
