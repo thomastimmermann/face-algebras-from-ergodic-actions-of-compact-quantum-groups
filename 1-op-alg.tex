@@ -1,6 +1,68 @@
 \section{Partial compact quantum groups on the level of operator algebras}
 
-Let $I$ be a set. In \cite[Definition 1.17]{DCT1} was introduced the notion of an \emph{$I$-partial compact quantum group} $\mathscr{G}$. We will write the associated (function) $^*$-algebra by $P(\mathscr{G})$, and its $I^4$-grading as $\Gr{P(\mathscr{G})}{k}{l}{m}{n}$. The units are written $\UnitC{k}{l}$, and we also use the notation $\lambda_k = \sum_l \UnitC{k}{l}$ and $\rho_l = \sum_{k}\UnitC{k}{l}$, which define projections in $M(P(\mathscr{G}))$. The total coproduct on $P(\mathscr{G})$ will be written as $\Delta$, where we will use the Sweedler notation $\Delta(a) = a_{(1)}\otimes a_{(2)}$. The partial comultiplications $\Gr{P(\mathscr{G})}{k}{l}{m}{n}\rightarrow \Gr{P(\mathscr{G})}{k}{l}{r}{s}\otimes \Gr{P(\mathscr{G})}{r}{s}{m}{n}$ will be written $\Delta_{rs}$. Counit and antipode will be written respectively as $\epsilon$ and $S$. Finally, by $\phi$ will be denoted the (unique) normalized invariant positive functional, called also the \emph{invariant integral}. 
+\subsection{Preliminaries}
+
+We briefly recall some definitions from \cite{DCT1}. 
+
+Let $I$ be a set. An $I^2$-\emph{partial algebra} (with object set $I$), \cite[Definition 1.1]{DCT1}, will be an algebra, that is, a (not necessarily unital) $\C$-algebra together with a family $\UnitC{k}{l}$ of orthogonal idempotents, indexed by elements $(k,l)\in I^2$, for which the natural map \[\oplus_{k,l,m,n} \UnitC{k}{m}A\UnitC{l}{n} \rightarrow A\] is an isomorphism of vector spaces. Note that some of the $\UnitC{k}{l}$ are allowed to be zero. We will in the following write \[\Gr{A}{k}{l}{m}{n} = \UnitC{k}{m}A\UnitC{l}{n}, \quad \lambda_k = \sum_l \UnitC{k}{l},\quad \rho_l = \sum_k \UnitC{k}{l},\]  where the latter two elements are interpreted as elements in the multiplier algebra $M(A)$. 
+
+We call $A$ a \emph{partial bialgebra}, \cite[Definition 1.5]{DCT1} if one is also given a family of linear maps \[\Delta_{rs}: \Gr{A}{k}{l}{m}{n}\rightarrow \Gr{A}{k}{l}{r}{s} \otimes \Gr{A}{r}{s}{m}{n},\] called \emph{partial comultiplications}, and a map \[\epsilon: A \rightarrow \C,\] called the \emph{counit} satisfying the following assumptions.
+\begin{itemize}
+\item For all $a\in \Gr{A}{k}{l}{m}{n}$ and $p,q,r,q\in I$, one has \[(\Delta_{pq}\otimes \id)\Delta_{rs}(a) = (\id\otimes \Delta_{rs})\Delta_{pq}(a).\]
+\item The map $\epsilon$ vanishes on all $\Gr{A}{k}{l}{m}{n}$ with $k\neq m$ or $l\neq n$. 
+\item For all $a\in \Gr{A}{k}{l}{m}{n}$, \[(\id\otimes \epsilon)\Delta_{mn}(a) = (\epsilon\otimes \id)\Delta_{kl}(a) = a.\]
+\item $\epsilon(\UnitC{k}{k})= 1$ for all $k\in I$. 
+\item $\Delta_{ll'}(\UnitC{k}{m}) = \delta_{l,l'} \UnitC{k}{l}\otimes \UnitC{l}{m}$.
+%\item For all $a \in \Gr{A}{k}{l}{m}{n}$, one has $\Delta_{rs}(a)^* = \Delta_{sr}(a^*)$ and $\epsilon(a^*) = \overline{\epsilon(a)}$. 
+\item $\epsilon(ab) = \epsilon(a)\epsilon(b)$ for all $a\in \Gr{A}{k}{l}{m}{n}$ and $b\in \Gr{A}{l}{p}{n}{q}$,
+\item For all $a\in \Gr{A}{k}{l}{m}{n}$ and all $r$, $\Delta_{rs}(a)=0$ for almost all $s$.
+\item For all $a\in \Gr{A}{k}{l}{m}{n}$ and all $s$, $\Delta_{rs}(a)=0$ for almost all $r$.
+\item For all $a\in \Gr{A}{k}{l}{m}{n}$ and $b\in \Gr{A}{k'}{l'}{m'}{n'}$, one has \[\Delta_{rs}(ab) = \sum_{t} \Delta_{rt}(a)\Delta_{ts}(b).\]
+\end{itemize} 
+
+In the last multiplicative identity, we have used the finite support condition on the maps $s\mapsto \Delta_{rs}(a)$ to make sense of the a priori infinite sum as a finite sum. Note that $\epsilon$ is \emph{not} required to be a homomorphism on the whole of $A$.
+
+The expression $\Delta(a) = \sum_{rs}\Delta_{rs}(a)$ can be made sense of inside the multiplier algebra $M(A\otimes A)$, and we obtain in this way a (non-degenerate) homomorphism \[\Delta: A\rightarrow M(A\otimes A),\] called the \emph{(total) comultiplication}, satisfying the ordinary comultiplication formula. There is then a unique extension of $\Delta$ to $M(A)$ such that $\Delta(1) =\sum_k \rho_k\otimes \lambda_k$. We will use the Sweedler-like notations \[\Delta(a) = a_{(1)}\otimes a_{(2)}.\] Note that because of the finiteness condition, expressions such as $\Delta(a)(1\otimes b)$ lie in $A\otimes A$.
+
+%We will in the following use the linear maps $\Pi^L,\Pi^R,\overline{\Pi}^L$ and $\overline{\Pi}^R$ from $A$ to $M%(A)$, determined by the following formulas for $a\in \Gr{A}{k}{l}{m}{n}$: \[\Pi^L(a) = \epsilon(a)\lambda_k,\quad \overline{\Pi}^L(a) = \epsilon(a)\lambda_l,\quad \overline{\Pi}^R(a) = \epsilon(a)\rho_m,\quad \overline{\Pi}^R(a) = \epsilon(a)\rho_n.\]
+
+A \emph{partial Hopf algebra} \cite[Definition 1.7]{DCT1} is a partial bialgebra $(A,\Delta)$ for which there exists an invertible, antimultiplicative map $S: A\rightarrow A$ with \[S(a_{(1)})a_{(2)} = \sum_{k\in I} \epsilon(\lambda_ka)\lambda_k,\qquad a_{(1)}S(a_{(2)}) = \sum_n\epsilon(a\rho_n)\rho_n,\] where the identities have to be interpreted as identities of multipliers. The map $S$ is then referred to as the \emph{antipode}. 
+
+Following \cite[Definition 1.8]{DCT1}, one can show that the relation $k\sim l$ if $\UnitC{k}{l}\neq0$ defines an equivalence relation on $I$. The quotient set $\mathscr{I} = I/\sim$ will be called the \emph{hyperobject set} of $(A,\Delta)$.
+
+Finally, an invariant integral on $(A,\Delta)$ \cite[Definition 1.12]{DCT1} will consist of a functional $\phi: A\rightarrow \C$ such that $\phi(\UnitC{k}{l})=1$ for all $k,l$ with $\UnitC{k}{l}\neq 0$, and, for all $a\in A$, \[(\id\otimes \phi)\Delta(a) = \sum_{k} \phi(\lambda_k a)\lambda_k,\qquad (\phi\otimes \id)\Delta(a) = \sum_m \phi(\rho_m a)\rho_m,\] again as identities in the multiplier algebra of $A$. Such an invariant integral is unique if it exists.
+
+We can now give the definition of an $I$-partial compact quantum group, obtained by putting also a compatible $^*$-structure in the mix.
+
+\begin{Def}[\cite{DCT1}, Definition 1.17] An \emph{$I$-partial compact quantum group} $\mathscr{G}$ consists of a partial Hopf algebra $P(\mathscr{G})$ with invariant integral $\phi$, endowed with an antimultiplicative, antilinear involution $*:A\rightarrow A$ satisfying the following conditions.
+\begin{itemize}
+\item All $\UnitC{k}{l}$ are self-adjoint.
+\item $\Delta$ is a $^*$-homomorphism.
+\item $\epsilon(a^*) = \overline{\epsilon(a)}$ for all $a\in A$. 
+\item $\phi(a^*) = \overline{\phi(a)}$ and $\phi(a^*a)\geq 0$ for all $a\in A$.
+\end{itemize}
+\end{Def} 
+
+We refer to $P(\mathscr{G})$ as the associated (function) algebra of $\mathscr{G}$.
+
+Let us also briefly recall the notion of \emph{unitary representation} of a partial compact quantum group. Let $\Hsp$ be an $I^2$-graded Hilbert space, whose components we write $\GrDA{\Hsp}{k}{l}$. We call $\Hsp$ \emph{row- and column finite dimensional} (rcfd) if all $\GrDA{\Hsp}{k}{l}$ are finite dimensional and if, for any fixed $l$ (resp.~ fixed $k$), there are only finitely many $k$ (resp.~ $l$) for which $\GrDA{\Hsp}{k}{l}$ is not zero.  
+%We further write $p_{kl}$ for the projection on $\GrDA{\Hsp}{k}{l}$, and $L_k =\sum_{l} p_{kl}$, $R_l = \sum_k p_{kl}$ (as strongly convergent sums).
+
+\begin{Def}[\cite{DCT1}, Definition 2.1 and Definition 2.18]\label{DefUniCorep} Let $\mathscr{G}$ be a partial compact quantum group. A \emph{unitary representation $\mathscr{X}$ of $\mathscr{G}$} (or unitary corepresentation of $P(\mathscr{G})$) $\mathscr{X}$ will consist of an rcfd Hilbert space $\Hsp$ and a collection of elements \[\Gr{X}{k}{l}{m}{n}\in \Gr{A}{k}{l}{m}{n}\otimes B(\GrDA{\Hsp}{m}{n},\GrDA{\Hsp}{k}{l})\] such that \begin{eqnarray*} (\Delta_{rs}\otimes \id)\Gr{X}{k}{l}{m}{n} &=& \left(\Gr{X}{k}{l}{r}{s}\right)_{13}\left(\Gr{X}{r}{s}{m}{n}\right)_{23},\\ (\epsilon\otimes \id)\Gr{X}{k}{l}{k}{l} &=& \id_{\GrDA{\Hsp}{k}{l}}\end{eqnarray*} and \begin{eqnarray*} \sum_{k} \left(\Gr{X}{k}{l'}{m}{n'}\right)^*\Gr{X}{k}{l}{m}{n} &=& \delta_{l,l'}  \delta_{n,n'} \UnitC{l}{n}\otimes \id_{\GrDA{\Hsp}{m}{n}},\\ \sum_{n} \Gr{X}{k}{l}{m}{n}\left(\Gr{X}{k'}{l}{m'}{n}\right)^* &=& \delta_{k,k'}\delta_{m,m'} \UnitC{k}{m}\otimes \id_{\GrDA{\Hsp}{k}{l}}.\end{eqnarray*}
+\end{Def} 
+
+Note that the above sums are finite because of the rcfd condition.
+
+It is easy to see that any collection of maps $\Gr{X}{k}{l}{m}{n}$ as above gives rise to a partial isometry \[X = \sum_{k,l,m,n}\Gr{X}{k}{l}{m}{n}\in M(P(\mathscr{G})\otimes B_{00}(\Hsp)),\] where $B_{00}(\Hsp)$ is the $^*$-algebra of finite rank operators on $\Hsp$. We will then also write $\Hsp = \Hsp_{\mathscr{X}}$.
+
+The left (resp.~ right) hyperobject support of a unitary representation will consist of all equivalence classes of $k$ (resp.~ all $l$) such that there exists $l$ (resp.~ $k$) with $\GrDA{\Hsp}{k}{l}\neq 0$. It can be shown that any unitary representation is a direct sum of irreducible representations \cite[Corollary 2.5]{DCT1}, and that the latter have left and right hypersupport consisting of each a single hyperobject. In general, we will say that a unitary representation has \emph{finite hyperobject support} if its left and right hyperobject supports are finite sets. This implies that the unitary representation will be a \emph{finite} direct sum of irreducibles. 
+
+One has the following lemma which will be crucial in what follows. 
+
+\begin{Lem}[\cite{DCT1}, Proposition 2.10 and Proposition 2.20]\label{LemSpan} The linear spaces \[P(\mathscr{G})(\mathscr{X}) = \{(\id\otimes \omega)(X)\mid \omega \in B(\Hsp_{\mathscr{X}})_*\},\] defined for irreducible unitary representations $\mathscr{X}$, are linearly independent when the unitary representations are not equivalent, and moreover their joint linear span over all irreducible unitary representations equals $P(\mathscr{G})$.
+\end{Lem}
+
+Further references to \cite{DCT1} will be given whenever needed. 
 
 For the rest of this section, let $\mathscr{G}$ be a fixed $I$-partial compact quantum group. We construct
 completions of the underlying $*$-algebra $P(\mathscr{G})$ in the form
@@ -12,23 +74,25 @@ integral to the level of
 operator algebras and show that $\LGinf$ becomes a measured quantum
 groupoid in the sense of Lesieur \cite{Les1} and Enock \cite{Eno2}.
 
-We first show that the $*$-algebra $P(\mathscr{G})$ has an enveloping $C^{*}$-algebra $\CuG$. Recall first the notion of an rcfd (= row and column finite-dimensional) Hilbert space $\Hsp$ over $I$, meaning an $I^2$-graded Hilbert space $\Hsp = \underset{k,l}{\oplus} \,\GrDA{\Hsp}{k}{l}$ with each $\underset{k}{\oplus}\, \GrDA{\Hsp}{k}{l}$ and $\underset{l}{\oplus}\, \GrDA{\Hsp}{k}{l}$ finite-dimensional. Then a \emph{unitary representation $\mathscr{X}$ of $\mathscr{G}$ on $\Hsp$} consists of a family of elements \[\Gr{X}{k}{l}{m}{n} \in \Gr{P(\mathscr{G})}{k}{l}{m}{n}\otimes B(\GrDA{\Hsp}{m}{n},\GrDA{\Hsp}{k}{l})\] satisfying natural corepresentation and unitarity identities, see \cite[Section 2.1 and Section 2.4]{DCT1}.
+\subsection{Universal C$^*$-algebra of a partial compact quantum group}
+
+We first show that the $*$-algebra $P(\mathscr{G})$ has an enveloping $C^{*}$-algebra $\CuG$. 
+%Recall the notion of an rcfd (row and column finite-dimensional) Hilbert space $\Hsp$ over $I$, meaning an $I^2$-graded Hilbert space $\Hsp = \underset{k,l}{\oplus} \,\GrDA{\Hsp}{k}{l}$ with each $\underset{k}{\oplus}\, \GrDA{\Hsp}{k}{l}$ and $\underset{l}{\oplus}\, \GrDA{\Hsp}{k}{l}$ finite-dimensional. Then a \emph{unitary representation $\mathscr{X}$ of $\mathscr{G}$ on $\Hsp$} consists of a family of elements \[\Gr{X}{k}{l}{m}{n} \in \Gr{P(\mathscr{G})}{k}{l}{m}{n}\otimes B(\GrDA{\Hsp}{m}{n},\GrDA{\Hsp}{k}{l})\] satisfying natural corepresentation and unitarity identities, see \cite[Section 2.1 and Section 2.4]{DCT1}.
 
 \begin{Lem}\label{LemUniBound}
  Let $H$ be a pre-Hilbert space with completion $\Hsp$. Let $\pi: P(\mathscr{G})\rightarrow \End(H)$ be a $*$-homomorphism into the $*$-algebra of adjointable endomorphisms of $H$. Then $\pi$ extends uniquely to a $*$-homomorphism $\pi: P(\mathscr{G})\rightarrow B(\Hsp)$, and for each $a\in P(\mathscr{G})$ there exists $M_a>0$, independent of $\pi$, such that $\|\pi(a)\|\leq M_a$.
 \end{Lem} 
 
 \begin{proof}
-By \cite[Corollary 2.16 and Proposition 2.20]{DCT1}, it suffices to prove that $\pi(a)$ is $\pi$-uniformly bounded for $a\in P(\mathscr{G})$ of the form \[a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),\]
+By Lemma \ref{LemSpan}, it suffices to prove that $\pi(a)$ is $\pi$-uniformly bounded for $a\in P(\mathscr{G})$ of the form \[a=(\id \otimes \omega_{\xi,\eta})(\Gr{X}{k}{l}{m}{n}),\]
 where $\mathscr{X}$ is a unitary representation of
 $\mathscr{G}$ on some rcfd $I^{2}$-graded Hilbert space
 $\mathcal{K}$ and $\xi\in \Gru{\mathcal{K}}{k}{l}$, $\eta\in
-\Gru{\mathcal{K}}{m}{n}$.  From  \cite[Lemma 2.2]{DCT1}, we deduce
+\Gru{\mathcal{K}}{m}{n}$.  By Definition \ref{DefUniCorep}, we deduce
   \begin{equation}\label{EqUnitary}
     \sum_{p}(\Gr{X}{p}{l}{m}{n})^{*} \Gr{X}{p}{l}{m}{n}  = \UnitC{l}{n}
-    \otimes \id_{\Gru{\mathcal{K}}{m}{n}},
+    \otimes \id_{\Gru{\mathcal{K}}{m}{n}}.
   \end{equation}
-where  the sum is  finite because $\mathcal{K}$ is rcfd. 
 
 As $\pi(\UnitC{l}{n})$ is a self-adjoint projection, it extends uniquely to an element in $B(\Hsp)$. From  $\eqref{EqUnitary}$, it then follows that each $(\pi\otimes \id)(\Gr{X}{p}{l}{m}{n})$ can be extended to a contraction in $B(\Hsp\otimes \GrDA{\mathcal{K}}{m}{n},\Hsp\otimes \GrDA{\mathcal{K}}{p}{l})$. We hence conclude that
  \[\|\pi(a)\| \leq \| \xi\| \|\eta\| \|(\pi \otimes \id)(\Gr{X}{k}{l}{m}{n})\| \leq
@@ -41,9 +105,9 @@ As $\pi(\UnitC{l}{n})$ is a self-adjoint projection, it extends uniquely to an e
 Let $\mathscr{G}$ be an $I$-partial compact quantum group with underlying
 $*$-algebra $P(\mathscr{G})$. Then
   there exist a $C^{*}$-algebra $C^{u}_{0}(\mathscr{G})$ and a
-  $*$-homomorphism $\pi_{u} \colon P(\mathscr{G}) \to
-  C^{u}_{0}(\mathscr{G})$ such that every $*$-homomorphism of
-  $P(\mathscr{G})$ into some $C^{*}$-algebra factorizes through
+  $*$-homomorphism \[\pi_{u} \colon P(\mathscr{G}) \to
+  C^{u}_{0}(\mathscr{G}) \] such that any $*$-homomorphism of
+  $P(\mathscr{G})$ into a $C^{*}$-algebra factorizes through
   $\pi_{u}$.
 \end{Prop}
 \begin{proof}
@@ -58,11 +122,12 @@ separated completion. This follows immediately from Lemma \ref{LemUniBound}.
 \end{proof}
 
 %The construction of the reduced $C^{*}$-algebra $C^{r}_{0}(\mathscr{G})$ 
+% Changed from maximal to minimal tensor product
 
 We will show later that the $*$-homomorphism $\pi_{u}
 \colon P(\mathscr{G}) \to \CuG$ is in fact injective. For now, we show that the comultiplication of $P(\mathscr{G})$ lifts to a $*$-homomorphism  of
-$C^{u}_{0}(\mathscr{G})$ into the multiplier C$^*$-algebra of the maximal tensor product
-$C^{u}_{0}(\mathscr{G}) \maxtimes
+$C^{u}_{0}(\mathscr{G})$ into the multiplier C$^*$-algebra of the minimal tensor product
+$C^{u}_{0}(\mathscr{G}) \otimes
 C^{u}_{0}(\mathscr{G})$.
 
 % First note that for any $k\in I$, the sums $\sum_l \pi_u(\UnitC{k}{l}$ and $\sum_l \pi_u(\UnitC{l}{k})$ converge strictly inside $C^u_0(\mathscr{G})$, as they are sums of mutually orthogonal projections in $C^{u}_{0}(\mathscr{G})$ that converge strictly on a dense subalgebra. We will denote the resulting elements by $\pi_u(\lambda_k)$ and $\pi_u(\rho_k$ 
@@ -82,37 +147,36 @@ C^{u}_{0}(\mathscr{G})$.
 \begin{Prop}
 Let $\mathscr{G}$ be a partial compact quantum group with underlying
 $*$-algebra $P(\mathscr{G})$. Then  there exists a unique $*$-homomorphism $\Delta^{u}\colon
-  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \maxtimes
+  C^{u}_{0}(\mathscr{G}) \to M(C^{u}_{0}(\mathscr{G}) \otimes
   C^{u}_{0}(\mathscr{G}))$ such that 
   \begin{equation}\label{EqParts}
     (\pi_u(\UnitC{k}{p}) \otimes
-    \pi_u(\UnitC{p}{m}))\Delta^{u}(\pi_{u}(a))(\pi_u(\UnitC{l}{q})\otimes \pi_u(\UnitC{q}{n})) =
+    \pi_u(\UnitC{r}{m}))\Delta^{u}(\pi_{u}(a))(\pi_u(\UnitC{l}{q})\otimes \pi_u(\UnitC{s}{n})) =\delta_{p,r}\delta_{s,q}
     (\pi_{u}  \otimes \pi_{u})(\Delta_{pq}(a))
   \end{equation}
-  for all $a \in \Gr{P(\mathscr{G})}{k}{l}{m}{n}$ and $p,q\in I$.
+  for all $a \in \Gr{P(\mathscr{G})}{k}{l}{m}{n}$ and $p,q,r,s\in I$.
 \end{Prop}
 \begin{proof}
 
-Let $\Hsp_u^{(2)}$ carry a (non-degenerate) universal $^*$-representation of $C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G})$, and define $H_u^{(2)}$ as the algebraic sum of all $(\pi_u(\UnitC{k}{m}) \otimes \pi_u(\UnitC{l}{n}))\Hsp_u^{(2)}$. Then $H_u^{(2)}$ is a pre-Hilbert space with $\Hsp_u^{(2)}$ as its closure, and as $P(\mathscr{G})\otimes P(\mathscr{G})$ has local units, it is clear that the representation $\pi_u\otimes \pi_u$ of $P(\mathscr{G})\otimes P(\mathscr{G})$ extends to a $ *$-representation of $M(P(\mathscr{G})\otimes P(\mathscr{G}))$ on $H_u^{(2)}$ by adjointable endomorphisms, which we will denote by the same symbol.
+Let $\Hsp_u^{(2)}$ carry a (non-degenerate) universal $^*$-representation of $C_0^u(\mathscr{G})\otimes C_0^u(\mathscr{G})$, and define $H_u^{(2)}$ as the algebraic sum of all $(\pi_u(\UnitC{k}{m}) \otimes \pi_u(\UnitC{l}{n}))\Hsp_u^{(2)}$. Then $H_u^{(2)}$ is a pre-Hilbert space with $\Hsp_u^{(2)}$ as its closure, and as $P(\mathscr{G})\otimes P(\mathscr{G})$ has local units, it is clear that the representation $\pi_u\otimes \pi_u$ of $P(\mathscr{G})\otimes P(\mathscr{G})$ extends to a $ *$-representation of $M(P(\mathscr{G})\otimes P(\mathscr{G}))$ on $H_u^{(2)}$ by adjointable endomorphisms, which we will denote by the same symbol.
 
-By Lemma \ref{LemUniBound}, we can extend $(\pi_u\otimes \pi_u)\Delta$ to a bounded $^*$-representation on $\Hsp_u^{(2)}$. It clearly satisfies $\eqref{EqParts}$. Moreover, as $(\pi_u\otimes \pi_u)\Delta(a)$ for $a\in P(\mathscr{G})$ defines a multiplier of $(\pi_u\otimes \pi_u)(P(\mathscr{G})\otimes P(\mathscr{G}))$, we conclude that the range of $\Delta_u$ is in $M(C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G}))$.
+By Lemma \ref{LemUniBound}, we can extend $(\pi_u\otimes \pi_u)\Delta$ to a $^*$-representation $\Delta^u$ of $C_0^u(\mathscr{G})$ on $\Hsp_u^{(2)}$. It clearly satisfies $\eqref{EqParts}$. Moreover, as $(\pi_u\otimes \pi_u)\Delta(a)$ for $a\in P(\mathscr{G})$ defines a multiplier of $(\pi_u\otimes \pi_u)(P(\mathscr{G})\otimes P(\mathscr{G}))$, we conclude that the range of $\Delta^u$ is in $M(C_0^u(\mathscr{G})\otimes C_0^u(\mathscr{G}))$.
 \end{proof}
 
-Since $\underset{k,l,m,n}{\sum} \pi_u(\UnitC{k}{m})\otimes \pi_u(\UnitC{l}{n})$ converges strictly to the unit in $M(C_0^u(\mathscr{G})\maxtimes C_0^u(\mathscr{G}))$, we have in fact for $a\in P(\mathscr{G})$ that, with respect to the strict topology, \[\Delta^u(a) = \sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a)).\]
+Since $\underset{k,l,m,n}{\sum} \pi_u(\UnitC{k}{m})\otimes \pi_u(\UnitC{l}{n})$ converges strictly to the unit in $M(C_0^u(\mathscr{G})\otimes C_0^u(\mathscr{G}))$, we have in fact for $a\in P(\mathscr{G})$ that, with respect to the strict topology, \[\Delta^u(a) = \sum_{p,q} (\pi_{u} \otimes \pi_{u})(\Delta_{pq}(a)).\]
 
-The existence of the above coproduct can be used to construct tensor products of C$^*$-representations of $\CuG$. For $(\Hsp,\pi)$ a $^*$-representation of $\CuG$, we write $p_{\pi}\in B(\Hsp)$ for the projection onto the closure of $\pi(\CuG)\Hsp$. We write $\GrLA{\Hsp}{k}{l} = \pi(\UnitC{k}{l})\Hsp$, which gives a direct sum decomposition of $p_{\pi}\Hsp$.  When $(\mathcal{K},\pi')$ is another $^*$-representation, we will write $\pi \boxtimes \pi'$ for the representation of $\CuG$ on $\mathcal{H}\otimes \mathcal{K}$ obtained as \[(\pi \boxtimes \pi')(a)(\xi\otimes \eta) = (\pi\otimes \pi')(\Delta^u(a))(p_{\pi}\xi\otimes p_{\pi'}\eta).\] The restriction of $\pi\boxtimes \pi'$ to \[\Hsp\itimes \mathcal{K} := p_{\pi \boxtimes \pi'}(\Hsp\otimes \mathcal{K}) = (\pi \boxtimes \pi')(\Delta^u(1))(\Hsp\otimes \mathcal{K})= \oplus_l ({}_l\Hsp\otimes {}^l\mathcal{K})\] will be written as $\pi\iboxtimes \pi'$. 
+The existence of the above coproduct can be used to construct tensor products of C$^*$-representations of $\CuG$. For $(\Hsp,\pi)$ a $^*$-representation of $\CuG$, we write $p_{\pi}\in B(\Hsp)$ for the projection onto the closure of $\pi(\CuG)\Hsp$. We write $\GrLA{\Hsp}{k}{l} = \pi(\UnitC{k}{l})\Hsp$, which gives a direct sum decomposition of $p_{\pi}\Hsp$.  When $(\mathcal{K},\pi')$ is another $^*$-representation, we will write $\pi \boxtimes \pi'$ for the $^*$-representation of $\CuG$ on $\mathcal{H}\otimes \mathcal{K}$ obtained as \[(\pi \boxtimes \pi')(a)(\xi\otimes \eta) = (\pi\otimes \pi')(\Delta^u(a))(p_{\pi}\xi\otimes p_{\pi'}\eta).\] When $\pi$ and $\pi'$ are non-degenerate, the restriction of $\pi\boxtimes \pi'$ to \[\Hsp\itimes \mathcal{K} := p_{\pi \boxtimes \pi'}(\Hsp\otimes \mathcal{K}) = (\pi \boxtimes \pi')(\Delta^u(1))(\Hsp\otimes \mathcal{K})= \oplus_l ({}_l\Hsp\otimes {}^l\mathcal{K})\] will be written as $\pi\iboxtimes \pi'$. Note that, by definition, $\pi\iboxtimes \pi'$ is a non-degenerate $^*$-representation, i.e.~ $p_{\pi\iboxtimes \pi'} = 1$. 
 
-\begin{Def}\label{DefTenProd}  Let $\mathscr{G}$ be a partial compact quantum group, and let $(\Hsp,\pi)$ and $(\mathcal{K},\pi')$ be two $^*$-representations of $\CuG$. Then the $^*$-representation $(\Hsp\itimes \mathcal{K},\pi\iboxtimes \pi')$ will be called the \emph{tensor product representation} of $\pi$ and $\pi'$. 
+\begin{Def}\label{DefTenProd}  Let $\mathscr{G}$ be a partial compact quantum group, and let $(\Hsp,\pi)$ and $(\mathcal{K},\pi')$ be two non-degenerate $^*$-representations of $\CuG$. Then the non-degenerate $^*$-representation $(\Hsp\itimes \mathcal{K},\pi\iboxtimes \pi')$ will be called the \emph{tensor product representation} of $\pi$ and $\pi'$. 
 \end{Def} 
-
-Note that, by definition, $\pi\iboxtimes \pi'$ is a non-degenerate representation, i.e.~ $p_{\pi\iboxtimes \pi'} = 1$. However, it is possible that this is a representation on the zero Hilbert space $\{0\}$!
-
+%However, it is possible that this is a representation on the zero Hilbert space $\{0\}$!
 %We further write $H=H_{\pi}$ for the linear span of all $\GrLA{\Hsp}{k}{l}$.
 
+\subsection{Reduced C$^*$-algebra and von Neumann algebra of a partial compact quantum group}
 
-We now turn towards the reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra
-$\LGinf$. As usual, these will be obtained from a GNS-construction with respect to the invariant
-integral $\phi$ of $\mathscr{G}$. Recall that $\phi$ is faithful by the remark following \cite[Corollary 2.16]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
+We now turn towards the reduced $C^{*}$-algebra $\CrG$ and the von Neumann algebra $\LGinf$. As usual, these will be obtained from a GNS-construction with respect to the invariant integral $\phi$ of $\mathscr{G}$. 
+
+Recall that $\phi$ is faithful by the remark following \cite[Corollary 2.16]{DCT1}.  We define an inner product on $P(\mathscr{G})$ by
 \begin{align*}
   \langle a|b\rangle :=\phi(a^{*}b).
 \end{align*}
@@ -122,11 +186,11 @@ $\Lambda \colon P(\mathscr{G}) \to \LGtwo$ the natural embedding.
 \begin{Prop} \label{prop:gns} Let $\mathscr{G}$ be a partial compact
   quantum group with underlying total $*$-algebra $P(\mathscr{G})$ and
   associated Hilbert space $\LGtwo$. Then there exists a unique
-  $*$-homomorphism $\pi_{\red}\colon P(\mathscr{G}) \to {\cal B}(\LGtwo)$
+  $*$-homomorphism \[\pi_{\red}\colon P(\mathscr{G}) \to {\cal B}(\LGtwo)\]
   such that $\pi_{\red}(a)\Lambda(b)=\Lambda(ab)$ for all $a,b\in
   P(\mathscr{G})$, and $\pi_{\red}$ is faithful.
 \end{Prop}
-\begin{proof} The existence of $\phi$ follows immediately from Lemma \ref{LemUniBound}, and the faithfulness of $\pi_{\red}$ follows from the faithfulness of $\phi$. 
+\begin{proof} The existence of $\pi_{\red}$ follows immediately from Lemma \ref{LemUniBound}, and the faithfulness of $\pi_{\red}$ follows from the faithfulness of $\phi$. 
   %Let $a,c \in P(\mathscr{G})$. Then the formula $x \mapsto \langle
 %\Lambda(c) | x\Lambda(a)\rangle$ defines a bounded linear functional
   %$\omega_{\Lambda(c),\Lambda(a)}$ on ${\cal B}(\LGtwo)$ and a
@@ -146,7 +210,7 @@ $\Lambda \colon P(\mathscr{G}) \to \LGtwo$ the natural embedding.
 Since $\pi_{\red}$ factorizes through $\pi_{u}$, we can conclude:
 \begin{Cor}
   Let $\mathscr{G}$ be a partial compact quantum group with underlying
-  total algebra $P(\mathscr{G})$. Then the
+  total $*$-algebra $P(\mathscr{G})$. Then the
 universal $*$-homomorphism $\pi_{u} \colon P(\mathscr{G}) \to\CuG$ is injective.
 \end{Cor}
 
@@ -201,15 +265,15 @@ $\lambda_{k}^{\op},\rho_{k}^{\op}\in {\cal
   V_{\pi}^{*}V_{\pi} &= \sum_{l} \rho_{l}^{\op} \otimes \pi(\rho_{l}), &
   V_{\pi}V_{\pi}^{*} &= \sum_{l}  \rho_{l} \otimes \pi(\lambda_{l}),
 \end{align*}
-where  the sums converging in the strong operator topology,
-and its adjoint is given by
+  the sums converging in the strong operator topology. The adjoint is determined by the formula
 \begin{align*}
 V_{\pi}^{*}(\Lambda(a) \otimes \pi(b)\xi) &= \Lambda(a_{(1)}) \otimes
-\pi(S(a_{(2)})b)\xi.
+\pi(S(a_{(2)})b)\xi
 \end{align*}
+for $a,b\in P(\mathscr{G})$.
 \end{Lem}
 \begin{proof}
-  Let $a,b \in A$. Since $\Delta$ is a $*$-homomorphism and $\phi$ is
+  Let $a,b \in P(\mathscr{G})$. Since $\Delta$ is a $*$-homomorphism and $\phi$ is
 invariant,
   \begin{align*}
     \langle \Lambda(a_{(1)}) \otimes
@@ -273,7 +337,7 @@ $\mathscr{G}$. Write
 
 Denote by $\nu$ the weight on $l^{\infty}(I)$ given by
 integration with respect to the counting measure on $I$. This weight is
-normal, faithful, and semi-finite,  briefly written nsf. For general nsf weights $\psi$ on a von Neumann algebra $M$, we will use the standard notation $\mathfrak{N}_{\psi} = \{a\in M\mid \psi(a^*a)<\infty\}$, $\mathfrak{M}_{\psi}^+  = \{a\in M^+\mid\psi(a)<\infty\}$ and $\mathfrak{M}_{\psi} = \mathfrak{N}_{\psi}^*\mathfrak{N}_{\psi} = \spann \mathfrak{M}_{\psi}^+$. The same notation will be used for operator valued weights.
+normal, faithful, and semi-finite,  briefly written nsf. For general nsf weights $\psi$ on a von Neumann algebra $M$, we will use the standard notation \[\mathfrak{N}_{\psi} = \{a\in M\mid \psi(a^*a)<\infty\},\]\[\mathfrak{M}_{\psi}^+  = \{a\in M^+\mid\psi(a)<\infty\}\] and \[\mathfrak{M}_{\psi} = \mathfrak{N}_{\psi}^*\mathfrak{N}_{\psi} = \spann \mathfrak{M}_{\psi}^+.\] The same notation will be used for operator valued weights.
 
 Furthermore, denote by
 \begin{align*}
@@ -305,7 +369,7 @@ Furthermore,  $(\id \otimes \vnphi)(\vnDelta(x)) =  T_{\lambda}(x)$ and $
 \begin{proof}
   We first prove uniqueness of $\vnphi$.  The
   $\Grt{p}{k}{m}:=\pi_{\red}(\UnitC{k}{m})=\lambda_{k}\rho_{m}$ are pairwise orthogonal
-  projections in $\mathfrak{N}_{\vnphi}\cap \mathfrak{N}_{\vnphi}^*$ which sum up to $1$. By the centralizing assumption, $\vnphi$ is the sum of the bounded maps
+  projections in $\mathfrak{N}_{\vnphi}\cap \mathfrak{N}_{\vnphi}^*$ which sum up to $1$. By the centralizing assumption, $\vnphi$ is the sum of the bounded positive functionals
   $\Grt{\vnphi}{k}{m} \colon x \mapsto
   \vnphi(\Grt{p}{k}{m}x\Grt{p}{k}{m})$ which are determined
   by their restrictions to $\pi_{\red}(P(\mathscr{G}))$. The centralizing condition also implies the existence of the maps $T_{\lambda}$ and $T_{\rho}$. 
@@ -327,13 +391,19 @@ for all $x\in \LGinf^{+}$  are normal, (semi-)finite and satisfy $\nu
 \circ \lambda^{-1} \circ T_{\lambda} = \vnphi = \nu \circ \rho^{-1}
 \circ T_{\rho}$.
 
-We finally check the invariance equations. For $x\in \LGinf$, we check immediately by definition of $\vnphic{k}{m}$, the formula for $\vnDelta$ and the formula for $V^*$ in Lemma \ref{lemma:partial-isometry} that
+We finally check the invariance equations. For $x\in P(\mathscr{G})$, we get by right invariance of $\phi$ that   \begin{align*}
+    (\vnphic{k}{m}\otimes \id)(\vnDelta(\pi_{\red}(\rho_lx))) &= 
+    \phi(\UnitC{k}{l}x\UnitC{k}{l}) \Grt{p}{m}{l}.
+  \end{align*}
+By taking strong limits, we obtain that for $x\in \LGinf$, 
   \begin{align*}
-    (\vnphic{k}{m}\otimes \id)(\vnDelta(x)) &= \sum_{l}
+    (\vnphic{k}{m}\otimes \id)(\vnDelta(\rho_lx)) &= 
     \vnphic{k}{l}(x) \UnitC{m}{l}.
-  \end{align*} Summing over $k$ and $m$, we  find $(\vnphi\otimes \id)
-  \circ \vnDelta = T_{\lambda}$. A similar argument (using a left regular representation) shows that
-  $(\vnphi \otimes \id) \circ \vnDelta=T_{\rho}$.
+  \end{align*} Summing over $k$, $l$ and $m$, we  find $(\vnphi\otimes \id)
+  \circ \vnDelta = T_{\rho}$. 
+  
+  A similar argument shows that
+  $(\id\otimes \vnphi) \circ \vnDelta=T_{\lambda}$.
 \end{proof}
 
 We next use the family of functionals $(f_{z})_{z \in \C}$ on
@@ -411,7 +481,7 @@ The map $\pi_{\red}(a)\colon \Lambda(b) \to \Lambda(ab)$ is bounded for
 
 
 The operator-algebraic structures constructed so far fit into the
-theory of measured quantum groupoids of Enock and Lesieur \cite{Eno2,Les1} as follows.
+theory of measured quantum groupoids of Enock and Lesieur \cite{Eno2,Les1} as follows. We will use notations as in these papers.
 
 The relative tensor product of $\LGtwo$ with itself, relative to the
 representations $\rho,\lambda$ of $l^{\infty}(I)$ and the weight
@@ -442,7 +512,7 @@ and $\lambda$,  gets identified with
 where for notational reasons we indexed the fiber product $*$ with $I$ in stead of $l^{\infty}(I)$.
 
 Since $\vnDelta(1)=\vnE$, we can co-restrict $\vnDelta$ to  a
-normal, faithful $*$-homomorphism
+normal, faithful unital $*$-homomorphism
 \begin{align*}
   \tilde\Delta \colon \LGinf \to   \LGinf \astrl \LGinf.
 \end{align*}
@@ -493,6 +563,11 @@ $T_{\lambda}$ is left-invariant in the sense that
   the appropriate sense. 
 \end{proof}
 
+%Added Remark
+\begin{Rem} It is not clear at the moment if a measured quantum groupoids of the form $(N,M, \lambda,\rho,\Delta,
+  T_{\lambda},T_{\rho},\nu)$ with $N$ atomic abelian and $T_{\lambda}$ and $T_{\rho}$ bounded arises from a partial compact quantum group. 
+  \end{Rem}
+  
 The scaling group and unitary antipode of the measured quantum
 groupoid above can be described in terms of the functionals
 $(f_{z})_{z\in \C}$ on $P(\mathscr{G})$ introduced in \cite[Theorem

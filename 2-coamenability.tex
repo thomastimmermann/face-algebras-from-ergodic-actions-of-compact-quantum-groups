@@ -31,12 +31,12 @@ We will show that the usual characterisation of coamenability in terms of the co
   lemma.
 \end{proof} 
 
-Recall now from \cite{DCT1} the $^*$-representation 
+Remark now that the partial multiplicativity of the counit $\epsilon$ allows one to construct the $^*$-representation 
 \begin{align} \label{eq:weps}
   \weps: P(\mathscr{G}) \rightarrow \End(\C^{(I)}), \quad x\in
   \Gr{A}{k}{l}{m}{n}\mapsto \epsilon(x) e_{kl},
 \end{align}
-where $\epsilon$ denotes the counit of $P(\mathscr{G})$ and $\C^{(I)}$ the direct sum of $I$ copies of $\C$ with the natural pre-Hilbert space structure. We will denote its extension to a $^*$-representation $\CuG\rightarrow B(l^2(I))$ by the same symbol.
+where $\C^{(I)}$ is the direct sum of $I$ copies of $\C$ with the natural pre-Hilbert space structure. We will denote its extension to a $^*$-representation $\CuG\rightarrow B(l^2(I))$ by the same symbol.
 
 \begin{Lem}\label{LemUnit} Let $(\Hsp,\pi)$ be a non-degenerate $^*$-representation of $\CuG$. Then $\weps\iboxtimes \pi$ is unitarily equivalent to $\pi$.
 \end{Lem} 
@@ -53,6 +53,8 @@ We now pass to the character algebra of $\mathscr{G}$.
  \begin{Def} Let $\mathscr{X}$ be a unitary rcfd representation of a partial compact quantum group $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$. The \emph{partial characters} of $\mathscr{X}$ are defined as \[\Gr{\chi}{}{X}{k}{l} = (\id\otimes \Tr)(\Gr{X}{k}{l}{k}{l}) = \sum_i(\Gr{X}{k}{l}{k}{l})_{ii} \in \Gr{P(\mathscr{G})}{k}{l}{k}{l},\] where $\Tr$ is the non-normalized trace on $B(\GrDA{\Hsp}{k}{l})$, and where $(\Gr{X}{k}{l}{k}{l})_{ij}$ denote matrix coefficients with respect to some fixed orthonormal basis. The \emph{total character} of $\mathscr{X}$ is the multiplier $\chi^X  =\underset{k,l}{\sum} \,\Gr{\chi}{}{X}{k}{l}\in M(P(\mathscr{G}))$.
  \end{Def}
 
+Note that the character of a representation is invariant under equivalence of representations. We will in the following also use the notations \[\Gr{\chi}{}{X}{}{l} = \chi^X\UnitC{l}{l} =  \sum_k \Gr{\chi}{}{X}{k}{l},\quad \Gr{\chi}{}{X}{k}{}  =\UnitC{k}{k}\chi^X = \sum_{l} \Gr{\chi}{}{X}{k}{l}.\]
+
 %  For example, if $\mathscr{U}$ is the trivial representation of $\mathscr{G}$, then $\Gr{\chi}{}{U}{k}{l} = \delta_{k,l}\UnitC{k}{k}$, and $\chi^U = \sum_k \UnitC{k}{k}$.
  
 %  Recall from \cite{DCT1} that $\smCirct$ denotes the tensor product of two representations of $\mathscr{G}$. 
@@ -63,12 +65,23 @@ We now pass to the character algebra of $\mathscr{G}$.
 %  This follows from the definition of $\smCirct$, namely $\Gr{(X\Circt Y)}{k}{l}{m}{n} = \sum_{r,s} \left(\Gr{X}{k}{r}{m}{s}\right)_{12} \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}$.
 %  \end{proof}
 
+Denote by $\mathscr{U}$ the trivial representation of
+ $\mathscr{G}$ on $l^2(I)$, so \[\Gr{U}{k}{l}{m}{n} = \delta_{k,l}\delta_{m,n}\UnitC{k}{m}.\] If $\mathscr{X}$ and $\mathscr{Y}$ are two unitary  rcfd representations of $\mathscr{G}$, recall \cite[Section 2.2]{DCT1} that their tensor product $\mathscr{X}\smCirct \mathscr{Y}$ has underlying Hilbert spaces \[\GrDA{(\Hsp_{\mathscr{X}\Circt\mathscr{Y}})}{m}{n} = \underset{s}{\oplus} \; \GrDA{(\Hsp_{\mathscr{X}})}{m}{s} \otimes \GrDA{(\Hsp_{\mathscr{Y}})}{s}{n}\] with \begin{align*}
+  \Gr{(X\Circt Y)}{k}{l}{m}{n} &= \sum_{r,s}
+   \left(\Gr{X}{k}{r}{m}{s}\right)_{12}
+   \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}.
+\end{align*}
 
+Recall also that to any unitary corepresentation $\mathscr{X}$ is associated a \emph{dual} unitary corepresentation $\overline{\mathscr{X}}$, which can be defined on $\Hsp$ with a deformed Hilbert space structure and opposite bigrading as 
+\begin{align*}
+   \Gr{\overline{X}}{k}{l}{m}{n} &= (\id \otimes
+   (-)^{tr})((\Gr{X}{l}{k}{n}{m})^{*})
+ \end{align*} 
 
- Denote by $\mathscr{U}$ the trivial representation of
- $\mathscr{G}$. Given an rcfd unitary representation $\mathscr{X}$ of
+  Finally, given an rcfd unitary representation $\mathscr{X}$ of
  $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$, write $d^X_{kl} = \dim(\Gru{H}{k}{l})$. 
- \begin{Lem} \label{LemCharProps} 
+
+  \begin{Lem} \label{LemCharProps} 
    Let $\mathscr{X}$ and $\mathscr{Y}$ be unitary  rcfd representations of $\mathscr{G}$. Then
    \begin{align*}
      \Gr{\chi}{}{U}{k}{l} &= \delta_{k,l}\UnitC{k}{k}, &
@@ -76,68 +89,40 @@ We now pass to the character algebra of $\mathscr{G}$.
      \Gr{\chi}{}{X}{k}{l} +      \Gr{\chi}{}{Y}{k}{l}, &
 \Gr{\chi}{}{X\smCirct Y}{k}{m}&=\sum_{l}
      \Gr{\chi}{}{X}{k}{l}\Gr{\chi}{}{Y}{l}{m}, &
-\Gr{\chi}{}{\hat X}{k}{l} &= (\Gr{\chi}{}{X}{l}{k})^{*}.
+\Gr{\chi}{}{\overline{X}}{k}{l} &= (\Gr{\chi}{}{X}{l}{k})^{*}.
    \end{align*}
-In total form, $\chi^{U}= \sum_{k} \UnitC{k}{k}$, $\chi^{X\oplus
-  Y}=\chi^{X}+\chi^{Y}$,  $\chi^{X\Circt Y} =
-     \chi^{X} \chi^{Y}$ and      $\chi^{\hat X} =
-     (\chi^{X})^{*}$. Moreover, 
-$\epsilon(\Gr{\chi}{}{X}{k}{l}) =d^{X}_{kl}$.
+In total form, \begin{align*}\chi^{U}&= \sum_{k} \UnitC{k}{k},& \chi^{X\oplus
+  Y}&=\chi^{X}+\chi^{Y},& \chi^{X\Circt Y} &=
+     \chi^{X} \chi^{Y},& \chi^{\overline{X}} &=
+     (\chi^{X})^{*}.\end{align*} Moreover, 
+\[\epsilon(\Gr{\chi}{}{X}{k}{l}) =d^{X}_{kl}.\]
  \end{Lem}
  \begin{proof} 
-This follows easily from the definitions, for example, one uses
-\begin{align*}
-  \Gr{(X\Circt Y)}{k}{l}{m}{n} &= \sum_{r,s}
-   \left(\Gr{X}{k}{r}{m}{s}\right)_{12}
-   \left(\Gr{Y}{r}{l}{s}{n}\right)_{13}, &
-   \Gr{\hat X}{k}{l}{m}{n} &= (\id \otimes
-   (-)^{tr})((\Gr{X}{l}{k}{n}{m})^{*})
-\end{align*}
-and $(\epsilon \otimes \id)(\Gr{X}{k}{l}{k}{l})=\id_{\Gru{H}{k}{l}}$,
-where $\mathcal{H}$ denotes the Hilbert space
-underlying $\mathscr{X}$.
+This follows easily from the definitions.
 \end{proof}
 
-These relations show that the subspace $C\subseteq M(P(\mathscr{G}))$
+\begin{Def} The \emph{character  $*$-algebra} of $\mathscr{G}$ is the subspace $C\subseteq M(P(\mathscr{G}))$
 spanned by the total characters of irreducible representations of
-$\mathscr{G}$ is a $*$-algebra. We call it the \emph{character
-  $*$-algebra} of $\mathscr{G}$.  
+$\mathscr{G}$.
+\end{Def} 
 
+Lemma \ref{LemCharProps} shows that it is a indeed a $*$-algebra.
 
-
- Recall from \cite{DCT1} that a unitary rcfd representation of
- $\mathscr{G}$ is said to have \emph{finite hypersupport} if it is a
- \emph{finite} direct sum of irreducible unitary rcfd representations.
- The left hyperobject support of $\mathscr{X}$ is then the set of all
- $k$ such that $\GrDA{\Hsp}{k}{l}\neq \{0\}$ for some $l$. The right
- hyperobject support is defined similarly. Note that the left
- (resp. right) hyperobject support consists of hyperobject classes,
- where $k$ and $l$ define the same hyperobject class if
- $\UnitC{k}{l}\neq0$.
-
-The unitary rcfd representations of $\mathscr{G}$ with finite
-hypersupport form a partial
-fusion  $C^{*}$-category $\Rep(\mathscr{G})$. We denote by
-$\mathscr{C}$ the associated partial fusion $C^{*}$-algebra, whose
-components $\Gru{C}{\alpha}{\beta}$ are the vector spaces generated by
-the equivalence classes $[X]$ of irreducible unitary rcfd
-representations of $\mathscr{G}$ with left and right hyperobject
-support $\alpha$ and $\beta$, respectively, with multiplication and
+Recall now \cite[Corollary 2.21]{DCT1} that the category of unitary representations of $\mathscr{G}$ with finite left and right hypersupports form a tensor  $C^{*}$-category $\mathscr{C} = \Rep(\mathscr{G})$ with `local units' (indexed by the hyperobject set $\mathscr{I}$) and duality. We denote by
+$\widetilde{C}$ the associated fusion $*$-algebra, whose basis consists of the equivalence classes $[X]$ of irreducible unitary rcfd representations with multiplication and
 involution given by 
 \begin{align*}
-  [X][Y] = \sum_{[Z]} \dim(\Hom(Z,X\Circt Y)) [Z] \quad \text{and} \quad [X]^{*} =[\hat{X}],
+  [X][Y] = \sum_{[Z]} \dim(\Hom(Z,X\Circt Y)) [Z] \quad \text{and} \quad [X]^{*} =[\overline{X}].
 \end{align*}
-respectively. Lemma \ref{LemCharProps} shows that the assignment $[X]
-\mapsto \chi^{X}$ induces an isomorphism between the total algebra of
-$\mathscr{C}$ and the character $*$-algebra $C$.
-
+ Lemma \ref{LemCharProps} shows that the assignment $[X]
+\mapsto \chi^{X}$ induces an isomorphism between $\widetilde{C}$ and the character $*$-algebra $C$ of $\mathscr{G}$.
 
  We aim to show that each character $\chi^X$ is in fact a well-defined
  element in $M(\CuG)$ so that we can regard $C$ as a subalgebra of
  $M(C^{u}_{0}(\mathscr{G}))$ and of  $M(C^{r}_{0}(\mathscr{G}))$, respectively.
 
  \begin{Lem} \label{LemBoundDim} Let $\mathscr{X}$ be an rcfd unitary
-   representation of $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$ with finite hyperobject support. Then the matrix $D^X = (d^X_{kl})_{k,l}$ defines a bounded operator on $l^2(I)$. 
+   representation of $\mathscr{G}$ on an $I$-bigraded Hilbert space $\Hsp$ with finite hyperobject support. Then the matrix \[D^X = (d^X_{kl})_{k,l}\] defines a bounded operator on $l^2(I)$. 
   \end{Lem}
   \begin{proof} We may assume that $\mathscr{X}$ is irreducible, say
     with left hyperobject support $\alpha$ and right hyperobject support
@@ -176,7 +161,7 @@ $\mathscr{X}$ of $\mathscr{G}$ with finite hyperobject support, and by
 unitary rcfd representations of $\mathscr{G}$.
 
 The next result shows that the completion $\mathcal{C}$ of the
-character $*$-algebra $C$ or, equivalently, of the total fusion
+character $*$-algebra $C$ or, equivalently, of the fusion
 $*$-algebra of $\Rep(\mathscr{G})$,  depends only on
 $\Rep(\mathscr{G})$.
 
@@ -205,7 +190,7 @@ $\Rep(\mathscr{G})$.
     Y}_{l(\alpha)} =  \sum_{[Z \in \Irr(\mathscr{G})]}
   \dim(\Hom(Z,X\Circt Y)) \iota([Z]).
 \end{align*}
-Hence,   there   exists  a representation $\pi_{\mathcal{C}}$ such
+Hence,   there   exists  a representation $\pi_{\mathcal{C}}$ 
 satisfying \eqref{eq:pi-c}, and it remains to show that this
 representation is faithful. 
 
@@ -255,39 +240,39 @@ It is immediately clear that a coamenable partial compact quantum group is dimen
  
  % Corollary: canonical partial quantum group constructed from a tensor C*-cat is always dimension coamenable, cf. Neshveyev-Tuset section 2.7
 
-Recall now from \cite[Definition 1.23 and Section 4.1]{DCT1} the notion of \emph{canonical partial compact quantum group} associated to a \emph{partial fusion tensor C$^*$-category $\CatCC$}.
+%Recall now from \cite[Definition 1.23 and Section 4.1]{DCT1} the notion of \emph{canonical partial compact quantum group} associated to a \emph{partial fusion tensor C$^*$-category $\CatCC$}.
 
-\begin{Prop} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to an $\mathcal{I}$-partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is dimension coamenable.  
-\end{Prop}% Ref to add to canonical partial compact quantum group
-\begin{proof} 
-  By construction, $\mathscr{G}_{\CatCC}$ is an $I$-partial compact quantum group, where $\Rep(\mathscr{G}_{\CatCC})$ can be canonically
-  identified with $\CatCC$, and the set $I$ labels a maximal set
-  $\{U_{k}\}$ of mutually non-isomorphic irreducible objects of
-  $\CatCC$.  Under the Tannaka duality, an object $X$ of $\CatCC$
-  corresponds to a corepresentation $\mathscr{X}$ of
-  $\mathscr{G}_{\CatCC}$ on an $I$-bigraded Hilbert space $\Hsp$ with
-  $\GrDA{\Hsp}{k}{l} = \Hom(U_k,X\otimes U_l)$. Now, $l^{2}(I) \cong
-  l^{2}(\Irr(\mathscr{G}_{\CatCC}))$ via $k \mapsto [U_{k}]$ and
-  \begin{align*}
-    \pi_{C}(\chi^{X})[U_{l}] = \sum_{k} \dim(\Hom(U_{k}, X \Circt
-    U_{l}))[U_{k}] = \sum_{m} d^{X}_{kl}[U_{l}]
-  \end{align*}
-  for all $k,l\in I$ and $[X] \in \Irr(\mathscr{G}_{\CatCC})$, showing
-  that $\weps$ is equivalent to $\pi_{\mathcal{C}}$ and therefore
-  extends to $\mathcal{C}$.
- \end{proof}
+%\begin{Prop} Let $\mathscr{G}_{\CatCC}$ be the canonical partial compact quantum group associated to an $\mathcal{I}$-partial fusion tensor C$^*$-category $\CatCC$. Then $\mathscr{G}_{\CatCC}$ is dimension coamenable.  
+%\end{Prop}% Ref to add to canonical partial compact quantum group
+%\begin{proof} 
+%  By construction, $\mathscr{G}_{\CatCC}$ is an $I$-partial compact quantum group, where $\Rep(\mathscr{G}_{\CatCC})$ can be canonically
+%  identified with $\CatCC$, and the set $I$ labels a maximal set
+ % $\{U_{k}\}$ of mutually non-isomorphic irreducible objects of
+ % $\CatCC$.  Under the Tannaka duality, an object $X$ of $\CatCC$
+ % corresponds to a corepresentation $\mathscr{X}$ of
+ % $\mathscr{G}_{\CatCC}$ on an $I$-bigraded Hilbert space $\Hsp$ with
+ % $\GrDA{\Hsp}{k}{l} = \Hom(U_k,X\otimes U_l)$. Now, $l^{2}(I) \cong
+  %l^{2}(\Irr(\mathscr{G}_{\CatCC}))$ via $k \mapsto [U_{k}]$ and
+  %\begin{align*}
+   % \pi_{C}(\chi^{X})[U_{l}] = \sum_{k} \dim(\Hom(U_{k}, X \Circt
+   % U_{l}))[U_{k}] = \sum_{m} d^{X}_{kl}[U_{l}]
+  %\end{align*}
+  %for all $k,l\in I$ and $[X] \in \Irr(\mathscr{G}_{\CatCC})$, showing
+ % that $\weps$ is equivalent to $\pi_{\mathcal{C}}$ and therefore
+ % extends to $\mathcal{C}$.
+ %\end{proof}
  
- In the next proposition, we consider the partial compact quantum groups associated to weighted reciprocal random walks, see \cite[Section 5]{DCT1}. 
- 
+ In the next proposition, we consider the partial compact quantum groups associated to weighted reciprocal random walks. We refer the reader to \cite[Section 5]{DCT1} for the terminology.
+  
  \begin{Prop} Consider the partial compact quantum group $\mathscr{G}(\Gamma)$ associated to a weighted reciprocal random walk $\Gamma = (\Gamma,i,w,\sgn)$. Then $\mathscr{G}(\Gamma)$ is dimension coamenable if and only if $\|\Gamma\| \leq 2$. 
  \end{Prop}% Ref to add to first article
- \begin{proof} As $\Rep(\mathscr{G}(\Gamma))$ is by construction a Temperley-Lieb category,  the character algebra $\mathscr{G}(\Gamma)$ is now the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, with $\chi_{1/2}$ the character of the generating object $u_{1/2}$ of $\Rep(\mathscr{G}(\Gamma))$. It has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. 
+ \begin{proof} As $\Rep(\mathscr{G}(\Gamma))$ is by construction a Temperley-Lieb category,  the character algebra $\mathscr{G}(\Gamma)$ is the polynomial ring on one generator $\C\lbrack \chi_{1/2}\rbrack$, with $\chi_{1/2}$ the character of the generating object $u_{1/2}$ of $\Rep(\mathscr{G}(\Gamma))$. It has regular C$^*$-completion $C(\lbrack -2,2\rbrack)$, with $\chi_{1/2}$ corresponding to the identity function. 
  
 Let now $\Gamma^{(0)}$ be the vertex set of $\Gamma$. Then $\Gamma^{(0)}$ is identified with the index set $I$ of $\mathscr{G}(\Gamma)$, and $D^{u_{1/2}}_{kl}$ is the number of arrows from $k$ to $l$. Hence we obtain that there exists a map $C(\lbrack -2,2\rbrack) \rightarrow B(l^2(\Gamma^{(0)}))$ with $\chi_{1/2}\mapsto D^{u_{1/2}}$ if and only if $\|D^{u_{1/2}}\| \leq  2$ if and only if $\|\Gamma\|\leq 2$.   
  \end{proof} 
  
  In particular, the partial compact quantum groups coming from
- dynamical quantum $SU(2)$ are dimension coamenable. However, as we
+ dynamical quantum $SU(2)$, which are associated to the $A_{\infty,\infty}$-graph with non-trivial weight functions, are dimension coamenable. However, as we
  will see in the next section, they are not coamenable.
 
 % Coamenability in terms of invariant measure not considered yet.
