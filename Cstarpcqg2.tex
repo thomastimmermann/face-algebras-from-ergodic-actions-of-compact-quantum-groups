@@ -347,9 +347,19 @@ Hence Theorem \ref{TheoInvInt} will be proven once we can produce a family of in
 
 \begin{Prop} For each $k\in I$, there exists a state $\phi_{kk}$ in $\Gr{B}{k}{k}{k}{k}$ such that, for any state $\omega \in \Gr{B}{k}{k}{k}{k}$, one has \[\omega*\phi_{kk} =\phi_{kk}.\]
 \end{Prop} 
-\begin{proof} Let $k\in I$, and $\omega$ a state in $\Gr{B}{k}{k}{k}{k}$. By \cite[Lemma 4.2]{MVD1}, there exists a state $h_{kk} \in \Gr{B}{k}{k}{k}{k}$ with \[\omega *h_{kk}= h_{kk} = h_{kk}*\omega.\]
+\begin{proof} Let $k\in I$, and $\omega$ a state in $\Gr{B}{k}{k}{k}{k}$. By \cite[Lemma 4.2]{MVD1},
+  there exists a state $h_{kk} \in \Gr{B}{k}{k}{k}{k}$ with \[\omega *h_{kk}= h_{kk} =
+  h_{kk}*\omega.\]
 
-Assume now that $\rho\in \Gr{B}{k}{k}{k}{k}$ and $0\leq \rho\leq \omega$. Take $a\in A$. Then the beginning of the proof of \cite[Lemma 4.3]{MVD1}, applied with $b= (\id\otimes h_{kk})\Delta(a)$, shows that, for all $c\in A$, \begin{equation}\label{EqAuxId} (h_{kk}\otimes (\rho*h_{kk}))((c\otimes 1)\Delta(a)) = \rho(1) (h_{kk}\otimes h_{kk})((c\otimes 1)\Delta(a)).\end{equation} Since $(A\otimes A)\Delta(1) = [(A\otimes 1)\Delta(A)]$, we may replace $(c\otimes 1)\Delta(a)$ with $\UnitC{k}{k}\otimes a$ for $a\in \Gr{A}{k}{k}{k}{k}$. Then \eqref{EqAuxId} becomes $(\rho*h_{kk})(a) = \rho(1)h_{kk}(a)$. Hence \[\rho*h_{kk} = \rho(1)h_{kk}.\] 
+  Assume now that $\rho\in \Gr{B}{k}{k}{k}{k}$ and $0\leq \rho\leq \omega$. Take $a\in A$. Then the
+  beginning of the proof of \cite[Lemma 4.3]{MVD1}, applied with $b= (\id\otimes h_{kk})\Delta(a)$,
+  shows that, for all $c\in A$, 
+  \begin{equation}\label{EqAuxId} (h_{kk}\otimes
+    (\rho*h_{kk}))((c\otimes 1)\Delta(a)) = \rho(1) (h_{kk}\otimes h_{kk})((c\otimes
+    1)\Delta(a)).\end{equation} Since $(A\otimes A)\Delta(1) = [(A\otimes 1)\Delta(A)]$, we may
+  replace $(c\otimes 1)\Delta(a)$ with $\UnitC{k}{k}\otimes a$ for $a\in \Gr{A}{k}{k}{k}{k}$. Then
+  \eqref{EqAuxId} becomes $(\rho*h_{kk})(a) = \rho(1)h_{kk}(a)$. Hence \[\rho*h_{kk} =
+  \rho(1)h_{kk}.\]
 
 A compactness argument as in \cite[Theorem 4.4]{MVD1} lets us conclude that there exists a state $\phi_{kk}$ as in the statement of the proposition.
 \end{proof}
@@ -361,9 +371,460 @@ A compactness argument as in \cite[Theorem 4.4]{MVD1} lets us conclude that ther
 %Also note that for the $(A,\Delta)$ arising from $^*$-pcqg with invariant integral, the above conditions are all satisfied - the fourth condition can be checked using the orthogonality relations for matrix coefficients of unitary corepresentations. 
 
 
+\section{Corepresentations}
+
+Let $I$ be a set.
+
+Given an $I^{2}$-graded Hilbert space
+$H=\bigoplus_{k,l} \Grd{H}{k}{l}$, we denote by
+$p_{kl}^{H} \in \mathcal{B}(H)$ the projections onto the homogeneous components and let
+\begin{align*}
+  \lambda^{H}_{k} &= \sum_{l} p_{kl}^{H}, &
+  \rho^{H}_{l} &= \sum_{k} p_{kl}^{H},
+\end{align*}
+ the sums converging in the strong operator topology.
 
 
+ \begin{Def} \label{def:corepresentation} Let $(A,\Delta)$ be a
+   $C^{*}$-algebraic $I$-partial compact quantum group. 
 
+   A \emph{unitary corepresentation} of $(A,\Delta)$ on a Hilbert
+   space $H$ is a partial isometry $X \in M(A \otimes \mathcal{K}(H))$
+   satisfying the following conditions:
+   \begin{enumerate}
+   \item with $\Delta \otimes \id$ extended to the multiplier algebra, we have
+     \begin{align} \label{eq:corep}
+     (\Delta \otimes \id)(X) = X_{13}X_{23},  
+   \end{align}
+ \item there exists an $I^{2}$-grading on $H$ such that
+     \begin{align} \label{eq:corep-pi}
+       X^{*}X= \sum_{n}\rho_{n} \otimes \rho^{H}_{n} \quad \text{and}
+       \quad XX^{*} = \sum_{k} \lambda_{k} \otimes \lambda^{H}_{k}.
+     \end{align}
+ %   \item the following inclusions hold:
+ % \begin{align*}
+ %   (A \otimes 1)X(1 \otimes \mathcal{K}(H)) \subseteq A\otimes
+ %   \mathcal{K}(H) \quad \text{and} \quad
+ %   (1 \otimes \mathcal{K}(H))X(A\otimes 1)   \subseteq A\otimes
+ %   \mathcal{K}(H).
+ % \end{align*}
+   \end{enumerate}
+   We call such a unitary corepresentation \emph{row- and column-finite-dimensional}, briefly
+   \emph{rcfd}, if $\lambda^{H}_{k}$ and $\rho^{H}_{m}$ have finite rank for all $k,m\in I$.
+\end{Def}
+Note that the $I^{2}$-grading on $H$ in  condition 2.\ is uniquely
+determined by $X$.
+\begin{Lem} \label{lem:corep-intertwine}
+ Let $X$ be a unitary corepresentation of $(A,\Delta)$ on a Hilbert space $H$. Then 
+     \begin{align*}
+       (\UnitC{k}{m} \otimes 1)X(\UnitC{l}{n} \otimes 1) = (1 \otimes
+       p^{H}_{kl})X(1 \otimes p^{H}_{mn})
+     \end{align*}
+ for all $k,l,m,n \in I$.
+\end{Lem}
+\begin{proof}
+  Conditions 1.\ and 2.\ above imply
+  \begin{align*}
+ \sum_{l,n} \rho_{l} \otimes
+  \UnitC{l}{n} \otimes \rho_{n}^{H} &=
+    \sum_{n} \Delta(\rho_{n}) \otimes \rho_{n}^{H} \\ &= (\Delta \otimes
+    \id)(X^{*}X) \\ &= X^{*}_{23}X^{*}_{13}X_{13}X_{23}  =
+    \sum_{l}\rho_{l} \otimes X^{*}(1 \otimes \rho_{l}^{H})X.
+  \end{align*}
+  We multiply on the left by $X$, use  condition 2.\, and deduce
+  $X(\lambda_{l}\otimes 1)=(1\otimes \rho_{l}^{H})X$ for all $l$.
+  This relation and \eqref{eq:corep} imply
+ \begin{align*}
+   X_{13}(1\otimes 1 \otimes \rho_{l}^{H})X_{23} &=X_{13}X_{23}(1
+   \otimes \lambda_{l} \otimes 1) \\ &= X_{13}X_{23}(\rho_{l} \otimes 1
+   \otimes 1) = X_{13} (\rho_{l} \otimes 1
+   \otimes 1) X_{23},
+ \end{align*}
+ and multiplying by $X_{23}^{*}$ on the right we conclude $X(1\otimes
+ \rho^{H}_{l})=X(\rho_{l} \otimes 1)$.
+
+
+  Similarly,  the relation
+  \begin{align*}
+    \sum_{k,m} \UnitC{k}{m} \otimes \lambda_{m} \otimes
+    \lambda_{m}^{H} &= (\Delta \otimes \id)(XX^{*}) = \sum_{m}
+    X_{13}(1 \otimes \lambda_{m} \otimes \lambda_{m}^{H})X_{13}^{*}
+  \end{align*}
+  implies $(\rho_{m} \otimes 1)X=X(1\otimes \lambda^{H}_{m})$ for all
+  $m$, and then
+  \begin{align*}
+    X_{13}(1 \otimes 1 \otimes \lambda^{H}_{m})X_{23} &= (
+    \rho_{m} \otimes 1 \otimes 1)X_{13}X_{23} \\ &= (1\otimes
+    \lambda_{m}\otimes 1)X_{13}X_{23} = X_{13}(1 \otimes \lambda_{m}
+    \otimes 1)X_{23}
+  \end{align*}
+  implies, after multiplying by $X_{13}^{*}$ on the left, $(1 \otimes
+  \lambda_{m}^{H})X=(\lambda_{m} \otimes 1)X$.
+\end{proof}
+
+\subsection{The regular corepresentation}
+ Let $(A,\Delta)$ be a $C^{*}$-pcqg with an invariant integral $h$. 
+ Then we can construct a left-regular corepresentation of $(A,\Delta)$ as follows.
+
+ 
+ We denote by $H_{h}$ the associated GNS-space, by $\zeta^k_m \in H_{h}$ the image of $\UnitC{k}{m}
+ \in A$, and write the GNS-representation of $A$ on $H_{h}$ as left multiplication.  We equip 
+ $H_{h}$ with the $I^{2}$-grading given by
+ \begin{align*}
+   \lambda^{H_{h}}_{m}  (a\zeta^{k}_{l}) &=  \rho_{m}a \zeta^{k}_{l}, &
+   \rho^{H_{h}}_{m} (a\zeta^{k}_{l}) &= a\rho_{m} \zeta^{k}_{l} = \delta_{m,l} a\zeta^{k}_{l}
+ \end{align*}
+ for all $k,l,m\in I$ and $a\in A$.
+
+ Choose a non-degenerate, faithful representation of $A$ on some Hilbert space $K$ and identify $A$
+ with its image.
+ \begin{Lem}\label{lem:reg-corep-pi}
+   There exists a unique partial isometry $\tilde V$ on $H_{h} \otimes
+   K$ such
+   that
+   \begin{align*}
+     \tilde V(a \zeta^k_m \otimes \eta) &=
+     \Delta(a) \sum_{l}(\zeta^{k}_{l} \otimes \UnitC{l}{m}\eta)
+   \end{align*}
+   for all $a\in A$, $k,m\in I$ and $\eta\in K$. Its support and range
+   projections are given by
+   \begin{align*}
+     \tilde V^{*}\tilde V &= \sum_{l} \rho^{H_{h}}_{l} \otimes \rho_{l}, &
+     \tilde V \tilde V^{*} &= \sum_{k} \lambda^{H_{h}}_{k} \otimes \lambda_{k}.
+   \end{align*}
+ \end{Lem}
+ \begin{proof}
+   Let $p,q\in I$ and $a,k,m,\eta$ as above. Given $\xi \in K$, denote by $\omega_{\xi}\in A^{*}$ the vector
+   functional $a \mapsto \langle \xi|a\xi\rangle$.
+   Then $\omega_{1\Grru{l}{m}\eta} \in \Gr{B}{l}{m}{l}{m}$ and by \eqref{EqInvRp},
+\begin{align*}
+  \left\|\Delta(a)\sum_{l}(\zeta^{k}_{l}\otimes \UnitC{l}{m}\eta)\right\|^{2} &= \sum_{l} (h_{kl}
+  \otimes \omega_{1\Grru{l}{m}\eta})(\Delta(a^{*}a)) \\
+  &= \sum_{l}\omega_{\eta}(1\Grru{l}{m}) h_{km}(a^{*}a) 
+  = \left\|a\zeta^{k}_{m} \otimes  \rho_{m}\eta \right\|^{2}.
+\end{align*}
+Therefore, the formula above defines a partial isometry $\tilde V$ with support projection $\sum_{m}
+\rho^{H_{h}}_{m} \otimes \rho_{m}$. The image of $\tilde V$ is spanned by elements of the form
+\begin{align*}
+\sum_{l}   \Delta(a)(1 \otimes \UnitC{l}{m}) (\zeta^{k}_{l} \otimes b\eta),
+\end{align*}
+where $a,b\in A$, $k,l,m\in I$, $\eta\in K$. By  \eqref{CondDi}, this is equal to the span of all
+elements of the form
+\begin{align*}
+  \sum_{l} (\rho_{m}c \zeta^{k}_{l} \otimes \lambda_{m}d\eta),
+\end{align*}
+where $c,d\in A$, $k,l,m \in I$, $\eta\in K$. Since $\rho_{m}c\zeta^{k}_{l} =
+\lambda^{H_{h}}_{m}(c\zeta^{k}_{l})$, we can conclude that $VV^{*}=\sum_{m} \lambda^{H_{h}}_{m}
+\otimes \lambda_{m}$ as claimed.
+ \end{proof}
+ \begin{Lem}\label{lem:reg-corep-mult}
+   The products $ \tilde V(\mathcal{K}(H_{h})\otimes A)$ and 
+   $(\mathcal{K}(H_{h}) \otimes A)\tilde V$ lie in $A \otimes
+   \mathcal{K}(H)$ so that $\tilde V \in M(A\otimes \mathcal{K}(H))$.
+ \end{Lem}
+ \begin{proof}
+   Given $\xi,\eta\in H_{h}$, denote by $|\xi\rangle\langle \eta| \in \mathcal{K}(H_{h})$ ket-bra
+   operator $\vartheta \mapsto \langle \eta|\vartheta\rangle \xi$. 
+
+   Let $a\in A$, $k,m,r,s\in I$, $\xi,\vartheta \in H_{h}$ and
+   $\eta\in K$. 
+   
+   We first show that $\tilde V(\mathcal{K}(H_{h})\otimes A) \subseteq
+   \mathcal{K}(H_{h}) \otimes A$. By definition,\begin{align*}
+     \tilde V(|a\zeta^{k}_{m}\rangle\langle \xi| \otimes \UnitC{r}{s})(\vartheta \otimes \eta) 
+     &=     \delta_{s,m} \langle \xi|\vartheta\rangle \Delta(a)(1 \otimes \UnitC{r}{s})(\zeta^{k}_{r}
+     \otimes \eta).
+   \end{align*} 
+   Here, we can approximate $\Delta(a)(1\otimes \UnitC{r}{s}) \in A\otimes A$ by finite sums $\sum_{i} c_{i} \otimes
+   d_{i}$ with $c_{i},d_{i} \in A$, and
+   \begin{align*}
+ \langle \xi|\vartheta\rangle (c_{i} \otimes
+d_{i})(\zeta^{k}_{r} \otimes \eta) = 
+ (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i}) (\vartheta \otimes \eta).
+   \end{align*}
+But  $\sum_{i} (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i}) \in \mathcal{K}(H_{h}) \otimes
+A$  and   one can check that
+   \begin{align*}
+     \left\|\tilde V(|a\zeta^{k}_{m}\rangle\langle \xi| \otimes \UnitC{r}{s}) -      \sum_{i}
+       (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i})\right\| \leq
+     \left\|\Delta(a)(1\otimes \UnitC{r}{s}) -  \sum_{i} c_{i} \otimes
+   d_{i}\right\|.
+   \end{align*}
+   Therefore, $\tilde V(|a\zeta^{k}_{m}\rangle\langle \xi| \otimes \UnitC{r}{s})$ lies in
+   $\mathcal{K}(H_{h}) \otimes A$ and hence $\tilde V(\mathcal{K}(H_{h})\otimes A) \subseteq
+   \mathcal{K}(H_{h}) \otimes A$.
+   
+
+   We next show that $\tilde V^{*}(\mathcal{K}(H_{h}) \otimes A)
+   \subseteq \mathcal{K}(H_{h}) \otimes A$.  By Lemma
+   \ref{lem:reg-corep-pi},
+   \begin{align*}
+     \tilde V^{*}(|a\zeta^{k}_{m}\rangle\langle\xi| \otimes
+     \UnitC{r}{s})(\vartheta\otimes \eta) &=  \langle
+     \xi|\vartheta\rangle \tilde V^{*}(\rho_{r}a\UnitC{k}{m}\otimes
+     \UnitC{r}{s})(\zeta^{k}_{m} \otimes \eta).
+   \end{align*}
+   By assumption \eqref{CondDi}, we can approximate $\rho_{r}a
+   \UnitC{k}{m}\otimes
+   \UnitC{r}{s}$ by finite sums $\sum_{i} \Delta(c_{i})(1 \otimes d_{i})$ with
+   $c_{i}, d_{i} \in A$, such that $c_{i} =c_{i}\rho_{l_{i}}$ and
+   $d_{i}=\rho_{l_{i}}d_{i}$ for some $l_{i} \in I$, and then
+   \begin{align*}
+     \langle \xi|\vartheta\rangle \tilde
+     V^{*}\Delta(c_{i})(\zeta^{k}_{m}\otimes d_{i}\eta) = \langle
+     \xi|\vartheta\rangle c_{i}\zeta^{k}_{l_{i}} \otimes d_{i}\eta =
+     (|c_{i}\zeta^{k}_{l_{i}}\rangle\langle\xi| \otimes
+     d_{i})(\vartheta\otimes \eta).
+   \end{align*}
+But $\sum_{i}     (|c_{i}\zeta^{k}_{l_{i}}\rangle\langle\xi| \otimes
+     d_{i}) \in \mathcal{K}(H_{h}) \otimes A$ and again, one can check
+     that
+     \begin{align*}
+       \left\|      \tilde V^{*}(|a\zeta^{k}_{m}\rangle\langle\xi| \otimes
+     \UnitC{r}{s}) - \sum_{i}     (|c_{i}\zeta^{k}_{l_{i}}\rangle\langle\xi| \otimes
+     d_{i})  \right\| \leq \left\|
+\rho_{r}a
+   \UnitC{k}{m}\otimes
+   \UnitC{r}{s} - \sum_{i} \Delta(c_{i})(1 \otimes d_{i})
+   \right\|.
+     \end{align*}
+     Therefore, $   \tilde V^{*}(|a\zeta^{k}_{m}\rangle\langle\xi| \otimes
+     \UnitC{r}{s})$ lies in $\mathcal{K}(H_{h}) \otimes A$ and the
+     second inclusion follows.
+\end{proof}
+\begin{Rem}
+  We also have $(1 \otimes A)\tilde V(\mathcal{K}(H_{h})\otimes 1)
+  \subseteq \mathcal{K}(H_{h}) \otimes A$. Indeed, for all $r,s\in I$,
+   \begin{align*}
+     (1 \otimes \UnitC{r}{s})\tilde
+     V(|a\zeta^{k}_{m}\rangle\langle\xi|\otimes 1)(\vartheta \otimes
+     \eta) = \langle \xi|\vartheta \rangle(1 \otimes
+     \UnitC{r}{s})\Delta(a) \sum_{l} (\zeta^{k}_{l} \otimes
+     \UnitC{l}{m}\eta),
+   \end{align*}
+where we can approximate $(1
+   \otimes \UnitC{r}{s})\Delta(a) \in A\otimes A$ by finite sums
+   $\sum_{i} c_{i} \otimes d_{i}$ with homogeneous $c_{i},d_{i} \in
+   A$, and
+   \begin{align*}
+     \sum_{i,l} \langle \xi|\vartheta\rangle (c_{i} \otimes d_{i})(\zeta^{k}_{l} \otimes
+     \UnitC{l}{m} \eta) = \sum_{i,l} (|c_{i}\zeta^{k}_{l}\rangle\langle \xi| \otimes
+     d_{i}\UnitC{l}{m}) (\vartheta \otimes \eta),
+   \end{align*}
+   where the sum becomes finite by homogenity of the $c_{i}$ and $d_{i}$. Now, one concludes
+   similarly as above that $(1 \otimes \UnitC{r}{s})\tilde
+   V(|a\zeta^{k}_{m}\rangle\langle\xi|\otimes 1) \in \mathcal{K}(H_{h}) \otimes A$ and consequently
+   $(1\otimes A)\tilde V(\mathcal{K}(H_{h}) \otimes 1) \subseteq \mathcal{K}(H_{h}) \otimes A$.
+   
+However,   we do not know whether $(\mathcal{K}(H_{h}) \otimes 1)
+   \tilde V(1\otimes A)$ is contained in $A\otimes \mathcal{K}(H)$.
+\end{Rem}
+Flipping $\tilde V$, we obtain the \emph{regular corepresentation} $V$ of $(A,\Delta)$.
+ \begin{Prop}
+Let $(A,\Delta)$ be a $C^{*}$-pcqg with invariant integral $h$. Then there exists a unique unitary
+corepresentation $V$ of $(A,\Delta)$ on the associated GNS-space
+$H_{h}$ such that for every faithful, nondegenerate representation of
+$A$ on a Hilbert space $K$,
+\begin{align*}
+  V(\eta  \otimes a\zeta^{k}_{m}) &= \Delta^{\op}(a) \sum_{l}(\UnitC{l}{m}\eta
+  \otimes \zeta^{k}_{l})
+\end{align*}
+for all $\eta\in K$ and $a\in A$, where $\zeta^{k}_{m}$ denotes the
+image of  $\UnitC{k}{m}$ in $H_{h}$ and $\Delta^{\op}$ the composition
+of $\Delta$ with the flip map.
+ \end{Prop}
+ \begin{proof}
+   Denote by $\sigma$ the flip $ M(\mathcal{K}(H) \otimes A) \to M(A
+   \otimes \mathcal{K}(H))$ and let $V=\sigma(\tilde V)$. Then the
+   preceding lemmas show that $V$ lies in $M(A\otimes
+   \mathcal{K}(H_{h}))$ and satisfies \eqref{eq:corep-pi}. We show
+   that it also satisfies \eqref{eq:corep}. Let $k,n\in I$, $a\in A$ and $\eta,\xi \in K$. Then
+ \begin{align*}
+\tilde V_{12}\tilde V_{13}(a\zeta^{k}_{n} \otimes \eta\otimes \xi) &=
+\tilde V_{12} \Delta(a)_{13}\sum_{m}(\zeta^{k}_{m} \otimes \eta \otimes \UnitC{m}{n}\xi) \\
+&= (\Delta \otimes \id)(\Delta(a)) \sum_{l,m} (\zeta^{k}_{l} \otimes \UnitC{l}{m}\eta \otimes
+\UnitC{m}{n}\xi)  \\
+&= (\id \otimes \Delta)(\Delta(a))  \sum_{l} (\zeta^{k}_{l} \otimes \lambda_{l}\eta \otimes
+\rho_{n}\xi),
+\end{align*}
+and a straightforward calculation shows that this is equal to $(\id \otimes \Delta)(\tilde
+V)(a\zeta^{k}_{n} \otimes \eta\otimes \xi)$.
+ \end{proof}
+
+\subsection{Intertwiners and averaging}
+
+\begin{Def}
+  Let $(A,\Delta)$ be a $C^{*}$-pcqg with unitary corepresentations $X$ and $Y$ on Hilbert spaces
+  $H$ and $K$, respectively. An \emph{intertwiner} from $X$ to $Y$ is an operator $T\in
+  \mathcal{B}(H,K)$ satisfying $Y(1\otimes T)=(1 \otimes T)X$.
+\end{Def}
+\begin{Lem} \label{lem:intertwiner-graded}
+  Let $X$ and $Y$ be unitary corepresentations on Hilbert spaces $H$ and $K$, respectively, and let
+  $T$ be an \emph{intertwiner} from $X$ to $Y$. Then $Tp^{H}_{kl} = p^{K}_{kl}T$ for all $k,l\in I$.
+\end{Lem}
+\begin{proof}
+Let $m,n\in I$. Lemma \ref{lem:corep-intertwine} implies
+\begin{align*}
+  Y(1\otimes Tp^{H}_{mn}) = (1\otimes T)X(1\otimes p^{H}_{mn}) &= (\rho_{m} \otimes T)X(\rho_{n}
+  \otimes 1) \\ &= (\rho_{m} \otimes 1)Y( \rho_{n}\otimes T) = Y(1 \otimes p^{K}_{mn}T).
+\end{align*}
+Multiplying on the right by $Y^{*}$ and using Condition 3., we find
+$\rho^{K}_{l}Tp^{H}_{mn}  = \delta_{l,n} p^{K}_{mn}T$ for all $l \in I$. Sum over $l\in I$ to obtain
+the desired equation.
+\end{proof}
+As in the case of compact quantum groups, intertwiners can be produced
+by averaging.
+\begin{Lem} \label{lem:intertwiner-averaged}
+  Let $X$ and $Y$ be unitary corepresentations of $(A,\Delta)$ on Hilbert spaces $H$ and $K$,
+  respectively, and let $T \in \mathcal{B}(H,K)$. Then for all $m,l \in I$, the sums
+  \begin{align*}
+    \hat T^{(m)} &:= \sum_{k} (h_{km} \otimes \id)(Y(1 \otimes T)X^{*}) \quad \text{and} \quad
+    \check T^{(l)}=\sum_{n} (h_{ln}\otimes \id)(Y^{*}(1 \otimes T)X)
+  \end{align*}
+converge in the strong operator topology to intertwiners $\hat T^{(m)}$ and $\check T^{(l)}$ from $X$ to
+$Y$.
+\end{Lem}
+\begin{proof}
+  We only prove the assertion concerning $\hat T^{(m)}$; the proof for $\check T^{(l)}$ is similar.
+  
+The sum defining $\hat T^{(m)}$ converges in the strong operator
+topology because  by \eqref{eq:corep-pi},
+  \begin{align*}
+    (h_{km} \otimes \id)(Y(1 \otimes T)X^{*}) = \lambda^{H}_{k}
+    (h_{km} \otimes \id)(Y(1 \otimes T)X^{*}) \lambda^{H}_{k}.
+  \end{align*}
+  To see that $\hat T^{(m)}$ is an intertwiner, we use invariance of
+  $h$ and find
+  \begin{align*}
+    Y(1 \otimes \hat T^{(m)})X^{*} &=
+    \sum_{k} (\id \otimes h_{km} \otimes \id)(Y_{13}Y_{23}(1 \otimes T)X^{*}_{23}X^{*}_{13}) \\
+    &= \sum_{k} ((\id \otimes h_{km})\circ \Delta \otimes \id)(Y(1 \otimes T)X^{*}) \\
+    &=\sum_{l} \lambda_{l} \otimes (h_{lm} \otimes \id)(Y(1\otimes T)X^{*}) \\
+    &= \sum_{l} \lambda_{l}   \otimes \lambda^{H}_{l} \hat T^{(m)}.
+  \end{align*}
+  With \eqref{eq:corep-pi}, we conclude that $Y(1\otimes \hat T^{(m)})
+  = (1 \otimes \hat T^{(m)}X$.
+\end{proof} 
+\begin{Lem} \label{lem:intertwiner-compact}
+  Let $X$ and $Y$ be unitary corepresentations of $(A,\Delta)$ on Hilbert spaces $H$ and $K$,
+  respectively,  let $T \in \mathcal{K}(H,K)$ and define $\hat
+  T^{(m)}$ and $\check T^{(l)}$ as above. Then
+$\rho^{H}_{n}\hat T^{(m)}$ and $\lambda^{H}_{k}\check T^{(l)}$ are compact for all $k,n\in I$.
+\end{Lem}
+\begin{proof}
+  We only prove the assertion concerning $\hat T^{(m)}$; a similar
+  reasoning applies to $\check T^{(l)}$.
+
+By Lemma \ref{lem:corep-intertwine} and
+  \begin{align*}
+    \rho^{H}_{n}(h_{km} \otimes \id)(Y(1\otimes T)X^{*}) = 
+    (h_{km} \otimes \id)(Y(\lambda_{n} \otimes T)X^{*}),
+  \end{align*}
+and  by \eqref{eq:corep-pi}, 
+  \begin{align*}
+    Y(\lambda_{n} \otimes T)X^{*} =  \sum_{p} Y(\UnitC{n}{p} \otimes \rho^{H}_{p}T)X^{*}.
+  \end{align*}
+  Since $T$ is compact, the sum converges in norm and each summand $Y(\UnitC{n}{p} \otimes
+  \rho^{H}_{p}T)X^{*}$ lies in $A \otimes \mathcal{K}(H,K)$. Thus,
+  \begin{align*}
+    Y(\lambda_{n} \otimes T)X^{*} \in A \otimes \mathcal{K}(H,K).
+  \end{align*}
+ We can therefore approximate $Y(\lambda_{n}
+  \otimes T)X^{*}$ by finite sums $\sum_{i} a_{i} \otimes S_{i}$,
+  where $a_{i} \in A$, $S_{i} \in \mathcal{K}(H,K)$, and by
+  \eqref{eq:corep-pi}, we may assume $a_{i}=\lambda_{k_{i}}a_{i}
+  \lambda_{l_{i}}$ and $S_{i}=\lambda_{k_{i}}^{K}S\lambda_{l_{i}}^{H}$
+  for some $k_{i},l_{i}\in I$. Then
+  \begin{align*}
+\sum_{i,k}    (h_{km} \otimes \id)(a_{i} \otimes S_{i}) = \sum_{i}
+h_{k_{i}m}(a_{i})S_{i} \in \mathcal{K}(H,K)
+  \end{align*}
+and  $  \rho^{H}_{n}\hat T^{(m)} - \sum_{i}
+h_{k_{i}m}(a_{i})S_{i}$ is equal to the sum of the elements
+\begin{align*}
+  D_{k}:=   (h_{km} \otimes \id)\left(Y(\lambda_{n} \otimes T)X^{*} -
+    \sum_{i}a_{i} \otimes S_{i}\right).
+\end{align*}
+Now, \eqref{eq:corep-pi} and the assumption on the $a_{i}$ and $S_{i}$
+implies $D_{k} = \lambda_{k}^{H}D_{k}\lambda_{k}^{H}$, and  since each $h_{km}$ is a state,
+\begin{align*}
+  \|D_{k}\| \leq \left\|Y(\lambda_{n} \otimes T)X^{*} -
+    \sum_{i}a_{i} \otimes S_{i}\right\| \quad\text{for all } k.
+\end{align*}
+Therefore, 
+\begin{align*}
+\left\|    \rho^{H}_{n}\hat T^{(m)} - \sum_{i}
+h_{k_{i}m}(a_{i})S_{i}\right\| \leq \left\|\sum_{k} D_{k}\right\| \leq \left\|Y(\lambda_{n} \otimes T)X^{*} -
+    \sum_{i}a_{i} \otimes S_{i}\right\|.
+\end{align*}
+Since the right hand side can be made arbitrarily small, we can
+conclude that $\rho^{H}_{n}\hat T^{(m)}$ is compact. 
+\end{proof}
+\begin{Lem} \label{lem:intertwiner-rcfd}
+Every unitary corepresentation of a  $C^{*}$-pcqg contains an rcfd unitary
+corepresentation.
+\end{Lem}
+\begin{proof}
+  Let $(A,\Delta)$ be a $C^{*}$-pcqg with invariant integral $h$ and
+  let $X$ be a unitary corepresentation of $(A,\Delta)$ on a Hilbert
+  space $H$.
+
+  We claim that there exists a non-zero intertwiner of $S$ of $X$ such
+  that $\rho^{H}_{n}S$ is compact for all $n$.  Indeed, choose
+  projections $T_{i} \in \mathcal{K}(H)$ converging strictly to
+  $\id_{H}$ and fix $m\in I$. Then products $X(1\otimes T_{i})X^{*}$
+  converge strictly to $\sum_{k} \lambda_{k} \otimes \lambda_{k}^{H}$
+  and the sums
+  \begin{align*}
+    \hat T_{i} := \sum_{k}(h_{km} \otimes \id)(X(1\otimes T_{i})X^{*})
+  \end{align*}
+  converge strictly to $\id_{H}$ in $M(\mathcal{K}(H))$. In
+  particular, we find some $i$ such that $\hat T_{i}\neq 0$.  By Lemma 
+  \ref{lem:intertwiner-averaged} and  Lemma
+  \ref{lem:intertwiner-compact}, we can now take $S:=\hat T_{i}$.
+
+  Since $\rho^{H}_{n}S$ is compact for all $n$ and $S$ is non-zero, we
+  find $n \in I$ and a non-zero $\lambda\in \C$ such that the
+  intertwiner $S-\lambda\id_{H}$ of $X$ has non-trivial kernel.  Then
+  $X$ restricts to a unitary corepresentation $X'$ of $(A,\Delta)$ on
+  $H':=\ker (S-\lambda \id_{H})$, and since $\rho^{H}_{n}S$ is
+  compact, $\rho^{H'}_{n}$ is compact for all $n$.
+
+
+  Now, a similar argument for $(H',X')$ instead of $(H,X)$ shows that
+  there exist a non-zero intertwiner $S'$ of $X'$ such that
+  $\lambda^{H'}_{l}S$ is compact for all $l$, and a non-zero $\lambda'
+  \in \C$ such that $X'$ restricts to a unitary corepresentation $X''$ on
+  $H'':=\ker (S' - \lambda'\id_{H'})$. Now, $\lambda^{H''}_{l}$ is
+  compact by construction, and $\rho^{H''}_{n}$ is compact because
+  $\rho^{H'}_{n}$ was. Therefore, $X''$ is rcfd.
+\end{proof}
+\begin{Prop}
+  Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
+  irreducible, rcfd unitary corepresentations.
+\end{Prop}
+\begin{proof}
+  Use the Lemma of Zorn and the preceding result.
+\end{proof}
+
+ % \begin{Prop}
+ %   Then there exists a unique unitary corepresentation $V \in M(A
+ %   \otimes \mathcal{K}(H))$ such that for every non-degenerate
+ %   representation $\pi\colon A \to \mathcal{B}(K)$,
+ %   \begin{align*}
+ %     (\pi \otimes \id)(V)(\eta \otimes \pi_{h}(a)\xi) = (\pi \otimes
+ %     \pi_{h})(\Delta(a))(\eta\otimes \xi)
+ %   \end{align*}
+ %   for all $\eta\in K$, $\xi \in H_{h}$, $a\in A$.
+ % \end{Prop}
+ % \begin{proof}
+ %   Let $k,l,m,n \in I$ and let $\eta,\xi,a$ as above. Then
+ %   \begin{align*}
+ %     (\pi \otimes \id)(\UnitC{k}{m} \otimes 1)V(\UnitC{l}{n} \otimes 1)(\eta \otimes
+ %     \pi_{h}(a) \xi)
+ %     = (\pi \otimes \pi_{h})((\UnitC{k}{m} \otimes 1)
+ %   \end{align*}
+ % \end{proof}
 \begin{thebibliography}{00}
 
 \bibitem{MVD1} A. Maes, A. Van Daele, Notes on compact quantum groups, \emph{Nieuw Arch. Wisk.} \textbf{16} (4) (1998), no. 1--2, 73--112. 
