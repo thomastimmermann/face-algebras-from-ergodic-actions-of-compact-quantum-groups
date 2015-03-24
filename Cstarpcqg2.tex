@@ -653,9 +653,61 @@ V)(a\zeta^{k}_{n} \otimes \eta\otimes \xi)$.
 
 \subsection{Intertwiners and averaging}
 
+
+ \begin{Prop}
+   Let $(A,\Delta)$ be a $C^{*}$-pcqg with invariant integral $h$ and
+   let $X$ be a unitary corepresentation of $(A,\Delta)$. Then the
+   subspace
+   \begin{align*}
+     B &:= [ \{(h_{km} \otimes
+     \id)(X(a\otimes 1)) : a \in A,\, k,m\in I\}] \subseteq \mathcal{B}(H)
+   \end{align*}
+   is a $C^{*}$-algebra and $X\in M(A\otimes B)$.
+ \end{Prop}
+  \begin{proof}
+    Let $a\in \Gr{A}{k}{l}{m}{n}$ and $b\in \Gr{A}{p}{q}{r}{s}$. Then
+ \begin{align*}
+   S&:=(h_{ln} \otimes \id)(X(a\otimes 1)), &
+   T&:=(h_{qs} \otimes \id)(X(b\otimes 1)).
+ \end{align*}
+Then  $S \in \mathcal{B}(\Grd{H}{n}{m},\Grd{H}{l}{k})$, $T\in
+\mathcal{B}(\Grd{H}{s}{r},\Grd{H}{q}{p})$ and
+\begin{align*}
+  S^{*}T = \delta_{q,l}\delta_{p,k} (h_{ln} \otimes \id)((a^{*}\otimes
+  1)X^{*}(1\otimes T)).
+\end{align*}
+Assume that $(p,q)=(k,l)$.  For all $c\in \Gr{A}{l}{l}{s}{s}$,
+\begin{align*}
+  \lambda_{l} h_{ls}(a) = \sum_{v} \rho_{v}(\id \otimes h_{vs})(\Delta(c)),
+\end{align*}
+where the sum converges strictly, and therefore,
+\begin{align*}
+(1 \otimes p^{H}_{nm})  X^{*}(1\otimes T) &= (1 \otimes \rho^{H}_{m}) X^{*}(\UnitC{l}{n} \otimes (h_{ls} \otimes
+  \id)(X(b\otimes 1))) \\
+  &=  (1\otimes \rho^{H}_{m})X^{*}(\rho_{n} \otimes 1)(\id \otimes h_{ns}\otimes
+  \id)((\Delta\otimes \id)(X(b\otimes 1))) \\
+  &=  (1\otimes \rho^{H}_{m})X^{*}(\rho_{n} \otimes 1)(\id \otimes h_{ns}\otimes
+  \id)(X_{13}X_{23}(\Delta(b)\otimes 1)) \\
+  &=  (1\otimes \rho^{H}_{m}) X^{*}(\rho_{n} \otimes 1)X(\id \otimes h_{ns}\otimes
+  \id)(X_{23}(\Delta(b)\otimes 1)) \\
+  &= (\rho_{m} \otimes p^{H}_{nm})(\id \otimes h_{ns} \otimes
+  \id)(X_{23}\Delta(b)\otimes 1).
+\end{align*}
+Thus,
+\begin{align*}
+  S^{*}T &= (h_{ln} \otimes \id)((a^{*}\otimes
+  p^{H}_{nm})X^{*}(1\otimes T))  \\ &= (h_{ln} \otimes h_{ns} \otimes
+  \id)((a^{*} \otimes 1\otimes 1)X_{23}(\Delta(b) \otimes 1)) 
+  =(h_{ns} \otimes 1)(X(c\otimes 1)), 
+\end{align*}
+where $c=(h_{ln}
+  \otimes \id)((a^{*}\otimes 1)\Delta(b))$.
+  \end{proof}
+
 \begin{Def}
-  Let $(A,\Delta)$ be a $C^{*}$-pcqg with unitary corepresentations $X$ and $Y$ on Hilbert spaces
-  $H$ and $K$, respectively. An \emph{intertwiner} from $X$ to $Y$ is an operator $T\in
+  Let $(A,\Delta)$ be a $C^{*}$-pcqg with unitary corepresentations
+  $X$ and $Y$ on Hilbert spaces $H$ and $K$, respectively. An
+  \emph{intertwiner} from $X$ to $Y$ is an operator $T\in
   \mathcal{B}(H,K)$ satisfying $Y(1\otimes T)=(1 \otimes T)X$.
 \end{Def}
 \begin{Lem} \label{lem:intertwiner-graded}
@@ -806,6 +858,8 @@ corepresentation.
 \begin{proof}
   Use the Lemma of Zorn and the preceding result.
 \end{proof}
+
+
 
  % \begin{Prop}
  %   Then there exists a unique unitary corepresentation $V \in M(A
