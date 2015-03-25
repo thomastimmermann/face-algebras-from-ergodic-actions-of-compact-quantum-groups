@@ -651,10 +651,23 @@ and a straightforward calculation shows that this is equal to $(\id \otimes \Del
 V)(a\zeta^{k}_{n} \otimes \eta\otimes \xi)$.
  \end{proof}
 
-\subsection{Intertwiners and averaging}
+\subsection{Decomposition into rcfd irreducible corepresentations}
 
+We show that similarly as in the compact quantum group case, every unitary
+corepresentation decomposes into a direct sum of irreducible
+unitary rcfd corepresentations,  following the approach in \cite{MVD1}.
 
- \begin{Prop}
+\begin{Def}
+Let $X$ be a unitary corepresentation of a $C^{*}$-pcqg $(A,\Delta)$ on a
+  Hilbert space $H$. We call a closed subspace $K\subseteq H$
+  \emph{invariant} if $K=\bigoplus_{k,l} (K \cap \Grd{H}{k}{l})$ and
+  the orthogonal projection $P\in \mathcal{B}(H)$ onto $K$ satisfies
+  $(1\otimes P)X(1\otimes P)=X(1\otimes P)$.  We call $X$
+  \emph{irreducible} if there exists no non-trivial closed invariant
+  subspace $K\subseteq H$.
+\end{Def}
+As in \cite{MVD1}, the  following result will imply that every invariant closed subspace is complemented:
+ \begin{Prop}\label{prop:corep-complemented}
    Let $(A,\Delta)$ be a $C^{*}$-pcqg with invariant integral $h$ and
    let $X$ be a unitary corepresentation of $(A,\Delta)$. Then the
    subspace
@@ -662,10 +675,12 @@ V)(a\zeta^{k}_{n} \otimes \eta\otimes \xi)$.
      B &:= [ \{(h_{km} \otimes
      \id)(X(a\otimes 1)) : a \in A,\, k,m\in I\}] \subseteq \mathcal{B}(H)
    \end{align*}
-   is a $C^{*}$-algebra and $X\in M(A\otimes B)$.
+   is a non-degenerate $C^{*}$-subalgebra and $X\in M(A\otimes B)$.
  \end{Prop}
   \begin{proof}
-    Let $a\in \Gr{A}{k}{l}{m}{n}$ and $b\in \Gr{A}{p}{q}{r}{s}$. Then
+We first show that $[B^{*}B]= B$. This relation implies $B=B^{*}$ and
+$[BB]=B$ so that $B$ is a $C^{*}$-subalgebra of $\mathcal{B}(H)$. So,
+    let $a\in \Gr{A}{k}{l}{m}{n}$, $b\in \Gr{A}{p}{q}{r}{s}$ and
  \begin{align*}
    S&:=(h_{ln} \otimes \id)(X(a\otimes 1)), &
    T&:=(h_{qs} \otimes \id)(X(b\otimes 1)).
@@ -678,30 +693,65 @@ Then  $S \in \mathcal{B}(\Grd{H}{n}{m},\Grd{H}{l}{k})$, $T\in
 \end{align*}
 Assume that $(p,q)=(k,l)$.  For all $c\in \Gr{A}{l}{l}{s}{s}$,
 \begin{align*}
-  \lambda_{l} h_{ls}(a) = \sum_{v} \rho_{v}(\id \otimes h_{vs})(\Delta(c)),
+  \lambda_{l} h_{ls}(a) = \sum_{v} \rho_{v}(\id \otimes
+  h_{vs})(\Delta(c))
+= \sum_{v} (\id \otimes h_{vs})(\Delta(c)),
 \end{align*}
 where the sum converges strictly, and therefore,
 \begin{align*}
-(1 \otimes p^{H}_{nm})  X^{*}(1\otimes T) &= (1 \otimes \rho^{H}_{m}) X^{*}(\UnitC{l}{n} \otimes (h_{ls} \otimes
+ X^{*}(\rho_{n}\otimes T) &=  X^{*}(\UnitC{l}{n} \otimes (h_{ls} \otimes
   \id)(X(b\otimes 1))) \\
-  &=  (1\otimes \rho^{H}_{m})X^{*}(\rho_{n} \otimes 1)(\id \otimes h_{ns}\otimes
+  &=  X^{*}(\id \otimes h_{ns}\otimes
   \id)((\Delta\otimes \id)(X(b\otimes 1))) \\
-  &=  (1\otimes \rho^{H}_{m})X^{*}(\rho_{n} \otimes 1)(\id \otimes h_{ns}\otimes
-  \id)(X_{13}X_{23}(\Delta(b)\otimes 1)) \\
-  &=  (1\otimes \rho^{H}_{m}) X^{*}(\rho_{n} \otimes 1)X(\id \otimes h_{ns}\otimes
-  \id)(X_{23}(\Delta(b)\otimes 1)) \\
-  &= (\rho_{m} \otimes p^{H}_{nm})(\id \otimes h_{ns} \otimes
-  \id)(X_{23}\Delta(b)\otimes 1).
+  &=    (\id \otimes h_{ns}\otimes
+  \id)(X^{*}_{13}X_{13}X_{23}(\Delta(b)\otimes 1)) \\
+  &= \sum_{t}(\id \otimes h_{ns} \otimes
+  \id)((\rho_{t} \otimes 1\otimes \rho^{H}_{t})X_{23}(\Delta(b)\otimes
+  1)) \\
+&= \sum_{t}(\id \otimes h_{ns} \otimes
+  \id)(X_{23}((\rho_{t}\otimes \lambda_{t})\Delta(b)\otimes
+  1)), 
 \end{align*}
+that is,
+\begin{align}\label{eq:corep-complemented}
+  X^{*}(\rho_{n}\otimes T) &=
+ (\id \otimes h_{ns} \otimes
+  \id)(X_{23}(\Delta(b)\otimes 1)).
+\end{align}
 Thus,
 \begin{align*}
   S^{*}T &= (h_{ln} \otimes \id)((a^{*}\otimes
-  p^{H}_{nm})X^{*}(1\otimes T))  \\ &= (h_{ln} \otimes h_{ns} \otimes
+  1)X^{*}(1\otimes T))  \\ &= (h_{ln} \otimes h_{ns} \otimes
   \id)((a^{*} \otimes 1\otimes 1)X_{23}(\Delta(b) \otimes 1)) 
   =(h_{ns} \otimes 1)(X(c\otimes 1)), 
 \end{align*}
-where $c=(h_{ln}
-  \otimes \id)((a^{*}\otimes 1)\Delta(b))$.
+where $c=(h_{ln} \otimes \id)((a^{*}\otimes 1)\Delta(b))$. Therefore,
+$S^{*}T \in B$. Since $[(A\otimes 1)\Delta(A)]=[(A\otimes
+A)\Delta(A)]$, we can also conclude that $[B^{*}B]=B$.
+
+
+To see that $B$ is non-degenerate, observe that $X(A\otimes
+\mathcal{K}(H))$ contains $\lambda_{k}A \otimes
+\lambda_{k}^{H}\mathcal{K}(H)$ for all $k$ and hence
+$[B\mathcal{K}(H)]=\mathcal{K}(H)$.
+
+
+Let us next show that $X^{*}(A\otimes B)\subseteq A\otimes
+B$. Let $a,b$ as above but allow $(p,q)\neq (k,l)$ again. Then
+equation \eqref{eq:corep-complemented}  implies that
+\begin{align*}
+  X^{*}(a\otimes T) = X^{*}(\rho_{m}a\otimes T) = (\id \otimes h_{ms}
+  \otimes \id)(X_{23}(\Delta(b)(a\otimes 1))\otimes 1).
+\end{align*}
+Since $\Delta(b)(a\otimes 1) \subseteq A\otimes A$, the right hand
+side belongs to $A\otimes B$.
+On the other hand,
+\begin{align*}
+  X(a\otimes T) = (\id \otimes h_{qs} \otimes
+  \id)(X_{13}X_{23}(a\otimes b\otimes 1)) = (\id \otimes h_{qs}
+  \otimes \id)((\Delta \otimes \id)(X)(a\otimes b\otimes 1)) 
+\end{align*}
+\text{CONTINUE HERE}
   \end{proof}
 
 \begin{Def}
@@ -724,8 +774,17 @@ Multiplying on the right by $Y^{*}$ and using Condition 3., we find
 $\rho^{K}_{l}Tp^{H}_{mn}  = \delta_{l,n} p^{K}_{mn}T$ for all $l \in I$. Sum over $l\in I$ to obtain
 the desired equation.
 \end{proof}
-As in the case of compact quantum groups, intertwiners can be produced
-by averaging.
+Similarly as in the case of compact quantum groups, Proposition \ref{prop:corep-complemented} implies
+that a closed subspace is invariant if and only if the orthogonal
+projection onto this subspace is an intertwiner, and then a
+straightforward application of Zorn's Lemma shows:
+\begin{Prop}
+  Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
+  irreducible unitary corepresentations.
+\end{Prop}
+We next show that every irreducible unitary corepresentation
+is rcfd, using an averaging construction, which
+will also be used to prove the Schur orthogonality relations later on.
 \begin{Lem} \label{lem:intertwiner-averaged}
   Let $X$ and $Y$ be unitary corepresentations of $(A,\Delta)$ on Hilbert spaces $H$ and $K$,
   respectively, and let $T \in \mathcal{B}(H,K)$. Then for all $m,l \in I$, the sums
@@ -812,14 +871,13 @@ h_{k_{i}m}(a_{i})S_{i}\right\| \leq \left\|\sum_{k} D_{k}\right\| \leq \left\|Y(
 Since the right hand side can be made arbitrarily small, we can
 conclude that $\rho^{H}_{n}\hat T^{(m)}$ is compact. 
 \end{proof}
-\begin{Lem} \label{lem:intertwiner-rcfd}
-Every unitary corepresentation of a  $C^{*}$-pcqg contains an rcfd unitary
-corepresentation.
+\begin{Prop} \label{prop:corep-rcfd}
+Every irreducible unitary corepresentation of a  $C^{*}$-pcqg is rcfd.
 \end{Lem}
 \begin{proof}
   Let $(A,\Delta)$ be a $C^{*}$-pcqg with invariant integral $h$ and
-  let $X$ be a unitary corepresentation of $(A,\Delta)$ on a Hilbert
-  space $H$.
+  let $X$ be a unitary irreducible corepresentation of $(A,\Delta)$ on
+  a Hilbert space $H$.
 
   We claim that there exists a non-zero intertwiner of $S$ of $X$ such
   that $\rho^{H}_{n}S$ is compact for all $n$.  Indeed, choose
@@ -837,48 +895,149 @@ corepresentation.
 
   Since $\rho^{H}_{n}S$ is compact for all $n$ and $S$ is non-zero, we
   find $n \in I$ and a non-zero $\lambda\in \C$ such that the
-  intertwiner $S-\lambda\id_{H}$ of $X$ has non-trivial kernel.  Then
-  $X$ restricts to a unitary corepresentation $X'$ of $(A,\Delta)$ on
-  $H':=\ker (S-\lambda \id_{H})$, and since $\rho^{H}_{n}S$ is
-  compact, $\rho^{H'}_{n}$ is compact for all $n$.
+  intertwiner $S-\lambda\id_{H}$ of $X$ has non-trivial kernel.  But
+  this kernel is an invariant subspace and therefore must be $H$.
+  Thus, $S=\lambda\id_{H}$ and hence $\rho^{H}_{n}$ is compact for all
+  $n$.
 
 
-  Now, a similar argument for $(H',X')$ instead of $(H,X)$ shows that
-  there exist a non-zero intertwiner $S'$ of $X'$ such that
-  $\lambda^{H'}_{l}S$ is compact for all $l$, and a non-zero $\lambda'
-  \in \C$ such that $X'$ restricts to a unitary corepresentation $X''$ on
-  $H'':=\ker (S' - \lambda'\id_{H'})$. Now, $\lambda^{H''}_{l}$ is
-  compact by construction, and $\rho^{H''}_{n}$ is compact because
-  $\rho^{H'}_{n}$ was. Therefore, $X''$ is rcfd.
+  A similar argument shows $\lambda^{H'}_{l}S$ is compact for all
+  $l$. Therefore, $X$ is rcfd.
 \end{proof}
+
+
+\begin{Lem} \label{lem:construct-intertwiner}
+  Let $H$ be an $I^{2}$-graded Hilbert space, assume that $X\in M(A
+  \otimes \mathcal{K}(H))$ satisfies $(\Delta \otimes
+  \id)(X)=X_{13}X_{23}$, and let $\eta\in \Grd{H}{k}{l}$. Then the formula
+  \begin{align*}
+    T^{(\eta)} \xi := (\id \otimes \omega_{\eta,\xi})(X) \zeta^{l}_{n}
+    \quad \text{for } \xi \in \Grd{H}{m}{n}
+  \end{align*}
+  defines an $I^{2}$-graded  operator $T^{(\eta)} \in \mathcal{B}(H,H_{h})$ satisfying
+  \begin{align*}
+    V(1\otimes T^{(\eta)}) = (1 \otimes T^{(\eta)})X.
+  \end{align*}
+\end{Lem}
+\begin{proof}
+The formula above defines an $I^{2}$-graded  operator $T^{(\eta)}$
+because  for $\xi \in \Grd{H}{m}{n}$, 
+  \begin{align*}
+    (\id \otimes \omega_{\eta,\xi})(X) &=  
+    (\id \otimes \omega_{\eta,\xi})((\UnitC{k}{m}\otimes 1)X(\UnitC{l}{n}\otimes
+   1) \in \Gr{A}{k}{l}{m}{n}
+  \end{align*}
+ by Lemma \ref{lem:corep-intertwine}
+  and
+  \begin{align*}
+   \|    (\id \otimes \omega_{\eta,\xi})(X)\| \leq
+  \|X\|\|\eta\|\|\xi\|  \| \zeta^{l}_{n}\| =     \|X\|\|\eta\|\|\xi\|.
+  \end{align*}
+  To check that $V(1\otimes T)=(1\otimes T)X$, consider $a \in \Gr{A}{p}{q}{r}{s}$ and
+  $\xi \in \Grd{H}{m}{n}$. Then
+  \begin{align*}
+    V(1\otimes T)(a\otimes \xi)   &= V(a \otimes (\id \otimes
+    \omega_{\eta,\xi})(X)\zeta^{l}_{n}) \\ &=
+    (\Delta^{\op} \otimes
+    \omega_{\eta,\xi})(X)(a\otimes \zeta^{l}_{p}) \\
+    &=  (\id \otimes \id \otimes
+    \omega_{\eta,\xi})(X_{23}(1 \otimes \rho^{H}_{p})X_{13})(a\otimes
+    \zeta^{l}_{p}) \\
+    &= (\id \otimes T)X(a\otimes \xi)
+  \end{align*}
+and the claim follows.
+\end{proof}
+  Let $X$ be an irreducible unitary corepresentation on a Hilbert
+  space $H$, choose for each $k,l$ matrix units
+  $(e^{(kl)}_{i,j})_{i,j}$ of the finite-dimensional space
+  $\mathcal{B}(\Grd{H}{k}{l})$, write
+  \begin{align*}
+    \Gr{X}{k}{l}{m}{n} =  \sum_{i,j} x^{(klmn)}_{i,j} \otimes e^{(kl)}_{i,j}.
+  \end{align*}
+Then the sum
+\begin{align*}
+\overline{X}:=  \sum_{k,l,m,n} \sum_{i,j} (x^{(klmn)}_{i,j})^{*} \otimes
+  e^{(kl)}_{i,j} 
+\end{align*}
+converges strictly in $M(A \otimes \mathcal{K}(H))$ and depends on the
+choice of the matrix units $(e^{(kl)}_{i,j})_{i,j}$ up to conjugation
+by $1\otimes U$ for some $I^{2}$-graded unitary $U\in \mathcal{B}(H)$.
 \begin{Prop}
-  Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
-  irreducible, rcfd unitary corepresentations.
+There exists an irreducible unitary corepresentation $Y$ on a Hilbert
+space $K$ and an injective operator $T\in \mathcal{B}(H,K)$  with
+dense image such that $(1\otimes
+T)\overline{X} =Y(1\otimes T)$.
 \end{Prop}
 \begin{proof}
-  Use the Lemma of Zorn and the preceding result.
+  A straightforward calculation shows that $(\Delta \otimes
+  \id)(\overline{X}) = \overline{X}_{13}\overline{X}_{23}$.
+
+
+
+  Next, we find $k,l$ and $\eta\in \Grd{H}{k}{l}$ such that the
+  operator $T^{(\eta)} \in \mathcal{B}(H,H_{h})$ constructed in Lemma
+  \ref{lem:construct-intertwiner} is non-zero. 
+
+  We claim this $T^{(\eta)}$ is injective.  Indeed, denote by $P$ the
+  projection onto the kernel of $T^{(\eta)}$. Then the relation
+\begin{align*}
+  V(1\otimes T^{(\eta)}) = (1\otimes T^{(\eta)})\overline{X}
+\end{align*}
+implies
+$(1 \otimes T^{(\eta)})  \overline{X}(1 \otimes P) = 0$
+and hence
+$\overline{X}(1 \otimes P)  = (1 \otimes P)  \overline{X}(1 \otimes
+P)$, and therefore,
+\begin{align*}
+  (1 \otimes P)X(1\otimes P) = X(1\otimes P).
+\end{align*}
+By irreducibility of $X$, we can conclude that $P=0$ or
+$P=\id_{H}$. Since $T^{(\eta)}\neq 0$, we must have $P=0$ and hence
+$T^{(\eta)}$ is injective. 
+
+We can now take for $K$ the closure of the image of $T^{(\eta)}$, for
+$Y$ the restriction of $V$ to $K$,  and
+for $T$ the corestriction of $T^{(\eta)}$ to $K$.
+\end{proof}
+
+\subsection{The matrix coefficients}
+
+To every unitary  corepresentation  $X$ of $(A,\Delta)$ on a
+Hilbert space $H$,  we associate a space of \emph{matrix coefficients}
+\begin{align*}
+\mathcal{C}(X) = \sum_{k,l,m,n}  \Gr{\mathcal{C}(X)}{k}{l}{m}{n},
+\text{ where } \Gr{\mathcal{C}(X)}{k}{l}{m}{n} = \span \{ (\id \otimes
+  \omega_{\eta,\xi})(\Gr{X}{k}{l}{m}{n}) : \eta,\xi \in H\} \subseteq
+  \Gr{A}{k}{l}{m}{n}.
+\end{align*}
+\begin{Prop}
+  The matrix coefficients of irreducible unitary rcfd corepresentations
+  are linearly dense in $A$.
+\end{Prop}
+\begin{proof}
+  Consider the regular corepresentation $V$. Let $a\in
+  \Gr{A}{k}{l}{m}{n}$, $b\in \Gr{A}{p}{q}{r}{s}$ and
+  $\eta=a\zeta^{k}_{m}$, $\eta=b\zeta^{q}_{s}$. Then by definition,
+  \begin{align*}
+    (\id \otimes \omega_{\eta,\xi})(V) = (h_{qs}\otimes \id)((b^{*} \otimes
+    1)\Delta(a))
+  \end{align*}
+  and since $[(A\otimes 1)\Delta(A)]=[(A\otimes A)\Delta(1)]$, we can
+  conclude that $\mathcal{C}(V)$ is dense in $A$. But by Proposition
+\ref{}, $V$ decomposes as a direct sum of irreducible unitary rcfd
+corepresentations, whence the assertion follows.
 \end{proof}
 
 
+ denote by
+\begin{align*}
+  B \subseteq A \quad \text{and} \quad \Gr{B}{k}{l}{m}{n} \subseteq \Gr{A}{k}{l}{m}{n}
+\end{align*}
+the sums of the corresponding spaces for all irreducible unitary rcfd
+corepresentations of $(A,\Delta)$.
 
- % \begin{Prop}
- %   Then there exists a unique unitary corepresentation $V \in M(A
- %   \otimes \mathcal{K}(H))$ such that for every non-degenerate
- %   representation $\pi\colon A \to \mathcal{B}(K)$,
- %   \begin{align*}
- %     (\pi \otimes \id)(V)(\eta \otimes \pi_{h}(a)\xi) = (\pi \otimes
- %     \pi_{h})(\Delta(a))(\eta\otimes \xi)
- %   \end{align*}
- %   for all $\eta\in K$, $\xi \in H_{h}$, $a\in A$.
- % \end{Prop}
- % \begin{proof}
- %   Let $k,l,m,n \in I$ and let $\eta,\xi,a$ as above. Then
- %   \begin{align*}
- %     (\pi \otimes \id)(\UnitC{k}{m} \otimes 1)V(\UnitC{l}{n} \otimes 1)(\eta \otimes
- %     \pi_{h}(a) \xi)
- %     = (\pi \otimes \pi_{h})((\UnitC{k}{m} \otimes 1)
- %   \end{align*}
- % \end{proof}
+
+
 \begin{thebibliography}{00}
 
 \bibitem{MVD1} A. Maes, A. Van Daele, Notes on compact quantum groups, \emph{Nieuw Arch. Wisk.} \textbf{16} (4) (1998), no. 1--2, 73--112. 
