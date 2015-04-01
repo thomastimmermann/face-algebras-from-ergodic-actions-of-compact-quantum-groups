@@ -62,6 +62,7 @@
 \DeclareMathOperator{\tA}{\tilde{A}}
 \DeclareMathOperator{\weps}{\tilde{\epsilon}}
 
+\newcommand{\transpose}{\mathsf{T}}
 \newcommand{\Circt}{{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\Circtv}[1]{\underset{#1}{\mathop{\ooalign{$\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptstyle\mathsf T\mkern3.5mu$}\cr}}}} % Woronowicz style tensor product, USUAL SIZE
 \newcommand{\smCirct}{\mathop{\ooalign{$\scriptstyle\ovoid$\cr\hidewidth\raise-.05ex\hbox{$\scriptscriptstyle\mathsf T\mkern2.8mu$}\cr}}}  % Woronowicz style tensor product, SCRIPT SIZE
@@ -179,7 +180,7 @@
 \newcommand{\pmat}[4]{{\tiny \begin{pmatrix} #1 \quad #2 \\ #3 \quad #4\end{pmatrix}}}
 
 \newcommand{\UT}[2]{#1{\tiny #2 }}
-\newcommand{\Gr}[5]{\tensor*[^{#2}_{#4}]{#1}{^{#3}_{#5}}}%TODO: better typesetting
+\newcommand{\Gr}[5]{\,\tensor*[^{#2}_{#4}]{#1}{^{#3}_{#5}}}%TODO: better typesetting
 \newcommand{\Grl}[3]{\Gr{#1}{#2}{}{#3}{}}%TODO: better typesetting
 \newcommand{\Gru}[3]{\Gr{#1}{}{}{#2}{#3}}
 \newcommand{\Grd}[3]{\Gr{#1}{}{}{#2}{#3}}
@@ -497,7 +498,8 @@ by all unitary rcfd corepresentations. The following result shows that for every
 the adjoint $T^{*}$ is an intertwiner as well.
 \begin{Lem} \label{lem:def-intertwiner}
   Let $(A,\Delta)$ be a $C^{*}$-pcqg with unitary corepresentations $X$ and $Y$ on Hilbert spaces
-  $H$ and $K$, respectively, and let $T\in \mathcal{B}(H,K)$. Then the following conditions are equivalent:
+  $H$ and $K$, respectively, and let $T\in \mathcal{B}(H,K)$. Then the following conditions are
+  equivalent:
   \begin{enumerate}
   \item $T$ intertwines $X$ and $Y$, that is, $Y(1\otimes T)=(1 \otimes T)X$;
   \item $Y^{*}(1\otimes T)X=\sum_{l} \rho_{l} \otimes \rho^{K}_{l}T$ and $\lambda_{m}^{K}T=T\lambda_{m}^{H}$ for all $l$;
@@ -672,14 +674,16 @@ products of the form $(\Delta \otimes\id)(X(c\otimes 1))(d \otimes
 Therefore, $X(A \otimes B) \subseteq A\otimes B$.
   \end{proof}
 
-Similarly as in the case of compact quantum groups, Proposition \ref{prop:corep-complemented} implies
-that a closed subspace is invariant if and only if the orthogonal
-projection onto this subspace is an intertwiner, and then a
-straightforward application of Zorn's Lemma shows:
-\begin{Prop} \label{prop:corep-decompose}
+Similarly as in the case of compact quantum groups, Proposition \ref{prop:corep-complemented}
+and a straightforward application of Zorn's Lemma imply:
+\begin{Cor} \label{cor:invariant-complemented}
+  Let $X$ be a unitary corepresentation. Then every orthogonal projection onto a closed invariant
+  subspace intertwines $X$.
+\end{Cor}
+\begin{Cor} \label{cor:corep-decompose}
   Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
   irreducible unitary corepresentations.
-\end{Prop}
+\end{Cor}
 We next show that every irreducible unitary corepresentation
 is rcfd, using an averaging construction, which
 will also be used to prove the Schur orthogonality relations later on.
@@ -800,8 +804,70 @@ Every irreducible unitary corepresentation of a  $C^{*}$-pcqg is rcfd.
   A similar argument shows $\lambda^{H'}_{l}S$ is compact for all
   $l$. Therefore, $X$ is rcfd.
 \end{proof}
+We finally show how  Schur's lemma translates into the present context.
+\begin{Lem} \label{lem:schur}
+  \begin{enumerate}
+  \item   A unitary corepresentation $X$ is irreducible if and only if every
+  intertwiner of $X$ is a scalar multiple of the identity.
+\item Let $X$ and $Y$ be irreducible unitary corepresentations on Hilbert spaces $H$ and $K$,
+  respectively.  Then either $\dim \Hom(X,Y) = 0$ or $\dim\Hom(X,Y)=1$, and in the second case,
+  there exists a unitary intertwiner from $X$ to $Y$.
+  \end{enumerate}
+\end{Lem}
+\begin{proof}
+  1. The ``if'' part follows from Corollary \ref{cor:corep-decompose}.  Assume that $X$ is
+  irreducible and $T$ intertwines $X$. By \ref{prop:corep-rcfd}, the components $\Grd{T}{k}{l}$ are
+  compact operators and hence there exists a $\lambda\in \C$ such that the intertwiner $T-\lambda
+  \id$ has non-trivial kernel. This kernel is easily seen to be invariant, hence $T-\lambda \id =
+  0$.
 
+  2. If $T$ is a non-zero intertwiner from $X$ to $Y$, then $T^{*}T$ intertwines $X$ and $TT^{*}$
+  intertwines $Y$, so that $T^{*}T=\lambda \id$ and $TT^{*}=\mu\id$ for some $\lambda,\mu\in\C$ by
+  1.\ But since $T^{*}T$ and $TT^{*}$ have the same spectrum away from $0$, we get $\lambda=\mu$ and
+  $\lambda^{-1/2}T$ is a unitary intertwiner. If $S$ is another intertwiner from $X$ to $Y$, then $T^{*}S$
+  intertwines $X$ and hence is a multiple of $\id$, whence $\dim\Hom(X,Y)=1$.
+\end{proof}
+We will need the following sharpening.
+\begin{Lem} \label{lem:schur-algebraic}
+  Let $X$ and $Y$ be irreducible unitary corepresentations on Hilbert spaces $H$ and $K$,
+  respectively, and assume that operators $ \Grd{T}{k}{l} \in
+  \mathcal{B}(\Grd{H}{k}{l},\Grd{K}{k}{l}) $ satisfy $(1 \otimes \Grd{T}{k}{l})\Gr{X}{k}{l}{m}{n} =
+  \Gr{Y}{k}{l}{m}{n}(1\otimes \Grd{T}{m}{n})$ for all $k,l,m,n$. Then they are the restrictions of
+  an intertwiner $T$ from $X$ to $Y$. 
+\end{Lem}
+\begin{proof}
+  We only need to show that $\sup_{k,l} \|\Grd{T}{k}{l}\|<\infty$. Replacing $\Grd{T}{k}{l}$ by
+  $(\Grd{T}{k}{l})^{*}\Grd{T}{k}{l}$, if necessary, we may assume $X=Y$. Now, a similar argument as
+  in the proof of Lemma \ref{lem:schur} 1.\ shows that there exists a $\lambda\in \C$ such that
+  $\Grd{T}{k}{l}=\lambda \id_{\Grd{H}{k}{l}}$ for all $k,l$.  
+\end{proof}
+% Let $X$ and $Y$ be unitary corepresentations on Hilbert spaces $H$ and $K$, respectively. By  Lemma
+% \ref{lem:def-intertwiner}, an operator $T\in \mathcal{B}(H,K)$ is an intertwiner from $X$ to $Y$ if
+% and only if it decomposes as a direct sum of homogeneous components
+% \begin{align}
+%   \label{eq:intertwiner-components}
+%   \Grd{T}{k}{l} \in
+% \mathcal{B}(\Grd{H}{k}{l},\Grd{K}{k}{l})
+% \end{align}
+%  satisfying 
+%   \begin{align} \label{eq:intertwiner-partial}
+%     (1 \otimes \Grd{T}{k}{l})\Gr{X}{k}{l}{m}{n}  = \Gr{Y}{k}{l}{m}{n}(1\otimes \Grd{T}{m}{n}).
+%   \end{align}
+% \begin{Def}
+%   Let $X$ and $Y$ be unitary corepresentations on Hilbert spaces $H$ and $K$, respectively.  We call
+%   a family of operators as in \eqref{eq:intertwiner-components} satisfying
+%   \eqref{eq:intertwiner-partial} an
+%   \emph{algebraic intertwiner} between $X$ and $Y$.
+% \end{Def}
+% Thus, intertwiners correspond to those algebraic intertwiners that are uniformly bounded.
+% \begin{Lem}
 
+% If $(\Grd{T}{k}{l})_{k,l}$ is an algebraic intertwiner between irreducible unitary
+% corepresentations, then the sum $\sum_{k,l} \Grd{T}{k}{l}$ 
+% \end{Lem}
+% \begin{proof}
+  
+% \end{proof}
 
 \subsection{The regular corepresentation}
  Let $(A,\Delta)$ be a $C^{*}$-pcqg with an invariant integral $h$. 
@@ -809,7 +875,7 @@ Every irreducible unitary corepresentation of a  $C^{*}$-pcqg is rcfd.
 
  
  We denote by $H_{h}$ the associated GNS-space, by $\zeta^k_m \in H_{h}$ the image of $\UnitC{k}{m}
- \in A$, and write the GNS-representation of $A$ on $H_{h}$ as left multiplication.  We equip 
+ \in A$, and write the GNS-representation of $A$ on $H_{h}$ as left multiplication.  We equip
  $H_{h}$ with the $I^{2}$-grading given by
  \begin{align*}
    \lambda^{H_{h}}_{m}  (a\zeta^{k}_{l}) &=  \rho_{m}a \zeta^{k}_{l}, &
@@ -993,98 +1059,116 @@ V)(a\zeta^{k}_{n} \otimes \eta\otimes \xi)$.
  \end{proof}
 \subsection{The dual corepresentation}
 
-Let $X$ be an irreducible unitary corepresentation on a Hilbert space $H$, which is automatically
-rcfd by Proposition \ref{prop:corep-rcfd}. For each $k,l \in I$, choose matrix units
-$(e^{(kl)}_{i,j})_{i,j}$ of the finite-dimensional space $\mathcal{B}(\Grd{H}{k}{l})$ and write
-  \begin{align*}
-    \Gr{X}{k}{l}{m}{n} =  \sum_{i,j} x^{(klmn)}_{i,j} \otimes e^{(kl)}_{i,j}.
-  \end{align*}
-Then the sum
+Given a Hilbert space $H$, we denote by $\overline{H}$ the conjugate Hilbert space and by
+$\eta\mapsto \overline{\eta}$ the canonical anti-unitary $H\to\overline{H}$. Given a second Hilbert
+space $K$ and $T \in \mathcal{B}(H,K)$, we define $\overline{T}\in
+\mathcal{B}(\overline{H},\overline{K})$ by $\overline{\eta} \mapsto \overline{(T\eta)}$.  If $H$ is
+$I^{2}$-graded, we equip $\overline{H}$ with the reversed $I^{2}$-grading, that is,
+$\Grd{(\overline{H})}{k}{l}=\overline{(\Grd{H}{l}{k})}$.
+
+Let now $X$ be an irreducible unitary corepresentation on a Hilbert space $H$, which is
+automatically rcfd by Proposition \ref{prop:corep-rcfd}. Then for each $k,l,m,n$, we have components
+$\Gr{X}{k}{l}{m}{n} \in \Gr{A}{k}{l}{m}{n}\otimes \mathcal{B}(\Grd{H}{m}{n},\Grd{H}{k}{l})$, and we
+define
 \begin{align*}
-X^{\dag}:=  \sum_{k,l,m,n} \sum_{i,j} (x^{(klmn)}_{i,j})^{*} \otimes
-  e^{(kl)}_{i,j} 
+  \Gr{\overline{X}}{k}{l}{m}{n} &:=  (\Gr{X}{l}{k}{n}{m})^{*\otimes \overline{(\phantom{T})}} \in
+  \Gr{A}{k}{l}{m}{n} \otimes \mathcal{B}(\Grd{\overline{H}}{m}{n},\Grd{\overline{H}}{k}{l}).
 \end{align*}
-converges strictly in $M(A \otimes \mathcal{K}(H))$ and depends on the
-choice of the matrix units $(e^{(kl)}_{i,j})_{i,j}$ up to conjugation
-by $1\otimes U$ for some $I^{2}$-graded unitary $U\in \mathcal{B}(H)$.
-  A straightforward calculation shows that
+Thus, if $ \Gr{X}{l}{k}{n}{m} = \sum_{i} a_{i} \otimes T_{i}$, then $ \Gr{\overline{X}}{k}{l}{m}{n}
+= \sum_{i} a_{i}^{*} \otimes \overline{T_{i}}$.
+
+A straightforward calculation shows that the relation $(\Delta\otimes \id)(X)=X_{13}X_{23}$ implies
   \begin{align*}
-    (\Delta \otimes \id)(X^{\dag}) = X^{\dag}_{13}X^{\dag}_{23}.
+    (\Delta_{pq} \otimes \id)(\Gr{\overline{X}}{k}{l}{m}{n}) =
+     (\Gr{\overline{X}}{k}{l}{p}{q})_{13}(\Gr{\overline{X}}{p}{q}{m}{n})_{23}.
   \end{align*}
-We want to show that $X^{\dag}$ is, in a sense, equivalent to an irreducible unitary  corepresentation. The idea is to embed
-$X^{\dag}$ into the regular corepresentation.
-\begin{Lem} \label{lem:construct-intertwiner}
-  Let $K$ be an $I^{2}$-graded Hilbert space, assume that $Y\in M(A
-  \otimes \mathcal{K}(K))$ satisfies $(\Delta \otimes
-  \id)(Y)=Y_{13}Y_{23}$, and let $\eta\in \Grd{K}{k}{l}$. Then the formula
+We want to show that after rescaling, the components  $\overline{X}$ is, in a sense, equivalent to an irreducible unitary  corepresentation. The idea is to embed
+$\overline{X}$ into the regular corepresentation.
+\begin{Lem} \label{lem:construct-intertwiner} Let $K$ be an $I^{2}$-graded Hilbert space, assume
+  given elements
   \begin{align*}
-    T^{(\eta)} \xi := (\id \otimes \omega_{\eta,\xi})(Y) \zeta^{l}_{n}
-    \quad \text{for } \xi \in \Grd{K}{m}{n}
+    \Gr{Y}{k}{l}{m}{n}\in \Gr{A}{k}{l}{m}{n} \otimes \mathcal{B}(\Grd{K}{m}{n},\Grd{K}{k}{l})
   \end{align*}
-  defines an $I^{2}$-graded  operator $T^{(\eta)} \in \mathcal{B}(K,H_{h})$ satisfying
+   satisfying $    (\Delta_{kl} \otimes \id)(\Gr{Y}{p}{q}{m}{n}) =
+     (\Gr{Y}{p}{q}{k}{l})_{13}(\Gr{Y}{k}{l}{m}{n})_{23}
+$. Then for each $\eta\in \Grd{K}{p}{q}$,  the operators
+\begin{align*}
+  \Gr{T}{}{(\eta)}{m}{n} \colon
+\Grd{K}{m}{n} \to  \Grd{(H_{h})}{m}{n}, \quad \xi \mapsto (\id \otimes \omega_{\eta,\xi})(\Gr{Y}{p}{q}{m}{n}) \zeta^{q}_{n},
+\end{align*}
+satisfy
   \begin{align*}
-    V(1\otimes T^{(\eta)}) = (1 \otimes T^{(\eta)})Y.
+    \Gr{V}{k}{l}{m}{n}(1\otimes \Gr{T}{}{(\eta)}{m}{n}) = (1 \otimes
+    \Gr{T}{}{(\eta)}{k}{l})\Gr{Y}{k}{l}{m}{n}.
   \end{align*}
 \end{Lem}
 \begin{proof}
-The formula above defines an $I^{2}$-graded  operator $T^{(\eta)}$
-because  for $\xi \in \Grd{K}{m}{n}$, 
-  \begin{align*}
-    (\id \otimes \omega_{\eta,\xi})(Y) &=  
-    (\id \otimes \omega_{\eta,\xi})((\UnitC{k}{m}\otimes 1)Y(\UnitC{l}{n}\otimes
-   1) \in \Gr{A}{k}{l}{m}{n}
-  \end{align*}
- by Lemma \ref{lem:corep-intertwine}
-  and
-  \begin{align*}
-   \|    (\id \otimes \omega_{\eta,\xi})(Y)\| \leq
-  \|Y\|\|\eta\|\|\xi\|  \| \zeta^{l}_{n}\| =     \|Y\|\|\eta\|\|\xi\|.
-  \end{align*}
-  To check that $V(1\otimes T)=(1\otimes T)Y$, consider $a \in \Gr{A}{p}{q}{r}{s}$ and
+Let $\eta \in \Grd{K}{p}{q}$
   $\xi \in \Grd{K}{m}{n}$. Then
   \begin{align*}
-    V(1\otimes T)(a\otimes \xi)   &= V(a \otimes (\id \otimes
-    \omega_{\eta,\xi})(Y)\zeta^{l}_{n}) \\ &=
-    (\Delta^{\op} \otimes
-    \omega_{\eta,\xi})(Y)(a\otimes \zeta^{l}_{p}) \\
-    &=  (\id \otimes \id \otimes
-    \omega_{\eta,\xi})(Y_{23}(1 \otimes \rho^{K}_{p})Y_{13})(a\otimes
-    \zeta^{l}_{p}) \\
-    &= (\id \otimes T)Y(a\otimes \xi)
+    \Gr{V}{k}{l}{m}{n}(1\otimes \Gr{T}{}{(\eta)}{m}{n})(\UnitC{l}{n}\otimes \xi) &= \Gr{V}{k}{l}{m}{n}(\UnitC{l}{n}
+    \otimes (\id \otimes \omega_{\eta,\xi})(\Gr{Y}{p}{q}{m}{n})\zeta^{q}_{n}) \\ &= (\Delta_{kl}^{\op}    \otimes
+    \omega_{\eta,\xi})(\Gr{Y}{p}{q}{m}{n})(\UnitC{l}{n}\otimes \zeta^{q}_{l}) \\
+    &= (\id \otimes \id \otimes \omega_{\eta,\xi})((\Gr{Y}{p}{q}{k}{l})_{23}(\Gr{Y}{k}{l}{m}{n})_{13})(\UnitC{l}{n}\otimes
+    \zeta^{q}_{l}) \\
+    &= (\id \otimes \Gr{T}{}{(\eta)}{k}{l})\Gr{Y}{k}{l}{m}{n}(\UnitC{l}{n}\otimes \xi)
   \end{align*}
 and the claim follows.
 \end{proof}
 
 
-\begin{Prop}
-There exists an irreducible unitary corepresentation $\overline{X}$ on a Hilbert
-space $K$ and an injective operator $T\in \mathcal{B}(H,K)$  with
-dense image such that $(1\otimes
-T)X^{\dag} =\overline{X}(1\otimes T)$, and  this unitary corepresentation $\overline{X}$ is unique up to equivalence.
+\begin{Prop} \label{prop:corep-dual}
+There exist invertible operators $\Grd{T}{k}{l} \in \mathcal{B}(\Grd{\overline{H}}{k}{l})$ such that the sum
+\begin{align} \label{eq:dual}
+   \sum_{k,l,m,n} (1\otimes \Grd{T}{k}{l}) \Gr{\overline{X}}{k}{l}{m}{n} (1 \otimes
+  \Grd{T}{m}{n})^{-1}
+\end{align}
+converges strictly to an irreducible unitary corepresentation. This corepresentation is uniquely
+determined by $X$ up to equivalence and the operators 
+\begin{align*} 
+  \Grd{F}{k}{l} := \overline{(\Grd{T}{l}{k})^{*}\Grd{T}{l}{k}} \in \mathcal{B}(\Grd{H}{k}{l})
+\end{align*}
+are uniquely determined by $X$ up to a scalar factor that does not depend on $k,l$.
 \end{Prop}
 \begin{proof}
-  Choose $k,l$ and $\eta\in \Grd{H}{k}{l}$ such that the operator $T^{(\eta)} \in
-  \mathcal{B}(H,H_{h})$ constructed in Lemma \ref{lem:construct-intertwiner} is non-zero.  We claim
-  this $T^{(\eta)}$ is injective.  Indeed, denote by $P$ the projection onto the kernel of
-  $T^{(\eta)}$. Then the relation
+Let us first prove uniqueness. Assume that $\Grd{T}{k}{l},\Grd{S}{k}{l} \in
+\mathcal{B}(\Grd{\overline{H}}{k}{l})$ are invertible operators such that
 \begin{align*}
-  V(1\otimes T^{(\eta)}) = (1\otimes T^{(\eta)})X^\dag
+  Y = \sum_{k,l,m,n} (1\otimes \Grd{S}{k}{l}) \Gr{\overline{X}}{k}{l}{m}{n} (1 \otimes
+  \Grd{S}{m}{n})^{-1}  \text{ and }
+  Z = \sum_{k,l,m,n} (1\otimes \Grd{T}{k}{l}) \Gr{\overline{X}}{k}{l}{m}{n} (1 \otimes
+  \Grd{T}{m}{n})^{-1}
 \end{align*}
-implies
-$(1 \otimes T^{(\eta)})  X^\dag(1 \otimes P) = 0$
-and hence
-$X^\dag(1 \otimes P)  = (1 \otimes P)  X^\dag(1 \otimes
-P)$, and therefore,
-\begin{align*}
-  (1 \otimes P)X(1\otimes P) = X(1\otimes P).
-\end{align*}
-By irreducibility of $X$, we can conclude that $P=0$ or
-$P=\id_{H}$. Since $T^{(\eta)}\neq 0$, we must have $P=0$ and hence
-$T^{(\eta)}$ is injective. 
+are irreducible unitary corepresentations. Then Lemma \ref{lem:schur-algebraic}, applied to $Y,Z$
+and the operators $(\Grd{S}{k}{l}(\Grd{T}{k}{l})^{-1})_{k,l}$, shows that these operators are the
+components of an invertible intertwiner $R$ between $Y$ and $Z$, and by Lemma \ref{lem:schur} 2.,
+this intertwiner is a scalar multiple of a unitary. The uniqueness assertions follow.
 
-We can now take for $K$ the closure of the image of $T^{(\eta)}$, for
-$Y$ the restriction of $V$ to $K$,  and
-for $T$ the corestriction of $T^{(\eta)}$ to $K$.
+Let us now prove existence.  Choose $p,q$ and $\eta\in \Grd{\overline{H}}{p}{q}$ such that the
+family of operators $\Gr{T}{}{(\eta)}{m}{n} \in
+\mathcal{B}(\Grd{\overline{H}}{m}{n},\Grd{(H_{h})}{m}{n})$ constructed in Lemma
+\ref{lem:construct-intertwiner} is non-zero.
+
+We claim that then all $\Gr{T}{}{(\eta)}{m}{n}$ are injective.  Indeed, denote by $\Grd{P} {m}{n}$
+the orthogonal projection onto the kernel of $\Gr{T}{}{(\eta)}{m}{n}$. Then the relation
+\begin{align} \label{eq:dual-intertwine-aux}
+  \Gr{V}{k}{l}{m}{n}(1\otimes \Gr{T}{}{(\eta)}{m}{n}) = (1\otimes \Gr{T}{}{(\eta)}{k}{l})\Gr{\overline{X}}{k}{l}{m}{n}
+\end{align}
+implies $(1\otimes \Gr{T}{}{(\eta)}{k}{l})\Gr{\overline{X}}{k}{l}{m}{n} (1 \otimes \Grd{P}{m}{n}) =
+0$ and hence $\Gr{\overline{X}}{k}{l}{m}{n} (1 \otimes \Grd{P}{m}{n}) = (1 \otimes \Grd{P}{k}{l})
+\overline{X}(1 \otimes P)$, and therefore,
+\begin{align*}
+  (1 \otimes P)X(1\otimes P) = X(1\otimes P),
+\end{align*}
+where $P=\sum_{m,n} \Grd{P}{m}{n}$.  By irreducibility of $X$, we can conclude that $P=0$ or
+$P=\id_{H}$. Since some $\Gr{T}{}{(\eta)}{m}{n}$ is non-zero, we must have $P=0$ and hence each $\Gr{T}{}{(\eta)}{m}{n}$ is injective.
+
+Now, take the polar decomposition $\Gr{T}{}{(\eta)}{m}{n}=\Grd{U}{m}{n} |\Gr{T}{}{(\eta)}{m}{n}|$
+and let $\Grd{T}{m}{n}=|\Gr{T}{}{(\eta)}{m}{n}|$.   Equation \eqref{eq:dual-intertwine-aux} shows
+that the image of $U:=\sum_{m,n} \Grd{U}{m}{n}$ is a closed invariant subspace for $V$, and by Corollary
+\ref{cor:invariant-complemented}, $V$ restricts to a unitary corepresentation on this subspace.
+Now, the sum \eqref{eq:dual} is equal to the unitary corepresentation $(1\otimes U^{*})V(1\otimes
+U)$, and a similar argument like the one involving $P$ shows that this unitary corepresentation is irreducible.
 \end{proof}
 
 \subsection{Matrix coefficients, Schur orthogonality relations and Peter-Weyl}
@@ -1124,9 +1208,123 @@ It suffices to  consider elements of the form
   because $\check{T}^{(k)}$ intertwines $X$  and $Y$  and hence is $0$.
 \end{proof}
 
-\begin{Prop}
-  Let $X$ be a unitary irreducible corepresentation of $(A,\Delta)$. Then
-\end{Prop}
+\begin{Theorem}
+  Let $X$ be an irreducible unitary corepresentation on a Hilbert space $H$ with left hyperobject
+  support  $\alpha$ and right hyperobject support $\beta$. Let $\Grd{F}{k}{l}
+  \in \mathcal{B}(\Grd{H}{k}{l})$ be as in Proposition \ref{prop:corep-dual} and let
+  $\Grd{G}{k}{l}:=\Gr{F}{}{-1}{k}{l}$.
+  \begin{enumerate}
+  \item For $l \in \beta$ and $m\in\alpha$, the numbers $d_G:=\sum_{k} \Tr (\Grd{G}{k}{l})$ and $d_F:=\sum_{n} \Tr (\Grd{F}{m}{n})$ are non-zero and do not depend on the choice of $l$ or $m$.
+    \item  For all $k,m \in \alpha$ and $l,n\in \beta$,
+    \begin{align*}
+      (h_{ln} \otimes \id)((\Gr{X}{k}{l}{m}{n})^{*}\Gr{X}{k}{l}{m}{n})
+      &=d_G^{-1}\Tr(\Gru{G}{k}{l})
+      \id_{\Grd{H}{m}{n}}, \\
+      (h_{km} \otimes \id)(\Gr{X}{k}{l}{m}{n}(\Gr{X}{k}{l}{m}{n})^{*})
+      &=d_F^{-1}\Tr(\Grd{F}{m}{n})
+      \id_{\Grd{H}{k}{l}}.
+    \end{align*}
+  \item    Denote by $\Sigma_{mnkl} \colon \Grd{H}{m}{n}\otimes \Grd{H}{k}{l} \to \Grd{H}{k}{l}\otimes
+  \Grd{H}{m}{n}$ the flip map. Then
+    \begin{align*}
+      (h_{ln} \otimes \id \otimes
+    \id)((\Gr{X}{k}{l}{m}{n})^{*}_{12}(\Gr{X}{k}{l}{m}{n})_{13})  &=  d_{G}^{-1}\cdot
+    (\id_{\Grd{H}{m}{n}} \otimes \Grd{G}{k}{l}) \circ \Sigma_{klmn}, \\
+   (h_{km} \otimes \id \otimes
+   \id)((\Gr{X}{k}{l}{m}{n})_{13}(\Gr{X}{k}{l}{m}{n})^{*}_{12}) &= d_F^{-1} (\Grd{F}{m}{n}
+   \otimes \id_{\Grd{H}{k}{l}}) \circ \Sigma_{klmn}.
+    \end{align*}
+  \end{enumerate}
+\end{Theorem}
+\begin{proof}
+  We proceed similarly as in the proof of  Theorem 2.22 in \cite{}, and only prove the assertions
+  involving $d_{G}$.
+
+  Consider the operators
+  \begin{align*}
+    P_{klmn} &:= (h_{ln} \otimes \id \otimes
+    \id)((\Gr{X}{k}{l}{m}{n})^{*}_{12}(\Gr{X}{k}{l}{m}{n})_{13})  \in
+    \mathcal{K}(\Grd{H}{k}{l} \otimes \Grd{H}{m}{n}, \Grd{H}{m}{n}\otimes \Grd{H}{k}{l}).
+  \end{align*}
+  Then
+  \begin{align*}
+    P_{klmn} \circ \Sigma_{mnkl} = (h_{ln} \otimes \id \otimes \id)((\Gr{X}{k}{l}{m}{n})^{*}_{12}(\Sigma_{klkl})_{23}(\Gr{X}{k}{l}{m}{n})_{12})
+  \end{align*}
+  For fixed $k,l$, the multiplier $X \otimes \id_{\Grd{H}{k}{l}}$ is a unitary corepresentation on
+  $H \otimes \Grd{H}{k}{l}$, and by Lemma \ref{lem:intertwiner-averaged}, the sum $\sum_{m,n}
+  (P_{klmn}\circ \Sigma_{mnkl})$ intertwines $X \otimes \id_{\Grd{H}{k}{l}}$. Since $X$ is
+  irreducible, the sum must take the form $\id_{H} \otimes S$ with some $S\in
+  \mathcal{B}(\Grd{H}{k}{l})$ and then for all $m,n$,
+  \begin{align} \label{eq:schur-aux-1}
+    P_{klmn} = (h_{ln} \otimes \id \otimes
+    \id)((\Gr{X}{k}{l}{m}{n})^{*}_{12}(\Gr{X}{k}{l}{m}{n})_{13})= (\id_{\Grd{H}{m}{n}} \otimes
+    S) \circ \Sigma_{klmn}.
+  \end{align}
+
+  A similar argument shows that there exists a $T\in \mathcal{B}(\Grd{H}{m}{n})$ such that for all
+  $k,l$,
+\begin{align} \label{eq:schur-aux-2} 
+  (h_{km} \otimes \id \otimes
+  \id)((\Gr{X}{k}{l}{m}{n})_{12}(\Gr{X}{k}{l}{m}{n})^{*}_{13})= (\id_{\Grd{H}{k}{l}} \otimes T) \circ
+  \Sigma_{mnkl}.
+  \end{align}
+
+  Now, choose  invertible operators $\Grd{T}{k}{l} \in
+  \mathcal{B}(\Grd{\overline{H}}{k}{l})$ as in Proposition \ref{prop:corep-dual} such that the components
+  \begin{align*}
+    \Gr{Y}{k}{l}{m}{n} &:= (1 \otimes \Grd{T}{k}{l}) \Gr{\overline{X}}{k}{l}{m}{n} (1 \otimes
+    \Grd{T}{m}{n})^{-1} 
+  \end{align*}
+  sum up to an irreducible unitary corepresentation $Y$ on $\overline{H}$. 
+  Given an operator $T$ between Hilbert spaces $K$ and $L$,  denote by
+  $T^{\transpose}:=\overline{T}^{*}$ the transpose, which maps $\overline{L}$ to
+  $\overline{K}$. Then
+  \begin{align*}
+    (\Gr{X}{k}{l}{m}{n})^{*}  = (\Gr{\overline{X}}{l}{k}{n}{m})^{\id \otimes \transpose} =
+    ((1 \otimes \Grd{T}{l}{k})^{-1}\cdot \Gr{Y}{l}{k}{n}{m} \cdot (1\otimes \Grd{T}{n}{m}))^{\id \otimes \transpose}
+  \end{align*}
+  and hence
+  \begin{align*}
+    P_{klmn} &= ((\Gr{T}{}{-1}{l}{k} \otimes \Gr{T}{}{*}{n}{m})(h_{ln} \otimes \id \otimes
+    \id)((\Gr{Y}{l}{k}{n}{m})_{12}(\Gr{Y}{l}{k}{n}{m})^{*}_{13})(\Grd{T}{n}{m} \otimes \Gr{T}{}{-*}{l}{k}))^{\transpose\otimes \transpose}.
+  \end{align*}
+  Now, \eqref{eq:schur-aux-2} for $Y$ instead of $X$ shows that there exists an $R\in
+  \mathcal{B}(\Grd{\overline{H}}{n}{m})$ such that 
+  \begin{align*}
+    (h_{ln} \otimes \id \otimes
+    \id)((\Gr{Y}{l}{k}{n}{m})_{12}(\Gr{Y}{l}{k}{n}{m})^{*}_{13}) = (\id_{\Grd{\overline{H}}{l}{k}}
+    \otimes R)\circ \overline{\Sigma_{mnkl}},
+  \end{align*}
+  and hence,
+  \begin{align*}
+    P_{klmn} &= ((\Gr{T}{}{-1}{l}{k} \otimes \Gr{T}{}{*}{n}{m})(\id \otimes
+    R)\overline{\Sigma_{mnkl}} (\Grd{T}{n}{m} \otimes \Gr{T}{}{-*}{l}{k}))^{\transpose\otimes
+      \transpose} \\
+    &= ((\Gr{T}{}{*}{n}{m}R \Grd{T}{n}{m})^{\transpose} \otimes
+    (\Gr{T}{}{-1}{l}{k}\Gr{T}{}{-*}{l}{k})^{\transpose})\circ \Sigma_{mnkl}^{*} \\
+    &=  ((\Gr{T}{}{*}{n}{m}R \Grd{T}{n}{m})^{\transpose} \otimes \Grd{G}{k}{l}) \circ \Sigma_{klmn}.
+  \end{align*}
+  Comparing with \eqref{eq:schur-aux-1}, we find that 
+  $P_{klmn} = \lambda \cdot (\id_{\Grd{H}{m}{n}} \otimes \Grd{G}{k}{l}) \circ \Sigma_{klmn}$
+  for some $\lambda \in \C$.
+  
+  Now, one finishes the proof similarly like the proof of Theorem 2.22 in \cite{}.
+\end{proof}
+One can now deduce the following Schur orthogonality relations as in \cite{}:
+\begin{Cor}
+  Let $X$ an irreducible
+  unitary corepresentation on a Hilbert space $H$, let $F$ be defined as in Proposition \ref{prop:corep-dual} and
+  $G=F^{-1}$, and let $a=(\id \otimes \omega_{v,v'})(\Gr{X}{k}{l}{m}{n})$ and $b=(\id \otimes
+  \omega_{w,w'})(\Gr{X}{k}{l}{m}{n})$, where $v,w \in \Grd{H}{k}{l}$ and $v',w' \in
+  \Grd{H}{m}{n}$.  Then
+  \begin{align*} 
+    h_{ln}(b^{*}a) &= \frac{\langle w|v'\rangle\langle v|\Grd{G}{m}{n}w'\rangle}{\sum_{r}
+      \Tr(\Grd{G}{r}{n})}, &  h_{km}(ab^{*}) = \frac{\langle w|\Grd{F}{m}{n}v'\rangle \langle v|w'\rangle}{\sum_{s}
+      \Tr(\Grd{F}{m}{s})}.
+  \end{align*}
+\end{Cor}
+
+\texttt{Now, need to formulate Peter-Weyl}
  \subsection{The  partial compact quantum group of  matrix coefficients}
 \begin{Prop}
   The matrix coefficients of irreducible unitary rcfd corepresentations
@@ -1140,7 +1338,7 @@ It suffices to  consider elements of the form
     1)\Delta(a))
   \end{align*}
   and since $[(A\otimes 1)\Delta(A)]=[(A\otimes A)\Delta(1)]$, we can conclude that $\mathcal{C}(V)$
-  is dense in $A$. But by Proposition \ref{prop:corep-decompose} and Proposition \ref{prop:corep-rcfd}, $V$ decomposes as a direct sum of
+  is dense in $A$. But by Corollary \ref{cor:corep-decompose} and Proposition \ref{prop:corep-rcfd}, $V$ decomposes as a direct sum of
   irreducible unitary rcfd corepresentations, whence the assertion follows.
 \end{proof}
 \begin{Prop}
