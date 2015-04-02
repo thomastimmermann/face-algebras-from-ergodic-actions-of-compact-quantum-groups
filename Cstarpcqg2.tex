@@ -541,10 +541,10 @@ $C^{*}$-categories. Furthermore, they admit the following tensor product.
 Clearly,
 $(\Delta \otimes \id)(X_{12}Y_{13}) = X_{13}X_{23}Y_{14}Y_{24} =
     X_{13}Y_{14}X_{23}Y_{24}$,
-and Lemma \ref{lem:corep-intertwine} implies
-\begin{align*}
-  X_{12}Y_{13}Y_{13}^{*}X_{12}^{*} &= \sum_{l} X_{12}^{*}(\lambda_{l}
-  \otimes 1)X_{12} \otimes \lambda_{l}^{K} = \sum_{k,l} \lambda_{k}
+and Lemma \ref{lem:corep-intertwine} implies 
+\begin{align*} % Changed order X and X^* in second part of first line
+  X_{12}Y_{13}Y_{13}^{*}X_{12}^{*} &= \sum_{l} X_{12}(\lambda_{l}
+  \otimes 1)X_{12}^* \otimes \lambda_{l}^{K} = \sum_{k,l} \lambda_{k}
   \otimes p_{kl}^{H} \otimes \lambda_{l}^{K}, \\
   Y_{13}^{*}X_{12}^{*}X_{12}Y_{13} &= \sum_{l} Y_{13}^{*}(\rho_{l}
   \otimes \rho_{l}^{H}\otimes 1)Y_{13}  = \sum_{l} \rho_{m} \otimes
@@ -566,7 +566,7 @@ $\Corepf(A,\Delta)$ is a $C^{*}$-tensor category as well.
 
 
 \subsection{Decomposition into irreducible corepresentations}
-
+% Semisimplicity strictly says every object _finite_ direct sum of irreducible objects. Should make remark on this... 
 We show that the $C^{*}$-tensor category $\Corep(A,\Delta)$ is semi-simple, that is, every unitary
 corepresentation decomposes into a direct sum of irreducible unitary corepresentations, following
 the approach in \cite{MVD1}. Furthermore, we show that every irreducible unitary corepresentation is rcfd.
@@ -574,7 +574,8 @@ the approach in \cite{MVD1}. Furthermore, we show that every irreducible unitary
 \begin{Def}
 Let $X$ be a unitary corepresentation of a $C^{*}$-pcqg $(A,\Delta)$ on a
   Hilbert space $H$. We call a closed subspace $K\subseteq H$
-  \emph{invariant} if $K=\bigoplus_{k,l} (K \cap \Grd{H}{k}{l})$ and
+  \emph{invariant} if $K=\bigoplus_{k,l} (K \cap \Grd{H}{k}{l})$ % State that this is completed sum?
+  and
   the orthogonal projection $P\in \mathcal{B}(H)$ onto $K$ satisfies
   $(1\otimes P)X(1\otimes P)=X(1\otimes P)$.  We call $X$
   \emph{irreducible} if there exists no non-trivial closed invariant
@@ -610,6 +611,8 @@ Assume that $(p,q)=(k,l)$.  Then \eqref{eq:invariance} implies
 \begin{align*}
  X^{*}(\rho_{n}\otimes T) &=  X^{*}(\UnitC{l}{n} \otimes (h_{ls} \otimes
   \id)(X(b\otimes 1))) \\
+  &=  X^{*} \sum_{n'}(\id \otimes h_{n's}\otimes
+  \id)((\rho_n\otimes 1\otimes 1)(\Delta\otimes \id)(X(b\otimes 1))(\lambda_l\otimes 1 \otimes 1))\\
   &=  X^{*}(\id \otimes h_{ns}\otimes
   \id)((\Delta\otimes \id)(X(b\otimes 1))) \\
   &=    (\id \otimes h_{ns}\otimes
@@ -632,7 +635,7 @@ Thus,
   S^{*}T &= (h_{ln} \otimes \id)((a^{*}\otimes
   1)X^{*}(1\otimes T))  \\ &= (h_{ln} \otimes h_{ns} \otimes
   \id)((a^{*} \otimes 1\otimes 1)X_{23}(\Delta(b) \otimes 1)) 
-  =(h_{ns} \otimes 1)(X(c\otimes 1)), 
+  =(h_{ns} \otimes \id)(X(c\otimes 1)), 
 \end{align*}
 where $c=(h_{ln} \otimes \id)((a^{*}\otimes 1)\Delta(b))$. Therefore,
 $S^{*}T \in B$. Since $[(A\otimes 1)\Delta(A)]=[(A\otimes
@@ -663,27 +666,32 @@ A\otimes B$. On the other hand,
 Since $\Delta(1)(A \otimes A) = [\Delta(A)(A \otimes 1)]$, we can
 approximate $(\Delta \otimes \id)(X)(a\otimes b\otimes 1)$ in norm by sums of
 products of the form $(\Delta \otimes\id)(X(c\otimes 1))(d \otimes
-1\otimes 1)$, where $c\in \Gr{A}{k}{t}{m}{n}$, $d \in
+1\otimes 1)$, where %Changed lower indices c
+$c\in \Gr{A}{k}{t}{r}{s}$, $d \in
 \Gr{A}{t}{l}{}{n}$ and $t\in I$. But \eqref{eq:invariance} implies that for such $c,d,t$,
 \begin{align*}
-(\id \otimes h_{qs}
-  \otimes \id)(  (\Delta \otimes\id)(X(c\otimes 1)))(d \otimes
-1) &= \UnitC{t}{q}d \otimes (h_{ks} \otimes \id)(X(c\otimes 1)) \in A
+(\id \otimes h_{qs} 
+  \otimes \id)(  (\Delta \otimes\id)(X(c\otimes 1)))(d \otimes %in next line changed index k into t
+1) &= \UnitC{t}{q}d \otimes (h_{ts} \otimes \id)(X(c\otimes 1)) \in A
 \otimes B.
 \end{align*}
 Therefore, $X(A \otimes B) \subseteq A\otimes B$.
   \end{proof}
 
 Similarly as in the case of compact quantum groups, Proposition \ref{prop:corep-complemented}
-and a straightforward application of Zorn's Lemma imply:
+implies:
+%and a straightforward application of Zorn's Lemma imply:
 \begin{Cor} \label{cor:invariant-complemented}
   Let $X$ be a unitary corepresentation. Then every orthogonal projection onto a closed invariant
   subspace intertwines $X$.
 \end{Cor}
-\begin{Cor} \label{cor:corep-decompose}
-  Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
-  irreducible unitary corepresentations.
-\end{Cor}
+
+% The next corollary fails badly in general I would say :) Moved it further down the line
+
+%\begin{Cor} \label{cor:corep-decompose}
+ % Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
+ % irreducible unitary corepresentations.
+%\end{Cor}
 We next show that every irreducible unitary corepresentation
 is rcfd, using an averaging construction, which
 will also be used to prove the Schur orthogonality relations later on.
@@ -713,9 +721,9 @@ will also be used to prove the Schur orthogonality relations later on.
     &= \sum_{k} ((\id \otimes h_{km})\circ \Delta \otimes \id)(Y(1 \otimes T)X^{*}) \\
     &=\sum_{l} \lambda_{l} \otimes (h_{lm} \otimes \id)(Y(1\otimes T)X^{*}) \\
     &= \sum_{l} \lambda_{l}   \otimes \lambda^{H}_{l} \hat T^{(m)}.
-  \end{align*}
+  \end{align*}%Added parenthesis in next line
   With \eqref{eq:corep-pi}, we conclude that $Y(1\otimes \hat T^{(m)})
-  = (1 \otimes \hat T^{(m)}X$.
+  = (1 \otimes \hat T^{(m)})X$.
 \end{proof} 
 \begin{Lem} \label{lem:intertwiner-compact} Let $X$ and $Y$ be unitary corepresentations of
   $(A,\Delta)$ on Hilbert spaces $H$ and $K$, respectively, let $T \in \mathcal{K}(H,K)$ and define
@@ -756,8 +764,8 @@ h_{k_{i}m}(a_{i})S_{i}$ is equal to the sum of the elements
   D_{k}:=   (h_{km} \otimes \id)\left(Y(\lambda_{n} \otimes T)X^{*} -
     \sum_{i}a_{i} \otimes S_{i}\right).
 \end{align*}
-Now, \eqref{eq:corep-pi} and the assumption on the $a_{i}$ and $S_{i}$
-implies $D_{k} = \lambda_{k}^{H}D_{k}\lambda_{k}^{H}$, and  since each $h_{km}$ is a state,
+Now, \eqref{eq:corep-pi} and the assumption on the $a_{i}$ and $S_{i}$ %Changed H to K in next line
+implies $D_{k} = \lambda_{k}^{K}D_{k}\lambda_{k}^{H}$, and  since each $h_{km}$ is a state,
 \begin{align*}
   \|D_{k}\| \leq \left\|Y(\lambda_{n} \otimes T)X^{*} -
     \sum_{i}a_{i} \otimes S_{i}\right\| \quad\text{for all } k.
@@ -793,18 +801,28 @@ Every irreducible unitary corepresentation of a  $C^{*}$-pcqg is rcfd.
   \ref{lem:intertwiner-averaged} and  Lemma
   \ref{lem:intertwiner-compact}, we can now take $S:=\hat T_{i}$.
 
+%Removed `we find an n'
   Since $\rho^{H}_{n}S$ is compact for all $n$ and $S$ is non-zero, we
-  find $n \in I$ and a non-zero $\lambda\in \C$ such that the
+  find a non-zero $\lambda\in \C$ such that the
   intertwiner $S-\lambda\id_{H}$ of $X$ has non-trivial kernel.  But
   this kernel is an invariant subspace and therefore must be $H$.
   Thus, $S=\lambda\id_{H}$ and hence $\rho^{H}_{n}$ is compact for all
   $n$.
 
-
-  A similar argument shows $\lambda^{H'}_{l}S$ is compact for all
+%removed S
+  A similar argument shows $\lambda^{H'}_{l}$ is compact for all
   $l$. Therefore, $X$ is rcfd.
 \end{proof}
-We finally show how  Schur's lemma translates into the present context.
+
+% Moved corollary, added proof, to complete (hyperobject set should be mentioned earlier)
+\begin{Cor} \label{cor:corep-decompose}
+  Every unitary corepresentation of a $C^{*}$-pcqg is a direct sum of
+ irreducible unitary corepresentations.
+\end{Cor}
+\begin{proof} It follows from Lemma \ref{lem:intertwiner-compact} that any unitary corepresentation is a direct sum of rcfd corepresentations, and any rcfd corepresentation is a direct sum of rcfd corepresentations with singletons as hyperobject support. But any such rcfd corepresentation has finite-dimensional intertwiner space since the restriction to a non-zero $\Hsp_n$ is faithful, hence is a finite direct sum of irreducible unitary corepresentations. 
+\end{proof} 
+
+We finally show how  Schur's lemma translates into the present context. % Can be formulated as a corollary and I think the proof can be skipped
 \begin{Lem} \label{lem:schur}
   \begin{enumerate}
   \item   A unitary corepresentation $X$ is irreducible if and only if every
@@ -814,8 +832,8 @@ We finally show how  Schur's lemma translates into the present context.
   there exists a unitary intertwiner from $X$ to $Y$.
   \end{enumerate}
 \end{Lem}
-\begin{proof}
-  1. The ``if'' part follows from Corollary \ref{cor:corep-decompose}.  Assume that $X$ is
+\begin{proof}%changed ref to corollary
+  1. The ``if'' part follows from Corollary \ref{cor:invariant-complemented}.  Assume that $X$ is
   irreducible and $T$ intertwines $X$. By \ref{prop:corep-rcfd}, the components $\Grd{T}{k}{l}$ are
   compact operators and hence there exists a $\lambda\in \C$ such that the intertwiner $T-\lambda
   \id$ has non-trivial kernel. This kernel is easily seen to be invariant, hence $T-\lambda \id =
@@ -827,7 +845,7 @@ We finally show how  Schur's lemma translates into the present context.
   $\lambda^{-1/2}T$ is a unitary intertwiner. If $S$ is another intertwiner from $X$ to $Y$, then $T^{*}S$
   intertwines $X$ and hence is a multiple of $\id$, whence $\dim\Hom(X,Y)=1$.
 \end{proof}
-We will need the following sharpening.
+We will need the following sharpening. % Proof of following lemma should be cleaned up a bit
 \begin{Lem} \label{lem:schur-algebraic}
   Let $X$ and $Y$ be irreducible unitary corepresentations on Hilbert spaces $H$ and $K$,
   respectively, and assume that operators $ \Grd{T}{k}{l} \in
@@ -916,10 +934,10 @@ Therefore, the formula above defines a partial isometry $\tilde V$ with support 
 \sum_{l}   \Delta(a)(1 \otimes \UnitC{l}{m}) (\zeta^{k}_{l} \otimes b\eta),
 \end{align*}
 where $a,b\in A$, $k,l,m\in I$, $\eta\in K$. By  \eqref{CondDi}, this is equal to the span of all
-elements of the form
+elements of the form % Drop the sum over l in the next equation and the one following it, for clarity
 \begin{align*}
   \sum_{l} (\rho_{m}c \zeta^{k}_{l} \otimes \lambda_{m}d\eta),
-\end{align*}
+\end{align*}%Add tildes in next line
 where $c,d\in A$, $k,l,m \in I$, $\eta\in K$. Since $\rho_{m}c\zeta^{k}_{l} =
 \lambda^{H_{h}}_{m}(c\zeta^{k}_{l})$, we can conclude that $VV^{*}=\sum_{m} \lambda^{H_{h}}_{m}
 \otimes \lambda_{m}$ as claimed.
@@ -950,7 +968,7 @@ d_{i})(\zeta^{k}_{r} \otimes \eta) =
  (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i}) (\vartheta \otimes \eta).
    \end{align*}
 But  $\sum_{i} (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i}) \in \mathcal{K}(H_{h}) \otimes
-A$  and   one can check that
+A$  and   one can check that%probably in next line $m=s$? Also, extra norm of $\xi$ in right hand side
    \begin{align*}
      \left\|\tilde V(|a\zeta^{k}_{m}\rangle\langle \xi| \otimes \UnitC{r}{s}) -      \sum_{i}
        (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i})\right\| \leq
