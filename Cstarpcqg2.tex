@@ -316,7 +316,7 @@ where the sums converge strictly.
 
 These relations can also  be rewritten in terms of the associative
 convolution product on $A^*$  defined by \[(\chi*\omega)(a) =
-(\chi\otimes \omega)\Delta(a).\] Let us write \[\Gr{B}{k}{m}{l}{n} = \{\omega \in A^* \mid \forall a\in A, \omega(a) = \omega\left(\UnitC{k}{m}a\UnitC{l}{n}\right)\}.\] Then the convolution product restricts to products \[\Gr{B}{k}{m}{l}{n}\times \Gr{B}{m}{p}{n}{q}\rightarrow \Gr{B}{k}{p}{l}{q},\] all other products being zero. The left and right invariance properties \eqref{EqInvL} and \eqref{EqInvR} can then be written in terms of the $\phi_{km}$ as \begin{equation}\label{EqInvLp}\omega*\phi_{km} = \omega(\UnitC{p}{k})\phi_{pm},\qquad \forall \omega \in \Gr{B}{p}{k}{q}{k},\end{equation}
+(\chi\otimes \omega)\Delta(a).\] Let us write \begin{equation}\label{DefSpB} \Gr{B}{k}{m}{l}{n} = \{\omega \in A^* \mid \forall a\in A, \omega(a) = \omega\left(\UnitC{k}{m}a\UnitC{l}{n}\right)\}.\end{equation}Then the convolution product restricts to products \[\Gr{B}{k}{m}{l}{n}\times \Gr{B}{m}{p}{n}{q}\rightarrow \Gr{B}{k}{p}{l}{q},\] all other products being zero. The left and right invariance properties \eqref{EqInvL} and \eqref{EqInvR} can then be written in terms of the $\phi_{km}$ as \begin{equation}\label{EqInvLp}\omega*\phi_{km} = \omega(\UnitC{p}{k})\phi_{pm},\qquad \forall \omega \in \Gr{B}{p}{k}{q}{k},\end{equation}
 \begin{equation}\label{EqInvRp}\phi_{km}*\omega = \omega(\UnitC{m}{q})\phi_{kq},\qquad \forall \omega \in \Gr{B}{m}{p}{m}{q}.\end{equation}
 
 
@@ -585,7 +585,7 @@ As in \cite{MVD1}, the  following result will imply that every invariant closed 
  \begin{Prop}\label{prop:corep-complemented}
    Let $(A,\Delta)$ be a $C^{*}$-pcqg with invariant integral $h$ and
    let $X$ be a unitary corepresentation of $(A,\Delta)$. Then the
-   subspace
+   subspace% Change notation B to C as to not have overlap with notation from first section? 
    \begin{align*}
      B &:= [ \{(h_{km} \otimes
      \id)(X(a\otimes 1)) : a \in A,\, k,m\in I\}] \subseteq \mathcal{B}(H)
@@ -920,32 +920,27 @@ We will need the following sharpening. % Proof of following lemma should be clea
  \end{Lem}
  \begin{proof}
    Let $p,q\in I$ and $a,k,m,\eta$ as above. Given $\xi \in K$, denote by $\omega_{\xi}\in A^{*}$ the vector
-   functional $a \mapsto \langle \xi|a\xi\rangle$.
-   Then $\omega_{1\Grru{l}{m}\eta} \in \Gr{B}{l}{m}{l}{m}$ and by \eqref{EqInvRp},
+   functional $a \mapsto \langle \xi|a\xi\rangle$.% Ref to notation in next line
+   Then, using the notation \eqref{DefSpB}, $\omega_{\UnitC{l}{m}\eta} \in \Gr{B}{l}{m}{l}{m}$ and by \eqref{EqInvRp},
    \begin{align*}
   \left\|\Delta(a)\sum_{l}(\zeta^{k}_{l}\otimes \UnitC{l}{m}\eta)\right\|^{2} &= \sum_{l} (h_{kl}
-  \otimes \omega_{1\Grru{l}{m}\eta})(\Delta(a^{*}a)) \\
+  \otimes \omega_{\UnitC{l}{m}\eta})(\Delta(a^{*}a)) \\
   &= \sum_{l}\omega_{\eta}(1\Grru{l}{m}) h_{km}(a^{*}a) 
   = \left\|a\zeta^{k}_{m} \otimes  \rho_{m}\eta \right\|^{2}.
 \end{align*}
 Therefore, the formula above defines a partial isometry $\tilde V$ with support projection $\sum_{m}
-\rho^{H_{h}}_{m} \otimes \rho_{m}$. The image of $\tilde V$ is spanned by elements of the form
-\begin{align*}
-\sum_{l}   \Delta(a)(1 \otimes \UnitC{l}{m}) (\zeta^{k}_{l} \otimes b\eta),
-\end{align*}
-where $a,b\in A$, $k,l,m\in I$, $\eta\in K$. By  \eqref{CondDi}, this is equal to the span of all
-elements of the form % Drop the sum over l in the next equation and the one following it, for clarity
-\begin{align*}
-  \sum_{l} (\rho_{m}c \zeta^{k}_{l} \otimes \lambda_{m}d\eta),
-\end{align*}%Add tildes in next line
-where $c,d\in A$, $k,l,m \in I$, $\eta\in K$. Since $\rho_{m}c\zeta^{k}_{l} =
-\lambda^{H_{h}}_{m}(c\zeta^{k}_{l})$, we can conclude that $VV^{*}=\sum_{m} \lambda^{H_{h}}_{m}
+\rho^{H_{h}}_{m} \otimes \rho_{m}$. %Changed wording somewhat 
+As the image of $\tilde V$ is closed, it contains by its definition the closed linear span of all elements of the form
+$\Delta(a) (\zeta^{k}_{l} \otimes b\eta)$, where $a,b\in A$, $k,l,m\in I$, $\eta\in K$. By  \eqref{CondDi}, this is equal to the closed linear span of all
+elements of the form $\rho_{m}c \zeta^{k}_{l} \otimes \lambda_{m}d\eta$,
+where $c,d\in A$, $k,l,m \in I$, $\eta\in K$. Since $\rho_{m}c\zeta^{k}_{l} =%Added tildes in next line
+\lambda^{H_{h}}_{m}(c\zeta^{k}_{l})$, we can conclude that $\tilde V \tilde V^{*}=\sum_{m} \lambda^{H_{h}}_{m}
 \otimes \lambda_{m}$ as claimed.
  \end{proof}
  \begin{Lem}\label{lem:reg-corep-mult}
    The products $ \tilde V(\mathcal{K}(H_{h})\otimes A)$ and 
-   $(\mathcal{K}(H_{h}) \otimes A)\tilde V$ lie in $A \otimes
-   \mathcal{K}(H)$ so that $\tilde V \in M(A\otimes \mathcal{K}(H))$.
+   $(\mathcal{K}(H_{h}) \otimes A)\tilde V$ lie in %changed order
+  $\mathcal{K}(H_h)\otimes A$ so that $\tilde V \in M(\mathcal{K}(H_h)\otimes A)$.
  \end{Lem}
  \begin{proof}
    Given $\xi,\eta\in H_{h}$, denote by $|\xi\rangle\langle \eta| \in \mathcal{K}(H_{h})$ ket-bra
@@ -968,12 +963,13 @@ d_{i})(\zeta^{k}_{r} \otimes \eta) =
  (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i}) (\vartheta \otimes \eta).
    \end{align*}
 But  $\sum_{i} (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i}) \in \mathcal{K}(H_{h}) \otimes
-A$  and   one can check that%probably in next line $m=s$? Also, extra norm of $\xi$ in right hand side
+A$  and  one can check that, %added $m=s$, also added extra norm of $\xi$ in right hand side
+for $m=s$,
    \begin{align*}
      \left\|\tilde V(|a\zeta^{k}_{m}\rangle\langle \xi| \otimes \UnitC{r}{s}) -      \sum_{i}
        (|c_{i}\zeta^{k}_{r}\rangle\langle \xi| \otimes d_{i})\right\| \leq
      \left\|\Delta(a)(1\otimes \UnitC{r}{s}) -  \sum_{i} c_{i} \otimes
-   d_{i}\right\|.
+   d_{i}\right\| \|\xi\|.
    \end{align*}
    Therefore, $\tilde V(|a\zeta^{k}_{m}\rangle\langle \xi| \otimes \UnitC{r}{s})$ lies in
    $\mathcal{K}(H_{h}) \otimes A$ and hence $\tilde V(\mathcal{K}(H_{h})\otimes A) \subseteq
@@ -1003,7 +999,7 @@ A$  and   one can check that%probably in next line $m=s$? Also, extra norm of $\
    \end{align*}
 But $\sum_{i}     (|c_{i}\zeta^{k}_{l_{i}}\rangle\langle\xi| \otimes
      d_{i}) \in \mathcal{K}(H_{h}) \otimes A$ and again, one can check
-     that
+     that%added norm of $\xi$
      \begin{align*}
        \left\|      \tilde V^{*}(|a\zeta^{k}_{m}\rangle\langle\xi| \otimes
      \UnitC{r}{s}) - \sum_{i}     (|c_{i}\zeta^{k}_{l_{i}}\rangle\langle\xi| \otimes
@@ -1011,7 +1007,7 @@ But $\sum_{i}     (|c_{i}\zeta^{k}_{l_{i}}\rangle\langle\xi| \otimes
 \rho_{r}a
    \UnitC{k}{m}\otimes
    \UnitC{r}{s} - \sum_{i} \Delta(c_{i})(1 \otimes d_{i})
-   \right\|.
+   \right\|\|\xi\|.
      \end{align*}
      Therefore, $   \tilde V^{*}(|a\zeta^{k}_{m}\rangle\langle\xi| \otimes
      \UnitC{r}{s})$ lies in $\mathcal{K}(H_{h}) \otimes A$ and the
@@ -1040,7 +1036,8 @@ where we can approximate $(1
    similarly as above that $(1 \otimes \UnitC{r}{s})\tilde
    V(|a\zeta^{k}_{m}\rangle\langle\xi|\otimes 1) \in \mathcal{K}(H_{h}) \otimes A$ and consequently
    $(1\otimes A)\tilde V(\mathcal{K}(H_{h}) \otimes 1) \subseteq \mathcal{K}(H_{h}) \otimes A$.
-   
+  
+    % To look into
 However,   we do not know whether $(\mathcal{K}(H_{h}) \otimes 1)
    \tilde V(1\otimes A)$ is contained in $A\otimes \mathcal{K}(H)$.
 \end{Rem}
@@ -1071,7 +1068,7 @@ of $\Delta$ with the flip map.
 \UnitC{m}{n}\xi)  \\
 &= (\id \otimes \Delta)(\Delta(a))  \sum_{l} (\zeta^{k}_{l} \otimes \lambda_{l}\eta \otimes
 \rho_{n}\xi),
-\end{align*}
+\end{align*}% Some more info, should be applied to elements of the form $\Delta(a)(...)$
 and a straightforward calculation shows that this is equal to $(\id \otimes \Delta)(\tilde
 V)(a\zeta^{k}_{n} \otimes \eta\otimes \xi)$.
  \end{proof}
@@ -1448,7 +1445,7 @@ then $ab = (\id \otimes \omega_{\xi\otimes \zeta,\eta\otimes \theta})(X\Circt Y)
 \end{align*}
 
 Next, we verify the antipode relations. 
-Lemma \ref{lem:corep-intertwine} implies $S(\Gr{B}{k}{l}{m}) \subseteq \Gr{B}{n}{m}{l}{k}$.
+Lemma \ref{lem:corep-intertwine} implies $S(\Gr{B}{k}{l}{m}{n}) \subseteq \Gr{B}{n}{m}{l}{k}$.
 Denote by $m \colon B\otimes B\to B$ the multiplication
 map and consider $a$ as above. Then by Lemma \ref{lem:corep-intertwine},
 \begin{align*}
