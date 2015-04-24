@@ -1,7 +1,7 @@
 \section{C$^*$-partial compact quantum groups and their representations}
 
 
-\subsection{Definition}
+\subsection{$C^{*}$-partial compact quantum groups and their invariant integrals}
 
 For $A$ a C$^*$-algebra, we denote by $M(A)$ the multiplier C$^*$-algebra of $A$. All tensor products of C$^*$-algebras in this paper will be minimal. We denote by $[\,\cdot\,]$ the closed linear span of a subset.
 
@@ -13,30 +13,30 @@ For $A$ a C$^*$-algebra, we denote by $M(A)$ the multiplier C$^*$-algebra of $A$
 \end{itemize}
 satisfying the following conditions:
 \begin{enumerate}[(a)]
-\item[Ui)] $\UnitC{k}{k}\neq 0$ for all $k\in I$. 
-\item[Uii)] $\sum_{k,l} \UnitC{k}{l}$ strictly converges to the unit in $M(A)$.
-\item[Uiii)] $\Delta(\UnitC{k}{l}) = \sum_{m}\UnitC{k}{m}\otimes \UnitC{m}{l}$ strictly for all $k,l$. 
-\item[Di)] With $\Delta(1) = \sum_{k,l,m} \UnitC{k}{m}\otimes \UnitC{m}{l}$, we have \begin{equation}\label{CondDi}(A\otimes A)\Delta(1) = [(A\otimes 1)\Delta(A)] = [(1\otimes A)\Delta(A)].\end{equation} 
-\item[Dii)] With $P=\sum_{k} \UnitC{k}{k}$, and $A_P = PAP$, we have \[[(\omega\otimes \id)\Delta(A_P)\mid \omega \in A^*] = [(\id\otimes \omega)\Delta(A_P)\mid \omega \in A^*] = A.\]
-\item[C)] $\Delta$ is coassociative: for all $a,b,c\in A$, we have \[(a\otimes 1\otimes 1)(\Delta\otimes \id)(\Delta(b)(1\otimes c)) = (\id\otimes \Delta)((a\otimes 1)\Delta(b))(1\otimes 1\otimes c).\] 
+\item[(U1)] $\UnitC{k}{k}\neq 0$ for all $k\in I$. 
+\item[(U2)] $\sum_{k,l} \UnitC{k}{l}$ strictly converges to the unit in $M(A)$.
+\item[(U3)] $\Delta(\UnitC{k}{l}) = \sum_{m}\UnitC{k}{m}\otimes \UnitC{m}{l}$ strictly for all $k,l$. 
+\item[(D1)] With $\Delta(1) = \sum_{k,l,m} \UnitC{k}{m}\otimes \UnitC{m}{l}$, we have \begin{equation}\label{CondDi}(A\otimes A)\Delta(1) = [(A\otimes 1)\Delta(A)] = [(1\otimes A)\Delta(A)].\end{equation} 
+\item[(D2)] With $P=\sum_{k} \UnitC{k}{k}$, and $A_P = PAP$, we have \[[(\omega\otimes \id)\Delta(A_P)\mid \omega \in A^*] = [(\id\otimes \omega)\Delta(A_P)\mid \omega \in A^*] = A.\]
+\item[(C)] $\Delta$ is coassociative: for all $a,b,c\in A$, we have \[(a\otimes 1\otimes 1)(\Delta\otimes \id)(\Delta(b)(1\otimes c)) = (\id\otimes \Delta)((a\otimes 1)\Delta(b))(1\otimes 1\otimes c).\] 
 \end{enumerate}
 \end{Def} 
 
 Note that $\Delta(1)$ is a well-defined projection in $M(A\otimes A)$. By condition \eqref{CondDi}, $\Delta$ extends uniquely to a $^*$-homomorphism \[\Delta: M(A)\rightarrow M(A\otimes A)\] with value in the unit precisely $\Delta(1)$. In the same way, $(\id\otimes \Delta)$ and $(\Delta\otimes \id)$ extend to $M(A\otimes A)$, and we can write the coassociativity condition in the usual form \[(\Delta\otimes \id)\Delta = (\id\otimes \Delta)\Delta,\] valid also on $M(A)$.
 
-In the following, we write \[\Gr{A}{k}{l}{m}{n} = \UnitC{k}{m}A\UnitC{l}{n},\] each of which is a Banach subspace of $A$. In particular, each corner $\Gr{A}{k}{k}{m}{m}$ is a unital C$^*$-algebra with unit $\UnitC{k}{m}$. We will write also \[\lambda_k = \sum_{m}\UnitC{k}{m},\qquad \rho_m = \sum_{k}\UnitC{k}{m},\] which give well-defined projections in $M(A)$. Finally, we will write, for $a\in A$, \[\Delta_{rs}(a) = (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) = (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s),\] which are well-defined elements in $A\otimes A$ by Definition \ref{DefCpcqg}.Uii). We then have that  \[\Delta(a) = \sum_{r,s} \Delta_{rs}(a)\] in the strict topology. 
+In the following, we write \[\Gr{A}{k}{l}{m}{n} = \UnitC{k}{m}A\UnitC{l}{n},\] each of which is a Banach subspace of $A$. In particular, each corner $\Gr{A}{k}{k}{m}{m}$ is a unital C$^*$-algebra with unit $\UnitC{k}{m}$. We will write also \[\lambda_k = \sum_{m}\UnitC{k}{m},\qquad \rho_m = \sum_{k}\UnitC{k}{m},\] which give well-defined projections in $M(A)$. Finally, we will write, for $a\in A$, \[\Delta_{rs}(a) = (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) = (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s),\] which are well-defined elements in $A\otimes A$ by Definition \ref{DefCpcqg}.(U2). We then have that  \[\Delta(a) = \sum_{r,s} \Delta_{rs}(a)\] in the strict topology. 
 
 \begin{Lem}
 Let $I$ be a set and let $(A,\Delta)$   be a $C^{*}$-algebraic $I$-partial compact quantum group. Then the relation $\sim$ on $I$ given by $k\sim l :\Leftrightarrow \UnitC{k}{l}\neq 0$ is an equivalence relation.
 \end{Lem}
 \begin{proof}
-  The relation is reflexive by Ui) and transitive by Uiii). Finally, if $\UnitC{k}{l}\neq 0$, then by Dii) it must be contained in $[(\omega \otimes \id)(\Delta(\Gr{A}{l}{l}{l}{l})) | \omega \in A^{*}]$, whence $\Gr{A}{l}{l}{k}{k}\neq 0$ and $\UnitC{l}{k} \neq 0$.
+  The relation is reflexive by (U1) and transitive by Uiii). Finally, if $\UnitC{k}{l}\neq 0$, then by (D2) it must be contained in $[(\omega \otimes \id)(\Delta(\Gr{A}{l}{l}{l}{l})) | \omega \in A^{*}]$, whence $\Gr{A}{l}{l}{k}{k}\neq 0$ and $\UnitC{l}{k} \neq 0$.
 \end{proof}
 \begin{Def}
   The \emph{hyperobject set} of a   $C^{*}$-algebraic $I$-partial compact quantum group $(A,\Delta)$ is the set $I/\sim$.
 \end{Def}
 
-\subsection{Invariant integrals}
+The next concept will be crucial.
 \begin{Def} Let $(A,\Delta)$ be a C$^*$-pcqg. An \emph{invariant integral} on $A$ consists of a weight $\phi: A^+ \rightarrow [0,+\infty]$ satisfying the following conditions:
 \begin{enumerate}[i)]
 \item For all $k,m$ with $\UnitC{k}{m}\neq 0$, \[\phi(\UnitC{k}{m}) = 1.\]
@@ -93,7 +93,7 @@ The following lemma will be crucial.
 
 \begin{Lem}\label{LemRefSep} Let $\omega \in \Gr{B}{k}{m}{l}{n}$, and assume $\chi*\omega =  0$ for all $\chi \in \Gr{B}{m}{k}{n}{l}$. Then $\omega =0$.
 \end{Lem} 
-\begin{proof} By assumption, we have for all $\chi\in A^*$ that \[(\chi\otimes \omega)((\UnitC{m}{k}\otimes \UnitC{k}{m})\Delta(A)(\UnitC{n}{l}\otimes \UnitC{l}{n}))=0.\] But since $\omega = \omega(\UnitC{k}{m}\,\cdot\,\UnitC{l}{n})$, this means, using the notation from Definition \ref{DefCpcqg}.Dii), \[\omega((\chi\otimes \id)(\Delta(A_P))) =(\chi\otimes \omega)((\sum_{k'}\UnitC{m}{k'}\otimes \UnitC{k'}{m})\Delta(A)(\sum_{l'}\UnitC{n}{l'}\otimes \UnitC{l'}{n})) =0.\] By Definition \ref{DefCpcqg}.Dii), we conclude $\omega=0$.
+\begin{proof} By assumption, we have for all $\chi\in A^*$ that \[(\chi\otimes \omega)((\UnitC{m}{k}\otimes \UnitC{k}{m})\Delta(A)(\UnitC{n}{l}\otimes \UnitC{l}{n}))=0.\] But since $\omega = \omega(\UnitC{k}{m}\,\cdot\,\UnitC{l}{n})$, this means, using the notation from Definition \ref{DefCpcqg}.(D2), \[\omega((\chi\otimes \id)(\Delta(A_P))) =(\chi\otimes \omega)((\sum_{k'}\UnitC{m}{k'}\otimes \UnitC{k'}{m})\Delta(A)(\sum_{l'}\UnitC{n}{l'}\otimes \UnitC{l'}{n})) =0.\] By Definition \ref{DefCpcqg} (D2), we conclude $\omega=0$.
 \end{proof} 
 
 \begin{Cor} If $\UnitC{k}{m}=0$, then $\UnitC{m}{k}=0$. 
@@ -137,8 +137,6 @@ Since $(A\otimes A)\Delta(1) = [(A\otimes 1)\Delta(A)]$, we may
 A compactness argument as in \cite[Theorem 4.4]{MVD1} lets us conclude that there exists a state $\phi_{kk}$ as in the statement of the proposition.
 \end{proof}
 
-
-  Assume now that $(A,\Delta)$ is the C$^*$-algebra with comultiplication arising from a $^*$-algebraic pcqg with invariant integral $\phi$. It is easy to see that the conditions in Definition \ref{DefCpcqg} are satisfied. To see that $[(\omega\otimes \id)\Delta(pAp)\mid \omega \in A^*] = A$ for example, for $p = \sum_{k} \UnitC{k}{k}$, note that for the matrix coefficient $(\Gr{X}{k}{l}{m}{n})_{pj}$ of a unitary corepresentation, we have \[ (\Gr{X}{k}{l}{m}{n})_{pj} \in \sum_{q,r,s} \phi((\Gr{X}{m}{n}{r}{s})_{jq}A) (\Gr{X}{r}{s}{m}{n})_{qj} =(\phi(\,\cdot\, A)\otimes \id)\Delta((\Gr{X}{m}{n}{m}{n})_{jj})\] by the orthogonality relations. 
 
 
 %Also note that for the $(A,\Delta)$ arising from $^*$-pcqg with invariant integral, the above conditions are all satisfied - the fourth condition can be checked using the orthogonality relations for matrix coefficients of unitary corepresentations. 
@@ -650,7 +648,7 @@ We will need the following sharpening. % Proof of following lemma should be clea
 
 
 \subsection{The regular  corepresentation and duals of corepresentations}
-
+\label{subsection:reg-corep}
 Let $(A,\Delta)$ be a $C^{*}$-pcqg with an invariant integral $\phi$.
 
 We  construct a left-regular corepresentation of $(A,\Delta)$ and
