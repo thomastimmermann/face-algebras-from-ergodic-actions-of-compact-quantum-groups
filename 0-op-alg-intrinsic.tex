@@ -5,11 +5,12 @@
 
 For $A$ a C$^*$-algebra, we denote by $M(A)$ the multiplier C$^*$-algebra of $A$. All tensor products of C$^*$-algebras in this paper will be minimal. We denote by $[\,\cdot\,]$ the closed linear span of a subset.
 
-\begin{Def}\label{DefCpcqg} Let $I$ be a set. We call \emph{C$^*$-algebraic $I$-partial compact quantum group}, or \emph{C$^*$-pcqg} (over $I$) for short, a triple consisting of 
+\begin{Def}\label{DefCpcqg} Let $I$ be a set, in the following referred to as the \emph{object set}. We call \emph{C$^*$-algebraic $I$-partial compact quantum group}, or \emph{C$^*$-pcqg} (over $I$) for short, a triple consisting of 
 \begin{itemize}
 \item a (not necessarily unital) C$^*$-algebra $A$,
 \item a family of orthogonal self-adjoint projections $\UnitC{k}{l}\in A$ for $k,l\in I$, some of which are possibly zero, and
-\item  a (not necessarily unital) $^*$-homomorphism \[\Delta: A\rightarrow M(A\otimes A),\] 
+%Added injectivity
+\item  a (not necessarily unital) injective $^*$-homomorphism \[\Delta: A\rightarrow M(A\otimes A),\] 
 \end{itemize}
 satisfying the following conditions:
 \begin{enumerate}[(a)]
@@ -17,20 +18,20 @@ satisfying the following conditions:
 \item[(U2)] $\sum_{k,l} \UnitC{k}{l}$ strictly converges to the unit in $M(A)$.
 \item[(U3)] $\Delta(\UnitC{k}{l}) = \sum_{m}\UnitC{k}{m}\otimes \UnitC{m}{l}$ strictly for all $k,l$. 
 \item[(D1)] With $\Delta(1) = \sum_{k,l,m} \UnitC{k}{m}\otimes \UnitC{m}{l}$, we have \begin{equation}\label{CondDi}(A\otimes A)\Delta(1) = [(A\otimes 1)\Delta(A)] = [(1\otimes A)\Delta(A)].\end{equation} 
-\item[(D2)] With $P=\sum_{k} \UnitC{k}{k}$, and $A_P = PAP$, we have \[[(\omega\otimes \id)\Delta(A_P)\mid \omega \in A^*] = [(\id\otimes \omega)\Delta(A_P)\mid \omega \in A^*] = A.\]
+\item[(D2)] With $P=\sum_{k} \UnitC{k}{k}\in M(A)$, and $A_P = PAP$, we have \[A=[(\omega\otimes \id)\Delta(A_P)\mid \omega \in A^*] = [(\id\otimes \omega)\Delta(A_P)\mid \omega \in A^*].\]
 \item[(C)] $\Delta$ is coassociative: for all $a,b,c\in A$, we have \[(a\otimes 1\otimes 1)(\Delta\otimes \id)(\Delta(b)(1\otimes c)) = (\id\otimes \Delta)((a\otimes 1)\Delta(b))(1\otimes 1\otimes c).\] 
 \end{enumerate}
 \end{Def} 
 
 Note that $\Delta(1)$ is a well-defined projection in $M(A\otimes A)$. By condition \eqref{CondDi}, $\Delta$ extends uniquely to a $^*$-homomorphism \[\Delta: M(A)\rightarrow M(A\otimes A)\] with value in the unit precisely $\Delta(1)$. In the same way, $(\id\otimes \Delta)$ and $(\Delta\otimes \id)$ extend to $M(A\otimes A)$, and we can write the coassociativity condition in the usual form \[(\Delta\otimes \id)\Delta = (\id\otimes \Delta)\Delta,\] valid also on $M(A)$.
 
-In the following, we write \[\Gr{A}{k}{l}{m}{n} = \UnitC{k}{m}A\UnitC{l}{n},\] each of which is a Banach subspace of $A$. In particular, each corner $\Gr{A}{k}{k}{m}{m}$ is a unital C$^*$-algebra with unit $\UnitC{k}{m}$. We will write also \[\lambda_k = \sum_{m}\UnitC{k}{m},\qquad \rho_m = \sum_{k}\UnitC{k}{m},\] which give well-defined projections in $M(A)$. Finally, we will write, for $a\in A$, \[\Delta_{rs}(a) = (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) = (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s),\] which are well-defined elements in $A\otimes A$ by Definition \ref{DefCpcqg}.(U2). We then have that  \[\Delta(a) = \sum_{r,s} \Delta_{rs}(a)\] in the strict topology. 
+In the following, we write \[\Gr{A}{k}{l}{m}{n} = \UnitC{k}{m}A\UnitC{l}{n},\] each of which is a Banach subspace of $A$. In particular, each corner $\Gr{A}{k}{k}{m}{m}$ is a unital C$^*$-algebra with unit $\UnitC{k}{m}$. We will write also \[\lambda_k = \sum_{m}\UnitC{k}{m},\qquad \rho_m = \sum_{k}\UnitC{k}{m},\] which give well-defined projections in $M(A)$. Finally, we will write, for $a\in A$, \[\Delta_{rs}(a) = (\rho_r\otimes 1)\Delta(a)(\rho_s\otimes 1) = (1\otimes \lambda_r)\Delta(a)(1\otimes \lambda_s),\] which are well-defined elements in $A\otimes A$ by Definition \ref{DefCpcqg}.(U2) and \ref{DefCpcqg}.(U3). We then have that  \[\Delta(a) = \sum_{r,s} \Delta_{rs}(a)\] in the strict topology. 
 
-\begin{Lem}
-Let $I$ be a set and let $(A,\Delta)$   be a $C^{*}$-algebraic $I$-partial compact quantum group. Then the relation $\sim$ on $I$ given by $k\sim l :\Leftrightarrow \UnitC{k}{l}\neq 0$ is an equivalence relation.
+\begin{Lem}\label{LemEqRel}
+Let $I$ be a set and let $(A,\Delta)$   be a $C^{*}$-algebraic $I$-partial compact quantum group. Then the relation $\sim$ on $I$ given by $k\sim l \Leftrightarrow \UnitC{k}{l}\neq 0$ is an equivalence relation.
 \end{Lem}
 \begin{proof}
-  The relation is reflexive by (U1) and transitive by Uiii). Finally, if $\UnitC{k}{l}\neq 0$, then by (D2) it must be contained in $[(\omega \otimes \id)(\Delta(\Gr{A}{l}{l}{l}{l})) | \omega \in A^{*}]$, whence $\Gr{A}{l}{l}{k}{k}\neq 0$ and $\UnitC{l}{k} \neq 0$.
+  The relation is reflexive by (U1) and transitive by (U3). Finally, if $\UnitC{k}{l}\neq 0$, then by (D2) it must be contained in $[(\omega \otimes \id)(\Delta(\Gr{A}{l}{l}{l}{l})) | \omega \in A^{*}]$, whence $\Gr{A}{l}{l}{k}{k}\neq 0$ and $\UnitC{l}{k} \neq 0$.
 \end{proof}
 \begin{Def}
   The \emph{hyperobject set} of a   $C^{*}$-algebraic $I$-partial compact quantum group $(A,\Delta)$ is the set $I/\sim$.
@@ -60,17 +61,17 @@ $\{\phi_{km}\}$.
 
 In terms of the $\phi_{km}$, the left and right invariance properties
 \eqref{EqInvL} and \eqref{EqInvR} take the following form.  For all
-$a\in A$,
+$a\in A$, and all $m$ resp.~ all $k$,
 \begin{align} \label{eq:invariance}
-\sum_{k}  \lambda_{k} \phi_{km}(a) &= \sum_{k}  (\id \otimes
-\phi_{km})(\Delta(a)), &
-\sum_{m} \rho_{m} \phi_{km}(a) &= \sum_{m} (\phi_{km} \otimes \id)(\Delta(a)),
+\sum_{k}  (\id \otimes
+\phi_{km})(\Delta(a)) &= \sum_{k}  \lambda_{k} \phi_{km}(a), &
+\sum_{m} (\phi_{km} \otimes \id)(\Delta(a))&= \sum_{m} \rho_{m} \phi_{km}(a)  ,
 \end{align}
 where the sums converge strictly.
 
 These relations can also  be rewritten in terms of the associative
 convolution product on $A^*$  defined by \[(\chi*\omega)(a) =
-(\chi\otimes \omega)\Delta(a).\] Let us write \begin{equation}\label{DefSpB} \Gr{B}{k}{m}{l}{n} = \{\omega \in A^* \mid \forall a\in A, \omega(a) = \omega\left(\UnitC{k}{m}a\UnitC{l}{n}\right)\}.\end{equation}Then the convolution product restricts to products \[\Gr{B}{k}{m}{l}{n}\times \Gr{B}{m}{p}{n}{q}\rightarrow \Gr{B}{k}{p}{l}{q},\] all other products being zero. The left and right invariance properties \eqref{EqInvL} and \eqref{EqInvR} can then be written in terms of the $\phi_{km}$ as \begin{equation}\label{EqInvLp}\omega*\phi_{km} = \omega(\UnitC{p}{k})\phi_{pm},\qquad \forall \omega \in \Gr{B}{p}{k}{q}{k},\end{equation}
+(\chi\otimes \omega)\Delta(a).\] Let us write \begin{equation}\label{DefSpB} \Gr{B}{k}{m}{l}{n} = \{\omega \in A^* \mid \forall a\in A, \omega(a) = \omega\left(\UnitC{k}{m}a\UnitC{l}{n}\right)\}.\end{equation}Then the convolution product restricts to products \[\Gr{B}{k}{m}{l}{n}\times \Gr{B}{m}{p}{n}{q}\rightarrow \Gr{B}{k}{p}{l}{q},\] all other products between homogeneous components being zero. The left and right invariance properties \eqref{EqInvL} and \eqref{EqInvR} can then be written in terms of the $\phi_{km}\in \Gr{B}{k}{m}{k}{m}$ as \begin{equation}\label{EqInvLp}\omega*\phi_{km} = \omega(\UnitC{p}{k})\phi_{pm},\qquad \forall \omega \in \Gr{B}{p}{k}{q}{k},\end{equation}
 \begin{equation}\label{EqInvRp}\phi_{km}*\omega = \omega(\UnitC{m}{q})\phi_{kq},\qquad \forall \omega \in \Gr{B}{m}{p}{m}{q}.\end{equation}
 
 
@@ -81,7 +82,7 @@ We will refer to families of states satisfying \eqref{EqInvLp} as a \emph{left i
 
 We will split the proof of the Theorem into several steps, setting the stage so that eventually the arguments of \cite{MVD1} can be applied almost verbatim. 
 
-\begin{Lem} Let $\{\phi_{km}\}$ be a a left invariant integral, and $\{\psi_{km}\}$ a right invariant integral. Then $\phi_{km}= \psi_{km}$ for all $k,m$. 
+\begin{Lem} Let $\{\phi_{km}\}$ be a left invariant integral, and $\{\psi_{km}\}$ a right invariant integral. Then $\phi_{km}= \psi_{km}$ for all $k,m$. 
 \end{Lem} 
 \begin{proof} By the invariance properties, and the fact that $\UnitC{k}{k}\neq 0$, we have \[\phi_{km}  = \psi_{kk}\left(\UnitC{k}{k}\right)\phi_{km} = \psi_{kk}*\phi_{km}= \phi_{km}\left(\UnitC{k}{m}\right)\psi_{km} = \psi_{km}.\]
 
@@ -96,26 +97,26 @@ The following lemma will be crucial.
 \begin{proof} By assumption, we have for all $\chi\in A^*$ that \[(\chi\otimes \omega)((\UnitC{m}{k}\otimes \UnitC{k}{m})\Delta(A)(\UnitC{n}{l}\otimes \UnitC{l}{n}))=0.\] But since $\omega = \omega(\UnitC{k}{m}\,\cdot\,\UnitC{l}{n})$, this means, using the notation from Definition \ref{DefCpcqg}.(D2), \[\omega((\chi\otimes \id)(\Delta(A_P))) =(\chi\otimes \omega)((\sum_{k'}\UnitC{m}{k'}\otimes \UnitC{k'}{m})\Delta(A)(\sum_{l'}\UnitC{n}{l'}\otimes \UnitC{l'}{n})) =0.\] By Definition \ref{DefCpcqg} (D2), we conclude $\omega=0$.
 \end{proof} 
 
-\begin{Cor} If $\UnitC{k}{m}=0$, then $\UnitC{m}{k}=0$. 
-\end{Cor}
-\begin{proof} If $\UnitC{k}{l}=0$, this implies $\Gr{B}{k}{l}{k}{l}=0$. By the previous lemma, this forces also $\Gr{B}{l}{k}{l}{k}=0$, and so $\UnitC{l}{k}=0$. 
-\end{proof} 
+%\begin{Cor} If $\UnitC{k}{m}=0$, then $\UnitC{m}{k}=0$. 
+%\end{Cor}
+%\begin{proof} If $\UnitC{k}{l}=0$, this implies $\Gr{B}{k}{l}{k}{l}=0$. By the previous lemma, this forces also $\Gr{B}{l}{k}{l}{k}=0$, and so $\UnitC{l}{k}=0$. 
+%\end{proof} 
 
-\begin{Lem} Assume that there exists a family of states $\{\phi_{kk}\}$ in $\Gr{B}{k}{k}{k}{k}$ such that, for any $\omega \in \Gr{B}{k}{k}{k}{k}$, one has \[\omega*\phi_{kk} = \omega\left(\UnitC{k}{k}\right)\phi_{kk}.\] Then $(A,\Delta)$ admits a left invariant state.
+\begin{Lem}\label{LemRedCorn} Assume that there exists a family of states $\{\phi_{kk}\}$ in $\Gr{B}{k}{k}{k}{k}$ such that, for any $\omega \in \Gr{B}{k}{k}{k}{k}$, one has \[\omega*\phi_{kk} = \omega\left(\UnitC{k}{k}\right)\phi_{kk}.\] Then $(A,\Delta)$ admits a left invariant state.
 \end{Lem}
-\begin{proof} Let $\theta_{rm}$ be an arbitary collection of states in $\Gr{B}{r}{m}{r}{m}$ (whenever this algebra is not zero), and write \[\phi_{rm} = \theta_{rm}*\phi_{mm}.\] By assumption, this notation is consistent in the case $r=m$. 
+\begin{proof} Let $\theta_{rm}\in \Gr{B}{r}{m}{r}{m}$ be a collection of states on $A$ when $\Gr{B}{r}{m}{r}{m}\neq \{0\}$, and $\theta_{rm}=0$ otherwise. Write \[\phi_{rm} = \theta_{rm}*\phi_{mm}.\] By assumption, this notation is consistent in the case $r=m$. 
 
 Assume now that $\omega \in \Gr{B}{k}{r}{l}{r}$ and $\chi \in \Gr{B}{m}{k}{m}{l}$. Assume first that $\UnitC{r}{m}\neq 0$ and $\UnitC{k}{m}\neq 0$. Then \begin{eqnarray*} \chi*(\omega*\phi_{rm}) &=& (\chi*\omega*\theta_{rm})*\phi_{mm} \\ &=&  (\chi*\omega*\theta_{rm})(\UnitC{m}{m}) \phi_{mm} \\ &=&  \chi(\UnitC{m}{k})\omega(\UnitC{k}{r})\phi_{mm} \\ &=&  \omega(\UnitC{k}{r}) \; (\chi*\theta_{km})\left(\UnitC{m}{m}\right)\phi_{mm}
 \\ &=& \omega(\UnitC{k}{r}) \; (\chi*\theta_{km})*\phi_{mm} \\ &=&  \omega(\UnitC{k}{r}) \; \chi*\phi_{km} .\end{eqnarray*} As $\chi$ was arbitrary, we find by Lemma \ref{LemRefSep} that \begin{equation}\label{EqInvL2} \omega*\phi_{rm} =  \omega(\UnitC{k}{r}) \phi_{km}.\end{equation}
 
-Assume now that $\UnitC{r}{m}=0$. Then also $\Delta_{kk}(\UnitC{r}{m}) = \UnitC{r}{k}\otimes \UnitC{k}{m}=0$, and hence $\UnitC{r}{k}=0$ or $\UnitC{k}{m}=0$. By the previous lemma, we obtain either $\UnitC{k}{r}=0$ or $\UnitC{k}{m}=0$. In either case, both sides of \eqref{EqInvL2} are zero. 
+Assume now that $\UnitC{r}{m}=0$. Then also $\Delta_{kk}(\UnitC{r}{m}) = \UnitC{r}{k}\otimes \UnitC{k}{m}=0$, and hence $\UnitC{r}{k}=0$ or $\UnitC{k}{m}=0$. By the Lemma \ref{LemEqRel}, we obtain either $\UnitC{k}{r}=0$ or $\UnitC{k}{m}=0$. In either case, both sides of \eqref{EqInvL2} are zero. 
 
 Similarly, if $\UnitC{k}{m}=0$, we conclude that either $\UnitC{k}{r}=0$ or $\UnitC{r}{m}=0$, and again both sides of \eqref{EqInvL2} are zero.
 
 This shows that \eqref{EqInvL2} holds for all indices, and hence $\{\phi_{km}\}$ is a left invariant integral. 
 \end{proof} 
 
-Hence Theorem \ref{TheoInvInt} will be proven once we can produce a family of invariant states $\phi_{kk}$ as in the previous lemma. For this, one can follow the proof as in \cite{MVD1} for the existence of an invariant state for a compact quantum group.
+Theorem \ref{TheoInvInt} will now be proven once we can produce a family of invariant states $\phi_{kk}$ as in Lemma \ref{LemRedCorn}. For this, one can follow the proof as in \cite{MVD1} for the existence of an invariant state on a compact quantum group.
 
 \begin{Prop} For each $k\in I$, there exists a state $\phi_{kk}$ in $\Gr{B}{k}{k}{k}{k}$ such that, for any state $\omega \in \Gr{B}{k}{k}{k}{k}$, one has \[\omega*\phi_{kk} =\phi_{kk}.\]
 \end{Prop} 
